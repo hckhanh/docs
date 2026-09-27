@@ -1,0 +1,72 @@
+---
+title: Introduction
+description: Learn about format-prompt – a utility to format prompts for cleaner presentation and optimal token usage
+---
+
+# format-prompt
+
+A utility to format prompts for a cleaner presentation and optimal token usage. Removes unused spaces and line breaks, and supports template literals.
+
+## Why format-prompt?
+
+When working with LLMs and AI prompts, you often want to write readable, well-formatted prompts in your code with proper indentation. However, this adds unnecessary whitespace that wastes tokens and can affect prompt quality.
+
+**format-prompt** solves this by:
+- Removing leading and trailing whitespace from each line
+- Collapsing multiple spaces into single spaces
+- Trimming unnecessary line breaks
+- Supporting template literal interpolation
+- Maintaining the structure and readability of your code
+
+## Quick Example
+
+```typescript
+import { prompt } from 'format-prompt';
+
+const result = prompt`
+  You are a helpful assistant that analyzes text for:
+    * Sentiment
+    * Key topics
+    * Action items
+    
+  Please analyze the following text and provide insights.
+`;
+// Output: Clean, token-efficient prompt without extra whitespace
+```
+
+## Key Features
+
+- **Template Literal Support**: Works seamlessly with JavaScript/TypeScript template literals
+- **Smart Formatting**: Removes unnecessary whitespace while preserving structure
+- **Small Bundle Size**: Minimal dependencies for optimal performance
+- **TypeScript Support**: Full type safety out of the box
+- **Zero Configuration**: Works out of the box with sensible defaults
+
+## Installation
+
+```bash
+npm install format-prompt
+# or
+bun add format-prompt
+# or
+pnpm add format-prompt
+```
+
+## Basic Usage
+
+```typescript
+import { prompt } from 'format-prompt';
+
+// With interpolation
+const userName = 'Alice';
+const userQuery = 'What is the weather?';
+
+const formattedPrompt = prompt`
+  You are a helpful assistant.
+  
+  User: ${userName}
+  Query: ${userQuery}
+  
+  Please provide a helpful response.
+`;
+```

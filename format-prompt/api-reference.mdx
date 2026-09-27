@@ -1,0 +1,228 @@
+---
+title: API Reference
+description: Complete API documentation for format-prompt
+---
+
+## Main Function
+
+### `prompt()`
+
+The main function exported by format-prompt. It's a template tag function that formats template literal strings.
+
+```typescript
+function prompt(
+  strings: TemplateStringsArray,
+  ...values: unknown[]
+): string
+```
+
+**Parameters:**
+
+- `strings` - The template strings array from a template literal
+- `values` - The interpolated values from the template literal
+
+**Returns:** A formatted string with cleaned whitespace
+
+**Example:**
+
+```typescript
+import { prompt } from 'format-prompt';
+
+const result = prompt`
+  This is a prompt
+  with multiple lines
+`;
+// Returns: "This is a prompt\nwith multiple lines"
+```
+
+## Behavior
+
+### Whitespace Handling
+
+The `prompt` function processes whitespace in the following way:
+
+1. **Leading whitespace**: Removed from each line
+2. **Trailing whitespace**: Removed from each line
+3. **Multiple spaces**: Collapsed to single spaces within lines
+4. **Line breaks**: Preserved as single line breaks
+5. **Final trim**: The entire result is trimmed of leading/trailing whitespace
+
+### Examples
+
+#### Basic Formatting
+
+```typescript
+const result = prompt`  Hello  World  `;
+// Returns: "Hello World"
+```
+
+#### Multi-line Formatting
+
+```typescript
+const result = prompt`
+  Line 1
+  Line 2
+  Line 3
+`;
+// Returns: "Line 1\nLine 2\nLine 3"
+```
+
+#### Preserving Structure
+
+```typescript
+const result = prompt`
+  Title
+  
+  Body paragraph
+  
+  Footer
+`;
+// Returns: "Title\n\nBody paragraph\n\nFooter"
+```
+
+### Interpolation
+
+The function supports standard template literal interpolation:
+
+```typescript
+const name = 'Alice';
+const age = 30;
+
+const result = prompt`Name: ${name}, Age: ${age}`;
+// Returns: "Name: Alice, Age: 30"
+```
+
+Interpolated values are converted to strings using `String()`:
+
+```typescript
+const obj = { key: 'value' };
+const num = 42;
+const bool = true;
+
+const result = prompt`
+  Object: ${obj}
+  Number: ${num}
+  Boolean: ${bool}
+`;
+// Object is converted to "[object Object]"
+// Number is converted to "42"
+// Boolean is converted to "true"
+```
+
+## Type Definitions
+
+### Function Signature
+
+```typescript
+export function prompt(
+  strings: TemplateStringsArray,
+  ...values: unknown[]
+): string
+```
+
+### TemplateStringsArray
+
+This is a built-in TypeScript type representing the strings in a template literal:
+
+```typescript
+interface TemplateStringsArray extends ReadonlyArray<string> {
+  readonly raw: ReadonlyArray<string>;
+}
+```
+
+## Use Cases
+
+### AI Prompt Formatting
+
+```typescript
+function createChatPrompt(systemRole: string, userMessage: string) {
+  return prompt`
+    System: ${systemRole}
+    
+    User: ${userMessage}
+    
+    Assistant:
+  `;
+}
+```
+
+### Email Template
+
+```typescript
+function formatEmail(to: string, subject: string, body: string) {
+  return prompt`
+    To: ${to}
+    Subject: ${subject}
+    
+    ${body}
+  `;
+}
+```
+
+### Code Generation
+
+```typescript
+function generateFunction(name: string, params: string[], body: string) {
+  return prompt`
+    function ${name}(${params.join(', ')}) {
+      ${body}
+    }
+  `;
+}
+```
+
+## Performance
+
+The `prompt` function is designed to be lightweight and efficient:
+
+- Uses native string operations
+- Minimal overhead for template literal processing
+- No external dependencies for the core formatting logic
+- Small bundle size (~1KB minified + gzipped)
+
+## Best Practices
+
+1. **Use for prompts**: This function is optimized for formatting AI prompts and similar text
+2. **Preserve structure**: The function maintains your intended line break structure
+3. **Interpolate variables**: Use template literal interpolation for dynamic content
+4. **Code readability**: Write prompts with proper indentation in your code - the function will clean it up
+
+## Common Patterns
+
+### Conditional Content
+
+```typescript
+function createPrompt(includeContext: boolean, context?: string) {
+  return prompt`
+    Answer the following question.
+    
+    ${includeContext && context ? `Context: ${context}\n\n` : ''}
+    
+    Provide a detailed response.
+  `;
+}
+```
+
+### List Generation
+
+```typescript
+function formatList(items: string[]) {
+  return prompt`
+    Items:
+    ${items.map(item => `  * ${item}`).join('\n')}
+  `;
+}
+```
+
+### Nested Templates
+
+```typescript
+const section1 = prompt`Section 1 content`;
+const section2 = prompt`Section 2 content`;
+
+const combined = prompt`
+  ${section1}
+  
+  ${section2}
+`;
+```

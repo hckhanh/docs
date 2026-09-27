@@ -1,0 +1,152 @@
+---
+title: Getting Started
+description: Quick start guide to install and use format-prompt in your JavaScript or TypeScript project
+---
+
+## Installation
+
+Install format-prompt using your preferred package manager:
+
+```bash
+# npm
+npm install format-prompt
+
+# bun
+bun add format-prompt
+
+# pnpm
+pnpm add format-prompt
+
+# yarn
+yarn add format-prompt
+```
+
+## Basic Usage
+
+### Importing
+
+```typescript
+import { prompt } from 'format-prompt';
+```
+
+### Simple Example
+
+```typescript
+import { prompt } from 'format-prompt';
+
+const result = prompt`
+  Hello world!
+  This is a formatted prompt.
+`;
+
+console.log(result);
+// Output: "Hello world!\nThis is a formatted prompt."
+```
+
+### With Variables
+
+```typescript
+const name = 'John';
+const age = 30;
+
+const result = prompt`
+  User Information:
+    Name: ${name}
+    Age: ${age}
+`;
+
+console.log(result);
+// Clean output without extra whitespace
+```
+
+### Complex Example
+
+```typescript
+import { prompt } from 'format-prompt';
+
+function createAnalysisPrompt(email: string) {
+  return prompt`
+    You are a security guard that analyzes emails for:
+      * Spam: unsolicited bulk/promotional content
+      * Scam: phishing, fraud, identity theft attempts
+      * Toxicity: hate speech, threats, harassment
+      * Business relevance: legitimate business inquiries
+    
+    Email to analyze:
+    ${email}
+    
+    Provide a detailed security assessment.
+  `;
+}
+
+const analysis = createAnalysisPrompt('test@example.com');
+```
+
+## How It Works
+
+The `prompt` function:
+
+1. Takes a template literal string with optional interpolated values
+2. Removes leading/trailing whitespace from each line
+3. Collapses multiple spaces into single spaces
+4. Preserves intentional line breaks
+5. Trims the final result
+6. Returns a clean, token-efficient string
+
+## TypeScript Support
+
+format-prompt is written in TypeScript and includes type definitions:
+
+```typescript
+import { prompt } from 'format-prompt';
+
+// Full type safety
+const result: string = prompt`Your prompt here`;
+```
+
+## Best Practices
+
+1. **Use template literals**: Leverage JavaScript's template literal syntax for clean code
+2. **Indent for readability**: Format your prompts for readability in code - the library will clean it up
+3. **Use interpolation**: Insert variables directly into your prompts
+4. **Keep structure**: The library preserves intentional line breaks and structure
+
+## Common Patterns
+
+### List Formatting
+
+```typescript
+const items = ['item1', 'item2', 'item3'];
+const result = prompt`
+  Please analyze:
+    * ${items[0]}
+    * ${items[1]}
+    * ${items[2]}
+`;
+```
+
+### Multi-line Instructions
+
+```typescript
+const result = prompt`
+  Step 1: Read the input
+  Step 2: Process the data
+  Step 3: Generate output
+  
+  Be thorough and accurate.
+`;
+```
+
+### Dynamic Content
+
+```typescript
+function generatePrompt(context: string, question: string) {
+  return prompt`
+    Context: ${context}
+    
+    Question: ${question}
+    
+    Provide a detailed answer based on the context.
+  `;
+}
+```

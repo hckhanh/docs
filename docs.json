@@ -1,0 +1,345 @@
+{
+  "$schema": "https://context7.com/schema/docs7.json",
+  "theme": "mint",
+  "name": "Khanh Docs",
+  "favicon": "/images/favicon.svg",
+  "description": "Documentation for Khanh's open source libraries",
+  "seo": {
+    "indexing": "navigable",
+    "trailingSlash": false,
+    "metatags": {
+      "canonical": "https://docs.khanh.id",
+      "robots": "index, follow",
+      "og:site_name": "Khanh Docs",
+      "og:locale": "en_US"
+    },
+    "organization": {
+      "name": "Khanh",
+      "url": "https://khanh.id",
+      "id": "https://khanh.id/#organization",
+      "sameAs": [
+        "https://github.com/hckhanh"
+      ]
+    }
+  },
+  "markdown": {
+    "instructions": [
+      "This site documents fast-url, format-prompt, ja4, vn-number, what-the-fetch, and Pulumi Any Terraform.",
+      "Each library is a separate product. Its pages start at /<library>/overview.",
+      "Use only the APIs and fields written on the pages for that library. Do not invent fields.",
+      "The Markdown for a page is that path with .md appended.",
+      "If a URL is missing, follow the suggested pages or search /search?q= instead of guessing another path.",
+      "The published documentation site is https://docs.khanh.id."
+    ]
+  },
+  "colors": {
+    "primary": "#0F766E"
+  },
+  "filterSidebar": true,
+  "poweredByDocs7": true,
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/hckhanh"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/hckhanh"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "pages": [
+          "index"
+        ],
+        "productGroups": [
+          {
+            "group": "Libraries",
+            "products": [
+              {
+                "product": "fast-url",
+                "icon": "/images/fast-url.svg",
+                "description": "A high-performance URL building library that makes constructing URLs safe and convenient",
+                "pages": [
+                  "fast-url/overview",
+                  "fast-url/getting-started",
+                  "fast-url/api-reference"
+                ]
+              },
+              {
+                "product": "format-prompt",
+                "icon": "/images/format-prompt.svg",
+                "description": "A utility to format prompts for a cleaner presentation and optimal token usage",
+                "pages": [
+                  "format-prompt/overview",
+                  "format-prompt/getting-started",
+                  "format-prompt/api-reference"
+                ]
+              },
+              {
+                "product": "ja4",
+                "icon": "/images/ja4.svg",
+                "description": "Parse JA4 TLS fingerprint strings into structured objects",
+                "pages": [
+                  "ja4/overview",
+                  "ja4/api",
+                  "ja4/concepts"
+                ]
+              },
+              {
+                "product": "Pulumi Any Terraform",
+                "icon": "/images/pulumi-any-terraform.svg",
+                "description": "Bridge any Terraform provider to Pulumi",
+                "groups": [
+                  {
+                    "group": "Guide",
+                    "pages": [
+                      "pulumi-any-terraform/overview",
+                      "pulumi-any-terraform/getting-started",
+                      "pulumi-any-terraform/architecture",
+                      "pulumi-any-terraform/contributing",
+                      "pulumi-any-terraform/troubleshooting",
+                      "pulumi-any-terraform/faq",
+                      "pulumi-any-terraform/ci-cd"
+                    ]
+                  },
+                  {
+                    "group": "Better Uptime",
+                    "pages": [
+                      "pulumi-any-terraform/providers/better-uptime/overview",
+                      "pulumi-any-terraform/providers/better-uptime/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Better Uptime Resources",
+                    "pages": [
+                      "pulumi-any-terraform/providers/better-uptime/monitor",
+                      "pulumi-any-terraform/providers/better-uptime/status-page",
+                      "pulumi-any-terraform/providers/better-uptime/heartbeat"
+                    ]
+                  },
+                  {
+                    "group": "Buildkite",
+                    "pages": [
+                      "pulumi-any-terraform/providers/buildkite/overview",
+                      "pulumi-any-terraform/providers/buildkite/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Bunny",
+                    "pages": [
+                      "pulumi-any-terraform/providers/bunnynet/overview",
+                      "pulumi-any-terraform/providers/bunnynet/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Infisical",
+                    "pages": [
+                      "pulumi-any-terraform/providers/infisical/overview"
+                    ]
+                  },
+                  {
+                    "group": "Logtail",
+                    "pages": [
+                      "pulumi-any-terraform/providers/logtail/overview"
+                    ]
+                  },
+                  {
+                    "group": "Namecheap",
+                    "pages": [
+                      "pulumi-any-terraform/providers/namecheap/overview",
+                      "pulumi-any-terraform/providers/namecheap/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Namecheap Resources",
+                    "pages": [
+                      "pulumi-any-terraform/providers/namecheap/domain-records"
+                    ]
+                  },
+                  {
+                    "group": "Namecheap Guides",
+                    "pages": [
+                      "pulumi-any-terraform/providers/namecheap/dns-guide",
+                      "pulumi-any-terraform/providers/namecheap/migration-guide"
+                    ]
+                  },
+                  {
+                    "group": "OpenFGA",
+                    "pages": [
+                      "pulumi-any-terraform/providers/openfga/overview"
+                    ]
+                  },
+                  {
+                    "group": "Portainer",
+                    "pages": [
+                      "pulumi-any-terraform/providers/portainer/overview"
+                    ]
+                  },
+                  {
+                    "group": "PostHog",
+                    "pages": [
+                      "pulumi-any-terraform/providers/posthog/overview",
+                      "pulumi-any-terraform/providers/posthog/configuration"
+                    ]
+                  },
+                  {
+                    "group": "PostHog Resources",
+                    "pages": [
+                      "pulumi-any-terraform/providers/posthog/feature-flag",
+                      "pulumi-any-terraform/providers/posthog/dashboard",
+                      "pulumi-any-terraform/providers/posthog/insight",
+                      "pulumi-any-terraform/providers/posthog/alert",
+                      "pulumi-any-terraform/providers/posthog/hog-function"
+                    ]
+                  },
+                  {
+                    "group": "TeamCity",
+                    "pages": [
+                      "pulumi-any-terraform/providers/teamcity/overview"
+                    ]
+                  },
+                  {
+                    "group": "Local",
+                    "pages": [
+                      "pulumi-any-terraform/providers/local/overview",
+                      "pulumi-any-terraform/providers/local/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Time",
+                    "pages": [
+                      "pulumi-any-terraform/providers/time/overview",
+                      "pulumi-any-terraform/providers/time/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Time Resources",
+                    "pages": [
+                      "pulumi-any-terraform/providers/time/offset",
+                      "pulumi-any-terraform/providers/time/rotating",
+                      "pulumi-any-terraform/providers/time/sleep",
+                      "pulumi-any-terraform/providers/time/static"
+                    ]
+                  },
+                  {
+                    "group": "Time Guides",
+                    "pages": [
+                      "pulumi-any-terraform/providers/time/time-guide"
+                    ]
+                  }
+                ]
+              },
+              {
+                "product": "vn-number",
+                "icon": "/images/vn-number.svg",
+                "description": "Utility functions that work with numbers in Vietnamese",
+                "pages": [
+                  "vn-number/overview",
+                  "vn-number/api-reference"
+                ]
+              },
+              {
+                "product": "what-the-fetch",
+                "icon": "/images/what-the-fetch.svg",
+                "description": "Type-safe API client with schema validation using Standard Schema",
+                "pages": [
+                  "what-the-fetch/overview",
+                  "what-the-fetch/getting-started",
+                  "what-the-fetch/api-reference"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/fast-url",
+      "destination": "/fast-url/overview"
+    },
+    {
+      "source": "/format-prompt",
+      "destination": "/format-prompt/overview"
+    },
+    {
+      "source": "/ja4",
+      "destination": "/ja4/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/vn-number",
+      "destination": "/vn-number/overview"
+    },
+    {
+      "source": "/what-the-fetch",
+      "destination": "/what-the-fetch/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/better-uptime",
+      "destination": "/pulumi-any-terraform/providers/better-uptime/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/buildkite",
+      "destination": "/pulumi-any-terraform/providers/buildkite/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/bunnynet",
+      "destination": "/pulumi-any-terraform/providers/bunnynet/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/infisical",
+      "destination": "/pulumi-any-terraform/providers/infisical/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/local",
+      "destination": "/pulumi-any-terraform/providers/local/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/logtail",
+      "destination": "/pulumi-any-terraform/providers/logtail/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/namecheap",
+      "destination": "/pulumi-any-terraform/providers/namecheap/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/openfga",
+      "destination": "/pulumi-any-terraform/providers/openfga/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/portainer",
+      "destination": "/pulumi-any-terraform/providers/portainer/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog",
+      "destination": "/pulumi-any-terraform/providers/posthog/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/teamcity",
+      "destination": "/pulumi-any-terraform/providers/teamcity/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time",
+      "destination": "/pulumi-any-terraform/providers/time/overview"
+    }
+  ]
+}

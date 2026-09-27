@@ -1,0 +1,26 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Khanh Docs",
+  "description": "Documentation for Khanh's open source libraries, published at docs.khanh.id.",
+  "folders": [
+    "fast-url",
+    "format-prompt",
+    "ja4",
+    "pulumi-any-terraform",
+    "vn-number",
+    "what-the-fetch"
+  ],
+  "excludeFolders": [
+    ".docs7"
+  ],
+  "excludeFiles": [
+    "README.md"
+  ],
+  "rules": [
+    "The published site is https://docs.khanh.id.",
+    "Each library is its own product. Pages start at /<library>/overview.",
+    "Use only the APIs and fields written on the pages for that library."
+  ],
+  "url": "https://context7.com/hckhanh/docs",
+  "public_key": "pk_5wVhL0PTjFlXiZPBk058C"
+}
