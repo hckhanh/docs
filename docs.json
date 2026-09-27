@@ -70,36 +70,6 @@
             "group": "Libraries",
             "products": [
               {
-                "product": "fast-url",
-                "icon": "/images/fast-url.svg",
-                "description": "A high-performance URL building library that makes constructing URLs safe and convenient",
-                "pages": [
-                  "fast-url/overview",
-                  "fast-url/getting-started",
-                  "fast-url/api-reference"
-                ]
-              },
-              {
-                "product": "format-prompt",
-                "icon": "/images/format-prompt.svg",
-                "description": "A utility to format prompts for a cleaner presentation and optimal token usage",
-                "pages": [
-                  "format-prompt/overview",
-                  "format-prompt/getting-started",
-                  "format-prompt/api-reference"
-                ]
-              },
-              {
-                "product": "ja4",
-                "icon": "/images/ja4.svg",
-                "description": "Parse JA4 TLS fingerprint strings into structured objects",
-                "pages": [
-                  "ja4/overview",
-                  "ja4/api",
-                  "ja4/concepts"
-                ]
-              },
-              {
                 "product": "Pulumi Any Terraform",
                 "icon": "/images/pulumi-any-terraform.svg",
                 "description": "Bridge any Terraform provider to Pulumi",
@@ -244,12 +214,32 @@
                 ]
               },
               {
+                "product": "fast-url",
+                "icon": "/images/fast-url.svg",
+                "description": "A high-performance URL building library that makes constructing URLs safe and convenient",
+                "pages": [
+                  "fast-url/overview",
+                  "fast-url/getting-started",
+                  "fast-url/api-reference"
+                ]
+              },
+              {
                 "product": "vn-number",
                 "icon": "/images/vn-number.svg",
                 "description": "Utility functions that work with numbers in Vietnamese",
                 "pages": [
                   "vn-number/overview",
                   "vn-number/api-reference"
+                ]
+              },
+              {
+                "product": "ja4",
+                "icon": "/images/ja4.svg",
+                "description": "Parse JA4 TLS fingerprint strings into structured objects",
+                "pages": [
+                  "ja4/overview",
+                  "ja4/api",
+                  "ja4/concepts"
                 ]
               },
               {
@@ -260,6 +250,16 @@
                   "what-the-fetch/overview",
                   "what-the-fetch/getting-started",
                   "what-the-fetch/api-reference"
+                ]
+              },
+              {
+                "product": "format-prompt",
+                "icon": "/images/format-prompt.svg",
+                "description": "A utility to format prompts for a cleaner presentation and optimal token usage",
+                "pages": [
+                  "format-prompt/overview",
+                  "format-prompt/getting-started",
+                  "format-prompt/api-reference"
                 ]
               }
             ]
