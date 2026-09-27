@@ -1,0 +1,38 @@
+---
+title: Benchmarks
+description: Measured comparison of createUrl with urlcat 3.1.0 and URLSearchParams
+---
+
+`createUrl` is the reason to pick fast-url over [urlcat](https://github.com/balazsbotond/urlcat): the same path-template and query-object call, with less work per call. It is not a replacement for `URLSearchParams` when the path is already a finished string.
+
+These numbers are from one local run on 27 September 2026, Bun 1.4.2, Apple Silicon. Each figure is the median of five loops of 100,000 calls, after a short warmup. They are not CodSpeed CI results.
+
+## Path template and query object
+
+The call substitutes `:userId` and `:postId`, then appends `sort` and `order` as a query string.
+
+| Implementation | ops/s | time per call |
+| --- | ---: | ---: |
+| `createUrl` | 2,003,232 | 499 ns |
+| urlcat 3.1.0 | 908,646 | 1,101 ns |
+
+`createUrl` did about 2.2× as many calls per second as urlcat on this input.
+
+A hand-written `URL` plus `URLSearchParams` on the same machine reached 4,365,248 ops/s (229 ns). That baseline used the path `/users/123/posts/456` already filled in. It did not scan a template for `:param` names, so it is doing less work than `createUrl` and urlcat.
+
+## Fifteen query parameters
+
+No path template. Fifteen string values become one query string.
+
+| Implementation | ops/s | time per call |
+| --- | ---: | ---: |
+| `createUrl` | 1,048,012 | 954 ns |
+| urlcat 3.1.0 | 218,184 | 4,583 ns |
+
+`createUrl` did about 4.8× as many calls per second as urlcat on this input.
+
+## How to read this
+
+Use fast-url when you want a template such as `/users/:id` and a params object, and you want unused keys to become the query string. Use `URLSearchParams` when you already have the path and only need a query string.
+
+The repository benches in `benchmark/urlcat.bench.ts` cover more `createUrl` shapes. They time fast-url by itself. CodSpeed runs those benches in CI.

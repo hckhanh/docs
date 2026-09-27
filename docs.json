@@ -220,7 +220,8 @@
                 "pages": [
                   "fast-url/overview",
                   "fast-url/getting-started",
-                  "fast-url/api-reference"
+                  "fast-url/api-reference",
+                  "fast-url/benchmarks"
                 ]
               },
               {
@@ -249,7 +250,8 @@
                 "pages": [
                   "what-the-fetch/overview",
                   "what-the-fetch/getting-started",
-                  "what-the-fetch/api-reference"
+                  "what-the-fetch/api-reference",
+                  "what-the-fetch/benchmarks"
                 ]
               },
               {

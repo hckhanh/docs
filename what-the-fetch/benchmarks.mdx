@@ -1,0 +1,25 @@
+---
+title: Benchmarks
+description: Measured overhead of createFetch compared with createUrl plus fetch, with the network stubbed
+---
+
+what-the-fetch is slower than calling `fetch` yourself. The extra time is the work you picked the library for: reading the path prefix, building the URL, and validating the request and response with a Standard Schema.
+
+These numbers are from one local run on 27 September 2026, Bun 1.4.2, Apple Silicon. `fetch` was replaced with a function that resolves `{ id, name, email }` immediately, so this is client overhead, not network time. Each figure is the median of five loops of 5,000 calls, after a short warmup.
+
+## GET `/users/:id` with one query field
+
+The schema validates `params`, `query`, and `response`. The mock validator returns the input unchanged.
+
+| Implementation | ops/s | time per call |
+| --- | ---: | ---: |
+| `createFetch` | 744,348 | 1,343 ns |
+| `createUrl` + `fetch` + `response.json()` | 1,616,118 | 619 ns |
+
+The manual call did about 2.2× as many requests per second. `createFetch` spent about 724 ns more per call. That gap is method parsing, URL building through fast-url, and three schema validations. A real schema such as Zod does more work than this mock, so a production schema will be slower than the row above.
+
+## How to read this
+
+Use what-the-fetch when a wrong response shape should fail before your code reads it, and when the path, query, and body should be checked against the same schema that types the result. Use `fetch` directly when you do not want that check on the hot path.
+
+The repository benches in `benchmark/createFetch.bench.ts` and `benchmark/parseMethodFromPath.bench.ts` time what-the-fetch by itself, including `@get` and `@post` prefixes. CodSpeed runs those benches in CI.
