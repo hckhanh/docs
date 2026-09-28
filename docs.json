@@ -88,6 +88,7 @@
                   },
                   {
                     "group": "Better Uptime",
+                    "icon": "/images/providers/better-stack.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/better-uptime/overview",
                       "pulumi-any-terraform/providers/better-uptime/configuration"
@@ -95,6 +96,7 @@
                   },
                   {
                     "group": "Better Uptime Resources",
+                    "icon": "/images/providers/better-stack.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/better-uptime/monitor",
                       "pulumi-any-terraform/providers/better-uptime/status-page",
@@ -103,6 +105,7 @@
                   },
                   {
                     "group": "Buildkite",
+                    "icon": "/images/providers/buildkite.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/buildkite/overview",
                       "pulumi-any-terraform/providers/buildkite/configuration"
@@ -110,6 +113,7 @@
                   },
                   {
                     "group": "Bunny",
+                    "icon": "/images/providers/bunnynet.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/bunnynet/overview",
                       "pulumi-any-terraform/providers/bunnynet/configuration"
@@ -117,18 +121,21 @@
                   },
                   {
                     "group": "Infisical",
+                    "icon": "/images/providers/infisical.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/infisical/overview"
                     ]
                   },
                   {
                     "group": "Logtail",
+                    "icon": "/images/providers/better-stack.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/logtail/overview"
                     ]
                   },
                   {
                     "group": "Namecheap",
+                    "icon": "/images/providers/namecheap.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/namecheap/overview",
                       "pulumi-any-terraform/providers/namecheap/configuration"
@@ -136,12 +143,14 @@
                   },
                   {
                     "group": "Namecheap Resources",
+                    "icon": "/images/providers/namecheap.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/namecheap/domain-records"
                     ]
                   },
                   {
                     "group": "Namecheap Guides",
+                    "icon": "/images/providers/namecheap.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/namecheap/dns-guide",
                       "pulumi-any-terraform/providers/namecheap/migration-guide"
@@ -149,18 +158,21 @@
                   },
                   {
                     "group": "OpenFGA",
+                    "icon": "/images/providers/openfga.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/openfga/overview"
                     ]
                   },
                   {
                     "group": "Portainer",
+                    "icon": "/images/providers/portainer.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/portainer/overview"
                     ]
                   },
                   {
                     "group": "PostHog",
+                    "icon": "/images/providers/posthog.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/posthog/overview",
                       "pulumi-any-terraform/providers/posthog/configuration"
@@ -168,6 +180,7 @@
                   },
                   {
                     "group": "PostHog Resources",
+                    "icon": "/images/providers/posthog.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/posthog/feature-flag",
                       "pulumi-any-terraform/providers/posthog/dashboard",
@@ -178,12 +191,14 @@
                   },
                   {
                     "group": "TeamCity",
+                    "icon": "/images/providers/teamcity.png",
                     "pages": [
                       "pulumi-any-terraform/providers/teamcity/overview"
                     ]
                   },
                   {
                     "group": "Local",
+                    "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/local/overview",
                       "pulumi-any-terraform/providers/local/configuration"
@@ -191,6 +206,7 @@
                   },
                   {
                     "group": "Time",
+                    "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/time/overview",
                       "pulumi-any-terraform/providers/time/configuration"
@@ -198,6 +214,7 @@
                   },
                   {
                     "group": "Time Resources",
+                    "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/time/offset",
                       "pulumi-any-terraform/providers/time/rotating",
@@ -207,6 +224,7 @@
                   },
                   {
                     "group": "Time Guides",
+                    "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/time/time-guide"
                     ]

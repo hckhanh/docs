@@ -175,16 +175,16 @@ const tuple = new openfga.RelationshipTuple("finance-can-view-invoice-42", {
 
 The provider exposes data sources for offline checks against an authorization model without writing to the store: `getCheckQuery`, `getListObjectsQuery`, `getListUsersQuery`, plus lookups for stores, models, and tuples (`getStore`, `getAuthorizationModel`, `getRelationshipTuple`, etc.).
 
+These invoke results no longer include a provider-assigned `id`. `getAuthorizationModelDocument` still returns the converted model on `result`.
+
 ```typescript
 const canRead = openfga.getCheckQueryOutput({
     storeId: store.id,
     authorizationModelId: model.id,
-    tupleKey: {
-        user: "user:alice",
-        relation: "viewer",
-        object: "document:readme",
-    },
+    user: "user:alice",
+    relation: "viewer",
+    object: "document:readme",
 });
 
-export const aliceCanRead = canRead.allowed;
+export const aliceCanRead = canRead.result;
 ```

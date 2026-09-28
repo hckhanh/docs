@@ -139,3 +139,37 @@ const identity = new infisical.Identity("api-identity", {
     projectId: project.id,
 });
 ```
+
+### Gateways
+
+A gateway authenticates with the platform identity of the machine that runs it. Kubernetes auth requires `allowedNamespaces` or `allowedServiceAccountNames`. AWS auth requires `allowedPrincipalArns` or `allowedAccountIds`. GCP auth requires `allowedServiceAccounts` or `allowedProjects`.
+
+```typescript
+const gateway = new infisical.Gateway("edge", {
+    name: "edge-gateway",
+    kubernetesAuth: {
+        allowedNamespaces: ["infisical"],
+        allowedServiceAccountNames: ["infisical-gateway"],
+    },
+});
+```
+
+Token auth stores a secret and does not re-authenticate on restart. Pair an empty `tokenAuth` block with `GatewayEnrollmentToken`. `keepers` forces a new token when a listed value changes.
+
+```typescript
+const tokenGateway = new infisical.Gateway("token-gateway", {
+    name: "token-gateway",
+    tokenAuth: {},
+});
+
+const enrollmentToken = new infisical.GatewayEnrollmentToken("token", {
+    gatewayId: tokenGateway.id,
+});
+```
+
+### Key and approval policy fields
+
+`KmsKey.isExportable` defaults to `true`. Changing it replaces the key.
+
+`SecretApprovalPolicy.bypassApprovalsForMachineIdentities` controls whether machine identities skip the policy. Leave it unset to take Infisical's default on creation and to leave the current value unchanged on update.
+

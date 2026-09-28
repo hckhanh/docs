@@ -90,10 +90,12 @@ const appStack = new portainer.Stack("app", {
 ```typescript
 const environment = new portainer.Environment("docker", {
     name: "Production Docker",
-    type: "docker",
+    type: 1, // Docker
     url: "tcp://docker.example.com:2375",
 });
 ```
+
+Environment `type` is a number: `1` Docker, `2` Agent, `3` Azure, `4` Edge Agent, `5` Kubernetes, `6` Kubernetes via agent, `7` Kubernetes Edge Agent.
 
 ### User Management
 
@@ -104,3 +106,36 @@ const user = new portainer.User("developer", {
     role: 2, // Standard user
 });
 ```
+
+## Provider 2.0
+
+The bridged Terraform provider is 2.0.0. Configurations that were valid on 1.35.0 are still valid. Plan Edge Agent environments before upgrading, because one behavior change can replace them.
+
+- Edge Agent environments (`type` `4` or `7`) are replaced when `url` changes, except when only the URL scheme differs. Replacement issues a new edge key, and the agent has to be redeployed with it.
+- TLS arguments are omitted for types `4` and `7`. `tlsEnabled: false` is no longer required to create those environments.
+- `EndpointRelations` leaves tags and edge groups alone unless `tagIds` or `edgeGroupIds` is set. Omit a field to keep the current relations. There is no value here that clears them; use `Environment` to clear tags.
+- `Webhook.reassignOnChange` keeps the existing webhook token when `resourceId` or `webhookType` changes. It is Business Edition only and defaults to `false`. On Community Edition those changes still replace the webhook.
+- Creating a stack waits until Portainer finishes the deploy. A failed deploy is reported as a failure.
+- API calls that used to return an error body as data now fail with the server response.
+- `BackupS3` exposes `lastRunFailed` and `lastRunTimestamp` after a scheduled backup.
+
+### Edge stack from a Helm repository
+
+`EdgeStack.helmConfig` deploys from a Helm chart repository. `chartName` and `chartUrl` are required. `chartVersion`, `namespace`, `atomic`, `timeout`, and `valuesInline` are optional. Leave `chartVersion` unset only when Portainer should resolve the newest published chart on each apply.
+
+### Business Edition resources
+
+These resources cover the Business Edition API. They have not been exercised against a live Business Edition instance; the first apply is the real test.
+
+- Add-on store: `Addon`, `AddonAccess`, `AddonConfig`, `AddonRepair`
+- Omni / Talos: `OmniCluster`, `OmniNodeReboot`
+- GitOps: `GitopsWorkflow`
+- Backup: `BackupAzureSettings`, `BackupAzureExecute`, `BackupAzureRestore`, `BackupLocalSettings`, `BackupLocalRun`, `BackupS3Restore`
+- Kubernetes: `KubernetesPodSecurityRule`, `KubernetesClusterUpgrade`
+- Alerting: `AlertingRuleGroups`, `AlertingRuleTiers`
+- Settings: `SettingsDefaultRegistry`, `SettingsAdditionalFunctionality`, `SsrfAllowlist`
+- Environments and users: `EndpointTrust`, `UserMembershipsSync`
+
+Matching data sources are exported as `get*` functions, including `getAddons`, `getOmniMachines`, `getKubernetesStorageClasses`, `getKubernetesCronJobs`, `getEdgeWaitingRoom`, `getLdapUsers`, `getEnvironmentLogs`, `getDockerSnapshot`, and `getGitopsHelmValues`.
+
+`OmniCluster` cannot detect drift in its machine list. `KubernetesPodSecurityRule` reads back only its switches; list sections stay driven by configuration. `UserApiKey` is created from a session, so the provider needs `apiUser` and `apiPassword`. A key for a user created in the same program needs two applies.
