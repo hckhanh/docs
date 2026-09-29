@@ -1,0 +1,66 @@
+---
+title: "DomainRecords"
+description: "Resource DomainRecords in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Resource DomainRecords in pulumi-namecheap.
+
+Pulumi type: `namecheap:index/domainRecords:DomainRecords`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Construct with `new namecheap.DomainRecords(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes | Purchased available domain name on your account |
+| `domainRecordsId` | `string` | no |  |
+| `emailType` | `string` | no | Possible values: NONE, MXE, MX, FWD, OX, GMAIL |
+| `mode` | `string` | no | Possible values: MERGE (default), OVERWRITE |
+| `nameservers` | `string[]` | no | Custom nameservers to delegate the domain to. Conflicts with `emailType` and `record`, which only apply while the domain uses Namecheap DNS. |
+| `records` | `DomainRecordsRecord (input)[]` | no | One or more DNS host records for the domain. Conflicts with `nameservers`, since a domain either uses Namecheap DNS with these records or delegates to custom nameservers. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | no | Purchased available domain name on your account |
+| `domainRecordsId` | `string` | no |  |
+| `emailType` | `string` | no | Possible values: NONE, MXE, MX, FWD, OX, GMAIL |
+| `mode` | `string` | no | Possible values: MERGE (default), OVERWRITE |
+| `nameservers` | `string[]` | no | Custom nameservers to delegate the domain to. Conflicts with `emailType` and `record`, which only apply while the domain uses Namecheap DNS. |
+| `records` | `DomainRecordsRecord (output)[]` | no | One or more DNS host records for the domain. Conflicts with `nameservers`, since a domain either uses Namecheap DNS with these records or delegates to custom nameservers. |
+
+## `DomainRecordsRecord (input)`
+
+Input object `DomainRecordsRecord`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address` | `string` | yes | Possible values are URL or IP address. The value for this parameter is based on record type |
+| `hostname` | `string` | yes | Sub-domain/hostname to create the record for |
+| `mxPref` | `number` | no | MX preference for host. Applicable for MX records only |
+| `ttl` | `number` | no | Time to live for all record types. Possible values: any value between 60 to 60000 |
+| `type` | `string` | yes | Possible values: A, AAAA, ALIAS, CAA, CNAME, MX, MXE, NS, TXT, URL, URL301, FRAME |
+
+## `DomainRecordsRecord (output)`
+
+Output object `DomainRecordsRecord`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address` | `string` | yes | Possible values are URL or IP address. The value for this parameter is based on record type |
+| `hostname` | `string` | yes | Sub-domain/hostname to create the record for |
+| `mxPref` | `number` | no | MX preference for host. Applicable for MX records only |
+| `ttl` | `number` | no | Time to live for all record types. Possible values: any value between 60 to 60000 |
+| `type` | `string` | yes | Possible values: A, AAAA, ALIAS, CAA, CNAME, MX, MXE, NS, TXT, URL, URL301, FRAME |

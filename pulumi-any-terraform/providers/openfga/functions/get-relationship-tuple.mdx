@@ -1,0 +1,46 @@
+---
+title: "getRelationshipTuple"
+description: "Function getRelationshipTuple in pulumi-openfga."
+---
+
+<!-- Generated from the pulumi-openfga SDK. -->
+
+Function getRelationshipTuple in pulumi-openfga.
+
+Invoke token: `openfga:index/getRelationshipTuple:getRelationshipTuple`.
+
+```ts
+import * as openfga from "pulumi-openfga"
+```
+
+Call `openfga.getRelationshipTuple(args)`.
+
+`getRelationshipTupleOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `object` | `string` | yes |  |
+| `relation` | `string` | yes |  |
+| `storeId` | `string` | yes |  |
+| `user` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `condition` | `GetRelationshipTupleCondition` | yes |  |
+| `object` | `string` | yes |  |
+| `relation` | `string` | yes |  |
+| `storeId` | `string` | yes |  |
+| `user` | `string` | yes |  |
+
+## `GetRelationshipTupleCondition`
+
+Output object `GetRelationshipTupleCondition`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `contextJson` | `string` | yes | The (partial) context under which the condition is evaluated. |
+| `name` | `string` | yes | The name of the condition. |

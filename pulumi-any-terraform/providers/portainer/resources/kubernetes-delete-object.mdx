@@ -1,0 +1,40 @@
+---
+title: "KubernetesDeleteObject"
+description: "Resource KubernetesDeleteObject in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesDeleteObject in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesDeleteObject:KubernetesDeleteObject`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesDeleteObject(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment from which the resources are deleted. |
+| `kubernetesDeleteObjectId` | `string` | no |  |
+| `names` | `string[]` | yes | List of resource names to delete within the target namespace or cluster scope. |
+| `namespace` | `string` | yes | Kubernetes namespace containing the resources to delete (ignored for cluster-scoped types). |
+| `resourceType` | `string` | yes | Type of Kubernetes resource to delete. One of `cronJobs`, `ingresses`, `jobs`, `roleBindings`, `roles`, `serviceAccounts`, `services`, `clusterRoleBindings`, `clusterRoles`. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment from which the resources are deleted. |
+| `kubernetesDeleteObjectId` | `string` | no |  |
+| `names` | `string[]` | no | List of resource names to delete within the target namespace or cluster scope. |
+| `namespace` | `string` | no | Kubernetes namespace containing the resources to delete (ignored for cluster-scoped types). |
+| `resourceType` | `string` | no | Type of Kubernetes resource to delete. One of `cronJobs`, `ingresses`, `jobs`, `roleBindings`, `roles`, `serviceAccounts`, `services`, `clusterRoleBindings`, `clusterRoles`. |

@@ -1,0 +1,43 @@
+---
+title: "CertManagerCaCertificate"
+description: "Resource CertManagerCaCertificate in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource CertManagerCaCertificate in pulumi-infisical.
+
+Pulumi type: `infisical:index/certManagerCaCertificate:CertManagerCaCertificate`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.CertManagerCaCertificate(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `caId` | `string` | yes | The ID of the certificate authority to generate a certificate for |
+| `maxPathLength` | `number` | no | The maximum number of intermediate CAs that may follow this CA in the certificate chain. Use -1 for no path limit |
+| `notAfter` | `string` | yes | The date and time when the CA expires in RFC3339 format (e.g., '2034-01-01T00:00:00Z') |
+| `notBefore` | `string` | yes | The date and time when the CA becomes valid in RFC3339 format (e.g., '2024-01-01T00:00:00Z') |
+| `parentCaId` | `string` | no | The ID of the parent CA (required for intermediate CAs) |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `caId` | `string` | no | The ID of the certificate authority to generate a certificate for |
+| `certificate` | `string` | yes | The generated CA certificate in PEM format |
+| `certificateChain` | `string` | yes | The certificate chain of the CA in PEM format |
+| `maxPathLength` | `number` | no | The maximum number of intermediate CAs that may follow this CA in the certificate chain. Use -1 for no path limit |
+| `notAfter` | `string` | no | The date and time when the CA expires in RFC3339 format (e.g., '2034-01-01T00:00:00Z') |
+| `notBefore` | `string` | no | The date and time when the CA becomes valid in RFC3339 format (e.g., '2024-01-01T00:00:00Z') |
+| `parentCaId` | `string` | no | The ID of the parent CA (required for intermediate CAs) |
+| `serialNumber` | `string` | yes | The serial number of the CA certificate |

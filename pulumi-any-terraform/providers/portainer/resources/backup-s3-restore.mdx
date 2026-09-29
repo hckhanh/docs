@@ -1,0 +1,46 @@
+---
+title: "BackupS3Restore"
+description: "Resource BackupS3Restore in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource BackupS3Restore in pulumi-portainer.
+
+Pulumi type: `portainer:index/backupS3Restore:BackupS3Restore`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.BackupS3Restore(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Access key ID used to read the bucket. Stored in state as a sensitive value. |
+| `backupS3RestoreId` | `string` | no |  |
+| `bucketName` | `string` | yes | S3 bucket holding the backup archive. |
+| `filename` | `string` | yes | Name of the archive in the bucket to restore from. |
+| `password` | `string` | no | Password the archive was encrypted with. Stored in state as a sensitive value. |
+| `region` | `string` | yes | AWS region of the bucket. |
+| `s3CompatibleHost` | `string` | no | Endpoint of an S3-compatible service such as MinIO. Leave unset for AWS S3. |
+| `secretAccessKey` | `string` | yes | Secret access key paired with `accessKeyId`. Stored in state as a sensitive value. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no | Access key ID used to read the bucket. Stored in state as a sensitive value. |
+| `backupS3RestoreId` | `string` | no |  |
+| `bucketName` | `string` | no | S3 bucket holding the backup archive. |
+| `filename` | `string` | no | Name of the archive in the bucket to restore from. |
+| `password` | `string` | no | Password the archive was encrypted with. Stored in state as a sensitive value. |
+| `region` | `string` | no | AWS region of the bucket. |
+| `s3CompatibleHost` | `string` | no | Endpoint of an S3-compatible service such as MinIO. Leave unset for AWS S3. |
+| `secretAccessKey` | `string` | no | Secret access key paired with `accessKeyId`. Stored in state as a sensitive value. |

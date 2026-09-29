@@ -1,0 +1,75 @@
+---
+title: "Dashboard"
+description: "Resource Dashboard in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource Dashboard in pulumi-logtail.
+
+Pulumi type: `logtail:index/dashboard:Dashboard`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.Dashboard(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `dashboardGroupId` | `number` | no | The ID of the dashboard group this dashboard belongs to. Use 0 to remove from group. |
+| `data` | `string` | no | The dashboard configuration data as a JSON string. When set, the dashboard is created via the import API and any change forces re-creation. Cannot be combined with individual fields like refresh_interval, date_range_from, chart and variable blocks, etc. |
+| `dateRangeFrom` | `string` | no | The start of the date range (e.g., 'now-3h', 'now-24h'). |
+| `dateRangeTo` | `string` | no | The end of the date range (e.g., 'now'). |
+| `name` | `string` | no | The name of the dashboard. |
+| `refreshInterval` | `number` | no | The auto-refresh interval in seconds. |
+| `sourceEligibilitySql` | `string` | no | SQL expression to filter eligible sources. |
+| `teamName` | `string` | no | The team name to associate with the dashboard when using a global API token. You can't update this value later. |
+| `variables` | `DashboardVariable (input)[]` | no | Variables for this dashboard. Default variables (time, start_time, end_time, source) are auto-created. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `createdAt` | `string` | yes | The time when this dashboard was created. |
+| `dashboardGroupId` | `number` | no | The ID of the dashboard group this dashboard belongs to. Use 0 to remove from group. |
+| `data` | `string` | no | The dashboard configuration data as a JSON string. When set, the dashboard is created via the import API and any change forces re-creation. Cannot be combined with individual fields like refresh_interval, date_range_from, chart and variable blocks, etc. |
+| `dateRangeFrom` | `string` | no | The start of the date range (e.g., 'now-3h', 'now-24h'). |
+| `dateRangeTo` | `string` | no | The end of the date range (e.g., 'now'). |
+| `name` | `string` | no | The name of the dashboard. |
+| `refreshInterval` | `number` | no | The auto-refresh interval in seconds. |
+| `sourceEligibilitySql` | `string` | no | SQL expression to filter eligible sources. |
+| `teamId` | `number` | yes | The team ID of the dashboard. |
+| `teamName` | `string` | no | The team name to associate with the dashboard when using a global API token. You can't update this value later. |
+| `updatedAt` | `string` | yes | The time when this dashboard was last updated. |
+| `variables` | `DashboardVariable (output)[]` | no | Variables for this dashboard. Default variables (time, start_time, end_time, source) are auto-created. |
+
+## `DashboardVariable (input)`
+
+Input object `DashboardVariable`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaultValues` | `string[]` | no | For 'string', 'number', and 'boolean' variables: fallback value used when `values` is empty. For 'select_value' variables: the predefined options shown in the picker. Unused for other types. |
+| `name` | `string` | yes | The name of the variable (used as &#123;&#123;name&#125;&#125; in queries). |
+| `sqlDefinition` | `string` | no | SQL definition for 'select_with_sql' or 'multi_select_with_sql' type variables. |
+| `values` | `string[]` | no | The selected values. For 'source' variables these are the source IDs the variable resolves to (e.g. `logtail_source.web.id`) - this is the field that selects the source. For other types it is the current picker selection or input. |
+| `variableType` | `string` | yes | The type of variable: 'source', 'string', 'number', 'date', 'datetime', 'boolean', 'sql_expression', 'select_value', 'select_with_sql', or 'multi_select_with_sql'. |
+
+## `DashboardVariable (output)`
+
+Output object `DashboardVariable`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `defaultValues` | `string[]` | yes | For 'string', 'number', and 'boolean' variables: fallback value used when `values` is empty. For 'select_value' variables: the predefined options shown in the picker. Unused for other types. |
+| `name` | `string` | yes | The name of the variable (used as &#123;&#123;name&#125;&#125; in queries). |
+| `sqlDefinition` | `string` | yes | SQL definition for 'select_with_sql' or 'multi_select_with_sql' type variables. |
+| `values` | `string[]` | yes | The selected values. For 'source' variables these are the source IDs the variable resolves to (e.g. `logtail_source.web.id`) - this is the field that selects the source. For other types it is the current picker selection or input. |
+| `variableType` | `string` | yes | The type of variable: 'source', 'string', 'number', 'date', 'datetime', 'boolean', 'sql_expression', 'select_value', 'select_with_sql', or 'multi_select_with_sql'. |

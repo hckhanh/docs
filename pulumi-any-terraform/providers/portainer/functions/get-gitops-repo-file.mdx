@@ -1,0 +1,45 @@
+---
+title: "getGitopsRepoFile"
+description: "Function getGitopsRepoFile in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsRepoFile in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsRepoFile:getGitopsRepoFile`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsRepoFile(args)`.
+
+`getGitopsRepoFileOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `gitCredentialId` | `number` | no |  |
+| `id` | `string` | no |  |
+| `password` | `string` | no |  |
+| `reference` | `string` | no |  |
+| `repositoryUrl` | `string` | yes |  |
+| `targetFile` | `string` | no |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `fileContent` | `string` | yes |  |
+| `gitCredentialId` | `number` | no |  |
+| `id` | `string` | yes |  |
+| `password` | `string` | no |  |
+| `reference` | `string` | no |  |
+| `repositoryUrl` | `string` | yes |  |
+| `targetFile` | `string` | no |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |

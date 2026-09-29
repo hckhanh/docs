@@ -1,0 +1,44 @@
+---
+title: "getUser"
+description: "Function getUser in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Function getUser in pulumi-teamcity.
+
+Invoke token: `teamcity:index/getUser:getUser`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Call `teamcity.getUser(args)`.
+
+`getUserOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `username` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `githubUsername` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `roles` | `GetUserRole[]` | yes |  |
+| `username` | `string` | yes |  |
+
+## `GetUserRole`
+
+Output object `GetUserRole`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `global` | `boolean` | yes | Whether the role is assigned globally. |
+| `id` | `string` | yes | The role ID. |
+| `project` | `string` | yes | The project ID if the role is project-specific. |

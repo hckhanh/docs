@@ -1,0 +1,44 @@
+---
+title: "getEdgeUpdatePreviousVersions"
+description: "Function getEdgeUpdatePreviousVersions in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getEdgeUpdatePreviousVersions in pulumi-portainer.
+
+Invoke token: `portainer:index/getEdgeUpdatePreviousVersions:getEdgeUpdatePreviousVersions`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getEdgeUpdatePreviousVersions(args)`.
+
+`getEdgeUpdatePreviousVersionsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `edgeGroupIds` | `number[]` | no |  |
+| `environmentIds` | `number[]` | no |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `edgeGroupIds` | `number[]` | no |  |
+| `environmentIds` | `number[]` | no |  |
+| `id` | `string` | yes |  |
+| `previousVersions` | `GetEdgeUpdatePreviousVersionsPreviousVersion[]` | yes |  |
+
+## `GetEdgeUpdatePreviousVersionsPreviousVersion`
+
+Output object `GetEdgeUpdatePreviousVersionsPreviousVersion`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `string` | no |  |
+| `version` | `string` | no |  |

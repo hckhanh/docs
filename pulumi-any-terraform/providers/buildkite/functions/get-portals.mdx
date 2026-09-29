@@ -1,0 +1,54 @@
+---
+title: "getPortals"
+description: "Function getPortals in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Function getPortals in pulumi-buildkite.
+
+Invoke token: `buildkite:index/getPortals:getPortals`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Call `buildkite.getPortals(args)`.
+
+`getPortalsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+This function takes no arguments.
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `portals` | `GetPortalsPortal[]` | yes |  |
+
+## `GetPortalsPortal`
+
+Output object `GetPortalsPortal`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string` | yes | Space-delimited list of IP addresses (in CIDR notation) allowed to invoke this portal. |
+| `createdAt` | `string` | yes | The time when the portal was created. |
+| `createdBy` | `GetPortalsPortalCreatedBy` | yes | Information about the user who created the portal. |
+| `description` | `string` | yes | The description of the portal. |
+| `name` | `string` | yes | The name of the portal. |
+| `query` | `string` | yes | The GraphQL query that the portal executes. |
+| `slug` | `string` | yes | The slug of the portal. |
+| `userInvokable` | `boolean` | yes | Whether users can invoke the portal. |
+| `uuid` | `string` | yes | The UUID of the portal. |
+
+## `GetPortalsPortalCreatedBy`
+
+Output object `GetPortalsPortalCreatedBy`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes | The email of the user. |
+| `name` | `string` | yes | The name of the user. |
+| `uuid` | `string` | yes | The UUID of the user. |

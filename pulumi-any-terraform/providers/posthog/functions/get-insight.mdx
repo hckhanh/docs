@@ -1,0 +1,40 @@
+---
+title: "getInsight"
+description: "Function getInsight in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Function getInsight in pulumi-posthog.
+
+Invoke token: `posthog:index/getInsight:getInsight`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Call `posthog.getInsight(args)`.
+
+`getInsightOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `projectId` | `string` | no |  |
+| `shortId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `dashboardIds` | `number[]` | yes |  |
+| `derivedName` | `string` | yes |  |
+| `description` | `string` | yes |  |
+| `favorited` | `boolean` | yes |  |
+| `id` | `number` | yes |  |
+| `name` | `string` | yes |  |
+| `projectId` | `string` | yes |  |
+| `queryJson` | `string` | yes |  |
+| `shortId` | `string` | yes |  |
+| `tags` | `string[]` | yes |  |

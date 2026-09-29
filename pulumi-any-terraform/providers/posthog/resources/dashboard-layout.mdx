@@ -1,0 +1,63 @@
+---
+title: "DashboardLayout"
+description: "Resource DashboardLayout in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource DashboardLayout in pulumi-posthog.
+
+Pulumi type: `posthog:index/dashboardLayout:DashboardLayout`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.DashboardLayout(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `dashboardId` | `number` | yes | PostHog dashboard ID. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `tiles` | `DashboardLayoutTile (input)[]` | yes | Ordered list of tiles to manage on the dashboard. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `dashboardId` | `number` | no | PostHog dashboard ID. |
+| `dashboardLayoutId` | `number` | yes | Resource ID (same value as dashboard_id). |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `tiles` | `DashboardLayoutTile (output)[]` | no | Ordered list of tiles to manage on the dashboard. |
+
+## `DashboardLayoutTile (input)`
+
+Input object `DashboardLayoutTile`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `color` | `string` | no | Background color of the tile. Valid values are defined by the PostHog API; see [InsightColor in types.ts](https://github.com/PostHog/posthog/blob/master/frontend/src/types.ts#L2154) for the current list. |
+| `insightId` | `number` | no | ID of the insight to display. Exactly one of `insightId` or `textBody` must be set. |
+| `layoutsJson` | `string` | no | JSON object with breakpoint keys `sm` and/or `xs`, each containing position properties: `x`, `y`, `w`, `h` (required), and optionally `minW`, `minH` (e.g. `{"sm":{"x":0,"y":0,"w":6,"h":5},"xs":{"x":0,"y":0,"w":1,"h":5}}`). Semantic JSON equality is used to suppress phantom diffs. |
+| `showDescription` | `boolean` | no | Whether to show the insight description on the tile. Omit the field to clear it back to the PostHog API default (`null`). |
+| `textBody` | `string` | no | Markdown body for a text tile (max 4000 characters). Exactly one of `insightId` or `textBody` must be set. |
+| `tileId` | `number` | no | Server-assigned tile ID. Populated after the first apply. |
+
+## `DashboardLayoutTile (output)`
+
+Output object `DashboardLayoutTile`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `color` | `string` | no | Background color of the tile. Valid values are defined by the PostHog API; see [InsightColor in types.ts](https://github.com/PostHog/posthog/blob/master/frontend/src/types.ts#L2154) for the current list. |
+| `insightId` | `number` | no | ID of the insight to display. Exactly one of `insightId` or `textBody` must be set. |
+| `layoutsJson` | `string` | yes | JSON object with breakpoint keys `sm` and/or `xs`, each containing position properties: `x`, `y`, `w`, `h` (required), and optionally `minW`, `minH` (e.g. `{"sm":{"x":0,"y":0,"w":6,"h":5},"xs":{"x":0,"y":0,"w":1,"h":5}}`). Semantic JSON equality is used to suppress phantom diffs. |
+| `showDescription` | `boolean` | no | Whether to show the insight description on the tile. Omit the field to clear it back to the PostHog API default (`null`). |
+| `textBody` | `string` | no | Markdown body for a text tile (max 4000 characters). Exactly one of `insightId` or `textBody` must be set. |
+| `tileId` | `number` | yes | Server-assigned tile ID. Populated after the first apply. |

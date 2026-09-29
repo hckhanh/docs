@@ -1,0 +1,37 @@
+---
+title: "getUser"
+description: "Function getUser in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Function getUser in pulumi-posthog.
+
+Invoke token: `posthog:index/getUser:getUser`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Call `posthog.getUser(args)`.
+
+`getUserOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes |  |
+| `organizationId` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes |  |
+| `firstName` | `string` | yes |  |
+| `isEmailVerified` | `boolean` | yes |  |
+| `lastName` | `string` | yes |  |
+| `organizationId` | `string` | yes |  |
+| `organizationMemberId` | `string` | yes |  |
+| `uuid` | `string` | yes |  |

@@ -1,0 +1,50 @@
+---
+title: "getAppTemplates"
+description: "Function getAppTemplates in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getAppTemplates in pulumi-portainer.
+
+Invoke token: `portainer:index/getAppTemplates:getAppTemplates`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getAppTemplates(args)`.
+
+`getAppTemplatesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `templateId` | `number` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `fileContent` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `templateId` | `number` | no |  |
+| `templates` | `GetAppTemplatesTemplate[]` | yes |  |
+| `version` | `string` | yes |  |
+
+## `GetAppTemplatesTemplate`
+
+Output object `GetAppTemplatesTemplate`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `categories` | `string[]` | no |  |
+| `description` | `string` | no |  |
+| `id` | `number` | no |  |
+| `image` | `string` | no |  |
+| `platform` | `string` | no |  |
+| `repositoryUrl` | `string` | no |  |
+| `title` | `string` | no |  |
+| `type` | `number` | no |  |

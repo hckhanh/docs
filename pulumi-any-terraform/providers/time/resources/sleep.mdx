@@ -1,0 +1,36 @@
+---
+title: "Sleep"
+description: "Resource Sleep in pulumi-time."
+---
+
+<!-- Generated from the pulumi-time SDK. -->
+
+Resource Sleep in pulumi-time.
+
+Pulumi type: `time:index/sleep:Sleep`.
+
+```ts
+import * as time from "pulumi-time"
+```
+
+Construct with `new time.Sleep(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `createDuration` | `string` | no | [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource creation. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay. |
+| `destroyDuration` | `string` | no | [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource destroy. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay. This value or any updates to it must be successfully applied into the Terraform state before destroying this resource to take effect. |
+| `triggers` | `{ [key: string]: string }` | no | (Optional) Arbitrary map of values that, when changed, will run any creation or destroy delays again. See the main provider documentation for more information. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `createDuration` | `string` | no | [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource creation. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay. |
+| `destroyDuration` | `string` | no | [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource destroy. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay. This value or any updates to it must be successfully applied into the Terraform state before destroying this resource to take effect. |
+| `triggers` | `{ [key: string]: string }` | no | (Optional) Arbitrary map of values that, when changed, will run any creation or destroy delays again. See the main provider documentation for more information. |

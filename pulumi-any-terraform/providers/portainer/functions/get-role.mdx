@@ -1,0 +1,44 @@
+---
+title: "getRole"
+description: "Function getRole in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getRole in pulumi-portainer.
+
+Invoke token: `portainer:index/getRole:getRole`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getRole(args)`.
+
+`getRoleOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `name` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `name` | `string` | no |  |
+| `roles` | `GetRoleRole[]` | yes |  |
+
+## `GetRoleRole`
+
+Output object `GetRoleRole`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no |  |
+| `id` | `number` | no |  |
+| `name` | `string` | no |  |
+| `priority` | `number` | no |  |

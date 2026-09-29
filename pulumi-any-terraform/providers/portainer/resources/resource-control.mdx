@@ -1,0 +1,48 @@
+---
+title: "ResourceControl"
+description: "Resource ResourceControl in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource ResourceControl in pulumi-portainer.
+
+Pulumi type: `portainer:index/resourceControl:ResourceControl`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.ResourceControl(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `administratorsOnly` | `boolean` | no | Whether the resource is restricted to Portainer administrators only. |
+| `portainerResourceControlId` | `string` | no |  |
+| `public` | `boolean` | no | Whether the resource is publicly accessible to all Portainer users. |
+| `resourceControlId` | `number` | no | Identifier of an existing Portainer resource control to manage directly instead of looking it up via `resourceId` and `type`. |
+| `resourceId` | `string` | no | Identifier of the underlying Portainer resource (e.g. stack ID) the resource control applies to. |
+| `subResourceIds` | `string[]` | no | Identifiers of sub-resources covered by the same control, such as the services and volumes of a stack. Only used when the control is created by this resource. |
+| `teams` | `number[]` | no | List of Portainer team identifiers granted access to the resource. |
+| `type` | `number` | no | Resource type that the control protects (1 = container, 2 = service, 3 = volume, 4 = network, 5 = secret, 6 = stack, 7 = config). Defaults to 6 (stack). |
+| `users` | `number[]` | no | List of Portainer user identifiers granted access to the resource. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `administratorsOnly` | `boolean` | no | Whether the resource is restricted to Portainer administrators only. |
+| `portainerResourceControlId` | `string` | no |  |
+| `public` | `boolean` | no | Whether the resource is publicly accessible to all Portainer users. |
+| `resourceControlId` | `number` | no | Identifier of an existing Portainer resource control to manage directly instead of looking it up via `resourceId` and `type`. |
+| `resourceId` | `string` | no | Identifier of the underlying Portainer resource (e.g. stack ID) the resource control applies to. |
+| `subResourceIds` | `string[]` | no | Identifiers of sub-resources covered by the same control, such as the services and volumes of a stack. Only used when the control is created by this resource. |
+| `teams` | `number[]` | no | List of Portainer team identifiers granted access to the resource. |
+| `type` | `number` | no | Resource type that the control protects (1 = container, 2 = service, 3 = volume, 4 = network, 5 = secret, 6 = stack, 7 = config). Defaults to 6 (stack). |
+| `users` | `number[]` | no | List of Portainer user identifiers granted access to the resource. |

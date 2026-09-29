@@ -1,0 +1,43 @@
+---
+title: "getCurrentUserAuthorizations"
+description: "Function getCurrentUserAuthorizations in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getCurrentUserAuthorizations in pulumi-portainer.
+
+Invoke token: `portainer:index/getCurrentUserAuthorizations:getCurrentUserAuthorizations`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getCurrentUserAuthorizations(args)`.
+
+`getCurrentUserAuthorizationsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authorizations` | `string[]` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `namespaceAuthorizations` | `GetCurrentUserAuthorizationsNamespaceAuthorization[]` | yes |  |
+
+## `GetCurrentUserAuthorizationsNamespaceAuthorization`
+
+Output object `GetCurrentUserAuthorizationsNamespaceAuthorization`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authorizations` | `string[]` | no |  |
+| `namespace` | `string` | no |  |

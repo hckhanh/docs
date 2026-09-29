@@ -1,0 +1,47 @@
+---
+title: "getDomainRecords"
+description: "Function getDomainRecords in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Function getDomainRecords in pulumi-namecheap.
+
+Invoke token: `namecheap:index/getDomainRecords:getDomainRecords`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Call `namecheap.getDomainRecords(args)`.
+
+`getDomainRecordsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes |  |
+| `emailType` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `nameservers` | `string[]` | yes |  |
+| `records` | `GetDomainRecordsRecord[]` | yes |  |
+
+## `GetDomainRecordsRecord`
+
+Output object `GetDomainRecordsRecord`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address` | `string` | no |  |
+| `hostname` | `string` | no |  |
+| `mxPref` | `number` | no |  |
+| `ttl` | `number` | no |  |
+| `type` | `string` | no |  |

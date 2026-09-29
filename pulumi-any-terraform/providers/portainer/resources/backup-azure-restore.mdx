@@ -1,0 +1,58 @@
+---
+title: "BackupAzureRestore"
+description: "Resource BackupAzureRestore in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource BackupAzureRestore in pulumi-portainer.
+
+Pulumi type: `portainer:index/backupAzureRestore:BackupAzureRestore`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.BackupAzureRestore(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `authMethod` | `string` | yes | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. |
+| `backupAzureRestoreId` | `string` | no |  |
+| `blobName` | `string` | yes | Name of the blob to restore from. |
+| `clientCertificate` | `string` | no | PEM-encoded client certificate of the service principal. Stored in state as a sensitive value. |
+| `clientCertificatePassword` | `string` | no | Password protecting `clientCertificate`. |
+| `clientId` | `string` | no | Application (client) ID of the service principal. |
+| `clientSecret` | `string` | no | Client secret of the service principal. Stored in state as a sensitive value. |
+| `containerName` | `string` | yes | Blob container holding the backup archive. |
+| `managedIdentityClientId` | `string` | no | Client ID of the user-assigned managed identity. |
+| `password` | `string` | no | Password the archive was encrypted with. Stored in state as a sensitive value. |
+| `serviceUrl` | `string` | no | Blob service endpoint, for a sovereign cloud or a storage emulator. |
+| `storageAccountKey` | `string` | no | Storage account access key. Used with 'authMethod'= "storageAccountKey"'. |
+| `storageAccountName` | `string` | yes | Name of the Azure storage account holding the container. |
+| `tenantId` | `string` | no | Entra ID tenant of the service principal. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `authMethod` | `string` | no | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. |
+| `backupAzureRestoreId` | `string` | no |  |
+| `blobName` | `string` | no | Name of the blob to restore from. |
+| `clientCertificate` | `string` | no | PEM-encoded client certificate of the service principal. Stored in state as a sensitive value. |
+| `clientCertificatePassword` | `string` | no | Password protecting `clientCertificate`. |
+| `clientId` | `string` | no | Application (client) ID of the service principal. |
+| `clientSecret` | `string` | no | Client secret of the service principal. Stored in state as a sensitive value. |
+| `containerName` | `string` | no | Blob container holding the backup archive. |
+| `managedIdentityClientId` | `string` | no | Client ID of the user-assigned managed identity. |
+| `password` | `string` | no | Password the archive was encrypted with. Stored in state as a sensitive value. |
+| `serviceUrl` | `string` | no | Blob service endpoint, for a sovereign cloud or a storage emulator. |
+| `storageAccountKey` | `string` | no | Storage account access key. Used with 'authMethod'= "storageAccountKey"'. |
+| `storageAccountName` | `string` | no | Name of the Azure storage account holding the container. |
+| `tenantId` | `string` | no | Entra ID tenant of the service principal. |

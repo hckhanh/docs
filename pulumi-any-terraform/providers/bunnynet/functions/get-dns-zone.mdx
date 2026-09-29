@@ -1,0 +1,46 @@
+---
+title: "getDnsZone"
+description: "Function getDnsZone in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Function getDnsZone in pulumi-bunnynet.
+
+Invoke token: `bunnynet:index/getDnsZone:getDnsZone`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Call `bunnynet.getDnsZone(args)`.
+
+`getDnsZoneOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `dnssecEnabled` | `boolean` | no |  |
+| `domain` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `dnssecAlgorithm` | `number` | yes |  |
+| `dnssecDigest` | `string` | yes |  |
+| `dnssecDigestType` | `number` | yes |  |
+| `dnssecEnabled` | `boolean` | no |  |
+| `dnssecFlags` | `number` | yes |  |
+| `dnssecKeytag` | `number` | yes |  |
+| `dnssecPublicKey` | `string` | yes |  |
+| `domain` | `string` | yes |  |
+| `id` | `number` | yes |  |
+| `logAnonymized` | `boolean` | yes |  |
+| `logAnonymizedStyle` | `string` | yes |  |
+| `logEnabled` | `boolean` | yes |  |
+| `nameserver1` | `string` | yes |  |
+| `nameserver2` | `string` | yes |  |
+| `nameserverCustom` | `boolean` | yes |  |
+| `soaEmail` | `string` | yes |  |

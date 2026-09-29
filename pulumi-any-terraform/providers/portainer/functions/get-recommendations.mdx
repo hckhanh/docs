@@ -1,0 +1,53 @@
+---
+title: "getRecommendations"
+description: "Function getRecommendations in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getRecommendations in pulumi-portainer.
+
+Invoke token: `portainer:index/getRecommendations:getRecommendations`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getRecommendations(args)`.
+
+`getRecommendationsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category` | `string` | no |  |
+| `id` | `string` | no |  |
+| `severity` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `category` | `string` | no |  |
+| `categoryCounts` | `{ [key: string]: number }` | yes |  |
+| `id` | `string` | yes |  |
+| `recommendations` | `GetRecommendationsRecommendation[]` | yes |  |
+| `severity` | `string` | no |  |
+| `severityCounts` | `{ [key: string]: number }` | yes |  |
+| `total` | `number` | yes |  |
+| `totalTypes` | `number` | yes |  |
+
+## `GetRecommendationsRecommendation`
+
+Output object `GetRecommendationsRecommendation`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `actionLabel` | `string` | no |  |
+| `actionUrl` | `string` | no |  |
+| `category` | `string` | no |  |
+| `description` | `string` | no |  |
+| `severity` | `string` | no |  |
+| `title` | `string` | no |  |
+| `typeId` | `string` | no |  |

@@ -1,0 +1,64 @@
+---
+title: "DockerPlugin"
+description: "Resource DockerPlugin in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource DockerPlugin in pulumi-portainer.
+
+Pulumi type: `portainer:index/dockerPlugin:DockerPlugin`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.DockerPlugin(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `dockerPluginId` | `string` | no |  |
+| `enable` | `boolean` | no | Whether to enable the Docker plugin immediately after installation. |
+| `endpointId` | `number` | yes | ID of the Portainer environment (Docker host) where the plugin is installed. |
+| `name` | `string` | no | Local alias name for the installed Docker plugin. |
+| `registryAuth` | `string` | no | Base64-encoded registry authentication payload used to pull the plugin from a private registry. |
+| `remote` | `string` | yes | Remote source URL or registry reference of the Docker plugin to pull. |
+| `settings` | `DockerPluginSetting (input)[]` | no | Configuration settings applied to the Docker plugin during installation. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `dockerPluginId` | `string` | no |  |
+| `enable` | `boolean` | no | Whether to enable the Docker plugin immediately after installation. |
+| `endpointId` | `number` | no | ID of the Portainer environment (Docker host) where the plugin is installed. |
+| `name` | `string` | no | Local alias name for the installed Docker plugin. |
+| `registryAuth` | `string` | no | Base64-encoded registry authentication payload used to pull the plugin from a private registry. |
+| `remote` | `string` | no | Remote source URL or registry reference of the Docker plugin to pull. |
+| `settings` | `DockerPluginSetting (output)[]` | no | Configuration settings applied to the Docker plugin during installation. |
+
+## `DockerPluginSetting (input)`
+
+Input object `DockerPluginSetting`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | Human-readable description of the plugin setting. |
+| `name` | `string` | yes | Name of the Docker plugin setting. |
+| `values` | `string[]` | yes | List of values assigned to the plugin setting. |
+
+## `DockerPluginSetting (output)`
+
+Output object `DockerPluginSetting`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | Human-readable description of the plugin setting. |
+| `name` | `string` | yes | Name of the Docker plugin setting. |
+| `values` | `string[]` | yes | List of values assigned to the plugin setting. |

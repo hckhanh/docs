@@ -1,0 +1,48 @@
+---
+title: "getKubernetesPersistentVolumes"
+description: "Function getKubernetesPersistentVolumes in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesPersistentVolumes in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesPersistentVolumes:getKubernetesPersistentVolumes`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesPersistentVolumes(args)`.
+
+`getKubernetesPersistentVolumesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `persistentVolumes` | `GetKubernetesPersistentVolumesPersistentVolume[]` | yes |  |
+| `releasedCount` | `number` | yes |  |
+
+## `GetKubernetesPersistentVolumesPersistentVolume`
+
+Output object `GetKubernetesPersistentVolumesPersistentVolume`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessModes` | `string[]` | no |  |
+| `capacity` | `string` | no |  |
+| `claimRef` | `string` | no |  |
+| `name` | `string` | no |  |
+| `phase` | `string` | no |  |
+| `reclaimPolicy` | `string` | no |  |
+| `storageClass` | `string` | no |  |

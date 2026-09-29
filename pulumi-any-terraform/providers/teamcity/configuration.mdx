@@ -1,0 +1,26 @@
+---
+title: "Configuration"
+description: "Configuration for pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Configuration for pulumi-teamcity.
+
+npm package `pulumi-teamcity` version `0.2.6`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/jetbrains/teamcity` version `0.0.96`.
+
+An explicit provider is `new teamcity.Provider(name, args)`. Stack configuration is a `pulumi.Config` object named `teamcity`.
+
+A value marked secret is passed through `pulumi.secret` or listed in `additionalSecretOutputs` on the provider resource.
+
+## Fields
+
+| Property | Type | Source | Secret | Description |
+| --- | --- | --- | --- | --- |
+| `host` | `string` | provider args; stack config via config.get | no |  |
+| `maxRetries` | `number` | provider args; stack config via config.getObject | no | Maximum number of retries for requests to the server. Default is 12 (1 min). Each retry waits 5 seconds by default. |
+| `password` | `string` | provider args; stack config via config.get | yes |  |
+| `token` | `string` | provider args; stack config via config.get | yes |  |
+| `username` | `string` | provider args; stack config via config.get | no |  |

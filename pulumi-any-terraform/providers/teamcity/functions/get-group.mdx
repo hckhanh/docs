@@ -1,0 +1,46 @@
+---
+title: "getGroup"
+description: "Function getGroup in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Function getGroup in pulumi-teamcity.
+
+Invoke token: `teamcity:index/getGroup:getGroup`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Call `teamcity.getGroup(args)`.
+
+`getGroupOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | no |  |
+| `name` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `key` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `parentGroups` | `string[]` | yes |  |
+| `roles` | `GetGroupRole[]` | yes |  |
+
+## `GetGroupRole`
+
+Output object `GetGroupRole`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `global` | `boolean` | yes | Whether the role is assigned globally. |
+| `id` | `string` | yes | The role ID. |
+| `project` | `string` | yes | The project ID if the role is project-specific. |

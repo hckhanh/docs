@@ -1,0 +1,81 @@
+---
+title: "ExternalKmsAws"
+description: "Resource ExternalKmsAws in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource ExternalKmsAws in pulumi-infisical.
+
+Pulumi type: `infisical:index/externalKmsAws:ExternalKmsAws`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.ExternalKmsAws(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `configuration` | `ExternalKmsAwsConfiguration (input)` | yes | The configuration for the AWS External KMS |
+| `description` | `string` | no | An optional description for the KMS. |
+| `name` | `string` | no | The name of the KMS to create. Must be slug-friendly |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `configuration` | `ExternalKmsAwsConfiguration (output)` | no | The configuration for the AWS External KMS |
+| `credentialsHash` | `string` | yes | The hash of the AWS External KMS credentials |
+| `description` | `string` | no | An optional description for the KMS. |
+| `name` | `string` | no | The name of the KMS to create. Must be slug-friendly |
+
+## `ExternalKmsAwsConfiguration (input)`
+
+Input object `ExternalKmsAwsConfiguration`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `awsKmsKeyId` | `string` | yes | The AWS KMS key ID to use for the external KMS. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-aws-kms-key-id |
+| `awsRegion` | `string` | yes | The AWS region where the KMS key is located |
+| `credential` | `ExternalKmsAwsConfigurationCredential (input)` | yes | The AWS credentials for the external KMS |
+| `type` | `string` | yes | The Authentication Type to use. Must be access-key or assume-role |
+
+## `ExternalKmsAwsConfigurationCredential (input)`
+
+Input object `ExternalKmsAwsConfigurationCredential`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no | The AWS Access Key ID used to authenticate requests to AWS services. Required for access-key type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-access-key-id |
+| `roleArn` | `string` | no | The Amazon Resource Name (ARN) of the IAM role to assume for performing operations. Infisical will assume this role using AWS Security Token Service (STS). Required for assume-role type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-iam-role-arn-for-role-assumption |
+| `roleExternalId` | `string` | no | The external ID of the role to assume for performing operations. Required for assume-role type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-assume-role-external-id |
+| `secretAccessKey` | `string` | no | The AWS Secret Access Key associated with the Access Key ID to authenticate requests to AWS services. Required for access-key type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-secret-access-key |
+
+## `ExternalKmsAwsConfiguration (output)`
+
+Output object `ExternalKmsAwsConfiguration`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `awsKmsKeyId` | `string` | yes | The AWS KMS key ID to use for the external KMS. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-aws-kms-key-id |
+| `awsRegion` | `string` | yes | The AWS region where the KMS key is located |
+| `credential` | `ExternalKmsAwsConfigurationCredential (output)` | yes | The AWS credentials for the external KMS |
+| `type` | `string` | yes | The Authentication Type to use. Must be access-key or assume-role |
+
+## `ExternalKmsAwsConfigurationCredential (output)`
+
+Output object `ExternalKmsAwsConfigurationCredential`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no | The AWS Access Key ID used to authenticate requests to AWS services. Required for access-key type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-access-key-id |
+| `roleArn` | `string` | no | The Amazon Resource Name (ARN) of the IAM role to assume for performing operations. Infisical will assume this role using AWS Security Token Service (STS). Required for assume-role type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-iam-role-arn-for-role-assumption |
+| `roleExternalId` | `string` | no | The external ID of the role to assume for performing operations. Required for assume-role type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-assume-role-external-id |
+| `secretAccessKey` | `string` | no | The AWS Secret Access Key associated with the Access Key ID to authenticate requests to AWS services. Required for access-key type. For more details, refer to the documentation here https://infisical.com/docs/documentation/platform/kms-configuration/aws-kms#param-secret-access-key |

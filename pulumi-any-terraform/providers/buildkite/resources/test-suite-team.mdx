@@ -1,0 +1,37 @@
+---
+title: "TestSuiteTeam"
+description: "Resource TestSuiteTeam in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource TestSuiteTeam in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/testSuiteTeam:TestSuiteTeam`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.TestSuiteTeam(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | yes | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
+| `teamId` | `string` | yes | The GraphQL ID of the team. |
+| `testSuiteId` | `string` | yes | The GraphQL ID of the test suite. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | no | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
+| `teamId` | `string` | no | The GraphQL ID of the team. |
+| `testSuiteId` | `string` | no | The GraphQL ID of the test suite. |
+| `uuid` | `string` | yes | The UUID of the test suite-team relationship. |

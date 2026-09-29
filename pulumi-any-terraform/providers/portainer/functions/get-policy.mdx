@@ -1,0 +1,40 @@
+---
+title: "getPolicy"
+description: "Function getPolicy in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getPolicy in pulumi-portainer.
+
+Invoke token: `portainer:index/getPolicy:getPolicy`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getPolicy(args)`.
+
+`getPolicyOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `name` | `string` | no |  |
+| `policyId` | `number` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `createdAt` | `string` | yes |  |
+| `data` | `string` | yes |  |
+| `environmentGroups` | `number[]` | yes |  |
+| `environmentType` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | no |  |
+| `policyId` | `number` | no |  |
+| `policyType` | `string` | yes |  |
+| `updatedAt` | `string` | yes |  |

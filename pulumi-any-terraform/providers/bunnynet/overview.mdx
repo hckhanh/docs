@@ -1,162 +1,57 @@
 ---
-title: Bunny Provider
-description: Manage Bunny.net CDN and edge computing resources with Pulumi
+title: "Bunny"
+description: "Resources and functions exported by pulumi-bunnynet."
 ---
 
-The Bunny provider enables you to manage Bunny.net CDN, storage, DNS, and edge computing resources using Pulumi. This provider is dynamically bridged from the [Terraform Bunnynet Provider](https://registry.terraform.io/providers/simplesurance/bunny).
+<!-- Generated from the pulumi-bunnynet SDK. -->
 
-## Installation
+`pulumi-bunnynet` version `0.16.1`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/bunnyway/bunnynet` version `0.19.1`.
 
-Install the Bunnynet provider package using your preferred package manager:
+The package is TypeScript. Import it by the npm package name.
 
-<Tabs>
-  <Tab title="bun">
-    ```bash
-    bun add pulumi-bunnynet
-    ```
-  </Tab>
-  <Tab title="pnpm">
-    ```bash
-    pnpm add pulumi-bunnynet
-    ```
-  </Tab>
-  <Tab title="yarn">
-    ```bash
-    yarn add pulumi-bunnynet
-    ```
-  </Tab>
-  <Tab title="npm">
-    ```bash
-    npm install pulumi-bunnynet
-    ```
-  </Tab>
-</Tabs>
-
-## Configuration
-
-### Getting API Key
-
-1. Log in to your Bunny.net account at [bunny.net](https://bunny.net)
-2. Navigate to Account → API
-3. Copy your API key
-
-### Provider Setup
-
-```bash
-pulumi config set bunnynet:apiKey YOUR_API_KEY --secret
+```ts
+import * as bunnynet from "pulumi-bunnynet"
 ```
 
-Or using environment variables:
+Nested object fields are on the resource or function page, under the object heading.
 
-```bash
-export BUNNY_API_KEY="your-api-key"
-```
+## Resources
 
-## Quick Start
+- [AccountSubuser](/pulumi-any-terraform/providers/bunnynet/resources/account-subuser)
+- [ComputeContainerApp](/pulumi-any-terraform/providers/bunnynet/resources/compute-container-app)
+- [ComputeContainerImageregistry](/pulumi-any-terraform/providers/bunnynet/resources/compute-container-imageregistry)
+- [ComputeScript](/pulumi-any-terraform/providers/bunnynet/resources/compute-script)
+- [ComputeScriptSecret](/pulumi-any-terraform/providers/bunnynet/resources/compute-script-secret)
+- [ComputeScriptVariable](/pulumi-any-terraform/providers/bunnynet/resources/compute-script-variable)
+- [Database](/pulumi-any-terraform/providers/bunnynet/resources/database)
+- [DnsRecord](/pulumi-any-terraform/providers/bunnynet/resources/dns-record)
+- [DnsScript](/pulumi-any-terraform/providers/bunnynet/resources/dns-script)
+- [DnsScriptVariable](/pulumi-any-terraform/providers/bunnynet/resources/dns-script-variable)
+- [DnsZone](/pulumi-any-terraform/providers/bunnynet/resources/dns-zone)
+- [Pullzone](/pulumi-any-terraform/providers/bunnynet/resources/pullzone)
+- [PullzoneAccessList](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-access-list)
+- [PullzoneEdgerule](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-edgerule)
+- [PullzoneHostname](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-hostname)
+- [PullzoneOptimizerClass](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-optimizer-class)
+- [PullzoneRatelimitRule](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-ratelimit-rule)
+- [PullzoneShield](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-shield)
+- [PullzoneWafRule](/pulumi-any-terraform/providers/bunnynet/resources/pullzone-waf-rule)
+- [StorageFile](/pulumi-any-terraform/providers/bunnynet/resources/storage-file)
+- [StorageZone](/pulumi-any-terraform/providers/bunnynet/resources/storage-zone)
+- [StreamCollection](/pulumi-any-terraform/providers/bunnynet/resources/stream-collection)
+- [StreamLibrary](/pulumi-any-terraform/providers/bunnynet/resources/stream-library)
+- [StreamVideo](/pulumi-any-terraform/providers/bunnynet/resources/stream-video)
 
-```typescript
-import * as bunnynet from "pulumi-bunnynet";
+## Functions
 
-// Create a pull zone (CDN)
-const pullZone = new bunnynet.Pullzone("my-cdn", {
-    name: "my-website-cdn",
-    origin: {
-        type: "OriginUrl",
-        url: "https://example.com",
-    },
-});
-
-export const cdnDomain = pullZone.cdnDomain;
-```
-
-## Key Features
-
-### Pull Zones (CDN)
-
-```typescript
-const pullZone = new bunnynet.Pullzone("cdn", {
-    name: "my-cdn",
-    origin: {
-        type: "OriginUrl",
-        url: "https://origin.example.com",
-    },
-    cacheEnabled: true,
-    cacheExpirationTime: 3600,
-});
-```
-
-To use a storage zone as the origin instead of a URL:
-
-```typescript
-const storageZone = new bunnynet.StorageZone("storage", {
-    name: "my-storage",
-    region: "DE",
-    zoneTier: "Standard",
-});
-
-const pullZone = new bunnynet.Pullzone("cdn", {
-    name: "my-cdn",
-    origin: {
-        type: "StorageZone",
-        storagezone: storageZone.storageZoneId,
-    },
-}, { dependsOn: [storageZone] });
-```
-
-### Storage Zones
-
-```typescript
-const storageZone = new bunnynet.StorageZone("storage", {
-    name: "my-storage",
-    region: "DE", // Germany
-    zoneTier: "Standard",
-    replicationRegions: ["NY", "LA"],
-});
-```
-
-### DNS Management
-
-```typescript
-const dnsZone = new bunnynet.DnsZone("dns", {
-    domain: "example.com",
-});
-
-const dnsRecord = new bunnynet.DnsRecord("www", {
-    zone: dnsZone.dnsZoneId,
-    name: "www",
-    type: "A",
-    value: "192.168.1.1",
-    ttl: 300,
-});
-```
-
-### Pull zone TLS and Shield
-
-`Pullzone` accepts `tlsLevel`: `Compatible`, `Legacy`, or `ModernOnly`. `getPullzone` returns the same value.
-
-```typescript
-const pullZone = new bunnynet.Pullzone("cdn", {
-    name: "my-cdn",
-    origin: {
-        type: "OriginUrl",
-        url: "https://origin.example.com",
-    },
-    tlsLevel: "ModernOnly",
-});
-
-const shield = new bunnynet.PullzoneShield("shield", {
-    pullzone: pullZone.pullzoneId,
-    botCategorizations: [
-        {
-            category: "AIScraper",
-            action: "Block",
-        },
-    ],
-});
-```
-
-Each `botCategorizations` entry sets `action` to `Allow`, `Block`, or `Ignore`, and `category` to `AIScraper`, `AITool`, `Ads`, `Preview`, `SEO`, `Social`, or `Tool`. Optional `overrides` can set a different `action` for one `bot`.
-
-### Databases
-
-`Database` requires `regionsPrimaries`. `storageRegion` is `eu-west-1` or `us-east-1`. The connection string is the output `url`.
+- [getComputeContainerAppContainer](/pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-app-container)
+- [getComputeContainerAppContainerEndpoint](/pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-app-container-endpoint)
+- [getComputeContainerImageregistry](/pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-imageregistry)
+- [getDnsRecord](/pulumi-any-terraform/providers/bunnynet/functions/get-dns-record)
+- [getDnsZone](/pulumi-any-terraform/providers/bunnynet/functions/get-dns-zone)
+- [getPullzone](/pulumi-any-terraform/providers/bunnynet/functions/get-pullzone)
+- [getPullzoneAccessLists](/pulumi-any-terraform/providers/bunnynet/functions/get-pullzone-access-lists)
+- [getRegion](/pulumi-any-terraform/providers/bunnynet/functions/get-region)
+- [getVideoLanguage](/pulumi-any-terraform/providers/bunnynet/functions/get-video-language)

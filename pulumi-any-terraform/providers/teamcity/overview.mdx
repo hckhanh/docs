@@ -1,151 +1,63 @@
 ---
-title: TeamCity Provider
-description: Manage TeamCity CI/CD resources with Pulumi
+title: "TeamCity"
+description: "Resources and functions exported by pulumi-teamcity."
 ---
 
-The TeamCity provider enables you to manage projects, build configurations, VCS roots, and team resources in TeamCity using Pulumi. This provider is dynamically bridged from the [Terraform TeamCity Provider](https://github.com/JetBrains/terraform-provider-teamcity).
+<!-- Generated from the pulumi-teamcity SDK. -->
 
-## Installation
+`pulumi-teamcity` version `0.2.6`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/jetbrains/teamcity` version `0.0.96`.
 
-Install the TeamCity provider package using your preferred package manager:
+The package is TypeScript. Import it by the npm package name.
 
-<Tabs>
-  <Tab title="bun">
-    ```bash
-    bun add pulumi-teamcity
-    ```
-  </Tab>
-  <Tab title="pnpm">
-    ```bash
-    pnpm add pulumi-teamcity
-    ```
-  </Tab>
-  <Tab title="yarn">
-    ```bash
-    yarn add pulumi-teamcity
-    ```
-  </Tab>
-  <Tab title="npm">
-    ```bash
-    npm install pulumi-teamcity
-    ```
-  </Tab>
-</Tabs>
-
-## Configuration
-
-### Provider Setup
-
-```bash
-pulumi config set teamcity:url https://teamcity.example.com
-pulumi config set teamcity:username admin
-pulumi config set teamcity:password YOUR_PASSWORD --secret
+```ts
+import * as teamcity from "pulumi-teamcity"
 ```
 
-Or using environment variables:
+Nested object fields are on the resource or function page, under the object heading.
 
-```bash
-export TEAMCITY_URL="https://teamcity.example.com"
-export TEAMCITY_USERNAME="admin"
-export TEAMCITY_PASSWORD="your-password"
-```
+## Resources
 
-## Quick Start
+- [AuthSettings](/pulumi-any-terraform/providers/teamcity/resources/auth-settings)
+- [BuildConfiguration](/pulumi-any-terraform/providers/teamcity/resources/build-configuration)
+- [BuildConfigurationAgentRequirement](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-agent-requirement)
+- [BuildConfigurationArtifactDependency](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-artifact-dependency)
+- [BuildConfigurationFeature](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-feature)
+- [BuildConfigurationParameter](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-parameter)
+- [BuildConfigurationSettings](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-settings)
+- [BuildConfigurationSnapshotDependency](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-snapshot-dependency)
+- [BuildConfigurationStep](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-step)
+- [BuildConfigurationTemplate](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-template)
+- [BuildConfigurationTrigger](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-trigger)
+- [BuildConfigurationVcsRoot](/pulumi-any-terraform/providers/teamcity/resources/build-configuration-vcs-root)
+- [CleanupSettings](/pulumi-any-terraform/providers/teamcity/resources/cleanup-settings)
+- [CloudProfile](/pulumi-any-terraform/providers/teamcity/resources/cloud-profile)
+- [Connection](/pulumi-any-terraform/providers/teamcity/resources/connection)
+- [ContextParameters](/pulumi-any-terraform/providers/teamcity/resources/context-parameters)
+- [EmailSettings](/pulumi-any-terraform/providers/teamcity/resources/email-settings)
+- [GlobalSettings](/pulumi-any-terraform/providers/teamcity/resources/global-settings)
+- [Group](/pulumi-any-terraform/providers/teamcity/resources/group)
+- [GroupMember](/pulumi-any-terraform/providers/teamcity/resources/group-member)
+- [GroupRoleAssignment](/pulumi-any-terraform/providers/teamcity/resources/group-role-assignment)
+- [License](/pulumi-any-terraform/providers/teamcity/resources/license)
+- [Pool](/pulumi-any-terraform/providers/teamcity/resources/pool)
+- [Project](/pulumi-any-terraform/providers/teamcity/resources/project)
+- [ProjectParameter](/pulumi-any-terraform/providers/teamcity/resources/project-parameter)
+- [Role](/pulumi-any-terraform/providers/teamcity/resources/role)
+- [SecureToken](/pulumi-any-terraform/providers/teamcity/resources/secure-token)
+- [SshKey](/pulumi-any-terraform/providers/teamcity/resources/ssh-key)
+- [Template](/pulumi-any-terraform/providers/teamcity/resources/template)
+- [User](/pulumi-any-terraform/providers/teamcity/resources/user)
+- [UserRoleAssignment](/pulumi-any-terraform/providers/teamcity/resources/user-role-assignment)
+- [Vcsroot](/pulumi-any-terraform/providers/teamcity/resources/vcsroot)
+- [VersionedSettings](/pulumi-any-terraform/providers/teamcity/resources/versioned-settings)
 
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as teamcity from "pulumi-teamcity";
+## Functions
 
-// Create a project
-const project = new teamcity.Project("web-project", {
-    name: "Web Application",
-    projectId: "WebApp",
-});
-
-// Create a VCS root
-const vcsRoot = new teamcity.Vcsroot("git-repo", {
-    name: "Main Repository",
-    projectId: project.projectId,
-    git: {
-        url: "https://github.com/example/repo.git",
-        branch: "refs/heads/main",
-    },
-});
-
-// Create a build configuration
-const buildConfig = new teamcity.BuildConfiguration("build", {
-    name: "Build",
-    projectId: project.projectId,
-});
-
-// Attach the VCS root to the build configuration
-new teamcity.BuildConfigurationVcsRoot("build-vcs", {
-    buildConfigurationId: buildConfig.buildConfigurationId,
-    vcsRootId: vcsRoot.vcsrootId,
-    checkoutRules: "+:. => source",
-});
-
-export const projectId = project.projectId;
-```
-
-## Key Features
-
-### Project Management
-
-```typescript
-const project = new teamcity.Project("project", {
-    name: "Web Application",
-    projectId: "WebApp",
-});
-```
-
-### Build Configurations
-
-A TeamCity build configuration is composed of several resources that all reference the parent `BuildConfiguration` by `buildConfigurationId`:
-
-```typescript
-const build = new teamcity.BuildConfiguration("build", {
-    name: "CI Build",
-    projectId: project.projectId,
-    buildType: "regular",
-});
-
-// Build configuration settings (artifact rules, build number format, etc.)
-new teamcity.BuildConfigurationSettings("build-settings", {
-    buildConfigurationId: build.buildConfigurationId,
-    buildNumberPattern: "%build.counter%",
-});
-
-// Add a build step
-new teamcity.BuildConfigurationStep("build-step", {
-    buildConfigurationId: build.buildConfigurationId,
-    name: "Compile",
-    type: "simpleRunner",
-    properties: {
-        "script.content": "npm install && npm run build",
-        "use.custom.script": "true",
-    },
-});
-
-// Add a VCS trigger
-new teamcity.BuildConfigurationTrigger("vcs-trigger", {
-    buildConfigurationId: build.buildConfigurationId,
-    type: "vcsTrigger",
-    properties: {
-        branchFilter: "+:*",
-    },
-});
-```
-
-### VCS Roots
-
-```typescript
-const vcs = new teamcity.Vcsroot("repo", {
-    name: "Repository",
-    projectId: project.projectId,
-    git: {
-        url: "https://github.com/example/repo.git",
-        branch: "refs/heads/main",
-    },
-});
-```
+- [getBuildConfiguration](/pulumi-any-terraform/providers/teamcity/functions/get-build-configuration)
+- [getGroup](/pulumi-any-terraform/providers/teamcity/functions/get-group)
+- [getPool](/pulumi-any-terraform/providers/teamcity/functions/get-pool)
+- [getServer](/pulumi-any-terraform/providers/teamcity/functions/get-server)
+- [getSshKey](/pulumi-any-terraform/providers/teamcity/functions/get-ssh-key)
+- [getUser](/pulumi-any-terraform/providers/teamcity/functions/get-user)

@@ -1,0 +1,76 @@
+---
+title: "ProjectSettings"
+description: "Resource ProjectSettings in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource ProjectSettings in pulumi-posthog.
+
+Pulumi type: `posthog:index/projectSettings:ProjectSettings`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.ProjectSettings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `anonymizeIps` | `boolean` | no | Whether to discard the client IP address at ingestion (shown in PostHog as **Discard client IP data**). Enabling this degrades IP-based event matching for destinations that rely on it (for example Meta Conversions API), since `$ip` is never stored. |
+| `appUrls` | `string[]` | no | The project's authorized domains — shown in PostHog settings as **Web analytics domains** (and used as the toolbar's Authorized URLs). These are the domains tracked in web analytics and where the toolbar is enabled. Maps to the team `appUrls` field. Wildcards are not allowed; order is preserved. |
+| `autocaptureExceptionsOptIn` | `boolean` | no | Whether exception autocapture is enabled. |
+| `autocaptureWebVitalsOptIn` | `boolean` | no | Whether web vitals autocapture is enabled. |
+| `capturePerformanceOptIn` | `boolean` | no | Whether network performance capture is enabled for session replay. This must be `true` for `sessionRecordingNetworkPayloadCaptureConfig` to have any effect — without it, session replay does not capture network requests at all. |
+| `cookielessServerHashMode` | `number` | no | The cookieless server hash mode. Known values: `0` (disabled), `1` (stateless), `2` (stateful) — matching PostHog's `CookielessServerHashMode` enum. PostHog may add modes over time, so any non-negative value is accepted rather than a fixed set; consult the PostHog docs for the current options. |
+| `heatmapsOptIn` | `boolean` | no | Whether heatmaps are enabled for web (the PostHog toolbar heatmap feature). |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `recordingDomains` | `string[]` | no | Authorized domains for session replay. Maps to the team `recordingDomains` field. Order is preserved. |
+| `sessionRecordingNetworkPayloadCaptureConfig` | `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig (input)` | no | Controls whether session replay records the headers and bodies of captured network requests. Only takes effect when `capturePerformanceOptIn` is `true`. **Security:** recorded headers and bodies can contain sensitive data such as `Authorization` tokens, cookies, and PII from request/response payloads — enable these deliberately and review PostHog's network-capture redaction options in your SDK configuration. PostHog replaces this JSON object wholesale on update, so both `recordHeaders` and `recordBody` must be set when the block is configured; omitting the whole block leaves the current PostHog value untouched. |
+| `sessionRecordingOptIn` | `boolean` | no | Whether session recording (recording user sessions) is enabled. |
+| `surveysOptIn` | `boolean` | no | Whether surveys are enabled. |
+| `testAccountFilters` | `string` | no | The **internal and test users** filter list as a JSON array of filter objects — the definition every managed insight and hog function references through `filterTestAccounts`. Managing it here makes that shared definition owned by Terraform, so a UI edit surfaces as drift instead of silently changing what all filtered insights measure. Compared semantically, so key ordering and whitespace differences from the PostHog API do not produce a diff. A filter object may reference a cohort (`{"key":"id","type":"cohort","value":<cohort_id>,"operator":"in"}`); PostHog injects a read-only `cohortName` into such objects, which this provider strips from state so the filter round-trips without a perpetual diff. |
+| `testAccountFiltersDefaultChecked` | `boolean` | no | Whether the **internal and test users** filters (`testAccountFilters`) are applied by default across the project. PostHog may report this as null until it is first set. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `anonymizeIps` | `boolean` | no | Whether to discard the client IP address at ingestion (shown in PostHog as **Discard client IP data**). Enabling this degrades IP-based event matching for destinations that rely on it (for example Meta Conversions API), since `$ip` is never stored. |
+| `appUrls` | `string[]` | no | The project's authorized domains — shown in PostHog settings as **Web analytics domains** (and used as the toolbar's Authorized URLs). These are the domains tracked in web analytics and where the toolbar is enabled. Maps to the team `appUrls` field. Wildcards are not allowed; order is preserved. |
+| `autocaptureExceptionsOptIn` | `boolean` | no | Whether exception autocapture is enabled. |
+| `autocaptureWebVitalsOptIn` | `boolean` | no | Whether web vitals autocapture is enabled. |
+| `capturePerformanceOptIn` | `boolean` | no | Whether network performance capture is enabled for session replay. This must be `true` for `sessionRecordingNetworkPayloadCaptureConfig` to have any effect — without it, session replay does not capture network requests at all. |
+| `cookielessServerHashMode` | `number` | no | The cookieless server hash mode. Known values: `0` (disabled), `1` (stateless), `2` (stateful) — matching PostHog's `CookielessServerHashMode` enum. PostHog may add modes over time, so any non-negative value is accepted rather than a fixed set; consult the PostHog docs for the current options. |
+| `heatmapsOptIn` | `boolean` | no | Whether heatmaps are enabled for web (the PostHog toolbar heatmap feature). |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `recordingDomains` | `string[]` | no | Authorized domains for session replay. Maps to the team `recordingDomains` field. Order is preserved. |
+| `sessionRecordingNetworkPayloadCaptureConfig` | `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig (output)` | no | Controls whether session replay records the headers and bodies of captured network requests. Only takes effect when `capturePerformanceOptIn` is `true`. **Security:** recorded headers and bodies can contain sensitive data such as `Authorization` tokens, cookies, and PII from request/response payloads — enable these deliberately and review PostHog's network-capture redaction options in your SDK configuration. PostHog replaces this JSON object wholesale on update, so both `recordHeaders` and `recordBody` must be set when the block is configured; omitting the whole block leaves the current PostHog value untouched. |
+| `sessionRecordingOptIn` | `boolean` | no | Whether session recording (recording user sessions) is enabled. |
+| `surveysOptIn` | `boolean` | no | Whether surveys are enabled. |
+| `testAccountFilters` | `string` | no | The **internal and test users** filter list as a JSON array of filter objects — the definition every managed insight and hog function references through `filterTestAccounts`. Managing it here makes that shared definition owned by Terraform, so a UI edit surfaces as drift instead of silently changing what all filtered insights measure. Compared semantically, so key ordering and whitespace differences from the PostHog API do not produce a diff. A filter object may reference a cohort (`{"key":"id","type":"cohort","value":<cohort_id>,"operator":"in"}`); PostHog injects a read-only `cohortName` into such objects, which this provider strips from state so the filter round-trips without a perpetual diff. |
+| `testAccountFiltersDefaultChecked` | `boolean` | no | Whether the **internal and test users** filters (`testAccountFilters`) are applied by default across the project. PostHog may report this as null until it is first set. |
+
+## `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig (input)`
+
+Input object `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `recordBody` | `boolean` | yes | Whether to record the bodies of network requests in session replay. |
+| `recordHeaders` | `boolean` | yes | Whether to record the headers of network requests in session replay. |
+
+## `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig (output)`
+
+Output object `ProjectSettingsSessionRecordingNetworkPayloadCaptureConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `recordBody` | `boolean` | yes | Whether to record the bodies of network requests in session replay. |
+| `recordHeaders` | `boolean` | yes | Whether to record the headers of network requests in session replay. |

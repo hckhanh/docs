@@ -1,0 +1,40 @@
+---
+title: "Ssl"
+description: "Resource Ssl in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Ssl in pulumi-portainer.
+
+Pulumi type: `portainer:index/ssl:Ssl`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Ssl(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `cert` | `string` | yes | SSL certificate content |
+| `clientCert` | `string` | no | SSL client certificate content |
+| `httpEnabled` | `boolean` | yes | Whether HTTP should be enabled (true) or disabled (false) |
+| `key` | `string` | yes | SSL private key content |
+| `sslId` | `string` | no |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `cert` | `string` | no | SSL certificate content |
+| `clientCert` | `string` | no | SSL client certificate content |
+| `httpEnabled` | `boolean` | no | Whether HTTP should be enabled (true) or disabled (false) |
+| `key` | `string` | no | SSL private key content |
+| `sslId` | `string` | no |  |

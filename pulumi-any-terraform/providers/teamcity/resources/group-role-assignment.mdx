@@ -1,0 +1,36 @@
+---
+title: "GroupRoleAssignment"
+description: "Resource GroupRoleAssignment in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Resource GroupRoleAssignment in pulumi-teamcity.
+
+Pulumi type: `teamcity:index/groupRoleAssignment:GroupRoleAssignment`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Construct with `new teamcity.GroupRoleAssignment(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `groupId` | `string` | yes | The ID or key of the group to assign the role to. |
+| `roleId` | `string` | yes | The ID of the role to assign. |
+| `scope` | `string` | no | The scope of the role assignment. Use 'g' for global scope or 'p:PROJECT_ID' for project-specific scope. Defaults to global if not specified. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `groupId` | `string` | no | The ID or key of the group to assign the role to. |
+| `roleId` | `string` | no | The ID of the role to assign. |
+| `scope` | `string` | no | The scope of the role assignment. Use 'g' for global scope or 'p:PROJECT_ID' for project-specific scope. Defaults to global if not specified. |

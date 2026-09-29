@@ -1,0 +1,43 @@
+---
+title: "Dashboard"
+description: "Resource Dashboard in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource Dashboard in pulumi-posthog.
+
+Pulumi type: `posthog:index/dashboard:Dashboard`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.Dashboard(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deleted` | `boolean` | no | Whether the dashboard is deleted (soft delete) |
+| `description` | `string` | no | Dashboard description |
+| `name` | `string` | no | Dashboard name |
+| `pinned` | `boolean` | no | Whether the dashboard is pinned |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `tags` | `string[]` | no | Set of tags for the dashboard |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `dashboardId` | `number` | yes | Dashboard ID |
+| `deleted` | `boolean` | no | Whether the dashboard is deleted (soft delete) |
+| `description` | `string` | no | Dashboard description |
+| `name` | `string` | no | Dashboard name |
+| `pinned` | `boolean` | no | Whether the dashboard is pinned |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `tags` | `string[]` | no | Set of tags for the dashboard |

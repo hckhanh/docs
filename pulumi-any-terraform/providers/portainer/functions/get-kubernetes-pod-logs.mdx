@@ -1,0 +1,48 @@
+---
+title: "getKubernetesPodLogs"
+description: "Function getKubernetesPodLogs in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesPodLogs in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesPodLogs:getKubernetesPodLogs`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesPodLogs(args)`.
+
+`getKubernetesPodLogsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `container` | `string` | no |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `namespace` | `string` | yes |  |
+| `podName` | `string` | yes |  |
+| `previous` | `boolean` | no |  |
+| `sinceSeconds` | `number` | no |  |
+| `tailLines` | `number` | no |  |
+| `timestamps` | `boolean` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `container` | `string` | no |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `lineCount` | `number` | yes |  |
+| `logs` | `string` | yes |  |
+| `namespace` | `string` | yes |  |
+| `podName` | `string` | yes |  |
+| `previous` | `boolean` | no |  |
+| `sinceSeconds` | `number` | no |  |
+| `tailLines` | `number` | no |  |
+| `timestamps` | `boolean` | no |  |

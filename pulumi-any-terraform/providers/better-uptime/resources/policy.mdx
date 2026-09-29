@@ -1,0 +1,145 @@
+---
+title: "Policy"
+description: "Resource Policy in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource Policy in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/policy:Policy`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.Policy(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fallbackPolicyId` | `number` | no | Set this to escalate to another escalation policy once this policy has run all its steps and repeats without being acknowledged. The fallback policy must belong to the same organization. |
+| `name` | `string` | no | The name of this Policy. |
+| `policyGroupId` | `number` | no | Set this attribute if you want to add this policy to a policy group. |
+| `repeatCount` | `number` | no | How many times should the entire policy be repeated if no one acknowledges the incident. |
+| `repeatDelay` | `number` | no | How long in seconds to wait before each repetition. |
+| `steps` | `PolicyStep (input)[]` | no | An array of escalation policy steps. May be empty to create a silent policy that only collects incidents without alerting anyone. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `fallbackPolicyId` | `number` | no | Set this to escalate to another escalation policy once this policy has run all its steps and repeats without being acknowledged. The fallback policy must belong to the same organization. |
+| `incidentToken` | `string` | yes | Incident token that can be used for manually reporting incidents. |
+| `name` | `string` | no | The name of this Policy. |
+| `policyGroupId` | `number` | no | Set this attribute if you want to add this policy to a policy group. |
+| `repeatCount` | `number` | no | How many times should the entire policy be repeated if no one acknowledges the incident. |
+| `repeatDelay` | `number` | no | How long in seconds to wait before each repetition. |
+| `steps` | `PolicyStep (output)[]` | no | An array of escalation policy steps. May be empty to create a silent policy that only collects incidents without alerting anyone. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+
+## `PolicyStep (input)`
+
+Input object `PolicyStep`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `actionType` | `string` | no | The action to take. Required when step type is `resolveRemove`- use `resolveIncident` or remove_incident. Optional when step type is `timeBranching` or `metadataBranching`- use escalate_to_policy, resolve_incident, remove_incident, or do_not_escalate. When omitted on branching steps, the action defaults to `escalateToPolicy` if `policyId` or `policyMetadataKey` is set, and to `doNotEscalate` otherwise; the resolved value is stored in state, so change it by setting an explicit value. |
+| `comment` | `string` | no | Post instructions as a comment into the incident timeline. You can use Markdown, reference metadata as `{server_region}`, and interactive checkboxes like `- [ ] Step 1`. Used when step type is instructions. |
+| `days` | `string[]` | no | An array of days during which the branching rule will be executed. Valid values are ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]. Used when step type is branching. |
+| `metadataKey` | `string` | no | A metadata field key to check. Used when step type is metadata_branching. |
+| `metadataValue` | `PolicyStepMetadataValue (input)[]` | no | An array of typed metadata values which will cause the branching rule to be executed. Used when step type is metadata_branching. |
+| `metadataValues` | `string[]` | no | An array of metadata String values which will cause the branching rule to be executed. Used when step type is metadata_branching. |
+| `policyId` | `number` | no | A policy to executed if the branching rule matches the time of an incident. Used when step type is `timeBranching` or metadata_branching. |
+| `policyMetadataKey` | `string` | no | A metadata key from which to extract the policy to executed if the branching rule matches the time of an incident. Used when step type is `timeBranching` or metadata_branching. |
+| `reminderEnabled` | `boolean` | no | Whether we should followup periodically unless all checkboxes are checked. Used when step type is instructions. |
+| `reminderIntervalHours` | `number` | no | Time interval in hours we should use for periodical follow-ups. Used when step type is instructions. |
+| `stepMembers` | `PolicyStepStepMember (input)[]` | no | An array of escalation policy steps members. Used when step type is escalation. |
+| `timeFrom` | `string` | no | A time from which the branching rule will be executed. Use HH:MM format. Used when step type is time_branching. |
+| `timeTo` | `string` | no | A time at which the branching rule will step being executed. Use HH:MM format. Used when step type is time_branching. |
+| `timezone` | `string` | no | What timezone to use when evaluating time based branching rules. Used when step type is time_branching. The accepted values can be found in the Rails TimeZone documentation. https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html |
+| `type` | `string` | yes | The type of the step. Can be either escalation, time_branching, metadata_branching, instructions, or resolve_remove. |
+| `urgencyId` | `number` | no | Which severity to use for this step. Used when step type is escalation. |
+| `waitBefore` | `number` | no | How long to wait in seconds before executing this step since previous step. Omit if `waitUntilTime` is set. |
+| `waitUntilTime` | `string` | no | Execute this step at the specified time. Use HH:MM format. Omit if `waitBefore` is set. |
+| `waitUntilTimezone` | `string` | no | Timezone to use when interpreting wait_until_time. Omit if `waitBefore` is set. |
+
+## `PolicyStepMetadataValue (input)`
+
+Input object `PolicyStepMetadataValue`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** Policy `metadataBranching` steps additionally accept `noValue`, which matches incidents whose metadata field is absent or blank. |
+| `value` | `string` | no | Value when type is String. |
+
+## `PolicyStepStepMember (input)`
+
+Input object `PolicyStepStepMember`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | The e-mail address of the user to notify during an incident. Can be used instead of id when member type is user - it is resolved to the user's ID automatically. Only one of id and email can be set. |
+| `id` | `number` | no | The ID of the resource to notify during an incident. Required for user, webhook, slack_integration, microsoft_teams_integration, zapier_webhook,`pagerdutyIntegration` and policy member types. This is e.g. the ID of the user to notify when member type is user, the on-call calendar ID when member type is current_on_call, or the chained escalation policy ID when member type is policy. When member type is user, you can set email instead. |
+| `metadataKey` | `string` | no | The metadata key to use to retrieve the escalation target from the incident's metadata. Required when type is incident_metadata. |
+| `teamId` | `number` | no | The ID of the team to notify when member team is entire_team. When left empty, the default team for the incident is used. This field is deprecated, use id instead. |
+| `type` | `string` | yes | Type type of the member to notify during an incident. Can be one of current_on_call, entire_team, all_slack_integrations, all_microsoft_teams_integrations, all_zapier_integrations, all_webhook_integrations, all_splunk_on_call_integrations, incident_metadata, user, webhook, slack_integration, microsoft_teams_integration, zapier_webhook,`pagerdutyIntegration` or policy. |
+
+## `PolicyStep (output)`
+
+Output object `PolicyStep`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `actionType` | `string` | yes | The action to take. Required when step type is `resolveRemove`- use `resolveIncident` or remove_incident. Optional when step type is `timeBranching` or `metadataBranching`- use escalate_to_policy, resolve_incident, remove_incident, or do_not_escalate. When omitted on branching steps, the action defaults to `escalateToPolicy` if `policyId` or `policyMetadataKey` is set, and to `doNotEscalate` otherwise; the resolved value is stored in state, so change it by setting an explicit value. |
+| `comment` | `string` | no | Post instructions as a comment into the incident timeline. You can use Markdown, reference metadata as `{server_region}`, and interactive checkboxes like `- [ ] Step 1`. Used when step type is instructions. |
+| `days` | `string[]` | no | An array of days during which the branching rule will be executed. Valid values are ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]. Used when step type is branching. |
+| `metadataKey` | `string` | no | A metadata field key to check. Used when step type is metadata_branching. |
+| `metadataValue` | `PolicyStepMetadataValue (output)[]` | no | An array of typed metadata values which will cause the branching rule to be executed. Used when step type is metadata_branching. |
+| `metadataValues` | `string[]` | no | An array of metadata String values which will cause the branching rule to be executed. Used when step type is metadata_branching. |
+| `policyId` | `number` | no | A policy to executed if the branching rule matches the time of an incident. Used when step type is `timeBranching` or metadata_branching. |
+| `policyMetadataKey` | `string` | no | A metadata key from which to extract the policy to executed if the branching rule matches the time of an incident. Used when step type is `timeBranching` or metadata_branching. |
+| `reminderEnabled` | `boolean` | yes | Whether we should followup periodically unless all checkboxes are checked. Used when step type is instructions. |
+| `reminderIntervalHours` | `number` | yes | Time interval in hours we should use for periodical follow-ups. Used when step type is instructions. |
+| `stepMembers` | `PolicyStepStepMember (output)[]` | no | An array of escalation policy steps members. Used when step type is escalation. |
+| `timeFrom` | `string` | no | A time from which the branching rule will be executed. Use HH:MM format. Used when step type is time_branching. |
+| `timeTo` | `string` | no | A time at which the branching rule will step being executed. Use HH:MM format. Used when step type is time_branching. |
+| `timezone` | `string` | no | What timezone to use when evaluating time based branching rules. Used when step type is time_branching. The accepted values can be found in the Rails TimeZone documentation. https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html |
+| `type` | `string` | yes | The type of the step. Can be either escalation, time_branching, metadata_branching, instructions, or resolve_remove. |
+| `urgencyId` | `number` | no | Which severity to use for this step. Used when step type is escalation. |
+| `waitBefore` | `number` | no | How long to wait in seconds before executing this step since previous step. Omit if `waitUntilTime` is set. |
+| `waitUntilTime` | `string` | no | Execute this step at the specified time. Use HH:MM format. Omit if `waitBefore` is set. |
+| `waitUntilTimezone` | `string` | no | Timezone to use when interpreting wait_until_time. Omit if `waitBefore` is set. |
+
+## `PolicyStepMetadataValue (output)`
+
+Output object `PolicyStepMetadataValue`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** Policy `metadataBranching` steps additionally accept `noValue`, which matches incidents whose metadata field is absent or blank. |
+| `value` | `string` | no | Value when type is String. |
+
+## `PolicyStepStepMember (output)`
+
+Output object `PolicyStepStepMember`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | The e-mail address of the user to notify during an incident. Can be used instead of id when member type is user - it is resolved to the user's ID automatically. Only one of id and email can be set. |
+| `id` | `number` | no | The ID of the resource to notify during an incident. Required for user, webhook, slack_integration, microsoft_teams_integration, zapier_webhook,`pagerdutyIntegration` and policy member types. This is e.g. the ID of the user to notify when member type is user, the on-call calendar ID when member type is current_on_call, or the chained escalation policy ID when member type is policy. When member type is user, you can set email instead. |
+| `metadataKey` | `string` | no | The metadata key to use to retrieve the escalation target from the incident's metadata. Required when type is incident_metadata. |
+| `teamId` | `number` | no | The ID of the team to notify when member team is entire_team. When left empty, the default team for the incident is used. This field is deprecated, use id instead. |
+| `type` | `string` | yes | Type type of the member to notify during an incident. Can be one of current_on_call, entire_team, all_slack_integrations, all_microsoft_teams_integrations, all_zapier_integrations, all_webhook_integrations, all_splunk_on_call_integrations, incident_metadata, user, webhook, slack_integration, microsoft_teams_integration, zapier_webhook,`pagerdutyIntegration` or policy. |

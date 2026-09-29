@@ -1,0 +1,48 @@
+---
+title: "Action"
+description: "Resource Action in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource Action in pulumi-posthog.
+
+Pulumi type: `posthog:index/action:Action`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.Action(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deleted` | `boolean` | no | Whether the action is soft-deleted. Terraform will restore soft-deleted actions on apply. |
+| `description` | `string` | no | Action description |
+| `name` | `string` | no | Action name |
+| `postToSlack` | `boolean` | no | Whether to post to Slack when the action is triggered |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `slackMessageFormat` | `string` | no | Slack message format string |
+| `stepsJson` | `string` | no | JSON-encoded array of action step objects. See the [ActionStep schema](https://posthog.com/docs/api/actions) for available fields. |
+| `tags` | `string[]` | no | Set of tags for the action |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `actionId` | `number` | yes | Action ID |
+| `createdAt` | `string` | yes | Timestamp when the action was created. |
+| `deleted` | `boolean` | no | Whether the action is soft-deleted. Terraform will restore soft-deleted actions on apply. |
+| `description` | `string` | no | Action description |
+| `name` | `string` | no | Action name |
+| `postToSlack` | `boolean` | no | Whether to post to Slack when the action is triggered |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `slackMessageFormat` | `string` | no | Slack message format string |
+| `stepsJson` | `string` | no | JSON-encoded array of action step objects. See the [ActionStep schema](https://posthog.com/docs/api/actions) for available fields. |
+| `tags` | `string[]` | no | Set of tags for the action |

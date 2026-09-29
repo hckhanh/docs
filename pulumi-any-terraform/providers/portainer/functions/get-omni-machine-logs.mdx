@@ -1,0 +1,35 @@
+---
+title: "getOmniMachineLogs"
+description: "Function getOmniMachineLogs in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getOmniMachineLogs in pulumi-portainer.
+
+Invoke token: `portainer:index/getOmniMachineLogs:getOmniMachineLogs`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getOmniMachineLogs(args)`.
+
+`getOmniMachineLogsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `machineName` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `logs` | `string` | yes |  |
+| `machineName` | `string` | yes |  |

@@ -1,0 +1,68 @@
+---
+title: "CustomTemplate"
+description: "Resource CustomTemplate in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource CustomTemplate in pulumi-portainer.
+
+Pulumi type: `portainer:index/customTemplate:CustomTemplate`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.CustomTemplate(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `composeFilePath` | `string` | no | Path within the Git repository to the Compose or manifest file (defaults to `docker-compose.yml`). |
+| `customTemplateId` | `string` | no |  |
+| `description` | `string` | yes | Short description of the custom template displayed in the Portainer UI. |
+| `edgeTemplate` | `boolean` | no | Whether this template is exposed as an Edge template. |
+| `fileContent` | `string` | no | Inline template body (Compose YAML, Kubernetes manifest, or Swarm stack file). Mutually exclusive with `filePath` and the repository fields. |
+| `filePath` | `string` | no | Path on the local filesystem to a file containing the template body. Mutually exclusive with `fileContent` and the repository fields. |
+| `isComposeFormat` | `boolean` | no | Whether the Kubernetes manifest is provided in Compose format (only relevant for `type = 3`). |
+| `logo` | `string` | no | URL of the logo image displayed next to the template in the Portainer UI. |
+| `note` | `string` | yes | Additional note or instructions associated with the custom template. |
+| `platform` | `number` | yes | Target platform for the template: 1 = Linux, 2 = Windows. |
+| `repositoryAuthentication` | `boolean` | no | Enable authentication for the Git repository (default: false). |
+| `repositoryPassword` | `string` | no | Sensitive password or personal access token used to authenticate against the Git repository. |
+| `repositoryReference` | `string` | no | Git reference (branch, tag, or commit) to check out (defaults to `refs/heads/main`). |
+| `repositoryUrl` | `string` | no | URL of the Git repository hosting the template manifest. |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. |
+| `title` | `string` | yes | Title of the Portainer custom template. |
+| `tlsskipVerify` | `boolean` | no | Whether to skip TLS verification when cloning the Git repository. |
+| `type` | `number` | yes | Template type: 1 = Swarm stack, 2 = Compose stack, 3 = Kubernetes manifest. |
+| `variables` | `{ [key: string]: string }[]` | no | List of template variable definitions (name, label, description, defaultValue) used for parameterized templates. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `composeFilePath` | `string` | no | Path within the Git repository to the Compose or manifest file (defaults to `docker-compose.yml`). |
+| `customTemplateId` | `string` | no |  |
+| `description` | `string` | no | Short description of the custom template displayed in the Portainer UI. |
+| `edgeTemplate` | `boolean` | no | Whether this template is exposed as an Edge template. |
+| `fileContent` | `string` | no | Inline template body (Compose YAML, Kubernetes manifest, or Swarm stack file). Mutually exclusive with `filePath` and the repository fields. |
+| `filePath` | `string` | no | Path on the local filesystem to a file containing the template body. Mutually exclusive with `fileContent` and the repository fields. |
+| `isComposeFormat` | `boolean` | no | Whether the Kubernetes manifest is provided in Compose format (only relevant for `type = 3`). |
+| `logo` | `string` | no | URL of the logo image displayed next to the template in the Portainer UI. |
+| `note` | `string` | no | Additional note or instructions associated with the custom template. |
+| `platform` | `number` | no | Target platform for the template: 1 = Linux, 2 = Windows. |
+| `repositoryAuthentication` | `boolean` | no | Enable authentication for the Git repository (default: false). |
+| `repositoryPassword` | `string` | no | Sensitive password or personal access token used to authenticate against the Git repository. |
+| `repositoryReference` | `string` | no | Git reference (branch, tag, or commit) to check out (defaults to `refs/heads/main`). |
+| `repositoryUrl` | `string` | no | URL of the Git repository hosting the template manifest. |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. |
+| `title` | `string` | no | Title of the Portainer custom template. |
+| `tlsskipVerify` | `boolean` | no | Whether to skip TLS verification when cloning the Git repository. |
+| `type` | `number` | no | Template type: 1 = Swarm stack, 2 = Compose stack, 3 = Kubernetes manifest. |
+| `variables` | `{ [key: string]: string }[]` | no | List of template variable definitions (name, label, description, defaultValue) used for parameterized templates. |

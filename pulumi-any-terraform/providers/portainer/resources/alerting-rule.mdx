@@ -1,0 +1,63 @@
+---
+title: "AlertingRule"
+description: "Resource AlertingRule in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource AlertingRule in pulumi-portainer.
+
+Pulumi type: `portainer:index/alertingRule:AlertingRule`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.AlertingRule(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `alertManagerId` | `number` | no | ID of the associated AlertManager settings. |
+| `alertingRuleId` | `string` | no |  |
+| `conditionOperator` | `string` | no | Condition operator for threshold comparison. |
+| `description` | `string` | no | Description of the alert rule. |
+| `duration` | `number` | no | Duration (in seconds) the condition must persist before firing. |
+| `enabled` | `boolean` | yes | Whether the alert rule is enabled. |
+| `labels` | `{ [key: string]: string }` | no | Labels associated with the alert rule. |
+| `metricType` | `string` | no | Type of metric for the alert rule. |
+| `name` | `string` | no | Name of the alert rule. |
+| `ruleId` | `number` | yes | The ID of the predefined alert rule to manage. Rules are predefined in Portainer and must be imported by ID. |
+| `severity` | `string` | no | Severity level of the alert rule. |
+| `summary` | `string` | no | Summary of the alert rule. |
+| `threshold` | `number` | no | Threshold value for the alert rule. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `alertManagerId` | `number` | no | ID of the associated AlertManager settings. |
+| `alertingRuleId` | `string` | no |  |
+| `conditionOperator` | `string` | no | Condition operator for threshold comparison. |
+| `createdAt` | `string` | yes | Timestamp when the rule was created. |
+| `createdBy` | `string` | yes | User who created the rule. |
+| `description` | `string` | no | Description of the alert rule. |
+| `duration` | `number` | no | Duration (in seconds) the condition must persist before firing. |
+| `enabled` | `boolean` | no | Whether the alert rule is enabled. |
+| `isEditable` | `boolean` | yes | Whether the alert rule can be edited. |
+| `isInternal` | `boolean` | yes | Whether the alert rule is an internal/system rule. |
+| `labels` | `{ [key: string]: string }` | no | Labels associated with the alert rule. |
+| `metricType` | `string` | no | Type of metric for the alert rule. |
+| `name` | `string` | no | Name of the alert rule. |
+| `ruleId` | `number` | no | The ID of the predefined alert rule to manage. Rules are predefined in Portainer and must be imported by ID. |
+| `severity` | `string` | no | Severity level of the alert rule. |
+| `summary` | `string` | no | Summary of the alert rule. |
+| `supportedAgentVersion` | `string` | yes | Minimum agent version that supports this rule. |
+| `supportedEnvironmentTypes` | `string` | yes | Environment types that support this rule (docker, kubernetes, podman, all). |
+| `threshold` | `number` | no | Threshold value for the alert rule. |
+| `updatedAt` | `string` | yes | Timestamp when the rule was last updated. |

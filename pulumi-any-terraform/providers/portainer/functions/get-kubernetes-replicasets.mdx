@@ -1,0 +1,58 @@
+---
+title: "getKubernetesReplicasets"
+description: "Function getKubernetesReplicasets in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesReplicasets in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesReplicasets:getKubernetesReplicasets`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesReplicasets(args)`.
+
+`getKubernetesReplicasetsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deployment` | `string` | no |  |
+| `environmentId` | `number` | yes |  |
+| `fieldSelector` | `string` | no |  |
+| `id` | `string` | no |  |
+| `labelSelector` | `string` | no |  |
+| `namespace` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `deployment` | `string` | no |  |
+| `environmentId` | `number` | yes |  |
+| `fieldSelector` | `string` | no |  |
+| `id` | `string` | yes |  |
+| `labelSelector` | `string` | no |  |
+| `namespace` | `string` | yes |  |
+| `replicasets` | `GetKubernetesReplicasetsReplicaset[]` | yes |  |
+
+## `GetKubernetesReplicasetsReplicaset`
+
+Output object `GetKubernetesReplicasetsReplicaset`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `availableReplicas` | `number` | no |  |
+| `creationTimestamp` | `string` | no |  |
+| `fullyLabeledReplicas` | `number` | no |  |
+| `images` | `string[]` | no |  |
+| `labels` | `{ [key: string]: string }` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `readyReplicas` | `number` | no |  |
+| `replicas` | `number` | no |  |
+| `revision` | `number` | no |  |

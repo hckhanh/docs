@@ -1,0 +1,42 @@
+---
+title: "RegistryAccess"
+description: "Resource RegistryAccess in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource RegistryAccess in pulumi-portainer.
+
+Pulumi type: `portainer:index/registryAccess:RegistryAccess`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.RegistryAccess(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes | Identifier of the Portainer endpoint to which the registry access policy applies. |
+| `registryAccessId` | `string` | no |  |
+| `registryId` | `number` | yes | Identifier of the Portainer registry whose access policy is being managed. |
+| `roleId` | `number` | no | Role identifier assigned to the user or team for the registry on the given endpoint. |
+| `teamId` | `number` | no | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
+| `userId` | `number` | no | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no | Identifier of the Portainer endpoint to which the registry access policy applies. |
+| `registryAccessId` | `string` | no |  |
+| `registryId` | `number` | no | Identifier of the Portainer registry whose access policy is being managed. |
+| `roleId` | `number` | no | Role identifier assigned to the user or team for the registry on the given endpoint. |
+| `teamId` | `number` | no | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
+| `userId` | `number` | no | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |

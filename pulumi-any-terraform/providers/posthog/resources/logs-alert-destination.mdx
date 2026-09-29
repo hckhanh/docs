@@ -1,0 +1,45 @@
+---
+title: "LogsAlertDestination"
+description: "Resource LogsAlertDestination in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource LogsAlertDestination in pulumi-posthog.
+
+Pulumi type: `posthog:index/logsAlertDestination:LogsAlertDestination`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.LogsAlertDestination(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `alertId` | `string` | yes | UUID of the `posthog.LogsAlert` this destination notifies for. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `slackChannelId` | `string` | no | Slack channel ID to post into, such as `C0123456789`. Required when `type` is `slack`. The channel ID rather than the name, because renaming a channel in Slack must not silently repoint the alert. |
+| `slackChannelName` | `string` | no | Channel name such as `#alerts`, used only to label the destination in the PostHog UI. Optional, and only meaningful when `type` is `slack`. Write-only: PostHog uses it to build the display name and never stores it, so nothing can read it back. Terraform keeps whatever you configured and never reports drift on it, and an imported destination has it unset. Changing it forces replacement, which is the only way to change the display name. |
+| `slackWorkspaceId` | `number` | no | ID of the Slack integration to post through, as created by connecting Slack to the project in the PostHog UI. Required when `type` is `slack`. |
+| `type` | `string` | yes | Where the notification goes. PostHog supports `slack`, `webhook`, and `teams` (Microsoft Teams); see the [alert destinations API](https://posthog.com/docs/api/logs-alerts) for the current list. A `slack` destination needs `slackWorkspaceId` and `slackChannelId`; `webhook` and `teams` need `webhookUrl`. Any other value is sent to PostHog as given, so a destination type added to the API works without a new provider release. Terraform cannot check the settings a type it does not know requires, so PostHog reports those at apply. |
+| `webhookUrl` | `string` | no | URL to POST the notification to. Required when `type` is `webhook` or `teams`. For `teams`, this is the Microsoft Teams incoming webhook URL. Marked sensitive because the secret is in the URL: whoever holds it can post to the channel. PostHog redacts the URL when reading destinations, so Terraform keeps the configured value and never compares it against the live one. A destination's URL cannot change in place: PostHog has no update endpoint for one, and the Hog Function API refuses writes to alert-owned destinations. Changing a URL outside Terraform means deleting the destination and adding another, which changes `hogFunctionIds` and does show up as drift. Rotate the URL by changing it here. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `alertId` | `string` | no | UUID of the `posthog.LogsAlert` this destination notifies for. |
+| `hogFunctionIds` | `string[]` | yes | UUIDs of the hog functions PostHog built for this destination, one per alert transition. Useful for finding the destination in the PostHog UI. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `slackChannelId` | `string` | no | Slack channel ID to post into, such as `C0123456789`. Required when `type` is `slack`. The channel ID rather than the name, because renaming a channel in Slack must not silently repoint the alert. |
+| `slackChannelName` | `string` | no | Channel name such as `#alerts`, used only to label the destination in the PostHog UI. Optional, and only meaningful when `type` is `slack`. Write-only: PostHog uses it to build the display name and never stores it, so nothing can read it back. Terraform keeps whatever you configured and never reports drift on it, and an imported destination has it unset. Changing it forces replacement, which is the only way to change the display name. |
+| `slackWorkspaceId` | `number` | no | ID of the Slack integration to post through, as created by connecting Slack to the project in the PostHog UI. Required when `type` is `slack`. |
+| `type` | `string` | no | Where the notification goes. PostHog supports `slack`, `webhook`, and `teams` (Microsoft Teams); see the [alert destinations API](https://posthog.com/docs/api/logs-alerts) for the current list. A `slack` destination needs `slackWorkspaceId` and `slackChannelId`; `webhook` and `teams` need `webhookUrl`. Any other value is sent to PostHog as given, so a destination type added to the API works without a new provider release. Terraform cannot check the settings a type it does not know requires, so PostHog reports those at apply. |
+| `webhookUrl` | `string` | no | URL to POST the notification to. Required when `type` is `webhook` or `teams`. For `teams`, this is the Microsoft Teams incoming webhook URL. Marked sensitive because the secret is in the URL: whoever holds it can post to the channel. PostHog redacts the URL when reading destinations, so Terraform keeps the configured value and never compares it against the live one. A destination's URL cannot change in place: PostHog has no update endpoint for one, and the Hog Function API refuses writes to alert-owned destinations. Changing a URL outside Terraform means deleting the destination and adding another, which changes `hogFunctionIds` and does show up as drift. Rotate the URL by changing it here. |

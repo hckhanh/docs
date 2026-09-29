@@ -1,0 +1,55 @@
+---
+title: "getKubernetesApplication"
+description: "Function getKubernetesApplication in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesApplication in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesApplication:getKubernetesApplication`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesApplication(args)`.
+
+`getKubernetesApplicationOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `name` | `string` | yes |  |
+| `namespace` | `string` | yes |  |
+| `resourceType` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `applicationOwner` | `string` | yes |  |
+| `applicationType` | `string` | yes |  |
+| `creationDate` | `string` | yes |  |
+| `deploymentType` | `string` | yes |  |
+| `details` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `image` | `string` | yes |  |
+| `kind` | `string` | yes |  |
+| `labels` | `{ [key: string]: string }` | yes |  |
+| `loadBalancerIp` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `namespace` | `string` | yes |  |
+| `resourceType` | `string` | no |  |
+| `runningPods` | `number` | yes |  |
+| `serviceName` | `string` | yes |  |
+| `serviceType` | `string` | yes |  |
+| `stackId` | `string` | yes |  |
+| `stackName` | `string` | yes |  |
+| `status` | `string` | yes |  |
+| `totalPods` | `number` | yes |  |
+| `uid` | `string` | yes |  |

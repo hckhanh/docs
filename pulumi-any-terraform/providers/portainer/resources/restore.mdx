@@ -1,0 +1,40 @@
+---
+title: "Restore"
+description: "Resource Restore in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Restore in pulumi-portainer.
+
+Pulumi type: `portainer:index/restore:Restore`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Restore(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fileContentBase64` | `string` | yes | Base64-encoded content of the backup archive, typically `filebase64("portainer-backup.tar.gz")`. A backup contains every credential Portainer holds, so it is stored in state as a sensitive value. |
+| `fileName` | `string` | no | Name reported to Portainer for the uploaded archive. |
+| `password` | `string` | no | Password the backup was encrypted with. Leave unset for an unencrypted backup. |
+| `restoreId` | `string` | no |  |
+| `setupToken` | `string` | no | Value sent as the `X-Setup-Token` header. Portainer requires it when the instance has not been initialised yet, which is the usual state for a restore. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `fileContentBase64` | `string` | no | Base64-encoded content of the backup archive, typically `filebase64("portainer-backup.tar.gz")`. A backup contains every credential Portainer holds, so it is stored in state as a sensitive value. |
+| `fileName` | `string` | no | Name reported to Portainer for the uploaded archive. |
+| `password` | `string` | no | Password the backup was encrypted with. Leave unset for an unencrypted backup. |
+| `restoreId` | `string` | no |  |
+| `setupToken` | `string` | no | Value sent as the `X-Setup-Token` header. Portainer requires it when the instance has not been initialised yet, which is the usual state for a restore. |

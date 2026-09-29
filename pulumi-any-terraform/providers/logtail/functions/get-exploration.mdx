@@ -1,0 +1,77 @@
+---
+title: "getExploration"
+description: "Function getExploration in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Function getExploration in pulumi-logtail.
+
+Invoke token: `logtail:index/getExploration:getExploration`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Call `logtail.getExploration(args)`.
+
+`getExplorationOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `charts` | `GetExplorationChart[]` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `dateRangeFrom` | `string` | yes |  |
+| `dateRangeTo` | `string` | yes |  |
+| `explorationGroupId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `queries` | `GetExplorationQuery[]` | yes |  |
+| `teamName` | `string` | yes |  |
+| `updatedAt` | `string` | yes |  |
+| `variables` | `GetExplorationVariable[]` | yes |  |
+
+## `GetExplorationChart`
+
+Output object `GetExplorationChart`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `chartType` | `string` | no |  |
+| `description` | `string` | no |  |
+| `name` | `string` | no |  |
+| `settings` | `string` | no |  |
+
+## `GetExplorationQuery`
+
+Output object `GetExplorationQuery`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | no |  |
+| `name` | `string` | no |  |
+| `queryType` | `string` | no |  |
+| `sourceVariable` | `string` | no |  |
+| `sqlQuery` | `string` | no |  |
+| `staticText` | `string` | no |  |
+| `whereCondition` | `string` | no |  |
+
+## `GetExplorationVariable`
+
+Output object `GetExplorationVariable`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `defaultValues` | `string[]` | no |  |
+| `name` | `string` | no |  |
+| `sqlDefinition` | `string` | no |  |
+| `values` | `string[]` | no |  |
+| `variableType` | `string` | no |  |

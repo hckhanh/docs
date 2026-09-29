@@ -1,0 +1,94 @@
+---
+title: "AccessApprovalPolicy"
+description: "Resource AccessApprovalPolicy in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AccessApprovalPolicy in pulumi-infisical.
+
+Pulumi type: `infisical:index/accessApprovalPolicy:AccessApprovalPolicy`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AccessApprovalPolicy(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowSelfApproval` | `boolean` | no | Whether to allow approvers to approve their own requests |
+| `approvers` | `AccessApprovalPolicyApprover (input)[]` | yes | The required approvers |
+| `bypassers` | `AccessApprovalPolicyBypasser (input)[]` | no | The bypassers who can bypass the approval policy |
+| `enforcementLevel` | `string` | no | The enforcement level of the policy. This can either be hard or soft |
+| `environmentSlug` | `string` | no | (DEPRECATED, Use `environmentSlugs` instead) The environment to apply the access approval policy to |
+| `environmentSlugs` | `string[]` | no | The environments to apply the access approval policy to |
+| `maxTimePeriod` | `string` | no | The maximum time period for the access approval, specified as a duration string (e.g. '1h', '30m', '2d'). If omitted, the default behavior is 'permanent'. |
+| `name` | `string` | no | The name of the access approval policy |
+| `projectId` | `string` | yes | The ID of the project to add the access approval policy |
+| `requestExpirationTime` | `string` | no | The time after which the access request expires, specified as a duration string (e.g. '1h', '3d', '72h'). Must be between 1 minute and 1 year. If omitted, the default behavior is 'never'. |
+| `requiredApprovals` | `number` | yes | The number of required approvers |
+| `secretPath` | `string` | yes | The secret path to apply the access approval policy to |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `allowSelfApproval` | `boolean` | no | Whether to allow approvers to approve their own requests |
+| `approvers` | `AccessApprovalPolicyApprover (output)[]` | no | The required approvers |
+| `bypassers` | `AccessApprovalPolicyBypasser (output)[]` | no | The bypassers who can bypass the approval policy |
+| `enforcementLevel` | `string` | no | The enforcement level of the policy. This can either be hard or soft |
+| `environmentSlug` | `string` | no | (DEPRECATED, Use `environmentSlugs` instead) The environment to apply the access approval policy to |
+| `environmentSlugs` | `string[]` | no | The environments to apply the access approval policy to |
+| `maxTimePeriod` | `string` | no | The maximum time period for the access approval, specified as a duration string (e.g. '1h', '30m', '2d'). If omitted, the default behavior is 'permanent'. |
+| `name` | `string` | no | The name of the access approval policy |
+| `projectId` | `string` | no | The ID of the project to add the access approval policy |
+| `requestExpirationTime` | `string` | no | The time after which the access request expires, specified as a duration string (e.g. '1h', '3d', '72h'). Must be between 1 minute and 1 year. If omitted, the default behavior is 'never'. |
+| `requiredApprovals` | `number` | no | The number of required approvers |
+| `secretPath` | `string` | no | The secret path to apply the access approval policy to |
+
+## `AccessApprovalPolicyApprover (input)`
+
+Input object `AccessApprovalPolicyApprover`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no | The ID of the approver |
+| `type` | `string` | yes | The type of approver. Either group or user |
+| `username` | `string` | no | The username of the approver. By default, this is the email |
+
+## `AccessApprovalPolicyBypasser (input)`
+
+Input object `AccessApprovalPolicyBypasser`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no | The ID of the bypasser |
+| `type` | `string` | yes | The type of bypasser. Either group or user |
+| `username` | `string` | no | The username of the bypasser. By default, this is the email |
+
+## `AccessApprovalPolicyApprover (output)`
+
+Output object `AccessApprovalPolicyApprover`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no | The ID of the approver |
+| `type` | `string` | yes | The type of approver. Either group or user |
+| `username` | `string` | no | The username of the approver. By default, this is the email |
+
+## `AccessApprovalPolicyBypasser (output)`
+
+Output object `AccessApprovalPolicyBypasser`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no | The ID of the bypasser |
+| `type` | `string` | yes | The type of bypasser. Either group or user |
+| `username` | `string` | no | The username of the bypasser. By default, this is the email |

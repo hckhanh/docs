@@ -1,0 +1,45 @@
+---
+title: "getKubernetesVolume"
+description: "Function getKubernetesVolume in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesVolume in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesVolume:getKubernetesVolume`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesVolume(args)`.
+
+`getKubernetesVolumeOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `namespace` | `string` | yes |  |
+| `volume` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `claimName` | `string` | yes |  |
+| `claimPhase` | `string` | yes |  |
+| `claimStorageRequest` | `string` | yes |  |
+| `details` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `namespace` | `string` | yes |  |
+| `persistentVolumeName` | `string` | yes |  |
+| `persistentVolumeReclaimPolicy` | `string` | yes |  |
+| `persistentVolumeStatus` | `string` | yes |  |
+| `storageClassName` | `string` | yes |  |
+| `storageClassProvisioner` | `string` | yes |  |
+| `volume` | `string` | yes |  |

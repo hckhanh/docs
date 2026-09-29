@@ -1,0 +1,63 @@
+---
+title: "getUserAccess"
+description: "Function getUserAccess in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getUserAccess in pulumi-portainer.
+
+Invoke token: `portainer:index/getUserAccess:getUserAccess`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getUserAccess(args)`.
+
+`getUserAccessOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `userId` | `number` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `effectiveAccesses` | `GetUserAccessEffectiveAccess[]` | yes |  |
+| `id` | `string` | yes |  |
+| `memberships` | `GetUserAccessMembership[]` | yes |  |
+| `role` | `number` | yes |  |
+| `userId` | `number` | no |  |
+| `username` | `string` | yes |  |
+
+## `GetUserAccessEffectiveAccess`
+
+Output object `GetUserAccessEffectiveAccess`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessLocation` | `string` | no |  |
+| `endpointId` | `number` | no |  |
+| `endpointName` | `string` | no |  |
+| `groupId` | `number` | no |  |
+| `groupName` | `string` | no |  |
+| `roleId` | `number` | no |  |
+| `roleName` | `string` | no |  |
+| `rolePriority` | `number` | no |  |
+| `teamId` | `number` | no |  |
+| `teamName` | `string` | no |  |
+
+## `GetUserAccessMembership`
+
+Output object `GetUserAccessMembership`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | no |  |
+| `role` | `number` | no |  |
+| `teamId` | `number` | no |  |

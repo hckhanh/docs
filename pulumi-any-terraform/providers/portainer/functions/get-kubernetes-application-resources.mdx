@@ -1,0 +1,36 @@
+---
+title: "getKubernetesApplicationResources"
+description: "Function getKubernetesApplicationResources in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesApplicationResources in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesApplicationResources:getKubernetesApplicationResources`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesApplicationResources(args)`.
+
+`getKubernetesApplicationResourcesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `cpuLimit` | `number` | yes |  |
+| `cpuRequest` | `number` | yes |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `memoryLimit` | `number` | yes |  |
+| `memoryRequest` | `number` | yes |  |

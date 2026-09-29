@@ -1,0 +1,46 @@
+---
+title: "EdgeJob"
+description: "Resource EdgeJob in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource EdgeJob in pulumi-portainer.
+
+Pulumi type: `portainer:index/edgeJob:EdgeJob`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.EdgeJob(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `cronExpression` | `string` | yes | Cron expression that schedules execution of the edge job. |
+| `edgeGroups` | `number[]` | yes | List of edge group identifiers targeted by the job. |
+| `edgeJobId` | `string` | no |  |
+| `endpoints` | `number[]` | yes | List of edge endpoint identifiers explicitly targeted by the job (in addition to those in `edgeGroups`). |
+| `fileContent` | `string` | no | Inline script executed by edge agents. Mutually exclusive with `filePath`. |
+| `filePath` | `string` | no | Path on the local filesystem to a script file uploaded as the job payload. Mutually exclusive with `fileContent`. |
+| `name` | `string` | no | Name of the Portainer edge job. |
+| `recurring` | `boolean` | no | Whether the edge job should run repeatedly according to the cron expression (true) or only once (false). |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `cronExpression` | `string` | no | Cron expression that schedules execution of the edge job. |
+| `edgeGroups` | `number[]` | no | List of edge group identifiers targeted by the job. |
+| `edgeJobId` | `string` | no |  |
+| `endpoints` | `number[]` | no | List of edge endpoint identifiers explicitly targeted by the job (in addition to those in `edgeGroups`). |
+| `fileContent` | `string` | no | Inline script executed by edge agents. Mutually exclusive with `filePath`. |
+| `filePath` | `string` | no | Path on the local filesystem to a script file uploaded as the job payload. Mutually exclusive with `fileContent`. |
+| `name` | `string` | no | Name of the Portainer edge job. |
+| `recurring` | `boolean` | no | Whether the edge job should run repeatedly according to the cron expression (true) or only once (false). |

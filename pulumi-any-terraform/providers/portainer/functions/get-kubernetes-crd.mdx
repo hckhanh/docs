@@ -1,0 +1,49 @@
+---
+title: "getKubernetesCrd"
+description: "Function getKubernetesCrd in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesCrd in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesCrd:getKubernetesCrd`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesCrd(args)`.
+
+`getKubernetesCrdOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `name` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `crds` | `GetKubernetesCrdCrd[]` | yes |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | no |  |
+
+## `GetKubernetesCrdCrd`
+
+Output object `GetKubernetesCrdCrd`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `creationDate` | `string` | no |  |
+| `group` | `string` | no |  |
+| `name` | `string` | no |  |
+| `releaseName` | `string` | no |  |
+| `releaseNamespace` | `string` | no |  |
+| `releaseVersion` | `string` | no |  |
+| `scope` | `string` | no |  |

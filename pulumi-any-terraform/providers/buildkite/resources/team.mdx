@@ -1,0 +1,52 @@
+---
+title: "Team"
+description: "Resource Team in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource Team in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/team:Team`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.Team(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaultMemberRole` | `string` | yes | The default role for new members of the team. This can be either `MEMBER` or `MAINTAINER`. |
+| `defaultTeam` | `boolean` | yes | Whether this is the default team for the organization. |
+| `description` | `string` | no | A description for the team. This is displayed in the Buildkite UI. |
+| `membersCanCreatePipelines` | `boolean` | no | Whether members of the team can create Pipelines. |
+| `membersCanCreateRegistries` | `boolean` | no | Whether members of the team can create registries. |
+| `membersCanCreateSuites` | `boolean` | no | Whether members of the team can create test suites. |
+| `membersCanDestroyPackages` | `boolean` | no | Whether members of the team can destroy packages. |
+| `membersCanDestroyRegistries` | `boolean` | no | Whether members of the team can destroy registries. |
+| `name` | `string` | no | The name of the team. |
+| `privacy` | `string` | yes | The privacy setting for the team. This can be either `VISIBLE` or `SECRET`. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `defaultMemberRole` | `string` | no | The default role for new members of the team. This can be either `MEMBER` or `MAINTAINER`. |
+| `defaultTeam` | `boolean` | no | Whether this is the default team for the organization. |
+| `description` | `string` | no | A description for the team. This is displayed in the Buildkite UI. |
+| `membersCanCreatePipelines` | `boolean` | no | Whether members of the team can create Pipelines. |
+| `membersCanCreateRegistries` | `boolean` | no | Whether members of the team can create registries. |
+| `membersCanCreateSuites` | `boolean` | no | Whether members of the team can create test suites. |
+| `membersCanDestroyPackages` | `boolean` | no | Whether members of the team can destroy packages. |
+| `membersCanDestroyRegistries` | `boolean` | no | Whether members of the team can destroy registries. |
+| `name` | `string` | no | The name of the team. |
+| `privacy` | `string` | no | The privacy setting for the team. This can be either `VISIBLE` or `SECRET`. |
+| `slug` | `string` | yes | The generated slug for the team. |
+| `uuid` | `string` | yes | The UUID of the team. |

@@ -1,0 +1,38 @@
+---
+title: "SplunkOncallIntegration"
+description: "Resource SplunkOncallIntegration in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource SplunkOncallIntegration in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/splunkOncallIntegration:SplunkOncallIntegration`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.SplunkOncallIntegration(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of the Splunk On-Call Integration. |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `url` | `string` | yes | The Splunk On-Call URL to post webhooks to. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of the Splunk On-Call Integration. |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `url` | `string` | no | The Splunk On-Call URL to post webhooks to. |

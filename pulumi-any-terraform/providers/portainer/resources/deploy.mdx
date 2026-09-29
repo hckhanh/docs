@@ -1,0 +1,67 @@
+---
+title: "Deploy"
+description: "Resource Deploy in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Deploy in pulumi-portainer.
+
+Pulumi type: `portainer:index/deploy:Deploy`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Deploy(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deployId` | `string` | no |  |
+| `endpointId` | `number` | yes | Identifier of the Portainer endpoint hosting the stack to deploy/update. |
+| `forceUpdate` | `boolean` | no | If true, call Portainer forceupdateservice endpoint for each updated service (after optional wait). |
+| `revision` | `string` | yes | Target image tag/revision to set on services and optionally on stack ENV in stack_env_var. |
+| `servicesList` | `string` | yes | Comma-separated list of service names (without stack prefix). |
+| `stackEnvVar` | `string` | yes | Name of stack environment variable to update. |
+| `stackName` | `string` | yes | Name of the Portainer stack whose services are being deployed. |
+| `timeouts` | `DeployTimeouts (input)` | no |  |
+| `updateRevision` | `boolean` | no | If true, also update stack ENV variable in `stackEnvVar` to the provided revision. |
+| `wait` | `number` | no | Seconds to wait before force-updating a service (only when `forceUpdate`= true). |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `deployId` | `string` | no |  |
+| `endpointId` | `number` | no | Identifier of the Portainer endpoint hosting the stack to deploy/update. |
+| `forceUpdate` | `boolean` | no | If true, call Portainer forceupdateservice endpoint for each updated service (after optional wait). |
+| `output` | `string` | yes | Human-readable summary of the deployment actions performed by the provider. |
+| `revision` | `string` | no | Target image tag/revision to set on services and optionally on stack ENV in stack_env_var. |
+| `servicesList` | `string` | no | Comma-separated list of service names (without stack prefix). |
+| `stackEnvVar` | `string` | no | Name of stack environment variable to update. |
+| `stackName` | `string` | no | Name of the Portainer stack whose services are being deployed. |
+| `timeouts` | `DeployTimeouts (output)` | no |  |
+| `updateRevision` | `boolean` | no | If true, also update stack ENV variable in `stackEnvVar` to the provided revision. |
+| `wait` | `number` | no | Seconds to wait before force-updating a service (only when `forceUpdate`= true). |
+
+## `DeployTimeouts (input)`
+
+Input object `DeployTimeouts`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |
+
+## `DeployTimeouts (output)`
+
+Output object `DeployTimeouts`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |

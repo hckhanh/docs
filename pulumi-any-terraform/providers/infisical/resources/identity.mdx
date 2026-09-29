@@ -1,0 +1,59 @@
+---
+title: "Identity"
+description: "Resource Identity in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource Identity in pulumi-infisical.
+
+Pulumi type: `infisical:index/identity:Identity`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.Identity(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hasDeleteProtection` | `boolean` | no | Whether the identity has delete protection, defaults to false |
+| `metadatas` | `IdentityMetadata (input)[]` | no | The metadata associated with this identity |
+| `name` | `string` | no | The name for the identity |
+| `orgId` | `string` | yes | The ID of the organization for the identity |
+| `role` | `string` | yes | The role for the identity. Available default role options are 'admin', 'member', and 'no-access'. If you've created custom roles, you can use their slugs as well. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `authModes` | `string[]` | yes | The authentication types of the identity |
+| `hasDeleteProtection` | `boolean` | no | Whether the identity has delete protection, defaults to false |
+| `metadatas` | `IdentityMetadata (output)[]` | no | The metadata associated with this identity |
+| `name` | `string` | no | The name for the identity |
+| `orgId` | `string` | no | The ID of the organization for the identity |
+| `role` | `string` | no | The role for the identity. Available default role options are 'admin', 'member', and 'no-access'. If you've created custom roles, you can use their slugs as well. |
+
+## `IdentityMetadata (input)`
+
+Input object `IdentityMetadata`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The key of the metadata object |
+| `value` | `string` | yes | The value of the metadata object |
+
+## `IdentityMetadata (output)`
+
+Output object `IdentityMetadata`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The key of the metadata object |
+| `value` | `string` | yes | The value of the metadata object |

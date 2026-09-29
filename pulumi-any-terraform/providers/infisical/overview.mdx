@@ -1,175 +1,155 @@
 ---
-title: Infisical Provider
-description: Manage secrets with Infisical using Pulumi
+title: "Infisical"
+description: "Resources and functions exported by pulumi-infisical."
 ---
 
-The Infisical provider enables you to manage secrets, projects, and access controls in Infisical using Pulumi. This provider is dynamically bridged from the [Terraform Infisical Provider](https://registry.terraform.io/providers/Infisical/infisical).
+<!-- Generated from the pulumi-infisical SDK. -->
 
-## Installation
+`pulumi-infisical` version `0.20.5`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/infisical/infisical` version `0.19.36`.
 
-Install the Infisical provider package using your preferred package manager:
+The package is TypeScript. Import it by the npm package name.
 
-<Tabs>
-  <Tab title="bun">
-    ```bash
-    bun add pulumi-infisical
-    ```
-  </Tab>
-  <Tab title="pnpm">
-    ```bash
-    pnpm add pulumi-infisical
-    ```
-  </Tab>
-  <Tab title="yarn">
-    ```bash
-    yarn add pulumi-infisical
-    ```
-  </Tab>
-  <Tab title="npm">
-    ```bash
-    npm install pulumi-infisical
-    ```
-  </Tab>
-</Tabs>
-
-## Configuration
-
-### Getting Service Token
-
-1. Log in to Infisical at [app.infisical.com](https://app.infisical.com)
-2. Navigate to your project → Settings → Service Tokens
-3. Create a new service token
-4. Copy the token value
-
-### Provider Setup
-
-```bash
-pulumi config set infisical:token YOUR_SERVICE_TOKEN --secret
+```ts
+import * as infisical from "pulumi-infisical"
 ```
 
-Or using environment variables:
+Nested object fields are on the resource or function page, under the object heading.
 
-```bash
-export INFISICAL_TOKEN="your-service-token"
-```
+## Resources
 
-### Self-Hosted Infisical
+- [AccessApprovalPolicy](/pulumi-any-terraform/providers/infisical/resources/access-approval-policy)
+- [Alert](/pulumi-any-terraform/providers/infisical/resources/alert)
+- [AppConnection1password](/pulumi-any-terraform/providers/infisical/resources/app-connection1password)
+- [AppConnectionAws](/pulumi-any-terraform/providers/infisical/resources/app-connection-aws)
+- [AppConnectionAzureAppConfiguration](/pulumi-any-terraform/providers/infisical/resources/app-connection-azure-app-configuration)
+- [AppConnectionAzureClientSecrets](/pulumi-any-terraform/providers/infisical/resources/app-connection-azure-client-secrets)
+- [AppConnectionAzureDevops](/pulumi-any-terraform/providers/infisical/resources/app-connection-azure-devops)
+- [AppConnectionAzureKeyVault](/pulumi-any-terraform/providers/infisical/resources/app-connection-azure-key-vault)
+- [AppConnectionBitbucket](/pulumi-any-terraform/providers/infisical/resources/app-connection-bitbucket)
+- [AppConnectionCircleci](/pulumi-any-terraform/providers/infisical/resources/app-connection-circleci)
+- [AppConnectionCloudflare](/pulumi-any-terraform/providers/infisical/resources/app-connection-cloudflare)
+- [AppConnectionDatabricks](/pulumi-any-terraform/providers/infisical/resources/app-connection-databricks)
+- [AppConnectionDatadog](/pulumi-any-terraform/providers/infisical/resources/app-connection-datadog)
+- [AppConnectionDigicert](/pulumi-any-terraform/providers/infisical/resources/app-connection-digicert)
+- [AppConnectionFlyio](/pulumi-any-terraform/providers/infisical/resources/app-connection-flyio)
+- [AppConnectionGcp](/pulumi-any-terraform/providers/infisical/resources/app-connection-gcp)
+- [AppConnectionGithub](/pulumi-any-terraform/providers/infisical/resources/app-connection-github)
+- [AppConnectionGitlab](/pulumi-any-terraform/providers/infisical/resources/app-connection-gitlab)
+- [AppConnectionHashicorpVault](/pulumi-any-terraform/providers/infisical/resources/app-connection-hashicorp-vault)
+- [AppConnectionLdap](/pulumi-any-terraform/providers/infisical/resources/app-connection-ldap)
+- [AppConnectionMssql](/pulumi-any-terraform/providers/infisical/resources/app-connection-mssql)
+- [AppConnectionMysql](/pulumi-any-terraform/providers/infisical/resources/app-connection-mysql)
+- [AppConnectionOracledb](/pulumi-any-terraform/providers/infisical/resources/app-connection-oracledb)
+- [AppConnectionPostgres](/pulumi-any-terraform/providers/infisical/resources/app-connection-postgres)
+- [AppConnectionRender](/pulumi-any-terraform/providers/infisical/resources/app-connection-render)
+- [AppConnectionSupabase](/pulumi-any-terraform/providers/infisical/resources/app-connection-supabase)
+- [CertificateSyncAwsCertificateManager](/pulumi-any-terraform/providers/infisical/resources/certificate-sync-aws-certificate-manager)
+- [CertificateSyncCertificate](/pulumi-any-terraform/providers/infisical/resources/certificate-sync-certificate)
+- [CertManagerApplication](/pulumi-any-terraform/providers/infisical/resources/cert-manager-application)
+- [CertManagerApplicationGroup](/pulumi-any-terraform/providers/infisical/resources/cert-manager-application-group)
+- [CertManagerApplicationIdentity](/pulumi-any-terraform/providers/infisical/resources/cert-manager-application-identity)
+- [CertManagerApplicationProfile](/pulumi-any-terraform/providers/infisical/resources/cert-manager-application-profile)
+- [CertManagerApplicationUser](/pulumi-any-terraform/providers/infisical/resources/cert-manager-application-user)
+- [CertManagerCaCertificate](/pulumi-any-terraform/providers/infisical/resources/cert-manager-ca-certificate)
+- [CertManagerCertificate](/pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate)
+- [CertManagerCertificatePolicy](/pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate-policy)
+- [CertManagerCertificateProfile](/pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate-profile)
+- [CertManagerExternalCaAcme](/pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-acme)
+- [CertManagerExternalCaAdcs](/pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-adcs)
+- [CertManagerExternalCaDigicert](/pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-digicert)
+- [CertManagerGroup](/pulumi-any-terraform/providers/infisical/resources/cert-manager-group)
+- [CertManagerIdentity](/pulumi-any-terraform/providers/infisical/resources/cert-manager-identity)
+- [CertManagerInternalCa](/pulumi-any-terraform/providers/infisical/resources/cert-manager-internal-ca)
+- [CertManagerUser](/pulumi-any-terraform/providers/infisical/resources/cert-manager-user)
+- [DynamicSecretAwsIam](/pulumi-any-terraform/providers/infisical/resources/dynamic-secret-aws-iam)
+- [DynamicSecretKubernetes](/pulumi-any-terraform/providers/infisical/resources/dynamic-secret-kubernetes)
+- [DynamicSecretMongoAtlas](/pulumi-any-terraform/providers/infisical/resources/dynamic-secret-mongo-atlas)
+- [DynamicSecretMongoDb](/pulumi-any-terraform/providers/infisical/resources/dynamic-secret-mongo-db)
+- [DynamicSecretSqlDatabase](/pulumi-any-terraform/providers/infisical/resources/dynamic-secret-sql-database)
+- [ExternalKmsAws](/pulumi-any-terraform/providers/infisical/resources/external-kms-aws)
+- [Gateway](/pulumi-any-terraform/providers/infisical/resources/gateway)
+- [GatewayEnrollmentToken](/pulumi-any-terraform/providers/infisical/resources/gateway-enrollment-token)
+- [Group](/pulumi-any-terraform/providers/infisical/resources/group)
+- [GroupMachineIdentity](/pulumi-any-terraform/providers/infisical/resources/group-machine-identity)
+- [Identity](/pulumi-any-terraform/providers/infisical/resources/identity)
+- [IdentityAwsAuth](/pulumi-any-terraform/providers/infisical/resources/identity-aws-auth)
+- [IdentityAzureAuth](/pulumi-any-terraform/providers/infisical/resources/identity-azure-auth)
+- [IdentityGcpAuth](/pulumi-any-terraform/providers/infisical/resources/identity-gcp-auth)
+- [IdentityJwtAuth](/pulumi-any-terraform/providers/infisical/resources/identity-jwt-auth)
+- [IdentityKubernetesAuth](/pulumi-any-terraform/providers/infisical/resources/identity-kubernetes-auth)
+- [IdentityOidcAuth](/pulumi-any-terraform/providers/infisical/resources/identity-oidc-auth)
+- [IdentityTlsCertAuth](/pulumi-any-terraform/providers/infisical/resources/identity-tls-cert-auth)
+- [IdentityTokenAuth](/pulumi-any-terraform/providers/infisical/resources/identity-token-auth)
+- [IdentityTokenAuthToken](/pulumi-any-terraform/providers/infisical/resources/identity-token-auth-token)
+- [IdentityUniversalAuth](/pulumi-any-terraform/providers/infisical/resources/identity-universal-auth)
+- [IdentityUniversalAuthClientSecret](/pulumi-any-terraform/providers/infisical/resources/identity-universal-auth-client-secret)
+- [IntegrationAwsParameterStore](/pulumi-any-terraform/providers/infisical/resources/integration-aws-parameter-store)
+- [IntegrationAwsSecretsManager](/pulumi-any-terraform/providers/infisical/resources/integration-aws-secrets-manager)
+- [IntegrationCircleci](/pulumi-any-terraform/providers/infisical/resources/integration-circleci)
+- [IntegrationDatabricks](/pulumi-any-terraform/providers/infisical/resources/integration-databricks)
+- [IntegrationGcpSecretManager](/pulumi-any-terraform/providers/infisical/resources/integration-gcp-secret-manager)
+- [KmsKey](/pulumi-any-terraform/providers/infisical/resources/kms-key)
+- [OrgRole](/pulumi-any-terraform/providers/infisical/resources/org-role)
+- [Project](/pulumi-any-terraform/providers/infisical/resources/project)
+- [ProjectEnvironment](/pulumi-any-terraform/providers/infisical/resources/project-environment)
+- [ProjectGroup](/pulumi-any-terraform/providers/infisical/resources/project-group)
+- [ProjectIdentity](/pulumi-any-terraform/providers/infisical/resources/project-identity)
+- [ProjectIdentitySpecificPrivilege](/pulumi-any-terraform/providers/infisical/resources/project-identity-specific-privilege)
+- [ProjectRole](/pulumi-any-terraform/providers/infisical/resources/project-role)
+- [ProjectScopedIdentity](/pulumi-any-terraform/providers/infisical/resources/project-scoped-identity)
+- [ProjectTemplate](/pulumi-any-terraform/providers/infisical/resources/project-template)
+- [ProjectUser](/pulumi-any-terraform/providers/infisical/resources/project-user)
+- [Secret](/pulumi-any-terraform/providers/infisical/resources/secret)
+- [SecretApprovalPolicy](/pulumi-any-terraform/providers/infisical/resources/secret-approval-policy)
+- [SecretFolder](/pulumi-any-terraform/providers/infisical/resources/secret-folder)
+- [SecretImport](/pulumi-any-terraform/providers/infisical/resources/secret-import)
+- [SecretRotationAuth0ClientSecret](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-auth0-client-secret)
+- [SecretRotationAwsIamUserSecret](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-aws-iam-user-secret)
+- [SecretRotationAzureClientSecret](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-azure-client-secret)
+- [SecretRotationDatadogApiKey](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-datadog-api-key)
+- [SecretRotationLdapPassword](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-ldap-password)
+- [SecretRotationMssqlCredentials](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-mssql-credentials)
+- [SecretRotationMysqlCredentials](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-mysql-credentials)
+- [SecretRotationOracledbCredentials](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-oracledb-credentials)
+- [SecretRotationPostgresCredentials](/pulumi-any-terraform/providers/infisical/resources/secret-rotation-postgres-credentials)
+- [SecretSync1password](/pulumi-any-terraform/providers/infisical/resources/secret-sync1password)
+- [SecretSyncAwsParameterStore](/pulumi-any-terraform/providers/infisical/resources/secret-sync-aws-parameter-store)
+- [SecretSyncAwsSecretsManager](/pulumi-any-terraform/providers/infisical/resources/secret-sync-aws-secrets-manager)
+- [SecretSyncAzureAppConfiguration](/pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-app-configuration)
+- [SecretSyncAzureDevops](/pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-devops)
+- [SecretSyncAzureKeyVault](/pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-key-vault)
+- [SecretSyncBitbucket](/pulumi-any-terraform/providers/infisical/resources/secret-sync-bitbucket)
+- [SecretSyncCircleci](/pulumi-any-terraform/providers/infisical/resources/secret-sync-circleci)
+- [SecretSyncCloudflarePages](/pulumi-any-terraform/providers/infisical/resources/secret-sync-cloudflare-pages)
+- [SecretSyncCloudflareWorkers](/pulumi-any-terraform/providers/infisical/resources/secret-sync-cloudflare-workers)
+- [SecretSyncDatabricks](/pulumi-any-terraform/providers/infisical/resources/secret-sync-databricks)
+- [SecretSyncFlyio](/pulumi-any-terraform/providers/infisical/resources/secret-sync-flyio)
+- [SecretSyncGcpSecretManager](/pulumi-any-terraform/providers/infisical/resources/secret-sync-gcp-secret-manager)
+- [SecretSyncGithub](/pulumi-any-terraform/providers/infisical/resources/secret-sync-github)
+- [SecretSyncGitlab](/pulumi-any-terraform/providers/infisical/resources/secret-sync-gitlab)
+- [SecretSyncRender](/pulumi-any-terraform/providers/infisical/resources/secret-sync-render)
+- [SecretSyncSupabase](/pulumi-any-terraform/providers/infisical/resources/secret-sync-supabase)
+- [SecretTag](/pulumi-any-terraform/providers/infisical/resources/secret-tag)
+- [SubOrganization](/pulumi-any-terraform/providers/infisical/resources/sub-organization)
+- [Webhook](/pulumi-any-terraform/providers/infisical/resources/webhook)
 
-If you're using a self-hosted Infisical instance, configure the custom host URL:
+## Functions
 
-```bash
-pulumi config set infisical:hostUrl https://infisical.your-domain.com
-```
-
-Or using environment variables:
-
-```bash
-export INFISICAL_HOST_URL="https://infisical.your-domain.com"
-```
-
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as infisical from "pulumi-infisical";
-
-// Configure provider for self-hosted instance
-const provider = new infisical.Provider("self-hosted", {
-    hostUrl: "https://infisical.your-domain.com",
-    token: config.requireSecret("token"),
-});
-
-// Use the provider
-const project = new infisical.Project("project", {
-    name: "Backend Service",
-    slug: "backend-service",
-}, { provider });
-```
-
-## Quick Start
-
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as infisical from "pulumi-infisical";
-
-// Create a project
-const project = new infisical.Project("api-project", {
-    name: "API Service",
-    slug: "api-service",
-});
-
-// Create a secret
-const secret = new infisical.Secret("api-key", {
-    projectId: project.id,
-    environment: "production",
-    key: "API_KEY",
-    value: "super-secret-value",
-});
-
-export const projectId = project.id;
-```
-
-## Key Features
-
-### Project Management
-
-```typescript
-const project = new infisical.Project("backend-project", {
-    name: "Backend Service",
-    slug: "backend-service",
-});
-```
-
-### Secret Management
-
-```typescript
-const secret = new infisical.Secret("database-password", {
-    projectId: project.id,
-    environment: "production",
-    key: "DATABASE_PASSWORD",
-    value: dbPassword,
-    type: "shared",
-});
-```
-
-### Identity Management
-
-```typescript
-const identity = new infisical.Identity("api-identity", {
-    name: "API Service",
-    roleSlug: "developer",
-    projectId: project.id,
-});
-```
-
-### Gateways
-
-A gateway authenticates with the platform identity of the machine that runs it. Kubernetes auth requires `allowedNamespaces` or `allowedServiceAccountNames`. AWS auth requires `allowedPrincipalArns` or `allowedAccountIds`. GCP auth requires `allowedServiceAccounts` or `allowedProjects`.
-
-```typescript
-const gateway = new infisical.Gateway("edge", {
-    name: "edge-gateway",
-    kubernetesAuth: {
-        allowedNamespaces: ["infisical"],
-        allowedServiceAccountNames: ["infisical-gateway"],
-    },
-});
-```
-
-Token auth stores a secret and does not re-authenticate on restart. Pair an empty `tokenAuth` block with `GatewayEnrollmentToken`. `keepers` forces a new token when a listed value changes.
-
-```typescript
-const tokenGateway = new infisical.Gateway("token-gateway", {
-    name: "token-gateway",
-    tokenAuth: {},
-});
-
-const enrollmentToken = new infisical.GatewayEnrollmentToken("token", {
-    gatewayId: tokenGateway.id,
-});
-```
-
-### Key and approval policy fields
-
-`KmsKey.isExportable` defaults to `true`. Changing it replaces the key.
-
-`SecretApprovalPolicy.bypassApprovalsForMachineIdentities` controls whether machine identities skip the policy. Leave it unset to take Infisical's default on creation and to leave the current value unchanged on update.
-
+- [getGateway](/pulumi-any-terraform/providers/infisical/functions/get-gateway)
+- [getGroups](/pulumi-any-terraform/providers/infisical/functions/get-groups)
+- [getIdentity](/pulumi-any-terraform/providers/infisical/functions/get-identity)
+- [getIdentityDetails](/pulumi-any-terraform/providers/infisical/functions/get-identity-details)
+- [getKmsKeyPublicKey](/pulumi-any-terraform/providers/infisical/functions/get-kms-key-public-key)
+- [getOrganization](/pulumi-any-terraform/providers/infisical/functions/get-organization)
+- [getProjectEnvironment](/pulumi-any-terraform/providers/infisical/functions/get-project-environment)
+- [getProjectIdentity](/pulumi-any-terraform/providers/infisical/functions/get-project-identity)
+- [getProjectRole](/pulumi-any-terraform/providers/infisical/functions/get-project-role)
+- [getProjects](/pulumi-any-terraform/providers/infisical/functions/get-projects)
+- [getProjectsList](/pulumi-any-terraform/providers/infisical/functions/get-projects-list)
+- [getProjectUser](/pulumi-any-terraform/providers/infisical/functions/get-project-user)
+- [getSecretFolders](/pulumi-any-terraform/providers/infisical/functions/get-secret-folders)
+- [getSecretMetadata](/pulumi-any-terraform/providers/infisical/functions/get-secret-metadata)
+- [getSecrets](/pulumi-any-terraform/providers/infisical/functions/get-secrets)
+- [getSecretTag](/pulumi-any-terraform/providers/infisical/functions/get-secret-tag)

@@ -1,0 +1,147 @@
+---
+title: "getCollector"
+description: "Function getCollector in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Function getCollector in pulumi-logtail.
+
+Invoke token: `logtail:index/getCollector:getCollector`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Call `logtail.getCollector(args)`.
+
+`getCollectorOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `configurations` | `GetCollectorConfiguration[]` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `customBuckets` | `GetCollectorCustomBucket[]` | yes |  |
+| `dataRegion` | `string` | yes |  |
+| `databases` | `GetCollectorDatabase[]` | yes |  |
+| `databasesCount` | `number` | yes |  |
+| `hostsCount` | `number` | yes |  |
+| `hostsUpCount` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `ingestingPaused` | `boolean` | yes |  |
+| `liveTailPattern` | `string` | yes |  |
+| `logsRetention` | `number` | yes |  |
+| `metricsRetention` | `number` | yes |  |
+| `name` | `string` | yes |  |
+| `note` | `string` | yes |  |
+| `pingedAt` | `string` | yes |  |
+| `platform` | `string` | yes |  |
+| `secret` | `string` | yes |  |
+| `sourceGroupId` | `number` | yes |  |
+| `sourceId` | `number` | yes |  |
+| `sourceVrlTransformation` | `string` | yes |  |
+| `status` | `string` | yes |  |
+| `teamId` | `string` | yes |  |
+| `teamName` | `string` | yes |  |
+| `updatedAt` | `string` | yes |  |
+| `userVectorConfig` | `string` | yes |  |
+
+## `GetCollectorConfiguration`
+
+Output object `GetCollectorConfiguration`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `bufferMaxEvents` | `number` | no |  |
+| `components` | `GetCollectorConfigurationComponent[]` | no |  |
+| `diskBatchSizeMb` | `number` | no |  |
+| `logLineLengthLimitKb` | `number` | no |  |
+| `logsSampleRate` | `number` | no |  |
+| `memoryBatchSizeMb` | `number` | no |  |
+| `mergeLogs` | `boolean` | no |  |
+| `mergeLogsConfig` | `string` | no |  |
+| `namespaceOptions` | `GetCollectorConfigurationNamespaceOption[]` | no |  |
+| `serviceOptions` | `GetCollectorConfigurationServiceOption[]` | no |  |
+| `tracesSampleRate` | `number` | no |  |
+| `vrlTransformation` | `string` | no |  |
+| `whenFull` | `string` | no |  |
+
+## `GetCollectorConfigurationComponent`
+
+Output object `GetCollectorConfigurationComponent`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ebpfMetrics` | `boolean` | no |  |
+| `ebpfRedMetrics` | `boolean` | no |  |
+| `ebpfTracingBasic` | `boolean` | no |  |
+| `ebpfTracingFull` | `boolean` | no |  |
+| `logsCollectorInternals` | `boolean` | no |  |
+| `logsDocker` | `boolean` | no |  |
+| `logsHost` | `boolean` | no |  |
+| `logsKubernetes` | `boolean` | no |  |
+| `metricsApache` | `boolean` | no |  |
+| `metricsCluster` | `boolean` | no |  |
+| `metricsDatabases` | `boolean` | no |  |
+| `metricsElasticsearch` | `boolean` | no |  |
+| `metricsMysql` | `boolean` | no |  |
+| `metricsNginx` | `boolean` | no |  |
+| `metricsPgbouncer` | `boolean` | no |  |
+| `metricsPostgres` | `boolean` | no |  |
+| `metricsTraefik` | `boolean` | no |  |
+| `tracesOpentelemetry` | `boolean` | no |  |
+
+## `GetCollectorConfigurationNamespaceOption`
+
+Output object `GetCollectorConfigurationNamespaceOption`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no |  |
+| `logSampling` | `number` | no |  |
+| `name` | `string` | no |  |
+
+## `GetCollectorConfigurationServiceOption`
+
+Output object `GetCollectorConfigurationServiceOption`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no |  |
+| `logSampling` | `number` | no |  |
+| `name` | `string` | no |  |
+
+## `GetCollectorCustomBucket`
+
+Output object `GetCollectorCustomBucket`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no |  |
+| `endpoint` | `string` | no |  |
+| `keepDataAfterRetention` | `boolean` | no |  |
+| `name` | `string` | no |  |
+| `secretAccessKey` | `string` | no |  |
+
+## `GetCollectorDatabase`
+
+Output object `GetCollectorDatabase`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `host` | `string` | no |  |
+| `id` | `number` | no |  |
+| `password` | `string` | no |  |
+| `port` | `number` | no |  |
+| `serviceType` | `string` | no |  |
+| `sslMode` | `string` | no |  |
+| `tls` | `string` | no |  |
+| `username` | `string` | no |  |

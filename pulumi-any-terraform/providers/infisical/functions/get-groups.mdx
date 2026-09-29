@@ -1,0 +1,40 @@
+---
+title: "getGroups"
+description: "Function getGroups in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Function getGroups in pulumi-infisical.
+
+Invoke token: `infisical:index/getGroups:getGroups`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Call `infisical.getGroups(args)`.
+
+`getGroupsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+This function takes no arguments.
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `groups` | `GetGroupsGroup[]` | yes |  |
+
+## `GetGroupsGroup`
+
+Output object `GetGroupsGroup`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes | The ID of the group |
+| `name` | `string` | yes | The name of the group |
+| `orgId` | `string` | yes | The organization ID of the group |
+| `role` | `string` | yes | The role of the group in the organization |
+| `roleId` | `string` | yes | The role ID of the group in the organization |

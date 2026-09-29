@@ -1,0 +1,153 @@
+---
+title: "Stack"
+description: "Resource Stack in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Stack in pulumi-portainer.
+
+Pulumi type: `portainer:index/stack:Stack`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Stack(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `active` | `boolean` | no | Whether the stack should be running. Set to false to stop the stack. |
+| `additionalFiles` | `string[]` | no | List of additional Compose file paths to use when deploying from Git repository. |
+| `additionalHelmValuesFiles` | `string[]` | no | List of additional Helm values files (e.g. values-prod.yaml). Only used with helm_chart_path. |
+| `authorizedTeams` | `number[]` | no | List of team IDs authorized to access this stack (only if ownership is restricted). |
+| `authorizedUsers` | `number[]` | no | List of user IDs authorized to access this stack (only if ownership is restricted). |
+| `composeFormat` | `boolean` | no | Whether the supplied content is in Docker Compose format (true) instead of native Kubernetes manifest (false). Only applies to Kubernetes stacks. Changing this value forces resource recreation. |
+| `deploymentType` | `string` | yes | Deployment mode: 'standalone', 'swarm', or 'kubernetes' |
+| `endpointId` | `number` | yes | Identifier of the Portainer environment (endpoint) where the stack will be deployed. Changing this value forces resource recreation. |
+| `envs` | `StackEnv (input)[]` | no | List of environment variables injected into the stack at deploy time. |
+| `filePathInRepository` | `string` | no | Path to Compose/manifest file in the repository. Defaults to docker-compose.yml for Docker/Swarm stacks. Not required when `helmChartPath` is set. |
+| `filesystemPath` | `string` | no | Local filesystem path on the host used when `supportRelativePath` is true. Maps to the repository working directory. |
+| `forceUpdate` | `boolean` | no | Whether to prune unused services/networks during stack update (default: true) |
+| `gitRepositoryAuthentication` | `boolean` | no | Whether the Git repository requires authentication. When true,`repositoryUsername` and `repositoryPassword`(or their write-only equivalents) are sent to Portainer. |
+| `helmChartPath` | `string` | no | Path to a Helm chart folder in the Git repository (must contain Chart.yaml). Only used when `deploymentType` is 'kubernetes' and method is 'repository'. |
+| `manifestUrl` | `string` | no | URL to a remote Kubernetes manifest used when `deploymentType` is 'kubernetes' and method is 'url'. Changing this value forces resource recreation. |
+| `method` | `string` | yes | Creation method: 'string', 'file', 'repository', or 'url' |
+| `name` | `string` | no | Name of the Portainer stack. Must be unique within the target endpoint. Changing this value forces resource recreation. |
+| `namespace` | `string` | no | Kubernetes namespace used when `deploymentType` is 'kubernetes'. Changing this value forces resource recreation. |
+| `ownership` | `string` | no | Ownership level: 'public', 'administrators' or 'restricted'. |
+| `prune` | `boolean` | no | Whether to prune unused services/networks during stack update (default: false) |
+| `pullImage` | `boolean` | no | Whether to force pull latest images during stack update (default: true) |
+| `registries` | `number[]` | no | List of registry IDs allowed for this stack. |
+| `repositoryGitCredentialId` | `number` | no | ID of the shared Git credentials to use for authentication (Portainer &lt; 2.43). Replaced by 'source_id' in Portainer 2.43 STS, which switched to the Sources model; on 2.43+ this field is ignored. Both are sent, so a single configuration stays compatible with old and new Portainer. |
+| `repositoryPassword` | `string` | no | Password or personal access token used to authenticate against the Git repository. Stored in state as a sensitive value. |
+| `repositoryPasswordWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository password (supports ephemeral values; not stored in Terraform state). |
+| `repositoryReferenceName` | `string` | no | Git reference (branch or tag) used by Portainer when deploying from the repository. Defaults to refs/heads/main. |
+| `repositoryUrl` | `string` | no | URL of the Git repository used to deploy the stack when method is 'repository'. Changing this value forces resource recreation. |
+| `repositoryUrlWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository URL (supports ephemeral values; not stored in Terraform state). |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. |
+| `repositoryUsernameWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository username (supports ephemeral values). |
+| `repositoryWoVersion` | `number` | no | Version flag for write-only repository credentials; increment to trigger recreation. |
+| `sourceId` | `number` | no | ID of a Portainer Source (Git source) providing the repository URL and credentials. Introduced in Portainer 2.43 STS, which replaced 'repository_git_credential_id'. When set (non-zero), Portainer resolves the repository URL/credentials from the referenced Source and ignores the inline repository_username/repository_password and `repositoryGitCredentialId` fields. |
+| `stackFileContent` | `string` | no | Inline Compose or Kubernetes manifest content used to deploy the stack. Required when method is 'string'; populated from `stackFilePath` when method is 'file'. |
+| `stackFilePath` | `string` | no | Local filesystem path to a Compose or manifest file. Contents are read and uploaded to Portainer when method is 'file'. |
+| `stackId` | `string` | no |  |
+| `stackWebhook` | `boolean` | no | Enable autoUpdate webhook (GitOps). |
+| `supportRelativePath` | `boolean` | no | Whether Portainer should support relative paths inside the Compose file for bind mounts referencing repository contents. Changing this value forces resource recreation. |
+| `swarmId` | `string` | no | Identifier of the Docker Swarm cluster used when `deploymentType` is 'swarm'. Automatically fetched from Portainer when not provided. Changing this value forces resource recreation. |
+| `timeouts` | `StackTimeouts (input)` | no |  |
+| `tlsskipVerify` | `boolean` | no | Whether to skip TLS verification when Portainer connects to the Git repository. Changing this value forces resource recreation. |
+| `updateInterval` | `string` | no | GitOps auto-update polling interval (e.g. '5m', '1h'). When set, Portainer periodically checks the Git repository for changes and redeploys the stack. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `active` | `boolean` | no | Whether the stack should be running. Set to false to stop the stack. |
+| `additionalFiles` | `string[]` | no | List of additional Compose file paths to use when deploying from Git repository. |
+| `additionalHelmValuesFiles` | `string[]` | no | List of additional Helm values files (e.g. values-prod.yaml). Only used with helm_chart_path. |
+| `authorizedTeams` | `number[]` | no | List of team IDs authorized to access this stack (only if ownership is restricted). |
+| `authorizedUsers` | `number[]` | no | List of user IDs authorized to access this stack (only if ownership is restricted). |
+| `composeFormat` | `boolean` | no | Whether the supplied content is in Docker Compose format (true) instead of native Kubernetes manifest (false). Only applies to Kubernetes stacks. Changing this value forces resource recreation. |
+| `deploymentType` | `string` | no | Deployment mode: 'standalone', 'swarm', or 'kubernetes' |
+| `endpointId` | `number` | no | Identifier of the Portainer environment (endpoint) where the stack will be deployed. Changing this value forces resource recreation. |
+| `envs` | `StackEnv (output)[]` | no | List of environment variables injected into the stack at deploy time. |
+| `filePathInRepository` | `string` | no | Path to Compose/manifest file in the repository. Defaults to docker-compose.yml for Docker/Swarm stacks. Not required when `helmChartPath` is set. |
+| `filesystemPath` | `string` | no | Local filesystem path on the host used when `supportRelativePath` is true. Maps to the repository working directory. |
+| `forceUpdate` | `boolean` | no | Whether to prune unused services/networks during stack update (default: true) |
+| `gitRepositoryAuthentication` | `boolean` | no | Whether the Git repository requires authentication. When true,`repositoryUsername` and `repositoryPassword`(or their write-only equivalents) are sent to Portainer. |
+| `helmChartPath` | `string` | no | Path to a Helm chart folder in the Git repository (must contain Chart.yaml). Only used when `deploymentType` is 'kubernetes' and method is 'repository'. |
+| `manifestUrl` | `string` | no | URL to a remote Kubernetes manifest used when `deploymentType` is 'kubernetes' and method is 'url'. Changing this value forces resource recreation. |
+| `method` | `string` | no | Creation method: 'string', 'file', 'repository', or 'url' |
+| `name` | `string` | no | Name of the Portainer stack. Must be unique within the target endpoint. Changing this value forces resource recreation. |
+| `namespace` | `string` | no | Kubernetes namespace used when `deploymentType` is 'kubernetes'. Changing this value forces resource recreation. |
+| `ownership` | `string` | no | Ownership level: 'public', 'administrators' or 'restricted'. |
+| `prune` | `boolean` | no | Whether to prune unused services/networks during stack update (default: false) |
+| `pullImage` | `boolean` | no | Whether to force pull latest images during stack update (default: true) |
+| `registries` | `number[]` | no | List of registry IDs allowed for this stack. |
+| `repositoryGitCredentialId` | `number` | no | ID of the shared Git credentials to use for authentication (Portainer &lt; 2.43). Replaced by 'source_id' in Portainer 2.43 STS, which switched to the Sources model; on 2.43+ this field is ignored. Both are sent, so a single configuration stays compatible with old and new Portainer. |
+| `repositoryPassword` | `string` | no | Password or personal access token used to authenticate against the Git repository. Stored in state as a sensitive value. |
+| `repositoryPasswordWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository password (supports ephemeral values; not stored in Terraform state). |
+| `repositoryReferenceName` | `string` | no | Git reference (branch or tag) used by Portainer when deploying from the repository. Defaults to refs/heads/main. |
+| `repositoryUrl` | `string` | no | URL of the Git repository used to deploy the stack when method is 'repository'. Changing this value forces resource recreation. |
+| `repositoryUrlWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository URL (supports ephemeral values; not stored in Terraform state). |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. |
+| `repositoryUsernameWo` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. Write-only repository username (supports ephemeral values). |
+| `repositoryWoVersion` | `number` | no | Version flag for write-only repository credentials; increment to trigger recreation. |
+| `resourceControlId` | `number` | yes | Identifier of the Portainer resource control entry associated with the stack. Computed by Portainer. |
+| `sourceId` | `number` | no | ID of a Portainer Source (Git source) providing the repository URL and credentials. Introduced in Portainer 2.43 STS, which replaced 'repository_git_credential_id'. When set (non-zero), Portainer resolves the repository URL/credentials from the referenced Source and ignores the inline repository_username/repository_password and `repositoryGitCredentialId` fields. |
+| `stackFileContent` | `string` | no | Inline Compose or Kubernetes manifest content used to deploy the stack. Required when method is 'string'; populated from `stackFilePath` when method is 'file'. |
+| `stackFilePath` | `string` | no | Local filesystem path to a Compose or manifest file. Contents are read and uploaded to Portainer when method is 'file'. |
+| `stackId` | `string` | no |  |
+| `stackWebhook` | `boolean` | no | Enable autoUpdate webhook (GitOps). |
+| `supportRelativePath` | `boolean` | no | Whether Portainer should support relative paths inside the Compose file for bind mounts referencing repository contents. Changing this value forces resource recreation. |
+| `swarmId` | `string` | no | Identifier of the Docker Swarm cluster used when `deploymentType` is 'swarm'. Automatically fetched from Portainer when not provided. Changing this value forces resource recreation. |
+| `timeouts` | `StackTimeouts (output)` | no |  |
+| `tlsskipVerify` | `boolean` | no | Whether to skip TLS verification when Portainer connects to the Git repository. Changing this value forces resource recreation. |
+| `updateInterval` | `string` | no | GitOps auto-update polling interval (e.g. '5m', '1h'). When set, Portainer periodically checks the Git repository for changes and redeploys the stack. |
+| `webhookId` | `string` | yes | UUID of the GitOps webhook (read-only). |
+| `webhookUrl` | `string` | yes | Full URL of the webhook trigger |
+
+## `StackEnv (input)`
+
+Input object `StackEnv`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Name of the environment variable. |
+| `value` | `string` | yes | Value of the environment variable. |
+
+## `StackTimeouts (input)`
+
+Input object `StackTimeouts`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |
+| `delete` | `string` | no |  |
+| `update` | `string` | no |  |
+
+## `StackEnv (output)`
+
+Output object `StackEnv`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Name of the environment variable. |
+| `value` | `string` | yes | Value of the environment variable. |
+
+## `StackTimeouts (output)`
+
+Output object `StackTimeouts`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |
+| `delete` | `string` | no |  |
+| `update` | `string` | no |  |

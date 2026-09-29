@@ -1,0 +1,142 @@
+---
+title: "CertManagerApplicationProfile"
+description: "Resource CertManagerApplicationProfile in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource CertManagerApplicationProfile in pulumi-infisical.
+
+Pulumi type: `infisical:index/certManagerApplicationProfile:CertManagerApplicationProfile`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.CertManagerApplicationProfile(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `acmeConfig` | `CertManagerApplicationProfileAcmeConfig (input)` | no | Enable the ACME enrollment method. Omit the block to disable ACME enrollment. |
+| `apiConfig` | `CertManagerApplicationProfileApiConfig (input)` | no | Enable the API enrollment method. Omit the block to disable API enrollment. |
+| `applicationId` | `string` | yes | The ID of the Certificate Manager application |
+| `estConfig` | `CertManagerApplicationProfileEstConfig (input)` | no | Enable the EST enrollment method. Omit the block to disable EST enrollment. |
+| `profileId` | `string` | yes | The ID of the certificate profile to attach |
+| `scepConfig` | `CertManagerApplicationProfileScepConfig (input)` | no | Enable the SCEP enrollment method. Omit the block to disable SCEP enrollment. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `acmeConfig` | `CertManagerApplicationProfileAcmeConfig (output)` | no | Enable the ACME enrollment method. Omit the block to disable ACME enrollment. |
+| `apiConfig` | `CertManagerApplicationProfileApiConfig (output)` | no | Enable the API enrollment method. Omit the block to disable API enrollment. |
+| `applicationId` | `string` | no | The ID of the Certificate Manager application |
+| `estConfig` | `CertManagerApplicationProfileEstConfig (output)` | no | Enable the EST enrollment method. Omit the block to disable EST enrollment. |
+| `profileId` | `string` | no | The ID of the certificate profile to attach |
+| `scepConfig` | `CertManagerApplicationProfileScepConfig (output)` | no | Enable the SCEP enrollment method. Omit the block to disable SCEP enrollment. |
+
+## `CertManagerApplicationProfileAcmeConfig (input)`
+
+Input object `CertManagerApplicationProfileAcmeConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `directoryUrl` | `string` | no | The ACME directory URL clients should use. |
+| `eabKid` | `string` | no | External Account Binding key identifier. Populated on create and on import; routine refreshes don't re-fetch it. Rotated only by the explicit rotate endpoint, never by Terraform. |
+| `eabSecret` | `string` | no | External Account Binding shared secret. Populated on create and on import; routine refreshes don't re-fetch it. Rotated only by the explicit rotate endpoint, never by Terraform. |
+| `skipDnsOwnershipVerification` | `boolean` | no | Skip DNS ownership verification. Defaults to false. |
+| `skipEabBinding` | `boolean` | no | Skip External Account Binding. Defaults to false. Cannot be set to true at the same time as skip_dns_ownership_verification. |
+
+## `CertManagerApplicationProfileApiConfig (input)`
+
+Input object `CertManagerApplicationProfileApiConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `autoRenew` | `boolean` | no | Whether to automatically renew certificates. Defaults to false when omitted. |
+| `renewBeforeDays` | `number` | no | Number of days before expiration to renew (1-30). Defaults to 7 when omitted. |
+
+## `CertManagerApplicationProfileEstConfig (input)`
+
+Input object `CertManagerApplicationProfileEstConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `caChain` | `string` | no | PEM-encoded CA chain used for bootstrap CA validation (only honored when `disableBootstrapCaValidation` is false). |
+| `disableBootstrapCaValidation` | `boolean` | no | Whether to disable bootstrap CA validation. Defaults to false. |
+| `endpointUrl` | `string` | no | The EST endpoint URL clients should use. |
+| `passphrase` | `string` | yes | EST passphrase used to authorize certificate requests. |
+
+## `CertManagerApplicationProfileScepConfig (input)`
+
+Input object `CertManagerApplicationProfileScepConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowCertBasedRenewal` | `boolean` | no | Allow certificate-based renewal. Defaults to true. |
+| `challengeEndpointUrl` | `string` | no | The SCEP dynamic challenge endpoint URL (only set when `challengeType` is dynamic). |
+| `challengePassword` | `string` | no | Static-mode SCEP challenge password (min 8 chars). Required when `challengeType` is static. |
+| `challengeType` | `string` | no | SCEP challenge type. Supported values: static, dynamic. Defaults to static. |
+| `dynamicChallengeExpiryMinutes` | `number` | no | Expiry of a dynamic challenge in minutes (1-1440). Only used when `challengeType` is dynamic. |
+| `dynamicChallengeMaxPending` | `number` | no | Maximum pending dynamic challenges (1-1000). Only used when `challengeType` is dynamic. |
+| `includeCaCertInResponse` | `boolean` | no | Include the issuing CA certificate in SCEP responses. Defaults to true. |
+| `raCertExpiresAt` | `string` | no | ISO-8601 timestamp when the RA certificate expires. |
+| `raCertificatePem` | `string` | no | The PEM-encoded RA certificate used by the SCEP service. |
+| `scepEndpointUrl` | `string` | no | The SCEP endpoint URL clients should use. |
+| `signRaWithCa` | `boolean` | no | Sign the RA certificate with the profile's CA instead of self-signing it, so it chains to the CA root. Required by strict clients such as Apple and Microsoft Intune. Only supported for internal CAs. Cannot be changed once SCEP enrollment is configured. To change it, remove `scepConfig`(or the whole resource) to disable SCEP enrollment in one apply, then add `scepConfig` back with the new value in a subsequent apply. Defaults to false. |
+
+## `CertManagerApplicationProfileAcmeConfig (output)`
+
+Output object `CertManagerApplicationProfileAcmeConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `directoryUrl` | `string` | yes | The ACME directory URL clients should use. |
+| `eabKid` | `string` | yes | External Account Binding key identifier. Populated on create and on import; routine refreshes don't re-fetch it. Rotated only by the explicit rotate endpoint, never by Terraform. |
+| `eabSecret` | `string` | yes | External Account Binding shared secret. Populated on create and on import; routine refreshes don't re-fetch it. Rotated only by the explicit rotate endpoint, never by Terraform. |
+| `skipDnsOwnershipVerification` | `boolean` | yes | Skip DNS ownership verification. Defaults to false. |
+| `skipEabBinding` | `boolean` | yes | Skip External Account Binding. Defaults to false. Cannot be set to true at the same time as skip_dns_ownership_verification. |
+
+## `CertManagerApplicationProfileApiConfig (output)`
+
+Output object `CertManagerApplicationProfileApiConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoRenew` | `boolean` | yes | Whether to automatically renew certificates. Defaults to false when omitted. |
+| `renewBeforeDays` | `number` | yes | Number of days before expiration to renew (1-30). Defaults to 7 when omitted. |
+
+## `CertManagerApplicationProfileEstConfig (output)`
+
+Output object `CertManagerApplicationProfileEstConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `caChain` | `string` | no | PEM-encoded CA chain used for bootstrap CA validation (only honored when `disableBootstrapCaValidation` is false). |
+| `disableBootstrapCaValidation` | `boolean` | yes | Whether to disable bootstrap CA validation. Defaults to false. |
+| `endpointUrl` | `string` | yes | The EST endpoint URL clients should use. |
+| `passphrase` | `string` | yes | EST passphrase used to authorize certificate requests. |
+
+## `CertManagerApplicationProfileScepConfig (output)`
+
+Output object `CertManagerApplicationProfileScepConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowCertBasedRenewal` | `boolean` | yes | Allow certificate-based renewal. Defaults to true. |
+| `challengeEndpointUrl` | `string` | yes | The SCEP dynamic challenge endpoint URL (only set when `challengeType` is dynamic). |
+| `challengePassword` | `string` | no | Static-mode SCEP challenge password (min 8 chars). Required when `challengeType` is static. |
+| `challengeType` | `string` | yes | SCEP challenge type. Supported values: static, dynamic. Defaults to static. |
+| `dynamicChallengeExpiryMinutes` | `number` | yes | Expiry of a dynamic challenge in minutes (1-1440). Only used when `challengeType` is dynamic. |
+| `dynamicChallengeMaxPending` | `number` | yes | Maximum pending dynamic challenges (1-1000). Only used when `challengeType` is dynamic. |
+| `includeCaCertInResponse` | `boolean` | yes | Include the issuing CA certificate in SCEP responses. Defaults to true. |
+| `raCertExpiresAt` | `string` | yes | ISO-8601 timestamp when the RA certificate expires. |
+| `raCertificatePem` | `string` | yes | The PEM-encoded RA certificate used by the SCEP service. |
+| `scepEndpointUrl` | `string` | yes | The SCEP endpoint URL clients should use. |
+| `signRaWithCa` | `boolean` | yes | Sign the RA certificate with the profile's CA instead of self-signing it, so it chains to the CA root. Required by strict clients such as Apple and Microsoft Intune. Only supported for internal CAs. Cannot be changed once SCEP enrollment is configured. To change it, remove `scepConfig`(or the whole resource) to disable SCEP enrollment in one apply, then add `scepConfig` back with the new value in a subsequent apply. Defaults to false. |

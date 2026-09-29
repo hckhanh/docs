@@ -1,0 +1,36 @@
+---
+title: "SsrfAllowlist"
+description: "Resource SsrfAllowlist in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource SsrfAllowlist in pulumi-portainer.
+
+Pulumi type: `portainer:index/ssrfAllowlist:SsrfAllowlist`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.SsrfAllowlist(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `entries` | `string[]` | yes | URLs Portainer is allowed to make outbound proxy requests to. The list is authoritative: a URL missing from it is removed. |
+| `mode` | `string` | yes | How the allow list is applied: `off` does not check outbound requests at all, `audit` records requests that are not on the list but still makes them, and `enforce` blocks them. |
+| `ssrfAllowlistId` | `string` | no |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `entries` | `string[]` | no | URLs Portainer is allowed to make outbound proxy requests to. The list is authoritative: a URL missing from it is removed. |
+| `mode` | `string` | no | How the allow list is applied: `off` does not check outbound requests at all, `audit` records requests that are not on the list but still makes them, and `enforce` blocks them. |
+| `ssrfAllowlistId` | `string` | no |  |

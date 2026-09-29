@@ -26,6 +26,8 @@
     "instructions": [
       "This site documents fast-url, format-prompt, ja4, vn-number, what-the-fetch, and Pulumi Any Terraform.",
       "Each library is a separate product. Its pages start at /<library>/overview.",
+      "Pulumi provider packages are TypeScript modules named pulumi-<provider>. Resource pages are /pulumi-any-terraform/providers/<provider>/resources/<resource>. Function pages are under functions.",
+      "Nested object fields are under that object heading. A long reference continues on the linked part pages. They are not arguments of the parent resource.",
       "Use only the APIs and fields written on the pages for that library. Do not invent fields.",
       "The Markdown for a page is that path with .md appended.",
       "If a URL is missing, follow the suggested pages or search /search?q= instead of guessing another path.",
@@ -72,18 +74,12 @@
               {
                 "product": "Pulumi Any Terraform",
                 "icon": "/images/pulumi-any-terraform.svg",
-                "description": "Bridge any Terraform provider to Pulumi",
+                "description": "TypeScript packages bridged from Terraform providers",
                 "groups": [
                   {
-                    "group": "Guide",
+                    "group": "Overview",
                     "pages": [
-                      "pulumi-any-terraform/overview",
-                      "pulumi-any-terraform/getting-started",
-                      "pulumi-any-terraform/architecture",
-                      "pulumi-any-terraform/contributing",
-                      "pulumi-any-terraform/troubleshooting",
-                      "pulumi-any-terraform/faq",
-                      "pulumi-any-terraform/ci-cd"
+                      "pulumi-any-terraform/overview"
                     ]
                   },
                   {
@@ -91,16 +87,62 @@
                     "icon": "/images/providers/better-stack.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/better-uptime/overview",
-                      "pulumi-any-terraform/providers/better-uptime/configuration"
-                    ]
-                  },
-                  {
-                    "group": "Better Uptime Resources",
-                    "icon": "/images/providers/better-stack.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/better-uptime/monitor",
-                      "pulumi-any-terraform/providers/better-uptime/status-page",
-                      "pulumi-any-terraform/providers/better-uptime/heartbeat"
+                      "pulumi-any-terraform/providers/better-uptime/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/better-uptime/resources/amazon-sns-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/aws-cloudwatch-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/azure-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/catalog-attribute",
+                          "pulumi-any-terraform/providers/better-uptime/resources/catalog-record",
+                          "pulumi-any-terraform/providers/better-uptime/resources/catalog-relation",
+                          "pulumi-any-terraform/providers/better-uptime/resources/datadog-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/elastic-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/email-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/google-monitoring-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/grafana-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/heartbeat",
+                          "pulumi-any-terraform/providers/better-uptime/resources/heartbeat-group",
+                          "pulumi-any-terraform/providers/better-uptime/resources/incoming-webhook",
+                          "pulumi-any-terraform/providers/better-uptime/resources/jira-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/metadata",
+                          "pulumi-any-terraform/providers/better-uptime/resources/monitor",
+                          "pulumi-any-terraform/providers/better-uptime/resources/monitor-group",
+                          "pulumi-any-terraform/providers/better-uptime/resources/new-relic-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/on-call-calendar",
+                          "pulumi-any-terraform/providers/better-uptime/resources/outgoing-webhook",
+                          "pulumi-any-terraform/providers/better-uptime/resources/pagerduty-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/policy",
+                          "pulumi-any-terraform/providers/better-uptime/resources/policy-group",
+                          "pulumi-any-terraform/providers/better-uptime/resources/prometheus-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/severity",
+                          "pulumi-any-terraform/providers/better-uptime/resources/severity-group",
+                          "pulumi-any-terraform/providers/better-uptime/resources/splunk-oncall-integration",
+                          "pulumi-any-terraform/providers/better-uptime/resources/status-page",
+                          "pulumi-any-terraform/providers/better-uptime/resources/status-page-group",
+                          "pulumi-any-terraform/providers/better-uptime/resources/status-page-resource",
+                          "pulumi-any-terraform/providers/better-uptime/resources/status-page-section",
+                          "pulumi-any-terraform/providers/better-uptime/resources/team-member"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-amazon-sns-integration",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-incoming-webhook",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-ip-list",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-monitor",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-on-call-calendar",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-policy",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-role",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-severity",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-slack-integration",
+                          "pulumi-any-terraform/providers/better-uptime/functions/get-team-member"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -108,7 +150,60 @@
                     "icon": "/images/providers/buildkite.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/buildkite/overview",
-                      "pulumi-any-terraform/providers/buildkite/configuration"
+                      "pulumi-any-terraform/providers/buildkite/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/buildkite/resources/agent-token",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster-agent-token",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster-default-queue",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster-maintainer",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster-queue",
+                          "pulumi-any-terraform/providers/buildkite/resources/cluster-secret",
+                          "pulumi-any-terraform/providers/buildkite/resources/notification-service",
+                          "pulumi-any-terraform/providers/buildkite/resources/organization",
+                          "pulumi-any-terraform/providers/buildkite/resources/organization-banner",
+                          "pulumi-any-terraform/providers/buildkite/resources/organization-pipeline-settings",
+                          "pulumi-any-terraform/providers/buildkite/resources/organization-rule",
+                          "pulumi-any-terraform/providers/buildkite/resources/pipeline",
+                          "pulumi-any-terraform/providers/buildkite/resources/pipeline-schedule",
+                          "pulumi-any-terraform/providers/buildkite/resources/pipeline-team",
+                          "pulumi-any-terraform/providers/buildkite/resources/pipeline-template",
+                          "pulumi-any-terraform/providers/buildkite/resources/pipeline-webhook",
+                          "pulumi-any-terraform/providers/buildkite/resources/portal",
+                          "pulumi-any-terraform/providers/buildkite/resources/registry",
+                          "pulumi-any-terraform/providers/buildkite/resources/team",
+                          "pulumi-any-terraform/providers/buildkite/resources/team-member",
+                          "pulumi-any-terraform/providers/buildkite/resources/team-registry",
+                          "pulumi-any-terraform/providers/buildkite/resources/test-suite",
+                          "pulumi-any-terraform/providers/buildkite/resources/test-suite-team"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/buildkite/functions/get-cluster",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-cluster-network-ranges",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-clusters",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-meta",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-organization",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-organization-member",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-organization-members",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-organization-rule",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-pipeline",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-pipeline-template",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-portal",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-portals",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-registry",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-signed-pipeline-steps",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-team",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-teams",
+                          "pulumi-any-terraform/providers/buildkite/functions/get-test-suite"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -116,21 +211,259 @@
                     "icon": "/images/providers/bunnynet.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/bunnynet/overview",
-                      "pulumi-any-terraform/providers/bunnynet/configuration"
+                      "pulumi-any-terraform/providers/bunnynet/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/bunnynet/resources/account-subuser",
+                          "pulumi-any-terraform/providers/bunnynet/resources/compute-container-app",
+                          "pulumi-any-terraform/providers/bunnynet/resources/compute-container-imageregistry",
+                          "pulumi-any-terraform/providers/bunnynet/resources/compute-script",
+                          "pulumi-any-terraform/providers/bunnynet/resources/compute-script-secret",
+                          "pulumi-any-terraform/providers/bunnynet/resources/compute-script-variable",
+                          "pulumi-any-terraform/providers/bunnynet/resources/database",
+                          "pulumi-any-terraform/providers/bunnynet/resources/dns-record",
+                          "pulumi-any-terraform/providers/bunnynet/resources/dns-script",
+                          "pulumi-any-terraform/providers/bunnynet/resources/dns-script-variable",
+                          "pulumi-any-terraform/providers/bunnynet/resources/dns-zone",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-access-list",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-edgerule",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-hostname",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-optimizer-class",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-ratelimit-rule",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-shield",
+                          "pulumi-any-terraform/providers/bunnynet/resources/pullzone-waf-rule",
+                          "pulumi-any-terraform/providers/bunnynet/resources/storage-file",
+                          "pulumi-any-terraform/providers/bunnynet/resources/storage-zone",
+                          "pulumi-any-terraform/providers/bunnynet/resources/stream-collection",
+                          "pulumi-any-terraform/providers/bunnynet/resources/stream-library",
+                          "pulumi-any-terraform/providers/bunnynet/resources/stream-video"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-app-container",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-app-container-endpoint",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-compute-container-imageregistry",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-dns-record",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-dns-zone",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-pullzone",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-pullzone-access-lists",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-region",
+                          "pulumi-any-terraform/providers/bunnynet/functions/get-video-language"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "Infisical",
                     "icon": "/images/providers/infisical.svg",
                     "pages": [
-                      "pulumi-any-terraform/providers/infisical/overview"
+                      "pulumi-any-terraform/providers/infisical/overview",
+                      "pulumi-any-terraform/providers/infisical/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/infisical/resources/access-approval-policy",
+                          "pulumi-any-terraform/providers/infisical/resources/alert",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection1password",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-aws",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-azure-app-configuration",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-azure-client-secrets",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-azure-devops",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-azure-key-vault",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-bitbucket",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-circleci",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-cloudflare",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-databricks",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-datadog",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-digicert",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-flyio",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-gcp",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-github",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-gitlab",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-hashicorp-vault",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-ldap",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-mssql",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-mysql",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-oracledb",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-postgres",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-render",
+                          "pulumi-any-terraform/providers/infisical/resources/app-connection-supabase",
+                          "pulumi-any-terraform/providers/infisical/resources/certificate-sync-aws-certificate-manager",
+                          "pulumi-any-terraform/providers/infisical/resources/certificate-sync-certificate",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-application",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-application-group",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-application-identity",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-application-profile",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-application-user",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-ca-certificate",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate-policy",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-certificate-profile",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-acme",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-adcs",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-external-ca-digicert",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-group",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-identity",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-internal-ca",
+                          "pulumi-any-terraform/providers/infisical/resources/cert-manager-user",
+                          "pulumi-any-terraform/providers/infisical/resources/dynamic-secret-aws-iam",
+                          "pulumi-any-terraform/providers/infisical/resources/dynamic-secret-kubernetes",
+                          "pulumi-any-terraform/providers/infisical/resources/dynamic-secret-mongo-atlas",
+                          "pulumi-any-terraform/providers/infisical/resources/dynamic-secret-mongo-db",
+                          "pulumi-any-terraform/providers/infisical/resources/dynamic-secret-sql-database",
+                          "pulumi-any-terraform/providers/infisical/resources/external-kms-aws",
+                          "pulumi-any-terraform/providers/infisical/resources/gateway",
+                          "pulumi-any-terraform/providers/infisical/resources/gateway-enrollment-token",
+                          "pulumi-any-terraform/providers/infisical/resources/group",
+                          "pulumi-any-terraform/providers/infisical/resources/group-machine-identity",
+                          "pulumi-any-terraform/providers/infisical/resources/identity",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-aws-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-azure-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-gcp-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-jwt-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-kubernetes-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-oidc-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-tls-cert-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-token-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-token-auth-token",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-universal-auth",
+                          "pulumi-any-terraform/providers/infisical/resources/identity-universal-auth-client-secret",
+                          "pulumi-any-terraform/providers/infisical/resources/integration-aws-parameter-store",
+                          "pulumi-any-terraform/providers/infisical/resources/integration-aws-secrets-manager",
+                          "pulumi-any-terraform/providers/infisical/resources/integration-circleci",
+                          "pulumi-any-terraform/providers/infisical/resources/integration-databricks",
+                          "pulumi-any-terraform/providers/infisical/resources/integration-gcp-secret-manager",
+                          "pulumi-any-terraform/providers/infisical/resources/kms-key",
+                          "pulumi-any-terraform/providers/infisical/resources/org-role",
+                          "pulumi-any-terraform/providers/infisical/resources/project",
+                          "pulumi-any-terraform/providers/infisical/resources/project-environment",
+                          "pulumi-any-terraform/providers/infisical/resources/project-group",
+                          "pulumi-any-terraform/providers/infisical/resources/project-identity",
+                          "pulumi-any-terraform/providers/infisical/resources/project-identity-specific-privilege",
+                          "pulumi-any-terraform/providers/infisical/resources/project-role",
+                          "pulumi-any-terraform/providers/infisical/resources/project-scoped-identity",
+                          "pulumi-any-terraform/providers/infisical/resources/project-template",
+                          "pulumi-any-terraform/providers/infisical/resources/project-user",
+                          "pulumi-any-terraform/providers/infisical/resources/secret",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-approval-policy",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-folder",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-import",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-auth0-client-secret",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-aws-iam-user-secret",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-azure-client-secret",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-datadog-api-key",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-ldap-password",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-mssql-credentials",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-mysql-credentials",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-oracledb-credentials",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-rotation-postgres-credentials",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync1password",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-aws-parameter-store",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-aws-secrets-manager",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-app-configuration",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-devops",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-azure-key-vault",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-bitbucket",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-circleci",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-cloudflare-pages",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-cloudflare-workers",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-databricks",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-flyio",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-gcp-secret-manager",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-github",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-gitlab",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-render",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-sync-supabase",
+                          "pulumi-any-terraform/providers/infisical/resources/secret-tag",
+                          "pulumi-any-terraform/providers/infisical/resources/sub-organization",
+                          "pulumi-any-terraform/providers/infisical/resources/webhook"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/infisical/functions/get-gateway",
+                          "pulumi-any-terraform/providers/infisical/functions/get-groups",
+                          "pulumi-any-terraform/providers/infisical/functions/get-identity",
+                          "pulumi-any-terraform/providers/infisical/functions/get-identity-details",
+                          "pulumi-any-terraform/providers/infisical/functions/get-kms-key-public-key",
+                          "pulumi-any-terraform/providers/infisical/functions/get-organization",
+                          "pulumi-any-terraform/providers/infisical/functions/get-project-environment",
+                          "pulumi-any-terraform/providers/infisical/functions/get-project-identity",
+                          "pulumi-any-terraform/providers/infisical/functions/get-project-role",
+                          "pulumi-any-terraform/providers/infisical/functions/get-projects",
+                          "pulumi-any-terraform/providers/infisical/functions/get-projects-list",
+                          "pulumi-any-terraform/providers/infisical/functions/get-project-user",
+                          "pulumi-any-terraform/providers/infisical/functions/get-secret-folders",
+                          "pulumi-any-terraform/providers/infisical/functions/get-secret-metadata",
+                          "pulumi-any-terraform/providers/infisical/functions/get-secrets",
+                          "pulumi-any-terraform/providers/infisical/functions/get-secret-tag"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "Logtail",
                     "icon": "/images/providers/better-stack.svg",
                     "pages": [
-                      "pulumi-any-terraform/providers/logtail/overview"
+                      "pulumi-any-terraform/providers/logtail/overview",
+                      "pulumi-any-terraform/providers/logtail/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/logtail/resources/collector",
+                          "pulumi-any-terraform/providers/logtail/resources/collector-target",
+                          "pulumi-any-terraform/providers/logtail/resources/connection",
+                          "pulumi-any-terraform/providers/logtail/resources/dashboard",
+                          "pulumi-any-terraform/providers/logtail/resources/dashboard-alert",
+                          "pulumi-any-terraform/providers/logtail/resources/dashboard-chart",
+                          "pulumi-any-terraform/providers/logtail/resources/dashboard-group",
+                          "pulumi-any-terraform/providers/logtail/resources/dashboard-section",
+                          "pulumi-any-terraform/providers/logtail/resources/errors-application",
+                          "pulumi-any-terraform/providers/logtail/resources/errors-application-group",
+                          "pulumi-any-terraform/providers/logtail/resources/errors-release",
+                          "pulumi-any-terraform/providers/logtail/resources/exploration",
+                          "pulumi-any-terraform/providers/logtail/resources/exploration-alert",
+                          "pulumi-any-terraform/providers/logtail/resources/exploration-group",
+                          "pulumi-any-terraform/providers/logtail/resources/metric",
+                          "pulumi-any-terraform/providers/logtail/resources/source",
+                          "pulumi-any-terraform/providers/logtail/resources/source-aws-account",
+                          "pulumi-any-terraform/providers/logtail/resources/source-aws-log-group",
+                          "pulumi-any-terraform/providers/logtail/resources/source-gcp-project",
+                          "pulumi-any-terraform/providers/logtail/resources/source-group"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/logtail/functions/get-collector",
+                          "pulumi-any-terraform/providers/logtail/functions/get-connection",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard-alert",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard-chart",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard-group",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard-section",
+                          "pulumi-any-terraform/providers/logtail/functions/get-dashboard-template",
+                          "pulumi-any-terraform/providers/logtail/functions/get-errors-application",
+                          "pulumi-any-terraform/providers/logtail/functions/get-errors-application-group",
+                          "pulumi-any-terraform/providers/logtail/functions/get-exploration",
+                          "pulumi-any-terraform/providers/logtail/functions/get-exploration-alert",
+                          "pulumi-any-terraform/providers/logtail/functions/get-exploration-group",
+                          "pulumi-any-terraform/providers/logtail/functions/get-metric",
+                          "pulumi-any-terraform/providers/logtail/functions/get-source",
+                          "pulumi-any-terraform/providers/logtail/functions/get-source-group"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -138,36 +471,364 @@
                     "icon": "/images/providers/namecheap.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/namecheap/overview",
-                      "pulumi-any-terraform/providers/namecheap/configuration"
-                    ]
-                  },
-                  {
-                    "group": "Namecheap Resources",
-                    "icon": "/images/providers/namecheap.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/namecheap/domain-records"
-                    ]
-                  },
-                  {
-                    "group": "Namecheap Guides",
-                    "icon": "/images/providers/namecheap.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/namecheap/dns-guide",
-                      "pulumi-any-terraform/providers/namecheap/migration-guide"
+                      "pulumi-any-terraform/providers/namecheap/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/namecheap/resources/domain-contacts",
+                          "pulumi-any-terraform/providers/namecheap/resources/domain-host-record",
+                          "pulumi-any-terraform/providers/namecheap/resources/domain-records",
+                          "pulumi-any-terraform/providers/namecheap/resources/email-forwarding",
+                          "pulumi-any-terraform/providers/namecheap/resources/personal-nameserver"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/namecheap/functions/get-account-balance",
+                          "pulumi-any-terraform/providers/namecheap/functions/get-domain",
+                          "pulumi-any-terraform/providers/namecheap/functions/get-domain-records",
+                          "pulumi-any-terraform/providers/namecheap/functions/get-domains",
+                          "pulumi-any-terraform/providers/namecheap/functions/get-tld-pricing"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "OpenFGA",
                     "icon": "/images/providers/openfga.svg",
                     "pages": [
-                      "pulumi-any-terraform/providers/openfga/overview"
+                      "pulumi-any-terraform/providers/openfga/overview",
+                      "pulumi-any-terraform/providers/openfga/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/openfga/resources/authorization-model",
+                          "pulumi-any-terraform/providers/openfga/resources/relationship-tuple",
+                          "pulumi-any-terraform/providers/openfga/resources/store"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/openfga/functions/get-authorization-model",
+                          "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document",
+                          {
+                            "group": "getAuthorizationModelDocument types",
+                            "expanded": false,
+                            "pages": [
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-2",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-3",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-4",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-5",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-6",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-7",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-8",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-9",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-10",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-11",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-12",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-13",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-14",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-15",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-16",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-17",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-18",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-19",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-20",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-21",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-22",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-23",
+                              "pulumi-any-terraform/providers/openfga/functions/get-authorization-model-document-part-24"
+                            ]
+                          },
+                          "pulumi-any-terraform/providers/openfga/functions/get-authorization-models",
+                          "pulumi-any-terraform/providers/openfga/functions/get-check-query",
+                          "pulumi-any-terraform/providers/openfga/functions/get-list-objects-query",
+                          "pulumi-any-terraform/providers/openfga/functions/get-list-users-query",
+                          "pulumi-any-terraform/providers/openfga/functions/get-relationship-tuple",
+                          "pulumi-any-terraform/providers/openfga/functions/get-relationship-tuples",
+                          "pulumi-any-terraform/providers/openfga/functions/get-store",
+                          "pulumi-any-terraform/providers/openfga/functions/get-stores"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "Portainer",
                     "icon": "/images/providers/portainer.svg",
                     "pages": [
-                      "pulumi-any-terraform/providers/portainer/overview"
+                      "pulumi-any-terraform/providers/portainer/overview",
+                      "pulumi-any-terraform/providers/portainer/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/portainer/resources/addon",
+                          "pulumi-any-terraform/providers/portainer/resources/addon-access",
+                          "pulumi-any-terraform/providers/portainer/resources/addon-config",
+                          "pulumi-any-terraform/providers/portainer/resources/addon-repair",
+                          "pulumi-any-terraform/providers/portainer/resources/alerting-rule",
+                          "pulumi-any-terraform/providers/portainer/resources/alerting-rule-groups",
+                          "pulumi-any-terraform/providers/portainer/resources/alerting-rule-tiers",
+                          "pulumi-any-terraform/providers/portainer/resources/alerting-settings",
+                          "pulumi-any-terraform/providers/portainer/resources/alerting-silence",
+                          "pulumi-any-terraform/providers/portainer/resources/auth",
+                          "pulumi-any-terraform/providers/portainer/resources/backup",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-azure-execute",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-azure-restore",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-azure-settings",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-local-run",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-local-settings",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-s3",
+                          "pulumi-any-terraform/providers/portainer/resources/backup-s3-restore",
+                          "pulumi-any-terraform/providers/portainer/resources/chat",
+                          "pulumi-any-terraform/providers/portainer/resources/check",
+                          "pulumi-any-terraform/providers/portainer/resources/cloud-credentials",
+                          "pulumi-any-terraform/providers/portainer/resources/cloud-provider-provision",
+                          "pulumi-any-terraform/providers/portainer/resources/compose-convert",
+                          "pulumi-any-terraform/providers/portainer/resources/container-exec",
+                          "pulumi-any-terraform/providers/portainer/resources/custom-template",
+                          "pulumi-any-terraform/providers/portainer/resources/deploy",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-config",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-image",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-network",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-node",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-plugin",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-secret",
+                          "pulumi-any-terraform/providers/portainer/resources/docker-volume",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-configurations",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-group",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-job",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-job-task-logs",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-stack",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-stack-webhook",
+                          "pulumi-any-terraform/providers/portainer/resources/edge-update-schedules",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-association",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-group",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-group-access",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-group-membership",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-relations",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoints-edge-generate-key",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-service-update",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-settings",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-snapshot",
+                          "pulumi-any-terraform/providers/portainer/resources/endpoint-trust",
+                          "pulumi-any-terraform/providers/portainer/resources/environment",
+                          "pulumi-any-terraform/providers/portainer/resources/gitops-source",
+                          "pulumi-any-terraform/providers/portainer/resources/gitops-workflow",
+                          "pulumi-any-terraform/providers/portainer/resources/helm-rollback",
+                          "pulumi-any-terraform/providers/portainer/resources/helm-user-repository",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-application",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-clusterrole",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-clusterrolebinding",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-cluster-upgrade",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-configmaps",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-cronjob",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-delete-object",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-deployment-rollback",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-deployment-scale",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-helm",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-ingresscontrollers",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-ingresses",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-job",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-access",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-ingresscontrollers",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-system",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-node-drain",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-persistent-volume",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-pod-security-rule",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-role",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-rolebinding",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-secret",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-service",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-serviceaccounts",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-storage",
+                          "pulumi-any-terraform/providers/portainer/resources/kubernetes-volume",
+                          "pulumi-any-terraform/providers/portainer/resources/ldap-settings",
+                          "pulumi-any-terraform/providers/portainer/resources/licenses",
+                          "pulumi-any-terraform/providers/portainer/resources/omni-cluster",
+                          "pulumi-any-terraform/providers/portainer/resources/omni-node-reboot",
+                          "pulumi-any-terraform/providers/portainer/resources/open-amt",
+                          "pulumi-any-terraform/providers/portainer/resources/open-amt-activate",
+                          "pulumi-any-terraform/providers/portainer/resources/open-amt-devices-action",
+                          "pulumi-any-terraform/providers/portainer/resources/open-amt-devices-features",
+                          "pulumi-any-terraform/providers/portainer/resources/policy",
+                          "pulumi-any-terraform/providers/portainer/resources/registry",
+                          "pulumi-any-terraform/providers/portainer/resources/registry-access",
+                          "pulumi-any-terraform/providers/portainer/resources/registry-configure",
+                          "pulumi-any-terraform/providers/portainer/resources/resource-control",
+                          "pulumi-any-terraform/providers/portainer/resources/restore",
+                          "pulumi-any-terraform/providers/portainer/resources/settings",
+                          "pulumi-any-terraform/providers/portainer/resources/settings-additional-functionality",
+                          "pulumi-any-terraform/providers/portainer/resources/settings-default-registry",
+                          "pulumi-any-terraform/providers/portainer/resources/settings-experimental",
+                          "pulumi-any-terraform/providers/portainer/resources/shared-git-credential",
+                          "pulumi-any-terraform/providers/portainer/resources/sshkeygen",
+                          "pulumi-any-terraform/providers/portainer/resources/ssl",
+                          "pulumi-any-terraform/providers/portainer/resources/ssrf-allowlist",
+                          "pulumi-any-terraform/providers/portainer/resources/stack",
+                          "pulumi-any-terraform/providers/portainer/resources/stack-associate",
+                          "pulumi-any-terraform/providers/portainer/resources/stack-delete-by-name",
+                          "pulumi-any-terraform/providers/portainer/resources/stack-migrate",
+                          "pulumi-any-terraform/providers/portainer/resources/stack-webhook",
+                          "pulumi-any-terraform/providers/portainer/resources/support-debug-log",
+                          "pulumi-any-terraform/providers/portainer/resources/tag",
+                          "pulumi-any-terraform/providers/portainer/resources/team",
+                          "pulumi-any-terraform/providers/portainer/resources/team-membership",
+                          "pulumi-any-terraform/providers/portainer/resources/tls",
+                          "pulumi-any-terraform/providers/portainer/resources/user",
+                          "pulumi-any-terraform/providers/portainer/resources/user-admin",
+                          "pulumi-any-terraform/providers/portainer/resources/user-api-key",
+                          "pulumi-any-terraform/providers/portainer/resources/user-git-credential",
+                          "pulumi-any-terraform/providers/portainer/resources/user-memberships-sync",
+                          "pulumi-any-terraform/providers/portainer/resources/webhook",
+                          "pulumi-any-terraform/providers/portainer/resources/webhook-execute"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/portainer/functions/get-addon-chart-source",
+                          "pulumi-any-terraform/providers/portainer/functions/get-addons",
+                          "pulumi-any-terraform/providers/portainer/functions/get-agent-versions",
+                          "pulumi-any-terraform/providers/portainer/functions/get-alerting-connectivity",
+                          "pulumi-any-terraform/providers/portainer/functions/get-alerting-rule-environments",
+                          "pulumi-any-terraform/providers/portainer/functions/get-app-templates",
+                          "pulumi-any-terraform/providers/portainer/functions/get-auto-updates",
+                          "pulumi-any-terraform/providers/portainer/functions/get-backup-azure-connection",
+                          "pulumi-any-terraform/providers/portainer/functions/get-cloud-credentials",
+                          "pulumi-any-terraform/providers/portainer/functions/get-current-user-authorizations",
+                          "pulumi-any-terraform/providers/portainer/functions/get-custom-template",
+                          "pulumi-any-terraform/providers/portainer/functions/get-custom-template-file",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-config",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-container-gpus",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-dashboard",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-image",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-images",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-network",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-node",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-secret",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot-container",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot-containers",
+                          "pulumi-any-terraform/providers/portainer/functions/get-docker-volume",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-configuration",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-configuration-files",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-group",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-job",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-job-file",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-job-task-logs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-job-tasks",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-mtls-ca-certificate",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-mtls-certificate",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-stack",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-stack-file",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-stack-stagger-status",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-update-previous-versions",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-update-schedule-info",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-update-schedules-active",
+                          "pulumi-any-terraform/providers/portainer/functions/get-edge-waiting-room",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoint-group",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoint-group-access",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoint-mtls-certificate",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoint-mtls-certificate-error",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoint-registries",
+                          "pulumi-any-terraform/providers/portainer/functions/get-endpoints-summary",
+                          "pulumi-any-terraform/providers/portainer/functions/get-environment",
+                          "pulumi-any-terraform/providers/portainer/functions/get-environment-logs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-environment-metrics",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-helm-values",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-file",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-file-search",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-refs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-source",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-source-connection",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-sources",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-workflow",
+                          "pulumi-any-terraform/providers/portainer/functions/get-gitops-workflows",
+                          "pulumi-any-terraform/providers/portainer/functions/get-helm-chart",
+                          "pulumi-any-terraform/providers/portainer/functions/get-helm-git-dryrun",
+                          "pulumi-any-terraform/providers/portainer/functions/get-helm-release-history",
+                          "pulumi-any-terraform/providers/portainer/functions/get-image-status",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-application",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-application-resources",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-cluster",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-config",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-crd",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-cron-jobs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource-definition",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource-definitions",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resources",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-deployments",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-describe",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-endpoints",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-events",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-gpu",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-ingress-classes",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-manifest-dry-run",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-node-metrics",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-nodes",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volume-claim",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volume-claims",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volumes",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pod-logs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pod-metrics",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pods",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-replicasets",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-resource-counts",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-resource-quotas",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-service-account",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-storage-class",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-storage-classes",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-volume",
+                          "pulumi-any-terraform/providers/portainer/functions/get-kubernetes-volumes",
+                          "pulumi-any-terraform/providers/portainer/functions/get-ldap-admin-groups",
+                          "pulumi-any-terraform/providers/portainer/functions/get-ldap-check",
+                          "pulumi-any-terraform/providers/portainer/functions/get-ldap-groups",
+                          "pulumi-any-terraform/providers/portainer/functions/get-ldap-login-test",
+                          "pulumi-any-terraform/providers/portainer/functions/get-ldap-users",
+                          "pulumi-any-terraform/providers/portainer/functions/get-licenses-info",
+                          "pulumi-any-terraform/providers/portainer/functions/get-motd",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-machine",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-machine-logs",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-machines",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-service-account",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-talos-versions",
+                          "pulumi-any-terraform/providers/portainer/functions/get-omni-upgrade-status",
+                          "pulumi-any-terraform/providers/portainer/functions/get-policy",
+                          "pulumi-any-terraform/providers/portainer/functions/get-policy-conflicts",
+                          "pulumi-any-terraform/providers/portainer/functions/get-policy-metadata",
+                          "pulumi-any-terraform/providers/portainer/functions/get-policy-observability-test",
+                          "pulumi-any-terraform/providers/portainer/functions/get-policy-template",
+                          "pulumi-any-terraform/providers/portainer/functions/get-recommendations",
+                          "pulumi-any-terraform/providers/portainer/functions/get-registry",
+                          "pulumi-any-terraform/providers/portainer/functions/get-registry-access",
+                          "pulumi-any-terraform/providers/portainer/functions/get-registry-connection",
+                          "pulumi-any-terraform/providers/portainer/functions/get-role",
+                          "pulumi-any-terraform/providers/portainer/functions/get-settings-public",
+                          "pulumi-any-terraform/providers/portainer/functions/get-shared-git-credential",
+                          "pulumi-any-terraform/providers/portainer/functions/get-stack",
+                          "pulumi-any-terraform/providers/portainer/functions/get-stack-conversion",
+                          "pulumi-any-terraform/providers/portainer/functions/get-system",
+                          "pulumi-any-terraform/providers/portainer/functions/get-tag",
+                          "pulumi-any-terraform/providers/portainer/functions/get-team",
+                          "pulumi-any-terraform/providers/portainer/functions/get-team-membership",
+                          "pulumi-any-terraform/providers/portainer/functions/get-team-memberships",
+                          "pulumi-any-terraform/providers/portainer/functions/get-user",
+                          "pulumi-any-terraform/providers/portainer/functions/get-user-access",
+                          "pulumi-any-terraform/providers/portainer/functions/get-user-activity",
+                          "pulumi-any-terraform/providers/portainer/functions/get-user-namespaces",
+                          "pulumi-any-terraform/providers/portainer/functions/get-webhook"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -175,25 +836,105 @@
                     "icon": "/images/providers/posthog.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/posthog/overview",
-                      "pulumi-any-terraform/providers/posthog/configuration"
-                    ]
-                  },
-                  {
-                    "group": "PostHog Resources",
-                    "icon": "/images/providers/posthog.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/posthog/feature-flag",
-                      "pulumi-any-terraform/providers/posthog/dashboard",
-                      "pulumi-any-terraform/providers/posthog/insight",
-                      "pulumi-any-terraform/providers/posthog/alert",
-                      "pulumi-any-terraform/providers/posthog/hog-function"
+                      "pulumi-any-terraform/providers/posthog/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/posthog/resources/access-control",
+                          "pulumi-any-terraform/providers/posthog/resources/action",
+                          "pulumi-any-terraform/providers/posthog/resources/alert",
+                          "pulumi-any-terraform/providers/posthog/resources/cohort",
+                          "pulumi-any-terraform/providers/posthog/resources/dashboard",
+                          "pulumi-any-terraform/providers/posthog/resources/dashboard-layout",
+                          "pulumi-any-terraform/providers/posthog/resources/experiment",
+                          "pulumi-any-terraform/providers/posthog/resources/external-data-source",
+                          "pulumi-any-terraform/providers/posthog/resources/feature-flag",
+                          "pulumi-any-terraform/providers/posthog/resources/hog-function",
+                          "pulumi-any-terraform/providers/posthog/resources/insight",
+                          "pulumi-any-terraform/providers/posthog/resources/insight-variable",
+                          "pulumi-any-terraform/providers/posthog/resources/logs-alert",
+                          "pulumi-any-terraform/providers/posthog/resources/logs-alert-destination",
+                          "pulumi-any-terraform/providers/posthog/resources/organization-member",
+                          "pulumi-any-terraform/providers/posthog/resources/project",
+                          "pulumi-any-terraform/providers/posthog/resources/project-default-access",
+                          "pulumi-any-terraform/providers/posthog/resources/project-member",
+                          "pulumi-any-terraform/providers/posthog/resources/project-settings",
+                          "pulumi-any-terraform/providers/posthog/resources/proxy-record",
+                          "pulumi-any-terraform/providers/posthog/resources/role",
+                          "pulumi-any-terraform/providers/posthog/resources/role-membership",
+                          "pulumi-any-terraform/providers/posthog/resources/subscription",
+                          "pulumi-any-terraform/providers/posthog/resources/survey"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/posthog/functions/get-insight",
+                          "pulumi-any-terraform/providers/posthog/functions/get-role",
+                          "pulumi-any-terraform/providers/posthog/functions/get-user"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "TeamCity",
                     "icon": "/images/providers/teamcity.png",
                     "pages": [
-                      "pulumi-any-terraform/providers/teamcity/overview"
+                      "pulumi-any-terraform/providers/teamcity/overview",
+                      "pulumi-any-terraform/providers/teamcity/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/teamcity/resources/auth-settings",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-agent-requirement",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-artifact-dependency",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-feature",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-parameter",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-settings",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-snapshot-dependency",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-step",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-template",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-trigger",
+                          "pulumi-any-terraform/providers/teamcity/resources/build-configuration-vcs-root",
+                          "pulumi-any-terraform/providers/teamcity/resources/cleanup-settings",
+                          "pulumi-any-terraform/providers/teamcity/resources/cloud-profile",
+                          "pulumi-any-terraform/providers/teamcity/resources/connection",
+                          "pulumi-any-terraform/providers/teamcity/resources/context-parameters",
+                          "pulumi-any-terraform/providers/teamcity/resources/email-settings",
+                          "pulumi-any-terraform/providers/teamcity/resources/global-settings",
+                          "pulumi-any-terraform/providers/teamcity/resources/group",
+                          "pulumi-any-terraform/providers/teamcity/resources/group-member",
+                          "pulumi-any-terraform/providers/teamcity/resources/group-role-assignment",
+                          "pulumi-any-terraform/providers/teamcity/resources/license",
+                          "pulumi-any-terraform/providers/teamcity/resources/pool",
+                          "pulumi-any-terraform/providers/teamcity/resources/project",
+                          "pulumi-any-terraform/providers/teamcity/resources/project-parameter",
+                          "pulumi-any-terraform/providers/teamcity/resources/role",
+                          "pulumi-any-terraform/providers/teamcity/resources/secure-token",
+                          "pulumi-any-terraform/providers/teamcity/resources/ssh-key",
+                          "pulumi-any-terraform/providers/teamcity/resources/template",
+                          "pulumi-any-terraform/providers/teamcity/resources/user",
+                          "pulumi-any-terraform/providers/teamcity/resources/user-role-assignment",
+                          "pulumi-any-terraform/providers/teamcity/resources/vcsroot",
+                          "pulumi-any-terraform/providers/teamcity/resources/versioned-settings"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/teamcity/functions/get-build-configuration",
+                          "pulumi-any-terraform/providers/teamcity/functions/get-group",
+                          "pulumi-any-terraform/providers/teamcity/functions/get-pool",
+                          "pulumi-any-terraform/providers/teamcity/functions/get-server",
+                          "pulumi-any-terraform/providers/teamcity/functions/get-ssh-key",
+                          "pulumi-any-terraform/providers/teamcity/functions/get-user"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -201,7 +942,25 @@
                     "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/local/overview",
-                      "pulumi-any-terraform/providers/local/configuration"
+                      "pulumi-any-terraform/providers/local/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/local/resources/file",
+                          "pulumi-any-terraform/providers/local/resources/sensitive-file"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/local/functions/direxists",
+                          "pulumi-any-terraform/providers/local/functions/get-command",
+                          "pulumi-any-terraform/providers/local/functions/get-file",
+                          "pulumi-any-terraform/providers/local/functions/get-sensitive-file"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -209,24 +968,26 @@
                     "icon": "/images/providers/terraform.svg",
                     "pages": [
                       "pulumi-any-terraform/providers/time/overview",
-                      "pulumi-any-terraform/providers/time/configuration"
-                    ]
-                  },
-                  {
-                    "group": "Time Resources",
-                    "icon": "/images/providers/terraform.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/time/offset",
-                      "pulumi-any-terraform/providers/time/rotating",
-                      "pulumi-any-terraform/providers/time/sleep",
-                      "pulumi-any-terraform/providers/time/static"
-                    ]
-                  },
-                  {
-                    "group": "Time Guides",
-                    "icon": "/images/providers/terraform.svg",
-                    "pages": [
-                      "pulumi-any-terraform/providers/time/time-guide"
+                      "pulumi-any-terraform/providers/time/configuration",
+                      {
+                        "group": "Resources",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/time/resources/offset",
+                          "pulumi-any-terraform/providers/time/resources/rotating",
+                          "pulumi-any-terraform/providers/time/resources/sleep",
+                          "pulumi-any-terraform/providers/time/resources/static"
+                        ]
+                      },
+                      {
+                        "group": "Functions",
+                        "expanded": false,
+                        "pages": [
+                          "pulumi-any-terraform/providers/time/functions/duration-parse",
+                          "pulumi-any-terraform/providers/time/functions/rfc3339-parse",
+                          "pulumi-any-terraform/providers/time/functions/unix-timestamp-parse"
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -302,16 +1063,104 @@
       "destination": "/ja4/overview"
     },
     {
-      "source": "/pulumi-any-terraform",
-      "destination": "/pulumi-any-terraform/overview"
-    },
-    {
       "source": "/vn-number",
       "destination": "/vn-number/overview"
     },
     {
       "source": "/what-the-fetch",
       "destination": "/what-the-fetch/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/getting-started",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/architecture",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/contributing",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/troubleshooting",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/faq",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/ci-cd",
+      "destination": "/pulumi-any-terraform/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/better-uptime/heartbeat",
+      "destination": "/pulumi-any-terraform/providers/better-uptime/resources/heartbeat"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/better-uptime/monitor",
+      "destination": "/pulumi-any-terraform/providers/better-uptime/resources/monitor"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/better-uptime/status-page",
+      "destination": "/pulumi-any-terraform/providers/better-uptime/resources/status-page"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/namecheap/dns-guide",
+      "destination": "/pulumi-any-terraform/providers/namecheap/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/namecheap/domain-records",
+      "destination": "/pulumi-any-terraform/providers/namecheap/resources/domain-records"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/namecheap/migration-guide",
+      "destination": "/pulumi-any-terraform/providers/namecheap/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog/alert",
+      "destination": "/pulumi-any-terraform/providers/posthog/resources/alert"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog/dashboard",
+      "destination": "/pulumi-any-terraform/providers/posthog/resources/dashboard"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog/feature-flag",
+      "destination": "/pulumi-any-terraform/providers/posthog/resources/feature-flag"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog/hog-function",
+      "destination": "/pulumi-any-terraform/providers/posthog/resources/hog-function"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/posthog/insight",
+      "destination": "/pulumi-any-terraform/providers/posthog/resources/insight"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time/offset",
+      "destination": "/pulumi-any-terraform/providers/time/resources/offset"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time/rotating",
+      "destination": "/pulumi-any-terraform/providers/time/resources/rotating"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time/sleep",
+      "destination": "/pulumi-any-terraform/providers/time/resources/sleep"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time/static",
+      "destination": "/pulumi-any-terraform/providers/time/resources/static"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/time/time-guide",
+      "destination": "/pulumi-any-terraform/providers/time/overview"
     },
     {
       "source": "/pulumi-any-terraform/providers/better-uptime",
@@ -328,10 +1177,6 @@
     {
       "source": "/pulumi-any-terraform/providers/infisical",
       "destination": "/pulumi-any-terraform/providers/infisical/overview"
-    },
-    {
-      "source": "/pulumi-any-terraform/providers/local",
-      "destination": "/pulumi-any-terraform/providers/local/overview"
     },
     {
       "source": "/pulumi-any-terraform/providers/logtail",
@@ -356,6 +1201,10 @@
     {
       "source": "/pulumi-any-terraform/providers/teamcity",
       "destination": "/pulumi-any-terraform/providers/teamcity/overview"
+    },
+    {
+      "source": "/pulumi-any-terraform/providers/local",
+      "destination": "/pulumi-any-terraform/providers/local/overview"
     },
     {
       "source": "/pulumi-any-terraform/providers/time",

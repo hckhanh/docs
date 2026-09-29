@@ -1,0 +1,40 @@
+---
+title: "getClusterNetworkRanges"
+description: "Function getClusterNetworkRanges in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Function getClusterNetworkRanges in pulumi-buildkite.
+
+Invoke token: `buildkite:index/getClusterNetworkRanges:getClusterNetworkRanges`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Call `buildkite.getClusterNetworkRanges(args)`.
+
+`getClusterNetworkRangesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clusterUuid` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `clusterUuid` | `string` | yes |  |
+| `ranges` | `GetClusterNetworkRangesRange[]` | yes |  |
+
+## `GetClusterNetworkRangesRange`
+
+Output object `GetClusterNetworkRangesRange`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `cidrRange` | `string` | yes | The range in CIDR notation. |
+| `kind` | `string` | yes | The kind of range, for example `NAMESPACE_MANAGED`. Values originate upstream and are not a fixed set. |

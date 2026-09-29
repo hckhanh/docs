@@ -1,0 +1,71 @@
+---
+title: "getLdapLoginTest"
+description: "Function getLdapLoginTest in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getLdapLoginTest in pulumi-portainer.
+
+Invoke token: `portainer:index/getLdapLoginTest:getLdapLoginTest`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getLdapLoginTest(args)`.
+
+`getLdapLoginTestOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `anonymousMode` | `boolean` | no |  |
+| `failOnError` | `boolean` | no |  |
+| `id` | `string` | no |  |
+| `password` | `string` | no |  |
+| `readerDn` | `string` | no |  |
+| `searches` | `GetLdapLoginTestSearch (input)[]` | no |  |
+| `startTls` | `boolean` | no |  |
+| `testPassword` | `string` | yes |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `url` | `string` | yes |  |
+| `username` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `anonymousMode` | `boolean` | no |  |
+| `failOnError` | `boolean` | no |  |
+| `id` | `string` | yes |  |
+| `password` | `string` | no |  |
+| `readerDn` | `string` | no |  |
+| `searches` | `GetLdapLoginTestSearch (output)[]` | no |  |
+| `startTls` | `boolean` | no |  |
+| `testPassword` | `string` | yes |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `url` | `string` | yes |  |
+| `username` | `string` | yes |  |
+| `valid` | `boolean` | yes |  |
+
+## `GetLdapLoginTestSearch (input)`
+
+Input object `GetLdapLoginTestSearch`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `baseDn` | `string` | yes | Distinguished name the search starts from. |
+| `filter` | `string` | no | LDAP filter narrowing the search, for example `(objectClass=person)`. |
+| `userNameAttribute` | `string` | no | Attribute holding the login name, for example `uid` or `sAMAccountName`. |
+
+## `GetLdapLoginTestSearch (output)`
+
+Output object `GetLdapLoginTestSearch`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `baseDn` | `string` | yes | Distinguished name the search starts from. |
+| `filter` | `string` | no | LDAP filter narrowing the search, for example `(objectClass=person)`. |
+| `userNameAttribute` | `string` | no | Attribute holding the login name, for example `uid` or `sAMAccountName`. |

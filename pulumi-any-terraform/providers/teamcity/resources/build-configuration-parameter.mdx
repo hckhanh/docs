@@ -1,0 +1,38 @@
+---
+title: "BuildConfigurationParameter"
+description: "Resource BuildConfigurationParameter in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Resource BuildConfigurationParameter in pulumi-teamcity.
+
+Pulumi type: `teamcity:index/buildConfigurationParameter:BuildConfigurationParameter`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Construct with `new teamcity.BuildConfigurationParameter(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `buildConfigurationId` | `string` | yes |  |
+| `name` | `string` | no |  |
+| `type` | `string` | no | Parameter type. Use 'password' to create a secure (hidden) parameter. Defaults to 'text' if omitted. |
+| `value` | `string` | yes |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `buildConfigurationId` | `string` | no |  |
+| `name` | `string` | no |  |
+| `type` | `string` | no | Parameter type. Use 'password' to create a secure (hidden) parameter. Defaults to 'text' if omitted. |
+| `value` | `string` | no |  |

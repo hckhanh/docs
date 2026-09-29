@@ -1,0 +1,36 @@
+---
+title: "getStack"
+description: "Function getStack in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getStack in pulumi-portainer.
+
+Invoke token: `portainer:index/getStack:getStack`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getStack(args)`.
+
+`getStackOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `swarmId` | `string` | yes |  |
+| `type` | `number` | yes |  |

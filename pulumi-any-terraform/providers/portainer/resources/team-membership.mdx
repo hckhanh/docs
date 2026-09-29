@@ -1,0 +1,38 @@
+---
+title: "TeamMembership"
+description: "Resource TeamMembership in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource TeamMembership in pulumi-portainer.
+
+Pulumi type: `portainer:index/teamMembership:TeamMembership`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.TeamMembership(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `role` | `number` | yes | Membership role: 1 = team leader, 2 = regular member |
+| `teamId` | `number` | yes | ID of the team |
+| `teamMembershipId` | `string` | no |  |
+| `userId` | `number` | yes | ID of the user |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `role` | `number` | no | Membership role: 1 = team leader, 2 = regular member |
+| `teamId` | `number` | no | ID of the team |
+| `teamMembershipId` | `string` | no |  |
+| `userId` | `number` | no | ID of the user |

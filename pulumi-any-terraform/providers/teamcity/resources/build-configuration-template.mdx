@@ -1,0 +1,34 @@
+---
+title: "BuildConfigurationTemplate"
+description: "Resource BuildConfigurationTemplate in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Resource BuildConfigurationTemplate in pulumi-teamcity.
+
+Pulumi type: `teamcity:index/buildConfigurationTemplate:BuildConfigurationTemplate`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Construct with `new teamcity.BuildConfigurationTemplate(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `buildConfigurationId` | `string` | yes | ID of the build configuration the template is attached to. |
+| `templateId` | `string` | yes | ID of the template to attach. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `buildConfigurationId` | `string` | no | ID of the build configuration the template is attached to. |
+| `templateId` | `string` | no | ID of the template to attach. |

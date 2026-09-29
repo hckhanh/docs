@@ -1,0 +1,44 @@
+---
+title: "getUserNamespaces"
+description: "Function getUserNamespaces in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getUserNamespaces in pulumi-portainer.
+
+Invoke token: `portainer:index/getUserNamespaces:getUserNamespaces`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getUserNamespaces(args)`.
+
+`getUserNamespacesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `userId` | `number` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `namespaces` | `GetUserNamespacesNamespace[]` | yes |  |
+| `raw` | `string` | yes |  |
+| `userId` | `number` | yes |  |
+
+## `GetUserNamespacesNamespace`
+
+Output object `GetUserNamespacesNamespace`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authorizations` | `string[]` | no |  |
+| `endpointId` | `string` | no |  |
+| `namespace` | `string` | no |  |

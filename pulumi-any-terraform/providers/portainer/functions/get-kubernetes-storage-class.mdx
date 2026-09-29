@@ -1,0 +1,43 @@
+---
+title: "getKubernetesStorageClass"
+description: "Function getKubernetesStorageClass in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesStorageClass in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesStorageClass:getKubernetesStorageClass`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesStorageClass(args)`.
+
+`getKubernetesStorageClassOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowVolumeExpansion` | `boolean` | yes |  |
+| `annotations` | `{ [key: string]: string }` | yes |  |
+| `creationDate` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `isDefault` | `boolean` | yes |  |
+| `labels` | `{ [key: string]: string }` | yes |  |
+| `mountOptions` | `string[]` | yes |  |
+| `name` | `string` | yes |  |
+| `parameters` | `{ [key: string]: string }` | yes |  |
+| `provisionerName` | `string` | yes |  |
+| `reclaimPolicy` | `string` | yes |  |

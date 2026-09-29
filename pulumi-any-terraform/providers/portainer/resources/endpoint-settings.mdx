@@ -1,0 +1,138 @@
+---
+title: "EndpointSettings"
+description: "Resource EndpointSettings in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource EndpointSettings in pulumi-portainer.
+
+Pulumi type: `portainer:index/endpointSettings:EndpointSettings`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.EndpointSettings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `changeWindow` | `EndpointSettingsChangeWindow (input)` | no | Maintenance change window during which automatic updates may run on the environment. |
+| `deploymentOptions` | `EndpointSettingsDeploymentOptions (input)` | no | Per-environment overrides for stack and application deployment UI options. |
+| `enableGpuManagement` | `boolean` | no | Whether GPU management is enabled for the Portainer environment. |
+| `enableImageNotification` | `boolean` | no | Whether image update notifications are enabled for the Portainer environment. |
+| `endpointId` | `number` | yes | ID of the Portainer environment whose runtime settings are managed. |
+| `endpointSettingsId` | `string` | no |  |
+| `gpuses` | `EndpointSettingsGpus (input)[]` | no | List of GPU devices exposed to Portainer for this environment. |
+| `securitySettings` | `EndpointSettingsSecuritySettings (input)` | no | Per-environment security settings controlling what regular (non-admin) users may do. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `changeWindow` | `EndpointSettingsChangeWindow (output)` | no | Maintenance change window during which automatic updates may run on the environment. |
+| `deploymentOptions` | `EndpointSettingsDeploymentOptions (output)` | no | Per-environment overrides for stack and application deployment UI options. |
+| `enableGpuManagement` | `boolean` | no | Whether GPU management is enabled for the Portainer environment. |
+| `enableImageNotification` | `boolean` | no | Whether image update notifications are enabled for the Portainer environment. |
+| `endpointId` | `number` | no | ID of the Portainer environment whose runtime settings are managed. |
+| `endpointSettingsId` | `string` | no |  |
+| `gpuses` | `EndpointSettingsGpus (output)[]` | no | List of GPU devices exposed to Portainer for this environment. |
+| `securitySettings` | `EndpointSettingsSecuritySettings (output)` | no | Per-environment security settings controlling what regular (non-admin) users may do. |
+
+## `EndpointSettingsChangeWindow (input)`
+
+Input object `EndpointSettingsChangeWindow`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `boolean` | no | Whether the change window is enabled. |
+| `endTime` | `string` | no | End time of the change window in HH:MM format. |
+| `startTime` | `string` | no | Start time of the change window in HH:MM format. |
+
+## `EndpointSettingsDeploymentOptions (input)`
+
+Input object `EndpointSettingsDeploymentOptions`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hideAddWithForm` | `boolean` | no | Whether to hide the form-based add option in the deployment UI. |
+| `hideFileUpload` | `boolean` | no | Whether to hide the file upload option in the deployment UI. |
+| `hideWebEditor` | `boolean` | no | Whether to hide the web editor option in the deployment UI. |
+| `overrideGlobalOptions` | `boolean` | no | Whether to override global deployment options with these environment-specific values. |
+
+## `EndpointSettingsGpus (input)`
+
+Input object `EndpointSettingsGpus`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Display name of the GPU device. |
+| `value` | `string` | yes | Device identifier of the GPU as exposed to Docker. |
+
+## `EndpointSettingsSecuritySettings (input)`
+
+Input object `EndpointSettingsSecuritySettings`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowBindMounts` | `boolean` | no | Whether regular users may use bind mounts when deploying containers. |
+| `allowContainerCapabilities` | `boolean` | no | Whether regular users may add Linux capabilities to containers. |
+| `allowDeviceMapping` | `boolean` | no | Whether regular users may map host devices into containers. |
+| `allowHostNamespace` | `boolean` | no | Whether regular users may use the host namespace for containers. |
+| `allowPrivilegedMode` | `boolean` | no | Whether regular users may run containers in privileged mode. |
+| `allowStackManagement` | `boolean` | no | Whether regular users may create and manage stacks. |
+| `allowSysctlSetting` | `boolean` | no | Whether regular users may set sysctl values on containers. |
+| `allowVolumeBrowser` | `boolean` | no | Whether regular users may browse the contents of volumes via Portainer. |
+| `enableHostManagement` | `boolean` | no | Whether host management features (host browser, host info) are enabled in the UI. |
+
+## `EndpointSettingsChangeWindow (output)`
+
+Output object `EndpointSettingsChangeWindow`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `enabled` | `boolean` | no | Whether the change window is enabled. |
+| `endTime` | `string` | no | End time of the change window in HH:MM format. |
+| `startTime` | `string` | no | Start time of the change window in HH:MM format. |
+
+## `EndpointSettingsDeploymentOptions (output)`
+
+Output object `EndpointSettingsDeploymentOptions`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hideAddWithForm` | `boolean` | no | Whether to hide the form-based add option in the deployment UI. |
+| `hideFileUpload` | `boolean` | no | Whether to hide the file upload option in the deployment UI. |
+| `hideWebEditor` | `boolean` | no | Whether to hide the web editor option in the deployment UI. |
+| `overrideGlobalOptions` | `boolean` | no | Whether to override global deployment options with these environment-specific values. |
+
+## `EndpointSettingsGpus (output)`
+
+Output object `EndpointSettingsGpus`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Display name of the GPU device. |
+| `value` | `string` | yes | Device identifier of the GPU as exposed to Docker. |
+
+## `EndpointSettingsSecuritySettings (output)`
+
+Output object `EndpointSettingsSecuritySettings`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowBindMounts` | `boolean` | no | Whether regular users may use bind mounts when deploying containers. |
+| `allowContainerCapabilities` | `boolean` | no | Whether regular users may add Linux capabilities to containers. |
+| `allowDeviceMapping` | `boolean` | no | Whether regular users may map host devices into containers. |
+| `allowHostNamespace` | `boolean` | no | Whether regular users may use the host namespace for containers. |
+| `allowPrivilegedMode` | `boolean` | no | Whether regular users may run containers in privileged mode. |
+| `allowStackManagement` | `boolean` | no | Whether regular users may create and manage stacks. |
+| `allowSysctlSetting` | `boolean` | no | Whether regular users may set sysctl values on containers. |
+| `allowVolumeBrowser` | `boolean` | no | Whether regular users may browse the contents of volumes via Portainer. |
+| `enableHostManagement` | `boolean` | no | Whether host management features (host browser, host info) are enabled in the UI. |

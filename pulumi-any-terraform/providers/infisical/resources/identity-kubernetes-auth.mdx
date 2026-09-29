@@ -1,0 +1,72 @@
+---
+title: "IdentityKubernetesAuth"
+description: "Resource IdentityKubernetesAuth in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource IdentityKubernetesAuth in pulumi-infisical.
+
+Pulumi type: `infisical:index/identityKubernetesAuth:IdentityKubernetesAuth`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.IdentityKubernetesAuth(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
+| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
+| `accessTokenTrustedIps` | `IdentityKubernetesAuthAccessTokenTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
+| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
+| `allowedAudience` | `string` | no | An optional audience claim that the service account JWT token must have to authenticate with Infisical. |
+| `allowedNamespaces` | `string[]` | no | List of trusted namespaces that service accounts must belong to authenticate with Infisical. |
+| `allowedServiceAccountNames` | `string[]` | no | List of trusted service account names that are allowed to authenticate with Infisical. |
+| `gatewayId` | `string` | no | Select a gateway for private cluster access. If not specified, the Internet Gateway will be used. |
+| `identityId` | `string` | yes | The ID of the identity to attach the configuration onto. |
+| `kubernetesCaCertificate` | `string` | no | The PEM-encoded CA cert for the Kubernetes API server. This is used by the TLS client for secure communication with the Kubernetes API server. |
+| `kubernetesHost` | `string` | no | The host string, host:port pair, or URL to the base of the Kubernetes API server. This can usually be obtained by running `kubectl cluster-info`. |
+| `tokenReviewerJwt` | `string` | no | A long-lived service account JWT token for Infisical to access the [TokenReview API](https://kubernetes.io/docs/reference/kubernetes-api/authentication-resources/token-review-v1/) to validate other service account JWT tokens submitted by applications/pods. This is the JWT token obtained from step 1.5. |
+| `tokenReviewerMode` | `string` | no | Choose between Token ('api') or 'gateway' authentication. If using Gateway, the Gateway must be deployed in your Kubernetes cluster. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
+| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
+| `accessTokenTrustedIps` | `IdentityKubernetesAuthAccessTokenTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
+| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
+| `allowedAudience` | `string` | no | An optional audience claim that the service account JWT token must have to authenticate with Infisical. |
+| `allowedNamespaces` | `string[]` | no | List of trusted namespaces that service accounts must belong to authenticate with Infisical. |
+| `allowedServiceAccountNames` | `string[]` | no | List of trusted service account names that are allowed to authenticate with Infisical. |
+| `gatewayId` | `string` | no | Select a gateway for private cluster access. If not specified, the Internet Gateway will be used. |
+| `identityId` | `string` | no | The ID of the identity to attach the configuration onto. |
+| `kubernetesCaCertificate` | `string` | no | The PEM-encoded CA cert for the Kubernetes API server. This is used by the TLS client for secure communication with the Kubernetes API server. |
+| `kubernetesHost` | `string` | no | The host string, host:port pair, or URL to the base of the Kubernetes API server. This can usually be obtained by running `kubectl cluster-info`. |
+| `tokenReviewerJwt` | `string` | no | A long-lived service account JWT token for Infisical to access the [TokenReview API](https://kubernetes.io/docs/reference/kubernetes-api/authentication-resources/token-review-v1/) to validate other service account JWT tokens submitted by applications/pods. This is the JWT token obtained from step 1.5. |
+| `tokenReviewerMode` | `string` | no | Choose between Token ('api') or 'gateway' authentication. If using Gateway, the Gateway must be deployed in your Kubernetes cluster. |
+
+## `IdentityKubernetesAuthAccessTokenTrustedIp (input)`
+
+Input object `IdentityKubernetesAuthAccessTokenTrustedIp`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `ipAddress` | `string` | no |  |
+
+## `IdentityKubernetesAuthAccessTokenTrustedIp (output)`
+
+Output object `IdentityKubernetesAuthAccessTokenTrustedIp`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ipAddress` | `string` | yes |  |

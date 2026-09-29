@@ -1,0 +1,56 @@
+---
+title: "AddonConfig"
+description: "Resource AddonConfig in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource AddonConfig in pulumi-portainer.
+
+Pulumi type: `portainer:index/addonConfig:AddonConfig`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.AddonConfig(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addonConfigId` | `string` | no |  |
+| `addonId` | `string` | yes | Catalog identifier of the addon whose stored configuration this resource owns, for example `portal-template`. |
+| `entries` | `AddonConfigEntry (input)[]` | yes | Configuration entries of the addon. The set is authoritative: an entry removed from the configuration is deleted from the addon. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `addonConfigId` | `string` | no |  |
+| `addonId` | `string` | no | Catalog identifier of the addon whose stored configuration this resource owns, for example `portal-template`. |
+| `entries` | `AddonConfigEntry (output)[]` | no | Configuration entries of the addon. The set is authoritative: an entry removed from the configuration is deleted from the addon. |
+
+## `AddonConfigEntry (input)`
+
+Input object `AddonConfigEntry`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | Name of the configuration entry, for example `BASE_DOMAIN`. |
+| `sensitive` | `boolean` | no | Whether Portainer should treat the value as a secret, which keeps it out of API responses and makes clients display it carefully. |
+| `value` | `string` | yes | Value of the configuration entry. |
+
+## `AddonConfigEntry (output)`
+
+Output object `AddonConfigEntry`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | Name of the configuration entry, for example `BASE_DOMAIN`. |
+| `sensitive` | `boolean` | no | Whether Portainer should treat the value as a secret, which keeps it out of API responses and makes clients display it carefully. |
+| `value` | `string` | yes | Value of the configuration entry. |

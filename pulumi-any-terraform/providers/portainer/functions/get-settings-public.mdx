@@ -1,0 +1,40 @@
+---
+title: "getSettingsPublic"
+description: "Function getSettingsPublic in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getSettingsPublic in pulumi-portainer.
+
+Invoke token: `portainer:index/getSettingsPublic:getSettingsPublic`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getSettingsPublic(args)`.
+
+`getSettingsPublicOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authenticationMethod` | `number` | yes |  |
+| `enableEdgeComputeFeatures` | `boolean` | yes |  |
+| `id` | `string` | yes |  |
+| `isDockerDesktopExtension` | `boolean` | yes |  |
+| `kubeconfigExpiry` | `string` | yes |  |
+| `logoUrl` | `string` | yes |  |
+| `oauthLoginUri` | `string` | yes |  |
+| `oauthLogoutUri` | `string` | yes |  |
+| `requiredPasswordLength` | `number` | yes |  |
+| `requiresSetupToken` | `boolean` | yes |  |
+| `teamSync` | `boolean` | yes |  |

@@ -1,0 +1,47 @@
+---
+title: "getKubernetesCluster"
+description: "Function getKubernetesCluster in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesCluster in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesCluster:getKubernetesCluster`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesCluster(args)`.
+
+`getKubernetesClusterOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `applicationsCount` | `number` | yes |  |
+| `configMapsCount` | `number` | yes |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `ingressesCount` | `number` | yes |  |
+| `major` | `string` | yes |  |
+| `maxCpu` | `number` | yes |  |
+| `maxMemory` | `number` | yes |  |
+| `minor` | `string` | yes |  |
+| `namespacesCount` | `number` | yes |  |
+| `platform` | `string` | yes |  |
+| `rbacEnabled` | `boolean` | yes |  |
+| `secretsCount` | `number` | yes |  |
+| `servicesCount` | `number` | yes |  |
+| `supportsPodRestart` | `boolean` | yes |  |
+| `version` | `string` | yes |  |
+| `volumesCount` | `number` | yes |  |

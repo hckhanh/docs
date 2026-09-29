@@ -1,0 +1,37 @@
+---
+title: "TeamMember"
+description: "Resource TeamMember in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource TeamMember in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/teamMember:TeamMember`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.TeamMember(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `role` | `string` | yes | The role for the user. Either `MEMBER` or `MAINTAINER`. |
+| `teamId` | `string` | yes | The GraphQL ID of the team. |
+| `userId` | `string` | yes | The GraphQL ID of the user. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `role` | `string` | no | The role for the user. Either `MEMBER` or `MAINTAINER`. |
+| `teamId` | `string` | no | The GraphQL ID of the team. |
+| `userId` | `string` | no | The GraphQL ID of the user. |
+| `uuid` | `string` | yes | The UUID of the team membership. |

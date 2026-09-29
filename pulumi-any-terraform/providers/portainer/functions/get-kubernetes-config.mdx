@@ -1,0 +1,35 @@
+---
+title: "getKubernetesConfig"
+description: "Function getKubernetesConfig in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesConfig in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesConfig:getKubernetesConfig`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesConfig(args)`.
+
+`getKubernetesConfigOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentIds` | `number[]` | no |  |
+| `excludeEnvironmentIds` | `number[]` | no |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentIds` | `number[]` | no |  |
+| `excludeEnvironmentIds` | `number[]` | no |  |
+| `id` | `string` | yes |  |
+| `kubeconfig` | `string` | yes |  |

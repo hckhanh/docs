@@ -1,0 +1,64 @@
+---
+title: "Addon"
+description: "Resource Addon in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Addon in pulumi-portainer.
+
+Pulumi type: `portainer:index/addon:Addon`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Addon(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | yes | Catalog identifier of the addon, for example `portal-template`. Use the `portainer.getAddons` data source to list what the connected Portainer offers. |
+| `chart` | `string` | no | Chart path within `registryId`, for example `portainer/charts/portainer-run`. Required when `registryId` is set; leave unset to install from the catalog's public chart reference. |
+| `forceUninstall` | `boolean` | no | Whether to force the uninstall when the addon is destroyed, which lets Portainer remove a release that is in a broken state. |
+| `imageRegistryId` | `number` | no | Identifier of the Portainer registry whose credentials the addon's pods pull their container image with. Unlike `registryId` this can be changed on an upgrade. Leave unset to keep whatever the addon is installed with. |
+| `portainerAddonId` | `string` | no |  |
+| `pruneConfigOnUninstall` | `boolean` | no | Whether to also delete the addon's stored configuration entries when the addon is destroyed. By default the configuration survives an uninstall so a reinstall keeps it. |
+| `registryId` | `number` | no | Identifier of the Portainer registry the chart is pulled from. Only honoured on a first install, so changing it reinstalls the addon. Leave unset to use the catalog's public chart reference. |
+| `values` | `string` | no | Helm value overrides as a JSON object, merged over Portainer's per-addon defaults. Use `jsonencode({...})` to build it. |
+| `version` | `string` | no | Chart version to install. Leave unset to resolve the latest published version at apply time - note that Portainer then picks the version, so the installed one is reported in `chartVersion` rather than here. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | no | Catalog identifier of the addon, for example `portal-template`. Use the `portainer.getAddons` data source to list what the connected Portainer offers. |
+| `availableVersions` | `string[]` | yes | Published stable chart versions, newest first. Empty when the lookup could not run, in which case `versionCheckError` says why. |
+| `chart` | `string` | no | Chart path within `registryId`, for example `portainer/charts/portainer-run`. Required when `registryId` is set; leave unset to install from the catalog's public chart reference. |
+| `chartPath` | `string` | yes | Chart path recorded for the installed release, empty when the chart came from the public reference. |
+| `chartVersion` | `string` | yes | Chart version actually installed, which is what to read when `version` is left unset. |
+| `description` | `string` | yes | Full catalog description of the addon. |
+| `displayName` | `string` | yes | Human-readable name of the addon as published in the catalog. |
+| `enabled` | `boolean` | yes | Whether the addon is installed and switched on. Manage it with `portainer.AddonAccess`. |
+| `forceUninstall` | `boolean` | no | Whether to force the uninstall when the addon is destroyed, which lets Portainer remove a release that is in a broken state. |
+| `healthMessage` | `string` | yes | Explanation of an unhealthy probe result, empty otherwise. |
+| `healthStatus` | `string` | yes | Live probe of the running addon: `healthy`, `unhealthy`, `credential-invalid` or `unknown`. Orthogonal to `lifecycleStatus` - an installed addon can be unhealthy. |
+| `helmChartRepository` | `string` | yes | Public OCI chart reference the catalog publishes for the addon. |
+| `icon` | `string` | yes | Icon the Portainer UI shows for the addon. |
+| `imageRegistryId` | `number` | no | Identifier of the Portainer registry whose credentials the addon's pods pull their container image with. Unlike `registryId` this can be changed on an upgrade. Leave unset to keep whatever the addon is installed with. |
+| `lifecycleStatus` | `string` | yes | Helm release lifecycle state: `installing`, `upgrading`, `installed`, `failed`, `unknown` or `uninstalling`. This is not a health status. |
+| `lifecycleStatusMessage` | `string` | yes | Explanation of a failed install or upgrade, empty after a clean one. |
+| `path` | `string` | yes | Path the addon is served under in Portainer. |
+| `portainerAddonId` | `string` | no |  |
+| `pruneConfigOnUninstall` | `boolean` | no | Whether to also delete the addon's stored configuration entries when the addon is destroyed. By default the configuration survives an uninstall so a reinstall keeps it. |
+| `registryId` | `number` | no | Identifier of the Portainer registry the chart is pulled from. Only honoured on a first install, so changing it reinstalls the addon. Leave unset to use the catalog's public chart reference. |
+| `shortDescription` | `string` | yes | One-line catalog tagline for the addon. |
+| `upgradeAvailable` | `boolean` | yes | Whether a newer chart version than the installed one has been published. |
+| `values` | `string` | no | Helm value overrides as a JSON object, merged over Portainer's per-addon defaults. Use `jsonencode({...})` to build it. |
+| `version` | `string` | no | Chart version to install. Leave unset to resolve the latest published version at apply time - note that Portainer then picks the version, so the installed one is reported in `chartVersion` rather than here. |
+| `versionCheckError` | `string` | yes | Why the available-version lookup failed, empty when it succeeded. |

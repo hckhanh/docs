@@ -1,0 +1,65 @@
+---
+title: "AppConnectionAzureDevops"
+description: "Resource AppConnectionAzureDevops in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionAzureDevops in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionAzureDevops:AppConnectionAzureDevops`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionAzureDevops(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionAzureDevopsCredentials (input)` | yes | The credentials for the Azure DevOps App Connection |
+| `description` | `string` | no | An optional description for the Azure DevOps App Connection. |
+| `method` | `string` | yes | The method used to authenticate with Azure DevOps. Possible values are: access-token, client-secret |
+| `name` | `string` | no | The name of the Azure DevOps App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionAzureDevopsCredentials (output)` | no | The credentials for the Azure DevOps App Connection |
+| `credentialsHash` | `string` | yes | The hash of the Azure DevOps App Connection credentials |
+| `description` | `string` | no | An optional description for the Azure DevOps App Connection. |
+| `method` | `string` | no | The method used to authenticate with Azure DevOps. Possible values are: access-token, client-secret |
+| `name` | `string` | no | The name of the Azure DevOps App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionAzureDevopsCredentials (input)`
+
+Input object `AppConnectionAzureDevopsCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessToken` | `string` | no | The Azure DevOps access token. Required for access-token method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-devops |
+| `clientId` | `string` | no | The Azure application (client) ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |
+| `clientSecret` | `string` | no | The Azure client secret. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |
+| `organizationName` | `string` | yes | The name of the Azure DevOps organization. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-devops |
+| `tenantId` | `string` | no | The Azure Active Directory (AAD) tenant ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |
+
+## `AppConnectionAzureDevopsCredentials (output)`
+
+Output object `AppConnectionAzureDevopsCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessToken` | `string` | no | The Azure DevOps access token. Required for access-token method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-devops |
+| `clientId` | `string` | no | The Azure application (client) ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |
+| `clientSecret` | `string` | no | The Azure client secret. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |
+| `organizationName` | `string` | yes | The name of the Azure DevOps organization. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-devops |
+| `tenantId` | `string` | no | The Azure Active Directory (AAD) tenant ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-client-secrets |

@@ -1,0 +1,48 @@
+---
+title: "getTeams"
+description: "Function getTeams in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Function getTeams in pulumi-buildkite.
+
+Invoke token: `buildkite:index/getTeams:getTeams`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Call `buildkite.getTeams(args)`.
+
+`getTeamsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+This function takes no arguments.
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `teams` | `GetTeamsTeam[]` | yes |  |
+
+## `GetTeamsTeam`
+
+Output object `GetTeamsTeam`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `defaultMemberRole` | `string` | yes | The default member role for new team members. |
+| `description` | `string` | yes | The description of the team. |
+| `id` | `string` | yes | The GraphQL ID of the team. |
+| `isDefaultTeam` | `boolean` | yes | Whether this is the default team for the organization. |
+| `membersCanCreatePipelines` | `boolean` | yes | Whether team members can create pipelines. |
+| `membersCanCreateRegistries` | `boolean` | yes | Whether team members can create registries. |
+| `membersCanCreateSuites` | `boolean` | yes | Whether team members can create test suites. |
+| `membersCanDestroyPackages` | `boolean` | yes | Whether team members can destroy packages. |
+| `membersCanDestroyRegistries` | `boolean` | yes | Whether team members can destroy registries. |
+| `name` | `string` | yes | The name of the team. |
+| `privacy` | `string` | yes | The privacy setting of the team. |
+| `slug` | `string` | yes | The slug of the team. |
+| `uuid` | `string` | yes | The UUID of the team. |

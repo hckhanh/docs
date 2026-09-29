@@ -1,0 +1,69 @@
+---
+title: "getKubernetesGpu"
+description: "Function getKubernetesGpu in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesGpu in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesGpu:getKubernetesGpu`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesGpu(args)`.
+
+`getKubernetesGpuOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `degradedCount` | `number` | yes |  |
+| `devicePluginDetected` | `boolean` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `gpuNodeCount` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `nodes` | `GetKubernetesGpuNode[]` | yes |  |
+| `operatorDetected` | `boolean` | yes |  |
+| `totalAllocatable` | `{ [key: string]: number }` | yes |  |
+| `totalAllocated` | `{ [key: string]: number }` | yes |  |
+| `totalCapacity` | `{ [key: string]: number }` | yes |  |
+| `workloads` | `GetKubernetesGpuWorkload[]` | yes |  |
+
+## `GetKubernetesGpuNode`
+
+Output object `GetKubernetesGpuNode`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allocatable` | `{ [key: string]: number }` | no |  |
+| `allocated` | `{ [key: string]: number }` | no |  |
+| `capacity` | `{ [key: string]: number }` | no |  |
+| `name` | `string` | no |  |
+| `status` | `string` | no |  |
+| `statusReason` | `string` | no |  |
+
+## `GetKubernetesGpuWorkload`
+
+Output object `GetKubernetesGpuWorkload`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `gpuRequests` | `{ [key: string]: number }` | no |  |
+| `namespace` | `string` | no |  |
+| `nodeName` | `string` | no |  |
+| `ownerKind` | `string` | no |  |
+| `ownerName` | `string` | no |  |
+| `podName` | `string` | no |  |
+| `podPhase` | `string` | no |  |
+| `schedulingIssue` | `string` | no |  |

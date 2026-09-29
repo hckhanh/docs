@@ -1,0 +1,51 @@
+---
+title: "getProjects"
+description: "Function getProjects in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Function getProjects in pulumi-infisical.
+
+Invoke token: `infisical:index/getProjects:getProjects`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Call `infisical.getProjects(args)`.
+
+`getProjectsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `slug` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoCapitalization` | `boolean` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `environments` | `{ [key: string]: GetProjectsEnvironments }` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `orgId` | `string` | yes |  |
+| `slug` | `string` | yes |  |
+| `type` | `string` | yes |  |
+| `updatedAt` | `string` | yes |  |
+| `upgradeStatus` | `string` | yes |  |
+| `version` | `number` | yes |  |
+
+## `GetProjectsEnvironments`
+
+Output object `GetProjectsEnvironments`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes | The ID of the environment |
+| `name` | `string` | yes | The name of the environment |
+| `slug` | `string` | yes | The slug of the environment |

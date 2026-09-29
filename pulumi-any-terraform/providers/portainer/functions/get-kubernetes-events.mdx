@@ -1,0 +1,55 @@
+---
+title: "getKubernetesEvents"
+description: "Function getKubernetesEvents in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesEvents in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesEvents:getKubernetesEvents`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesEvents(args)`.
+
+`getKubernetesEventsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `resourceId` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `events` | `GetKubernetesEventsEvent[]` | yes |  |
+| `id` | `string` | yes |  |
+| `namespace` | `string` | no |  |
+| `resourceId` | `string` | no |  |
+| `warningCount` | `number` | yes |  |
+
+## `GetKubernetesEventsEvent`
+
+Output object `GetKubernetesEventsEvent`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `count` | `number` | no |  |
+| `firstTimestamp` | `string` | no |  |
+| `kind` | `string` | no |  |
+| `lastTimestamp` | `string` | no |  |
+| `message` | `string` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `reason` | `string` | no |  |
+| `type` | `string` | no |  |
+| `uid` | `string` | no |  |

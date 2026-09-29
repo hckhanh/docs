@@ -1,0 +1,45 @@
+---
+title: "getEdgeJobTasks"
+description: "Function getEdgeJobTasks in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getEdgeJobTasks in pulumi-portainer.
+
+Invoke token: `portainer:index/getEdgeJobTasks:getEdgeJobTasks`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getEdgeJobTasks(args)`.
+
+`getEdgeJobTasksOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `edgeJobId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `edgeJobId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `tasks` | `GetEdgeJobTasksTask[]` | yes |  |
+
+## `GetEdgeJobTasksTask`
+
+Output object `GetEdgeJobTasksTask`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no |  |
+| `endpointName` | `string` | no |  |
+| `id` | `string` | no |  |
+| `logsCollected` | `boolean` | no |  |
+| `logsStatus` | `number` | no |  |

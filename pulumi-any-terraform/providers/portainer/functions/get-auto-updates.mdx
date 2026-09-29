@@ -1,0 +1,42 @@
+---
+title: "getAutoUpdates"
+description: "Function getAutoUpdates in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getAutoUpdates in pulumi-portainer.
+
+Invoke token: `portainer:index/getAutoUpdates:getAutoUpdates`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getAutoUpdates(args)`.
+
+`getAutoUpdatesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoUpdates` | `GetAutoUpdatesAutoUpdate[]` | yes |  |
+| `id` | `string` | yes |  |
+
+## `GetAutoUpdatesAutoUpdate`
+
+Output object `GetAutoUpdatesAutoUpdate`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `doneAt` | `number` | no |  |
+| `startedAt` | `number` | no |  |
+| `status` | `string` | no |  |
+| `version` | `string` | no |  |

@@ -1,0 +1,62 @@
+---
+title: "KubernetesIngresscontrollers"
+description: "Resource KubernetesIngresscontrollers in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesIngresscontrollers in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesIngresscontrollers:KubernetesIngresscontrollers`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesIngresscontrollers(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `controllers` | `KubernetesIngresscontrollersController (input)[]` | yes | List of ingress controller configurations to apply at the cluster level. |
+| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment whose ingress controllers are managed. |
+| `kubernetesIngresscontrollersId` | `string` | no |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `controllers` | `KubernetesIngresscontrollersController (output)[]` | no | List of ingress controller configurations to apply at the cluster level. |
+| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment whose ingress controllers are managed. |
+| `kubernetesIngresscontrollersId` | `string` | no |  |
+
+## `KubernetesIngresscontrollersController (input)`
+
+Input object `KubernetesIngresscontrollersController`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `availability` | `boolean` | yes | Whether the ingress controller is exposed for selection in the Portainer UI. |
+| `className` | `string` | yes | Kubernetes IngressClass name associated with the controller. |
+| `name` | `string` | yes | Display name of the ingress controller in Portainer. |
+| `new` | `boolean` | yes | Whether Portainer should treat this entry as a newly-registered controller. |
+| `type` | `string` | yes | Type of the ingress controller (for example `nginx`, `traefik`, `custom`). |
+| `used` | `boolean` | yes | Whether the ingress controller is currently in use by workloads. |
+
+## `KubernetesIngresscontrollersController (output)`
+
+Output object `KubernetesIngresscontrollersController`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `availability` | `boolean` | yes | Whether the ingress controller is exposed for selection in the Portainer UI. |
+| `className` | `string` | yes | Kubernetes IngressClass name associated with the controller. |
+| `name` | `string` | yes | Display name of the ingress controller in Portainer. |
+| `new` | `boolean` | yes | Whether Portainer should treat this entry as a newly-registered controller. |
+| `type` | `string` | yes | Type of the ingress controller (for example `nginx`, `traefik`, `custom`). |
+| `used` | `boolean` | yes | Whether the ingress controller is currently in use by workloads. |

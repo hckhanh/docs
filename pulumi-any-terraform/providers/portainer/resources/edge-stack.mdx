@@ -1,0 +1,134 @@
+---
+title: "EdgeStack"
+description: "Resource EdgeStack in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource EdgeStack in pulumi-portainer.
+
+Pulumi type: `portainer:index/edgeStack:EdgeStack`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.EdgeStack(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `alwaysClone` | `boolean` | no | Whether the agent must always clone the git repository for relative path. Only valid when `relativePath` is set. |
+| `deploymentType` | `number` | yes | 0 = Docker Compose, 1 = Kubernetes |
+| `dryrun` | `boolean` | no | If true, perform a dry-run of the Edge stack deployment without applying changes. |
+| `edgeGroups` | `number[]` | yes | List of Portainer Edge group IDs to which this Edge stack is deployed. |
+| `edgeStackId` | `string` | no |  |
+| `environment` | `{ [key: string]: string }` | no | Environment variables for the Edge Stack |
+| `filePathInRepository` | `string` | no | Path to the Compose or manifest file within the Git repository. Changing this value forces resource recreation. |
+| `forceUpdate` | `boolean` | no | Whether to prune unused services/networks during stack update (default: true) |
+| `gitRepositoryAuthentication` | `boolean` | no | Whether authentication is required to clone the Git repository. |
+| `helmConfig` | `EdgeStackHelmConfig (input)` | no | Deploy the stack from a Helm chart repository instead of a compose file or a git repository. Business Edition only. |
+| `name` | `string` | no | Name of the Portainer Edge stack. |
+| `prePullImage` | `boolean` | no | Whether Portainer should pre-pull images on Edge agents before deploying the stack. |
+| `pullImage` | `boolean` | no | Whether to force pull latest images during stack update (default: true) |
+| `registries` | `number[]` | no | List of Portainer registry IDs used to pull images for this Edge stack. |
+| `relativePath` | `string` | no | Enable relative path volumes – also used as value for 'filesystemPath'. |
+| `repositoryGitCredentialId` | `number` | no | ID of the Git credentials to use for authentication. |
+| `repositoryPassword` | `string` | no | Password or personal access token used to authenticate against the Git repository. Stored in state as sensitive value. Changing this value forces resource recreation. |
+| `repositoryReferenceName` | `string` | no | Git reference (branch or tag) to check out from the repository. |
+| `repositoryUrl` | `string` | no | Git repository URL containing the Edge stack definition. Changing this value forces resource recreation. |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. Changing this value forces resource recreation. |
+| `retryDeploy` | `boolean` | no | Whether the Edge agent should retry deployment on failure. |
+| `stackFileContent` | `string` | no | Inline content of the Docker Compose or Kubernetes manifest used to deploy the Edge stack. |
+| `stackFilePath` | `string` | no | Local filesystem path to a Compose or manifest file used as the Edge stack definition. Changing this value forces resource recreation. |
+| `stackWebhook` | `boolean` | no | Enable autoUpdate webhook (GitOps). |
+| `timeouts` | `EdgeStackTimeouts (input)` | no |  |
+| `updateInterval` | `string` | no | GitOps update interval (e.g. "5m") at which Portainer polls the Git repository for Edge stack changes. |
+| `useManifestNamespaces` | `boolean` | no | For Kubernetes deployments, whether to use namespaces declared inside the manifest instead of the default Portainer namespace. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `alwaysClone` | `boolean` | no | Whether the agent must always clone the git repository for relative path. Only valid when `relativePath` is set. |
+| `deploymentType` | `number` | no | 0 = Docker Compose, 1 = Kubernetes |
+| `dryrun` | `boolean` | no | If true, perform a dry-run of the Edge stack deployment without applying changes. |
+| `edgeGroups` | `number[]` | no | List of Portainer Edge group IDs to which this Edge stack is deployed. |
+| `edgeStackId` | `string` | no |  |
+| `environment` | `{ [key: string]: string }` | no | Environment variables for the Edge Stack |
+| `filePathInRepository` | `string` | no | Path to the Compose or manifest file within the Git repository. Changing this value forces resource recreation. |
+| `forceUpdate` | `boolean` | no | Whether to prune unused services/networks during stack update (default: true) |
+| `gitRepositoryAuthentication` | `boolean` | no | Whether authentication is required to clone the Git repository. |
+| `helmConfig` | `EdgeStackHelmConfig (output)` | no | Deploy the stack from a Helm chart repository instead of a compose file or a git repository. Business Edition only. |
+| `name` | `string` | no | Name of the Portainer Edge stack. |
+| `prePullImage` | `boolean` | no | Whether Portainer should pre-pull images on Edge agents before deploying the stack. |
+| `pullImage` | `boolean` | no | Whether to force pull latest images during stack update (default: true) |
+| `registries` | `number[]` | no | List of Portainer registry IDs used to pull images for this Edge stack. |
+| `relativePath` | `string` | no | Enable relative path volumes – also used as value for 'filesystemPath'. |
+| `repositoryGitCredentialId` | `number` | no | ID of the Git credentials to use for authentication. |
+| `repositoryPassword` | `string` | no | Password or personal access token used to authenticate against the Git repository. Stored in state as sensitive value. Changing this value forces resource recreation. |
+| `repositoryReferenceName` | `string` | no | Git reference (branch or tag) to check out from the repository. |
+| `repositoryUrl` | `string` | no | Git repository URL containing the Edge stack definition. Changing this value forces resource recreation. |
+| `repositoryUsername` | `string` | no | Username used to authenticate against the Git repository. Changing this value forces resource recreation. |
+| `retryDeploy` | `boolean` | no | Whether the Edge agent should retry deployment on failure. |
+| `stackFileContent` | `string` | no | Inline content of the Docker Compose or Kubernetes manifest used to deploy the Edge stack. |
+| `stackFilePath` | `string` | no | Local filesystem path to a Compose or manifest file used as the Edge stack definition. Changing this value forces resource recreation. |
+| `stackWebhook` | `boolean` | no | Enable autoUpdate webhook (GitOps). |
+| `timeouts` | `EdgeStackTimeouts (output)` | no |  |
+| `updateInterval` | `string` | no | GitOps update interval (e.g. "5m") at which Portainer polls the Git repository for Edge stack changes. |
+| `useManifestNamespaces` | `boolean` | no | For Kubernetes deployments, whether to use namespaces declared inside the manifest instead of the default Portainer namespace. |
+| `webhookId` | `string` | yes | UUID of the GitOps webhook (read-only). |
+| `webhookUrl` | `string` | yes | Full URL of the webhook trigger |
+
+## `EdgeStackHelmConfig (input)`
+
+Input object `EdgeStackHelmConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `atomic` | `boolean` | no | Whether a failed deployment is rolled back automatically, the equivalent of `helm --atomic`. |
+| `chartName` | `string` | yes | Name of the Helm chart within the repository. |
+| `chartUrl` | `string` | yes | URL of the Helm chart repository. |
+| `chartVersion` | `string` | no | Version of the chart to deploy. Leave unset to deploy the latest published version - note that Portainer then picks the version, so a re-apply can move the stack. |
+| `namespace` | `string` | no | Kubernetes namespace to deploy the chart into. |
+| `timeout` | `string` | no | Deadline for Helm operations, the equivalent of `helm --timeout` (for example `5m0s`). |
+| `valuesInline` | `string` | no | Helm values as an inline YAML string, the equivalent of a values file passed to `helm install`. |
+
+## `EdgeStackTimeouts (input)`
+
+Input object `EdgeStackTimeouts`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |
+| `delete` | `string` | no |  |
+| `update` | `string` | no |  |
+
+## `EdgeStackHelmConfig (output)`
+
+Output object `EdgeStackHelmConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `atomic` | `boolean` | no | Whether a failed deployment is rolled back automatically, the equivalent of `helm --atomic`. |
+| `chartName` | `string` | yes | Name of the Helm chart within the repository. |
+| `chartUrl` | `string` | yes | URL of the Helm chart repository. |
+| `chartVersion` | `string` | no | Version of the chart to deploy. Leave unset to deploy the latest published version - note that Portainer then picks the version, so a re-apply can move the stack. |
+| `namespace` | `string` | no | Kubernetes namespace to deploy the chart into. |
+| `timeout` | `string` | no | Deadline for Helm operations, the equivalent of `helm --timeout` (for example `5m0s`). |
+| `valuesInline` | `string` | no | Helm values as an inline YAML string, the equivalent of a values file passed to `helm install`. |
+
+## `EdgeStackTimeouts (output)`
+
+Output object `EdgeStackTimeouts`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `create` | `string` | no |  |
+| `delete` | `string` | no |  |
+| `update` | `string` | no |  |

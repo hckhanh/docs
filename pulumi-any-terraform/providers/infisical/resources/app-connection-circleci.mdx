@@ -1,0 +1,59 @@
+---
+title: "AppConnectionCircleci"
+description: "Resource AppConnectionCircleci in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionCircleci in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionCircleci:AppConnectionCircleci`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionCircleci(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionCircleciCredentials (input)` | yes | The credentials for the CircleCI App Connection |
+| `description` | `string` | no | An optional description for the CircleCI App Connection. |
+| `method` | `string` | yes | The method used to authenticate with CircleCI. Possible values are: api-token |
+| `name` | `string` | no | The name of the CircleCI App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionCircleciCredentials (output)` | no | The credentials for the CircleCI App Connection |
+| `credentialsHash` | `string` | yes | The hash of the CircleCI App Connection credentials |
+| `description` | `string` | no | An optional description for the CircleCI App Connection. |
+| `method` | `string` | no | The method used to authenticate with CircleCI. Possible values are: api-token |
+| `name` | `string` | no | The name of the CircleCI App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionCircleciCredentials (input)`
+
+Input object `AppConnectionCircleciCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `apiToken` | `string` | yes | The CircleCI API token for authentication. |
+| `host` | `string` | no | The CircleCI host to connect with, for self-hosted instances. (default: https://circleci.com) |
+
+## `AppConnectionCircleciCredentials (output)`
+
+Output object `AppConnectionCircleciCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `apiToken` | `string` | yes | The CircleCI API token for authentication. |
+| `host` | `string` | no | The CircleCI host to connect with, for self-hosted instances. (default: https://circleci.com) |

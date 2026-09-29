@@ -1,0 +1,47 @@
+---
+title: "getEdgeMtlsCertificate"
+description: "Function getEdgeMtlsCertificate in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getEdgeMtlsCertificate in pulumi-portainer.
+
+Invoke token: `portainer:index/getEdgeMtlsCertificate:getEdgeMtlsCertificate`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getEdgeMtlsCertificate(args)`.
+
+`getEdgeMtlsCertificateOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `commonName` | `string` | yes |  |
+| `configured` | `boolean` | yes |  |
+| `extendedKeyUsages` | `string[]` | yes |  |
+| `id` | `string` | yes |  |
+| `isCertificateAuthority` | `boolean` | yes |  |
+| `issuerCommonName` | `string` | yes |  |
+| `keyUsages` | `string[]` | yes |  |
+| `organizations` | `string[]` | yes |  |
+| `publicKeyAlgorithm` | `string` | yes |  |
+| `publicKeySize` | `number` | yes |  |
+| `serialNumber` | `string` | yes |  |
+| `sha256Fingerprint` | `string` | yes |  |
+| `signatureAlgorithm` | `string` | yes |  |
+| `subjectAltDnsNames` | `string[]` | yes |  |
+| `subjectAltIpAddresses` | `string[]` | yes |  |
+| `validNotAfter` | `string` | yes |  |
+| `validNotBefore` | `string` | yes |  |
+| `version` | `number` | yes |  |

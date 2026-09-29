@@ -1,0 +1,40 @@
+---
+title: "AddonRepair"
+description: "Resource AddonRepair in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource AddonRepair in pulumi-portainer.
+
+Pulumi type: `portainer:index/addonRepair:AddonRepair`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.AddonRepair(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | yes | Catalog identifier of the addon whose credential is repaired, for example `portal-template`. Repair the addon when its `healthStatus` reports `credential-invalid`. |
+| `addonRepairId` | `string` | no |  |
+| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another repair when they change. A repair is a one-shot action, so without a trigger the resource runs once and then stays put. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | no | Catalog identifier of the addon whose credential is repaired, for example `portal-template`. Repair the addon when its `healthStatus` reports `credential-invalid`. |
+| `addonRepairId` | `string` | no |  |
+| `chartVersion` | `string` | yes | Chart version of the addon, as reported after the repair. |
+| `enabled` | `boolean` | yes | Whether the addon is enabled, as reported after the repair. |
+| `lifecycleStatus` | `string` | yes | Helm release lifecycle state of the addon, as reported after the repair. |
+| `lifecycleStatusMessage` | `string` | yes | Explanation of a failed lifecycle operation, as reported after the repair. |
+| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another repair when they change. A repair is a one-shot action, so without a trigger the resource runs once and then stays put. |

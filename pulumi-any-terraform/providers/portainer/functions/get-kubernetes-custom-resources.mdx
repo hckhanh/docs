@@ -1,0 +1,47 @@
+---
+title: "getKubernetesCustomResources"
+description: "Function getKubernetesCustomResources in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesCustomResources in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesCustomResources:getKubernetesCustomResources`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesCustomResources(args)`.
+
+`getKubernetesCustomResourcesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `definition` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `definition` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `resources` | `GetKubernetesCustomResourcesResource[]` | yes |  |
+
+## `GetKubernetesCustomResourcesResource`
+
+Output object `GetKubernetesCustomResourcesResource`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `creationDate` | `string` | no |  |
+| `definitionName` | `string` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `uid` | `string` | no |  |

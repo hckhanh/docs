@@ -1,0 +1,50 @@
+---
+title: "StorageZone"
+description: "Resource StorageZone in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource StorageZone in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/storageZone:StorageZone`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.StorageZone(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `custom404FilePath` | `string` | no | The file path for a custom 404 error page. |
+| `name` | `string` | no | The name of the storage zone. |
+| `region` | `string` | yes | The region where the storage zone is located. |
+| `replicationRegions` | `string[]` | no | A set of regions for data replication. |
+| `rewrite404To200` | `boolean` | no | Indicates whether to rewrite 404 errors to 200 status. |
+| `type` | `string` | no | Options: `S3`, `Standard` |
+| `zoneTier` | `string` | yes | Options: `Edge`, `Standard` |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `custom404FilePath` | `string` | no | The file path for a custom 404 error page. |
+| `dateModified` | `string` | yes | The date when the zone was last modified. |
+| `hostname` | `string` | yes | The hostname for accessing the storage zone over HTTP API. |
+| `hostnameS3` | `string` | yes | The hostname for accessing the storage zone over S3. |
+| `name` | `string` | no | The name of the storage zone. |
+| `password` | `string` | yes | The password for accessing the storage zone. |
+| `passwordReadonly` | `string` | yes | The read-only password for accessing the storage zone. |
+| `region` | `string` | no | The region where the storage zone is located. |
+| `replicationRegions` | `string[]` | no | A set of regions for data replication. |
+| `rewrite404To200` | `boolean` | no | Indicates whether to rewrite 404 errors to 200 status. |
+| `storageZoneId` | `number` | yes | The ID of the storage zone. |
+| `type` | `string` | no | Options: `S3`, `Standard` |
+| `zoneTier` | `string` | no | Options: `Edge`, `Standard` |

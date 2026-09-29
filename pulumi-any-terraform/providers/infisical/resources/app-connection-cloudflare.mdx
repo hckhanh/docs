@@ -1,0 +1,59 @@
+---
+title: "AppConnectionCloudflare"
+description: "Resource AppConnectionCloudflare in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionCloudflare in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionCloudflare:AppConnectionCloudflare`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionCloudflare(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionCloudflareCredentials (input)` | yes | The credentials for the Cloudflare App Connection |
+| `description` | `string` | no | An optional description for the Cloudflare App Connection. |
+| `method` | `string` | yes | The method used to authenticate with Cloudflare. Possible values are: api-token |
+| `name` | `string` | no | The name of the Cloudflare App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionCloudflareCredentials (output)` | no | The credentials for the Cloudflare App Connection |
+| `credentialsHash` | `string` | yes | The hash of the Cloudflare App Connection credentials |
+| `description` | `string` | no | An optional description for the Cloudflare App Connection. |
+| `method` | `string` | no | The method used to authenticate with Cloudflare. Possible values are: api-token |
+| `name` | `string` | no | The name of the Cloudflare App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionCloudflareCredentials (input)`
+
+Input object `AppConnectionCloudflareCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accountId` | `string` | yes | The Cloudflare Account ID. This can be found in the sidebar of your Cloudflare dashboard. |
+| `apiToken` | `string` | yes | The Cloudflare API token with the necessary permissions to manage Workers scripts. The token should have Zone:Zone:Read, Zone:Zone Settings:Read, and Zone:Zone:Edit permissions. |
+
+## `AppConnectionCloudflareCredentials (output)`
+
+Output object `AppConnectionCloudflareCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accountId` | `string` | yes | The Cloudflare Account ID. This can be found in the sidebar of your Cloudflare dashboard. |
+| `apiToken` | `string` | yes | The Cloudflare API token with the necessary permissions to manage Workers scripts. The token should have Zone:Zone:Read, Zone:Zone Settings:Read, and Zone:Zone:Edit permissions. |

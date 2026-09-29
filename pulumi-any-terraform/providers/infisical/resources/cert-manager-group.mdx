@@ -1,0 +1,34 @@
+---
+title: "CertManagerGroup"
+description: "Resource CertManagerGroup in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource CertManagerGroup in pulumi-infisical.
+
+Pulumi type: `infisical:index/certManagerGroup:CertManagerGroup`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.CertManagerGroup(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `groupId` | `string` | yes | The ID of the group |
+| `role` | `string` | yes | The role to assign to the group (admin or member) |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `groupId` | `string` | no | The ID of the group |
+| `role` | `string` | no | The role to assign to the group (admin or member) |

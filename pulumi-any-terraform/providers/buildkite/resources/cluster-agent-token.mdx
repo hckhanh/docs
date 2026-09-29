@@ -1,0 +1,41 @@
+---
+title: "ClusterAgentToken"
+description: "Resource ClusterAgentToken in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource ClusterAgentToken in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/clusterAgentToken:ClusterAgentToken`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.ClusterAgentToken(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string[]` | no | A list of CIDR-notation IPv4 addresses from which agents can use this Cluster Agent Token.If not set, all IP addresses are allowed (the same as setting 0.0.0.0/0). |
+| `clusterId` | `string` | yes | The GraphQL ID of the Cluster that this Cluster Agent Token belongs to. |
+| `description` | `string` | yes | A description about what this cluster agent token is used for. |
+| `expiresAt` | `string` | no | The time at which the token expires, in RFC 3339 format with up to millisecond precision (e.g. `2030-01-01T00:00:00Z`) and at least 10 minutes in the future. If not set, the token never expires. Changing this value replaces the token, since the expiry cannot be updated. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string[]` | no | A list of CIDR-notation IPv4 addresses from which agents can use this Cluster Agent Token.If not set, all IP addresses are allowed (the same as setting 0.0.0.0/0). |
+| `clusterId` | `string` | no | The GraphQL ID of the Cluster that this Cluster Agent Token belongs to. |
+| `clusterUuid` | `string` | yes | The UUID of the Cluster that this token belongs to. |
+| `description` | `string` | no | A description about what this cluster agent token is used for. |
+| `expiresAt` | `string` | no | The time at which the token expires, in RFC 3339 format with up to millisecond precision (e.g. `2030-01-01T00:00:00Z`) and at least 10 minutes in the future. If not set, the token never expires. Changing this value replaces the token, since the expiry cannot be updated. |
+| `token` | `string` | yes | The token value used by an agent to register with the API. |
+| `uuid` | `string` | yes | The UUID of the token. |

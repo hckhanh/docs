@@ -1,0 +1,71 @@
+---
+title: "AppConnectionPostgres"
+description: "Resource AppConnectionPostgres in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionPostgres in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionPostgres:AppConnectionPostgres`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionPostgres(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionPostgresCredentials (input)` | yes | The credentials for the PostgreSQL App Connection |
+| `description` | `string` | no | An optional description for the PostgreSQL App Connection. |
+| `method` | `string` | yes | The method used to authenticate with PostgreSQL. Possible values are: username-and-password |
+| `name` | `string` | no | The name of the PostgreSQL App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionPostgresCredentials (output)` | no | The credentials for the PostgreSQL App Connection |
+| `credentialsHash` | `string` | yes | The hash of the PostgreSQL App Connection credentials |
+| `description` | `string` | no | An optional description for the PostgreSQL App Connection. |
+| `method` | `string` | no | The method used to authenticate with PostgreSQL. Possible values are: username-and-password |
+| `name` | `string` | no | The name of the PostgreSQL App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionPostgresCredentials (input)`
+
+Input object `AppConnectionPostgresCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `database` | `string` | yes | The name of the database to connect to. |
+| `host` | `string` | yes | The hostname of the database server. |
+| `password` | `string` | yes | The password to connect to the database with. |
+| `port` | `number` | no | The port number of the database. |
+| `sslCertificate` | `string` | no | The SSL certificate to use for connection. |
+| `sslEnabled` | `boolean` | no | Whether or not to use SSL when connecting to the database. |
+| `sslRejectUnauthorized` | `boolean` | no | Whether or not to reject unauthorized SSL certificates. |
+| `username` | `string` | yes | The username to connect to the database with. |
+
+## `AppConnectionPostgresCredentials (output)`
+
+Output object `AppConnectionPostgresCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `database` | `string` | yes | The name of the database to connect to. |
+| `host` | `string` | yes | The hostname of the database server. |
+| `password` | `string` | yes | The password to connect to the database with. |
+| `port` | `number` | yes | The port number of the database. |
+| `sslCertificate` | `string` | no | The SSL certificate to use for connection. |
+| `sslEnabled` | `boolean` | yes | Whether or not to use SSL when connecting to the database. |
+| `sslRejectUnauthorized` | `boolean` | yes | Whether or not to reject unauthorized SSL certificates. |
+| `username` | `string` | yes | The username to connect to the database with. |

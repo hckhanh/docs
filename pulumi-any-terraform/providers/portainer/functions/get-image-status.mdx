@@ -1,0 +1,40 @@
+---
+title: "getImageStatus"
+description: "Function getImageStatus in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getImageStatus in pulumi-portainer.
+
+Invoke token: `portainer:index/getImageStatus:getImageStatus`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getImageStatus(args)`.
+
+`getImageStatusOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no |  |
+| `id` | `string` | no |  |
+| `kind` | `string` | yes |  |
+| `refresh` | `boolean` | no |  |
+| `resourceId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no |  |
+| `id` | `string` | yes |  |
+| `kind` | `string` | yes |  |
+| `message` | `string` | yes |  |
+| `refresh` | `boolean` | no |  |
+| `resourceId` | `string` | yes |  |
+| `status` | `string` | yes |  |

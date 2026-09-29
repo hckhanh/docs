@@ -1,0 +1,38 @@
+---
+title: "UserRoleAssignment"
+description: "Resource UserRoleAssignment in pulumi-teamcity."
+---
+
+<!-- Generated from the pulumi-teamcity SDK. -->
+
+Resource UserRoleAssignment in pulumi-teamcity.
+
+Pulumi type: `teamcity:index/userRoleAssignment:UserRoleAssignment`.
+
+```ts
+import * as teamcity from "pulumi-teamcity"
+```
+
+Construct with `new teamcity.UserRoleAssignment(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `roleId` | `string` | yes | The ID of the role to assign. |
+| `scope` | `string` | no | The scope of the role assignment. Use 'g' for global scope or 'p:PROJECT_ID' for project-specific scope. Defaults to global if not specified. |
+| `userId` | `string` | no | The ID of the user to assign the role to. Either `userId` or username must be specified. |
+| `username` | `string` | no | The username of the user to assign the role to. Either `userId` or username must be specified. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `roleId` | `string` | no | The ID of the role to assign. |
+| `scope` | `string` | no | The scope of the role assignment. Use 'g' for global scope or 'p:PROJECT_ID' for project-specific scope. Defaults to global if not specified. |
+| `userId` | `string` | no | The ID of the user to assign the role to. Either `userId` or username must be specified. |
+| `username` | `string` | no | The username of the user to assign the role to. Either `userId` or username must be specified. |

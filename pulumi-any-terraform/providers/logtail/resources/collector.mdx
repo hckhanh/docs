@@ -1,0 +1,254 @@
+---
+title: "Collector"
+description: "Resource Collector in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource Collector in pulumi-logtail.
+
+Pulumi type: `logtail:index/collector:Collector`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.Collector(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `configuration` | `CollectorConfiguration (input)` | no | Collector-level configuration including active components, sampling rates, batching, and VRL transformations. These settings run on the collector host inside your infrastructure. |
+| `customBucket` | `CollectorCustomBucket (input)` | no | Optional custom S3-compatible bucket configuration for the collector. Can only be set when creating the collector and cannot be added, changed, or removed afterwards - recreate the collector to use a different bucket. Better Stack validates the credentials by writing and reading a test object in the bucket during creation. |
+| `dataRegion` | `string` | no | Data region or private cluster name to create the collector in. Permitted values for most plans are: 'usWest', 'germany', 'singapore'. This value can only be set at creation time and cannot be changed afterwards. The API returns the specific cluster name, which may differ from the value you provide (for example, 'germany' may read back as 'eu-nbg-2').\ When importing an existing collector, leave 'dataRegion' unset in your configuration - Terraform reads it from the API. Pinning it to an identifier that differs from the stored cluster name produces a spurious 'dataRegion' cannot be changed after collector is created' error. |
+| `databases` | `CollectorDatabase (input)[]` | no | Database connections for the collector. Deprecated - use the `logtail.CollectorTarget` resource instead. |
+| `ingestingPaused` | `boolean` | no | Whether ingestion is paused for this collector. |
+| `liveTailPattern` | `string` | no | Freeform text template for formatting Live tail output with columns wrapped in &#123;column&#125; brackets. Example: "PID: &#123;message_json.pid&#125; &#123;level&#125; &#123;message&#125;" |
+| `logsRetention` | `number` | no | Data retention for logs in days. Allowed values: 7, 30, 60, 90, 180, 365, 730, 1095, 1460, 1825. There might be additional charges for longer retention. |
+| `metricsRetention` | `number` | no | Data retention for metrics in days. Allowed values: 7, 30, 60, 90, 180, 365, 730, 1095, 1460, 1825. There might be additional charges for longer retention. |
+| `name` | `string` | no | The name of this collector. |
+| `note` | `string` | no | A description or note about this collector. |
+| `platform` | `string` | yes | The platform of this collector. This value can be set only when creating a new collector and cannot be changed later. Valid values are: `docker`, `swarm`, `kubernetes`. |
+| `sourceGroupId` | `number` | no | The ID of the source group (folder) this collector belongs to. Set to `0` to remove from a group. |
+| `sourceVrlTransformation` | `string` | no | Server-side VRL transformation that runs during ingestion on Better Stack. Use this for enrichment, routing, or light normalization that doesn't involve sensitive data. For PII redaction and sensitive data filtering, prefer `configuration.vrl_transformation` which runs on the collector host and ensures raw data never leaves your network. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `userVectorConfig` | `string` | no | Custom Vector YAML configuration for additional sources and transforms beyond the built-in component toggles. Must not contain `command:` directives. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `configuration` | `CollectorConfiguration (output)` | no | Collector-level configuration including active components, sampling rates, batching, and VRL transformations. These settings run on the collector host inside your infrastructure. |
+| `createdAt` | `string` | yes | The time when this collector was created. |
+| `customBucket` | `CollectorCustomBucket (output)` | no | Optional custom S3-compatible bucket configuration for the collector. Can only be set when creating the collector and cannot be added, changed, or removed afterwards - recreate the collector to use a different bucket. Better Stack validates the credentials by writing and reading a test object in the bucket during creation. |
+| `dataRegion` | `string` | no | Data region or private cluster name to create the collector in. Permitted values for most plans are: 'usWest', 'germany', 'singapore'. This value can only be set at creation time and cannot be changed afterwards. The API returns the specific cluster name, which may differ from the value you provide (for example, 'germany' may read back as 'eu-nbg-2').\ When importing an existing collector, leave 'dataRegion' unset in your configuration - Terraform reads it from the API. Pinning it to an identifier that differs from the stored cluster name produces a spurious 'dataRegion' cannot be changed after collector is created' error. |
+| `databases` | `CollectorDatabase (output)[]` | no | Database connections for the collector. Deprecated - use the `logtail.CollectorTarget` resource instead. |
+| `databasesCount` | `number` | yes | The number of database connections configured for this collector. |
+| `hostsCount` | `number` | yes | The number of hosts connected to this collector. |
+| `hostsUpCount` | `number` | yes | The number of hosts currently online. |
+| `ingestingPaused` | `boolean` | no | Whether ingestion is paused for this collector. |
+| `liveTailPattern` | `string` | no | Freeform text template for formatting Live tail output with columns wrapped in &#123;column&#125; brackets. Example: "PID: &#123;message_json.pid&#125; &#123;level&#125; &#123;message&#125;" |
+| `logsRetention` | `number` | no | Data retention for logs in days. Allowed values: 7, 30, 60, 90, 180, 365, 730, 1095, 1460, 1825. There might be additional charges for longer retention. |
+| `metricsRetention` | `number` | no | Data retention for metrics in days. Allowed values: 7, 30, 60, 90, 180, 365, 730, 1095, 1460, 1825. There might be additional charges for longer retention. |
+| `name` | `string` | no | The name of this collector. |
+| `note` | `string` | no | A description or note about this collector. |
+| `pingedAt` | `string` | yes | The time when this collector last received data. |
+| `platform` | `string` | no | The platform of this collector. This value can be set only when creating a new collector and cannot be changed later. Valid values are: `docker`, `swarm`, `kubernetes`. |
+| `secret` | `string` | yes | The secret token used to authenticate collector hosts. |
+| `sourceGroupId` | `number` | no | The ID of the source group (folder) this collector belongs to. Set to `0` to remove from a group. |
+| `sourceId` | `number` | yes | The ID of the underlying source. Use this with `logtail.Metric` to define metrics on this collector's data. |
+| `sourceVrlTransformation` | `string` | no | Server-side VRL transformation that runs during ingestion on Better Stack. Use this for enrichment, routing, or light normalization that doesn't involve sensitive data. For PII redaction and sensitive data filtering, prefer `configuration.vrl_transformation` which runs on the collector host and ensures raw data never leaves your network. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `status` | `string` | yes | The current status of this collector. |
+| `teamId` | `string` | yes | The team ID for this resource. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `updatedAt` | `string` | yes | The time when this collector was last updated. |
+| `userVectorConfig` | `string` | no | Custom Vector YAML configuration for additional sources and transforms beyond the built-in component toggles. Must not contain `command:` directives. |
+
+## `CollectorConfiguration (input)`
+
+Input object `CollectorConfiguration`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `bufferMaxEvents` | `number` | no | Maximum number of events held in the collector's in-memory buffer before overflowing to the disk buffer. Defaults to 10000. |
+| `components` | `CollectorConfigurationComponents (input)` | no | Enable or disable specific collector components. Maps to the Logs, Metrics, and eBPF tabs in the collector settings UI. |
+| `diskBatchSizeMb` | `number` | no | Disk buffer size in MB for outgoing requests. Minimum 256 MB. |
+| `logLineLengthLimitKb` | `number` | no | Maximum log line length in kB. Lines longer than this are dropped by the collector to protect Vector from memory exhaustion. Higher values may use more memory. Must be between 4 and 128. Defaults to 8. |
+| `logsSampleRate` | `number` | no | Sample rate for logs (0-100). |
+| `memoryBatchSizeMb` | `number` | no | Memory batch size in MB for outgoing requests. Maximum 40 MB. |
+| `mergeLogs` | `boolean` | no | Whether to merge multi-line logs (e.g. stack traces) into single log entries on the collector host before transmission. Matches the Merge logs tab in the collector's Transform data UI. |
+| `mergeLogsConfig` | `string` | no | VRL condition detecting the first line of a new log entry - consecutive lines not matching it are merged into the preceding entry. Leave unset to use the built-in heuristic (lines starting with a timestamp or log level). Only used when `mergeLogs` is `true`. |
+| `namespaceOptions` | `CollectorConfigurationNamespaceOption (input)[]` | no | Per-namespace overrides for log sampling rate and trace ingestion (Kubernetes only). Order-independent; entries are identified by name. |
+| `serviceOptions` | `CollectorConfigurationServiceOption (input)[]` | no | Per-service overrides for log sampling rate and trace ingestion. Only includes user-managed services; internal collector services (`better-stack-beyla`, `better-stack-collector`) are excluded. Use the `logtail.Collector` data source to see all discovered services. |
+| `tracesSampleRate` | `number` | no | Sample rate for traces (0-100). |
+| `vrlTransformation` | `string` | no | VRL transformation that runs on the collector host, inside your infrastructure, before data is transmitted to Better Stack. Use this for PII redaction and sensitive data filtering - raw data never leaves your network. For server-side transformations that run during ingestion on Better Stack, use the top-level `sourceVrlTransformation` attribute instead. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `whenFull` | `string` | no | What the collector does when the disk buffer is full. `dropNewest` (default) drops incoming data, preferring availability; `block` applies backpressure to producers, preferring completeness. |
+
+## `CollectorConfigurationComponents (input)`
+
+Input object `CollectorConfigurationComponents`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `ebpfMetrics` | `boolean` | no | Enable eBPF-based metrics collection. |
+| `ebpfRedMetrics` | `boolean` | no | Enable service map and RED (Requests, Error rate, Duration) metrics via eBPF. |
+| `ebpfTracingBasic` | `boolean` | no | Enable basic eBPF tracing. |
+| `ebpfTracingFull` | `boolean` | no | Enable full eBPF tracing. |
+| `logsCollectorInternals` | `boolean` | no | Collect internal collector logs. |
+| `logsDocker` | `boolean` | no | Collect Docker container logs. |
+| `logsHost` | `boolean` | no | Collect host-level logs. |
+| `logsKubernetes` | `boolean` | no | Collect Kubernetes logs. |
+| `metricsApache` | `boolean` | no | Collect Apache metrics. |
+| `metricsCluster` | `boolean` | no | Run the cluster agent for database metrics. Takes precedence over `metricsDatabases` when both are set. |
+| `metricsDatabases` | `boolean` | no | Run the cluster agent for database metrics. |
+| `metricsElasticsearch` | `boolean` | no | Enable the Elasticsearch metrics exporter. Defaults to true. |
+| `metricsMysql` | `boolean` | no | Enable the MySQL metrics exporter. Defaults to true. |
+| `metricsNginx` | `boolean` | no | Collect Nginx metrics. |
+| `metricsPgbouncer` | `boolean` | no | Enable the PgBouncer metrics exporter. Defaults to true. |
+| `metricsPostgres` | `boolean` | no | Enable the PostgreSQL metrics exporter. Defaults to true. |
+| `metricsTraefik` | `boolean` | no | Collect Traefik metrics. |
+| `tracesOpentelemetry` | `boolean` | no | Accept OpenTelemetry SDK traces on ports 4317 (gRPC) and 4318 (HTTP). |
+
+## `CollectorConfigurationNamespaceOption (input)`
+
+Input object `CollectorConfigurationNamespaceOption`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no | Whether to ingest traces for this namespace. |
+| `logSampling` | `number` | no | Log sampling rate (0-100). |
+| `name` | `string` | yes | Namespace name. |
+
+## `CollectorConfigurationServiceOption (input)`
+
+Input object `CollectorConfigurationServiceOption`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no | Whether to ingest traces for this service. |
+| `logSampling` | `number` | no | Log sampling rate (0-100). |
+| `name` | `string` | yes | Service name. |
+
+## `CollectorCustomBucket (input)`
+
+Input object `CollectorCustomBucket`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Access key ID for the bucket. |
+| `endpoint` | `string` | yes | Bucket endpoint including the bucket name, e.g. `https://s3.us-east-1.amazonaws.com/my-bucket` or `https://my-bucket.s3.us-east-1.amazonaws.com`. |
+| `keepDataAfterRetention` | `boolean` | no | Whether to keep data in the bucket after the retention period. |
+| `name` | `string` | no | Bucket name derived from `endpoint`. Deprecated - do not set this attribute. |
+| `secretAccessKey` | `string` | yes | Secret access key for the bucket. |
+
+## `CollectorDatabase (input)`
+
+Input object `CollectorDatabase`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `host` | `string` | yes | The database host. |
+| `id` | `number` | no | The ID of this database connection (assigned by the API). |
+| `password` | `string` | no | The database password. |
+| `port` | `number` | yes | The database port. |
+| `serviceType` | `string` | yes | The type of database service. |
+| `sslMode` | `string` | no | SSL mode for PostgreSQL connections. Valid values: `disable`, `require`, `verify-ca`. |
+| `tls` | `string` | no | TLS mode for MySQL connections. Valid values: `false`, `true`, `skip-verify`, `preferred`. |
+| `username` | `string` | no | The database username. |
+
+## `CollectorConfiguration (output)`
+
+Output object `CollectorConfiguration`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `bufferMaxEvents` | `number` | yes | Maximum number of events held in the collector's in-memory buffer before overflowing to the disk buffer. Defaults to 10000. |
+| `components` | `CollectorConfigurationComponents (output)` | no | Enable or disable specific collector components. Maps to the Logs, Metrics, and eBPF tabs in the collector settings UI. |
+| `diskBatchSizeMb` | `number` | yes | Disk buffer size in MB for outgoing requests. Minimum 256 MB. |
+| `logLineLengthLimitKb` | `number` | yes | Maximum log line length in kB. Lines longer than this are dropped by the collector to protect Vector from memory exhaustion. Higher values may use more memory. Must be between 4 and 128. Defaults to 8. |
+| `logsSampleRate` | `number` | yes | Sample rate for logs (0-100). |
+| `memoryBatchSizeMb` | `number` | yes | Memory batch size in MB for outgoing requests. Maximum 40 MB. |
+| `mergeLogs` | `boolean` | yes | Whether to merge multi-line logs (e.g. stack traces) into single log entries on the collector host before transmission. Matches the Merge logs tab in the collector's Transform data UI. |
+| `mergeLogsConfig` | `string` | yes | VRL condition detecting the first line of a new log entry - consecutive lines not matching it are merged into the preceding entry. Leave unset to use the built-in heuristic (lines starting with a timestamp or log level). Only used when `mergeLogs` is `true`. |
+| `namespaceOptions` | `CollectorConfigurationNamespaceOption (output)[]` | no | Per-namespace overrides for log sampling rate and trace ingestion (Kubernetes only). Order-independent; entries are identified by name. |
+| `serviceOptions` | `CollectorConfigurationServiceOption (output)[]` | no | Per-service overrides for log sampling rate and trace ingestion. Only includes user-managed services; internal collector services (`better-stack-beyla`, `better-stack-collector`) are excluded. Use the `logtail.Collector` data source to see all discovered services. |
+| `tracesSampleRate` | `number` | yes | Sample rate for traces (0-100). |
+| `vrlTransformation` | `string` | yes | VRL transformation that runs on the collector host, inside your infrastructure, before data is transmitted to Better Stack. Use this for PII redaction and sensitive data filtering - raw data never leaves your network. For server-side transformations that run during ingestion on Better Stack, use the top-level `sourceVrlTransformation` attribute instead. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `whenFull` | `string` | yes | What the collector does when the disk buffer is full. `dropNewest` (default) drops incoming data, preferring availability; `block` applies backpressure to producers, preferring completeness. |
+
+## `CollectorConfigurationComponents (output)`
+
+Output object `CollectorConfigurationComponents`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ebpfMetrics` | `boolean` | yes | Enable eBPF-based metrics collection. |
+| `ebpfRedMetrics` | `boolean` | yes | Enable service map and RED (Requests, Error rate, Duration) metrics via eBPF. |
+| `ebpfTracingBasic` | `boolean` | yes | Enable basic eBPF tracing. |
+| `ebpfTracingFull` | `boolean` | yes | Enable full eBPF tracing. |
+| `logsCollectorInternals` | `boolean` | yes | Collect internal collector logs. |
+| `logsDocker` | `boolean` | yes | Collect Docker container logs. |
+| `logsHost` | `boolean` | yes | Collect host-level logs. |
+| `logsKubernetes` | `boolean` | yes | Collect Kubernetes logs. |
+| `metricsApache` | `boolean` | yes | Collect Apache metrics. |
+| `metricsCluster` | `boolean` | yes | Run the cluster agent for database metrics. Takes precedence over `metricsDatabases` when both are set. |
+| `metricsDatabases` | `boolean` | yes | Run the cluster agent for database metrics. |
+| `metricsElasticsearch` | `boolean` | yes | Enable the Elasticsearch metrics exporter. Defaults to true. |
+| `metricsMysql` | `boolean` | yes | Enable the MySQL metrics exporter. Defaults to true. |
+| `metricsNginx` | `boolean` | yes | Collect Nginx metrics. |
+| `metricsPgbouncer` | `boolean` | yes | Enable the PgBouncer metrics exporter. Defaults to true. |
+| `metricsPostgres` | `boolean` | yes | Enable the PostgreSQL metrics exporter. Defaults to true. |
+| `metricsTraefik` | `boolean` | yes | Collect Traefik metrics. |
+| `tracesOpentelemetry` | `boolean` | yes | Accept OpenTelemetry SDK traces on ports 4317 (gRPC) and 4318 (HTTP). |
+
+## `CollectorConfigurationNamespaceOption (output)`
+
+Output object `CollectorConfigurationNamespaceOption`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no | Whether to ingest traces for this namespace. |
+| `logSampling` | `number` | no | Log sampling rate (0-100). |
+| `name` | `string` | yes | Namespace name. |
+
+## `CollectorConfigurationServiceOption (output)`
+
+Output object `CollectorConfigurationServiceOption`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ingestTraces` | `boolean` | no | Whether to ingest traces for this service. |
+| `logSampling` | `number` | no | Log sampling rate (0-100). |
+| `name` | `string` | yes | Service name. |
+
+## `CollectorCustomBucket (output)`
+
+Output object `CollectorCustomBucket`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Access key ID for the bucket. |
+| `endpoint` | `string` | yes | Bucket endpoint including the bucket name, e.g. `https://s3.us-east-1.amazonaws.com/my-bucket` or `https://my-bucket.s3.us-east-1.amazonaws.com`. |
+| `keepDataAfterRetention` | `boolean` | no | Whether to keep data in the bucket after the retention period. |
+| `name` | `string` | yes | Bucket name derived from `endpoint`. Deprecated - do not set this attribute. |
+| `secretAccessKey` | `string` | yes | Secret access key for the bucket. |
+
+## `CollectorDatabase (output)`
+
+Output object `CollectorDatabase`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `host` | `string` | yes | The database host. |
+| `id` | `number` | yes | The ID of this database connection (assigned by the API). |
+| `password` | `string` | no | The database password. |
+| `port` | `number` | yes | The database port. |
+| `serviceType` | `string` | yes | The type of database service. |
+| `sslMode` | `string` | no | SSL mode for PostgreSQL connections. Valid values: `disable`, `require`, `verify-ca`. |
+| `tls` | `string` | no | TLS mode for MySQL connections. Valid values: `false`, `true`, `skip-verify`, `preferred`. |
+| `username` | `string` | no | The database username. |

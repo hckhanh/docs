@@ -1,0 +1,61 @@
+---
+title: "getGitopsSource"
+description: "Function getGitopsSource in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsSource in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsSource:getGitopsSource`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsSource(args)`.
+
+`getGitopsSourceOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `sourceId` | `number` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `interval` | `string` | yes |  |
+| `lastSync` | `number` | yes |  |
+| `name` | `string` | yes |  |
+| `public` | `boolean` | yes |  |
+| `sourceId` | `number` | yes |  |
+| `status` | `string` | yes |  |
+| `statusError` | `string` | yes |  |
+| `teamAccesses` | `number[]` | yes |  |
+| `tlsSkipVerify` | `boolean` | yes |  |
+| `type` | `string` | yes |  |
+| `url` | `string` | yes |  |
+| `userAccesses` | `number[]` | yes |  |
+| `username` | `string` | yes |  |
+| `workflows` | `GetGitopsSourceWorkflow[]` | yes |  |
+
+## `GetGitopsSourceWorkflow`
+
+Output object `GetGitopsSourceWorkflow`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `creationDate` | `number` | no |  |
+| `edgeGroupIds` | `number[]` | no |  |
+| `endpointId` | `number` | no |  |
+| `id` | `number` | no |  |
+| `lastSyncDate` | `number` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `platform` | `string` | no |  |
+| `type` | `string` | no |  |

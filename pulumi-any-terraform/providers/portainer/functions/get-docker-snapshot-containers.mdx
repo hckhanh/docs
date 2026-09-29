@@ -1,0 +1,63 @@
+---
+title: "getDockerSnapshotContainers"
+description: "Function getDockerSnapshotContainers in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getDockerSnapshotContainers in pulumi-portainer.
+
+Invoke token: `portainer:index/getDockerSnapshotContainers:getDockerSnapshotContainers`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getDockerSnapshotContainers(args)`.
+
+`getDockerSnapshotContainersOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `edgeStackId` | `number` | no |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `containers` | `GetDockerSnapshotContainersContainer[]` | yes |  |
+| `edgeStackId` | `number` | no |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+
+## `GetDockerSnapshotContainersContainer`
+
+Output object `GetDockerSnapshotContainersContainer`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `command` | `string` | no |  |
+| `created` | `number` | no |  |
+| `id` | `string` | no |  |
+| `image` | `string` | no |  |
+| `imageId` | `string` | no |  |
+| `labels` | `{ [key: string]: string }` | no |  |
+| `names` | `string[]` | no |  |
+| `ports` | `GetDockerSnapshotContainersContainerPort[]` | no |  |
+| `state` | `string` | no |  |
+| `status` | `string` | no |  |
+
+## `GetDockerSnapshotContainersContainerPort`
+
+Output object `GetDockerSnapshotContainersContainerPort`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `ip` | `string` | no |  |
+| `privatePort` | `number` | no |  |
+| `publicPort` | `number` | no |  |
+| `type` | `string` | no |  |

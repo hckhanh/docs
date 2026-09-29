@@ -1,0 +1,37 @@
+---
+title: "Auth"
+description: "Resource Auth in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Auth in pulumi-portainer.
+
+Pulumi type: `portainer:index/auth:Auth`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Auth(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `authId` | `string` | no |  |
+| `password` | `string` | yes | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| `username` | `string` | yes | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `authId` | `string` | no |  |
+| `jwt` | `string` | yes | JWT bearer token issued by Portainer after successful authentication. Computed and stored in state as a sensitive value. |
+| `password` | `string` | no | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| `username` | `string` | no | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |

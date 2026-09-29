@@ -1,0 +1,194 @@
+---
+title: "DomainContacts"
+description: "Resource DomainContacts in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Resource DomainContacts in pulumi-namecheap.
+
+Pulumi type: `namecheap:index/domainContacts:DomainContacts`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Construct with `new namecheap.DomainContacts(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `admin` | `DomainContactsAdmin (input)` | no | Admin contact. Optional; defaults to the registrant contact when omitted. |
+| `auxBilling` | `DomainContactsAuxBilling (input)` | no | AuxBilling contact. Optional; defaults to the registrant contact when omitted. |
+| `domain` | `string` | yes | Purchased available domain name on your account whose WHOIS contacts are managed. |
+| `domainContactsId` | `string` | no |  |
+| `registrant` | `DomainContactsRegistrant (input)` | yes | Registrant contact. Required. |
+| `tech` | `DomainContactsTech (input)` | no | Tech contact. Optional; defaults to the registrant contact when omitted. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `admin` | `DomainContactsAdmin (output)` | no | Admin contact. Optional; defaults to the registrant contact when omitted. |
+| `auxBilling` | `DomainContactsAuxBilling (output)` | no | AuxBilling contact. Optional; defaults to the registrant contact when omitted. |
+| `domain` | `string` | no | Purchased available domain name on your account whose WHOIS contacts are managed. |
+| `domainContactsId` | `string` | no |  |
+| `registrant` | `DomainContactsRegistrant (output)` | no | Registrant contact. Required. |
+| `tech` | `DomainContactsTech (output)` | no | Tech contact. Optional; defaults to the registrant contact when omitted. |
+
+## `DomainContactsAdmin (input)`
+
+Input object `DomainContactsAdmin`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsAuxBilling (input)`
+
+Input object `DomainContactsAuxBilling`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsRegistrant (input)`
+
+Input object `DomainContactsRegistrant`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsTech (input)`
+
+Input object `DomainContactsTech`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsAdmin (output)`
+
+Output object `DomainContactsAdmin`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsAuxBilling (output)`
+
+Output object `DomainContactsAuxBilling`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsRegistrant (output)`
+
+Output object `DomainContactsRegistrant`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |
+
+## `DomainContactsTech (output)`
+
+Output object `DomainContactsTech`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `address1` | `string` | yes | The primary street address. |
+| `address2` | `string` | no | The secondary street address. |
+| `city` | `string` | yes | The contact's city. |
+| `country` | `string` | yes | The two-letter ISO 3166-1 alpha-2 country code (e.g. US, PT). |
+| `emailAddress` | `string` | yes | The contact e-mail address. |
+| `firstName` | `string` | yes | The contact's first name. |
+| `jobTitle` | `string` | no | The contact's job title. |
+| `lastName` | `string` | yes | The contact's last name. |
+| `organization` | `string` | no | The contact's organization. |
+| `phone` | `string` | yes | The phone number in +NNN.NNNNNNNNNN format (e.g. +1.6613102107). |
+| `postalCode` | `string` | yes | The postal/ZIP code. |
+| `stateProvince` | `string` | yes | The state or province. |

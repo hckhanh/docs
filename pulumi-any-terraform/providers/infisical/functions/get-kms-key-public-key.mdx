@@ -1,0 +1,35 @@
+---
+title: "getKmsKeyPublicKey"
+description: "Function getKmsKeyPublicKey in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Function getKmsKeyPublicKey in pulumi-infisical.
+
+Invoke token: `infisical:index/getKmsKeyPublicKey:getKmsKeyPublicKey`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Call `infisical.getKmsKeyPublicKey(args)`.
+
+`getKmsKeyPublicKeyOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `keyId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `encryptionAlgorithm` | `string` | yes |  |
+| `keyId` | `string` | yes |  |
+| `keyUsage` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `publicKey` | `string` | yes |  |
+| `signingAlgorithms` | `string[]` | yes |  |

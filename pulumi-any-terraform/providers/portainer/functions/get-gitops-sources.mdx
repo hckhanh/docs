@@ -1,0 +1,75 @@
+---
+title: "getGitopsSources"
+description: "Function getGitopsSources in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsSources in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsSources:getGitopsSources`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsSources(args)`.
+
+`getGitopsSourcesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `limit` | `number` | no |  |
+| `order` | `string` | no |  |
+| `search` | `string` | no |  |
+| `sort` | `string` | no |  |
+| `start` | `number` | no |  |
+| `status` | `string` | no |  |
+| `type` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `limit` | `number` | no |  |
+| `order` | `string` | no |  |
+| `search` | `string` | no |  |
+| `sort` | `string` | no |  |
+| `sources` | `GetGitopsSourcesSource[]` | yes |  |
+| `start` | `number` | no |  |
+| `status` | `string` | no |  |
+| `summaries` | `GetGitopsSourcesSummary[]` | yes |  |
+| `type` | `string` | no |  |
+
+## `GetGitopsSourcesSource`
+
+Output object `GetGitopsSourcesSource`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environments` | `number` | no |  |
+| `id` | `number` | no |  |
+| `interval` | `string` | no |  |
+| `lastSync` | `number` | no |  |
+| `name` | `string` | no |  |
+| `status` | `string` | no |  |
+| `statusError` | `string` | no |  |
+| `type` | `string` | no |  |
+| `url` | `string` | no |  |
+| `usedBy` | `number` | no |  |
+
+## `GetGitopsSourcesSummary`
+
+Output object `GetGitopsSourcesSummary`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `error` | `number` | no |  |
+| `healthy` | `number` | no |  |
+| `paused` | `number` | no |  |
+| `syncing` | `number` | no |  |
+| `unknown` | `number` | no |  |

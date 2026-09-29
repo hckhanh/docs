@@ -1,0 +1,54 @@
+---
+title: "getKubernetesManifestDryRun"
+description: "Function getKubernetesManifestDryRun in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesManifestDryRun in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesManifestDryRun:getKubernetesManifestDryRun`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesManifestDryRun(args)`.
+
+`getKubernetesManifestDryRunOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `failOnInvalid` | `boolean` | no |  |
+| `id` | `string` | no |  |
+| `manifests` | `string[]` | yes |  |
+| `namespace` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `failOnInvalid` | `boolean` | no |  |
+| `failedCount` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `manifests` | `string[]` | yes |  |
+| `namespace` | `string` | no |  |
+| `passed` | `boolean` | yes |  |
+| `results` | `GetKubernetesManifestDryRunResult[]` | yes |  |
+
+## `GetKubernetesManifestDryRunResult`
+
+Output object `GetKubernetesManifestDryRunResult`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `documentIndex` | `number` | no |  |
+| `kind` | `string` | no |  |
+| `message` | `string` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `status` | `string` | no |  |

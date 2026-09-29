@@ -1,0 +1,42 @@
+---
+title: "SourceAwsLogGroup"
+description: "Resource SourceAwsLogGroup in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource SourceAwsLogGroup in pulumi-logtail.
+
+Pulumi type: `logtail:index/sourceAwsLogGroup:SourceAwsLogGroup`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.SourceAwsLogGroup(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The CloudWatch log-group name. |
+| `region` | `string` | yes | The AWS region containing the CloudWatch log group. |
+| `sourceAwsLogGroupId` | `string` | no |  |
+| `sourceId` | `string` | yes | The ID of the AWS `logtail.Source` whose explicit log-group subscription this resource manages. |
+| `subscribed` | `boolean` | no | Whether Better Stack should subscribe this log group. Defaults to true. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `createdAt` | `string` | yes | The time when this log-group subscription override was created. |
+| `name` | `string` | no | The CloudWatch log-group name. |
+| `region` | `string` | no | The AWS region containing the CloudWatch log group. |
+| `sourceAwsLogGroupId` | `string` | no |  |
+| `sourceId` | `string` | no | The ID of the AWS `logtail.Source` whose explicit log-group subscription this resource manages. |
+| `subscribed` | `boolean` | no | Whether Better Stack should subscribe this log group. Defaults to true. |
+| `updatedAt` | `string` | yes | The time when this log-group subscription override was last updated. |

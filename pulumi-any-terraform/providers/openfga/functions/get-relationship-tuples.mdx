@@ -1,0 +1,73 @@
+---
+title: "getRelationshipTuples"
+description: "Function getRelationshipTuples in pulumi-openfga."
+---
+
+<!-- Generated from the pulumi-openfga SDK. -->
+
+Function getRelationshipTuples in pulumi-openfga.
+
+Invoke token: `openfga:index/getRelationshipTuples:getRelationshipTuples`.
+
+```ts
+import * as openfga from "pulumi-openfga"
+```
+
+Call `openfga.getRelationshipTuples(args)`.
+
+`getRelationshipTuplesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `query` | `GetRelationshipTuplesQuery (input)` | no |  |
+| `storeId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `query` | `GetRelationshipTuplesQuery (output)` | no |  |
+| `relationshipTuples` | `GetRelationshipTuplesRelationshipTuple[]` | yes |  |
+| `storeId` | `string` | yes |  |
+
+## `GetRelationshipTuplesQuery (input)`
+
+Input object `GetRelationshipTuplesQuery`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `object` | `string` | yes | The object of the resulting relationship tuples. |
+| `relation` | `string` | no | The relation of the resulting relationship tuples. |
+| `user` | `string` | no | The user of the resulting relationship tuples. |
+
+## `GetRelationshipTuplesQuery (output)`
+
+Output object `GetRelationshipTuplesQuery`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `object` | `string` | yes | The object of the resulting relationship tuples. |
+| `relation` | `string` | no | The relation of the resulting relationship tuples. |
+| `user` | `string` | no | The user of the resulting relationship tuples. |
+
+## `GetRelationshipTuplesRelationshipTuple`
+
+Output object `GetRelationshipTuplesRelationshipTuple`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `condition` | `GetRelationshipTuplesRelationshipTupleCondition` | yes | A condition of the relationship tuple. |
+| `object` | `string` | yes | The object of the relationship tuple. |
+| `relation` | `string` | yes | The relation of the relationship tuple. |
+| `user` | `string` | yes | The user of the relationship tuple. |
+
+## `GetRelationshipTuplesRelationshipTupleCondition`
+
+Output object `GetRelationshipTuplesRelationshipTupleCondition`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `contextJson` | `string` | yes | The (partial) context under which the condition is evaluated. |
+| `name` | `string` | yes | The name of the condition. |

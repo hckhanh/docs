@@ -1,0 +1,42 @@
+---
+title: "JiraIntegration"
+description: "Resource JiraIntegration in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource JiraIntegration in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/jiraIntegration:JiraIntegration`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.JiraIntegration(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `automaticIssueCreation` | `boolean` | no | Whether to automatically create issues in Jira on incident start. |
+| `betterStackId` | `string` | no | Due to required authentication in Jira, the integration has to be created and removed in Better Stack web UI. You can set the ID of the Jira Integration to control in Better Stack, and it will be auto-imported during resource creation. |
+| `jiraFieldsJson` | `string` | no | JSON object representing Jira fields. |
+| `jiraIssueTypeId` | `string` | no | The Jira issue type ID. |
+| `jiraProjectKey` | `string` | no | The Jira project key. |
+| `name` | `string` | no | The name of the Jira Integration. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `automaticIssueCreation` | `boolean` | no | Whether to automatically create issues in Jira on incident start. |
+| `betterStackId` | `string` | no | Due to required authentication in Jira, the integration has to be created and removed in Better Stack web UI. You can set the ID of the Jira Integration to control in Better Stack, and it will be auto-imported during resource creation. |
+| `jiraFieldsJson` | `string` | no | JSON object representing Jira fields. |
+| `jiraIssueTypeId` | `string` | no | The Jira issue type ID. |
+| `jiraProjectKey` | `string` | no | The Jira project key. |
+| `name` | `string` | no | The name of the Jira Integration. |

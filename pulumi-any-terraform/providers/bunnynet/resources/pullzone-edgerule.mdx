@@ -1,0 +1,98 @@
+---
+title: "PullzoneEdgerule"
+description: "Resource PullzoneEdgerule in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource PullzoneEdgerule in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/pullzoneEdgerule:PullzoneEdgerule`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.PullzoneEdgerule(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no | Options: `BlockRequest`, `BypassAwsS3Authentication`, `BypassPermaCache`, `DisableOptimizer`, `DisableRequestCoalescing`, `DisableShield`, `DisableShieldAccessLists`, `DisableShieldBotDetection`, `DisableShieldChallenge`, `DisableShieldRateLimiting`, `DisableTokenAuthentication`, `DisableWAF`, `EnableRequestCoalescing`, `EnableTokenAuthentication`, `ForceCompression`, `ForceDownload`, `ForceSSL`, `IgnoreQueryString`, `OriginMagicContainers`, `OriginStorage`, `OriginUrl`, `OverrideBrowserCacheResponseHeader`, `OverrideBrowserCacheTime`, `OverrideCacheTime`, `OverrideCacheTimePublic`, `Redirect`, `RemoveBrowserCacheResponseHeader`, `RetryOrigin`, `RunEdgeScript`, `SetConnectionLimit`, `SetNetworkRateLimit`, `SetRequestHeader`, `SetRequestsPerSecondLimit`, `SetResponseHeader`, `SetStatusCode`, `StripCookiesClientToOrigin` |
+| `actionParameter1` | `string` | no |  |
+| `actionParameter2` | `string` | no |  |
+| `actionParameter3` | `string` | no |  |
+| `actions` | `PullzoneEdgeruleAction (input)[]` | no | List of actions for the edge rule. |
+| `description` | `string` | no | The description of the edge rule. |
+| `enabled` | `boolean` | yes | Indicates whether the edge rule is enabled. |
+| `matchType` | `string` | no | Options: `MatchAll`, `MatchAny`, `MatchNone` |
+| `priority` | `number` | no | The priority of the edge rule. The lower number is executed first. |
+| `pullzone` | `number` | yes |  |
+| `triggers` | `PullzoneEdgeruleTrigger (input)[]` | yes |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no | Options: `BlockRequest`, `BypassAwsS3Authentication`, `BypassPermaCache`, `DisableOptimizer`, `DisableRequestCoalescing`, `DisableShield`, `DisableShieldAccessLists`, `DisableShieldBotDetection`, `DisableShieldChallenge`, `DisableShieldRateLimiting`, `DisableTokenAuthentication`, `DisableWAF`, `EnableRequestCoalescing`, `EnableTokenAuthentication`, `ForceCompression`, `ForceDownload`, `ForceSSL`, `IgnoreQueryString`, `OriginMagicContainers`, `OriginStorage`, `OriginUrl`, `OverrideBrowserCacheResponseHeader`, `OverrideBrowserCacheTime`, `OverrideCacheTime`, `OverrideCacheTimePublic`, `Redirect`, `RemoveBrowserCacheResponseHeader`, `RetryOrigin`, `RunEdgeScript`, `SetConnectionLimit`, `SetNetworkRateLimit`, `SetRequestHeader`, `SetRequestsPerSecondLimit`, `SetResponseHeader`, `SetStatusCode`, `StripCookiesClientToOrigin` |
+| `actionParameter1` | `string` | no |  |
+| `actionParameter2` | `string` | no |  |
+| `actionParameter3` | `string` | no |  |
+| `actions` | `PullzoneEdgeruleAction (output)[]` | no | List of actions for the edge rule. |
+| `description` | `string` | no | The description of the edge rule. |
+| `enabled` | `boolean` | no | Indicates whether the edge rule is enabled. |
+| `matchType` | `string` | no | Options: `MatchAll`, `MatchAny`, `MatchNone` |
+| `priority` | `number` | no | The priority of the edge rule. The lower number is executed first. |
+| `pullzone` | `number` | no |  |
+| `triggers` | `PullzoneEdgeruleTrigger (output)[]` | no |  |
+
+## `PullzoneEdgeruleAction (input)`
+
+Input object `PullzoneEdgeruleAction`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `parameter1` | `string` | no |  |
+| `parameter2` | `string` | no |  |
+| `parameter3` | `string` | no |  |
+| `type` | `string` | no |  |
+
+## `PullzoneEdgeruleTrigger (input)`
+
+Input object `PullzoneEdgeruleTrigger`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `matchType` | `string` | no |  |
+| `parameter1` | `string` | no |  |
+| `parameter2` | `string` | no |  |
+| `patterns` | `string[]` | no |  |
+| `type` | `string` | no |  |
+
+## `PullzoneEdgeruleAction (output)`
+
+Output object `PullzoneEdgeruleAction`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `parameter1` | `string` | no |  |
+| `parameter2` | `string` | no |  |
+| `parameter3` | `string` | no |  |
+| `type` | `string` | no |  |
+
+## `PullzoneEdgeruleTrigger (output)`
+
+Output object `PullzoneEdgeruleTrigger`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `matchType` | `string` | no |  |
+| `parameter1` | `string` | no |  |
+| `parameter2` | `string` | no |  |
+| `patterns` | `string[]` | no |  |
+| `type` | `string` | no |  |

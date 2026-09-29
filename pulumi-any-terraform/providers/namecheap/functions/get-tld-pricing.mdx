@@ -1,0 +1,42 @@
+---
+title: "getTldPricing"
+description: "Function getTldPricing in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Function getTldPricing in pulumi-namecheap.
+
+Invoke token: `namecheap:index/getTldPricing:getTldPricing`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Call `namecheap.getTldPricing(args)`.
+
+`getTldPricingOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no |  |
+| `id` | `string` | no |  |
+| `tld` | `string` | yes |  |
+| `years` | `number` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no |  |
+| `currency` | `string` | yes |  |
+| `durationType` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `price` | `string` | yes |  |
+| `promoPrice` | `string` | yes |  |
+| `regularPrice` | `string` | yes |  |
+| `tld` | `string` | yes |  |
+| `years` | `number` | no |  |
+| `yourPrice` | `string` | yes |  |

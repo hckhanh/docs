@@ -1,0 +1,44 @@
+---
+title: "getTeamMemberships"
+description: "Function getTeamMemberships in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getTeamMemberships in pulumi-portainer.
+
+Invoke token: `portainer:index/getTeamMemberships:getTeamMemberships`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getTeamMemberships(args)`.
+
+`getTeamMembershipsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `teamId` | `number` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `leaderUserIds` | `number[]` | yes |  |
+| `memberships` | `GetTeamMembershipsMembership[]` | yes |  |
+| `teamId` | `number` | yes |  |
+
+## `GetTeamMembershipsMembership`
+
+Output object `GetTeamMembershipsMembership`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | no |  |
+| `role` | `number` | no |  |
+| `userId` | `number` | no |  |

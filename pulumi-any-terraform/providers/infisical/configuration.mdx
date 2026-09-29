@@ -1,0 +1,124 @@
+---
+title: "Configuration"
+description: "Configuration for pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Configuration for pulumi-infisical.
+
+npm package `pulumi-infisical` version `0.20.5`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/infisical/infisical` version `0.19.36`.
+
+An explicit provider is `new infisical.Provider(name, args)`. Stack configuration is a `pulumi.Config` object named `infisical`.
+
+A value marked secret is passed through `pulumi.secret` or listed in `additionalSecretOutputs` on the provider resource.
+
+## Fields
+
+| Property | Type | Source | Secret | Description |
+| --- | --- | --- | --- | --- |
+| `auth` | `ProviderAuth` | provider args; stack config via config.getObject | no | The configuration values for authentication |
+| `clientId` | `string` | provider args; stack config via config.get | yes | (DEPRECATED, Use the `auth` attribute), Machine identity client ID. Used to fetch/modify secrets for a given project. |
+| `clientSecret` | `string` | provider args; stack config via config.get | yes | (DEPRECATED, use `auth` attribute), Machine identity client secret. Used to fetch/modify secrets for a given project |
+| `host` | `string` | provider args; stack config via config.get | no | Used to point the client to fetch secrets from your self hosted instance of Infisical. If not host is provided, https://app.infisical.com is the default host. This attribute can also be set using the `INFISICAL_HOST` environment variable |
+| `serviceToken` | `string` | provider args; stack config via config.get | yes | (DEPRECATED, Use machine identity auth), Used to fetch/modify secrets for a given project |
+
+## `ProviderAuth`
+
+Input object `ProviderAuth`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `awsIam` | `ProviderAuthAwsIam` | no | The configuration values for AWS IAM Auth |
+| `kubernetes` | `ProviderAuthKubernetes` | no | The configuration values for Kubernetes Auth |
+| `oidc` | `ProviderAuthOidc` | no | The configuration values for OIDC Auth |
+| `organizationSlug` | `string` | no | When set, this will scope the login session to the specified organization the machine identity has access to. If left empty, the session defaults to the organization where the machine identity was created in. |
+| `token` | `string` | no | The authentication token for Machine Identity Token Auth. This attribute can also be set using the `INFISICAL_TOKEN` environment variable |
+| `universal` | `ProviderAuthUniversal` | no | The configuration values for Universal Auth |
+
+## `ProviderAuthAwsIam`
+
+Input object `ProviderAuthAwsIam`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+
+## `ProviderAuthKubernetes`
+
+Input object `ProviderAuthKubernetes`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+| `serviceAccountToken` | `string` | no | The service account token. This attribute can also be set using the `INFISICAL_KUBERNETES_SERVICE_ACCOUNT_TOKEN` environment variable |
+| `serviceAccountTokenPath` | `string` | no | The path to the service account token. This attribute can also be set using the `INFISICAL_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH` environment variable. Default is `/var/run/secrets/kubernetes.io/serviceaccount/token`. |
+
+## `ProviderAuthOidc`
+
+Input object `ProviderAuthOidc`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+| `tokenEnvironmentVariableName` | `string` | no | The environment variable name for the OIDC JWT token. This attribute can also be set using the `INFISICAL_OIDC_AUTH_TOKEN_KEY_NAME` environment variable. Default is `INFISICAL_AUTH_JWT`. |
+
+## `ProviderAuthUniversal`
+
+Input object `ProviderAuthUniversal`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clientId` | `string` | no | Machine identity client ID. This attribute can also be set using the `INFISICAL_UNIVERSAL_AUTH_CLIENT_ID` environment variable |
+| `clientSecret` | `string` | no | Machine identity client secret. This attribute can also be set using the `INFISICAL_UNIVERSAL_AUTH_CLIENT_SECRET` environment variable |
+
+## `config.Auth`
+
+Output object `config.Auth`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `awsIam` | `config.AuthAwsIam` | no | The configuration values for AWS IAM Auth |
+| `kubernetes` | `config.AuthKubernetes` | no | The configuration values for Kubernetes Auth |
+| `oidc` | `config.AuthOidc` | no | The configuration values for OIDC Auth |
+| `organizationSlug` | `string` | no | When set, this will scope the login session to the specified organization the machine identity has access to. If left empty, the session defaults to the organization where the machine identity was created in. |
+| `token` | `string` | no | The authentication token for Machine Identity Token Auth. This attribute can also be set using the `INFISICAL_TOKEN` environment variable |
+| `universal` | `config.AuthUniversal` | no | The configuration values for Universal Auth |
+
+## `config.AuthAwsIam`
+
+Output object `config.AuthAwsIam`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+
+## `config.AuthKubernetes`
+
+Output object `config.AuthKubernetes`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+| `serviceAccountToken` | `string` | no | The service account token. This attribute can also be set using the `INFISICAL_KUBERNETES_SERVICE_ACCOUNT_TOKEN` environment variable |
+| `serviceAccountTokenPath` | `string` | no | The path to the service account token. This attribute can also be set using the `INFISICAL_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH` environment variable. Default is `/var/run/secrets/kubernetes.io/serviceaccount/token`. |
+
+## `config.AuthOidc`
+
+Output object `config.AuthOidc`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `identityId` | `string` | no | Machine identity ID. This attribute can also be set using the `INFISICAL_MACHINE_IDENTITY_ID` environment variable |
+| `tokenEnvironmentVariableName` | `string` | no | The environment variable name for the OIDC JWT token. This attribute can also be set using the `INFISICAL_OIDC_AUTH_TOKEN_KEY_NAME` environment variable. Default is `INFISICAL_AUTH_JWT`. |
+
+## `config.AuthUniversal`
+
+Output object `config.AuthUniversal`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `clientId` | `string` | no | Machine identity client ID. This attribute can also be set using the `INFISICAL_UNIVERSAL_AUTH_CLIENT_ID` environment variable |
+| `clientSecret` | `string` | no | Machine identity client secret. This attribute can also be set using the `INFISICAL_UNIVERSAL_AUTH_CLIENT_SECRET` environment variable |

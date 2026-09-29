@@ -1,0 +1,98 @@
+---
+title: "OnCallCalendar"
+description: "Resource OnCallCalendar in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource OnCallCalendar in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/onCallCalendar:OnCallCalendar`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.OnCallCalendar(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | Name of the on-call calendar. |
+| `onCallRotation` | `OnCallCalendarOnCallRotation (input)` | no | Configuration block for the on-call rotation schedule. Ignored when omitted - on-call can be controlled in Better Stack. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `defaultCalendar` | `boolean` | yes | Whether the on-call calendar is the default on-call calendar. |
+| `name` | `string` | no | Name of the on-call calendar. |
+| `onCallRotation` | `OnCallCalendarOnCallRotation (output)` | no | Configuration block for the on-call rotation schedule. Ignored when omitted - on-call can be controlled in Better Stack. |
+| `onCallUsers` | `OnCallCalendarOnCallUser (output)[]` | yes | Array of on-call persons. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+
+## `OnCallCalendarOnCallRotation (input)`
+
+Input object `OnCallCalendarOnCallRotation`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endRotationsAt` | `string` | yes | End time of the rotation in RFC 3339 format (e.g. `2026-01-01T00:00:00Z`) |
+| `rotationInterval` | `string` | yes | The interval unit for rotation_length. Must be one of: `hour`, `day`, `week`. |
+| `rotationLength` | `number` | yes | The length of each rotation shift. See `rotationInterval` for units. |
+| `startRotationsAt` | `string` | yes | Start time of the rotation in RFC 3339 format (e.g. `2026-01-01T00:00:00Z`) |
+| `timezone` | `string` | no | Time zone the rotation's working hours are written in and its handovers follow across daylight-saving changes, an IANA name such as `Europe/Prague`. The offset in `startRotationsAt` still fixes the instant of the first shift, so write it in this time zone's offset. Omit to keep the time zone the rotation already has; a new rotation with working hours and no time zone uses UTC. |
+| `users` | `string[]` | yes | List of email addresses for users participating in the rotation. |
+| `workingHours` | `OnCallCalendarOnCallRotationWorkingHour (input)[]` | no | Windows during which the rotation pages anyone, one block per day and window. Omit for a rotation that is active around the clock; omitting it on an existing rotation removes its working hours. A window whose `endTime` is not after `startTime` runs overnight. |
+
+## `OnCallCalendarOnCallRotationWorkingHour (input)`
+
+Input object `OnCallCalendarOnCallRotationWorkingHour`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `day` | `string` | yes | Day of the week. Must be one of: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`. |
+| `endTime` | `string` | no | End of the window as `HH:MM` on a 24-hour clock (e.g. `17:00`). Ends at midnight when omitted, so a block with both times omitted covers the whole day. |
+| `startTime` | `string` | no | Start of the window as `HH:MM` on a 24-hour clock (e.g. `09:00`). Starts at midnight when omitted. |
+
+## `OnCallCalendarOnCallRotation (output)`
+
+Output object `OnCallCalendarOnCallRotation`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endRotationsAt` | `string` | yes | End time of the rotation in RFC 3339 format (e.g. `2026-01-01T00:00:00Z`) |
+| `rotationInterval` | `string` | yes | The interval unit for rotation_length. Must be one of: `hour`, `day`, `week`. |
+| `rotationLength` | `number` | yes | The length of each rotation shift. See `rotationInterval` for units. |
+| `startRotationsAt` | `string` | yes | Start time of the rotation in RFC 3339 format (e.g. `2026-01-01T00:00:00Z`) |
+| `timezone` | `string` | yes | Time zone the rotation's working hours are written in and its handovers follow across daylight-saving changes, an IANA name such as `Europe/Prague`. The offset in `startRotationsAt` still fixes the instant of the first shift, so write it in this time zone's offset. Omit to keep the time zone the rotation already has; a new rotation with working hours and no time zone uses UTC. |
+| `users` | `string[]` | yes | List of email addresses for users participating in the rotation. |
+| `workingHours` | `OnCallCalendarOnCallRotationWorkingHour (output)[]` | no | Windows during which the rotation pages anyone, one block per day and window. Omit for a rotation that is active around the clock; omitting it on an existing rotation removes its working hours. A window whose `endTime` is not after `startTime` runs overnight. |
+
+## `OnCallCalendarOnCallRotationWorkingHour (output)`
+
+Output object `OnCallCalendarOnCallRotationWorkingHour`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `day` | `string` | yes | Day of the week. Must be one of: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`. |
+| `endTime` | `string` | no | End of the window as `HH:MM` on a 24-hour clock (e.g. `17:00`). Ends at midnight when omitted, so a block with both times omitted covers the whole day. |
+| `startTime` | `string` | no | Start of the window as `HH:MM` on a 24-hour clock (e.g. `09:00`). Starts at midnight when omitted. |
+
+## `OnCallCalendarOnCallUser (output)`
+
+Output object `OnCallCalendarOnCallUser`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no |  |
+| `firstName` | `string` | no |  |
+| `id` | `string` | no |  |
+| `lastName` | `string` | no |  |
+| `phoneNumbers` | `string[]` | no |  |

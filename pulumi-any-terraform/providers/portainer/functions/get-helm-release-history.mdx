@@ -1,0 +1,52 @@
+---
+title: "getHelmReleaseHistory"
+description: "Function getHelmReleaseHistory in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getHelmReleaseHistory in pulumi-portainer.
+
+Invoke token: `portainer:index/getHelmReleaseHistory:getHelmReleaseHistory`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getHelmReleaseHistory(args)`.
+
+`getHelmReleaseHistoryOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `releaseName` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `namespace` | `string` | no |  |
+| `releaseName` | `string` | yes |  |
+| `revisions` | `GetHelmReleaseHistoryRevision[]` | yes |  |
+
+## `GetHelmReleaseHistoryRevision`
+
+Output object `GetHelmReleaseHistoryRevision`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `appVersion` | `string` | no |  |
+| `chart` | `string` | no |  |
+| `description` | `string` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `revision` | `number` | no |  |
+| `status` | `string` | no |  |
+| `updated` | `string` | no |  |

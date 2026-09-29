@@ -1,0 +1,34 @@
+---
+title: "ProjectDefaultAccess"
+description: "Resource ProjectDefaultAccess in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource ProjectDefaultAccess in pulumi-posthog.
+
+Pulumi type: `posthog:index/projectDefaultAccess:ProjectDefaultAccess`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.ProjectDefaultAccess(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | yes | The default access level for the project. Valid values are `none`, `member`, or `admin`. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | no | The default access level for the project. Valid values are `none`, `member`, or `admin`. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |

@@ -1,0 +1,69 @@
+---
+title: "getSource"
+description: "Function getSource in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Function getSource in pulumi-logtail.
+
+Invoke token: `logtail:index/getSource:getSource`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Call `logtail.getSource(args)`.
+
+`getSourceOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tableName` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `blockedMetrics` | `string[]` | yes |  |
+| `codeMappingSourceRoot` | `string` | yes |  |
+| `codeMappingStackRoot` | `string` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `customBuckets` | `GetSourceCustomBucket[]` | yes |  |
+| `dataRegion` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `ingestingHost` | `string` | yes |  |
+| `ingestingPaused` | `boolean` | yes |  |
+| `liveTailPattern` | `string` | yes |  |
+| `logsRetention` | `number` | yes |  |
+| `metricsRetention` | `number` | yes |  |
+| `name` | `string` | yes |  |
+| `platform` | `string` | yes |  |
+| `scrapeFrequencySecs` | `number` | yes |  |
+| `scrapeRequestBasicAuthPassword` | `string` | yes |  |
+| `scrapeRequestBasicAuthUser` | `string` | yes |  |
+| `scrapeRequestHeaders` | `{ [key: string]: string }[]` | yes |  |
+| `scrapeUrls` | `string[]` | yes |  |
+| `skipSslVerify` | `boolean` | yes |  |
+| `sourceGroupId` | `number` | yes |  |
+| `tableName` | `string` | yes |  |
+| `teamId` | `string` | yes |  |
+| `teamName` | `string` | yes |  |
+| `token` | `string` | yes |  |
+| `updatedAt` | `string` | yes |  |
+| `vrlTransformationLogs` | `string` | yes |  |
+| `vrlTransformationSpans` | `string` | yes |  |
+
+## `GetSourceCustomBucket`
+
+Output object `GetSourceCustomBucket`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no |  |
+| `endpoint` | `string` | no |  |
+| `keepDataAfterRetention` | `boolean` | no |  |
+| `name` | `string` | no |  |
+| `secretAccessKey` | `string` | no |  |

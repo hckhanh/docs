@@ -1,0 +1,78 @@
+---
+title: "getUserActivity"
+description: "Function getUserActivity in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getUserActivity in pulumi-portainer.
+
+Invoke token: `portainer:index/getUserActivity:getUserActivity`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getUserActivity(args)`.
+
+`getUserActivityOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `after` | `number` | no |  |
+| `before` | `number` | no |  |
+| `contexts` | `string[]` | no |  |
+| `id` | `string` | no |  |
+| `keyword` | `string` | no |  |
+| `limit` | `number` | no |  |
+| `logType` | `string` | no |  |
+| `offset` | `number` | no |  |
+| `sortBy` | `string` | no |  |
+| `sortDesc` | `boolean` | no |  |
+| `usernames` | `string[]` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `activityLogs` | `GetUserActivityActivityLog[]` | yes |  |
+| `after` | `number` | no |  |
+| `authLogs` | `GetUserActivityAuthLog[]` | yes |  |
+| `before` | `number` | no |  |
+| `contexts` | `string[]` | no |  |
+| `id` | `string` | yes |  |
+| `keyword` | `string` | no |  |
+| `limit` | `number` | no |  |
+| `logType` | `string` | no |  |
+| `offset` | `number` | no |  |
+| `sortBy` | `string` | no |  |
+| `sortDesc` | `boolean` | no |  |
+| `totalCount` | `number` | yes |  |
+| `usernames` | `string[]` | no |  |
+
+## `GetUserActivityActivityLog`
+
+Output object `GetUserActivityActivityLog`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no |  |
+| `context` | `string` | no |  |
+| `id` | `number` | no |  |
+| `timestamp` | `number` | no |  |
+| `username` | `string` | no |  |
+
+## `GetUserActivityAuthLog`
+
+Output object `GetUserActivityAuthLog`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `context` | `number` | no |  |
+| `id` | `number` | no |  |
+| `origin` | `string` | no |  |
+| `timestamp` | `number` | no |  |
+| `type` | `number` | no |  |
+| `username` | `string` | no |  |

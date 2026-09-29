@@ -1,0 +1,40 @@
+---
+title: "ProxyRecord"
+description: "Resource ProxyRecord in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource ProxyRecord in pulumi-posthog.
+
+Pulumi type: `posthog:index/proxyRecord:ProxyRecord`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.ProxyRecord(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes | The custom domain to provision in PostHog. Configured values are normalised to lowercase with no trailing dot, so `Example.COM.` and `example.com` plan as the same value. |
+| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `createdAt` | `string` | yes | Timestamp when the proxy record was created. |
+| `createdBy` | `number` | yes | Numeric identifier of the user who created the proxy record. |
+| `domain` | `string` | no | The custom domain to provision in PostHog. Configured values are normalised to lowercase with no trailing dot, so `Example.COM.` and `example.com` plan as the same value. |
+| `message` | `string` | yes | Additional status detail returned by PostHog, when present. |
+| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+| `status` | `string` | yes | The current provisioning status reported by PostHog. |
+| `targetCname` | `string` | yes | The PostHog-managed CNAME target that your DNS record must point to. Normalised without a trailing dot, ready to use as DNS record content. If your DNS provider requires the DNS-canonical dotted form (e.g. `hashicorp/dns`), append it yourself: `"${posthog_proxy_record.example.target_cname}."`. |
+| `updatedAt` | `string` | yes | Timestamp when the proxy record was last updated. |

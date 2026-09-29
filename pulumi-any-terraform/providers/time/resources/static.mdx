@@ -1,0 +1,41 @@
+---
+title: "Static"
+description: "Resource Static in pulumi-time."
+---
+
+<!-- Generated from the pulumi-time SDK. -->
+
+Resource Static in pulumi-time.
+
+Pulumi type: `time:index/static:Static`.
+
+```ts
+import * as time from "pulumi-time"
+```
+
+Construct with `new time.Static(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc3339` | `string` | no | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
+| `triggers` | `{ [key: string]: string }` | no | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `day` | `number` | yes | Number day of timestamp. |
+| `hour` | `number` | yes | Number hour of timestamp. |
+| `minute` | `number` | yes | Number minute of timestamp. |
+| `month` | `number` | yes | Number month of timestamp. |
+| `rfc3339` | `string` | no | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
+| `second` | `number` | yes | Number second of timestamp. |
+| `triggers` | `{ [key: string]: string }` | no | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information. |
+| `unix` | `number` | yes | Number of seconds since epoch time, e.g. `1581489373`. |
+| `year` | `number` | yes | Number year of timestamp. |

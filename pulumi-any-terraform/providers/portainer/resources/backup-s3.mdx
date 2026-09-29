@@ -1,0 +1,48 @@
+---
+title: "BackupS3"
+description: "Resource BackupS3 in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource BackupS3 in pulumi-portainer.
+
+Pulumi type: `portainer:index/backupS3:BackupS3`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.BackupS3(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Sensitive S3 access key identifier used to upload the Portainer backup archive. |
+| `backupS3Id` | `string` | no |  |
+| `bucketName` | `string` | yes | Name of the S3 bucket where the Portainer backup archive will be stored. |
+| `cronRule` | `string` | no | Optional cron expression that schedules recurring S3 backups in Portainer. |
+| `password` | `string` | yes | Sensitive password used to encrypt the Portainer backup archive before upload. |
+| `region` | `string` | yes | AWS or S3-compatible region of the destination bucket. |
+| `s3CompatibleHost` | `string` | yes | Endpoint URL of the S3 or S3-compatible service used for the backup upload. |
+| `secretAccessKey` | `string` | yes | Sensitive S3 secret access key paired with `accessKeyId`. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | no | Sensitive S3 access key identifier used to upload the Portainer backup archive. |
+| `backupS3Id` | `string` | no |  |
+| `bucketName` | `string` | no | Name of the S3 bucket where the Portainer backup archive will be stored. |
+| `cronRule` | `string` | no | Optional cron expression that schedules recurring S3 backups in Portainer. |
+| `lastRunFailed` | `boolean` | yes | Whether the most recent scheduled S3 backup failed. |
+| `lastRunTimestamp` | `string` | yes | UTC timestamp of the most recent scheduled S3 backup, empty when none has run. |
+| `password` | `string` | no | Sensitive password used to encrypt the Portainer backup archive before upload. |
+| `region` | `string` | no | AWS or S3-compatible region of the destination bucket. |
+| `s3CompatibleHost` | `string` | no | Endpoint URL of the S3 or S3-compatible service used for the backup upload. |
+| `secretAccessKey` | `string` | no | Sensitive S3 secret access key paired with `accessKeyId`. |

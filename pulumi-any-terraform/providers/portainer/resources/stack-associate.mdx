@@ -1,0 +1,40 @@
+---
+title: "StackAssociate"
+description: "Resource StackAssociate in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource StackAssociate in pulumi-portainer.
+
+Pulumi type: `portainer:index/stackAssociate:StackAssociate`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.StackAssociate(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes | Identifier of the Portainer endpoint that should adopt the orphaned stack. |
+| `orphanedRunning` | `boolean` | no | Whether the orphaned stack is already running on the endpoint; controls Portainer's adoption behaviour. |
+| `stackAssociateId` | `string` | no |  |
+| `stackId` | `number` | yes | Identifier of the orphaned Portainer stack to associate with an endpoint. |
+| `swarmId` | `string` | yes | Swarm cluster identifier (`Cluster.ID`) of the target endpoint when associating a Swarm stack. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no | Identifier of the Portainer endpoint that should adopt the orphaned stack. |
+| `orphanedRunning` | `boolean` | no | Whether the orphaned stack is already running on the endpoint; controls Portainer's adoption behaviour. |
+| `stackAssociateId` | `string` | no |  |
+| `stackId` | `number` | no | Identifier of the orphaned Portainer stack to associate with an endpoint. |
+| `swarmId` | `string` | no | Swarm cluster identifier (`Cluster.ID`) of the target endpoint when associating a Swarm stack. |

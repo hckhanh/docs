@@ -1,0 +1,52 @@
+---
+title: "RegistryConfigure"
+description: "Resource RegistryConfigure in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource RegistryConfigure in pulumi-portainer.
+
+Pulumi type: `portainer:index/registryConfigure:RegistryConfigure`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.RegistryConfigure(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `authentication` | `boolean` | yes | Whether the registry requires authentication. When false, Portainer ignores `username` and `password`. |
+| `password` | `string` | no | Password or token paired with `username`. Portainer never returns it, so it cannot be checked for drift. |
+| `region` | `string` | no | AWS region of an ECR registry. Ignored by other registry types. |
+| `registryConfigureId` | `string` | no |  |
+| `registryId` | `number` | yes | Identifier of the registry to configure. |
+| `tls` | `boolean` | no | Whether Portainer contacts the registry over TLS. |
+| `tlsCaCert` | `string` | no | PEM-encoded CA certificate used to verify the registry's certificate. Stored in state as a sensitive value. |
+| `tlsCert` | `string` | no | PEM-encoded client certificate presented to the registry. Stored in state as a sensitive value. |
+| `tlsKey` | `string` | no | PEM-encoded client private key paired with `tlsCert`. Stored in state as a sensitive value. |
+| `tlsSkipVerify` | `boolean` | no | Whether to skip verification of the registry's TLS certificate. |
+| `username` | `string` | no | Username used to authenticate against the registry. Required when `authentication` is true. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `authentication` | `boolean` | no | Whether the registry requires authentication. When false, Portainer ignores `username` and `password`. |
+| `password` | `string` | no | Password or token paired with `username`. Portainer never returns it, so it cannot be checked for drift. |
+| `region` | `string` | no | AWS region of an ECR registry. Ignored by other registry types. |
+| `registryConfigureId` | `string` | no |  |
+| `registryId` | `number` | no | Identifier of the registry to configure. |
+| `tls` | `boolean` | no | Whether Portainer contacts the registry over TLS. |
+| `tlsCaCert` | `string` | no | PEM-encoded CA certificate used to verify the registry's certificate. Stored in state as a sensitive value. |
+| `tlsCert` | `string` | no | PEM-encoded client certificate presented to the registry. Stored in state as a sensitive value. |
+| `tlsKey` | `string` | no | PEM-encoded client private key paired with `tlsCert`. Stored in state as a sensitive value. |
+| `tlsSkipVerify` | `boolean` | no | Whether to skip verification of the registry's TLS certificate. |
+| `username` | `string` | no | Username used to authenticate against the registry. Required when `authentication` is true. |

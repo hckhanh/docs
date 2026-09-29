@@ -1,0 +1,45 @@
+---
+title: "EdgeConfigurations"
+description: "Resource EdgeConfigurations in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource EdgeConfigurations in pulumi-portainer.
+
+Pulumi type: `portainer:index/edgeConfigurations:EdgeConfigurations`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.EdgeConfigurations(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `baseDir` | `string` | no | Base directory on edge agents where the configuration files are written. |
+| `category` | `string` | no | Category of the edge configuration. One of `configuration`, `secret`, or empty string. |
+| `edgeConfigurationsId` | `string` | no |  |
+| `edgeGroupIds` | `number[]` | yes | List of edge group identifiers that should receive this configuration. |
+| `filePath` | `string` | yes | Path on the local filesystem to the file or archive uploaded as the edge configuration payload. |
+| `name` | `string` | no | Name of the Portainer edge configuration. |
+| `type` | `string` | yes | Edge configuration type. Accepts the textual form `general` or the numeric form `1`. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `baseDir` | `string` | no | Base directory on edge agents where the configuration files are written. |
+| `category` | `string` | no | Category of the edge configuration. One of `configuration`, `secret`, or empty string. |
+| `edgeConfigurationsId` | `string` | no |  |
+| `edgeGroupIds` | `number[]` | no | List of edge group identifiers that should receive this configuration. |
+| `filePath` | `string` | no | Path on the local filesystem to the file or archive uploaded as the edge configuration payload. |
+| `fileSha256` | `string` | yes | SHA256 hash of the uploaded edge configuration file used to detect content changes. |
+| `name` | `string` | no | Name of the Portainer edge configuration. |
+| `type` | `string` | no | Edge configuration type. Accepts the textual form `general` or the numeric form `1`. |

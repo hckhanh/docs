@@ -1,0 +1,41 @@
+---
+title: "KubernetesDeploymentRollback"
+description: "Resource KubernetesDeploymentRollback in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesDeploymentRollback in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesDeploymentRollback:KubernetesDeploymentRollback`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesDeploymentRollback(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deploymentName` | `string` | yes | Name of the deployment to roll back. |
+| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment the deployment belongs to. |
+| `kubernetesDeploymentRollbackId` | `string` | no |  |
+| `namespace` | `string` | yes | Namespace the deployment lives in. |
+| `revision` | `number` | no | Rollout revision to roll back to. `0` (the default) rolls back to the previous revision, matching `kubectl rollout undo`. Use the `portainer.getKubernetesReplicasets` data source to discover the available revisions. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `deploymentName` | `string` | no | Name of the deployment to roll back. |
+| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment the deployment belongs to. |
+| `kubernetesDeploymentRollbackId` | `string` | no |  |
+| `namespace` | `string` | no | Namespace the deployment lives in. |
+| `revision` | `number` | no | Rollout revision to roll back to. `0` (the default) rolls back to the previous revision, matching `kubectl rollout undo`. Use the `portainer.getKubernetesReplicasets` data source to discover the available revisions. |
+| `rolledBackToReplicas` | `number` | yes | Desired replica count of the deployment after the rollback. |

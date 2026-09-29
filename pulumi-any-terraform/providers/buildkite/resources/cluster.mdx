@@ -1,0 +1,39 @@
+---
+title: "Cluster"
+description: "Resource Cluster in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource Cluster in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/cluster:Cluster`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.Cluster(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `color` | `string` | no | A color representation of the Cluster. Accepts hex codes, eg #BADA55. |
+| `description` | `string` | no | This is a description for the cluster, this may describe the usage for it, the region, or something else which would help identify the Cluster's purpose. |
+| `emoji` | `string` | no | An emoji to use with the Cluster, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀. |
+| `name` | `string` | no | The name of the Cluster. Can only contain numbers and letters, no spaces or special characters. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `color` | `string` | no | A color representation of the Cluster. Accepts hex codes, eg #BADA55. |
+| `description` | `string` | no | This is a description for the cluster, this may describe the usage for it, the region, or something else which would help identify the Cluster's purpose. |
+| `emoji` | `string` | no | An emoji to use with the Cluster, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀. |
+| `name` | `string` | no | The name of the Cluster. Can only contain numbers and letters, no spaces or special characters. |
+| `uuid` | `string` | yes | The UUID of the cluster. |

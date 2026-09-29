@@ -1,0 +1,142 @@
+---
+title: "NotificationService"
+description: "Resource NotificationService in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource NotificationService in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/notificationService:NotificationService`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.NotificationService(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `awsEventBridge` | `NotificationServiceAwsEventBridge (input)` | no | Settings for the `awsEventBridge` provider. |
+| `branchConfiguration` | `string` | no | A branch pattern restricting which builds produce notifications. Not supported for `linear` or `slackWorkspace` services. |
+| `datadogPipelineVisibility` | `NotificationServiceDatadogPipelineVisibility (input)` | no | Settings for the `datadogPipelineVisibility` provider. |
+| `description` | `string` | no | A description of the notification service. |
+| `enabled` | `boolean` | no | Whether the notification service is enabled. Defaults to true. |
+| `openTelemetryTracing` | `NotificationServiceOpenTelemetryTracing (input)` | no | Settings for the `openTelemetryTracing` provider. |
+| `providerType` | `string` | yes | The notification provider type. OAuth-managed `linear` and `slackWorkspace` services can be imported but cannot be created with this resource. Legacy `slack` services are not supported. |
+| `scope` | `string` | no | Which resources the service applies to. Defaults to `all`. Only `all` is supported for `linear` and `slackWorkspace` services. |
+| `scopeUuids` | `string[]` | no | The project, team, or cluster UUIDs selected by a `some_*` scope. Not supported for `linear` or `slackWorkspace` services. |
+| `webhook` | `NotificationServiceWebhook (input)` | no | Settings for the `webhook` provider. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `awsEventBridge` | `NotificationServiceAwsEventBridge (output)` | no | Settings for the `awsEventBridge` provider. |
+| `branchConfiguration` | `string` | no | A branch pattern restricting which builds produce notifications. Not supported for `linear` or `slackWorkspace` services. |
+| `createdAt` | `string` | yes | The time when the notification service was created. |
+| `datadogPipelineVisibility` | `NotificationServiceDatadogPipelineVisibility (output)` | no | Settings for the `datadogPipelineVisibility` provider. |
+| `description` | `string` | no | A description of the notification service. |
+| `enabled` | `boolean` | no | Whether the notification service is enabled. Defaults to true. |
+| `graphqlId` | `string` | yes | The GraphQL ID of the notification service, when its provider has a GraphQL node type. |
+| `openTelemetryTracing` | `NotificationServiceOpenTelemetryTracing (output)` | no | Settings for the `openTelemetryTracing` provider. |
+| `providerType` | `string` | no | The notification provider type. OAuth-managed `linear` and `slackWorkspace` services can be imported but cannot be created with this resource. Legacy `slack` services are not supported. |
+| `scope` | `string` | no | Which resources the service applies to. Defaults to `all`. Only `all` is supported for `linear` and `slackWorkspace` services. |
+| `scopeUuids` | `string[]` | no | The project, team, or cluster UUIDs selected by a `some_*` scope. Not supported for `linear` or `slackWorkspace` services. |
+| `webhook` | `NotificationServiceWebhook (output)` | no | Settings for the `webhook` provider. |
+
+## `NotificationServiceAwsEventBridge (input)`
+
+Input object `NotificationServiceAwsEventBridge`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `awsAccountId` | `string` | no | The AWS account ID for the partner event source. Required on create, immutable, and masked by the API. |
+| `awsRegion` | `string` | no | The AWS region for the partner event source. Required on create and immutable. |
+| `eventSourceName` | `string` | no | The AWS partner event source created for this service. |
+| `includeBuildMetaData` | `string` | no | A build meta-data pattern to include in EventBridge payloads. |
+
+## `NotificationServiceDatadogPipelineVisibility (input)`
+
+Input object `NotificationServiceDatadogPipelineVisibility`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `apiKey` | `string` | no | The Datadog API key. Required on create and masked by the API. |
+| `datadogSite` | `string` | no | The Datadog site, such as `datadoghq.com` or `datadoghq.eu`. |
+| `datadogTags` | `string` | no | Newline-delimited `key:value` tags attached to Datadog events. |
+
+## `NotificationServiceOpenTelemetryTracing (input)`
+
+Input object `NotificationServiceOpenTelemetryTracing`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpoint` | `string` | no | The OTLP HTTP endpoint. Required on create. |
+| `headers` | `{ [key: string]: string }` | no | Headers sent to the OTLP endpoint. Buildkite never returns these values, so they are preserved only in Terraform state. |
+| `resourceAttributes` | `{ [key: string]: string }` | no | Additional OpenTelemetry resource attributes. |
+| `serviceName` | `string` | no | The OpenTelemetry service name. Defaults to `buildkite`. |
+
+## `NotificationServiceWebhook (input)`
+
+Input object `NotificationServiceWebhook`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `events` | `string[]` | no | The webhook event names to deliver. |
+| `tlsVerify` | `boolean` | no | Whether to verify the webhook endpoint's TLS certificate. |
+| `token` | `string` | no | The token used to authenticate webhook deliveries. The API generates one when omitted. |
+| `tokenMode` | `string` | no | How the webhook token authenticates deliveries. |
+| `url` | `string` | no | The URL that receives webhook deliveries. Required when creating a webhook service. |
+| `version` | `number` | no | The webhook payload version. New services must use the API's latest version, and existing services can only be upgraded to it, never downgraded. |
+
+## `NotificationServiceAwsEventBridge (output)`
+
+Output object `NotificationServiceAwsEventBridge`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `awsAccountId` | `string` | yes | The AWS account ID for the partner event source. Required on create, immutable, and masked by the API. |
+| `awsRegion` | `string` | yes | The AWS region for the partner event source. Required on create and immutable. |
+| `eventSourceName` | `string` | yes | The AWS partner event source created for this service. |
+| `includeBuildMetaData` | `string` | no | A build meta-data pattern to include in EventBridge payloads. |
+
+## `NotificationServiceDatadogPipelineVisibility (output)`
+
+Output object `NotificationServiceDatadogPipelineVisibility`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `apiKey` | `string` | yes | The Datadog API key. Required on create and masked by the API. |
+| `datadogSite` | `string` | yes | The Datadog site, such as `datadoghq.com` or `datadoghq.eu`. |
+| `datadogTags` | `string` | no | Newline-delimited `key:value` tags attached to Datadog events. |
+
+## `NotificationServiceOpenTelemetryTracing (output)`
+
+Output object `NotificationServiceOpenTelemetryTracing`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpoint` | `string` | no | The OTLP HTTP endpoint. Required on create. |
+| `headers` | `{ [key: string]: string }` | yes | Headers sent to the OTLP endpoint. Buildkite never returns these values, so they are preserved only in Terraform state. |
+| `resourceAttributes` | `{ [key: string]: string }` | yes | Additional OpenTelemetry resource attributes. |
+| `serviceName` | `string` | yes | The OpenTelemetry service name. Defaults to `buildkite`. |
+
+## `NotificationServiceWebhook (output)`
+
+Output object `NotificationServiceWebhook`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `events` | `string[]` | yes | The webhook event names to deliver. |
+| `tlsVerify` | `boolean` | yes | Whether to verify the webhook endpoint's TLS certificate. |
+| `token` | `string` | yes | The token used to authenticate webhook deliveries. The API generates one when omitted. |
+| `tokenMode` | `string` | yes | How the webhook token authenticates deliveries. |
+| `url` | `string` | no | The URL that receives webhook deliveries. Required when creating a webhook service. |
+| `version` | `number` | yes | The webhook payload version. New services must use the API's latest version, and existing services can only be upgraded to it, never downgraded. |

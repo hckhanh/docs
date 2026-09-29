@@ -1,0 +1,38 @@
+---
+title: "KubernetesRole"
+description: "Resource KubernetesRole in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesRole in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesRole:KubernetesRole`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesRole(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
+| `kubernetesRoleId` | `string` | no |  |
+| `manifest` | `string` | yes | Raw YAML or JSON manifest defining the Kubernetes Role. |
+| `namespace` | `string` | yes | Kubernetes namespace in which the Role is created. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | no | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
+| `kubernetesRoleId` | `string` | no |  |
+| `manifest` | `string` | no | Raw YAML or JSON manifest defining the Kubernetes Role. |
+| `namespace` | `string` | no | Kubernetes namespace in which the Role is created. |

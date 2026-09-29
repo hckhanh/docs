@@ -1,0 +1,50 @@
+---
+title: "getKubernetesCronJobs"
+description: "Function getKubernetesCronJobs in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesCronJobs in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesCronJobs:getKubernetesCronJobs`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesCronJobs(args)`.
+
+`getKubernetesCronJobsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `includeSystem` | `boolean` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `cronJobs` | `GetKubernetesCronJobsCronJob[]` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `includeSystem` | `boolean` | no |  |
+
+## `GetKubernetesCronJobsCronJob`
+
+Output object `GetKubernetesCronJobsCronJob`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `command` | `string` | no |  |
+| `id` | `string` | no |  |
+| `isSystem` | `boolean` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `schedule` | `string` | no |  |
+| `suspend` | `boolean` | no |  |
+| `timezone` | `string` | no |  |

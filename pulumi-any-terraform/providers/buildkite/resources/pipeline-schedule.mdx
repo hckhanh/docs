@@ -1,0 +1,47 @@
+---
+title: "PipelineSchedule"
+description: "Resource PipelineSchedule in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource PipelineSchedule in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/pipelineSchedule:PipelineSchedule`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.PipelineSchedule(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `branch` | `string` | yes | The branch that the schedule should run on. |
+| `commit` | `string` | no | The commit that the schedule should run on. |
+| `cronline` | `string` | yes | The cronline that describes when the schedule should run. See[here](https://buildkite.com/docs/pipelines/scheduled-builds#schedule-intervals) for supported syntax. |
+| `enabled` | `boolean` | no | Whether the schedule is enabled or not. |
+| `env` | `{ [key: string]: string }` | no | The environment variables that scheduled builds should use. An empty map (`{}`) is equivalent to omitting this attribute at the API level. |
+| `label` | `string` | yes | A label to describe the schedule. |
+| `message` | `string` | no | The message the builds show for builds created by this schedule. |
+| `pipelineId` | `string` | yes | The GraphQL ID of the pipeline that this schedule belongs to. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `branch` | `string` | no | The branch that the schedule should run on. |
+| `commit` | `string` | no | The commit that the schedule should run on. |
+| `cronline` | `string` | no | The cronline that describes when the schedule should run. See[here](https://buildkite.com/docs/pipelines/scheduled-builds#schedule-intervals) for supported syntax. |
+| `enabled` | `boolean` | no | Whether the schedule is enabled or not. |
+| `env` | `{ [key: string]: string }` | no | The environment variables that scheduled builds should use. An empty map (`{}`) is equivalent to omitting this attribute at the API level. |
+| `label` | `string` | no | A label to describe the schedule. |
+| `message` | `string` | no | The message the builds show for builds created by this schedule. |
+| `pipelineId` | `string` | no | The GraphQL ID of the pipeline that this schedule belongs to. |
+| `uuid` | `string` | yes | The UUID of the schedule. |

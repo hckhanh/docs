@@ -1,0 +1,37 @@
+---
+title: "getKubernetesVolumes"
+description: "Function getKubernetesVolumes in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesVolumes in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesVolumes:getKubernetesVolumes`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesVolumes(args)`.
+
+`getKubernetesVolumesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `withApplications` | `boolean` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `namespace` | `string` | no |  |
+| `volumes` | `string` | yes |  |
+| `withApplications` | `boolean` | no |  |

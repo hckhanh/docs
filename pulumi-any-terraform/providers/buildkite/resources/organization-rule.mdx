@@ -1,0 +1,43 @@
+---
+title: "OrganizationRule"
+description: "Resource OrganizationRule in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource OrganizationRule in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/organizationRule:OrganizationRule`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.OrganizationRule(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | The description of the organization rule. |
+| `type` | `string` | yes | The type of organization rule. |
+| `value` | `string` | yes | The JSON document that this organization rule implements. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | The action defined between source and target resources. |
+| `description` | `string` | no | The description of the organization rule. |
+| `effect` | `string` | yes | Whether this organization rule allows or denies the action to take place between source and target resources. |
+| `sourceType` | `string` | yes | The source resource type that this organization rule allows or denies to invoke its defined action. |
+| `sourceUuid` | `string` | yes | The UUID of the resource that this organization rule allows or denies invocating its defined action. |
+| `targetType` | `string` | yes | The target resource type that this organization rule allows or denies the source to respective action. |
+| `targetUuid` | `string` | yes | The UUID of the target resource that this organization rule allows or denies invocation its respective action. |
+| `type` | `string` | no | The type of organization rule. |
+| `uuid` | `string` | yes | The UUID of the organization rule. |
+| `value` | `string` | no | The JSON document that this organization rule implements. |

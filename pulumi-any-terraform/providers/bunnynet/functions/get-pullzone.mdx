@@ -1,0 +1,192 @@
+---
+title: "getPullzone"
+description: "Function getPullzone in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Function getPullzone in pulumi-bunnynet.
+
+Invoke token: `bunnynet:index/getPullzone:getPullzone`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Call `bunnynet.getPullzone(args)`.
+
+`getPullzoneOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | no |  |
+| `name` | `string` | no |  |
+| `origin` | `GetPullzoneOrigin (input)` | no |  |
+| `routing` | `GetPullzoneRouting (input)` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addCanonicalHeader` | `boolean` | yes |  |
+| `allowReferers` | `string[]` | yes |  |
+| `blockIps` | `string[]` | yes |  |
+| `blockNoReferer` | `boolean` | yes |  |
+| `blockPostRequests` | `boolean` | yes |  |
+| `blockReferers` | `string[]` | yes |  |
+| `blockRootPath` | `boolean` | yes |  |
+| `cacheChunked` | `boolean` | yes |  |
+| `cacheEnabled` | `boolean` | yes |  |
+| `cacheErrors` | `boolean` | yes |  |
+| `cacheExpirationTime` | `number` | yes |  |
+| `cacheExpirationTimeBrowser` | `number` | yes |  |
+| `cacheStales` | `string[]` | yes |  |
+| `cacheVaries` | `string[]` | yes |  |
+| `cacheVaryCookies` | `string[]` | yes |  |
+| `cacheVaryHeaders` | `string[]` | yes |  |
+| `cacheVaryQuerystrings` | `string[]` | yes |  |
+| `cdnDomain` | `string` | yes |  |
+| `corsEnabled` | `boolean` | yes |  |
+| `corsExtensions` | `string[]` | yes |  |
+| `disableLetsencrypt` | `boolean` | yes |  |
+| `errorpageCustomContent` | `string` | yes |  |
+| `errorpageCustomEnabled` | `boolean` | yes |  |
+| `errorpageStatuspageCode` | `string` | yes |  |
+| `errorpageStatuspageEnabled` | `boolean` | yes |  |
+| `errorpageWhitelabel` | `boolean` | yes |  |
+| `id` | `number` | yes |  |
+| `limitAfter` | `number` | yes |  |
+| `limitBandwidth` | `number` | yes |  |
+| `limitBurst` | `number` | yes |  |
+| `limitConnections` | `number` | yes |  |
+| `limitDownloadSpeed` | `number` | yes |  |
+| `limitRequests` | `number` | yes |  |
+| `logAnonymized` | `boolean` | yes |  |
+| `logAnonymizedStyle` | `string` | yes |  |
+| `logEnabled` | `boolean` | yes |  |
+| `logForwardEnabled` | `boolean` | yes |  |
+| `logForwardFormat` | `string` | yes |  |
+| `logForwardPort` | `number` | yes |  |
+| `logForwardProtocol` | `string` | yes |  |
+| `logForwardServer` | `string` | yes |  |
+| `logForwardToken` | `string` | yes |  |
+| `logStorageEnabled` | `boolean` | yes |  |
+| `logStorageZone` | `number` | yes |  |
+| `name` | `string` | yes |  |
+| `optimizerBurrow` | `boolean` | yes |  |
+| `optimizerClassesForce` | `boolean` | yes |  |
+| `optimizerDynamicImageApi` | `boolean` | yes |  |
+| `optimizerEnabled` | `boolean` | yes |  |
+| `optimizerHtmlPrerender` | `boolean` | yes |  |
+| `optimizerMinifyCss` | `boolean` | yes |  |
+| `optimizerMinifyJs` | `boolean` | yes |  |
+| `optimizerSmartimage` | `boolean` | yes |  |
+| `optimizerSmartimageDesktopMaxwidth` | `number` | yes |  |
+| `optimizerSmartimageDesktopQuality` | `number` | yes |  |
+| `optimizerSmartimageMobileMaxwidth` | `number` | yes |  |
+| `optimizerSmartimageMobileQuality` | `number` | yes |  |
+| `optimizerWatermark` | `boolean` | yes |  |
+| `optimizerWatermarkBorderoffset` | `number` | yes |  |
+| `optimizerWatermarkMinsize` | `number` | yes |  |
+| `optimizerWatermarkPosition` | `string` | yes |  |
+| `optimizerWatermarkUrl` | `string` | yes |  |
+| `optimizerWebp` | `boolean` | yes |  |
+| `origin` | `GetPullzoneOrigin (output)` | no |  |
+| `originshieldConcurrencyLimit` | `boolean` | yes |  |
+| `originshieldConcurrencyRequests` | `number` | yes |  |
+| `originshieldEnabled` | `boolean` | yes |  |
+| `originshieldQueueRequests` | `number` | yes |  |
+| `originshieldQueueWait` | `number` | yes |  |
+| `originshieldZone` | `string` | yes |  |
+| `permacacheStoragezone` | `number` | yes |  |
+| `requestCoalescingEnabled` | `boolean` | yes |  |
+| `requestCoalescingTimeout` | `number` | yes |  |
+| `routing` | `GetPullzoneRouting (output)` | no |  |
+| `s3AuthEnabled` | `boolean` | yes |  |
+| `s3AuthKey` | `string` | yes |  |
+| `s3AuthRegion` | `string` | yes |  |
+| `s3AuthSecret` | `string` | yes |  |
+| `safehopConnectionTimeout` | `number` | yes |  |
+| `safehopEnabled` | `boolean` | yes |  |
+| `safehopResponseTimeout` | `number` | yes |  |
+| `safehopRetryCount` | `number` | yes |  |
+| `safehopRetryDelay` | `number` | yes |  |
+| `safehopRetryReasons` | `string[]` | yes |  |
+| `sortQuerystring` | `boolean` | yes |  |
+| `stripCookies` | `boolean` | yes |  |
+| `tlsLevel` | `string` | yes |  |
+| `tlsSupports` | `string[]` | yes |  |
+| `tokenAuthEnabled` | `boolean` | yes |  |
+| `tokenAuthIpValidation` | `boolean` | yes |  |
+| `tokenAuthKey` | `string` | yes |  |
+| `useBackgroundUpdate` | `boolean` | yes |  |
+| `websocketsEnabled` | `boolean` | yes |  |
+| `websocketsMaxConnections` | `number` | yes |  |
+
+## `GetPullzoneOrigin (input)`
+
+Input object `GetPullzoneOrigin`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `containerAppId` | `string` | no | The ID if the compute container app. |
+| `containerEndpointId` | `string` | no | The ID if the compute container app endpoint. |
+| `dnsPort` | `number` | no | The port for DNS Accelerated endpoints. |
+| `dnsScheme` | `string` | no | The scheme for DNS Accelerated endpoints. |
+| `followRedirects` | `boolean` | no | Indicates whether the zone will follow origin redirects. |
+| `forwardHostHeader` | `boolean` | no | Indicates whether the current hostname is forwarded to the origin. |
+| `hostHeader` | `string` | no | The host header that will be sent to the origin. |
+| `middlewareScript` | `number` | no | The ID of the compute script used as a middleware. |
+| `script` | `number` | no | The ID of the linked compute script. |
+| `scriptExecuteBeforeCache` | `boolean` | no | Indicates whether the script will execute ahead of the cache layer. |
+| `storagezone` | `number` | no | The ID of the linked storage zone. |
+| `type` | `string` | no | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
+| `url` | `string` | no | The origin URL from where the files are fetched. |
+| `verifySsl` | `boolean` | no | Indicates whether the Origin's TLS certificate should be verified. |
+
+## `GetPullzoneRouting (input)`
+
+Input object `GetPullzoneRouting`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `blockedCountries` | `string[]` | no | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level. |
+| `filters` | `string[]` | no | Options: `all`, `eea`, `eu`, `scripting` |
+| `redirectedCountries` | `string[]` | no | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
+| `tier` | `string` | no | Options: `Standard`, `Volume` |
+| `zones` | `string[]` | no | Options: `AF`, `ASIA`, `EU`, `SA`, `US` |
+
+## `GetPullzoneOrigin (output)`
+
+Output object `GetPullzoneOrigin`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `containerAppId` | `string` | yes | The ID if the compute container app. |
+| `containerEndpointId` | `string` | yes | The ID if the compute container app endpoint. |
+| `dnsPort` | `number` | yes | The port for DNS Accelerated endpoints. |
+| `dnsScheme` | `string` | yes | The scheme for DNS Accelerated endpoints. |
+| `followRedirects` | `boolean` | yes | Indicates whether the zone will follow origin redirects. |
+| `forwardHostHeader` | `boolean` | yes | Indicates whether the current hostname is forwarded to the origin. |
+| `hostHeader` | `string` | yes | The host header that will be sent to the origin. |
+| `middlewareScript` | `number` | yes | The ID of the compute script used as a middleware. |
+| `script` | `number` | yes | The ID of the linked compute script. |
+| `scriptExecuteBeforeCache` | `boolean` | yes | Indicates whether the script will execute ahead of the cache layer. |
+| `storagezone` | `number` | yes | The ID of the linked storage zone. |
+| `type` | `string` | yes | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
+| `url` | `string` | yes | The origin URL from where the files are fetched. |
+| `verifySsl` | `boolean` | yes | Indicates whether the Origin's TLS certificate should be verified. |
+
+## `GetPullzoneRouting (output)`
+
+Output object `GetPullzoneRouting`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `blockedCountries` | `string[]` | yes | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level. |
+| `filters` | `string[]` | yes | Options: `all`, `eea`, `eu`, `scripting` |
+| `redirectedCountries` | `string[]` | yes | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
+| `tier` | `string` | yes | Options: `Standard`, `Volume` |
+| `zones` | `string[]` | yes | Options: `AF`, `ASIA`, `EU`, `SA`, `US` |

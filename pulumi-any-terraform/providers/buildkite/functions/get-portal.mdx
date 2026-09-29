@@ -1,0 +1,48 @@
+---
+title: "getPortal"
+description: "Function getPortal in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Function getPortal in pulumi-buildkite.
+
+Invoke token: `buildkite:index/getPortal:getPortal`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Call `buildkite.getPortal(args)`.
+
+`getPortalOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `slug` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `createdBy` | `GetPortalCreatedBy` | yes |  |
+| `description` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `query` | `string` | yes |  |
+| `slug` | `string` | yes |  |
+| `userInvokable` | `boolean` | yes |  |
+| `uuid` | `string` | yes |  |
+
+## `GetPortalCreatedBy`
+
+Output object `GetPortalCreatedBy`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes | The email of the user. |
+| `name` | `string` | yes | The name of the user. |
+| `uuid` | `string` | yes | The UUID of the user. |

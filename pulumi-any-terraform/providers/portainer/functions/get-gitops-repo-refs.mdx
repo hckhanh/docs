@@ -1,0 +1,41 @@
+---
+title: "getGitopsRepoRefs"
+description: "Function getGitopsRepoRefs in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsRepoRefs in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsRepoRefs:getGitopsRepoRefs`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsRepoRefs(args)`.
+
+`getGitopsRepoRefsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `gitCredentialId` | `number` | no |  |
+| `id` | `string` | no |  |
+| `password` | `string` | no |  |
+| `repositoryUrl` | `string` | yes |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `gitCredentialId` | `number` | no |  |
+| `id` | `string` | yes |  |
+| `password` | `string` | no |  |
+| `refs` | `string[]` | yes |  |
+| `repositoryUrl` | `string` | yes |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |

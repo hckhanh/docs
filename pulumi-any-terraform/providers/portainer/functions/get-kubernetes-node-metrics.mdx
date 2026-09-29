@@ -1,0 +1,38 @@
+---
+title: "getKubernetesNodeMetrics"
+description: "Function getKubernetesNodeMetrics in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesNodeMetrics in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesNodeMetrics:getKubernetesNodeMetrics`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesNodeMetrics(args)`.
+
+`getKubernetesNodeMetricsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `node` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `cpu` | `string` | yes |  |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `memory` | `string` | yes |  |
+| `node` | `string` | yes |  |
+| `timestamp` | `string` | yes |  |
+| `window` | `string` | yes |  |

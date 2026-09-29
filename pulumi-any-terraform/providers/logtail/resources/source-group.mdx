@@ -1,0 +1,38 @@
+---
+title: "SourceGroup"
+description: "Resource SourceGroup in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource SourceGroup in pulumi-logtail.
+
+Pulumi type: `logtail:index/sourceGroup:SourceGroup`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.SourceGroup(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of this source group. |
+| `sortIndex` | `number` | no | The sort index of this source group. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `createdAt` | `string` | yes | The time when this source group was created. |
+| `name` | `string` | no | The name of this source group. |
+| `sortIndex` | `number` | no | The sort index of this source group. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `updatedAt` | `string` | yes | The time when this source group was updated. |

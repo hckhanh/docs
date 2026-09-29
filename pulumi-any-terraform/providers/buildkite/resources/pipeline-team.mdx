@@ -1,0 +1,37 @@
+---
+title: "PipelineTeam"
+description: "Resource PipelineTeam in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource PipelineTeam in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/pipelineTeam:PipelineTeam`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.PipelineTeam(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | yes | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
+| `pipelineId` | `string` | yes | The GraphQL ID of the pipeline. |
+| `teamId` | `string` | yes | The GraphQL ID of the team. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessLevel` | `string` | no | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
+| `pipelineId` | `string` | no | The GraphQL ID of the pipeline. |
+| `teamId` | `string` | no | The GraphQL ID of the team. |
+| `uuid` | `string` | yes | The UUID of the pipeline-team relationship. |

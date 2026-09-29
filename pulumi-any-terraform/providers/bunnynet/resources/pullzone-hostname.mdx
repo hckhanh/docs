@@ -1,0 +1,44 @@
+---
+title: "PullzoneHostname"
+description: "Resource PullzoneHostname in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource PullzoneHostname in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/pullzoneHostname:PullzoneHostname`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.PullzoneHostname(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `certificate` | `string` | no | The certificate for the hostname, in PEM format. ***Important***: the Bunny API will not return the certificate data, so you'll have to make sure you're importing the correct certificate. |
+| `certificateKey` | `string` | no | The certificate private key for the hostname, in PEM format. ***Important***: the Bunny API will not return the certificate key, so you'll have to make sure you're importing the correct certificate key. |
+| `forceSsl` | `boolean` | no | Indicates whether SSL should be enforced for the hostname. |
+| `name` | `string` | no | The hostname value for the domain name. |
+| `pullzone` | `number` | yes | The ID of the linked pull zone. |
+| `tlsEnabled` | `boolean` | no | Indicates whether the hostname should support HTTPS. If a custom certificate is not provided via the &lt;code&gt;certificate&lt;/code&gt; attribute, a Domain-validated TLS certificate will be automatically obtained and managed by Bunny. ***Important***: it is not possible to tell managed and custom certificates apart for imported resources. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `certificate` | `string` | no | The certificate for the hostname, in PEM format. ***Important***: the Bunny API will not return the certificate data, so you'll have to make sure you're importing the correct certificate. |
+| `certificateKey` | `string` | no | The certificate private key for the hostname, in PEM format. ***Important***: the Bunny API will not return the certificate key, so you'll have to make sure you're importing the correct certificate key. |
+| `forceSsl` | `boolean` | no | Indicates whether SSL should be enforced for the hostname. |
+| `isInternal` | `boolean` | yes | Indicates whether the hostname is internal (in the CDN domain) or provided by the user. |
+| `name` | `string` | no | The hostname value for the domain name. |
+| `pullzone` | `number` | no | The ID of the linked pull zone. |
+| `pullzoneHostnameId` | `number` | yes | The unique ID of the hostname. |
+| `tlsEnabled` | `boolean` | no | Indicates whether the hostname should support HTTPS. If a custom certificate is not provided via the &lt;code&gt;certificate&lt;/code&gt; attribute, a Domain-validated TLS certificate will be automatically obtained and managed by Bunny. ***Important***: it is not possible to tell managed and custom certificates apart for imported resources. |

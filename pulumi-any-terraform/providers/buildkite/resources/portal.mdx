@@ -1,0 +1,56 @@
+---
+title: "Portal"
+description: "Resource Portal in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource Portal in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/portal:Portal`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.Portal(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string` | no | Space-delimited list of IP addresses (in CIDR notation) allowed to invoke this portal. If not specified, all IP addresses are allowed. |
+| `description` | `string` | no | A description of the portal. |
+| `name` | `string` | no | The name of the portal. |
+| `query` | `string` | yes | The GraphQL query that the portal executes. |
+| `slug` | `string` | yes | The slug of the portal. Used in the portal's URL path. |
+| `userInvokable` | `boolean` | no | Whether users can invoke the portal. Defaults to false. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `allowedIpAddresses` | `string` | no | Space-delimited list of IP addresses (in CIDR notation) allowed to invoke this portal. If not specified, all IP addresses are allowed. |
+| `createdAt` | `string` | yes | The time when the portal was created. |
+| `createdBy` | `PortalCreatedBy (output)` | yes | Information about the user who created the portal. |
+| `description` | `string` | no | A description of the portal. |
+| `name` | `string` | no | The name of the portal. |
+| `query` | `string` | no | The GraphQL query that the portal executes. |
+| `slug` | `string` | no | The slug of the portal. Used in the portal's URL path. |
+| `token` | `string` | yes | The token used to invoke the portal. Only returned on creation. |
+| `userInvokable` | `boolean` | no | Whether users can invoke the portal. Defaults to false. |
+| `uuid` | `string` | yes | The UUID of the portal. |
+
+## `PortalCreatedBy (output)`
+
+Output object `PortalCreatedBy`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes | The email of the user. |
+| `name` | `string` | yes | The name of the user. |
+| `uuid` | `string` | yes | The UUID of the user. |

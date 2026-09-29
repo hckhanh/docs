@@ -1,0 +1,42 @@
+---
+title: "SourceAwsAccount"
+description: "Resource SourceAwsAccount in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource SourceAwsAccount in pulumi-logtail.
+
+Pulumi type: `logtail:index/sourceAwsAccount:SourceAwsAccount`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.SourceAwsAccount(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `autoSubscribeLogGroups` | `boolean` | no | Whether Better Stack automatically subscribes CloudWatch log groups without an explicit override. When omitted, the current API setting is preserved. |
+| `awsAccountId` | `string` | no | The ID of an existing connected AWS account to link this source to. Provide this instead of `awsRoleArn`/`awsExternalId` to reuse an account you've already connected. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `awsExternalId` | `string` | no | The external ID used for the STS assume-role trust - the `ExternalId` output of the Better Stack CloudFormation stack. Provide together with `awsRoleArn`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `awsRoleArn` | `string` | no | The IAM role ARN to connect your AWS account - the `IntegrationRoleArn` output of the Better Stack CloudFormation stack. Provide together with `awsExternalId`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `sourceAwsAccountId` | `string` | no |  |
+| `sourceId` | `string` | yes | The ID of the `logtail.Source` (with `platform = "aws"`) to link the AWS account to. Changing this forces a new resource, re-running the account connect against the new source. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `autoSubscribeLogGroups` | `boolean` | no | Whether Better Stack automatically subscribes CloudWatch log groups without an explicit override. When omitted, the current API setting is preserved. |
+| `awsAccountId` | `string` | no | The ID of an existing connected AWS account to link this source to. Provide this instead of `awsRoleArn`/`awsExternalId` to reuse an account you've already connected. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `awsExternalId` | `string` | no | The external ID used for the STS assume-role trust - the `ExternalId` output of the Better Stack CloudFormation stack. Provide together with `awsRoleArn`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `awsRoleArn` | `string` | no | The IAM role ARN to connect your AWS account - the `IntegrationRoleArn` output of the Better Stack CloudFormation stack. Provide together with `awsExternalId`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `sourceAwsAccountId` | `string` | no |  |
+| `sourceId` | `string` | no | The ID of the `logtail.Source` (with `platform = "aws"`) to link the AWS account to. Changing this forces a new resource, re-running the account connect against the new source. |

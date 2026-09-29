@@ -1,0 +1,42 @@
+---
+title: "DashboardSection"
+description: "Resource DashboardSection in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource DashboardSection in pulumi-logtail.
+
+Pulumi type: `logtail:index/dashboardSection:DashboardSection`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.DashboardSection(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `collapsed` | `boolean` | no | Whether this section is collapsed. |
+| `dashboardId` | `string` | yes | The ID of the dashboard this section belongs to. |
+| `explanation` | `string` | no | The explanation text shown for this section. |
+| `name` | `string` | no | The name of this section. |
+| `y` | `number` | yes | The vertical position of this section in the dashboard grid. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `collapsed` | `boolean` | no | Whether this section is collapsed. |
+| `createdAt` | `string` | yes | The time when this section was created. |
+| `dashboardId` | `string` | no | The ID of the dashboard this section belongs to. |
+| `explanation` | `string` | no | The explanation text shown for this section. |
+| `name` | `string` | no | The name of this section. |
+| `updatedAt` | `string` | yes | The time when this section was updated. |
+| `y` | `number` | no | The vertical position of this section in the dashboard grid. |

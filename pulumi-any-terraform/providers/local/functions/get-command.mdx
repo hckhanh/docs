@@ -1,0 +1,41 @@
+---
+title: "getCommand"
+description: "Function getCommand in pulumi-local."
+---
+
+<!-- Generated from the pulumi-local SDK. -->
+
+Function getCommand in pulumi-local.
+
+Invoke token: `local:index/getCommand:getCommand`.
+
+```ts
+import * as local from "pulumi-local"
+```
+
+Call `local.getCommand(args)`.
+
+`getCommandOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowNonZeroExitCode` | `boolean` | no |  |
+| `arguments` | `string[]` | no |  |
+| `command` | `string` | yes |  |
+| `stdin` | `string` | no |  |
+| `workingDirectory` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowNonZeroExitCode` | `boolean` | no |  |
+| `arguments` | `string[]` | no |  |
+| `command` | `string` | yes |  |
+| `exitCode` | `number` | yes |  |
+| `stderr` | `string` | yes |  |
+| `stdin` | `string` | no |  |
+| `stdout` | `string` | yes |  |
+| `workingDirectory` | `string` | no |  |

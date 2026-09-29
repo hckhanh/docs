@@ -1,0 +1,71 @@
+---
+title: "Subscription"
+description: "Resource Subscription in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource Subscription in pulumi-posthog.
+
+Pulumi type: `posthog:index/subscription:Subscription`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.Subscription(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `aiPrompt` | `string` | no | Natural-language prompt for an AI-summary subscription. PostHog runs the prompt over your project data and delivers the result on the schedule. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. The prompt text itself can be edited in place; switching to or from a dashboard/insight subject forces replacement. |
+| `aiPromptConfig` | `string` | no | Optional JSON config for an `aiPrompt` subscription, e.g. the analysis window (`{"window":{"mode":,:7,:null}}`). Compared semantically, so key ordering and whitespace do not produce a diff. Only meaningful when `aiPrompt` is set. |
+| `bysetpos` | `number` | no | Selects *which* occurrence within the period to use (rrule `BYSETPOS`), used together with `byweekday` on a `monthly` frequency. For example `byweekday = ["monday"]` with `bysetpos = 1` means the **first Monday of each month**, and `bysetpos = -1` means the **last Monday**. Positive values count from the start of the period, negative from the end. Leave unset for simple daily/weekly schedules. |
+| `byweekdays` | `string[]` | no | Lowercase weekday names (`monday`..`sunday`) used with weekly/monthly frequency. |
+| `dashboardExportInsights` | `number[]` | no | Insight IDs from the dashboard to include in the digest. Required and non-empty when `dashboardId` is set (the API rejects an empty selection). Ignored for insight subscriptions. |
+| `dashboardId` | `number` | no | ID of the dashboard to send a digest for. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. Changing which subject is targeted forces replacement. |
+| `enabled` | `boolean` | no | Whether the subscription is active. Defaults to true. Set to false to pause without deleting. |
+| `frequency` | `string` | yes | Recurrence unit: `daily`, `weekly`, `monthly`, or `yearly`. |
+| `insightId` | `number` | no | ID of a single insight to subscribe to. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. Changing which subject is targeted forces replacement. |
+| `integrationId` | `number` | no | ID of the Slack integration to deliver through. Required when `targetType` is `slack`, and must be omitted for `email`. To find it, connect Slack under **Settings → Integrations** in the PostHog UI, then list this project's integrations via `GET /api/projects/<project_id>/integrations/` and use the `id` of the entry whose `kind` is `slack`. |
+| `interval` | `number` | yes | Every N of the frequency unit (e.g. `interval = 2` with `frequency = "weekly"` is every two weeks). |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `startDate` | `string` | yes | Required RFC3339 datetime that anchors the delivery schedule (the recurrence's `dtstart`). It sets *when in the cycle* deliveries land — the time of day for `daily`, and the weekday/day-of-month plus time for `weekly`/`monthly`. PostHog requires it and has no server default, so it must always be set. Example: `2026-08-17T09:00:00Z` delivers at 09:00 UTC. |
+| `summaryEnabled` | `boolean` | no | Whether to attach an AI-generated summary to the delivery. Defaults to false. |
+| `summaryPromptGuide` | `string` | no | Optional free-text guidance steering the AI summary (only used when `summaryEnabled` is true). |
+| `targetType` | `string` | yes | Delivery channel type: `email` or `slack`. |
+| `targetValue` | `string` | yes | Delivery target. For `email` a plain address (or comma-separated addresses). For `slack` the channel in the form `<channelId>|#<channel-name>` (e.g. `C0B9A53J8RF|#reports`). Stored verbatim; the API does not parse the pipe/#name suffix. |
+| `title` | `string` | no | Optional human-readable label for the subscription. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `aiPrompt` | `string` | no | Natural-language prompt for an AI-summary subscription. PostHog runs the prompt over your project data and delivers the result on the schedule. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. The prompt text itself can be edited in place; switching to or from a dashboard/insight subject forces replacement. |
+| `aiPromptConfig` | `string` | no | Optional JSON config for an `aiPrompt` subscription, e.g. the analysis window (`{"window":{"mode":,:7,:null}}`). Compared semantically, so key ordering and whitespace do not produce a diff. Only meaningful when `aiPrompt` is set. |
+| `bysetpos` | `number` | no | Selects *which* occurrence within the period to use (rrule `BYSETPOS`), used together with `byweekday` on a `monthly` frequency. For example `byweekday = ["monday"]` with `bysetpos = 1` means the **first Monday of each month**, and `bysetpos = -1` means the **last Monday**. Positive values count from the start of the period, negative from the end. Leave unset for simple daily/weekly schedules. |
+| `byweekdays` | `string[]` | no | Lowercase weekday names (`monday`..`sunday`) used with weekly/monthly frequency. |
+| `createdAt` | `string` | yes | Timestamp when the subscription was created. |
+| `dashboardExportInsights` | `number[]` | no | Insight IDs from the dashboard to include in the digest. Required and non-empty when `dashboardId` is set (the API rejects an empty selection). Ignored for insight subscriptions. |
+| `dashboardId` | `number` | no | ID of the dashboard to send a digest for. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. Changing which subject is targeted forces replacement. |
+| `enabled` | `boolean` | no | Whether the subscription is active. Defaults to true. Set to false to pause without deleting. |
+| `frequency` | `string` | no | Recurrence unit: `daily`, `weekly`, `monthly`, or `yearly`. |
+| `insightId` | `number` | no | ID of a single insight to subscribe to. Exactly one of `dashboardId`, `insightId`, or `aiPrompt` must be set. Changing which subject is targeted forces replacement. |
+| `integrationId` | `number` | no | ID of the Slack integration to deliver through. Required when `targetType` is `slack`, and must be omitted for `email`. To find it, connect Slack under **Settings → Integrations** in the PostHog UI, then list this project's integrations via `GET /api/projects/<project_id>/integrations/` and use the `id` of the entry whose `kind` is `slack`. |
+| `interval` | `number` | no | Every N of the frequency unit (e.g. `interval = 2` with `frequency = "weekly"` is every two weeks). |
+| `nextDeliveryDate` | `string` | yes | Computed timestamp of the next scheduled delivery. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `resourceType` | `string` | yes | Server-inferred subject type: `dashboard`, `insight`, or `aiPrompt`. |
+| `startDate` | `string` | no | Required RFC3339 datetime that anchors the delivery schedule (the recurrence's `dtstart`). It sets *when in the cycle* deliveries land — the time of day for `daily`, and the weekday/day-of-month plus time for `weekly`/`monthly`. PostHog requires it and has no server default, so it must always be set. Example: `2026-08-17T09:00:00Z` delivers at 09:00 UTC. |
+| `subscriptionId` | `number` | yes | Numeric ID of the subscription. |
+| `summary` | `string` | yes | Server-generated human-readable schedule summary (e.g. `sent every week on Monday`). Recomputed whenever the schedule changes. |
+| `summaryEnabled` | `boolean` | no | Whether to attach an AI-generated summary to the delivery. Defaults to false. |
+| `summaryPromptGuide` | `string` | no | Optional free-text guidance steering the AI summary (only used when `summaryEnabled` is true). |
+| `targetType` | `string` | no | Delivery channel type: `email` or `slack`. |
+| `targetValue` | `string` | no | Delivery target. For `email` a plain address (or comma-separated addresses). For `slack` the channel in the form `<channelId>|#<channel-name>` (e.g. `C0B9A53J8RF|#reports`). Stored verbatim; the API does not parse the pipe/#name suffix. |
+| `title` | `string` | no | Optional human-readable label for the subscription. |

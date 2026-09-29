@@ -1,0 +1,39 @@
+---
+title: "BackupLocalSettings"
+description: "Resource BackupLocalSettings in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource BackupLocalSettings in pulumi-portainer.
+
+Pulumi type: `portainer:index/backupLocalSettings:BackupLocalSettings`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.BackupLocalSettings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `backupLocalSettingsId` | `string` | no |  |
+| `cronRule` | `string` | no | Cron expression for the scheduled local backup (for example `0 2 * * *`). Leave unset to keep the schedule off and back up only on demand with `portainer.BackupLocalRun`. |
+| `retentionDays` | `number` | no | How many days Portainer keeps local backup archives before pruning them. Zero keeps them indefinitely. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `backupLocalSettingsId` | `string` | no |  |
+| `cronRule` | `string` | no | Cron expression for the scheduled local backup (for example `0 2 * * *`). Leave unset to keep the schedule off and back up only on demand with `portainer.BackupLocalRun`. |
+| `lastRunFailed` | `boolean` | yes | Whether the most recent scheduled local backup failed. |
+| `lastRunPath` | `string` | yes | Path on the Portainer host where the most recent local backup archive was written. |
+| `lastRunTimestamp` | `string` | yes | UTC timestamp of the most recent scheduled local backup, empty when none has run. |
+| `retentionDays` | `number` | no | How many days Portainer keeps local backup archives before pruning them. Zero keeps them indefinitely. |

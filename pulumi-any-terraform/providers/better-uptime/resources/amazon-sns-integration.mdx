@@ -1,0 +1,394 @@
+---
+title: "AmazonSnsIntegration"
+description: "Resource AmazonSnsIntegration in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource AmazonSnsIntegration in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/amazonSnsIntegration:AmazonSnsIntegration`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.AmazonSnsIntegration(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `acknowledgedAlertIdField` | `AmazonSnsIntegrationAcknowledgedAlertIdField (input)` | no | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `acknowledgedRuleType` | `string` | yes | Should an incident be acknowledged for all notifications, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `acknowledgedRules` | `AmazonSnsIntegrationAcknowledgedRule (input)[]` | no | An array of rules to match to acknowledge an incident. |
+| `call` | `boolean` | no | Whether to call when a new incident is created. |
+| `causeField` | `AmazonSnsIntegrationCauseField (input)` | no | A field describing how to extract an incident cause, used as a short description shared with the team member on-call. |
+| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
+| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
+| `name` | `string` | no | The name of this Amazon SNS integration. |
+| `otherAcknowledgedFields` | `AmazonSnsIntegrationOtherAcknowledgedField (input)[]` | no | An array of additional fields, which will be extracted when acknowledging an incident. |
+| `otherResolvedFields` | `AmazonSnsIntegrationOtherResolvedField (input)[]` | no | An array of additional fields, which will be extracted when resolving an incident. |
+| `otherStartedFields` | `AmazonSnsIntegrationOtherStartedField (input)[]` | no | An array of additional fields, which will be extracted when starting an incident. |
+| `paused` | `boolean` | no | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring. |
+| `policyId` | `string` | no | ID of the escalation policy associated with the Amazon SNS integration. |
+| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
+| `recoveryPeriod` | `number` | no | How long the integration must be up to automatically mark an incident as resolved after being down. |
+| `resolvedAlertIdField` | `AmazonSnsIntegrationResolvedAlertIdField (input)` | no | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `resolvedRuleType` | `string` | yes | Should an incident be resolved for all notifications, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `resolvedRules` | `AmazonSnsIntegrationResolvedRule (input)[]` | no | An array of rules to match to resolved an incident. |
+| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
+| `startedAlertIdField` | `AmazonSnsIntegrationStartedAlertIdField (input)` | no | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `startedRuleType` | `string` | yes | Should an incident be started for all notifications, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `startedRules` | `AmazonSnsIntegrationStartedRule (input)[]` | no | An array of rules to match to start a new incident. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `teamWait` | `number` | no | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team. |
+| `titleField` | `AmazonSnsIntegrationTitleField (input)` | no | An optional field describing how to extract a customized incident title. Defaults to the Amazon SNS envelope's Subject. It can be changed but not removed through Terraform. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `acknowledgedAlertIdField` | `AmazonSnsIntegrationAcknowledgedAlertIdField (output)` | no | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `acknowledgedRuleType` | `string` | no | Should an incident be acknowledged for all notifications, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `acknowledgedRules` | `AmazonSnsIntegrationAcknowledgedRule (output)[]` | no | An array of rules to match to acknowledge an incident. |
+| `call` | `boolean` | no | Whether to call when a new incident is created. |
+| `causeField` | `AmazonSnsIntegrationCauseField (output)` | no | A field describing how to extract an incident cause, used as a short description shared with the team member on-call. |
+| `createdAt` | `string` | yes | The time when this Amazon SNS integration was created. |
+| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
+| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
+| `name` | `string` | no | The name of this Amazon SNS integration. |
+| `otherAcknowledgedFields` | `AmazonSnsIntegrationOtherAcknowledgedField (output)[]` | no | An array of additional fields, which will be extracted when acknowledging an incident. |
+| `otherResolvedFields` | `AmazonSnsIntegrationOtherResolvedField (output)[]` | no | An array of additional fields, which will be extracted when resolving an incident. |
+| `otherStartedFields` | `AmazonSnsIntegrationOtherStartedField (output)[]` | no | An array of additional fields, which will be extracted when starting an incident. |
+| `paused` | `boolean` | no | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring. |
+| `policyId` | `string` | no | ID of the escalation policy associated with the Amazon SNS integration. |
+| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
+| `recoveryPeriod` | `number` | no | How long the integration must be up to automatically mark an incident as resolved after being down. |
+| `resolvedAlertIdField` | `AmazonSnsIntegrationResolvedAlertIdField (output)` | no | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `resolvedRuleType` | `string` | no | Should an incident be resolved for all notifications, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `resolvedRules` | `AmazonSnsIntegrationResolvedRule (output)[]` | no | An array of rules to match to resolved an incident. |
+| `sampleBody` | `string` | yes | Sample Amazon SNS message. Used only to make the configuration easier. |
+| `sampleHeaders` | `string` | yes | Sample request HTTP headers of the notification (separated by a newline). Used only to make the configuration easier. |
+| `sampleQueryString` | `string` | yes | Sample query string of the notification (without the leading ?). Used only to make the configuration easier. |
+| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
+| `startedAlertIdField` | `AmazonSnsIntegrationStartedAlertIdField (output)` | no | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
+| `startedRuleType` | `string` | no | Should an incident be started for all notifications, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `startedRules` | `AmazonSnsIntegrationStartedRule (output)[]` | no | An array of rules to match to start a new incident. |
+| `subscriptionState` | `string` | yes | Whether the Amazon SNS subscription has been confirmed: active once AWS has confirmed it, awaiting until then. Set by Better Stack when AWS confirms it, so it is read-only. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `teamWait` | `number` | no | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team. |
+| `titleField` | `AmazonSnsIntegrationTitleField (output)` | no | An optional field describing how to extract a customized incident title. Defaults to the Amazon SNS envelope's Subject. It can be changed but not removed through Terraform. |
+| `topicArn` | `string` | yes | The ARN of the Amazon SNS topic this integration is subscribed to. Set by Better Stack when AWS confirms the subscription, so it is read-only. |
+| `updatedAt` | `string` | yes | The time when this Amazon SNS integration was updated. |
+| `url` | `string` | yes | The URL to subscribe the Amazon SNS topic to, using the HTTPS protocol with raw message delivery disabled. |
+
+## `AmazonSnsIntegrationAcknowledgedAlertIdField (input)`
+
+Input object `AmazonSnsIntegrationAcknowledgedAlertIdField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationAcknowledgedRule (input)`
+
+Input object `AmazonSnsIntegrationAcknowledgedRule`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationCauseField (input)`
+
+Input object `AmazonSnsIntegrationCauseField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherAcknowledgedField (input)`
+
+Input object `AmazonSnsIntegrationOtherAcknowledgedField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherResolvedField (input)`
+
+Input object `AmazonSnsIntegrationOtherResolvedField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherStartedField (input)`
+
+Input object `AmazonSnsIntegrationOtherStartedField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationResolvedAlertIdField (input)`
+
+Input object `AmazonSnsIntegrationResolvedAlertIdField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationResolvedRule (input)`
+
+Input object `AmazonSnsIntegrationResolvedRule`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationStartedAlertIdField (input)`
+
+Input object `AmazonSnsIntegrationStartedAlertIdField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationStartedRule (input)`
+
+Input object `AmazonSnsIntegrationStartedRule`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationTitleField (input)`
+
+Input object `AmazonSnsIntegrationTitleField`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | no | The name of the field. |
+| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationAcknowledgedAlertIdField (output)`
+
+Output object `AmazonSnsIntegrationAcknowledgedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationAcknowledgedRule (output)`
+
+Output object `AmazonSnsIntegrationAcknowledgedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationCauseField (output)`
+
+Output object `AmazonSnsIntegrationCauseField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherAcknowledgedField (output)`
+
+Output object `AmazonSnsIntegrationOtherAcknowledgedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherResolvedField (output)`
+
+Output object `AmazonSnsIntegrationOtherResolvedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationOtherStartedField (output)`
+
+Output object `AmazonSnsIntegrationOtherStartedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationResolvedAlertIdField (output)`
+
+Output object `AmazonSnsIntegrationResolvedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationResolvedRule (output)`
+
+Output object `AmazonSnsIntegrationResolvedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationStartedAlertIdField (output)`
+
+Output object `AmazonSnsIntegrationStartedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationStartedRule (output)`
+
+Output object `AmazonSnsIntegrationStartedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
+| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
+| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |
+
+## `AmazonSnsIntegrationTitleField (output)`
+
+Output object `AmazonSnsIntegrationTitleField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
+| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
+| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
+| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml for the HTTP request Amazon SNS delivers, or `snsEnvelope` for the TopicArn, MessageId and Subject of the notification envelope. |
+| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
+| `name` | `string` | yes | The name of the field. |
+| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
+| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, the parameter name when it is query_string, or one of TopicArn, MessageId and Subject when it is sns_envelope. |

@@ -1,208 +1,32 @@
 ---
-title: Configuration
-description: Configure the Namecheap provider for managing domains and DNS records
+title: "Configuration"
+description: "Configuration for pulumi-namecheap."
 ---
 
-This guide covers all configuration options for the Namecheap provider, including authentication methods, API access setup, and provider settings.
+<!-- Generated from the pulumi-namecheap SDK. -->
 
-## Provider Configuration
+Configuration for pulumi-namecheap.
 
-The Namecheap provider requires API credentials to interact with the Namecheap API. You can configure the provider using one of several methods.
+npm package `pulumi-namecheap` version `2.4.5`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/namecheap/namecheap` version `2.9.3`.
 
-### Provider Block
+An explicit provider is `new namecheap.Provider(name, args)`. Stack configuration is a `pulumi.Config` object named `namecheap`.
 
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as namecheap from "@pulumi/namecheap";
+A value marked secret is passed through `pulumi.secret` or listed in `additionalSecretOutputs` on the provider resource.
 
-const provider = new namecheap.Provider("namecheap-provider", {
-    userName: "your_username",
-    apiUser: "your_username",
-    apiKey: "your_api_key",
-    clientIp: "your.ip.address",
-    useSandbox: false,
-});
-```
+## Fields
 
-### Environment Variables
-
-Set environment variables to configure the provider without hardcoding credentials:
-
-```bash
-export NAMECHEAP_USER_NAME="your_username"
-export NAMECHEAP_API_USER="your_username"
-export NAMECHEAP_API_KEY="your_api_key"
-export NAMECHEAP_CLIENT_IP="your.ip.address"
-export NAMECHEAP_USE_SANDBOX="false"
-```
-
-### Pulumi Configuration
-
-Store credentials securely using Pulumi config:
-
-```bash
-pulumi config set namecheap:userName your_username
-pulumi config set namecheap:apiUser your_username
-pulumi config set --secret namecheap:apiKey your_api_key
-pulumi config set namecheap:clientIp your.ip.address
-pulumi config set namecheap:useSandbox false
-```
-
-Then reference in your code:
-
-```typescript
-const config = new pulumi.Config("namecheap");
-const provider = new namecheap.Provider("namecheap-provider", {
-    userName: config.require("userName"),
-    apiUser: config.require("apiUser"),
-    apiKey: config.requireSecret("apiKey"),
-    clientIp: config.require("clientIp"),
-    useSandbox: config.requireBoolean("useSandbox"),
-});
-```
-
-## Configuration Reference
-
-### Required Arguments
-
-- **`userName`** (string): Your Namecheap username
-- **`apiUser`** (string): API username (typically the same as userName)
-- **`apiKey`** (string): Your Namecheap API key
-- **`clientIp`** (string): Your whitelisted IP address
-
-### Optional Arguments
-
-- **`useSandbox`** (boolean): Use the Namecheap sandbox environment. Default: `false`
-
-## Getting API Credentials
-
-### Enable API Access
-
-1. Log in to your [Namecheap account](https://www.namecheap.com/)
-2. Navigate to **Profile** → **Tools** → **Business & Dev Tools** → **API Access**
-3. Enable API Access
-4. Whitelist your IP address
-5. Copy your API key
-
-### Sandbox Environment
-
-For testing, you can use the Namecheap sandbox:
-
-1. Create a sandbox account at [Namecheap Sandbox](https://www.sandbox.namecheap.com/)
-2. Enable API access in the sandbox
-3. Set `useSandbox: true` in your provider configuration
-
-## IP Whitelisting
-
-Namecheap requires you to whitelist the IP address that will make API calls:
-
-1. Go to **Profile** → **Tools** → **API Access**
-2. Click **Whitelist IP**
-3. Add your public IP address
-
-**Important**: If your IP changes, you must update the whitelist.
-
-### Finding Your Public IP
-
-```bash
-curl ifconfig.me
-```
-
-## Authentication Methods Comparison
-
-| Method | Security | Ease of Use | CI/CD Friendly | Best For |
-|--------|----------|-------------|----------------|----------|
-| Provider Block | Low | Easy | No | Local Development |
-| Environment Variables | Medium | Medium | Yes | CI/CD Pipelines |
-| Pulumi Config | High | Easy | Yes | Production |
-
-## Production Best Practices
-
-### Secret Management
-
-```typescript
-// ✅ Good: Use Pulumi secrets
-const config = new pulumi.Config("namecheap");
-const apiKey = config.requireSecret("apiKey");
-
-// ❌ Bad: Hardcode secrets
-const apiKey = "abc123...";
-```
-
-### Provider Aliasing
-
-Create multiple provider instances for different accounts:
-
-```typescript
-const productionProvider = new namecheap.Provider("prod", {
-    userName: config.require("prodUserName"),
-    apiUser: config.require("prodApiUser"),
-    apiKey: config.requireSecret("prodApiKey"),
-    clientIp: config.require("prodClientIp"),
-});
-
-const stagingProvider = new namecheap.Provider("staging", {
-    userName: config.require("stagingUserName"),
-    apiUser: config.require("stagingApiUser"),
-    apiKey: config.requireSecret("stagingApiKey"),
-    clientIp: config.require("stagingClientIp"),
-    useSandbox: true,
-});
-
-// Use different providers for different resources
-const prodDns = new namecheap.DomainRecords("prod-dns", {
-    domain: "example.com",
-    // ...
-}, { provider: productionProvider });
-
-const stagingDns = new namecheap.DomainRecords("staging-dns", {
-    domain: "staging.example.com",
-    // ...
-}, { provider: stagingProvider });
-```
-
-## Troubleshooting
-
-### Common Configuration Errors
-
-**Error: IP not whitelisted**
-```
-Error: Your IP address is not whitelisted
-```
-Solution: Add your IP to the whitelist in Namecheap dashboard
-
-**Error: Invalid API credentials**
-```
-Error: Authentication failed
-```
-Solution: Verify your apiKey, userName, and apiUser are correct
-
-**Error: Sandbox mode mismatch**
-```
-Error: Domain not found
-```
-Solution: Ensure `useSandbox` matches where your domain is registered (production vs sandbox)
-
-### Testing Configuration
-
-Test your configuration with a simple program:
-
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as namecheap from "@pulumi/namecheap";
-
-// This will validate your credentials on pulumi up
-const test = new namecheap.DomainRecords("test", {
-    domain: "yourdomain.com",
-    mode: "MERGE",
-    records: [],
-});
-
-export const configured = "Namecheap provider is configured correctly";
-```
-
-## Next Steps
-
-- [Domain Records Resource](/pulumi-any-terraform/providers/namecheap/domain-records) - Manage DNS records
-- [DNS Management Guide](/pulumi-any-terraform/providers/namecheap/dns-guide) - Best practices for DNS
-- [Migration Guide](/pulumi-any-terraform/providers/namecheap/migration-guide) - Migrate existing domains
+| Property | Type | Source | Secret | Description |
+| --- | --- | --- | --- | --- |
+| `apiKey` | `string` | provider args; stack config via config.get | yes | The namecheap API key |
+| `apiUser` | `string` | provider args; stack config via config.get | yes | A registered api user for namecheap |
+| `clientIp` | `string` | provider args; stack config via config.get | no | The public IP address the Namecheap API sees as the caller; it must be whitelisted at https://ap.www.namecheap.com/settings/tools/apiaccess/whitelisted-ips. Leaving it unset now auto-detects this machine's public IP address via an outbound HTTPS request to api.ipify.org (previously it defaulted to the non-functional 0.0.0.0); if that request fails (for example on a host with no outbound network access), provider configuration fails with guidance to set `clientIp` explicitly. |
+| `maxRetries` | `number` | provider args; stack config via config.getObject | no | Total number of attempts (including the first) for a single API call before giving up. Must be &gt;= 0. Defaults to 4, matching the SDK's built-in retry policy. Note: because the underlying SDK treats a zero value as "unset", setting this to 0 falls back to the SDK default of 4 attempts rather than disabling retries. |
+| `requestTimeout` | `string` | provider args; stack config via config.get | no | Timeout applied to the underlying HTTP client for a single request to the Namecheap API, as a Go duration string (e.g. "30s", "1m"). Must parse and be greater than zero. Defaults to "30s". |
+| `requestsPerMinute` | `number` | provider args; stack config via config.getObject | no | Client-side rate limit applied to the Namecheap API, in requests per minute. Must be between 1 and 20 (Namecheap's documented primary quota). Defaults to 20, matching the SDK's built-in limiter. |
+| `retryBaseDelay` | `string` | provider args; stack config via config.get | no | First backoff delay before a retried API call, as a Go duration string (e.g. "500ms", "5s"). Subsequent delays double up to retry_max_delay, and each one is then jittered to between 50% and 100% of that value. Must parse, be greater than zero, and not exceed retry_max_delay. Defaults to "500ms", matching the SDK's built-in retry policy. Raise it when the API is rate-limiting: waiting longer between fewer attempts costs less quota than retrying quickly, because every attempt is itself a request. |
+| `retryMaxDelay` | `string` | provider args; stack config via config.get | no | Cap on any single backoff delay between retried API calls, as a Go duration string (e.g. "30s", "1m"). Must parse, be greater than zero, and be at least retry_base_delay. Defaults to "30s", matching the SDK's built-in retry policy. |
+| `retryMaxElapsed` | `string` | provider args; stack config via config.get | no | Maximum total wall-clock time to spend retrying a single API call, as a Go duration string (e.g. "2m", "90s"). Must parse and be greater than zero. Defaults to "2m", matching the SDK's built-in retry policy. |
+| `useSandbox` | `boolean` | provider args; stack config via config.getObject | no | Use sandbox API endpoints |
+| `userName` | `string` | provider args; stack config via config.get | yes | A registered user name for namecheap |

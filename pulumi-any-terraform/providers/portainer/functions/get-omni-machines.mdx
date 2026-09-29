@@ -1,0 +1,50 @@
+---
+title: "getOmniMachines"
+description: "Function getOmniMachines in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getOmniMachines in pulumi-portainer.
+
+Invoke token: `portainer:index/getOmniMachines:getOmniMachines`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getOmniMachines(args)`.
+
+`getOmniMachinesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `machines` | `GetOmniMachinesMachine[]` | yes |  |
+
+## `GetOmniMachinesMachine`
+
+Output object `GetOmniMachinesMachine`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `cluster` | `string` | no |  |
+| `connected` | `boolean` | no |  |
+| `labels` | `{ [key: string]: string }` | no |  |
+| `lastError` | `string` | no |  |
+| `machineName` | `string` | no |  |
+| `maintenance` | `boolean` | no |  |
+| `managementAddress` | `string` | no |  |
+| `powerState` | `string` | no |  |
+| `role` | `string` | no |  |
+| `talosVersion` | `string` | no |  |

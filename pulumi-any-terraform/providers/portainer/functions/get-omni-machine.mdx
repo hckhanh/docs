@@ -1,0 +1,101 @@
+---
+title: "getOmniMachine"
+description: "Function getOmniMachine in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getOmniMachine in pulumi-portainer.
+
+Invoke token: `portainer:index/getOmniMachine:getOmniMachine`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getOmniMachine(args)`.
+
+`getOmniMachineOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `machineName` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | yes |  |
+| `architecture` | `string` | yes |  |
+| `blockDevices` | `GetOmniMachineBlockDevice[]` | yes |  |
+| `cluster` | `string` | yes |  |
+| `connected` | `boolean` | yes |  |
+| `credentialId` | `number` | yes |  |
+| `defaultGateways` | `string[]` | yes |  |
+| `domainName` | `string` | yes |  |
+| `hostname` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `instanceId` | `string` | yes |  |
+| `instanceType` | `string` | yes |  |
+| `labels` | `{ [key: string]: string }` | yes |  |
+| `lastError` | `string` | yes |  |
+| `machineName` | `string` | yes |  |
+| `maintenance` | `boolean` | yes |  |
+| `managementAddress` | `string` | yes |  |
+| `memoryModules` | `GetOmniMachineMemoryModule[]` | yes |  |
+| `networkLinks` | `GetOmniMachineNetworkLink[]` | yes |  |
+| `platform` | `string` | yes |  |
+| `powerState` | `string` | yes |  |
+| `processors` | `GetOmniMachineProcessor[]` | yes |  |
+| `region` | `string` | yes |  |
+| `role` | `string` | yes |  |
+| `talosVersion` | `string` | yes |  |
+| `zone` | `string` | yes |  |
+
+## `GetOmniMachineBlockDevice`
+
+Output object `GetOmniMachineBlockDevice`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `linuxName` | `string` | no |  |
+| `model` | `string` | no |  |
+| `size` | `number` | no |  |
+| `systemDisk` | `boolean` | no |  |
+| `type` | `string` | no |  |
+
+## `GetOmniMachineMemoryModule`
+
+Output object `GetOmniMachineMemoryModule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no |  |
+| `sizeMb` | `number` | no |  |
+
+## `GetOmniMachineNetworkLink`
+
+Output object `GetOmniMachineNetworkLink`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hardwareAddress` | `string` | no |  |
+| `linkUp` | `boolean` | no |  |
+| `linuxName` | `string` | no |  |
+| `speedMbps` | `number` | no |  |
+
+## `GetOmniMachineProcessor`
+
+Output object `GetOmniMachineProcessor`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `coreCount` | `number` | no |  |
+| `description` | `string` | no |  |
+| `frequency` | `number` | no |  |
+| `manufacturer` | `string` | no |  |
+| `threadCount` | `number` | no |  |

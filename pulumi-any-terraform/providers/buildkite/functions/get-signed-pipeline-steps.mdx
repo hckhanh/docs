@@ -1,0 +1,39 @@
+---
+title: "getSignedPipelineSteps"
+description: "Function getSignedPipelineSteps in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Function getSignedPipelineSteps in pulumi-buildkite.
+
+Invoke token: `buildkite:index/getSignedPipelineSteps:getSignedPipelineSteps`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Call `buildkite.getSignedPipelineSteps(args)`.
+
+`getSignedPipelineStepsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `jwks` | `string` | no |  |
+| `jwksFile` | `string` | no |  |
+| `jwksKeyId` | `string` | no |  |
+| `repository` | `string` | yes |  |
+| `unsignedSteps` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `jwks` | `string` | no |  |
+| `jwksFile` | `string` | no |  |
+| `jwksKeyId` | `string` | no |  |
+| `repository` | `string` | yes |  |
+| `steps` | `string` | yes |  |
+| `unsignedSteps` | `string` | yes |  |

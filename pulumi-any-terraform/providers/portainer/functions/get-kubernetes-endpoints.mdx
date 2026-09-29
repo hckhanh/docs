@@ -1,0 +1,55 @@
+---
+title: "getKubernetesEndpoints"
+description: "Function getKubernetesEndpoints in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesEndpoints in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesEndpoints:getKubernetesEndpoints`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesEndpoints(args)`.
+
+`getKubernetesEndpointsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `endpoints` | `GetKubernetesEndpointsEndpoint[]` | yes |  |
+| `id` | `string` | yes |  |
+
+## `GetKubernetesEndpointsEndpoint`
+
+Output object `GetKubernetesEndpointsEndpoint`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | no |  |
+| `name` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `ports` | `GetKubernetesEndpointsEndpointPort[]` | no |  |
+| `uid` | `string` | no |  |
+
+## `GetKubernetesEndpointsEndpointPort`
+
+Output object `GetKubernetesEndpointsEndpointPort`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no |  |
+| `port` | `number` | no |  |
+| `protocol` | `string` | no |  |

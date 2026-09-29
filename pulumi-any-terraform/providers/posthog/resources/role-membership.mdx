@@ -1,0 +1,38 @@
+---
+title: "RoleMembership"
+description: "Resource RoleMembership in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource RoleMembership in pulumi-posthog.
+
+Pulumi type: `posthog:index/roleMembership:RoleMembership`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.RoleMembership(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+| `roleId` | `string` | yes | The UUID of the role. |
+| `userUuid` | `string` | yes | The UUID of the user to add to the role. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `joinedAt` | `string` | yes | Timestamp when the user joined the role. |
+| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+| `roleId` | `string` | no | The UUID of the role. |
+| `userEmail` | `string` | yes | The email address of the user. |
+| `userUuid` | `string` | no | The UUID of the user to add to the role. |

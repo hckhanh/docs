@@ -1,0 +1,320 @@
+---
+title: "Settings"
+description: "Resource Settings in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource Settings in pulumi-portainer.
+
+Pulumi type: `portainer:index/settings:Settings`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.Settings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addonsCatalogUrl` | `string` | no | URL the add-on catalog is fetched from. Business Edition only. Leave unset to keep the built-in catalog. |
+| `authenticationMethod` | `number` | no | Authentication method used by Portainer. 1 = internal, 2 = LDAP, 3 = OAuth. |
+| `blackListedLabels` | `SettingsBlackListedLabel (input)[]` | no | List of container labels that Portainer should hide from the UI. |
+| `disableKubeRolesSync` | `boolean` | no | Whether automatic synchronization of Kubernetes roles is disabled. |
+| `disableKubeShell` | `boolean` | no | Whether the in-browser Kubernetes shell is disabled for users. |
+| `disableKubeconfigDownload` | `boolean` | no | Whether downloading kubeconfig files from the Portainer UI is disabled. |
+| `displayDonationHeader` | `boolean` | no | Whether the donation header banner is shown in the Portainer UI. |
+| `displayExternalContributors` | `boolean` | no | Whether external contributors are displayed in the Portainer UI. |
+| `edgeAgentCheckinInterval` | `number` | no | Heartbeat interval (in seconds) used by edge agents to poll Portainer. |
+| `edgePortainerUrl` | `string` | no | Public URL of the Portainer instance that edge agents use to reach back for polling and tunneling. |
+| `enableEdgeComputeFeatures` | `boolean` | no | Whether Edge Compute features (edge agents, edge stacks, edge jobs) are enabled. |
+| `enableTelemetry` | `boolean` | no | Whether anonymous usage telemetry is sent to Portainer. |
+| `enforceEdgeId` | `boolean` | no | Whether Portainer enforces a matching edge identifier when an edge agent connects. |
+| `globalDeploymentOptions` | `SettingsGlobalDeploymentOptions (input)` | no | Global deployment options applied across environments. |
+| `helmRepositoryUrl` | `string` | no | Global Helm repository URL used by Portainer for chart browsing. |
+| `internalAuthSettings` | `SettingsInternalAuthSettings (input)` | no | Settings for Portainer's internal authentication provider, such as the password policy. |
+| `isDockerDesktopExtension` | `boolean` | no | Whether this Portainer instance runs as a Docker Desktop extension. |
+| `kubeconfigExpiry` | `string` | no | Validity period of kubeconfig files generated for users (e.g. "24h", "0" for never). |
+| `kubectlShellImage` | `string` | no | Container image used for the in-browser kubectl shell. |
+| `ldapSettings` | `SettingsLdapSettings (input)` | no | Configuration for the LDAP authentication provider. |
+| `logoUrl` | `string` | no | URL of a custom logo displayed in the Portainer UI. |
+| `oauthSettings` | `SettingsOauthSettings (input)` | no | Configuration for the OAuth authentication provider. |
+| `settingsId` | `string` | no |  |
+| `snapshotInterval` | `string` | no | Interval at which Portainer snapshots endpoints (e.g. "5m", "1h"). |
+| `templatesUrl` | `string` | no | URL of the JSON file with application templates used by the Portainer UI. |
+| `trustOnFirstConnect` | `boolean` | no | Whether edge agents are automatically trusted on their first connection. |
+| `userSessionTimeout` | `string` | no | Duration after which an idle user session expires (e.g. "8h"). |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `addonsCatalogUrl` | `string` | no | URL the add-on catalog is fetched from. Business Edition only. Leave unset to keep the built-in catalog. |
+| `authenticationMethod` | `number` | no | Authentication method used by Portainer. 1 = internal, 2 = LDAP, 3 = OAuth. |
+| `blackListedLabels` | `SettingsBlackListedLabel (output)[]` | no | List of container labels that Portainer should hide from the UI. |
+| `disableKubeRolesSync` | `boolean` | no | Whether automatic synchronization of Kubernetes roles is disabled. |
+| `disableKubeShell` | `boolean` | no | Whether the in-browser Kubernetes shell is disabled for users. |
+| `disableKubeconfigDownload` | `boolean` | no | Whether downloading kubeconfig files from the Portainer UI is disabled. |
+| `displayDonationHeader` | `boolean` | no | Whether the donation header banner is shown in the Portainer UI. |
+| `displayExternalContributors` | `boolean` | no | Whether external contributors are displayed in the Portainer UI. |
+| `edgeAgentCheckinInterval` | `number` | no | Heartbeat interval (in seconds) used by edge agents to poll Portainer. |
+| `edgePortainerUrl` | `string` | no | Public URL of the Portainer instance that edge agents use to reach back for polling and tunneling. |
+| `enableEdgeComputeFeatures` | `boolean` | no | Whether Edge Compute features (edge agents, edge stacks, edge jobs) are enabled. |
+| `enableTelemetry` | `boolean` | no | Whether anonymous usage telemetry is sent to Portainer. |
+| `enforceEdgeId` | `boolean` | no | Whether Portainer enforces a matching edge identifier when an edge agent connects. |
+| `globalDeploymentOptions` | `SettingsGlobalDeploymentOptions (output)` | no | Global deployment options applied across environments. |
+| `helmRepositoryUrl` | `string` | no | Global Helm repository URL used by Portainer for chart browsing. |
+| `internalAuthSettings` | `SettingsInternalAuthSettings (output)` | no | Settings for Portainer's internal authentication provider, such as the password policy. |
+| `isDockerDesktopExtension` | `boolean` | no | Whether this Portainer instance runs as a Docker Desktop extension. |
+| `kubeconfigExpiry` | `string` | no | Validity period of kubeconfig files generated for users (e.g. "24h", "0" for never). |
+| `kubectlShellImage` | `string` | no | Container image used for the in-browser kubectl shell. |
+| `ldapSettings` | `SettingsLdapSettings (output)` | no | Configuration for the LDAP authentication provider. |
+| `logoUrl` | `string` | no | URL of a custom logo displayed in the Portainer UI. |
+| `oauthSettings` | `SettingsOauthSettings (output)` | no | Configuration for the OAuth authentication provider. |
+| `settingsId` | `string` | no |  |
+| `snapshotInterval` | `string` | no | Interval at which Portainer snapshots endpoints (e.g. "5m", "1h"). |
+| `templatesUrl` | `string` | no | URL of the JSON file with application templates used by the Portainer UI. |
+| `trustOnFirstConnect` | `boolean` | no | Whether edge agents are automatically trusted on their first connection. |
+| `userSessionTimeout` | `string` | no | Duration after which an idle user session expires (e.g. "8h"). |
+
+## `SettingsBlackListedLabel (input)`
+
+Input object `SettingsBlackListedLabel`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Name of the container label to hide. |
+| `value` | `string` | yes | Value of the container label to match for hiding. |
+
+## `SettingsGlobalDeploymentOptions (input)`
+
+Input object `SettingsGlobalDeploymentOptions`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hideStacksFunctionality` | `boolean` | no | Whether the stacks functionality is hidden from non-admin users. |
+
+## `SettingsInternalAuthSettings (input)`
+
+Input object `SettingsInternalAuthSettings`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `requiredPasswordLength` | `number` | no | Minimum password length required for internally-managed users. |
+
+## `SettingsLdapSettings (input)`
+
+Input object `SettingsLdapSettings`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `anonymousMode` | `boolean` | no | Whether to bind to the LDAP server anonymously instead of using reader credentials. |
+| `autoCreateUsers` | `boolean` | no | Whether Portainer automatically creates a local user record on the first LDAP login. |
+| `groupSearchSettings` | `SettingsLdapSettingsGroupSearchSetting (input)[]` | no | List of LDAP group search configurations used to resolve user group memberships. |
+| `password` | `string` | no | Password used by the LDAP reader account. Stored in state as a sensitive value. |
+| `readerDn` | `string` | no | Distinguished Name of the LDAP account used to perform user lookups. |
+| `searchSettings` | `SettingsLdapSettingsSearchSetting (input)[]` | no | List of LDAP user search configurations applied to locate user entries. |
+| `startTls` | `boolean` | no | Whether to upgrade the LDAP connection to TLS using StartTLS. |
+| `tlsConfig` | `SettingsLdapSettingsTlsConfig (input)` | no | TLS configuration used for the LDAP connection. |
+| `url` | `string` | no | URL of the LDAP server (e.g. "ldap://ldap.example.com:389"). |
+
+## `SettingsLdapSettingsGroupSearchSetting (input)`
+
+Input object `SettingsLdapSettingsGroupSearchSetting`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `groupAttribute` | `string` | no | LDAP attribute on group entries that lists their members. |
+| `groupBaseDn` | `string` | no | Base DN under which group entries are searched. |
+| `groupFilter` | `string` | no | LDAP search filter applied when looking up groups. |
+
+## `SettingsLdapSettingsSearchSetting (input)`
+
+Input object `SettingsLdapSettingsSearchSetting`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `baseDn` | `string` | no | Base DN under which user entries are searched. |
+| `filter` | `string` | no | LDAP search filter applied when looking up users. |
+| `userNameAttribute` | `string` | no | LDAP attribute used as the user's login name (e.g. "uid", "sAMAccountName"). |
+
+## `SettingsLdapSettingsTlsConfig (input)`
+
+Input object `SettingsLdapSettingsTlsConfig`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `tls` | `boolean` | no | Whether TLS is enabled for the LDAP connection. |
+| `tlsCaCert` | `string` | no | PEM-encoded CA certificate used to verify the LDAP server certificate. |
+| `tlsCert` | `string` | no | PEM-encoded client certificate presented to the LDAP server. |
+| `tlsKey` | `string` | no | PEM-encoded private key matching the client certificate. |
+| `tlsSkipVerify` | `boolean` | no | Whether to skip verification of the LDAP server certificate. |
+
+## `SettingsOauthSettings (input)`
+
+Input object `SettingsOauthSettings`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessTokenUri` | `string` | no | Token endpoint URL used to exchange the authorization code for an access token. |
+| `authStyle` | `number` | no | OAuth client authentication style passed to the token endpoint (0 = auto-detect, 1 = params, 2 = HTTP Basic header). |
+| `authorizationUri` | `string` | no | Authorization endpoint URL of the OAuth provider. |
+| `clientId` | `string` | no | OAuth client identifier registered with the provider. |
+| `clientSecret` | `string` | no | OAuth client secret. Stored in state as a sensitive value. |
+| `defaultTeamId` | `number` | no | Identifier of the team that new OAuth users are added to by default. 0 means no default team. |
+| `hideInternalAuth` | `boolean` | no | Whether to hide the internal username/password login form when OAuth is configured. |
+| `kubeSecretKeys` | `number[]` | no | Byte-array key used to encrypt OAuth-derived Kubernetes secrets. Stored in state. |
+| `logoutUri` | `string` | no | URL the user is redirected to after logging out from Portainer. |
+| `microsoftTenantId` | `string` | no | Microsoft Entra/Azure AD tenant identifier used when the OAuth provider is Microsoft. |
+| `oauthAutoCreateUsers` | `boolean` | no | Whether Portainer automatically creates a local user record on the first OAuth login. |
+| `oauthAutoMapTeamMemberships` | `boolean` | no | Whether Portainer automatically maps Portainer team memberships from OAuth claims. |
+| `redirectUri` | `string` | no | Redirect URI registered with the OAuth provider; must match Portainer's callback URL. |
+| `resourceUri` | `string` | no | Resource endpoint URL used to fetch the authenticated user's profile. |
+| `scopes` | `string` | no | OAuth scopes requested from the provider (space- or comma-separated). |
+| `sso` | `boolean` | no | Whether single sign-on is enabled, redirecting users straight to the OAuth provider. |
+| `teamMemberships` | `SettingsOauthSettingsTeamMemberships (input)` | no | Rules that map OAuth claims to Portainer team memberships and admin role. |
+| `userIdentifier` | `string` | no | Claim used as the unique user identifier from the OAuth provider response. |
+
+## `SettingsOauthSettingsTeamMemberships (input)`
+
+Input object `SettingsOauthSettingsTeamMemberships`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `adminAutoPopulate` | `boolean` | no | Whether Portainer auto-grants admin rights to users whose claim values match the admin regex list. |
+| `adminGroupClaimsRegexLists` | `string[]` | no | List of regular expressions that, when matching a claim value, mark the user as Portainer admin. |
+| `oauthClaimMappings` | `SettingsOauthSettingsTeamMembershipsOauthClaimMapping (input)[]` | no | List of mappings from OAuth claim value regexes to Portainer team IDs. |
+| `oauthClaimName` | `string` | no | Name of the OAuth claim that carries the user's group/team membership values. |
+
+## `SettingsOauthSettingsTeamMembershipsOauthClaimMapping (input)`
+
+Input object `SettingsOauthSettingsTeamMembershipsOauthClaimMapping`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `claimValRegex` | `string` | no | Regular expression matched against the OAuth claim value to trigger this mapping. |
+| `team` | `number` | no | Identifier of the Portainer team that matching users are added to. |
+
+## `SettingsBlackListedLabel (output)`
+
+Output object `SettingsBlackListedLabel`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes | Name of the container label to hide. |
+| `value` | `string` | yes | Value of the container label to match for hiding. |
+
+## `SettingsGlobalDeploymentOptions (output)`
+
+Output object `SettingsGlobalDeploymentOptions`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hideStacksFunctionality` | `boolean` | yes | Whether the stacks functionality is hidden from non-admin users. |
+
+## `SettingsInternalAuthSettings (output)`
+
+Output object `SettingsInternalAuthSettings`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `requiredPasswordLength` | `number` | yes | Minimum password length required for internally-managed users. |
+
+## `SettingsLdapSettings (output)`
+
+Output object `SettingsLdapSettings`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `anonymousMode` | `boolean` | yes | Whether to bind to the LDAP server anonymously instead of using reader credentials. |
+| `autoCreateUsers` | `boolean` | yes | Whether Portainer automatically creates a local user record on the first LDAP login. |
+| `groupSearchSettings` | `SettingsLdapSettingsGroupSearchSetting (output)[]` | no | List of LDAP group search configurations used to resolve user group memberships. |
+| `password` | `string` | yes | Password used by the LDAP reader account. Stored in state as a sensitive value. |
+| `readerDn` | `string` | yes | Distinguished Name of the LDAP account used to perform user lookups. |
+| `searchSettings` | `SettingsLdapSettingsSearchSetting (output)[]` | no | List of LDAP user search configurations applied to locate user entries. |
+| `startTls` | `boolean` | yes | Whether to upgrade the LDAP connection to TLS using StartTLS. |
+| `tlsConfig` | `SettingsLdapSettingsTlsConfig (output)` | no | TLS configuration used for the LDAP connection. |
+| `url` | `string` | yes | URL of the LDAP server (e.g. "ldap://ldap.example.com:389"). |
+
+## `SettingsLdapSettingsGroupSearchSetting (output)`
+
+Output object `SettingsLdapSettingsGroupSearchSetting`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `groupAttribute` | `string` | yes | LDAP attribute on group entries that lists their members. |
+| `groupBaseDn` | `string` | yes | Base DN under which group entries are searched. |
+| `groupFilter` | `string` | yes | LDAP search filter applied when looking up groups. |
+
+## `SettingsLdapSettingsSearchSetting (output)`
+
+Output object `SettingsLdapSettingsSearchSetting`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `baseDn` | `string` | yes | Base DN under which user entries are searched. |
+| `filter` | `string` | yes | LDAP search filter applied when looking up users. |
+| `userNameAttribute` | `string` | yes | LDAP attribute used as the user's login name (e.g. "uid", "sAMAccountName"). |
+
+## `SettingsLdapSettingsTlsConfig (output)`
+
+Output object `SettingsLdapSettingsTlsConfig`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `tls` | `boolean` | yes | Whether TLS is enabled for the LDAP connection. |
+| `tlsCaCert` | `string` | yes | PEM-encoded CA certificate used to verify the LDAP server certificate. |
+| `tlsCert` | `string` | yes | PEM-encoded client certificate presented to the LDAP server. |
+| `tlsKey` | `string` | yes | PEM-encoded private key matching the client certificate. |
+| `tlsSkipVerify` | `boolean` | yes | Whether to skip verification of the LDAP server certificate. |
+
+## `SettingsOauthSettings (output)`
+
+Output object `SettingsOauthSettings`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessTokenUri` | `string` | yes | Token endpoint URL used to exchange the authorization code for an access token. |
+| `authStyle` | `number` | yes | OAuth client authentication style passed to the token endpoint (0 = auto-detect, 1 = params, 2 = HTTP Basic header). |
+| `authorizationUri` | `string` | yes | Authorization endpoint URL of the OAuth provider. |
+| `clientId` | `string` | yes | OAuth client identifier registered with the provider. |
+| `clientSecret` | `string` | yes | OAuth client secret. Stored in state as a sensitive value. |
+| `defaultTeamId` | `number` | yes | Identifier of the team that new OAuth users are added to by default. 0 means no default team. |
+| `hideInternalAuth` | `boolean` | yes | Whether to hide the internal username/password login form when OAuth is configured. |
+| `kubeSecretKeys` | `number[]` | yes | Byte-array key used to encrypt OAuth-derived Kubernetes secrets. Stored in state. |
+| `logoutUri` | `string` | yes | URL the user is redirected to after logging out from Portainer. |
+| `microsoftTenantId` | `string` | yes | Microsoft Entra/Azure AD tenant identifier used when the OAuth provider is Microsoft. |
+| `oauthAutoCreateUsers` | `boolean` | yes | Whether Portainer automatically creates a local user record on the first OAuth login. |
+| `oauthAutoMapTeamMemberships` | `boolean` | yes | Whether Portainer automatically maps Portainer team memberships from OAuth claims. |
+| `redirectUri` | `string` | yes | Redirect URI registered with the OAuth provider; must match Portainer's callback URL. |
+| `resourceUri` | `string` | yes | Resource endpoint URL used to fetch the authenticated user's profile. |
+| `scopes` | `string` | yes | OAuth scopes requested from the provider (space- or comma-separated). |
+| `sso` | `boolean` | yes | Whether single sign-on is enabled, redirecting users straight to the OAuth provider. |
+| `teamMemberships` | `SettingsOauthSettingsTeamMemberships (output)` | no | Rules that map OAuth claims to Portainer team memberships and admin role. |
+| `userIdentifier` | `string` | yes | Claim used as the unique user identifier from the OAuth provider response. |
+
+## `SettingsOauthSettingsTeamMemberships (output)`
+
+Output object `SettingsOauthSettingsTeamMemberships`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `adminAutoPopulate` | `boolean` | yes | Whether Portainer auto-grants admin rights to users whose claim values match the admin regex list. |
+| `adminGroupClaimsRegexLists` | `string[]` | yes | List of regular expressions that, when matching a claim value, mark the user as Portainer admin. |
+| `oauthClaimMappings` | `SettingsOauthSettingsTeamMembershipsOauthClaimMapping (output)[]` | no | List of mappings from OAuth claim value regexes to Portainer team IDs. |
+| `oauthClaimName` | `string` | yes | Name of the OAuth claim that carries the user's group/team membership values. |
+
+## `SettingsOauthSettingsTeamMembershipsOauthClaimMapping (output)`
+
+Output object `SettingsOauthSettingsTeamMembershipsOauthClaimMapping`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `claimValRegex` | `string` | yes | Regular expression matched against the OAuth claim value to trigger this mapping. |
+| `team` | `number` | yes | Identifier of the Portainer team that matching users are added to. |

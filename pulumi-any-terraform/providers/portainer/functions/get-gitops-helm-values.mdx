@@ -1,0 +1,47 @@
+---
+title: "getGitopsHelmValues"
+description: "Function getGitopsHelmValues in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsHelmValues in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsHelmValues:getGitopsHelmValues`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsHelmValues(args)`.
+
+`getGitopsHelmValuesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `password` | `string` | no |  |
+| `reference` | `string` | yes |  |
+| `repository` | `string` | yes |  |
+| `sourceId` | `number` | no |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |
+| `valuesFiles` | `string[]` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `commitHash` | `string` | yes |  |
+| `filesProcesseds` | `string[]` | yes |  |
+| `id` | `string` | yes |  |
+| `mergedValues` | `string` | yes |  |
+| `password` | `string` | no |  |
+| `reference` | `string` | yes |  |
+| `repository` | `string` | yes |  |
+| `sourceId` | `number` | no |  |
+| `tlsSkipVerify` | `boolean` | no |  |
+| `username` | `string` | no |  |
+| `valuesFiles` | `string[]` | yes |  |

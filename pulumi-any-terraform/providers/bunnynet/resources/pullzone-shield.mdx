@@ -1,0 +1,201 @@
+---
+title: "PullzoneShield"
+description: "Resource PullzoneShield in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource PullzoneShield in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/pullzoneShield:PullzoneShield`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.PullzoneShield(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessLists` | `PullzoneShieldAccessList (input)[]` | no |  |
+| `botCategorizations` | `PullzoneShieldBotCategorization (input)[]` | no |  |
+| `botDetection` | `PullzoneShieldBotDetection (input)` | no | Configures Bot Detection settings. |
+| `ddos` | `PullzoneShieldDdos (input)` | no | Configures DDoS settings. |
+| `pullzone` | `number` | yes | The ID of the linked pullzone. |
+| `tier` | `string` | no | Options: `Advanced`, `Basic`, `Business`, `Enterprise` |
+| `uploadScanningAntivirus` | `string` | no | Scan file uploads for viruses, trojans, ransomware, and other forms of malware. Options: `Block`, `Disable`, `Log` |
+| `uploadScanningCsam` | `string` | no | Scan file uploads for Child Sexual Abuse Material. Options: `Block`, `Disable`, `Log` |
+| `waf` | `PullzoneShieldWaf (input)` | no | Configures WAF settings. |
+| `whitelabel` | `boolean` | no | Replace our bunny.net branded block and challenge pages with a white-labelled experience. |
+| `whitelabelBlock` | `string` | no | Customized Response Page for requests blocked by WAF, access list or bot detection. |
+| `whitelabelChallenge` | `string` | no | Customized Response Page for challenged requests. |
+| `whitelabelRateLimit` | `string` | no | Customized Response Page for requests after a rate limit is breached. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accessLists` | `PullzoneShieldAccessList (output)[]` | no |  |
+| `botCategorizations` | `PullzoneShieldBotCategorization (output)[]` | no |  |
+| `botDetection` | `PullzoneShieldBotDetection (output)` | no | Configures Bot Detection settings. |
+| `ddos` | `PullzoneShieldDdos (output)` | no | Configures DDoS settings. |
+| `pullzone` | `number` | no | The ID of the linked pullzone. |
+| `pullzoneShieldId` | `number` | yes | The ID of the Bunny Shield. |
+| `tier` | `string` | no | Options: `Advanced`, `Basic`, `Business`, `Enterprise` |
+| `uploadScanningAntivirus` | `string` | no | Scan file uploads for viruses, trojans, ransomware, and other forms of malware. Options: `Block`, `Disable`, `Log` |
+| `uploadScanningCsam` | `string` | no | Scan file uploads for Child Sexual Abuse Material. Options: `Block`, `Disable`, `Log` |
+| `waf` | `PullzoneShieldWaf (output)` | no | Configures WAF settings. |
+| `whitelabel` | `boolean` | no | Replace our bunny.net branded block and challenge pages with a white-labelled experience. |
+| `whitelabelBlock` | `string` | no | Customized Response Page for requests blocked by WAF, access list or bot detection. |
+| `whitelabelChallenge` | `string` | no | Customized Response Page for challenged requests. |
+| `whitelabelRateLimit` | `string` | no | Customized Response Page for requests after a rate limit is breached. |
+
+## `PullzoneShieldAccessList (input)`
+
+Input object `PullzoneShieldAccessList`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log` |
+| `id` | `number` | yes | The ID of the Access List. |
+
+## `PullzoneShieldBotCategorization (input)`
+
+Input object `PullzoneShieldBotCategorization`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | Options: `Allow`, `Block`, `Ignore` |
+| `category` | `string` | yes | Options: `AIScraper`, `AITool`, `Ads`, `Preview`, `SEO`, `Social`, `Tool` |
+| `overrides` | `PullzoneShieldBotCategorizationOverride (input)[]` | no | Override actions for specific bots. |
+
+## `PullzoneShieldBotCategorizationOverride (input)`
+
+Input object `PullzoneShieldBotCategorizationOverride`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no |  |
+| `bot` | `string` | no |  |
+
+## `PullzoneShieldBotDetection (input)`
+
+Input object `PullzoneShieldBotDetection`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `complexFingerprinting` | `boolean` | no | Combines advanced entropy analysis and cross-session consistency. |
+| `fingerprintAggression` | `number` | no | Controls how assertively unusual fingerprints are treated as bots. |
+| `fingerprintSensitivity` | `number` | no | Adjusts how precisely browsers are checked for signs of automation. |
+| `ipSensitivity` | `number` | no | Monitors IP behaviour, reputation, and rate patterns. |
+| `mode` | `string` | no | Indicates the mode the Bot Detection engine is running. Options: `Challenge`, `Log` |
+| `requestIntegrity` | `number` | no | Analyzes request headers, query structure, and protocol anomalies. |
+
+## `PullzoneShieldDdos (input)`
+
+Input object `PullzoneShieldDdos`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `challengeWindow` | `number` | no | The window of time a visitor can access your website after passing a challenge. Once the timeout expires, they'll face a new challenge. |
+| `level` | `string` | yes | Options: `Asleep`, `Extreme`, `High`, `Low`, `Medium` |
+
+## `PullzoneShieldWaf (input)`
+
+Input object `PullzoneShieldWaf`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `allowedHttpMethods` | `string[]` | no | Indicates allowed HTTP methods. |
+| `allowedHttpVersions` | `string[]` | no | Indicates allowed HTTP versions. |
+| `allowedRequestContentTypes` | `string[]` | no | Indicates allowed values for request Content-Type. |
+| `blockingSensitivity` | `number` | no | Determines which severity level of rules will block requests. |
+| `bodyLimitRequest` | `string` | no | Determines the action to take when the request body length exceeds your plan limit. Options: `Block`, `Ignore`, `Log` |
+| `bodyLimitResponse` | `string` | no | Determines the action to take when the response body length exceeds your plan limit. Options: `Block`, `Ignore`, `Log` |
+| `detectionSensitivity` | `number` | no | Determines which severity level of rules will trigger a detection log. |
+| `enabled` | `boolean` | yes | Indicates whether the WAF (Web Application Firewall) is enabled. |
+| `executionSensitivity` | `number` | no | Determines which severity level of rules will trigger the rules and their action. |
+| `logHeaders` | `boolean` | no | When enabled, detected WAF audit logs will contain the full list of request headers sent during the request. |
+| `logHeadersExcludeds` | `string[]` | no | The list of headers excluded from the logs. They will still be used for processing WAF rules. |
+| `mode` | `string` | no | Indicates the mode the engine is running. Options: `Block`, `Log` |
+| `realtimeThreatIntelligence` | `boolean` | no | Real-time Threat Intelligence delivers zero-day protection by instantly detecting and blocking emerging threats. |
+| `rulesDisableds` | `string[]` | no | List of disabled WAF rules. |
+| `rulesLogonlies` | `string[]` | no | List of WAF rules that will not be blocked, but will be logged when triggered. |
+
+## `PullzoneShieldAccessList (output)`
+
+Output object `PullzoneShieldAccessList`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log` |
+| `id` | `number` | yes | The ID of the Access List. |
+
+## `PullzoneShieldBotCategorization (output)`
+
+Output object `PullzoneShieldBotCategorization`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | Options: `Allow`, `Block`, `Ignore` |
+| `category` | `string` | yes | Options: `AIScraper`, `AITool`, `Ads`, `Preview`, `SEO`, `Social`, `Tool` |
+| `overrides` | `PullzoneShieldBotCategorizationOverride (output)[]` | yes | Override actions for specific bots. |
+
+## `PullzoneShieldBotCategorizationOverride (output)`
+
+Output object `PullzoneShieldBotCategorizationOverride`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no |  |
+| `bot` | `string` | no |  |
+
+## `PullzoneShieldBotDetection (output)`
+
+Output object `PullzoneShieldBotDetection`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `complexFingerprinting` | `boolean` | yes | Combines advanced entropy analysis and cross-session consistency. |
+| `fingerprintAggression` | `number` | yes | Controls how assertively unusual fingerprints are treated as bots. |
+| `fingerprintSensitivity` | `number` | yes | Adjusts how precisely browsers are checked for signs of automation. |
+| `ipSensitivity` | `number` | yes | Monitors IP behaviour, reputation, and rate patterns. |
+| `mode` | `string` | yes | Indicates the mode the Bot Detection engine is running. Options: `Challenge`, `Log` |
+| `requestIntegrity` | `number` | yes | Analyzes request headers, query structure, and protocol anomalies. |
+
+## `PullzoneShieldDdos (output)`
+
+Output object `PullzoneShieldDdos`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `challengeWindow` | `number` | yes | The window of time a visitor can access your website after passing a challenge. Once the timeout expires, they'll face a new challenge. |
+| `level` | `string` | yes | Options: `Asleep`, `Extreme`, `High`, `Low`, `Medium` |
+
+## `PullzoneShieldWaf (output)`
+
+Output object `PullzoneShieldWaf`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `allowedHttpMethods` | `string[]` | yes | Indicates allowed HTTP methods. |
+| `allowedHttpVersions` | `string[]` | yes | Indicates allowed HTTP versions. |
+| `allowedRequestContentTypes` | `string[]` | yes | Indicates allowed values for request Content-Type. |
+| `blockingSensitivity` | `number` | yes | Determines which severity level of rules will block requests. |
+| `bodyLimitRequest` | `string` | yes | Determines the action to take when the request body length exceeds your plan limit. Options: `Block`, `Ignore`, `Log` |
+| `bodyLimitResponse` | `string` | yes | Determines the action to take when the response body length exceeds your plan limit. Options: `Block`, `Ignore`, `Log` |
+| `detectionSensitivity` | `number` | yes | Determines which severity level of rules will trigger a detection log. |
+| `enabled` | `boolean` | yes | Indicates whether the WAF (Web Application Firewall) is enabled. |
+| `executionSensitivity` | `number` | yes | Determines which severity level of rules will trigger the rules and their action. |
+| `logHeaders` | `boolean` | yes | When enabled, detected WAF audit logs will contain the full list of request headers sent during the request. |
+| `logHeadersExcludeds` | `string[]` | yes | The list of headers excluded from the logs. They will still be used for processing WAF rules. |
+| `mode` | `string` | yes | Indicates the mode the engine is running. Options: `Block`, `Log` |
+| `realtimeThreatIntelligence` | `boolean` | yes | Real-time Threat Intelligence delivers zero-day protection by instantly detecting and blocking emerging threats. |
+| `rulesDisableds` | `string[]` | yes | List of disabled WAF rules. |
+| `rulesLogonlies` | `string[]` | yes | List of WAF rules that will not be blocked, but will be logged when triggered. |

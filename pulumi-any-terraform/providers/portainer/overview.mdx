@@ -1,141 +1,277 @@
 ---
-title: Portainer Provider
-description: Manage container environments with Portainer using Pulumi
+title: "Portainer"
+description: "Resources and functions exported by pulumi-portainer."
 ---
 
-The Portainer provider enables you to manage container environments, stacks, users, and teams in Portainer using Pulumi. This provider is dynamically bridged from the [Terraform Portainer Provider](https://registry.terraform.io/providers/portainer/portainer).
+<!-- Generated from the pulumi-portainer SDK. -->
 
-## Installation
+`pulumi-portainer` version `2.0.1`.
+Pulumi bridge `terraform-provider` version `1.4.0`.
+Upstream provider `registry.opentofu.org/portainer/portainer` version `2.0.0`.
 
-Install the Portainer provider package using your preferred package manager:
+The package is TypeScript. Import it by the npm package name.
 
-<Tabs>
-  <Tab title="bun">
-    ```bash
-    bun add pulumi-portainer
-    ```
-  </Tab>
-  <Tab title="pnpm">
-    ```bash
-    pnpm add pulumi-portainer
-    ```
-  </Tab>
-  <Tab title="yarn">
-    ```bash
-    yarn add pulumi-portainer
-    ```
-  </Tab>
-  <Tab title="npm">
-    ```bash
-    npm install pulumi-portainer
-    ```
-  </Tab>
-</Tabs>
-
-## Configuration
-
-### Provider Setup
-
-```bash
-pulumi config set portainer:url https://portainer.example.com
-pulumi config set portainer:username admin
-pulumi config set portainer:password YOUR_PASSWORD --secret
+```ts
+import * as portainer from "pulumi-portainer"
 ```
 
-Or using environment variables:
+Nested object fields are on the resource or function page, under the object heading.
 
-```bash
-export PORTAINER_URL="https://portainer.example.com"
-export PORTAINER_USERNAME="admin"
-export PORTAINER_PASSWORD="your-password"
-```
+## Resources
 
-## Quick Start
+- [Addon](/pulumi-any-terraform/providers/portainer/resources/addon)
+- [AddonAccess](/pulumi-any-terraform/providers/portainer/resources/addon-access)
+- [AddonConfig](/pulumi-any-terraform/providers/portainer/resources/addon-config)
+- [AddonRepair](/pulumi-any-terraform/providers/portainer/resources/addon-repair)
+- [AlertingRule](/pulumi-any-terraform/providers/portainer/resources/alerting-rule)
+- [AlertingRuleGroups](/pulumi-any-terraform/providers/portainer/resources/alerting-rule-groups)
+- [AlertingRuleTiers](/pulumi-any-terraform/providers/portainer/resources/alerting-rule-tiers)
+- [AlertingSettings](/pulumi-any-terraform/providers/portainer/resources/alerting-settings)
+- [AlertingSilence](/pulumi-any-terraform/providers/portainer/resources/alerting-silence)
+- [Auth](/pulumi-any-terraform/providers/portainer/resources/auth)
+- [Backup](/pulumi-any-terraform/providers/portainer/resources/backup)
+- [BackupAzureExecute](/pulumi-any-terraform/providers/portainer/resources/backup-azure-execute)
+- [BackupAzureRestore](/pulumi-any-terraform/providers/portainer/resources/backup-azure-restore)
+- [BackupAzureSettings](/pulumi-any-terraform/providers/portainer/resources/backup-azure-settings)
+- [BackupLocalRun](/pulumi-any-terraform/providers/portainer/resources/backup-local-run)
+- [BackupLocalSettings](/pulumi-any-terraform/providers/portainer/resources/backup-local-settings)
+- [BackupS3](/pulumi-any-terraform/providers/portainer/resources/backup-s3)
+- [BackupS3Restore](/pulumi-any-terraform/providers/portainer/resources/backup-s3-restore)
+- [Chat](/pulumi-any-terraform/providers/portainer/resources/chat)
+- [Check](/pulumi-any-terraform/providers/portainer/resources/check)
+- [CloudCredentials](/pulumi-any-terraform/providers/portainer/resources/cloud-credentials)
+- [CloudProviderProvision](/pulumi-any-terraform/providers/portainer/resources/cloud-provider-provision)
+- [ComposeConvert](/pulumi-any-terraform/providers/portainer/resources/compose-convert)
+- [ContainerExec](/pulumi-any-terraform/providers/portainer/resources/container-exec)
+- [CustomTemplate](/pulumi-any-terraform/providers/portainer/resources/custom-template)
+- [Deploy](/pulumi-any-terraform/providers/portainer/resources/deploy)
+- [DockerConfig](/pulumi-any-terraform/providers/portainer/resources/docker-config)
+- [DockerImage](/pulumi-any-terraform/providers/portainer/resources/docker-image)
+- [DockerNetwork](/pulumi-any-terraform/providers/portainer/resources/docker-network)
+- [DockerNode](/pulumi-any-terraform/providers/portainer/resources/docker-node)
+- [DockerPlugin](/pulumi-any-terraform/providers/portainer/resources/docker-plugin)
+- [DockerSecret](/pulumi-any-terraform/providers/portainer/resources/docker-secret)
+- [DockerVolume](/pulumi-any-terraform/providers/portainer/resources/docker-volume)
+- [EdgeConfigurations](/pulumi-any-terraform/providers/portainer/resources/edge-configurations)
+- [EdgeGroup](/pulumi-any-terraform/providers/portainer/resources/edge-group)
+- [EdgeJob](/pulumi-any-terraform/providers/portainer/resources/edge-job)
+- [EdgeJobTaskLogs](/pulumi-any-terraform/providers/portainer/resources/edge-job-task-logs)
+- [EdgeStack](/pulumi-any-terraform/providers/portainer/resources/edge-stack)
+- [EdgeStackWebhook](/pulumi-any-terraform/providers/portainer/resources/edge-stack-webhook)
+- [EdgeUpdateSchedules](/pulumi-any-terraform/providers/portainer/resources/edge-update-schedules)
+- [EndpointAssociation](/pulumi-any-terraform/providers/portainer/resources/endpoint-association)
+- [EndpointGroup](/pulumi-any-terraform/providers/portainer/resources/endpoint-group)
+- [EndpointGroupAccess](/pulumi-any-terraform/providers/portainer/resources/endpoint-group-access)
+- [EndpointGroupMembership](/pulumi-any-terraform/providers/portainer/resources/endpoint-group-membership)
+- [EndpointRelations](/pulumi-any-terraform/providers/portainer/resources/endpoint-relations)
+- [EndpointsEdgeGenerateKey](/pulumi-any-terraform/providers/portainer/resources/endpoints-edge-generate-key)
+- [EndpointServiceUpdate](/pulumi-any-terraform/providers/portainer/resources/endpoint-service-update)
+- [EndpointSettings](/pulumi-any-terraform/providers/portainer/resources/endpoint-settings)
+- [EndpointSnapshot](/pulumi-any-terraform/providers/portainer/resources/endpoint-snapshot)
+- [EndpointTrust](/pulumi-any-terraform/providers/portainer/resources/endpoint-trust)
+- [Environment](/pulumi-any-terraform/providers/portainer/resources/environment)
+- [GitopsSource](/pulumi-any-terraform/providers/portainer/resources/gitops-source)
+- [GitopsWorkflow](/pulumi-any-terraform/providers/portainer/resources/gitops-workflow)
+- [HelmRollback](/pulumi-any-terraform/providers/portainer/resources/helm-rollback)
+- [HelmUserRepository](/pulumi-any-terraform/providers/portainer/resources/helm-user-repository)
+- [KubernetesApplication](/pulumi-any-terraform/providers/portainer/resources/kubernetes-application)
+- [KubernetesClusterrole](/pulumi-any-terraform/providers/portainer/resources/kubernetes-clusterrole)
+- [KubernetesClusterrolebinding](/pulumi-any-terraform/providers/portainer/resources/kubernetes-clusterrolebinding)
+- [KubernetesClusterUpgrade](/pulumi-any-terraform/providers/portainer/resources/kubernetes-cluster-upgrade)
+- [KubernetesConfigmaps](/pulumi-any-terraform/providers/portainer/resources/kubernetes-configmaps)
+- [KubernetesCronjob](/pulumi-any-terraform/providers/portainer/resources/kubernetes-cronjob)
+- [KubernetesDeleteObject](/pulumi-any-terraform/providers/portainer/resources/kubernetes-delete-object)
+- [KubernetesDeploymentRollback](/pulumi-any-terraform/providers/portainer/resources/kubernetes-deployment-rollback)
+- [KubernetesDeploymentScale](/pulumi-any-terraform/providers/portainer/resources/kubernetes-deployment-scale)
+- [KubernetesHelm](/pulumi-any-terraform/providers/portainer/resources/kubernetes-helm)
+- [KubernetesIngresscontrollers](/pulumi-any-terraform/providers/portainer/resources/kubernetes-ingresscontrollers)
+- [KubernetesIngresses](/pulumi-any-terraform/providers/portainer/resources/kubernetes-ingresses)
+- [KubernetesJob](/pulumi-any-terraform/providers/portainer/resources/kubernetes-job)
+- [KubernetesNamespace](/pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace)
+- [KubernetesNamespaceAccess](/pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-access)
+- [KubernetesNamespaceIngresscontrollers](/pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-ingresscontrollers)
+- [KubernetesNamespaceSystem](/pulumi-any-terraform/providers/portainer/resources/kubernetes-namespace-system)
+- [KubernetesNodeDrain](/pulumi-any-terraform/providers/portainer/resources/kubernetes-node-drain)
+- [KubernetesPersistentVolume](/pulumi-any-terraform/providers/portainer/resources/kubernetes-persistent-volume)
+- [KubernetesPodSecurityRule](/pulumi-any-terraform/providers/portainer/resources/kubernetes-pod-security-rule)
+- [KubernetesRole](/pulumi-any-terraform/providers/portainer/resources/kubernetes-role)
+- [KubernetesRolebinding](/pulumi-any-terraform/providers/portainer/resources/kubernetes-rolebinding)
+- [KubernetesSecret](/pulumi-any-terraform/providers/portainer/resources/kubernetes-secret)
+- [KubernetesService](/pulumi-any-terraform/providers/portainer/resources/kubernetes-service)
+- [KubernetesServiceaccounts](/pulumi-any-terraform/providers/portainer/resources/kubernetes-serviceaccounts)
+- [KubernetesStorage](/pulumi-any-terraform/providers/portainer/resources/kubernetes-storage)
+- [KubernetesVolume](/pulumi-any-terraform/providers/portainer/resources/kubernetes-volume)
+- [LdapSettings](/pulumi-any-terraform/providers/portainer/resources/ldap-settings)
+- [Licenses](/pulumi-any-terraform/providers/portainer/resources/licenses)
+- [OmniCluster](/pulumi-any-terraform/providers/portainer/resources/omni-cluster)
+- [OmniNodeReboot](/pulumi-any-terraform/providers/portainer/resources/omni-node-reboot)
+- [OpenAmt](/pulumi-any-terraform/providers/portainer/resources/open-amt)
+- [OpenAmtActivate](/pulumi-any-terraform/providers/portainer/resources/open-amt-activate)
+- [OpenAmtDevicesAction](/pulumi-any-terraform/providers/portainer/resources/open-amt-devices-action)
+- [OpenAmtDevicesFeatures](/pulumi-any-terraform/providers/portainer/resources/open-amt-devices-features)
+- [Policy](/pulumi-any-terraform/providers/portainer/resources/policy)
+- [Registry](/pulumi-any-terraform/providers/portainer/resources/registry)
+- [RegistryAccess](/pulumi-any-terraform/providers/portainer/resources/registry-access)
+- [RegistryConfigure](/pulumi-any-terraform/providers/portainer/resources/registry-configure)
+- [ResourceControl](/pulumi-any-terraform/providers/portainer/resources/resource-control)
+- [Restore](/pulumi-any-terraform/providers/portainer/resources/restore)
+- [Settings](/pulumi-any-terraform/providers/portainer/resources/settings)
+- [SettingsAdditionalFunctionality](/pulumi-any-terraform/providers/portainer/resources/settings-additional-functionality)
+- [SettingsDefaultRegistry](/pulumi-any-terraform/providers/portainer/resources/settings-default-registry)
+- [SettingsExperimental](/pulumi-any-terraform/providers/portainer/resources/settings-experimental)
+- [SharedGitCredential](/pulumi-any-terraform/providers/portainer/resources/shared-git-credential)
+- [Sshkeygen](/pulumi-any-terraform/providers/portainer/resources/sshkeygen)
+- [Ssl](/pulumi-any-terraform/providers/portainer/resources/ssl)
+- [SsrfAllowlist](/pulumi-any-terraform/providers/portainer/resources/ssrf-allowlist)
+- [Stack](/pulumi-any-terraform/providers/portainer/resources/stack)
+- [StackAssociate](/pulumi-any-terraform/providers/portainer/resources/stack-associate)
+- [StackDeleteByName](/pulumi-any-terraform/providers/portainer/resources/stack-delete-by-name)
+- [StackMigrate](/pulumi-any-terraform/providers/portainer/resources/stack-migrate)
+- [StackWebhook](/pulumi-any-terraform/providers/portainer/resources/stack-webhook)
+- [SupportDebugLog](/pulumi-any-terraform/providers/portainer/resources/support-debug-log)
+- [Tag](/pulumi-any-terraform/providers/portainer/resources/tag)
+- [Team](/pulumi-any-terraform/providers/portainer/resources/team)
+- [TeamMembership](/pulumi-any-terraform/providers/portainer/resources/team-membership)
+- [Tls](/pulumi-any-terraform/providers/portainer/resources/tls)
+- [User](/pulumi-any-terraform/providers/portainer/resources/user)
+- [UserAdmin](/pulumi-any-terraform/providers/portainer/resources/user-admin)
+- [UserApiKey](/pulumi-any-terraform/providers/portainer/resources/user-api-key)
+- [UserGitCredential](/pulumi-any-terraform/providers/portainer/resources/user-git-credential)
+- [UserMembershipsSync](/pulumi-any-terraform/providers/portainer/resources/user-memberships-sync)
+- [Webhook](/pulumi-any-terraform/providers/portainer/resources/webhook)
+- [WebhookExecute](/pulumi-any-terraform/providers/portainer/resources/webhook-execute)
 
-```typescript
-import * as pulumi from "@pulumi/pulumi";
-import * as portainer from "pulumi-portainer";
+## Functions
 
-// Deploy a stack
-const stack = new portainer.Stack("web-app", {
-    name: "web-application",
-    environmentId: 1,
-    stackFile: `
-version: '3'
-services:
-  web:
-    image: nginx:latest
-    ports:
-      - "80:80"
-`,
-});
-
-export const stackId = stack.id;
-```
-
-## Key Features
-
-### Stack Management
-
-```typescript
-const appStack = new portainer.Stack("app", {
-    name: "web-application",
-    environmentId: environment.id,
-    stackFile: stackContent,
-});
-```
-
-### Environment Management
-
-```typescript
-const environment = new portainer.Environment("docker", {
-    name: "Production Docker",
-    type: 1, // Docker
-    url: "tcp://docker.example.com:2375",
-});
-```
-
-Environment `type` is a number: `1` Docker, `2` Agent, `3` Azure, `4` Edge Agent, `5` Kubernetes, `6` Kubernetes via agent, `7` Kubernetes Edge Agent.
-
-### User Management
-
-```typescript
-const user = new portainer.User("developer", {
-    username: "dev-user",
-    password: "secure-password",
-    role: 2, // Standard user
-});
-```
-
-## Provider 2.0
-
-The bridged Terraform provider is 2.0.0. Configurations that were valid on 1.35.0 are still valid. Plan Edge Agent environments before upgrading, because one behavior change can replace them.
-
-- Edge Agent environments (`type` `4` or `7`) are replaced when `url` changes, except when only the URL scheme differs. Replacement issues a new edge key, and the agent has to be redeployed with it.
-- TLS arguments are omitted for types `4` and `7`. `tlsEnabled: false` is no longer required to create those environments.
-- `EndpointRelations` leaves tags and edge groups alone unless `tagIds` or `edgeGroupIds` is set. Omit a field to keep the current relations. There is no value here that clears them; use `Environment` to clear tags.
-- `Webhook.reassignOnChange` keeps the existing webhook token when `resourceId` or `webhookType` changes. It is Business Edition only and defaults to `false`. On Community Edition those changes still replace the webhook.
-- Creating a stack waits until Portainer finishes the deploy. A failed deploy is reported as a failure.
-- API calls that used to return an error body as data now fail with the server response.
-- `BackupS3` exposes `lastRunFailed` and `lastRunTimestamp` after a scheduled backup.
-
-### Edge stack from a Helm repository
-
-`EdgeStack.helmConfig` deploys from a Helm chart repository. `chartName` and `chartUrl` are required. `chartVersion`, `namespace`, `atomic`, `timeout`, and `valuesInline` are optional. Leave `chartVersion` unset only when Portainer should resolve the newest published chart on each apply.
-
-### Business Edition resources
-
-These resources cover the Business Edition API. They have not been exercised against a live Business Edition instance; the first apply is the real test.
-
-- Add-on store: `Addon`, `AddonAccess`, `AddonConfig`, `AddonRepair`
-- Omni / Talos: `OmniCluster`, `OmniNodeReboot`
-- GitOps: `GitopsWorkflow`
-- Backup: `BackupAzureSettings`, `BackupAzureExecute`, `BackupAzureRestore`, `BackupLocalSettings`, `BackupLocalRun`, `BackupS3Restore`
-- Kubernetes: `KubernetesPodSecurityRule`, `KubernetesClusterUpgrade`
-- Alerting: `AlertingRuleGroups`, `AlertingRuleTiers`
-- Settings: `SettingsDefaultRegistry`, `SettingsAdditionalFunctionality`, `SsrfAllowlist`
-- Environments and users: `EndpointTrust`, `UserMembershipsSync`
-
-Matching data sources are exported as `get*` functions, including `getAddons`, `getOmniMachines`, `getKubernetesStorageClasses`, `getKubernetesCronJobs`, `getEdgeWaitingRoom`, `getLdapUsers`, `getEnvironmentLogs`, `getDockerSnapshot`, and `getGitopsHelmValues`.
-
-`OmniCluster` cannot detect drift in its machine list. `KubernetesPodSecurityRule` reads back only its switches; list sections stay driven by configuration. `UserApiKey` is created from a session, so the provider needs `apiUser` and `apiPassword`. A key for a user created in the same program needs two applies.
+- [getAddonChartSource](/pulumi-any-terraform/providers/portainer/functions/get-addon-chart-source)
+- [getAddons](/pulumi-any-terraform/providers/portainer/functions/get-addons)
+- [getAgentVersions](/pulumi-any-terraform/providers/portainer/functions/get-agent-versions)
+- [getAlertingConnectivity](/pulumi-any-terraform/providers/portainer/functions/get-alerting-connectivity)
+- [getAlertingRuleEnvironments](/pulumi-any-terraform/providers/portainer/functions/get-alerting-rule-environments)
+- [getAppTemplates](/pulumi-any-terraform/providers/portainer/functions/get-app-templates)
+- [getAutoUpdates](/pulumi-any-terraform/providers/portainer/functions/get-auto-updates)
+- [getBackupAzureConnection](/pulumi-any-terraform/providers/portainer/functions/get-backup-azure-connection)
+- [getCloudCredentials](/pulumi-any-terraform/providers/portainer/functions/get-cloud-credentials)
+- [getCurrentUserAuthorizations](/pulumi-any-terraform/providers/portainer/functions/get-current-user-authorizations)
+- [getCustomTemplate](/pulumi-any-terraform/providers/portainer/functions/get-custom-template)
+- [getCustomTemplateFile](/pulumi-any-terraform/providers/portainer/functions/get-custom-template-file)
+- [getDockerConfig](/pulumi-any-terraform/providers/portainer/functions/get-docker-config)
+- [getDockerContainerGpus](/pulumi-any-terraform/providers/portainer/functions/get-docker-container-gpus)
+- [getDockerDashboard](/pulumi-any-terraform/providers/portainer/functions/get-docker-dashboard)
+- [getDockerImage](/pulumi-any-terraform/providers/portainer/functions/get-docker-image)
+- [getDockerImages](/pulumi-any-terraform/providers/portainer/functions/get-docker-images)
+- [getDockerNetwork](/pulumi-any-terraform/providers/portainer/functions/get-docker-network)
+- [getDockerNode](/pulumi-any-terraform/providers/portainer/functions/get-docker-node)
+- [getDockerSecret](/pulumi-any-terraform/providers/portainer/functions/get-docker-secret)
+- [getDockerSnapshot](/pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot)
+- [getDockerSnapshotContainer](/pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot-container)
+- [getDockerSnapshotContainers](/pulumi-any-terraform/providers/portainer/functions/get-docker-snapshot-containers)
+- [getDockerVolume](/pulumi-any-terraform/providers/portainer/functions/get-docker-volume)
+- [getEdgeConfiguration](/pulumi-any-terraform/providers/portainer/functions/get-edge-configuration)
+- [getEdgeConfigurationFiles](/pulumi-any-terraform/providers/portainer/functions/get-edge-configuration-files)
+- [getEdgeGroup](/pulumi-any-terraform/providers/portainer/functions/get-edge-group)
+- [getEdgeJob](/pulumi-any-terraform/providers/portainer/functions/get-edge-job)
+- [getEdgeJobFile](/pulumi-any-terraform/providers/portainer/functions/get-edge-job-file)
+- [getEdgeJobTaskLogs](/pulumi-any-terraform/providers/portainer/functions/get-edge-job-task-logs)
+- [getEdgeJobTasks](/pulumi-any-terraform/providers/portainer/functions/get-edge-job-tasks)
+- [getEdgeMtlsCaCertificate](/pulumi-any-terraform/providers/portainer/functions/get-edge-mtls-ca-certificate)
+- [getEdgeMtlsCertificate](/pulumi-any-terraform/providers/portainer/functions/get-edge-mtls-certificate)
+- [getEdgeStack](/pulumi-any-terraform/providers/portainer/functions/get-edge-stack)
+- [getEdgeStackFile](/pulumi-any-terraform/providers/portainer/functions/get-edge-stack-file)
+- [getEdgeStackStaggerStatus](/pulumi-any-terraform/providers/portainer/functions/get-edge-stack-stagger-status)
+- [getEdgeUpdatePreviousVersions](/pulumi-any-terraform/providers/portainer/functions/get-edge-update-previous-versions)
+- [getEdgeUpdateScheduleInfo](/pulumi-any-terraform/providers/portainer/functions/get-edge-update-schedule-info)
+- [getEdgeUpdateSchedulesActive](/pulumi-any-terraform/providers/portainer/functions/get-edge-update-schedules-active)
+- [getEdgeWaitingRoom](/pulumi-any-terraform/providers/portainer/functions/get-edge-waiting-room)
+- [getEndpointGroup](/pulumi-any-terraform/providers/portainer/functions/get-endpoint-group)
+- [getEndpointGroupAccess](/pulumi-any-terraform/providers/portainer/functions/get-endpoint-group-access)
+- [getEndpointMtlsCertificate](/pulumi-any-terraform/providers/portainer/functions/get-endpoint-mtls-certificate)
+- [getEndpointMtlsCertificateError](/pulumi-any-terraform/providers/portainer/functions/get-endpoint-mtls-certificate-error)
+- [getEndpointRegistries](/pulumi-any-terraform/providers/portainer/functions/get-endpoint-registries)
+- [getEndpointsSummary](/pulumi-any-terraform/providers/portainer/functions/get-endpoints-summary)
+- [getEnvironment](/pulumi-any-terraform/providers/portainer/functions/get-environment)
+- [getEnvironmentLogs](/pulumi-any-terraform/providers/portainer/functions/get-environment-logs)
+- [getEnvironmentMetrics](/pulumi-any-terraform/providers/portainer/functions/get-environment-metrics)
+- [getGitopsHelmValues](/pulumi-any-terraform/providers/portainer/functions/get-gitops-helm-values)
+- [getGitopsRepoFile](/pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-file)
+- [getGitopsRepoFileSearch](/pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-file-search)
+- [getGitopsRepoRefs](/pulumi-any-terraform/providers/portainer/functions/get-gitops-repo-refs)
+- [getGitopsSource](/pulumi-any-terraform/providers/portainer/functions/get-gitops-source)
+- [getGitopsSourceConnection](/pulumi-any-terraform/providers/portainer/functions/get-gitops-source-connection)
+- [getGitopsSources](/pulumi-any-terraform/providers/portainer/functions/get-gitops-sources)
+- [getGitopsWorkflow](/pulumi-any-terraform/providers/portainer/functions/get-gitops-workflow)
+- [getGitopsWorkflows](/pulumi-any-terraform/providers/portainer/functions/get-gitops-workflows)
+- [getHelmChart](/pulumi-any-terraform/providers/portainer/functions/get-helm-chart)
+- [getHelmGitDryrun](/pulumi-any-terraform/providers/portainer/functions/get-helm-git-dryrun)
+- [getHelmReleaseHistory](/pulumi-any-terraform/providers/portainer/functions/get-helm-release-history)
+- [getImageStatus](/pulumi-any-terraform/providers/portainer/functions/get-image-status)
+- [getKubernetesApplication](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-application)
+- [getKubernetesApplicationResources](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-application-resources)
+- [getKubernetesCluster](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-cluster)
+- [getKubernetesConfig](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-config)
+- [getKubernetesCrd](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-crd)
+- [getKubernetesCronJobs](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-cron-jobs)
+- [getKubernetesCustomResource](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource)
+- [getKubernetesCustomResourceDefinition](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource-definition)
+- [getKubernetesCustomResourceDefinitions](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resource-definitions)
+- [getKubernetesCustomResources](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-custom-resources)
+- [getKubernetesDeployments](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-deployments)
+- [getKubernetesDescribe](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-describe)
+- [getKubernetesEndpoints](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-endpoints)
+- [getKubernetesEvents](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-events)
+- [getKubernetesGpu](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-gpu)
+- [getKubernetesIngressClasses](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-ingress-classes)
+- [getKubernetesManifestDryRun](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-manifest-dry-run)
+- [getKubernetesNodeMetrics](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-node-metrics)
+- [getKubernetesNodes](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-nodes)
+- [getKubernetesPersistentVolumeClaim](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volume-claim)
+- [getKubernetesPersistentVolumeClaims](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volume-claims)
+- [getKubernetesPersistentVolumes](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-persistent-volumes)
+- [getKubernetesPodLogs](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pod-logs)
+- [getKubernetesPodMetrics](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pod-metrics)
+- [getKubernetesPods](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-pods)
+- [getKubernetesReplicasets](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-replicasets)
+- [getKubernetesResourceCounts](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-resource-counts)
+- [getKubernetesResourceQuotas](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-resource-quotas)
+- [getKubernetesServiceAccount](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-service-account)
+- [getKubernetesStorageClass](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-storage-class)
+- [getKubernetesStorageClasses](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-storage-classes)
+- [getKubernetesVolume](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-volume)
+- [getKubernetesVolumes](/pulumi-any-terraform/providers/portainer/functions/get-kubernetes-volumes)
+- [getLdapAdminGroups](/pulumi-any-terraform/providers/portainer/functions/get-ldap-admin-groups)
+- [getLdapCheck](/pulumi-any-terraform/providers/portainer/functions/get-ldap-check)
+- [getLdapGroups](/pulumi-any-terraform/providers/portainer/functions/get-ldap-groups)
+- [getLdapLoginTest](/pulumi-any-terraform/providers/portainer/functions/get-ldap-login-test)
+- [getLdapUsers](/pulumi-any-terraform/providers/portainer/functions/get-ldap-users)
+- [getLicensesInfo](/pulumi-any-terraform/providers/portainer/functions/get-licenses-info)
+- [getMotd](/pulumi-any-terraform/providers/portainer/functions/get-motd)
+- [getOmniMachine](/pulumi-any-terraform/providers/portainer/functions/get-omni-machine)
+- [getOmniMachineLogs](/pulumi-any-terraform/providers/portainer/functions/get-omni-machine-logs)
+- [getOmniMachines](/pulumi-any-terraform/providers/portainer/functions/get-omni-machines)
+- [getOmniServiceAccount](/pulumi-any-terraform/providers/portainer/functions/get-omni-service-account)
+- [getOmniTalosVersions](/pulumi-any-terraform/providers/portainer/functions/get-omni-talos-versions)
+- [getOmniUpgradeStatus](/pulumi-any-terraform/providers/portainer/functions/get-omni-upgrade-status)
+- [getPolicy](/pulumi-any-terraform/providers/portainer/functions/get-policy)
+- [getPolicyConflicts](/pulumi-any-terraform/providers/portainer/functions/get-policy-conflicts)
+- [getPolicyMetadata](/pulumi-any-terraform/providers/portainer/functions/get-policy-metadata)
+- [getPolicyObservabilityTest](/pulumi-any-terraform/providers/portainer/functions/get-policy-observability-test)
+- [getPolicyTemplate](/pulumi-any-terraform/providers/portainer/functions/get-policy-template)
+- [getRecommendations](/pulumi-any-terraform/providers/portainer/functions/get-recommendations)
+- [getRegistry](/pulumi-any-terraform/providers/portainer/functions/get-registry)
+- [getRegistryAccess](/pulumi-any-terraform/providers/portainer/functions/get-registry-access)
+- [getRegistryConnection](/pulumi-any-terraform/providers/portainer/functions/get-registry-connection)
+- [getRole](/pulumi-any-terraform/providers/portainer/functions/get-role)
+- [getSettingsPublic](/pulumi-any-terraform/providers/portainer/functions/get-settings-public)
+- [getSharedGitCredential](/pulumi-any-terraform/providers/portainer/functions/get-shared-git-credential)
+- [getStack](/pulumi-any-terraform/providers/portainer/functions/get-stack)
+- [getStackConversion](/pulumi-any-terraform/providers/portainer/functions/get-stack-conversion)
+- [getSystem](/pulumi-any-terraform/providers/portainer/functions/get-system)
+- [getTag](/pulumi-any-terraform/providers/portainer/functions/get-tag)
+- [getTeam](/pulumi-any-terraform/providers/portainer/functions/get-team)
+- [getTeamMembership](/pulumi-any-terraform/providers/portainer/functions/get-team-membership)
+- [getTeamMemberships](/pulumi-any-terraform/providers/portainer/functions/get-team-memberships)
+- [getUser](/pulumi-any-terraform/providers/portainer/functions/get-user)
+- [getUserAccess](/pulumi-any-terraform/providers/portainer/functions/get-user-access)
+- [getUserActivity](/pulumi-any-terraform/providers/portainer/functions/get-user-activity)
+- [getUserNamespaces](/pulumi-any-terraform/providers/portainer/functions/get-user-namespaces)
+- [getWebhook](/pulumi-any-terraform/providers/portainer/functions/get-webhook)

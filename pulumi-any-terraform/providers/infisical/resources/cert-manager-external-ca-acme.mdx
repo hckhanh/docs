@@ -1,0 +1,48 @@
+---
+title: "CertManagerExternalCaAcme"
+description: "Resource CertManagerExternalCaAcme in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource CertManagerExternalCaAcme in pulumi-infisical.
+
+Pulumi type: `infisical:index/certManagerExternalCaAcme:CertManagerExternalCaAcme`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.CertManagerExternalCaAcme(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accountEmail` | `string` | yes | The email address for ACME account registration |
+| `directoryUrl` | `string` | yes | The ACME directory URL |
+| `dnsAppConnectionId` | `string` | yes | The ID of the DNS app connection for ACME challenge validation |
+| `dnsHostedZoneId` | `string` | no | The hosted zone ID for DNS-01 challenge validation |
+| `dnsProvider` | `string` | yes | The DNS provider for ACME challenge validation. Supported values: route53, cloudflare, dns-made-easy |
+| `eabHmacKey` | `string` | no | External Account Binding (EAB) HMAC key (optional) |
+| `eabKid` | `string` | no | External Account Binding (EAB) Key ID (optional) |
+| `name` | `string` | no | The name of the ACME CA |
+| `status` | `string` | no | The status of the CA. Supported values: active, disabled. Defaults to 'active'. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `accountEmail` | `string` | no | The email address for ACME account registration |
+| `directoryUrl` | `string` | no | The ACME directory URL |
+| `dnsAppConnectionId` | `string` | no | The ID of the DNS app connection for ACME challenge validation |
+| `dnsHostedZoneId` | `string` | no | The hosted zone ID for DNS-01 challenge validation |
+| `dnsProvider` | `string` | no | The DNS provider for ACME challenge validation. Supported values: route53, cloudflare, dns-made-easy |
+| `eabHmacKey` | `string` | no | External Account Binding (EAB) HMAC key (optional) |
+| `eabKid` | `string` | no | External Account Binding (EAB) Key ID (optional) |
+| `name` | `string` | no | The name of the ACME CA |
+| `status` | `string` | no | The status of the CA. Supported values: active, disabled. Defaults to 'active'. |

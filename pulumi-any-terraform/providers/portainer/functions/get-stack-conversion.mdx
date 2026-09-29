@@ -1,0 +1,37 @@
+---
+title: "getStackConversion"
+description: "Function getStackConversion in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getStackConversion in pulumi-portainer.
+
+Invoke token: `portainer:index/getStackConversion:getStackConversion`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getStackConversion(args)`.
+
+`getStackConversionOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `namespace` | `string` | no |  |
+| `stackId` | `number` | yes |  |
+| `targetFormat` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `files` | `{ [key: string]: string }` | yes |  |
+| `id` | `string` | yes |  |
+| `namespace` | `string` | no |  |
+| `stackId` | `number` | yes |  |
+| `targetFormat` | `string` | yes |  |

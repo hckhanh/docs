@@ -1,0 +1,55 @@
+---
+title: "getConnection"
+description: "Function getConnection in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Function getConnection in pulumi-logtail.
+
+Invoke token: `logtail:index/getConnection:getConnection`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Call `logtail.getConnection(args)`.
+
+`getConnectionOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `clientType` | `string` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `createdBy` | `{ [key: string]: string }` | yes |  |
+| `dataRegion` | `string` | yes |  |
+| `dataSources` | `GetConnectionDataSource[]` | yes |  |
+| `host` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `ipAllowlists` | `string[]` | yes |  |
+| `note` | `string` | yes |  |
+| `port` | `number` | yes |  |
+| `sampleQuery` | `string` | yes |  |
+| `teamIds` | `number[]` | yes |  |
+| `teamNames` | `string[]` | yes |  |
+| `username` | `string` | yes |  |
+| `validUntil` | `string` | yes |  |
+
+## `GetConnectionDataSource`
+
+Output object `GetConnectionDataSource`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `dataSources` | `string[]` | no |  |
+| `sourceId` | `number` | no |  |
+| `sourceName` | `string` | no |  |
+| `teamName` | `string` | no |  |

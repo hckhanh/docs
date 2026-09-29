@@ -1,0 +1,62 @@
+---
+title: "getProjectUser"
+description: "Function getProjectUser in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Function getProjectUser in pulumi-infisical.
+
+Invoke token: `infisical:index/getProjectUser:getProjectUser`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Call `infisical.getProjectUser(args)`.
+
+`getProjectUserOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `projectId` | `string` | yes |  |
+| `userId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `membershipId` | `string` | yes |  |
+| `projectId` | `string` | yes |  |
+| `roles` | `GetProjectUserRole[]` | yes |  |
+| `user` | `GetProjectUserUser` | yes |  |
+| `userId` | `string` | yes |  |
+| `username` | `string` | yes |  |
+
+## `GetProjectUserRole`
+
+Output object `GetProjectUserRole`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `customRoleId` | `string` | yes | The ID of the custom role, if applicable. |
+| `id` | `string` | yes | The ID of the project user role. |
+| `isTemporary` | `boolean` | yes | Flag to indicate whether the assigned role is temporary. |
+| `roleSlug` | `string` | yes | The slug of the role. |
+| `temporaryAccessEndTime` | `string` | yes | ISO time at which temporary access ends. Null for permanent roles. |
+| `temporaryAccessStartTime` | `string` | yes | ISO time at which temporary access begins. Null for permanent roles. |
+| `temporaryMode` | `string` | yes | Type of temporary access given. Null for permanent roles. |
+| `temporaryRange` | `string` | yes | TTL for the temporary access. Null for permanent roles. |
+
+## `GetProjectUserUser`
+
+Output object `GetProjectUserUser`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | yes | The email of the user |
+| `firstName` | `string` | yes | The first name of the user |
+| `id` | `string` | yes | The id of the user |
+| `lastName` | `string` | yes | The last name of the user |

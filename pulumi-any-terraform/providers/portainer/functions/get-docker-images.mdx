@@ -1,0 +1,50 @@
+---
+title: "getDockerImages"
+description: "Function getDockerImages in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getDockerImages in pulumi-portainer.
+
+Invoke token: `portainer:index/getDockerImages:getDockerImages`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getDockerImages(args)`.
+
+`getDockerImagesOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `withUsage` | `boolean` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `images` | `GetDockerImagesImage[]` | yes |  |
+| `totalSize` | `number` | yes |  |
+| `unusedCount` | `number` | yes |  |
+| `withUsage` | `boolean` | no |  |
+
+## `GetDockerImagesImage`
+
+Output object `GetDockerImagesImage`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `created` | `number` | no |  |
+| `id` | `string` | no |  |
+| `nodeName` | `string` | no |  |
+| `size` | `number` | no |  |
+| `tags` | `string[]` | no |  |
+| `used` | `boolean` | no |  |

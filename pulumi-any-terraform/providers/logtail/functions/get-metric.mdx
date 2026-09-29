@@ -1,0 +1,36 @@
+---
+title: "getMetric"
+description: "Function getMetric in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Function getMetric in pulumi-logtail.
+
+Invoke token: `logtail:index/getMetric:getMetric`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Call `logtail.getMetric(args)`.
+
+`getMetricOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes |  |
+| `sourceId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `aggregations` | `string[]` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `sourceId` | `string` | yes |  |
+| `sqlExpression` | `string` | yes |  |
+| `type` | `string` | yes |  |

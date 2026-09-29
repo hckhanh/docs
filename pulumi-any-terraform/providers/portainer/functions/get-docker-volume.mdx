@@ -1,0 +1,36 @@
+---
+title: "getDockerVolume"
+description: "Function getDockerVolume in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getDockerVolume in pulumi-portainer.
+
+Invoke token: `portainer:index/getDockerVolume:getDockerVolume`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getDockerVolume(args)`.
+
+`getDockerVolumeOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `driver` | `string` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `mountPoint` | `string` | yes |  |
+| `name` | `string` | yes |  |

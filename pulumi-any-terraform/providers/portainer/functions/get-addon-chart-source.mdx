@@ -1,0 +1,40 @@
+---
+title: "getAddonChartSource"
+description: "Function getAddonChartSource in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getAddonChartSource in pulumi-portainer.
+
+Invoke token: `portainer:index/getAddonChartSource:getAddonChartSource`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getAddonChartSource(args)`.
+
+`getAddonChartSourceOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | yes |  |
+| `chart` | `string` | no |  |
+| `id` | `string` | no |  |
+| `registryId` | `number` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addonId` | `string` | yes |  |
+| `chart` | `string` | no |  |
+| `id` | `string` | yes |  |
+| `reachable` | `boolean` | yes |  |
+| `reason` | `string` | yes |  |
+| `registryId` | `number` | no |  |
+| `tlsVerify` | `boolean` | yes |  |
+| `versions` | `string[]` | yes |  |

@@ -1,0 +1,61 @@
+---
+title: "AppConnectionAzureAppConfiguration"
+description: "Resource AppConnectionAzureAppConfiguration in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionAzureAppConfiguration in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionAzureAppConfiguration:AppConnectionAzureAppConfiguration`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionAzureAppConfiguration(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionAzureAppConfigurationCredentials (input)` | yes | The credentials for the Azure App Configuration App Connection |
+| `description` | `string` | no | An optional description for the Azure App Configuration App Connection. |
+| `method` | `string` | yes | The method used to authenticate with Azure App Configuration. Possible values are: client-secret |
+| `name` | `string` | no | The name of the Azure App Configuration App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionAzureAppConfigurationCredentials (output)` | no | The credentials for the Azure App Configuration App Connection |
+| `credentialsHash` | `string` | yes | The hash of the Azure App Configuration App Connection credentials |
+| `description` | `string` | no | An optional description for the Azure App Configuration App Connection. |
+| `method` | `string` | no | The method used to authenticate with Azure App Configuration. Possible values are: client-secret |
+| `name` | `string` | no | The name of the Azure App Configuration App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionAzureAppConfigurationCredentials (input)`
+
+Input object `AppConnectionAzureAppConfigurationCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clientId` | `string` | yes | The Azure application (client) ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |
+| `clientSecret` | `string` | yes | The Azure client secret. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |
+| `tenantId` | `string` | yes | The Azure Active Directory (AAD) tenant ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |
+
+## `AppConnectionAzureAppConfigurationCredentials (output)`
+
+Output object `AppConnectionAzureAppConfigurationCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `clientId` | `string` | yes | The Azure application (client) ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |
+| `clientSecret` | `string` | yes | The Azure client secret. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |
+| `tenantId` | `string` | yes | The Azure Active Directory (AAD) tenant ID. Required for client-secret method. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/azure-app-configuration |

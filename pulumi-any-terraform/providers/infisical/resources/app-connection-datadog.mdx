@@ -1,0 +1,61 @@
+---
+title: "AppConnectionDatadog"
+description: "Resource AppConnectionDatadog in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionDatadog in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionDatadog:AppConnectionDatadog`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionDatadog(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionDatadogCredentials (input)` | yes | The credentials for the Datadog App Connection |
+| `description` | `string` | no | An optional description for the Datadog App Connection. |
+| `method` | `string` | yes | The method used to authenticate with Datadog. Possible values are: api-key |
+| `name` | `string` | no | The name of the Datadog App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionDatadogCredentials (output)` | no | The credentials for the Datadog App Connection |
+| `credentialsHash` | `string` | yes | The hash of the Datadog App Connection credentials |
+| `description` | `string` | no | An optional description for the Datadog App Connection. |
+| `method` | `string` | no | The method used to authenticate with Datadog. Possible values are: api-key |
+| `name` | `string` | no | The name of the Datadog App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionDatadogCredentials (input)`
+
+Input object `AppConnectionDatadogCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `apiKey` | `string` | yes | The Datadog API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |
+| `applicationKey` | `string` | yes | The Datadog application key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |
+| `url` | `string` | yes | The Datadog API URL for your site (e.g. https://api.datadoghq.com). For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |
+
+## `AppConnectionDatadogCredentials (output)`
+
+Output object `AppConnectionDatadogCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `apiKey` | `string` | yes | The Datadog API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |
+| `applicationKey` | `string` | yes | The Datadog application key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |
+| `url` | `string` | yes | The Datadog API URL for your site (e.g. https://api.datadoghq.com). For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/datadog |

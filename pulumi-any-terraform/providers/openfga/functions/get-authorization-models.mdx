@@ -1,0 +1,40 @@
+---
+title: "getAuthorizationModels"
+description: "Function getAuthorizationModels in pulumi-openfga."
+---
+
+<!-- Generated from the pulumi-openfga SDK. -->
+
+Function getAuthorizationModels in pulumi-openfga.
+
+Invoke token: `openfga:index/getAuthorizationModels:getAuthorizationModels`.
+
+```ts
+import * as openfga from "pulumi-openfga"
+```
+
+Call `openfga.getAuthorizationModels(args)`.
+
+`getAuthorizationModelsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `storeId` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authorizationModels` | `GetAuthorizationModelsAuthorizationModel[]` | yes |  |
+| `storeId` | `string` | yes |  |
+
+## `GetAuthorizationModelsAuthorizationModel`
+
+Output object `GetAuthorizationModelsAuthorizationModel`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes | The unique ID of the authorization model. |
+| `modelJson` | `string` | yes | The authorization model definition in JSON format. |

@@ -1,0 +1,36 @@
+---
+title: "getEdgeUpdateScheduleInfo"
+description: "Function getEdgeUpdateScheduleInfo in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getEdgeUpdateScheduleInfo in pulumi-portainer.
+
+Invoke token: `portainer:index/getEdgeUpdateScheduleInfo:getEdgeUpdateScheduleInfo`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getEdgeUpdateScheduleInfo(args)`.
+
+`getEdgeUpdateScheduleInfoOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `agentVersions` | `string[]` | yes |  |
+| `hasLocalTimeZone` | `boolean` | yes |  |
+| `hasNoLocalTimeZone` | `boolean` | yes |  |
+| `id` | `string` | yes |  |
+| `minimumAgentVersion` | `string` | yes |  |
+| `outdatedCount` | `number` | yes |  |
+| `upToDateCount` | `number` | yes |  |

@@ -1,0 +1,97 @@
+---
+title: "ErrorsApplication"
+description: "Resource ErrorsApplication in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource ErrorsApplication in pulumi-logtail.
+
+Pulumi type: `logtail:index/errorsApplication:ErrorsApplication`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.ErrorsApplication(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `applicationGroupId` | `number` | no | ID of the application group this application belongs to. Set to `0` to remove from a group. |
+| `codeMappingSourceRoot` | `string` | no | Source code root path that replaces the stack trace root prefix. Used to map container or build paths to the corresponding repository paths for git blame. |
+| `codeMappingStackRoot` | `string` | no | Stack trace root path prefix to match. When a stack trace file starts with this prefix, it will be replaced with the source code root to map to the correct repository path. |
+| `correlateWithSourceId` | `number` | no | ID of an existing source to correlate errors from this application with, for log and trace correlation. Cannot be changed after the application is created. |
+| `customBucket` | `ErrorsApplicationCustomBucket (input)` | no | Optional custom S3-compatible bucket configuration for the application. Can only be set when creating the application and cannot be added, changed, or removed afterwards - recreate the application to use a different bucket. Better Stack validates the credentials by writing and reading a test object in the bucket during creation. |
+| `dataRegion` | `string` | no | Data region or private cluster name to create the application in. Permitted values for most plans are: 'usWest', 'germany', 'singapore'. This value can only be set at creation time and cannot be changed afterwards. The API returns the specific cluster name, which may differ from the value you provide (for example, 'germany' may read back as 'eu-nbg-2').\ When importing an existing application, leave 'dataRegion' unset in your configuration - Terraform reads it from the API. Pinning it to an identifier that differs from the stored cluster name produces a spurious 'dataRegion' cannot be changed after application is created' error. |
+| `errorsRetention` | `number` | no | Error data retention period in days. Default retention is 90 days. |
+| `githubRepositoryName` | `string` | no | Full name of a GitHub repository (e.g. `owner/repo`) to connect to this application for source links, git blame, and AI-assisted fixes. The repository must already be connected to your team's GitHub integration. Set to an empty string to disconnect. Mutually exclusive with `gitlabRepositoryName`. |
+| `gitlabRepositoryName` | `string` | no | Full name of a GitLab repository (e.g. `group/project`) to connect to this application for source links, git blame, and AI-assisted fixes. The repository must already be connected to your team's GitLab integration. Set to an empty string to disconnect. Mutually exclusive with `githubRepositoryName`. |
+| `ingestingPaused` | `boolean` | no | This property allows you to temporarily pause data ingesting for this application. |
+| `name` | `string` | no | Application name. Must be unique within your team. |
+| `platform` | `string` | yes | The platform type for the application. This helps configure appropriate SDKs and integrations. You can't update this value later. Valid values are: - `aiohttpErrors` - `androidErrors` - `angularErrors` - `asgiErrors` - `aspDotNetCoreErrors` - `aspDotNetErrors` - `astroErrors` - `awsLambdaDotNetErrors` - `awsLambdaNodeErrors` - `awsLambdaPythonErrors` - `azureFunctionsNodeErrors` - `bottleErrors` - `bunErrors` - `celeryErrors` - `chaliceErrors` - `cliErrors` - `cloudflarePagesErrors` - `connectErrors` - `dartErrors` - `denoErrors` - `djangoErrors` - `dotNetErrors` - `dotNetHttpErrors` - `dotNetMauiErrors` - `echoErrors` - `electronErrors` - `elixirErrors` - `emberErrors` - `expressErrors` - `falconErrors` - `fastapiErrors` - `fasthttpErrors` - `fastifyErrors` - `fiberErrors` - `flaskErrors` - `flutterErrors` - `gatsbyErrors` - `ginErrors` - `goErrors` - `godotErrors` - `googleCloudFunctionDotNetErrors` - `googleCloudFunctionNodeErrors` - `googleCloudFunctionPythonErrors` - `hapiErrors` - `iosErrors` - `irisErrors` - `javaErrors` - `javascriptErrors` - `koaErrors` - `kotlinErrors` - `laravelErrors` - `log4jErrors` - `logbackErrors` - `macosErrors` - `minidumpErrors` - `nativeErrors` - `negroniErrors` - `nestJsErrors` - `nextJsErrors` - `nodeErrors` - `nuxtErrors` - `phpErrors` - `powershellErrors` - `pyramidErrors` - `pythonErrors` - `qtErrors` - `quartErrors` - `rackMiddlewareErrors` - `railsErrors` - `reactErrors` - `reactNativeErrors` - `reactRouterFrameworkErrors` - `remixErrors` - `rqErrors` - `rubyErrors` - `rustErrors` - `sanicErrors` - `serverlessPythonErrors` - `solidErrors` - `solidstartErrors` - `springBootErrors` - `springErrors` - `starletteErrors` - `svelteErrors` - `sveltekitErrors` - `symfonyErrors` - `tanstackStartReactErrors` - `tornadoErrors` - `trytonErrors` - `unityErrors` - `unrealEngineErrors` - `vueErrors` - `windowsFormsErrors` - `wpfErrors` - `wsgiErrors` |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `vrlTransformationExceptions` | `string` | no | VRL transformation applied to exceptions on Better Stack's servers during ingestion. This is what controls how exceptions are grouped into errors. Leave unset to keep the grouping unmanaged - the attribute reads back the effective program, including the default grouping for the application's platform. Set to an empty string to remove the grouping program entirely (exceptions stop being grouped by it - this is rarely what you want; to return to the default grouping, use the application's Exception grouping editor). Read more about [customizing exception grouping](https://betterstack.com/docs/errors/using-the-product/exception-grouping/#customize-exception-grouping). |
+| `vrlTransformationLogs` | `string` | no | VRL transformation applied to logs on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationReplays` | `string` | no | VRL transformation applied to session replays on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationSpans` | `string` | no | VRL transformation applied to traces (spans) on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationWebEvents` | `string` | no | VRL transformation applied to web events (page views and web vitals) on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `applicationGroupId` | `number` | no | ID of the application group this application belongs to. Set to `0` to remove from a group. |
+| `codeMappingSourceRoot` | `string` | no | Source code root path that replaces the stack trace root prefix. Used to map container or build paths to the corresponding repository paths for git blame. |
+| `codeMappingStackRoot` | `string` | no | Stack trace root path prefix to match. When a stack trace file starts with this prefix, it will be replaced with the source code root to map to the correct repository path. |
+| `correlateWithSourceId` | `number` | no | ID of an existing source to correlate errors from this application with, for log and trace correlation. Cannot be changed after the application is created. |
+| `createdAt` | `string` | yes | The time when this application was created. |
+| `customBucket` | `ErrorsApplicationCustomBucket (output)` | no | Optional custom S3-compatible bucket configuration for the application. Can only be set when creating the application and cannot be added, changed, or removed afterwards - recreate the application to use a different bucket. Better Stack validates the credentials by writing and reading a test object in the bucket during creation. |
+| `dataRegion` | `string` | no | Data region or private cluster name to create the application in. Permitted values for most plans are: 'usWest', 'germany', 'singapore'. This value can only be set at creation time and cannot be changed afterwards. The API returns the specific cluster name, which may differ from the value you provide (for example, 'germany' may read back as 'eu-nbg-2').\ When importing an existing application, leave 'dataRegion' unset in your configuration - Terraform reads it from the API. Pinning it to an identifier that differs from the stored cluster name produces a spurious 'dataRegion' cannot be changed after application is created' error. |
+| `errorsRetention` | `number` | no | Error data retention period in days. Default retention is 90 days. |
+| `githubRepositoryName` | `string` | no | Full name of a GitHub repository (e.g. `owner/repo`) to connect to this application for source links, git blame, and AI-assisted fixes. The repository must already be connected to your team's GitHub integration. Set to an empty string to disconnect. Mutually exclusive with `gitlabRepositoryName`. |
+| `gitlabRepositoryName` | `string` | no | Full name of a GitLab repository (e.g. `group/project`) to connect to this application for source links, git blame, and AI-assisted fixes. The repository must already be connected to your team's GitLab integration. Set to an empty string to disconnect. Mutually exclusive with `githubRepositoryName`. |
+| `ingestingHost` | `string` | yes | The host where the errors should be sent. See documentation for your specific platform for details. |
+| `ingestingPaused` | `boolean` | no | This property allows you to temporarily pause data ingesting for this application. |
+| `jsTagToken` | `string` | yes | The public JavaScript tag token embedded in the browser snippet for RUM and browser-side error tracking. Distinct from `token`, which is used for server-side data ingestion. |
+| `name` | `string` | no | Application name. Must be unique within your team. |
+| `platform` | `string` | no | The platform type for the application. This helps configure appropriate SDKs and integrations. You can't update this value later. Valid values are: - `aiohttpErrors` - `androidErrors` - `angularErrors` - `asgiErrors` - `aspDotNetCoreErrors` - `aspDotNetErrors` - `astroErrors` - `awsLambdaDotNetErrors` - `awsLambdaNodeErrors` - `awsLambdaPythonErrors` - `azureFunctionsNodeErrors` - `bottleErrors` - `bunErrors` - `celeryErrors` - `chaliceErrors` - `cliErrors` - `cloudflarePagesErrors` - `connectErrors` - `dartErrors` - `denoErrors` - `djangoErrors` - `dotNetErrors` - `dotNetHttpErrors` - `dotNetMauiErrors` - `echoErrors` - `electronErrors` - `elixirErrors` - `emberErrors` - `expressErrors` - `falconErrors` - `fastapiErrors` - `fasthttpErrors` - `fastifyErrors` - `fiberErrors` - `flaskErrors` - `flutterErrors` - `gatsbyErrors` - `ginErrors` - `goErrors` - `godotErrors` - `googleCloudFunctionDotNetErrors` - `googleCloudFunctionNodeErrors` - `googleCloudFunctionPythonErrors` - `hapiErrors` - `iosErrors` - `irisErrors` - `javaErrors` - `javascriptErrors` - `koaErrors` - `kotlinErrors` - `laravelErrors` - `log4jErrors` - `logbackErrors` - `macosErrors` - `minidumpErrors` - `nativeErrors` - `negroniErrors` - `nestJsErrors` - `nextJsErrors` - `nodeErrors` - `nuxtErrors` - `phpErrors` - `powershellErrors` - `pyramidErrors` - `pythonErrors` - `qtErrors` - `quartErrors` - `rackMiddlewareErrors` - `railsErrors` - `reactErrors` - `reactNativeErrors` - `reactRouterFrameworkErrors` - `remixErrors` - `rqErrors` - `rubyErrors` - `rustErrors` - `sanicErrors` - `serverlessPythonErrors` - `solidErrors` - `solidstartErrors` - `springBootErrors` - `springErrors` - `starletteErrors` - `svelteErrors` - `sveltekitErrors` - `symfonyErrors` - `tanstackStartReactErrors` - `tornadoErrors` - `trytonErrors` - `unityErrors` - `unrealEngineErrors` - `vueErrors` - `windowsFormsErrors` - `wpfErrors` - `wsgiErrors` |
+| `tableName` | `string` | yes | The table name generated for this application. |
+| `teamId` | `string` | yes | The team ID for this resource. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `token` | `string` | yes | The token of this application. This token is used to identify and route the data you will send to Better Stack. |
+| `updatedAt` | `string` | yes | The time when this application was updated. |
+| `vrlTransformationExceptions` | `string` | no | VRL transformation applied to exceptions on Better Stack's servers during ingestion. This is what controls how exceptions are grouped into errors. Leave unset to keep the grouping unmanaged - the attribute reads back the effective program, including the default grouping for the application's platform. Set to an empty string to remove the grouping program entirely (exceptions stop being grouped by it - this is rarely what you want; to return to the default grouping, use the application's Exception grouping editor). Read more about [customizing exception grouping](https://betterstack.com/docs/errors/using-the-product/exception-grouping/#customize-exception-grouping). |
+| `vrlTransformationLogs` | `string` | no | VRL transformation applied to logs on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationReplays` | `string` | no | VRL transformation applied to session replays on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationSpans` | `string` | no | VRL transformation applied to traces (spans) on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+| `vrlTransformationWebEvents` | `string` | no | VRL transformation applied to web events (page views and web vitals) on Better Stack's servers during ingestion. Leave unset to keep the transformation unmanaged; set to an empty string to remove it. Read more about [VRL transformations](https://betterstack.com/docs/logs/using-logtail/transforming-ingested-data/logs-vrl/). |
+
+## `ErrorsApplicationCustomBucket (input)`
+
+Input object `ErrorsApplicationCustomBucket`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Access key ID |
+| `endpoint` | `string` | yes | Bucket endpoint including the bucket name, e.g. `https://s3.us-east-1.amazonaws.com/my-bucket` or `https://my-bucket.s3.us-east-1.amazonaws.com`. |
+| `keepDataAfterRetention` | `boolean` | no | Whether we should keep data in the bucket after the retention period. |
+| `name` | `string` | no | Bucket name derived from `endpoint`. Deprecated - do not set this attribute. |
+| `secretAccessKey` | `string` | yes | Secret access key |
+
+## `ErrorsApplicationCustomBucket (output)`
+
+Output object `ErrorsApplicationCustomBucket`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKeyId` | `string` | yes | Access key ID |
+| `endpoint` | `string` | yes | Bucket endpoint including the bucket name, e.g. `https://s3.us-east-1.amazonaws.com/my-bucket` or `https://my-bucket.s3.us-east-1.amazonaws.com`. |
+| `keepDataAfterRetention` | `boolean` | no | Whether we should keep data in the bucket after the retention period. |
+| `name` | `string` | yes | Bucket name derived from `endpoint`. Deprecated - do not set this attribute. |
+| `secretAccessKey` | `string` | yes | Secret access key |

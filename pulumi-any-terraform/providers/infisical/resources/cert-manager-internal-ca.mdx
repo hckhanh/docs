@@ -1,0 +1,50 @@
+---
+title: "CertManagerInternalCa"
+description: "Resource CertManagerInternalCa in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource CertManagerInternalCa in pulumi-infisical.
+
+Pulumi type: `infisical:index/certManagerInternalCa:CertManagerInternalCa`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.CertManagerInternalCa(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `commonName` | `string` | no | The common name (CN) of the CA certificate |
+| `country` | `string` | no | The country (C) of the CA certificate |
+| `keyAlgorithm` | `string` | no | The key algorithm for the CA. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1. Defaults to 'RSA_2048'. |
+| `locality` | `string` | no | The locality (L) of the CA certificate |
+| `name` | `string` | no | The name of the CA |
+| `organization` | `string` | no | The organization (O) of the CA certificate |
+| `ou` | `string` | no | The organizational unit (OU) of the CA certificate |
+| `province` | `string` | no | The state/province (ST) of the CA certificate |
+| `status` | `string` | no | The status of the CA. Supported values: active, disabled. Defaults to 'active'. |
+| `type` | `string` | yes | The type of the CA. Supported values: root, intermediate |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `commonName` | `string` | no | The common name (CN) of the CA certificate |
+| `country` | `string` | no | The country (C) of the CA certificate |
+| `keyAlgorithm` | `string` | no | The key algorithm for the CA. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1. Defaults to 'RSA_2048'. |
+| `locality` | `string` | no | The locality (L) of the CA certificate |
+| `name` | `string` | no | The name of the CA |
+| `organization` | `string` | no | The organization (O) of the CA certificate |
+| `ou` | `string` | no | The organizational unit (OU) of the CA certificate |
+| `province` | `string` | no | The state/province (ST) of the CA certificate |
+| `status` | `string` | no | The status of the CA. Supported values: active, disabled. Defaults to 'active'. |
+| `type` | `string` | no | The type of the CA. Supported values: root, intermediate |

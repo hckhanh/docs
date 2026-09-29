@@ -1,0 +1,64 @@
+---
+title: "KubernetesNamespaceIngresscontrollers"
+description: "Resource KubernetesNamespaceIngresscontrollers in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesNamespaceIngresscontrollers in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesNamespaceIngresscontrollers:KubernetesNamespaceIngresscontrollers`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesNamespaceIngresscontrollers(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `controllers` | `KubernetesNamespaceIngresscontrollersController (input)[]` | yes | List of ingress controllers allowed for the namespace. |
+| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment hosting the namespace. |
+| `kubernetesNamespaceIngresscontrollersId` | `string` | no |  |
+| `namespace` | `string` | yes | Kubernetes namespace whose ingress controller allow-list is being configured. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `controllers` | `KubernetesNamespaceIngresscontrollersController (output)[]` | no | List of ingress controllers allowed for the namespace. |
+| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment hosting the namespace. |
+| `kubernetesNamespaceIngresscontrollersId` | `string` | no |  |
+| `namespace` | `string` | no | Kubernetes namespace whose ingress controller allow-list is being configured. |
+
+## `KubernetesNamespaceIngresscontrollersController (input)`
+
+Input object `KubernetesNamespaceIngresscontrollersController`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `availability` | `boolean` | yes | Whether the controller is available for selection in the namespace. |
+| `className` | `string` | yes | Kubernetes IngressClass name associated with the controller. |
+| `name` | `string` | yes | Display name of the ingress controller in Portainer. |
+| `new` | `boolean` | yes | Whether Portainer should treat this entry as a newly-registered controller. |
+| `type` | `string` | yes | Type of the ingress controller (for example `nginx`, `traefik`, `custom`). |
+| `used` | `boolean` | yes | Whether the controller is currently in use by workloads in the namespace. |
+
+## `KubernetesNamespaceIngresscontrollersController (output)`
+
+Output object `KubernetesNamespaceIngresscontrollersController`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `availability` | `boolean` | yes | Whether the controller is available for selection in the namespace. |
+| `className` | `string` | yes | Kubernetes IngressClass name associated with the controller. |
+| `name` | `string` | yes | Display name of the ingress controller in Portainer. |
+| `new` | `boolean` | yes | Whether Portainer should treat this entry as a newly-registered controller. |
+| `type` | `string` | yes | Type of the ingress controller (for example `nginx`, `traefik`, `custom`). |
+| `used` | `boolean` | yes | Whether the controller is currently in use by workloads in the namespace. |

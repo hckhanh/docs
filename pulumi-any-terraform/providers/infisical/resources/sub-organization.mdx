@@ -1,0 +1,35 @@
+---
+title: "SubOrganization"
+description: "Resource SubOrganization in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource SubOrganization in pulumi-infisical.
+
+Pulumi type: `infisical:index/subOrganization:SubOrganization`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.SubOrganization(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of the sub-organization. |
+| `slug` | `string` | no | The slug of the sub-organization. If omitted when the sub-organization is first created, Infisical generates one from the name. Changing this value updates the sub-organization. Once a slug is set, removing it from your configuration does not regenerate it; the existing value is retained. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of the sub-organization. |
+| `parentOrgId` | `string` | yes | The ID of the parent (root) organization. |
+| `slug` | `string` | no | The slug of the sub-organization. If omitted when the sub-organization is first created, Infisical generates one from the name. Changing this value updates the sub-organization. Once a slug is set, removing it from your configuration does not regenerate it; the existing value is retained. |

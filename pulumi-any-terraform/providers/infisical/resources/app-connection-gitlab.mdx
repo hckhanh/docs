@@ -1,0 +1,61 @@
+---
+title: "AppConnectionGitlab"
+description: "Resource AppConnectionGitlab in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionGitlab in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionGitlab:AppConnectionGitlab`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionGitlab(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionGitlabCredentials (input)` | yes | The credentials for the GitLab App Connection |
+| `description` | `string` | no | An optional description for the GitLab App Connection. |
+| `method` | `string` | yes | The method used to authenticate with GitLab. Possible values are: access-token |
+| `name` | `string` | no | The name of the GitLab App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionGitlabCredentials (output)` | no | The credentials for the GitLab App Connection |
+| `credentialsHash` | `string` | yes | The hash of the GitLab App Connection credentials |
+| `description` | `string` | no | An optional description for the GitLab App Connection. |
+| `method` | `string` | no | The method used to authenticate with GitLab. Possible values are: access-token |
+| `name` | `string` | no | The name of the GitLab App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionGitlabCredentials (input)`
+
+Input object `AppConnectionGitlabCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessToken` | `string` | yes | The Access Token used to access GitLab. |
+| `accessTokenType` | `string` | yes | The type of token used to connect with GitLab. Supported options: 'project', 'personal', and 'group' |
+| `instanceUrl` | `string` | no | The GitLab instance URL to connect with. (default: https://gitlab.com) |
+
+## `AppConnectionGitlabCredentials (output)`
+
+Output object `AppConnectionGitlabCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessToken` | `string` | yes | The Access Token used to access GitLab. |
+| `accessTokenType` | `string` | yes | The type of token used to connect with GitLab. Supported options: 'project', 'personal', and 'group' |
+| `instanceUrl` | `string` | no | The GitLab instance URL to connect with. (default: https://gitlab.com) |

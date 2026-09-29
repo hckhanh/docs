@@ -1,0 +1,44 @@
+---
+title: "StorageFile"
+description: "Resource StorageFile in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource StorageFile in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/storageFile:StorageFile`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.StorageFile(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no | The to be stored in the file. Use &lt;code&gt;source&lt;/code&gt; to upload files from the local disk. |
+| `contentType` | `string` | no | Specifies the content type of the file. |
+| `path` | `string` | yes | The path of the file within the storage zone. |
+| `source` | `string` | no | The path in the local disk for the file to be uploaded to the storage zone. Use &lt;code&gt;content&lt;/code&gt; to define the content directly. |
+| `zone` | `number` | yes | The ID of the storage zone where the file is stored. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `checksum` | `string` | yes | The SHA-256 hash of the stored file. |
+| `content` | `string` | no | The to be stored in the file. Use &lt;code&gt;source&lt;/code&gt; to upload files from the local disk. |
+| `contentType` | `string` | no | Specifies the content type of the file. |
+| `dateCreated` | `string` | yes | The date and time when the file was created. |
+| `dateModified` | `string` | yes | The date and time when the file was last modified. |
+| `path` | `string` | no | The path of the file within the storage zone. |
+| `size` | `number` | yes | The size of the file in bytes. |
+| `source` | `string` | no | The path in the local disk for the file to be uploaded to the storage zone. Use &lt;code&gt;content&lt;/code&gt; to define the content directly. |
+| `zone` | `number` | no | The ID of the storage zone where the file is stored. |

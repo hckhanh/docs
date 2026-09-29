@@ -1,0 +1,33 @@
+---
+title: "OrganizationBanner"
+description: "Resource OrganizationBanner in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource OrganizationBanner in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/organizationBanner:OrganizationBanner`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.OrganizationBanner(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `message` | `string` | yes | The organization banner's message. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `message` | `string` | no | The organization banner's message. |
+| `uuid` | `string` | yes | The UUID of the organization banner. |

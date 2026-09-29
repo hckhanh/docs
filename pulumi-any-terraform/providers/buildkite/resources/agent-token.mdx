@@ -1,0 +1,34 @@
+---
+title: "AgentToken"
+description: "Resource AgentToken in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource AgentToken in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/agentToken:AgentToken`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.AgentToken(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | The description of the agent token. Used to help identify its use. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | The description of the agent token. Used to help identify its use. |
+| `token` | `string` | yes | The token value used by an agent to register with the API. |
+| `uuid` | `string` | yes | The UUID of the agent token. |

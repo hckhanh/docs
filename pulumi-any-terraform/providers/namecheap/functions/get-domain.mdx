@@ -1,0 +1,58 @@
+---
+title: "getDomain"
+description: "Function getDomain in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Function getDomain in pulumi-namecheap.
+
+Invoke token: `namecheap:index/getDomain:getDomain`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Call `namecheap.getDomain(args)`.
+
+`getDomainOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoRenew` | `boolean` | yes |  |
+| `created` | `string` | yes |  |
+| `dnsProviderType` | `string` | yes |  |
+| `domain` | `string` | yes |  |
+| `dynamicDnsStatus` | `boolean` | yes |  |
+| `emailType` | `string` | yes |  |
+| `expires` | `string` | yes |  |
+| `expiresInDays` | `number` | yes |  |
+| `hostCount` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `isExpired` | `boolean` | yes |  |
+| `isFailover` | `boolean` | yes |  |
+| `isLocked` | `boolean` | yes |  |
+| `isOurDns` | `boolean` | yes |  |
+| `isOwner` | `boolean` | yes |  |
+| `isPremium` | `boolean` | yes |  |
+| `isPremiumDns` | `boolean` | yes |  |
+| `modificationRights` | `{ [key: string]: string }` | yes |  |
+| `modificationRightsAll` | `boolean` | yes |  |
+| `nameservers` | `string[]` | yes |  |
+| `ownerName` | `string` | yes |  |
+| `premiumDnsAutoRenew` | `boolean` | yes |  |
+| `premiumDnsExpires` | `string` | yes |  |
+| `status` | `string` | yes |  |
+| `whoisGuard` | `string` | yes |  |
+| `whoisGuardEmail` | `string` | yes |  |
+| `whoisGuardExpires` | `string` | yes |  |
+| `whoisGuardForwardedTo` | `string` | yes |  |

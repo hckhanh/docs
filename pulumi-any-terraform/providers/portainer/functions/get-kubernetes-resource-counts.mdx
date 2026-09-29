@@ -1,0 +1,39 @@
+---
+title: "getKubernetesResourceCounts"
+description: "Function getKubernetesResourceCounts in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getKubernetesResourceCounts in pulumi-portainer.
+
+Invoke token: `portainer:index/getKubernetesResourceCounts:getKubernetesResourceCounts`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getKubernetesResourceCounts(args)`.
+
+`getKubernetesResourceCountsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `applications` | `number` | yes |  |
+| `configMaps` | `number` | yes |  |
+| `endpointId` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `ingresses` | `number` | yes |  |
+| `namespaces` | `number` | yes |  |
+| `secrets` | `number` | yes |  |
+| `services` | `number` | yes |  |
+| `volumes` | `number` | yes |  |

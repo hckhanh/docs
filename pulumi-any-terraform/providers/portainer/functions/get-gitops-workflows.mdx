@@ -1,0 +1,80 @@
+---
+title: "getGitopsWorkflows"
+description: "Function getGitopsWorkflows in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getGitopsWorkflows in pulumi-portainer.
+
+Invoke token: `portainer:index/getGitopsWorkflows:getGitopsWorkflows`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getGitopsWorkflows(args)`.
+
+`getGitopsWorkflowsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `endpointIds` | `number[]` | no |  |
+| `id` | `string` | no |  |
+| `limit` | `number` | no |  |
+| `order` | `string` | no |  |
+| `platform` | `string` | no |  |
+| `search` | `string` | no |  |
+| `sort` | `string` | no |  |
+| `start` | `number` | no |  |
+| `status` | `string` | no |  |
+| `type` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endpointIds` | `number[]` | no |  |
+| `id` | `string` | yes |  |
+| `limit` | `number` | no |  |
+| `order` | `string` | no |  |
+| `platform` | `string` | no |  |
+| `search` | `string` | no |  |
+| `sort` | `string` | no |  |
+| `start` | `number` | no |  |
+| `status` | `string` | no |  |
+| `summaries` | `GetGitopsWorkflowsSummary[]` | yes |  |
+| `type` | `string` | no |  |
+| `workflows` | `GetGitopsWorkflowsWorkflow[]` | yes |  |
+
+## `GetGitopsWorkflowsSummary`
+
+Output object `GetGitopsWorkflowsSummary`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `error` | `number` | no |  |
+| `healthy` | `number` | no |  |
+| `paused` | `number` | no |  |
+| `syncing` | `number` | no |  |
+| `unknown` | `number` | no |  |
+
+## `GetGitopsWorkflowsWorkflow`
+
+Output object `GetGitopsWorkflowsWorkflow`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `artifactError` | `string` | no |  |
+| `artifactStatus` | `string` | no |  |
+| `creationDate` | `number` | no |  |
+| `healthy` | `boolean` | no |  |
+| `id` | `number` | no |  |
+| `lastSyncDate` | `number` | no |  |
+| `name` | `string` | no |  |
+| `sourceError` | `string` | no |  |
+| `sourceStatus` | `string` | no |  |
+| `targetError` | `string` | no |  |
+| `targetStatus` | `string` | no |  |

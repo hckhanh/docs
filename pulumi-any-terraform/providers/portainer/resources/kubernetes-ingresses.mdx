@@ -1,0 +1,92 @@
+---
+title: "KubernetesIngresses"
+description: "Resource KubernetesIngresses in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource KubernetesIngresses in pulumi-portainer.
+
+Pulumi type: `portainer:index/kubernetesIngresses:KubernetesIngresses`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.KubernetesIngresses(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `annotations` | `{ [key: string]: string }` | no | Annotations applied to the Ingress resource as key/value strings. |
+| `className` | `string` | no | Name of the IngressClass that should handle this Ingress (sets `spec.ingressClassName`). |
+| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment where the Ingress resource is managed. |
+| `hosts` | `string[]` | no | List of hostnames associated with the Ingress. |
+| `kubernetesIngressesId` | `string` | no |  |
+| `labels` | `{ [key: string]: string }` | no | Labels applied to the Ingress resource as key/value strings. |
+| `name` | `string` | no | Name of the Kubernetes Ingress resource. |
+| `namespace` | `string` | yes | Kubernetes namespace in which the Ingress is created. |
+| `paths` | `KubernetesIngressesPath (input)[]` | no | List of routing rules mapping host/path combinations to backend Kubernetes services. |
+| `tls` | `KubernetesIngressesTl (input)[]` | no | TLS configuration blocks for the Ingress, each pairing a list of hosts with a TLS secret. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `annotations` | `{ [key: string]: string }` | no | Annotations applied to the Ingress resource as key/value strings. |
+| `className` | `string` | no | Name of the IngressClass that should handle this Ingress (sets `spec.ingressClassName`). |
+| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment where the Ingress resource is managed. |
+| `hosts` | `string[]` | no | List of hostnames associated with the Ingress. |
+| `kubernetesIngressesId` | `string` | no |  |
+| `labels` | `{ [key: string]: string }` | no | Labels applied to the Ingress resource as key/value strings. |
+| `name` | `string` | no | Name of the Kubernetes Ingress resource. |
+| `namespace` | `string` | no | Kubernetes namespace in which the Ingress is created. |
+| `paths` | `KubernetesIngressesPath (output)[]` | no | List of routing rules mapping host/path combinations to backend Kubernetes services. |
+| `tls` | `KubernetesIngressesTl (output)[]` | no | TLS configuration blocks for the Ingress, each pairing a list of hosts with a TLS secret. |
+
+## `KubernetesIngressesPath (input)`
+
+Input object `KubernetesIngressesPath`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `host` | `string` | yes | Hostname matched by this routing rule. |
+| `path` | `string` | yes | URL path matched by this routing rule. |
+| `pathType` | `string` | yes | Path matching strategy (`Exact`, `Prefix`, or `ImplementationSpecific`). |
+| `port` | `number` | yes | Port on the backend Service that traffic is forwarded to. |
+| `serviceName` | `string` | yes | Name of the Kubernetes Service that receives traffic for this rule. |
+
+## `KubernetesIngressesTl (input)`
+
+Input object `KubernetesIngressesTl`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hosts` | `string[]` | no | List of hostnames covered by the referenced TLS secret. |
+| `secretName` | `string` | no | Name of the Kubernetes Secret containing the TLS certificate and key. |
+
+## `KubernetesIngressesPath (output)`
+
+Output object `KubernetesIngressesPath`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `host` | `string` | yes | Hostname matched by this routing rule. |
+| `path` | `string` | yes | URL path matched by this routing rule. |
+| `pathType` | `string` | yes | Path matching strategy (`Exact`, `Prefix`, or `ImplementationSpecific`). |
+| `port` | `number` | yes | Port on the backend Service that traffic is forwarded to. |
+| `serviceName` | `string` | yes | Name of the Kubernetes Service that receives traffic for this rule. |
+
+## `KubernetesIngressesTl (output)`
+
+Output object `KubernetesIngressesTl`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hosts` | `string[]` | no | List of hostnames covered by the referenced TLS secret. |
+| `secretName` | `string` | no | Name of the Kubernetes Secret containing the TLS certificate and key. |

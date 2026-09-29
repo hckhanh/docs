@@ -1,0 +1,92 @@
+---
+title: "Alert"
+description: "Resource Alert in pulumi-posthog."
+---
+
+<!-- Generated from the pulumi-posthog SDK. -->
+
+Resource Alert in pulumi-posthog.
+
+Pulumi type: `posthog:index/alert:Alert`.
+
+```ts
+import * as posthog from "pulumi-posthog"
+```
+
+Construct with `new posthog.Alert(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `calculationInterval` | `string` | no | How often to check the alert: `hourly`, `daily`, `weekly`, or `monthly`. |
+| `checkOngoingInterval` | `boolean` | no | Whether to check the ongoing (incomplete) interval. When false, only completed intervals are checked. |
+| `conditionType` | `string` | yes | Condition type: `absoluteValue`, `relativeIncrease`, or `relativeDecrease`. |
+| `enabled` | `boolean` | no | Whether the alert is enabled. Defaults to true. |
+| `insight` | `number` | yes | ID of the insight this alert monitors. |
+| `name` | `string` | no | Name of the alert. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `scheduleRestriction` | `AlertScheduleRestriction (input)` | no | Quiet hours: local time windows during which the alert is not evaluated. Times use the project timezone. |
+| `seriesIndex` | `number` | yes | Index of the trend series to monitor (0-based). Used for trends alerts. |
+| `skipWeekend` | `boolean` | no | Whether to skip checking the alert on weekends. |
+| `subscribedUsers` | `number[]` | yes | List of user IDs to notify when the alert fires. |
+| `thresholdLower` | `number` | no | Lower bound of the threshold. Alert fires when value goes below this. |
+| `thresholdType` | `string` | yes | Type of threshold: `absolute` for fixed values, `percentage` for relative changes. |
+| `thresholdUpper` | `number` | no | Upper bound of the threshold. Alert fires when value goes above this. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `calculationInterval` | `string` | no | How often to check the alert: `hourly`, `daily`, `weekly`, or `monthly`. |
+| `checkOngoingInterval` | `boolean` | no | Whether to check the ongoing (incomplete) interval. When false, only completed intervals are checked. |
+| `conditionType` | `string` | no | Condition type: `absoluteValue`, `relativeIncrease`, or `relativeDecrease`. |
+| `enabled` | `boolean` | no | Whether the alert is enabled. Defaults to true. |
+| `insight` | `number` | no | ID of the insight this alert monitors. |
+| `name` | `string` | no | Name of the alert. |
+| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
+| `scheduleRestriction` | `AlertScheduleRestriction (output)` | no | Quiet hours: local time windows during which the alert is not evaluated. Times use the project timezone. |
+| `seriesIndex` | `number` | no | Index of the trend series to monitor (0-based). Used for trends alerts. |
+| `skipWeekend` | `boolean` | no | Whether to skip checking the alert on weekends. |
+| `subscribedUsers` | `number[]` | no | List of user IDs to notify when the alert fires. |
+| `thresholdLower` | `number` | no | Lower bound of the threshold. Alert fires when value goes below this. |
+| `thresholdType` | `string` | no | Type of threshold: `absolute` for fixed values, `percentage` for relative changes. |
+| `thresholdUpper` | `number` | no | Upper bound of the threshold. Alert fires when value goes above this. |
+
+## `AlertScheduleRestriction (input)`
+
+Input object `AlertScheduleRestriction`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `blockedWindows` | `AlertScheduleRestrictionBlockedWindow (input)[]` | yes | Blocked time windows, half-open `[start, end)`. Windows must not overlap or touch, except that one may end at `00:00` where another starts. A window may wrap midnight (`end` before `start`), but only as the sole window, and two windows meeting at midnight are only allowed alongside a third. PostHog enforces its own limits on window length and count and reports them on apply. Remove `scheduleRestriction` to disable quiet hours. |
+
+## `AlertScheduleRestrictionBlockedWindow (input)`
+
+Input object `AlertScheduleRestrictionBlockedWindow`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `end` | `string` | yes | End time `HH:MM` (24-hour, project timezone). Exclusive. |
+| `start` | `string` | yes | Start time `HH:MM` (24-hour, project timezone). Inclusive. |
+
+## `AlertScheduleRestriction (output)`
+
+Output object `AlertScheduleRestriction`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `blockedWindows` | `AlertScheduleRestrictionBlockedWindow (output)[]` | yes | Blocked time windows, half-open `[start, end)`. Windows must not overlap or touch, except that one may end at `00:00` where another starts. A window may wrap midnight (`end` before `start`), but only as the sole window, and two windows meeting at midnight are only allowed alongside a third. PostHog enforces its own limits on window length and count and reports them on apply. Remove `scheduleRestriction` to disable quiet hours. |
+
+## `AlertScheduleRestrictionBlockedWindow (output)`
+
+Output object `AlertScheduleRestrictionBlockedWindow`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `end` | `string` | yes | End time `HH:MM` (24-hour, project timezone). Exclusive. |
+| `start` | `string` | yes | Start time `HH:MM` (24-hour, project timezone). Inclusive. |

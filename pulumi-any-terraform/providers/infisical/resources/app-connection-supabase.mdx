@@ -1,0 +1,59 @@
+---
+title: "AppConnectionSupabase"
+description: "Resource AppConnectionSupabase in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource AppConnectionSupabase in pulumi-infisical.
+
+Pulumi type: `infisical:index/appConnectionSupabase:AppConnectionSupabase`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.AppConnectionSupabase(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionSupabaseCredentials (input)` | yes | The credentials for the Supabase App Connection |
+| `description` | `string` | no | An optional description for the Supabase App Connection. |
+| `method` | `string` | yes | The method used to authenticate with Supabase. Possible values are: access-token |
+| `name` | `string` | no | The name of the Supabase App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `credentials` | `AppConnectionSupabaseCredentials (output)` | no | The credentials for the Supabase App Connection |
+| `credentialsHash` | `string` | yes | The hash of the Supabase App Connection credentials |
+| `description` | `string` | no | An optional description for the Supabase App Connection. |
+| `method` | `string` | no | The method used to authenticate with Supabase. Possible values are: access-token |
+| `name` | `string` | no | The name of the Supabase App Connection to create. Must be slug-friendly |
+| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+
+## `AppConnectionSupabaseCredentials (input)`
+
+Input object `AppConnectionSupabaseCredentials`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `accessKey` | `string` | yes | The Supabase access key for authentication. |
+| `instanceUrl` | `string` | no | The Supabase instance URL (e.g., https://your-domain.com). |
+
+## `AppConnectionSupabaseCredentials (output)`
+
+Output object `AppConnectionSupabaseCredentials`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `accessKey` | `string` | yes | The Supabase access key for authentication. |
+| `instanceUrl` | `string` | no | The Supabase instance URL (e.g., https://your-domain.com). |

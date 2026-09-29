@@ -1,0 +1,46 @@
+---
+title: "OpenAmtDevicesFeatures"
+description: "Resource OpenAmtDevicesFeatures in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource OpenAmtDevicesFeatures in pulumi-portainer.
+
+Pulumi type: `portainer:index/openAmtDevicesFeatures:OpenAmtDevicesFeatures`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.OpenAmtDevicesFeatures(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `deviceId` | `number` | yes | ID of the AMT-managed device. |
+| `environmentId` | `number` | yes | Portainer environment (endpoint) ID. |
+| `ider` | `boolean` | no | Enable IDER (IDE Redirection). |
+| `kvm` | `boolean` | no | Enable KVM (Keyboard/Video/Mouse). |
+| `openAmtDevicesFeaturesId` | `string` | no |  |
+| `redirection` | `boolean` | no | Enable redirection. |
+| `sol` | `boolean` | no | Enable SOL (Serial Over LAN). |
+| `userConsent` | `string` | no | User consent policy (e.g., 'none', 'all', 'kvmOnly'). |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `deviceId` | `number` | no | ID of the AMT-managed device. |
+| `environmentId` | `number` | no | Portainer environment (endpoint) ID. |
+| `ider` | `boolean` | no | Enable IDER (IDE Redirection). |
+| `kvm` | `boolean` | no | Enable KVM (Keyboard/Video/Mouse). |
+| `openAmtDevicesFeaturesId` | `string` | no |  |
+| `redirection` | `boolean` | no | Enable redirection. |
+| `sol` | `boolean` | no | Enable SOL (Serial Over LAN). |
+| `userConsent` | `string` | no | User consent policy (e.g., 'none', 'all', 'kvmOnly'). |

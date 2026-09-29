@@ -1,0 +1,54 @@
+---
+title: "getDomains"
+description: "Function getDomains in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Function getDomains in pulumi-namecheap.
+
+Invoke token: `namecheap:index/getDomains:getDomains`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Call `namecheap.getDomains(args)`.
+
+`getDomainsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `listType` | `string` | no |  |
+| `searchTerm` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `domains` | `GetDomainsDomain[]` | yes |  |
+| `id` | `string` | yes |  |
+| `listType` | `string` | no |  |
+| `searchTerm` | `string` | no |  |
+
+## `GetDomainsDomain`
+
+Output object `GetDomainsDomain`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoRenew` | `boolean` | no |  |
+| `created` | `string` | no |  |
+| `expires` | `string` | no |  |
+| `expiresInDays` | `number` | no |  |
+| `id` | `string` | no |  |
+| `isExpired` | `boolean` | no |  |
+| `isLocked` | `boolean` | no |  |
+| `isOurDns` | `boolean` | no |  |
+| `isPremium` | `boolean` | no |  |
+| `name` | `string` | no |  |
+| `user` | `string` | no |  |
+| `whoisGuard` | `string` | no |  |

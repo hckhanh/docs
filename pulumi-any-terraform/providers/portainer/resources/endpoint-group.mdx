@@ -1,0 +1,38 @@
+---
+title: "EndpointGroup"
+description: "Resource EndpointGroup in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource EndpointGroup in pulumi-portainer.
+
+Pulumi type: `portainer:index/endpointGroup:EndpointGroup`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.EndpointGroup(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | Human-readable description of the endpoint group displayed in the Portainer UI. |
+| `endpointGroupId` | `string` | no |  |
+| `name` | `string` | no | Name of the Portainer endpoint group. Must be unique within the Portainer instance. |
+| `tagIds` | `number[]` | no | List of Portainer tag identifiers associated with this endpoint group. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `description` | `string` | no | Human-readable description of the endpoint group displayed in the Portainer UI. |
+| `endpointGroupId` | `string` | no |  |
+| `name` | `string` | no | Name of the Portainer endpoint group. Must be unique within the Portainer instance. |
+| `tagIds` | `number[]` | no | List of Portainer tag identifiers associated with this endpoint group. |

@@ -1,0 +1,70 @@
+---
+title: "getOnCallCalendar"
+description: "Function getOnCallCalendar in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Function getOnCallCalendar in pulumi-better-uptime.
+
+Invoke token: `better-uptime:index/getOnCallCalendar:getOnCallCalendar`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Call `betteruptime.getOnCallCalendar(args)`.
+
+`getOnCallCalendarOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `defaultCalendar` | `boolean` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | no |  |
+| `onCallRotations` | `GetOnCallCalendarOnCallRotation[]` | yes |  |
+| `onCallUsers` | `GetOnCallCalendarOnCallUser[]` | yes |  |
+
+## `GetOnCallCalendarOnCallRotation`
+
+Output object `GetOnCallCalendarOnCallRotation`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `endRotationsAt` | `string` | no |  |
+| `rotationInterval` | `string` | no |  |
+| `rotationLength` | `number` | no |  |
+| `startRotationsAt` | `string` | no |  |
+| `timezone` | `string` | no |  |
+| `users` | `string[]` | no |  |
+| `workingHours` | `GetOnCallCalendarOnCallRotationWorkingHour[]` | no |  |
+
+## `GetOnCallCalendarOnCallRotationWorkingHour`
+
+Output object `GetOnCallCalendarOnCallRotationWorkingHour`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `day` | `string` | no |  |
+| `endTime` | `string` | no |  |
+| `startTime` | `string` | no |  |
+
+## `GetOnCallCalendarOnCallUser`
+
+Output object `GetOnCallCalendarOnCallUser`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no |  |
+| `firstName` | `string` | no |  |
+| `id` | `string` | no |  |
+| `lastName` | `string` | no |  |
+| `phoneNumbers` | `string[]` | no |  |

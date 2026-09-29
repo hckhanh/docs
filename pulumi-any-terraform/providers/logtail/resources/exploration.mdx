@@ -1,0 +1,122 @@
+---
+title: "Exploration"
+description: "Resource Exploration in pulumi-logtail."
+---
+
+<!-- Generated from the pulumi-logtail SDK. -->
+
+Resource Exploration in pulumi-logtail.
+
+Pulumi type: `logtail:index/exploration:Exploration`.
+
+```ts
+import * as logtail from "pulumi-logtail"
+```
+
+Construct with `new logtail.Exploration(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `chart` | `ExplorationChart (input)` | yes | The chart configuration for this exploration. |
+| `dateRangeFrom` | `string` | no | The start of the date range (e.g., 'now-3h', 'now-24h'). |
+| `dateRangeTo` | `string` | no | The end of the date range (e.g., 'now'). |
+| `explorationGroupId` | `number` | no | The ID of the exploration group this exploration belongs to. Use 0 to remove from group. |
+| `name` | `string` | no | The name of this exploration. |
+| `queries` | `ExplorationQuery (input)[]` | yes | The queries for this exploration. At least one query is required. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `variables` | `ExplorationVariable (input)[]` | no | Variables for this exploration. Default variables (time, start_time, end_time, source) are auto-created. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `chart` | `ExplorationChart (output)` | no | The chart configuration for this exploration. |
+| `createdAt` | `string` | yes | The time when this exploration was created. |
+| `dateRangeFrom` | `string` | no | The start of the date range (e.g., 'now-3h', 'now-24h'). |
+| `dateRangeTo` | `string` | no | The end of the date range (e.g., 'now'). |
+| `explorationGroupId` | `number` | no | The ID of the exploration group this exploration belongs to. Use 0 to remove from group. |
+| `name` | `string` | no | The name of this exploration. |
+| `queries` | `ExplorationQuery (output)[]` | no | The queries for this exploration. At least one query is required. |
+| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| `updatedAt` | `string` | yes | The time when this exploration was updated. |
+| `variables` | `ExplorationVariable (output)[]` | no | Variables for this exploration. Default variables (time, start_time, end_time, source) are auto-created. |
+
+## `ExplorationChart (input)`
+
+Input object `ExplorationChart`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `chartType` | `string` | yes | The type of chart: 'line_chart', 'bar_chart', 'pie_chart', 'number_chart', 'table_chart', 'tail_chart', 'static_text_chart', 'scatter_chart', 'gauge_chart', 'heatmap_chart', 'map_chart', 'text_chart', 'funnel_chart', or 'anomalies_chart'. |
+| `description` | `string` | no | The description of the chart. |
+| `name` | `string` | no | The name of the chart. Automatically set to the exploration name by the API. |
+| `settings` | `string` | no | Chart settings as a JSON string. Settings vary by chart type and include options like unit, decimal_places, legend, stacking, etc. |
+
+## `ExplorationQuery (input)`
+
+Input object `ExplorationQuery`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | no | The ID of this query (read-only). |
+| `name` | `string` | no | The name of the query. |
+| `queryType` | `string` | yes | The type of query: 'sql_expression', 'tail_query', or 'static_text'. Note: 'pql_expression', 'query_builder', and 'funnel_query' are read-only. |
+| `sourceVariable` | `string` | no | The source variable reference (default: 'source'). |
+| `sqlQuery` | `string` | no | The SQL query string. Required when `queryType` is 'sql_expression'. |
+| `staticText` | `string` | no | The static text content (markdown). Required when `queryType` is 'static_text'. |
+| `whereCondition` | `string` | no | The WHERE condition for filtering. Required when `queryType` is 'tail_query'. |
+
+## `ExplorationVariable (input)`
+
+Input object `ExplorationVariable`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaultValues` | `string[]` | no | For 'string', 'number', and 'boolean' variables: fallback value used when `values` is empty. For 'select_value' variables: the predefined options shown in the picker. Unused for other types. |
+| `name` | `string` | yes | The name of the variable (used as &#123;&#123;name&#125;&#125; in queries). |
+| `sqlDefinition` | `string` | no | SQL definition for 'select_with_sql' or 'multi_select_with_sql' type variables. |
+| `values` | `string[]` | no | The selected values. For 'source' variables these are the source IDs the variable resolves to (e.g. `logtail_source.web.id`) - this is the field that selects the source. For other types it is the current picker selection or input. |
+| `variableType` | `string` | yes | The type of variable: 'source', 'string', 'number', 'date', 'datetime', 'boolean', 'sql_expression', 'select_value', 'select_with_sql', or 'multi_select_with_sql'. |
+
+## `ExplorationChart (output)`
+
+Output object `ExplorationChart`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `chartType` | `string` | yes | The type of chart: 'line_chart', 'bar_chart', 'pie_chart', 'number_chart', 'table_chart', 'tail_chart', 'static_text_chart', 'scatter_chart', 'gauge_chart', 'heatmap_chart', 'map_chart', 'text_chart', 'funnel_chart', or 'anomalies_chart'. |
+| `description` | `string` | yes | The description of the chart. |
+| `name` | `string` | yes | The name of the chart. Automatically set to the exploration name by the API. |
+| `settings` | `string` | yes | Chart settings as a JSON string. Settings vary by chart type and include options like unit, decimal_places, legend, stacking, etc. |
+
+## `ExplorationQuery (output)`
+
+Output object `ExplorationQuery`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `number` | yes | The ID of this query (read-only). |
+| `name` | `string` | no | The name of the query. |
+| `queryType` | `string` | yes | The type of query: 'sql_expression', 'tail_query', or 'static_text'. Note: 'pql_expression', 'query_builder', and 'funnel_query' are read-only. |
+| `sourceVariable` | `string` | yes | The source variable reference (default: 'source'). |
+| `sqlQuery` | `string` | no | The SQL query string. Required when `queryType` is 'sql_expression'. |
+| `staticText` | `string` | no | The static text content (markdown). Required when `queryType` is 'static_text'. |
+| `whereCondition` | `string` | no | The WHERE condition for filtering. Required when `queryType` is 'tail_query'. |
+
+## `ExplorationVariable (output)`
+
+Output object `ExplorationVariable`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `defaultValues` | `string[]` | no | For 'string', 'number', and 'boolean' variables: fallback value used when `values` is empty. For 'select_value' variables: the predefined options shown in the picker. Unused for other types. |
+| `name` | `string` | yes | The name of the variable (used as &#123;&#123;name&#125;&#125; in queries). |
+| `sqlDefinition` | `string` | no | SQL definition for 'select_with_sql' or 'multi_select_with_sql' type variables. |
+| `values` | `string[]` | no | The selected values. For 'source' variables these are the source IDs the variable resolves to (e.g. `logtail_source.web.id`) - this is the field that selects the source. For other types it is the current picker selection or input. |
+| `variableType` | `string` | yes | The type of variable: 'source', 'string', 'number', 'date', 'datetime', 'boolean', 'sql_expression', 'select_value', 'select_with_sql', or 'multi_select_with_sql'. |

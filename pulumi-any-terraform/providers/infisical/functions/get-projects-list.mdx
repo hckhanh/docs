@@ -1,0 +1,59 @@
+---
+title: "getProjectsList"
+description: "Function getProjectsList in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Function getProjectsList in pulumi-infisical.
+
+Invoke token: `infisical:index/getProjectsList:getProjectsList`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Call `infisical.getProjectsList(args)`.
+
+`getProjectsListOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `slugs` | `string[]` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `projects` | `GetProjectsListProject[]` | yes |  |
+| `slugs` | `string[]` | no |  |
+
+## `GetProjectsListProject`
+
+Output object `GetProjectsListProject`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `autoCapitalization` | `boolean` | yes | The auto capitalization status of the project |
+| `createdAt` | `string` | yes | The creation date of the project |
+| `description` | `string` | yes | The description of the project |
+| `environments` | `GetProjectsListProjectEnvironment[]` | yes | The environments of the project |
+| `id` | `string` | yes | The ID of the project |
+| `name` | `string` | yes | The name of the project |
+| `orgId` | `string` | yes | The ID of the organization to which the project belongs |
+| `slug` | `string` | yes | The slug of the project |
+| `type` | `string` | yes | The type of the project ('secret-manager' or 'kms') |
+| `updatedAt` | `string` | yes | The last update date of the project |
+| `version` | `number` | yes | The version of the project |
+
+## `GetProjectsListProjectEnvironment`
+
+Output object `GetProjectsListProjectEnvironment`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes | The ID of the environment |
+| `name` | `string` | yes | The name of the environment |
+| `slug` | `string` | yes | The slug of the environment |

@@ -1,0 +1,33 @@
+---
+title: "getUser"
+description: "Function getUser in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getUser in pulumi-portainer.
+
+Invoke token: `portainer:index/getUser:getUser`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getUser(args)`.
+
+`getUserOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `username` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | yes |  |
+| `role` | `number` | yes |  |
+| `username` | `string` | yes |  |

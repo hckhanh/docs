@@ -1,0 +1,49 @@
+---
+title: "Project"
+description: "Resource Project in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource Project in pulumi-infisical.
+
+Pulumi type: `infisical:index/project:Project`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.Project(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auditLogRetentionDays` | `number` | no | The audit log retention in days |
+| `description` | `string` | no | The description of the project |
+| `hasDeleteProtection` | `boolean` | no | Whether the project has delete protection, defaults to false |
+| `kmsSecretManagerKeyId` | `string` | no | The ID of the KMS secret manager key to use for the project |
+| `name` | `string` | no | The name of the project |
+| `shouldCreateDefaultEnvs` | `boolean` | no | Whether to create default environments for the project (dev, staging, prod), defaults to true |
+| `slug` | `string` | yes | The slug of the project |
+| `templateName` | `string` | no | The name of the template to use for the project |
+| `type` | `string` | no | The type of the project. Supported values: secret-manager, cert-manager, kms. Defaults to 'secret-manager'. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `auditLogRetentionDays` | `number` | no | The audit log retention in days |
+| `description` | `string` | no | The description of the project |
+| `hasDeleteProtection` | `boolean` | no | Whether the project has delete protection, defaults to false |
+| `kmsSecretManagerKeyId` | `string` | no | The ID of the KMS secret manager key to use for the project |
+| `lastUpdated` | `string` | yes |  |
+| `name` | `string` | no | The name of the project |
+| `shouldCreateDefaultEnvs` | `boolean` | no | Whether to create default environments for the project (dev, staging, prod), defaults to true |
+| `slug` | `string` | no | The slug of the project |
+| `templateName` | `string` | no | The name of the template to use for the project |
+| `type` | `string` | no | The type of the project. Supported values: secret-manager, cert-manager, kms. Defaults to 'secret-manager'. |

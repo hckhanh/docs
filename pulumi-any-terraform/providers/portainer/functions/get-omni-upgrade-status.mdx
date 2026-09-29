@@ -1,0 +1,43 @@
+---
+title: "getOmniUpgradeStatus"
+description: "Function getOmniUpgradeStatus in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getOmniUpgradeStatus in pulumi-portainer.
+
+Invoke token: `portainer:index/getOmniUpgradeStatus:getOmniUpgradeStatus`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getOmniUpgradeStatus(args)`.
+
+`getOmniUpgradeStatusOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `cluster` | `string` | yes |  |
+| `component` | `string` | yes |  |
+| `credentialId` | `number` | yes |  |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `availableVersions` | `string[]` | yes |  |
+| `cluster` | `string` | yes |  |
+| `component` | `string` | yes |  |
+| `credentialId` | `number` | yes |  |
+| `currentVersion` | `string` | yes |  |
+| `error` | `string` | yes |  |
+| `id` | `string` | yes |  |
+| `lastVersion` | `string` | yes |  |
+| `phase` | `number` | yes |  |
+| `status` | `string` | yes |  |
+| `step` | `string` | yes |  |

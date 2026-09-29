@@ -1,0 +1,83 @@
+---
+title: "getCheckQuery"
+description: "Function getCheckQuery in pulumi-openfga."
+---
+
+<!-- Generated from the pulumi-openfga SDK. -->
+
+Function getCheckQuery in pulumi-openfga.
+
+Invoke token: `openfga:index/getCheckQuery:getCheckQuery`.
+
+```ts
+import * as openfga from "pulumi-openfga"
+```
+
+Call `openfga.getCheckQuery(args)`.
+
+`getCheckQueryOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `authorizationModelId` | `string` | no |  |
+| `contextJson` | `string` | no |  |
+| `contextualTuples` | `GetCheckQueryContextualTuple (input)[]` | no |  |
+| `object` | `string` | yes |  |
+| `relation` | `string` | yes |  |
+| `storeId` | `string` | yes |  |
+| `user` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `authorizationModelId` | `string` | no |  |
+| `contextJson` | `string` | no |  |
+| `contextualTuples` | `GetCheckQueryContextualTuple (output)[]` | no |  |
+| `object` | `string` | yes |  |
+| `relation` | `string` | yes |  |
+| `result` | `boolean` | yes |  |
+| `storeId` | `string` | yes |  |
+| `user` | `string` | yes |  |
+
+## `GetCheckQueryContextualTuple (input)`
+
+Input object `GetCheckQueryContextualTuple`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `condition` | `GetCheckQueryContextualTupleCondition (input)` | no | A condition of the contextual relationship tuple |
+| `object` | `string` | yes | The object of the contextual relationship tuple |
+| `relation` | `string` | yes | The relation of the contextual relationship tuple |
+| `user` | `string` | yes | The user of the contextual relationship tuple |
+
+## `GetCheckQueryContextualTupleCondition (input)`
+
+Input object `GetCheckQueryContextualTupleCondition`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated |
+| `name` | `string` | yes | The name of the condition |
+
+## `GetCheckQueryContextualTuple (output)`
+
+Output object `GetCheckQueryContextualTuple`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `condition` | `GetCheckQueryContextualTupleCondition (output)` | no | A condition of the contextual relationship tuple |
+| `object` | `string` | yes | The object of the contextual relationship tuple |
+| `relation` | `string` | yes | The relation of the contextual relationship tuple |
+| `user` | `string` | yes | The user of the contextual relationship tuple |
+
+## `GetCheckQueryContextualTupleCondition (output)`
+
+Output object `GetCheckQueryContextualTupleCondition`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated |
+| `name` | `string` | yes | The name of the condition |

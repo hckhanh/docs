@@ -1,0 +1,213 @@
+---
+title: "getIncomingWebhook"
+description: "Function getIncomingWebhook in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Function getIncomingWebhook in pulumi-better-uptime.
+
+Invoke token: `better-uptime:index/getIncomingWebhook:getIncomingWebhook`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Call `betteruptime.getIncomingWebhook(args)`.
+
+`getIncomingWebhookOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `acknowledgedAlertIdFields` | `GetIncomingWebhookAcknowledgedAlertIdField[]` | yes |  |
+| `acknowledgedRuleType` | `string` | yes |  |
+| `acknowledgedRules` | `GetIncomingWebhookAcknowledgedRule[]` | yes |  |
+| `call` | `boolean` | yes |  |
+| `causeFields` | `GetIncomingWebhookCauseField[]` | yes |  |
+| `createdAt` | `string` | yes |  |
+| `criticalAlert` | `boolean` | yes |  |
+| `email` | `boolean` | yes |  |
+| `id` | `string` | yes |  |
+| `name` | `string` | yes |  |
+| `otherAcknowledgedFields` | `GetIncomingWebhookOtherAcknowledgedField[]` | yes |  |
+| `otherResolvedFields` | `GetIncomingWebhookOtherResolvedField[]` | yes |  |
+| `otherStartedFields` | `GetIncomingWebhookOtherStartedField[]` | yes |  |
+| `paused` | `boolean` | yes |  |
+| `policyId` | `string` | yes |  |
+| `push` | `boolean` | yes |  |
+| `recoveryPeriod` | `number` | yes |  |
+| `resolvedAlertIdFields` | `GetIncomingWebhookResolvedAlertIdField[]` | yes |  |
+| `resolvedRuleType` | `string` | yes |  |
+| `resolvedRules` | `GetIncomingWebhookResolvedRule[]` | yes |  |
+| `sampleBody` | `string` | yes |  |
+| `sampleHeaders` | `string` | yes |  |
+| `sampleQueryString` | `string` | yes |  |
+| `sms` | `boolean` | yes |  |
+| `startedAlertIdFields` | `GetIncomingWebhookStartedAlertIdField[]` | yes |  |
+| `startedRuleType` | `string` | yes |  |
+| `startedRules` | `GetIncomingWebhookStartedRule[]` | yes |  |
+| `teamWait` | `number` | yes |  |
+| `titleFields` | `GetIncomingWebhookTitleField[]` | yes |  |
+| `updatedAt` | `string` | yes |  |
+| `url` | `string` | yes |  |
+
+## `GetIncomingWebhookAcknowledgedAlertIdField`
+
+Output object `GetIncomingWebhookAcknowledgedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookAcknowledgedRule`
+
+Output object `GetIncomingWebhookAcknowledgedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `ruleTarget` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookCauseField`
+
+Output object `GetIncomingWebhookCauseField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookOtherAcknowledgedField`
+
+Output object `GetIncomingWebhookOtherAcknowledgedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookOtherResolvedField`
+
+Output object `GetIncomingWebhookOtherResolvedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookOtherStartedField`
+
+Output object `GetIncomingWebhookOtherStartedField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookResolvedAlertIdField`
+
+Output object `GetIncomingWebhookResolvedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookResolvedRule`
+
+Output object `GetIncomingWebhookResolvedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `ruleTarget` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookStartedAlertIdField`
+
+Output object `GetIncomingWebhookStartedAlertIdField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookStartedRule`
+
+Output object `GetIncomingWebhookStartedRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `ruleTarget` | `string` | no |  |
+| `targetField` | `string` | no |  |
+
+## `GetIncomingWebhookTitleField`
+
+Output object `GetIncomingWebhookTitleField`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `content` | `string` | no |  |
+| `contentAfter` | `string` | no |  |
+| `contentBefore` | `string` | no |  |
+| `fieldTarget` | `string` | no |  |
+| `matchType` | `string` | no |  |
+| `name` | `string` | no |  |
+| `specialType` | `string` | no |  |
+| `targetField` | `string` | no |  |

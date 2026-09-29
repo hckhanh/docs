@@ -1,0 +1,71 @@
+---
+title: "AlertingSettings"
+description: "Resource AlertingSettings in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource AlertingSettings in pulumi-portainer.
+
+Pulumi type: `portainer:index/alertingSettings:AlertingSettings`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.AlertingSettings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `alertingSettingsId` | `string` | no |  |
+| `enabled` | `boolean` | yes | Whether alerting is enabled. |
+| `name` | `string` | no | Name of the alerting settings entry. |
+| `notificationChannels` | `AlertingSettingsNotificationChannel (input)[]` | no | List of notification channels. |
+| `portainerUrl` | `string` | no | Portainer URL used by AlertManager for callbacks. |
+| `url` | `string` | no | URL of the external AlertManager instance. Leave empty for internal. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `alertingSettingsId` | `string` | no |  |
+| `createdAt` | `string` | yes | Timestamp when the settings were created. |
+| `createdBy` | `string` | yes | User who created the settings. |
+| `enabled` | `boolean` | no | Whether alerting is enabled. |
+| `isInternal` | `boolean` | yes | Whether this uses the internal AlertManager. |
+| `name` | `string` | no | Name of the alerting settings entry. |
+| `notificationChannels` | `AlertingSettingsNotificationChannel (output)[]` | no | List of notification channels. |
+| `portainerUrl` | `string` | no | Portainer URL used by AlertManager for callbacks. |
+| `status` | `string` | yes | Connection status (disabled, connected, disconnected, error). |
+| `uptime` | `string` | yes | Uptime of the AlertManager. |
+| `url` | `string` | no | URL of the external AlertManager instance. Leave empty for internal. |
+
+## `AlertingSettingsNotificationChannel (input)`
+
+Input object `AlertingSettingsNotificationChannel`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `channelId` | `number` | no | Notification channel identifier. |
+| `config` | `{ [key: string]: string }` | no | Configuration key-value pairs for the notification channel. |
+| `enabled` | `boolean` | no | Whether the notification channel is enabled. |
+| `name` | `string` | no | Name of the notification channel. |
+| `type` | `string` | no | Type of the notification channel. |
+
+## `AlertingSettingsNotificationChannel (output)`
+
+Output object `AlertingSettingsNotificationChannel`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `channelId` | `number` | yes | Notification channel identifier. |
+| `config` | `{ [key: string]: string }` | yes | Configuration key-value pairs for the notification channel. |
+| `enabled` | `boolean` | yes | Whether the notification channel is enabled. |
+| `name` | `string` | yes | Name of the notification channel. |
+| `type` | `string` | yes | Type of the notification channel. |

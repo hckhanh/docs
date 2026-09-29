@@ -1,0 +1,34 @@
+---
+title: "AuthorizationModel"
+description: "Resource AuthorizationModel in pulumi-openfga."
+---
+
+<!-- Generated from the pulumi-openfga SDK. -->
+
+Resource AuthorizationModel in pulumi-openfga.
+
+Pulumi type: `openfga:index/authorizationModel:AuthorizationModel`.
+
+```ts
+import * as openfga from "pulumi-openfga"
+```
+
+Construct with `new openfga.AuthorizationModel(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `modelJson` | `string` | yes | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
+| `storeId` | `string` | yes | The unique ID of the store this authorization model belongs to. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `modelJson` | `string` | no | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
+| `storeId` | `string` | no | The unique ID of the store this authorization model belongs to. |

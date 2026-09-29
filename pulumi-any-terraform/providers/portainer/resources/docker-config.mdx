@@ -1,0 +1,43 @@
+---
+title: "DockerConfig"
+description: "Resource DockerConfig in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource DockerConfig in pulumi-portainer.
+
+Pulumi type: `portainer:index/dockerConfig:DockerConfig`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.DockerConfig(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `string` | yes | Base64-encoded config payload stored in the Docker Swarm config. |
+| `dockerConfigId` | `string` | no |  |
+| `endpointId` | `number` | yes | ID of the Portainer environment (Docker Swarm) where the config is created. |
+| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker Swarm config. |
+| `name` | `string` | no | Name of the Docker Swarm config. |
+| `templating` | `{ [key: string]: string }` | no | Templating driver configuration applied to the config payload at runtime. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `data` | `string` | no | Base64-encoded config payload stored in the Docker Swarm config. |
+| `dockerConfigId` | `string` | no |  |
+| `endpointId` | `number` | no | ID of the Portainer environment (Docker Swarm) where the config is created. |
+| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker Swarm config. |
+| `name` | `string` | no | Name of the Docker Swarm config. |
+| `resourceControlId` | `number` | yes | ID of the Portainer resource control associated with this Docker Swarm config. |
+| `templating` | `{ [key: string]: string }` | no | Templating driver configuration applied to the config payload at runtime. |

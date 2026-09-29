@@ -1,0 +1,37 @@
+---
+title: "getLicensesInfo"
+description: "Function getLicensesInfo in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getLicensesInfo in pulumi-portainer.
+
+Invoke token: `portainer:index/getLicensesInfo:getLicensesInfo`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getLicensesInfo(args)`.
+
+`getLicensesInfoOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `company` | `string` | yes |  |
+| `enforcedAt` | `number` | yes |  |
+| `expiresAt` | `number` | yes |  |
+| `id` | `string` | yes |  |
+| `nodes` | `number` | yes |  |
+| `overuseStartedAt` | `number` | yes |  |
+| `type` | `number` | yes |  |
+| `valid` | `boolean` | yes |  |

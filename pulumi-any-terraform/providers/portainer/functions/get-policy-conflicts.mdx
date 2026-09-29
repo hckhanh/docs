@@ -1,0 +1,63 @@
+---
+title: "getPolicyConflicts"
+description: "Function getPolicyConflicts in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Function getPolicyConflicts in pulumi-portainer.
+
+Invoke token: `portainer:index/getPolicyConflicts:getPolicyConflicts`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Call `portainer.getPolicyConflicts(args)`.
+
+`getPolicyConflictsOutput` accepts Input values and returns `Output` of the same result.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | no |  |
+| `policyJson` | `string` | yes |  |
+
+## Result
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `conflicts` | `GetPolicyConflictsConflict[]` | yes |  |
+| `id` | `string` | yes |  |
+| `newGroups` | `GetPolicyConflictsNewGroup[]` | yes |  |
+| `policyJson` | `string` | yes |  |
+| `supportedEnvironments` | `number` | yes |  |
+| `totalEnvironments` | `number` | yes |  |
+| `unsupportedEnvironments` | `number` | yes |  |
+
+## `GetPolicyConflictsConflict`
+
+Output object `GetPolicyConflictsConflict`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentCount` | `number` | no |  |
+| `environmentGroupId` | `number` | no |  |
+| `environmentGroupName` | `string` | no |  |
+| `existingPolicyId` | `number` | no |  |
+| `existingPolicyName` | `string` | no |  |
+| `supportedEnvironments` | `number` | no |  |
+| `unsupportedEnvironments` | `number` | no |  |
+
+## `GetPolicyConflictsNewGroup`
+
+Output object `GetPolicyConflictsNewGroup`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `environmentCount` | `number` | no |  |
+| `environmentGroupId` | `number` | no |  |
+| `environmentGroupName` | `string` | no |  |
+| `supportedEnvironments` | `number` | no |  |
+| `unsupportedEnvironments` | `number` | no |  |

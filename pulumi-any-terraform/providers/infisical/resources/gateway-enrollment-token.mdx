@@ -1,0 +1,36 @@
+---
+title: "GatewayEnrollmentToken"
+description: "Resource GatewayEnrollmentToken in pulumi-infisical."
+---
+
+<!-- Generated from the pulumi-infisical SDK. -->
+
+Resource GatewayEnrollmentToken in pulumi-infisical.
+
+Pulumi type: `infisical:index/gatewayEnrollmentToken:GatewayEnrollmentToken`.
+
+```ts
+import * as infisical from "pulumi-infisical"
+```
+
+Construct with `new infisical.GatewayEnrollmentToken(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `gatewayId` | `string` | yes | The ID of the gateway to mint the token for. The gateway must be configured with `tokenAuth`. |
+| `keepers` | `{ [key: string]: string }` | no | Arbitrary values that force a new token when any of them changes. List whatever forces the machine that consumes the token to be rebuilt, for example the AMI ID and subnet of an EC2 instance. Nothing validates this list, so an input you leave out means the rebuilt machine boots with a token that was already consumed, stays offline, and shows no drift. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `expiresAt` | `string` | yes | When the token expires. A token that has already been used is invalid before this. |
+| `gatewayId` | `string` | no | The ID of the gateway to mint the token for. The gateway must be configured with `tokenAuth`. |
+| `keepers` | `{ [key: string]: string }` | no | Arbitrary values that force a new token when any of them changes. List whatever forces the machine that consumes the token to be rebuilt, for example the AMI ID and subnet of an EC2 instance. Nothing validates this list, so an input you leave out means the rebuilt machine boots with a token that was already consumed, stays offline, and shows no drift. |
+| `token` | `string` | yes | The enrollment token. Single-use, valid for one hour, and stored in Terraform state in plaintext. |

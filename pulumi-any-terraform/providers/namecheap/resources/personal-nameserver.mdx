@@ -1,0 +1,38 @@
+---
+title: "PersonalNameserver"
+description: "Resource PersonalNameserver in pulumi-namecheap."
+---
+
+<!-- Generated from the pulumi-namecheap SDK. -->
+
+Resource PersonalNameserver in pulumi-namecheap.
+
+Pulumi type: `namecheap:index/personalNameserver:PersonalNameserver`.
+
+```ts
+import * as namecheap from "pulumi-namecheap"
+```
+
+Construct with `new namecheap.PersonalNameserver(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | yes | The registered root domain the personal nameserver belongs to (e.g. `example.com`). Must be a root domain present on the account, not a subdomain. Changing this forces a new resource. |
+| `ip` | `string` | yes | The IP address the personal nameserver resolves to (the glue record's address). This value can be changed in place, which issues a `domains.ns.update`. |
+| `nameserver` | `string` | yes | The fully qualified hostname of the personal nameserver to register (e.g. `ns1.example.com`). Changing this forces a new resource. |
+| `personalNameserverId` | `string` | no |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `domain` | `string` | no | The registered root domain the personal nameserver belongs to (e.g. `example.com`). Must be a root domain present on the account, not a subdomain. Changing this forces a new resource. |
+| `ip` | `string` | no | The IP address the personal nameserver resolves to (the glue record's address). This value can be changed in place, which issues a `domains.ns.update`. |
+| `nameserver` | `string` | no | The fully qualified hostname of the personal nameserver to register (e.g. `ns1.example.com`). Changing this forces a new resource. |
+| `personalNameserverId` | `string` | no |  |

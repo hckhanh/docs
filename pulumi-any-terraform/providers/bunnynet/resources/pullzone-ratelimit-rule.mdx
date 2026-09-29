@@ -1,0 +1,109 @@
+---
+title: "PullzoneRatelimitRule"
+description: "Resource PullzoneRatelimitRule in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource PullzoneRatelimitRule in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/pullzoneRatelimitRule:PullzoneRatelimitRule`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.PullzoneRatelimitRule(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `conditions` | `PullzoneRatelimitRuleCondition (input)[]` | no | The condition to trigger the rate limit rule. |
+| `description` | `string` | no | The rate limit rule description. |
+| `limit` | `PullzoneRatelimitRuleLimit (input)` | no |  |
+| `name` | `string` | no | The rate limit rule name. |
+| `pullzone` | `number` | yes | The ID of the linked pullzone. |
+| `response` | `PullzoneRatelimitRuleResponse (input)` | no | The response once the rate limit rule is triggered. |
+| `transformations` | `string[]` | no | Options: `CMDLINE`, `COMPRESSWHITESPACE`, `CSSDECODE`, `HEXENCODE`, `HTMLENTITYDECODE`, `JSDECODE`, `LENGTH`, `LOWERCASE`, `MD5`, `NORMALISEPATH`, `NORMALISEPATHWIN`, `NORMALIZEPATH`, `NORMALIZEPATHWIN`, `REMOVECOMMENTS`, `REMOVENULLS`, `REMOVEWHITESPACE`, `REPLACECOMMENTS`, `SHA1`, `URLDECODE`, `URLDECODEUNI`, `UTF8TOUNICODE` |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `conditions` | `PullzoneRatelimitRuleCondition (output)[]` | no | The condition to trigger the rate limit rule. |
+| `description` | `string` | no | The rate limit rule description. |
+| `limit` | `PullzoneRatelimitRuleLimit (output)` | no |  |
+| `name` | `string` | no | The rate limit rule name. |
+| `pullzone` | `number` | no | The ID of the linked pullzone. |
+| `pullzoneRatelimitRuleId` | `number` | yes | The ID of the rate limit rule. |
+| `response` | `PullzoneRatelimitRuleResponse (output)` | no | The response once the rate limit rule is triggered. |
+| `transformations` | `string[]` | no | Options: `CMDLINE`, `COMPRESSWHITESPACE`, `CSSDECODE`, `HEXENCODE`, `HTMLENTITYDECODE`, `JSDECODE`, `LENGTH`, `LOWERCASE`, `MD5`, `NORMALISEPATH`, `NORMALISEPATHWIN`, `NORMALIZEPATH`, `NORMALIZEPATHWIN`, `REMOVECOMMENTS`, `REMOVENULLS`, `REMOVEWHITESPACE`, `REPLACECOMMENTS`, `SHA1`, `URLDECODE`, `URLDECODEUNI`, `UTF8TOUNICODE` |
+
+## `PullzoneRatelimitRuleCondition (input)`
+
+Input object `PullzoneRatelimitRuleCondition`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `negated` | `boolean` | no | Negates the condition result. |
+| `operator` | `string` | yes | Options: `BEGINSWITH`, `CONTAINS`, `CONTAINSWORD`, `DETECTSQLI`, `DETECTXSS`, `ENDSWITH`, `EQ`, `GE`, `GT`, `LE`, `LT`, `RX`, `STREQ`, `STRMATCH`, `WITHIN` |
+| `value` | `string` | yes |  |
+| `variable` | `string` | yes | Options: `ARGS`, `ARGS_COMBINED_SIZE`, `ARGS_GET`, `ARGS_GET_NAMES`, `ARGS_POST`, `ARGS_POST_NAMES`, `FILES_NAMES`, `FINGERPRINT`, `GEO`, `QUERY_STRING`, `REMOTE_ADDR`, `REQUEST_BASENAME`, `REQUEST_BODY`, `REQUEST_COOKIES`, `REQUEST_COOKIES_NAMES`, `REQUEST_FILENAME`, `REQUEST_HEADERS`, `REQUEST_HEADERS_NAMES`, `REQUEST_LINE`, `REQUEST_METHOD`, `REQUEST_PROTOCOL`, `REQUEST_URI`, `REQUEST_URI_RAW`, `RESPONSE_BODY`, `RESPONSE_HEADERS`, `RESPONSE_STATUS`, `VERIFIED_BOT_CATEGORY` |
+| `variableValue` | `string` | no |  |
+| `variableValueRegex` | `boolean` | no | Indicated whether `variableValue` is a regular expression. |
+
+## `PullzoneRatelimitRuleLimit (input)`
+
+Input object `PullzoneRatelimitRuleLimit`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `counterKey` | `string` | no | The request property used to group rate limit counters. Options: `ASN`, `City`, `Country`, `Host`, `IP`, `IP+JA4`, `JA4`, `Organization` |
+| `interval` | `number` | yes | The interval, in seconds, to consider for to trigger the rate limit rule. |
+| `requests` | `number` | yes | The number of request within the interval to trigger the rate limit rule. |
+
+## `PullzoneRatelimitRuleResponse (input)`
+
+Input object `PullzoneRatelimitRuleResponse`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | no | The action to take once the rate limit is exceeded. Options: `Challenge`, `Log`, `RateLimit` |
+| `interval` | `number` | yes | The interval, in seconds, that the rate limit will apply. |
+
+## `PullzoneRatelimitRuleCondition (output)`
+
+Output object `PullzoneRatelimitRuleCondition`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `negated` | `boolean` | yes | Negates the condition result. |
+| `operator` | `string` | yes | Options: `BEGINSWITH`, `CONTAINS`, `CONTAINSWORD`, `DETECTSQLI`, `DETECTXSS`, `ENDSWITH`, `EQ`, `GE`, `GT`, `LE`, `LT`, `RX`, `STREQ`, `STRMATCH`, `WITHIN` |
+| `value` | `string` | yes |  |
+| `variable` | `string` | yes | Options: `ARGS`, `ARGS_COMBINED_SIZE`, `ARGS_GET`, `ARGS_GET_NAMES`, `ARGS_POST`, `ARGS_POST_NAMES`, `FILES_NAMES`, `FINGERPRINT`, `GEO`, `QUERY_STRING`, `REMOTE_ADDR`, `REQUEST_BASENAME`, `REQUEST_BODY`, `REQUEST_COOKIES`, `REQUEST_COOKIES_NAMES`, `REQUEST_FILENAME`, `REQUEST_HEADERS`, `REQUEST_HEADERS_NAMES`, `REQUEST_LINE`, `REQUEST_METHOD`, `REQUEST_PROTOCOL`, `REQUEST_URI`, `REQUEST_URI_RAW`, `RESPONSE_BODY`, `RESPONSE_HEADERS`, `RESPONSE_STATUS`, `VERIFIED_BOT_CATEGORY` |
+| `variableValue` | `string` | no |  |
+| `variableValueRegex` | `boolean` | yes | Indicated whether `variableValue` is a regular expression. |
+
+## `PullzoneRatelimitRuleLimit (output)`
+
+Output object `PullzoneRatelimitRuleLimit`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `counterKey` | `string` | yes | The request property used to group rate limit counters. Options: `ASN`, `City`, `Country`, `Host`, `IP`, `IP+JA4`, `JA4`, `Organization` |
+| `interval` | `number` | yes | The interval, in seconds, to consider for to trigger the rate limit rule. |
+| `requests` | `number` | yes | The number of request within the interval to trigger the rate limit rule. |
+
+## `PullzoneRatelimitRuleResponse (output)`
+
+Output object `PullzoneRatelimitRuleResponse`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `action` | `string` | yes | The action to take once the rate limit is exceeded. Options: `Challenge`, `Log`, `RateLimit` |
+| `interval` | `number` | yes | The interval, in seconds, that the rate limit will apply. |

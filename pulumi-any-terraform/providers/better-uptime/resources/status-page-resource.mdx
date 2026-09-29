@@ -1,0 +1,154 @@
+---
+title: "StatusPageResource"
+description: "Resource StatusPageResource in pulumi-better-uptime."
+---
+
+<!-- Generated from the pulumi-better-uptime SDK. -->
+
+Resource StatusPageResource in pulumi-better-uptime.
+
+Pulumi type: `better-uptime:index/statusPageResource:StatusPageResource`.
+
+```ts
+import * as betteruptime from "pulumi-better-uptime"
+```
+
+Construct with `new betteruptime.StatusPageResource(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `explanation` | `string` | no | A detailed text displayed as a help icon. |
+| `history` | `boolean` | no | Do you want to display detailed historical status for this item? This field is deprecated, use `widgetType` instead. |
+| `markAsDegradedFor` | `string` | no | How to mark this resource as degraded. Can be one of `noIncident`, `anyIncident`, or `incidentMatchingMetadata`. |
+| `markAsDegradedMetadataRule` | `StatusPageResourceMarkAsDegradedMetadataRule (input)` | no | Metadata rule for marking resource as degraded. Only applicable when `markAsDegradedFor` is 'incident_matching_metadata'. |
+| `markAsDownFor` | `string` | no | How to mark this resource as down. Can be one of `noIncident`, `anyIncident`, or `incidentMatchingMetadata`. |
+| `markAsDownMetadataRule` | `StatusPageResourceMarkAsDownMetadataRule (input)` | no | Metadata rule for marking resource as down. Only applicable when `markAsDownFor` is 'incident_matching_metadata'. |
+| `position` | `number` | no | The position of this resource on your status page, indexed from zero. If you don't specify a position, we add the resource to the end of the status page. When you specify a position of an existing resource, we add the resource to this position and shift resources below to accommodate. |
+| `publicName` | `string` | yes | The resource name displayed publicly on your status page. |
+| `resourceId` | `number` | no | The ID of the resource you are adding. Omit when `resourceType` is ManuallyTrackedItem. |
+| `resourceType` | `string` | yes | The type of the resource you are adding. Available values: ManuallyTrackedItem, Monitor, MonitorGroup, Heartbeat, HeartbeatGroup, WebhookIntegration, EmailIntegration, IncomingWebhook, AmazonSnsIntegration, ResourceGroup, LogsChart, CatalogReference. |
+| `statusPageId` | `string` | yes | The ID of the Status Page. |
+| `statusPageSectionId` | `number` | no | The ID of the Status Page Section. If you don't specify a status_page_section_id, we add the resource to the first section. If there are no sections in the status page yet, one will be automatically created for you. |
+| `widgetType` | `string` | no | What widget to display for this resource. Available values: plain - only display status, history - display historical status,`intradayHistory`- display detailed historical status,`responseTimes`- add a response times chart (only for Monitor resource type). This takes preference over history when both parameters are present. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `availability` | `number` | yes | The availability of this resource (from 0.0 to 1.0). |
+| `explanation` | `string` | no | A detailed text displayed as a help icon. |
+| `history` | `boolean` | no | Do you want to display detailed historical status for this item? This field is deprecated, use `widgetType` instead. |
+| `markAsDegradedFor` | `string` | no | How to mark this resource as degraded. Can be one of `noIncident`, `anyIncident`, or `incidentMatchingMetadata`. |
+| `markAsDegradedMetadataRule` | `StatusPageResourceMarkAsDegradedMetadataRule (output)` | no | Metadata rule for marking resource as degraded. Only applicable when `markAsDegradedFor` is 'incident_matching_metadata'. |
+| `markAsDownFor` | `string` | no | How to mark this resource as down. Can be one of `noIncident`, `anyIncident`, or `incidentMatchingMetadata`. |
+| `markAsDownMetadataRule` | `StatusPageResourceMarkAsDownMetadataRule (output)` | no | Metadata rule for marking resource as down. Only applicable when `markAsDownFor` is 'incident_matching_metadata'. |
+| `position` | `number` | no | The position of this resource on your status page, indexed from zero. If you don't specify a position, we add the resource to the end of the status page. When you specify a position of an existing resource, we add the resource to this position and shift resources below to accommodate. |
+| `publicName` | `string` | no | The resource name displayed publicly on your status page. |
+| `resourceId` | `number` | no | The ID of the resource you are adding. Omit when `resourceType` is ManuallyTrackedItem. |
+| `resourceType` | `string` | no | The type of the resource you are adding. Available values: ManuallyTrackedItem, Monitor, MonitorGroup, Heartbeat, HeartbeatGroup, WebhookIntegration, EmailIntegration, IncomingWebhook, AmazonSnsIntegration, ResourceGroup, LogsChart, CatalogReference. |
+| `status` | `string` | yes | The current status of the resource. Can be one of `notMonitored` (when the underlying monitor is paused), `operational`, `maintenance`, `degraded`, or `downtime` |
+| `statusHistories` | `StatusPageResourceStatusHistory (output)[]` | yes | History of a single status page resource history |
+| `statusPageId` | `string` | no | The ID of the Status Page. |
+| `statusPageSectionId` | `number` | no | The ID of the Status Page Section. If you don't specify a status_page_section_id, we add the resource to the first section. If there are no sections in the status page yet, one will be automatically created for you. |
+| `widgetType` | `string` | no | What widget to display for this resource. Available values: plain - only display status, history - display historical status,`intradayHistory`- display detailed historical status,`responseTimes`- add a response times chart (only for Monitor resource type). This takes preference over history when both parameters are present. |
+
+## `StatusPageResourceMarkAsDegradedMetadataRule (input)`
+
+Input object `StatusPageResourceMarkAsDegradedMetadataRule`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The metadata key to match against. |
+| `metadataValues` | `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue (input)[]` | yes | List of metadata values that should trigger the degraded status. |
+
+## `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue (input)`
+
+Input object `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** |
+| `value` | `string` | no | Value when type is String. |
+
+## `StatusPageResourceMarkAsDownMetadataRule (input)`
+
+Input object `StatusPageResourceMarkAsDownMetadataRule`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The metadata key to match against. |
+| `metadataValues` | `StatusPageResourceMarkAsDownMetadataRuleMetadataValue (input)[]` | yes | List of metadata values that should trigger the down status. |
+
+## `StatusPageResourceMarkAsDownMetadataRuleMetadataValue (input)`
+
+Input object `StatusPageResourceMarkAsDownMetadataRuleMetadataValue`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** |
+| `value` | `string` | no | Value when type is String. |
+
+## `StatusPageResourceMarkAsDegradedMetadataRule (output)`
+
+Output object `StatusPageResourceMarkAsDegradedMetadataRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The metadata key to match against. |
+| `metadataValues` | `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue (output)[]` | yes | List of metadata values that should trigger the degraded status. |
+
+## `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue (output)`
+
+Output object `StatusPageResourceMarkAsDegradedMetadataRuleMetadataValue`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** |
+| `value` | `string` | no | Value when type is String. |
+
+## `StatusPageResourceMarkAsDownMetadataRule (output)`
+
+Output object `StatusPageResourceMarkAsDownMetadataRule`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | yes | The metadata key to match against. |
+| `metadataValues` | `StatusPageResourceMarkAsDownMetadataRuleMetadataValue (output)[]` | yes | List of metadata values that should trigger the down status. |
+
+## `StatusPageResourceMarkAsDownMetadataRuleMetadataValue (output)`
+
+Output object `StatusPageResourceMarkAsDownMetadataRuleMetadataValue`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | no | Email of the referenced user when type is `User`. |
+| `itemId` | `string` | no | ID of the referenced item when type is different than `String`. |
+| `name` | `string` | no | Name of the referenced item when type is different than `String`. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. |
+| `type` | `string` | no | Value types can be grouped into 2 main categories: - **Scalar**: `String` - **Reference**: `User`, `Team`, `Policy`, `Schedule`, `Endpoint`, `Source`, `SlackIntegration`, `LinearIntegration`, `JiraIntegration`, `MicrosoftTeamsWebhook`, `ZapierWebhook`, `NativeWebhook`, `PagerDutyWebhook` The value of a **Scalar** type is defined using the value field. The value of a **Reference** type is defined using one of the following fields: - `itemId` - great choice when you know the ID of the target item. - `email` - your go-to choice when you're referencing users. - `name` - can be used to reference other items like teams, policies, etc. Not available for `Endpoint`, `SlackIntegration`, and `ZapierWebhook`, which are referenced by `itemId`. **The reference types require the presence of at least one of the three fields: `itemId`, `name`, `email`.** |
+| `value` | `string` | no | Value when type is String. |
+
+## `StatusPageResourceStatusHistory (output)`
+
+Output object `StatusPageResourceStatusHistory`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `day` | `string` | no |  |
+| `downtimeDuration` | `number` | no |  |
+| `maintenanceDuration` | `number` | no |  |
+| `status` | `string` | no |  |

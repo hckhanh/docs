@@ -1,0 +1,347 @@
+---
+title: "OmniCluster"
+description: "Resource OmniCluster in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource OmniCluster in pulumi-portainer.
+
+Pulumi type: `portainer:index/omniCluster:OmniCluster`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.OmniCluster(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clusterConfig` | `string` | no | Raw Omni cluster template, as an alternative to describing the cluster with the blocks below. Only read when the cluster is created. |
+| `clusterPatches` | `OmniClusterClusterPatch (input)[]` | no | Talos configuration patches to apply to the cluster as a whole. |
+| `controlPlane` | `OmniClusterControlPlane (input)` | no | The cluster's control plane. |
+| `credentialId` | `number` | yes | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key. |
+| `kind` | `string` | no | Omni resource kind of the cluster. Leave unset unless Omni asks for a specific one. |
+| `kubernetesVersion` | `string` | no | Kubernetes version to run. Leave unset to let Omni pick, and read the result back from this attribute. |
+| `labels` | `{ [key: string]: string }` | no | Labels to set on the Omni cluster resource. |
+| `name` | `string` | no | Name of the cluster. Omni cannot rename a cluster, so changing it replaces the resource. |
+| `omniClusterId` | `string` | no |  |
+| `portainerUrl` | `string` | no | URL the provisioned nodes reach Portainer on. Leave unset to use the instance's configured URL. |
+| `talosVersion` | `string` | no | Talos version to run. Use the `portainer.getOmniTalosVersions` data source to see what the credential supports. |
+| `tunnelServerAddress` | `string` | no | Address the provisioned nodes reach Portainer's tunnel server on. |
+| `validateBeforeCreate` | `boolean` | no | Whether to validate the cluster configuration with Portainer before provisioning it. Defaults to `true`. |
+| `worker` | `OmniClusterWorker (input)` | no | The cluster's worker pool. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `available` | `boolean` | yes | Whether Omni reports the cluster as available. |
+| `backupEnabled` | `boolean` | yes | Whether Omni backs the cluster's etcd up on a schedule. |
+| `backupInterval` | `string` | yes | Interval between the scheduled etcd backups. |
+| `clusterConfig` | `string` | no | Raw Omni cluster template, as an alternative to describing the cluster with the blocks below. Only read when the cluster is created. |
+| `clusterPatches` | `OmniClusterClusterPatch (output)[]` | no | Talos configuration patches to apply to the cluster as a whole. |
+| `controlPlane` | `OmniClusterControlPlane (output)` | no | The cluster's control plane. |
+| `controlPlaneReady` | `boolean` | yes | Whether the control plane has come up. |
+| `credentialId` | `number` | no | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key. |
+| `diskEncryption` | `boolean` | yes | Whether disk encryption is enabled on the cluster. |
+| `embeddedDiscoveryService` | `boolean` | yes | Whether the cluster uses Omni's embedded discovery service. |
+| `endpointId` | `number` | yes | Identifier of the Portainer environment created for the cluster. |
+| `kind` | `string` | no | Omni resource kind of the cluster. Leave unset unless Omni asks for a specific one. |
+| `kubernetesApiReady` | `boolean` | yes | Whether the cluster's Kubernetes API is answering. |
+| `kubernetesVersion` | `string` | no | Kubernetes version to run. Leave unset to let Omni pick, and read the result back from this attribute. |
+| `labels` | `{ [key: string]: string }` | no | Labels to set on the Omni cluster resource. |
+| `machinesConnected` | `number` | yes | Machines currently connected to Omni. |
+| `machinesHealthy` | `number` | yes | Machines Omni considers healthy. |
+| `machinesRequested` | `number` | yes | Machines the cluster asked for. |
+| `machinesTotal` | `number` | yes | Machines Omni counts in the cluster. |
+| `name` | `string` | no | Name of the cluster. Omni cannot rename a cluster, so changing it replaces the resource. |
+| `omniClusterId` | `string` | no |  |
+| `phase` | `number` | yes | Provisioning phase Omni reports for the cluster. |
+| `portainerUrl` | `string` | no | URL the provisioned nodes reach Portainer on. Leave unset to use the instance's configured URL. |
+| `ready` | `boolean` | yes | Whether Omni reports the cluster as ready. |
+| `talosVersion` | `string` | no | Talos version to run. Use the `portainer.getOmniTalosVersions` data source to see what the credential supports. |
+| `tunnelServerAddress` | `string` | no | Address the provisioned nodes reach Portainer's tunnel server on. |
+| `validateBeforeCreate` | `boolean` | no | Whether to validate the cluster configuration with Portainer before provisioning it. Defaults to `true`. |
+| `worker` | `OmniClusterWorker (output)` | no | The cluster's worker pool. |
+| `workloadProxyEnabled` | `boolean` | yes | Whether Omni's workload proxy is enabled for the cluster. |
+
+## `OmniClusterClusterPatch (input)`
+
+Input object `OmniClusterClusterPatch`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `annotationName` | `string` | no | Name annotation Omni shows for the patch. |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterControlPlane (input)`
+
+Input object `OmniClusterControlPlane`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `kind` | `string` | no | Omni resource kind of the control plane. Leave unset unless Omni asks for a specific one. |
+| `machines` | `OmniClusterControlPlaneMachine (input)[]` | no | Machines that make up the cluster's control plane. |
+
+## `OmniClusterControlPlaneMachine (input)`
+
+Input object `OmniClusterControlPlaneMachine`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hostname` | `string` | no | Hostname to configure on the machine. |
+| `installDisk` | `string` | no | Block device Talos is installed onto, for example `/dev/sda`. |
+| `interfaces` | `OmniClusterControlPlaneMachineInterface (input)[]` | no | Network interfaces to configure on the machine. |
+| `kind` | `string` | no | Omni resource kind of the machine. Leave unset unless Omni asks for a specific one. |
+| `name` | `string` | yes | Name of the machine as Omni knows it. |
+| `nameservers` | `string[]` | no | DNS servers to configure on the machine. |
+| `patches` | `OmniClusterControlPlaneMachinePatch (input)[]` | no | Talos machine configuration patches to apply. |
+| `systemDiskSize` | `number` | no | Size of the ephemeral system volume in GiB. Omni turns this into a volume configuration patch. |
+| `userDisk` | `OmniClusterControlPlaneMachineUserDisk (input)` | no | A user volume to carve out of the remaining disk space. |
+
+## `OmniClusterControlPlaneMachineInterface (input)`
+
+Input object `OmniClusterControlPlaneMachineInterface`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | no | Static addresses in CIDR notation, for example `10.0.0.10/24`. |
+| `dhcp` | `boolean` | no | Whether the interface takes its address from DHCP. Leave `addresses` unset when it does. |
+| `interface` | `string` | yes | Name of the interface, for example `eth0`. |
+| `routes` | `OmniClusterControlPlaneMachineInterfaceRoute (input)[]` | no | Static routes to add through the interface. |
+
+## `OmniClusterControlPlaneMachineInterfaceRoute (input)`
+
+Input object `OmniClusterControlPlaneMachineInterfaceRoute`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `gateway` | `string` | yes | Gateway the route goes through. |
+| `network` | `string` | yes | Destination network in CIDR notation. Use `0.0.0.0/0` for a default route. |
+
+## `OmniClusterControlPlaneMachinePatch (input)`
+
+Input object `OmniClusterControlPlaneMachinePatch`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterControlPlaneMachineUserDisk (input)`
+
+Input object `OmniClusterControlPlaneMachineUserDisk`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | no | Size of the volume in GiB. Zero means take all the space that is left. |
+| `volumeName` | `string` | yes | Name of the volume. |
+
+## `OmniClusterWorker (input)`
+
+Input object `OmniClusterWorker`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `kind` | `string` | no | Omni resource kind of the worker pool. Leave unset unless Omni asks for a specific one. |
+| `machines` | `OmniClusterWorkerMachine (input)[]` | no | Machines that make up this worker pool. |
+| `name` | `string` | no | Name of the worker pool. |
+
+## `OmniClusterWorkerMachine (input)`
+
+Input object `OmniClusterWorkerMachine`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `hostname` | `string` | no | Hostname to configure on the machine. |
+| `installDisk` | `string` | no | Block device Talos is installed onto, for example `/dev/sda`. |
+| `interfaces` | `OmniClusterWorkerMachineInterface (input)[]` | no | Network interfaces to configure on the machine. |
+| `kind` | `string` | no | Omni resource kind of the machine. Leave unset unless Omni asks for a specific one. |
+| `name` | `string` | yes | Name of the machine as Omni knows it. |
+| `nameservers` | `string[]` | no | DNS servers to configure on the machine. |
+| `patches` | `OmniClusterWorkerMachinePatch (input)[]` | no | Talos machine configuration patches to apply. |
+| `systemDiskSize` | `number` | no | Size of the ephemeral system volume in GiB. Omni turns this into a volume configuration patch. |
+| `userDisk` | `OmniClusterWorkerMachineUserDisk (input)` | no | A user volume to carve out of the remaining disk space. |
+
+## `OmniClusterWorkerMachineInterface (input)`
+
+Input object `OmniClusterWorkerMachineInterface`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | no | Static addresses in CIDR notation, for example `10.0.0.10/24`. |
+| `dhcp` | `boolean` | no | Whether the interface takes its address from DHCP. Leave `addresses` unset when it does. |
+| `interface` | `string` | yes | Name of the interface, for example `eth0`. |
+| `routes` | `OmniClusterWorkerMachineInterfaceRoute (input)[]` | no | Static routes to add through the interface. |
+
+## `OmniClusterWorkerMachineInterfaceRoute (input)`
+
+Input object `OmniClusterWorkerMachineInterfaceRoute`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `gateway` | `string` | yes | Gateway the route goes through. |
+| `network` | `string` | yes | Destination network in CIDR notation. Use `0.0.0.0/0` for a default route. |
+
+## `OmniClusterWorkerMachinePatch (input)`
+
+Input object `OmniClusterWorkerMachinePatch`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterWorkerMachineUserDisk (input)`
+
+Input object `OmniClusterWorkerMachineUserDisk`. Fields below belong to this object, not to the parent.
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | no | Size of the volume in GiB. Zero means take all the space that is left. |
+| `volumeName` | `string` | yes | Name of the volume. |
+
+## `OmniClusterClusterPatch (output)`
+
+Output object `OmniClusterClusterPatch`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `annotationName` | `string` | no | Name annotation Omni shows for the patch. |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterControlPlane (output)`
+
+Output object `OmniClusterControlPlane`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `kind` | `string` | no | Omni resource kind of the control plane. Leave unset unless Omni asks for a specific one. |
+| `machines` | `OmniClusterControlPlaneMachine (output)[]` | no | Machines that make up the cluster's control plane. |
+
+## `OmniClusterControlPlaneMachine (output)`
+
+Output object `OmniClusterControlPlaneMachine`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hostname` | `string` | no | Hostname to configure on the machine. |
+| `installDisk` | `string` | no | Block device Talos is installed onto, for example `/dev/sda`. |
+| `interfaces` | `OmniClusterControlPlaneMachineInterface (output)[]` | no | Network interfaces to configure on the machine. |
+| `kind` | `string` | no | Omni resource kind of the machine. Leave unset unless Omni asks for a specific one. |
+| `name` | `string` | yes | Name of the machine as Omni knows it. |
+| `nameservers` | `string[]` | no | DNS servers to configure on the machine. |
+| `patches` | `OmniClusterControlPlaneMachinePatch (output)[]` | no | Talos machine configuration patches to apply. |
+| `systemDiskSize` | `number` | no | Size of the ephemeral system volume in GiB. Omni turns this into a volume configuration patch. |
+| `userDisk` | `OmniClusterControlPlaneMachineUserDisk (output)` | no | A user volume to carve out of the remaining disk space. |
+
+## `OmniClusterControlPlaneMachineInterface (output)`
+
+Output object `OmniClusterControlPlaneMachineInterface`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | no | Static addresses in CIDR notation, for example `10.0.0.10/24`. |
+| `dhcp` | `boolean` | no | Whether the interface takes its address from DHCP. Leave `addresses` unset when it does. |
+| `interface` | `string` | yes | Name of the interface, for example `eth0`. |
+| `routes` | `OmniClusterControlPlaneMachineInterfaceRoute (output)[]` | no | Static routes to add through the interface. |
+
+## `OmniClusterControlPlaneMachineInterfaceRoute (output)`
+
+Output object `OmniClusterControlPlaneMachineInterfaceRoute`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `gateway` | `string` | yes | Gateway the route goes through. |
+| `network` | `string` | yes | Destination network in CIDR notation. Use `0.0.0.0/0` for a default route. |
+
+## `OmniClusterControlPlaneMachinePatch (output)`
+
+Output object `OmniClusterControlPlaneMachinePatch`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterControlPlaneMachineUserDisk (output)`
+
+Output object `OmniClusterControlPlaneMachineUserDisk`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | no | Size of the volume in GiB. Zero means take all the space that is left. |
+| `volumeName` | `string` | yes | Name of the volume. |
+
+## `OmniClusterWorker (output)`
+
+Output object `OmniClusterWorker`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `kind` | `string` | no | Omni resource kind of the worker pool. Leave unset unless Omni asks for a specific one. |
+| `machines` | `OmniClusterWorkerMachine (output)[]` | no | Machines that make up this worker pool. |
+| `name` | `string` | no | Name of the worker pool. |
+
+## `OmniClusterWorkerMachine (output)`
+
+Output object `OmniClusterWorkerMachine`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `hostname` | `string` | no | Hostname to configure on the machine. |
+| `installDisk` | `string` | no | Block device Talos is installed onto, for example `/dev/sda`. |
+| `interfaces` | `OmniClusterWorkerMachineInterface (output)[]` | no | Network interfaces to configure on the machine. |
+| `kind` | `string` | no | Omni resource kind of the machine. Leave unset unless Omni asks for a specific one. |
+| `name` | `string` | yes | Name of the machine as Omni knows it. |
+| `nameservers` | `string[]` | no | DNS servers to configure on the machine. |
+| `patches` | `OmniClusterWorkerMachinePatch (output)[]` | no | Talos machine configuration patches to apply. |
+| `systemDiskSize` | `number` | no | Size of the ephemeral system volume in GiB. Omni turns this into a volume configuration patch. |
+| `userDisk` | `OmniClusterWorkerMachineUserDisk (output)` | no | A user volume to carve out of the remaining disk space. |
+
+## `OmniClusterWorkerMachineInterface (output)`
+
+Output object `OmniClusterWorkerMachineInterface`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `addresses` | `string[]` | no | Static addresses in CIDR notation, for example `10.0.0.10/24`. |
+| `dhcp` | `boolean` | no | Whether the interface takes its address from DHCP. Leave `addresses` unset when it does. |
+| `interface` | `string` | yes | Name of the interface, for example `eth0`. |
+| `routes` | `OmniClusterWorkerMachineInterfaceRoute (output)[]` | no | Static routes to add through the interface. |
+
+## `OmniClusterWorkerMachineInterfaceRoute (output)`
+
+Output object `OmniClusterWorkerMachineInterfaceRoute`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `gateway` | `string` | yes | Gateway the route goes through. |
+| `network` | `string` | yes | Destination network in CIDR notation. Use `0.0.0.0/0` for a default route. |
+
+## `OmniClusterWorkerMachinePatch (output)`
+
+Output object `OmniClusterWorkerMachinePatch`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `idOverride` | `string` | no | Identifier Omni stores the patch under, instead of the generated one. |
+| `inline` | `string` | no | Patch body as a JSON object. Use `jsonencode({...})`. |
+
+## `OmniClusterWorkerMachineUserDisk (output)`
+
+Output object `OmniClusterWorkerMachineUserDisk`. Fields below belong to this object.
+
+| Property | Type | Always present | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | no | Size of the volume in GiB. Zero means take all the space that is left. |
+| `volumeName` | `string` | yes | Name of the volume. |

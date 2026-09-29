@@ -1,0 +1,50 @@
+---
+title: "OrganizationPipelineSettings"
+description: "Resource OrganizationPipelineSettings in pulumi-buildkite."
+---
+
+<!-- Generated from the pulumi-buildkite SDK. -->
+
+Resource OrganizationPipelineSettings in pulumi-buildkite.
+
+Pulumi type: `buildkite:index/organizationPipelineSettings:OrganizationPipelineSettings`.
+
+```ts
+import * as buildkite from "pulumi-buildkite"
+```
+
+Construct with `new buildkite.OrganizationPipelineSettings(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `buildExportLocation` | `string` | no | The bucket to export build data to, given as a bare bucket name without a scheme. Set this and `buildExportStrategyId` to empty strings to stop exporting build data. If both are omitted, the current setting is left unchanged. &gt; Exporting build data is a plan-gated feature. Read `buildExportAvailable` to see whether it is available on this organization's plan. |
+| `buildExportStrategyId` | `string` | no | The strategy used to export build data, which decides the scheme the bucket is addressed with. The strategies this organization accepts are listed in `buildExportSupportedStrategies`, and are usually `s3` and `gcs`. Always configured alongside `buildExportLocation`. |
+| `defaultBranch` | `string` | no | The default branch that new pipelines in the organization are created with. If omitted, the current setting is left unchanged. |
+| `defaultClusterId` | `string` | no | The UUID of the cluster that new pipelines in the organization are created in. Set this to an empty string to leave new pipelines without a default cluster. If omitted, the current setting is left unchanged. |
+| `defaultTimeoutInMinutes` | `number` | no | The default command timeout, in minutes, applied to jobs that do not set their own. If omitted, the current setting is left unchanged. |
+| `hostedAgentsTerminalAccessEnabled` | `boolean` | no | Whether remote access to hosted agents is enabled, which covers SSH access to all hosted agents and VNC access to supported macOS hosted jobs. If omitted, the current setting is left unchanged. |
+| `maximumTimeoutInMinutes` | `number` | no | The longest command timeout, in minutes, that any pipeline in the organization may set. If omitted, the current setting is left unchanged. |
+| `publicPipelineCreationEnabled` | `boolean` | no | Whether members of the organization can create public pipelines. If omitted, the current setting is left unchanged. |
+| `scheduledJobExpiryInMinutes` | `number` | no | How long a scheduled job waits, in minutes, before it expires without having started. Must be between 60 and 43200. If omitted, the current setting is left unchanged. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `buildExportAvailable` | `boolean` | yes | Whether exporting build data is available on this organization's billing plan. |
+| `buildExportLocation` | `string` | no | The bucket to export build data to, given as a bare bucket name without a scheme. Set this and `buildExportStrategyId` to empty strings to stop exporting build data. If both are omitted, the current setting is left unchanged. &gt; Exporting build data is a plan-gated feature. Read `buildExportAvailable` to see whether it is available on this organization's plan. |
+| `buildExportStrategyId` | `string` | no | The strategy used to export build data, which decides the scheme the bucket is addressed with. The strategies this organization accepts are listed in `buildExportSupportedStrategies`, and are usually `s3` and `gcs`. Always configured alongside `buildExportLocation`. |
+| `buildExportSupportedStrategies` | `string[]` | yes | The build export strategies that `buildExportStrategyId` accepts. |
+| `defaultBranch` | `string` | no | The default branch that new pipelines in the organization are created with. If omitted, the current setting is left unchanged. |
+| `defaultClusterId` | `string` | no | The UUID of the cluster that new pipelines in the organization are created in. Set this to an empty string to leave new pipelines without a default cluster. If omitted, the current setting is left unchanged. |
+| `defaultTimeoutInMinutes` | `number` | no | The default command timeout, in minutes, applied to jobs that do not set their own. If omitted, the current setting is left unchanged. |
+| `hostedAgentsTerminalAccessEnabled` | `boolean` | no | Whether remote access to hosted agents is enabled, which covers SSH access to all hosted agents and VNC access to supported macOS hosted jobs. If omitted, the current setting is left unchanged. |
+| `maximumTimeoutInMinutes` | `number` | no | The longest command timeout, in minutes, that any pipeline in the organization may set. If omitted, the current setting is left unchanged. |
+| `publicPipelineCreationEnabled` | `boolean` | no | Whether members of the organization can create public pipelines. If omitted, the current setting is left unchanged. |
+| `scheduledJobExpiryInMinutes` | `number` | no | How long a scheduled job waits, in minutes, before it expires without having started. Must be between 60 and 43200. If omitted, the current setting is left unchanged. |

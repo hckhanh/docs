@@ -1,0 +1,38 @@
+---
+title: "WebhookExecute"
+description: "Resource WebhookExecute in pulumi-portainer."
+---
+
+<!-- Generated from the pulumi-portainer SDK. -->
+
+Resource WebhookExecute in pulumi-portainer.
+
+Pulumi type: `portainer:index/webhookExecute:WebhookExecute`.
+
+```ts
+import * as portainer from "pulumi-portainer"
+```
+
+Construct with `new portainer.WebhookExecute(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `edgeStackId` | `string` | no | Edge Stack ID for triggering edge stack GitOps update |
+| `stackId` | `string` | no | Stack ID for triggering stack GitOps update |
+| `token` | `string` | no | Webhook token for service restart webhook |
+| `webhookExecuteId` | `string` | no |  |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `edgeStackId` | `string` | no | Edge Stack ID for triggering edge stack GitOps update |
+| `stackId` | `string` | no | Stack ID for triggering stack GitOps update |
+| `token` | `string` | no | Webhook token for service restart webhook |
+| `webhookExecuteId` | `string` | no |  |

@@ -1,0 +1,37 @@
+---
+title: "DnsScriptVariable"
+description: "Resource DnsScriptVariable in pulumi-bunnynet."
+---
+
+<!-- Generated from the pulumi-bunnynet SDK. -->
+
+Resource DnsScriptVariable in pulumi-bunnynet.
+
+Pulumi type: `bunnynet:index/dnsScriptVariable:DnsScriptVariable`.
+
+```ts
+import * as bunnynet from "pulumi-bunnynet"
+```
+
+Construct with `new bunnynet.DnsScriptVariable(name, args, opts?)`.
+
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Arguments
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | no | The name of the environment variable. |
+| `script` | `number` | yes | The ID of the associated DNS script. |
+| `value` | `string` | yes | The value of the environment variable. |
+
+## Outputs
+
+Computed outputs are produced by the provider. They are not constructor arguments.
+
+| Property | Type | Computed | Description |
+| --- | --- | --- | --- |
+| `dnsScriptVariableId` | `number` | yes | The ID of the environment variable. |
+| `name` | `string` | no | The name of the environment variable. |
+| `script` | `number` | no | The ID of the associated DNS script. |
+| `value` | `string` | no | The value of the environment variable. |
