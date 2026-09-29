@@ -19,63 +19,63 @@ Construct with `new infisical.Gateway(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `awsAuth` | `GatewayAwsAuth (input)` | no | Authenticate the gateway with its AWS IAM identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedPrincipalArns` or `allowedAccountIds` must be non-empty. |
-| `gcpAuth` | `GatewayGcpAuth (input)` | no | Authenticate the gateway with its GCP identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedServiceAccounts` or `allowedProjects` must be non-empty. |
-| `kubernetesAuth` | `GatewayKubernetesAuth (input)` | no | Authenticate the gateway with its Kubernetes service account token. The pod re-authenticates on every start, so no secret is stored. At least one of `allowedNamespaces` or `allowedServiceAccountNames` must be non-empty. |
-| `name` | `string` | no | The name of the gateway. Unique within the organization. Renaming is an in-place update, so the gateway keeps its ID and anything referencing it keeps working. |
-| `tokenAuth` | `GatewayTokenAuth (input)` | no | Authenticate the gateway with a one-time enrollment token. The token itself is minted by a separate 'infisical.GatewayEnrollmentToken' resource. This block takes no arguments, because token auth has nothing to configure: write 'tokenAuth'= &#123;&#125;'. Prefer 'awsAuth', 'gcpAuth' or 'kubernetesAuth' where the platform can vouch for the machine, since those re-authenticate on every start and put no secret in state. |
+| Property         | Type                            | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------- | ------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `awsAuth`        | `GatewayAwsAuth (input)`        | no       | Authenticate the gateway with its AWS IAM identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedPrincipalArns` or `allowedAccountIds` must be non-empty.                                                                                                                                                                                                                           |
+| `gcpAuth`        | `GatewayGcpAuth (input)`        | no       | Authenticate the gateway with its GCP identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedServiceAccounts` or `allowedProjects` must be non-empty.                                                                                                                                                                                                                               |
+| `kubernetesAuth` | `GatewayKubernetesAuth (input)` | no       | Authenticate the gateway with its Kubernetes service account token. The pod re-authenticates on every start, so no secret is stored. At least one of `allowedNamespaces` or `allowedServiceAccountNames` must be non-empty.                                                                                                                                                                                                         |
+| `name`           | `string`                        | no       | The name of the gateway. Unique within the organization. Renaming is an in-place update, so the gateway keeps its ID and anything referencing it keeps working.                                                                                                                                                                                                                                                                     |
+| `tokenAuth`      | `GatewayTokenAuth (input)`      | no       | Authenticate the gateway with a one-time enrollment token. The token itself is minted by a separate 'infisical.GatewayEnrollmentToken' resource. This block takes no arguments, because token auth has nothing to configure: write 'tokenAuth'= &#123;&#125;'. Prefer 'awsAuth', 'gcpAuth' or 'kubernetesAuth' where the platform can vouch for the machine, since those re-authenticate on every start and put no secret in state. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `awsAuth` | `GatewayAwsAuth (output)` | no | Authenticate the gateway with its AWS IAM identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedPrincipalArns` or `allowedAccountIds` must be non-empty. |
-| `gcpAuth` | `GatewayGcpAuth (output)` | no | Authenticate the gateway with its GCP identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedServiceAccounts` or `allowedProjects` must be non-empty. |
-| `kubernetesAuth` | `GatewayKubernetesAuth (output)` | no | Authenticate the gateway with its Kubernetes service account token. The pod re-authenticates on every start, so no secret is stored. At least one of `allowedNamespaces` or `allowedServiceAccountNames` must be non-empty. |
-| `name` | `string` | no | The name of the gateway. Unique within the organization. Renaming is an in-place update, so the gateway keeps its ID and anything referencing it keeps working. |
-| `tokenAuth` | `GatewayTokenAuth (output)` | no | Authenticate the gateway with a one-time enrollment token. The token itself is minted by a separate 'infisical.GatewayEnrollmentToken' resource. This block takes no arguments, because token auth has nothing to configure: write 'tokenAuth'= &#123;&#125;'. Prefer 'awsAuth', 'gcpAuth' or 'kubernetesAuth' where the platform can vouch for the machine, since those re-authenticate on every start and put no secret in state. |
+| Property         | Type                             | Computed | Description                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------- | -------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `awsAuth`        | `GatewayAwsAuth (output)`        | no       | Authenticate the gateway with its AWS IAM identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedPrincipalArns` or `allowedAccountIds` must be non-empty.                                                                                                                                                                                                                           |
+| `gcpAuth`        | `GatewayGcpAuth (output)`        | no       | Authenticate the gateway with its GCP identity. The machine re-authenticates on every start, so no secret is stored. At least one of `allowedServiceAccounts` or `allowedProjects` must be non-empty.                                                                                                                                                                                                                               |
+| `kubernetesAuth` | `GatewayKubernetesAuth (output)` | no       | Authenticate the gateway with its Kubernetes service account token. The pod re-authenticates on every start, so no secret is stored. At least one of `allowedNamespaces` or `allowedServiceAccountNames` must be non-empty.                                                                                                                                                                                                         |
+| `name`           | `string`                         | no       | The name of the gateway. Unique within the organization. Renaming is an in-place update, so the gateway keeps its ID and anything referencing it keeps working.                                                                                                                                                                                                                                                                     |
+| `tokenAuth`      | `GatewayTokenAuth (output)`      | no       | Authenticate the gateway with a one-time enrollment token. The token itself is minted by a separate 'infisical.GatewayEnrollmentToken' resource. This block takes no arguments, because token auth has nothing to configure: write 'tokenAuth'= &#123;&#125;'. Prefer 'awsAuth', 'gcpAuth' or 'kubernetesAuth' where the platform can vouch for the machine, since those re-authenticate on every start and put no secret in state. |
 
 ## `GatewayAwsAuth (input)`
 
 Input object `GatewayAwsAuth`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedAccountIds` | `string[]` | no | AWS account IDs allowed to authenticate as this gateway. |
-| `allowedPrincipalArns` | `string[]` | no | IAM principal ARNs allowed to authenticate as this gateway. Supports `*` wildcards. |
+| Property               | Type       | Required | Description                                                                         |
+| ---------------------- | ---------- | -------- | ----------------------------------------------------------------------------------- |
+| `allowedAccountIds`    | `string[]` | no       | AWS account IDs allowed to authenticate as this gateway.                            |
+| `allowedPrincipalArns` | `string[]` | no       | IAM principal ARNs allowed to authenticate as this gateway. Supports `*` wildcards. |
 
 ## `GatewayGcpAuth (input)`
 
 Input object `GatewayGcpAuth`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedProjects` | `string[]` | no | GCP project IDs whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`. |
-| `allowedServiceAccounts` | `string[]` | no | GCP service account emails allowed to authenticate as this gateway. |
-| `allowedZones` | `string[]` | no | GCP zones whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`. |
-| `type` | `string` | no | How the gateway proves its identity. `gce` verifies an ID token from the instance metadata server, which covers Compute Engine VMs and GKE workload identity. `iam` verifies a JWT the service account signed through the IAM Credentials API, for hosts outside Compute Engine. Defaults to `gce`. |
+| Property                 | Type       | Required | Description                                                                                                                                                                                                                                                                                         |
+| ------------------------ | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allowedProjects`        | `string[]` | no       | GCP project IDs whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`.                                                                                                                                                                      |
+| `allowedServiceAccounts` | `string[]` | no       | GCP service account emails allowed to authenticate as this gateway.                                                                                                                                                                                                                                 |
+| `allowedZones`           | `string[]` | no       | GCP zones whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`.                                                                                                                                                                            |
+| `type`                   | `string`   | no       | How the gateway proves its identity. `gce` verifies an ID token from the instance metadata server, which covers Compute Engine VMs and GKE workload identity. `iam` verifies a JWT the service account signed through the IAM Credentials API, for hosts outside Compute Engine. Defaults to `gce`. |
 
 ## `GatewayKubernetesAuth (input)`
 
 Input object `GatewayKubernetesAuth`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedAudience` | `string` | no | The audience the service account token must carry. Leave empty to skip the audience check. |
-| `allowedNamespaces` | `string[]` | no | Kubernetes namespaces whose service accounts are allowed to authenticate as this gateway. Supports `*` wildcards. |
-| `allowedServiceAccountNames` | `string[]` | no | Kubernetes service account names allowed to authenticate as this gateway. Supports `*` wildcards. |
-| `caCertificate` | `string` | no | The PEM-encoded CA certificate that issued the Kubernetes API server's TLS certificate. |
-| `hasTokenReviewerJwt` | `boolean` | no | Whether Infisical holds a token reviewer JWT for this gateway. The JWT itself is never returned, so this is the only way to tell a stored one apart from none. |
-| `kubernetesHost` | `string` | no | The URL of the Kubernetes API server, for example https://my-cluster.example.com:6443. Must be https with no path, and reachable from Infisical over the public internet. Required unless `tokenReviewMode` is `gateway`, where it must be omitted. |
-| `reviewerGatewayId` | `string` | no | The gateway that performs the TokenReview. Required when `tokenReviewMode` is `gateway`, and must be a different gateway that is already connected in the cluster. Mutually exclusive with `reviewerGatewayPoolId`. |
-| `reviewerGatewayPoolId` | `string` | no | The gateway pool to route TokenReview traffic through. Mutually exclusive with `reviewerGatewayId`, and rejected when `tokenReviewMode` is `gateway`. |
-| `tokenReviewMode` | `string` | no | Who performs the TokenReview. `api` means Infisical does, calling `kubernetesHost` directly. `gateway` means another already-connected gateway does it with its own in-cluster service account, which needs no host or reviewer token. Defaults to `api`. |
-| `tokenReviewerJwt` | `string` | no | A long-lived service account token with the system:auth-delegator ClusterRole, used to submit TokenReview requests. Write-only: Infisical never returns it, so Terraform cannot detect a change made outside this configuration, and an imported gateway leaves it empty. |
-| `verifyTlsCertificate` | `boolean` | no | Whether to verify the Kubernetes API server's TLS certificate. Defaults to true. |
+| Property                     | Type       | Required | Description                                                                                                                                                                                                                                                               |
+| ---------------------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allowedAudience`            | `string`   | no       | The audience the service account token must carry. Leave empty to skip the audience check.                                                                                                                                                                                |
+| `allowedNamespaces`          | `string[]` | no       | Kubernetes namespaces whose service accounts are allowed to authenticate as this gateway. Supports `*` wildcards.                                                                                                                                                         |
+| `allowedServiceAccountNames` | `string[]` | no       | Kubernetes service account names allowed to authenticate as this gateway. Supports `*` wildcards.                                                                                                                                                                         |
+| `caCertificate`              | `string`   | no       | The PEM-encoded CA certificate that issued the Kubernetes API server's TLS certificate.                                                                                                                                                                                   |
+| `hasTokenReviewerJwt`        | `boolean`  | no       | Whether Infisical holds a token reviewer JWT for this gateway. The JWT itself is never returned, so this is the only way to tell a stored one apart from none.                                                                                                            |
+| `kubernetesHost`             | `string`   | no       | The URL of the Kubernetes API server, for example https://my-cluster.example.com:6443. Must be https with no path, and reachable from Infisical over the public internet. Required unless `tokenReviewMode` is `gateway`, where it must be omitted.                       |
+| `reviewerGatewayId`          | `string`   | no       | The gateway that performs the TokenReview. Required when `tokenReviewMode` is `gateway`, and must be a different gateway that is already connected in the cluster. Mutually exclusive with `reviewerGatewayPoolId`.                                                       |
+| `reviewerGatewayPoolId`      | `string`   | no       | The gateway pool to route TokenReview traffic through. Mutually exclusive with `reviewerGatewayId`, and rejected when `tokenReviewMode` is `gateway`.                                                                                                                     |
+| `tokenReviewMode`            | `string`   | no       | Who performs the TokenReview. `api` means Infisical does, calling `kubernetesHost` directly. `gateway` means another already-connected gateway does it with its own in-cluster service account, which needs no host or reviewer token. Defaults to `api`.                 |
+| `tokenReviewerJwt`           | `string`   | no       | A long-lived service account token with the system:auth-delegator ClusterRole, used to submit TokenReview requests. Write-only: Infisical never returns it, so Terraform cannot detect a change made outside this configuration, and an imported gateway leaves it empty. |
+| `verifyTlsCertificate`       | `boolean`  | no       | Whether to verify the Kubernetes API server's TLS certificate. Defaults to true.                                                                                                                                                                                          |
 
 ## `GatewayTokenAuth (input)`
 
@@ -87,39 +87,39 @@ This object has no fields.
 
 Output object `GatewayAwsAuth`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedAccountIds` | `string[]` | no | AWS account IDs allowed to authenticate as this gateway. |
-| `allowedPrincipalArns` | `string[]` | no | IAM principal ARNs allowed to authenticate as this gateway. Supports `*` wildcards. |
+| Property               | Type       | Always present | Description                                                                         |
+| ---------------------- | ---------- | -------------- | ----------------------------------------------------------------------------------- |
+| `allowedAccountIds`    | `string[]` | no             | AWS account IDs allowed to authenticate as this gateway.                            |
+| `allowedPrincipalArns` | `string[]` | no             | IAM principal ARNs allowed to authenticate as this gateway. Supports `*` wildcards. |
 
 ## `GatewayGcpAuth (output)`
 
 Output object `GatewayGcpAuth`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedProjects` | `string[]` | no | GCP project IDs whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`. |
-| `allowedServiceAccounts` | `string[]` | no | GCP service account emails allowed to authenticate as this gateway. |
-| `allowedZones` | `string[]` | no | GCP zones whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`. |
-| `type` | `string` | yes | How the gateway proves its identity. `gce` verifies an ID token from the instance metadata server, which covers Compute Engine VMs and GKE workload identity. `iam` verifies a JWT the service account signed through the IAM Credentials API, for hosts outside Compute Engine. Defaults to `gce`. |
+| Property                 | Type       | Always present | Description                                                                                                                                                                                                                                                                                         |
+| ------------------------ | ---------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allowedProjects`        | `string[]` | no             | GCP project IDs whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`.                                                                                                                                                                      |
+| `allowedServiceAccounts` | `string[]` | no             | GCP service account emails allowed to authenticate as this gateway.                                                                                                                                                                                                                                 |
+| `allowedZones`           | `string[]` | no             | GCP zones whose Compute Engine instances are allowed to authenticate as this gateway. Only applies when `type` is `gce`.                                                                                                                                                                            |
+| `type`                   | `string`   | yes            | How the gateway proves its identity. `gce` verifies an ID token from the instance metadata server, which covers Compute Engine VMs and GKE workload identity. `iam` verifies a JWT the service account signed through the IAM Credentials API, for hosts outside Compute Engine. Defaults to `gce`. |
 
 ## `GatewayKubernetesAuth (output)`
 
 Output object `GatewayKubernetesAuth`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedAudience` | `string` | no | The audience the service account token must carry. Leave empty to skip the audience check. |
-| `allowedNamespaces` | `string[]` | no | Kubernetes namespaces whose service accounts are allowed to authenticate as this gateway. Supports `*` wildcards. |
-| `allowedServiceAccountNames` | `string[]` | no | Kubernetes service account names allowed to authenticate as this gateway. Supports `*` wildcards. |
-| `caCertificate` | `string` | no | The PEM-encoded CA certificate that issued the Kubernetes API server's TLS certificate. |
-| `hasTokenReviewerJwt` | `boolean` | yes | Whether Infisical holds a token reviewer JWT for this gateway. The JWT itself is never returned, so this is the only way to tell a stored one apart from none. |
-| `kubernetesHost` | `string` | yes | The URL of the Kubernetes API server, for example https://my-cluster.example.com:6443. Must be https with no path, and reachable from Infisical over the public internet. Required unless `tokenReviewMode` is `gateway`, where it must be omitted. |
-| `reviewerGatewayId` | `string` | no | The gateway that performs the TokenReview. Required when `tokenReviewMode` is `gateway`, and must be a different gateway that is already connected in the cluster. Mutually exclusive with `reviewerGatewayPoolId`. |
-| `reviewerGatewayPoolId` | `string` | no | The gateway pool to route TokenReview traffic through. Mutually exclusive with `reviewerGatewayId`, and rejected when `tokenReviewMode` is `gateway`. |
-| `tokenReviewMode` | `string` | yes | Who performs the TokenReview. `api` means Infisical does, calling `kubernetesHost` directly. `gateway` means another already-connected gateway does it with its own in-cluster service account, which needs no host or reviewer token. Defaults to `api`. |
-| `tokenReviewerJwt` | `string` | no | A long-lived service account token with the system:auth-delegator ClusterRole, used to submit TokenReview requests. Write-only: Infisical never returns it, so Terraform cannot detect a change made outside this configuration, and an imported gateway leaves it empty. |
-| `verifyTlsCertificate` | `boolean` | yes | Whether to verify the Kubernetes API server's TLS certificate. Defaults to true. |
+| Property                     | Type       | Always present | Description                                                                                                                                                                                                                                                               |
+| ---------------------------- | ---------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allowedAudience`            | `string`   | no             | The audience the service account token must carry. Leave empty to skip the audience check.                                                                                                                                                                                |
+| `allowedNamespaces`          | `string[]` | no             | Kubernetes namespaces whose service accounts are allowed to authenticate as this gateway. Supports `*` wildcards.                                                                                                                                                         |
+| `allowedServiceAccountNames` | `string[]` | no             | Kubernetes service account names allowed to authenticate as this gateway. Supports `*` wildcards.                                                                                                                                                                         |
+| `caCertificate`              | `string`   | no             | The PEM-encoded CA certificate that issued the Kubernetes API server's TLS certificate.                                                                                                                                                                                   |
+| `hasTokenReviewerJwt`        | `boolean`  | yes            | Whether Infisical holds a token reviewer JWT for this gateway. The JWT itself is never returned, so this is the only way to tell a stored one apart from none.                                                                                                            |
+| `kubernetesHost`             | `string`   | yes            | The URL of the Kubernetes API server, for example https://my-cluster.example.com:6443. Must be https with no path, and reachable from Infisical over the public internet. Required unless `tokenReviewMode` is `gateway`, where it must be omitted.                       |
+| `reviewerGatewayId`          | `string`   | no             | The gateway that performs the TokenReview. Required when `tokenReviewMode` is `gateway`, and must be a different gateway that is already connected in the cluster. Mutually exclusive with `reviewerGatewayPoolId`.                                                       |
+| `reviewerGatewayPoolId`      | `string`   | no             | The gateway pool to route TokenReview traffic through. Mutually exclusive with `reviewerGatewayId`, and rejected when `tokenReviewMode` is `gateway`.                                                                                                                     |
+| `tokenReviewMode`            | `string`   | yes            | Who performs the TokenReview. `api` means Infisical does, calling `kubernetesHost` directly. `gateway` means another already-connected gateway does it with its own in-cluster service account, which needs no host or reviewer token. Defaults to `api`.                 |
+| `tokenReviewerJwt`           | `string`   | no             | A long-lived service account token with the system:auth-delegator ClusterRole, used to submit TokenReview requests. Write-only: Infisical never returns it, so Terraform cannot detect a change made outside this configuration, and an imported gateway leaves it empty. |
+| `verifyTlsCertificate`       | `boolean`  | yes            | Whether to verify the Kubernetes API server's TLS certificate. Defaults to true.                                                                                                                                                                                          |
 
 ## `GatewayTokenAuth (output)`
 

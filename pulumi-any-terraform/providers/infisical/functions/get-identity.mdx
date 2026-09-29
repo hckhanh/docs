@@ -19,29 +19,29 @@ Call `infisical.getIdentity(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `name` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `name`   | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authModes` | `string[]` | yes |  |
-| `customRoleId` | `string` | yes |  |
-| `hasDeleteProtection` | `boolean` | yes |  |
-| `id` | `string` | yes |  |
-| `metadatas` | `GetIdentityMetadata[]` | yes |  |
-| `name` | `string` | yes |  |
-| `orgId` | `string` | yes |  |
-| `role` | `string` | yes |  |
+| Property              | Type                    | Always present | Description |
+| --------------------- | ----------------------- | -------------- | ----------- |
+| `authModes`           | `string[]`              | yes            |             |
+| `customRoleId`        | `string`                | yes            |             |
+| `hasDeleteProtection` | `boolean`               | yes            |             |
+| `id`                  | `string`                | yes            |             |
+| `metadatas`           | `GetIdentityMetadata[]` | yes            |             |
+| `name`                | `string`                | yes            |             |
+| `orgId`               | `string`                | yes            |             |
+| `role`                | `string`                | yes            |             |
 
 ## `GetIdentityMetadata`
 
 Output object `GetIdentityMetadata`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | The key of the metadata entry |
-| `value` | `string` | yes | The value of the metadata entry |
+| Property | Type     | Always present | Description                     |
+| -------- | -------- | -------------- | ------------------------------- |
+| `key`    | `string` | yes            | The key of the metadata entry   |
+| `value`  | `string` | yes            | The value of the metadata entry |

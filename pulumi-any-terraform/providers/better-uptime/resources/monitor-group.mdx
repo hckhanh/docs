@@ -19,22 +19,22 @@ Construct with `new betteruptime.MonitorGroup(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no | A name of the group that you can see in the dashboard. |
-| `paused` | `boolean` | no | Set to true to pause monitoring for any existing monitors in the group - we won't notify you about downtime. Set to false to resume monitoring for any existing monitors in the group. |
-| `sortIndex` | `number` | no | Set `sortIndex` to specify how to sort your monitor groups. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| Property    | Type      | Required | Description                                                                                                                                                                            |
+| ----------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`      | `string`  | no       | A name of the group that you can see in the dashboard.                                                                                                                                 |
+| `paused`    | `boolean` | no       | Set to true to pause monitoring for any existing monitors in the group - we won't notify you about downtime. Set to false to resume monitoring for any existing monitors in the group. |
+| `sortIndex` | `number`  | no       | Set `sortIndex` to specify how to sort your monitor groups.                                                                                                                            |
+| `teamName`  | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                                                |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `createdAt` | `string` | yes | The time when this monitor group was created. |
-| `name` | `string` | no | A name of the group that you can see in the dashboard. |
-| `paused` | `boolean` | no | Set to true to pause monitoring for any existing monitors in the group - we won't notify you about downtime. Set to false to resume monitoring for any existing monitors in the group. |
-| `sortIndex` | `number` | no | Set `sortIndex` to specify how to sort your monitor groups. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `updatedAt` | `string` | yes | The time when this monitor group was updated. |
+| Property    | Type      | Computed | Description                                                                                                                                                                            |
+| ----------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `createdAt` | `string`  | yes      | The time when this monitor group was created.                                                                                                                                          |
+| `name`      | `string`  | no       | A name of the group that you can see in the dashboard.                                                                                                                                 |
+| `paused`    | `boolean` | no       | Set to true to pause monitoring for any existing monitors in the group - we won't notify you about downtime. Set to false to resume monitoring for any existing monitors in the group. |
+| `sortIndex` | `number`  | no       | Set `sortIndex` to specify how to sort your monitor groups.                                                                                                                            |
+| `teamName`  | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                                                |
+| `updatedAt` | `string`  | yes      | The time when this monitor group was updated.                                                                                                                                          |

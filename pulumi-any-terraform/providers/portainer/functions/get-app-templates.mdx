@@ -19,32 +19,32 @@ Call `portainer.getAppTemplates(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `templateId` | `number` | no |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `id`         | `string` | no       |             |
+| `templateId` | `number` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `fileContent` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `templateId` | `number` | no |  |
-| `templates` | `GetAppTemplatesTemplate[]` | yes |  |
-| `version` | `string` | yes |  |
+| Property      | Type                        | Always present | Description |
+| ------------- | --------------------------- | -------------- | ----------- |
+| `fileContent` | `string`                    | yes            |             |
+| `id`          | `string`                    | yes            |             |
+| `templateId`  | `number`                    | no             |             |
+| `templates`   | `GetAppTemplatesTemplate[]` | yes            |             |
+| `version`     | `string`                    | yes            |             |
 
 ## `GetAppTemplatesTemplate`
 
 Output object `GetAppTemplatesTemplate`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `categories` | `string[]` | no |  |
-| `description` | `string` | no |  |
-| `id` | `number` | no |  |
-| `image` | `string` | no |  |
-| `platform` | `string` | no |  |
-| `repositoryUrl` | `string` | no |  |
-| `title` | `string` | no |  |
-| `type` | `number` | no |  |
+| Property        | Type       | Always present | Description |
+| --------------- | ---------- | -------------- | ----------- |
+| `categories`    | `string[]` | no             |             |
+| `description`   | `string`   | no             |             |
+| `id`            | `number`   | no             |             |
+| `image`         | `string`   | no             |             |
+| `platform`      | `string`   | no             |             |
+| `repositoryUrl` | `string`   | no             |             |
+| `title`         | `string`   | no             |             |
+| `type`          | `number`   | no             |             |

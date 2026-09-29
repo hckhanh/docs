@@ -19,46 +19,46 @@ Construct with `new logtail.CollectorTarget(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | no | API key for authentication. Used by elasticsearch. |
-| `collectorHost` | `string` | no | Hostname of the collector host running this process. Use this for process kinds (nginx, apache, kafka, prometheus, traefik). Must match the hostname of a `collectorHost` reporting to this collector. For database kinds use `host` instead. |
-| `collectorId` | `string` | yes | The ID of the collector this target belongs to. |
-| `enabled` | `boolean` | no | Whether the collector should scrape this target. Defaults to `true` server-side. Setting to `false` puts the target into `disabled` status - it remains configured but is not scraped. |
-| `endpoint` | `string` | no | Full scrape URL. Required for prometheus. |
-| `host` | `string` | no | Hostname or IP of the database server. Use this for database kinds (postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch). For process kinds use `collectorHost` instead. |
-| `kind` | `string` | yes | The target kind. One of: postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch, nginx, apache, kafka, prometheus, traefik. |
-| `listenIp` | `string` | no | IP address the process listens on, as seen from the collector host. Used for nginx, apache, kafka, traefik. |
-| `password` | `string` | no | Password for authentication. Used by database kinds. |
-| `port` | `number` | no | Port the target listens on. Required for database kinds and most process kinds; not used by prometheus (use `endpoint` instead). |
-| `scheme` | `string` | no | URL scheme. Required for elasticsearch. Valid values: `http`, `https`. |
-| `service` | `string` | no | Friendly name for the target. Required for process kinds. |
-| `sslMode` | `string` | no | SSL mode. Required for postgres-family kinds. Valid values: `disable`, `require`, `verify-ca`. |
-| `tls` | `string` | no | TLS mode. Required for mysql. Valid values: `false`, `true`, `skip-verify`, `preferred`. |
-| `username` | `string` | no | Username for authentication. Used by database kinds. |
+| Property        | Type      | Required | Description                                                                                                                                                                                                                                   |
+| --------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`        | `string`  | no       | API key for authentication. Used by elasticsearch.                                                                                                                                                                                            |
+| `collectorHost` | `string`  | no       | Hostname of the collector host running this process. Use this for process kinds (nginx, apache, kafka, prometheus, traefik). Must match the hostname of a `collectorHost` reporting to this collector. For database kinds use `host` instead. |
+| `collectorId`   | `string`  | yes      | The ID of the collector this target belongs to.                                                                                                                                                                                               |
+| `enabled`       | `boolean` | no       | Whether the collector should scrape this target. Defaults to `true` server-side. Setting to `false` puts the target into `disabled` status - it remains configured but is not scraped.                                                        |
+| `endpoint`      | `string`  | no       | Full scrape URL. Required for prometheus.                                                                                                                                                                                                     |
+| `host`          | `string`  | no       | Hostname or IP of the database server. Use this for database kinds (postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch). For process kinds use `collectorHost` instead.                                                     |
+| `kind`          | `string`  | yes      | The target kind. One of: postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch, nginx, apache, kafka, prometheus, traefik.                                                                                                     |
+| `listenIp`      | `string`  | no       | IP address the process listens on, as seen from the collector host. Used for nginx, apache, kafka, traefik.                                                                                                                                   |
+| `password`      | `string`  | no       | Password for authentication. Used by database kinds.                                                                                                                                                                                          |
+| `port`          | `number`  | no       | Port the target listens on. Required for database kinds and most process kinds; not used by prometheus (use `endpoint` instead).                                                                                                              |
+| `scheme`        | `string`  | no       | URL scheme. Required for elasticsearch. Valid values: `http`, `https`.                                                                                                                                                                        |
+| `service`       | `string`  | no       | Friendly name for the target. Required for process kinds.                                                                                                                                                                                     |
+| `sslMode`       | `string`  | no       | SSL mode. Required for postgres-family kinds. Valid values: `disable`, `require`, `verify-ca`.                                                                                                                                                |
+| `tls`           | `string`  | no       | TLS mode. Required for mysql. Valid values: `false`, `true`, `skip-verify`, `preferred`.                                                                                                                                                      |
+| `username`      | `string`  | no       | Username for authentication. Used by database kinds.                                                                                                                                                                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | no | API key for authentication. Used by elasticsearch. |
-| `collectorHost` | `string` | no | Hostname of the collector host running this process. Use this for process kinds (nginx, apache, kafka, prometheus, traefik). Must match the hostname of a `collectorHost` reporting to this collector. For database kinds use `host` instead. |
-| `collectorId` | `string` | no | The ID of the collector this target belongs to. |
-| `container` | `string` | yes | Container the target was detected in, if any. |
-| `createdAt` | `string` | yes | The time when this target was created. |
-| `enabled` | `boolean` | no | Whether the collector should scrape this target. Defaults to `true` server-side. Setting to `false` puts the target into `disabled` status - it remains configured but is not scraped. |
-| `endpoint` | `string` | no | Full scrape URL. Required for prometheus. |
-| `host` | `string` | no | Hostname or IP of the database server. Use this for database kinds (postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch). For process kinds use `collectorHost` instead. |
-| `kind` | `string` | no | The target kind. One of: postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch, nginx, apache, kafka, prometheus, traefik. |
-| `listenIp` | `string` | no | IP address the process listens on, as seen from the collector host. Used for nginx, apache, kafka, traefik. |
-| `password` | `string` | no | Password for authentication. Used by database kinds. |
-| `port` | `number` | no | Port the target listens on. Required for database kinds and most process kinds; not used by prometheus (use `endpoint` instead). |
-| `scheme` | `string` | no | URL scheme. Required for elasticsearch. Valid values: `http`, `https`. |
-| `service` | `string` | no | Friendly name for the target. Required for process kinds. |
-| `sslMode` | `string` | no | SSL mode. Required for postgres-family kinds. Valid values: `disable`, `require`, `verify-ca`. |
-| `status` | `string` | yes | Current status of the target as reported by the collector. |
-| `tls` | `string` | no | TLS mode. Required for mysql. Valid values: `false`, `true`, `skip-verify`, `preferred`. |
-| `updatedAt` | `string` | yes | The time when this target was last updated. |
-| `username` | `string` | no | Username for authentication. Used by database kinds. |
+| Property        | Type      | Computed | Description                                                                                                                                                                                                                                   |
+| --------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`        | `string`  | no       | API key for authentication. Used by elasticsearch.                                                                                                                                                                                            |
+| `collectorHost` | `string`  | no       | Hostname of the collector host running this process. Use this for process kinds (nginx, apache, kafka, prometheus, traefik). Must match the hostname of a `collectorHost` reporting to this collector. For database kinds use `host` instead. |
+| `collectorId`   | `string`  | no       | The ID of the collector this target belongs to.                                                                                                                                                                                               |
+| `container`     | `string`  | yes      | Container the target was detected in, if any.                                                                                                                                                                                                 |
+| `createdAt`     | `string`  | yes      | The time when this target was created.                                                                                                                                                                                                        |
+| `enabled`       | `boolean` | no       | Whether the collector should scrape this target. Defaults to `true` server-side. Setting to `false` puts the target into `disabled` status - it remains configured but is not scraped.                                                        |
+| `endpoint`      | `string`  | no       | Full scrape URL. Required for prometheus.                                                                                                                                                                                                     |
+| `host`          | `string`  | no       | Hostname or IP of the database server. Use this for database kinds (postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch). For process kinds use `collectorHost` instead.                                                     |
+| `kind`          | `string`  | no       | The target kind. One of: postgres, pgbouncer, mysql, redis, mongodb, memcached, elasticsearch, nginx, apache, kafka, prometheus, traefik.                                                                                                     |
+| `listenIp`      | `string`  | no       | IP address the process listens on, as seen from the collector host. Used for nginx, apache, kafka, traefik.                                                                                                                                   |
+| `password`      | `string`  | no       | Password for authentication. Used by database kinds.                                                                                                                                                                                          |
+| `port`          | `number`  | no       | Port the target listens on. Required for database kinds and most process kinds; not used by prometheus (use `endpoint` instead).                                                                                                              |
+| `scheme`        | `string`  | no       | URL scheme. Required for elasticsearch. Valid values: `http`, `https`.                                                                                                                                                                        |
+| `service`       | `string`  | no       | Friendly name for the target. Required for process kinds.                                                                                                                                                                                     |
+| `sslMode`       | `string`  | no       | SSL mode. Required for postgres-family kinds. Valid values: `disable`, `require`, `verify-ca`.                                                                                                                                                |
+| `status`        | `string`  | yes      | Current status of the target as reported by the collector.                                                                                                                                                                                    |
+| `tls`           | `string`  | no       | TLS mode. Required for mysql. Valid values: `false`, `true`, `skip-verify`, `preferred`.                                                                                                                                                      |
+| `updatedAt`     | `string`  | yes      | The time when this target was last updated.                                                                                                                                                                                                   |
+| `username`      | `string`  | no       | Username for authentication. Used by database kinds.                                                                                                                                                                                          |

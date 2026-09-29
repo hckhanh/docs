@@ -13,12 +13,12 @@ Creates a type-safe fetch function for your API.
 function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,
-  sharedInit?: RequestInit
+  sharedInit?: RequestInit,
 ): <Path extends ApiPath<Schema>>(
   path: Path,
   options?: FetchOptions<Schema, Path>,
-  init?: RequestInit
-) => Promise<ApiData<Schema, Path, 'response'>>
+  init?: RequestInit,
+) => Promise<ApiData<Schema, Path, "response">>
 ```
 
 **Parameters:**
@@ -28,6 +28,7 @@ function createFetch<Schema extends ApiSchema>(
 - `sharedInit` (optional) - Shared [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) options that will be merged with per-request options
 
 **Returns:** A typed fetch function that accepts:
+
 - `path` - The API path (must be a key from your schema)
 - `options` (optional) - Request options (params, query, body) based on the path's schema
 - `init` (optional) - Per-request [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) to customize the fetch request (merged with sharedInit)
@@ -35,27 +36,27 @@ function createFetch<Schema extends ApiSchema>(
 **Example:**
 
 ```typescript
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     query: z.object({ fields: z.string().optional() }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
-  }
-};
+      email: z.string(),
+    }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-const user = await apiFetch('/users/:id', {
+const user = await apiFetch("/users/:id", {
   params: { id: 123 },
-  query: { fields: 'name,email' }
-});
+  query: { fields: "name,email" },
+})
 // user is typed as { id: number; name: string; email: string }
 ```
 
@@ -91,23 +92,23 @@ Each path in your schema can have:
 **Example:**
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod"
 
 const api: ApiSchema = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     query: z.object({ fields: z.string().optional() }),
-    response: z.object({ id: z.number(), name: z.string() })
+    response: z.object({ id: z.number(), name: z.string() }),
   },
-  '/users': {
+  "/users": {
     // GET /users - List users with pagination
     query: z.object({
       limit: z.number().optional(),
-      offset: z.number().optional()
+      offset: z.number().optional(),
     }),
-    response: z.array(z.object({ id: z.number(), name: z.string() }))
-  }
-};
+    response: z.array(z.object({ id: z.number(), name: z.string() })),
+  },
+}
 ```
 
 ### `ApiPath<T>`
@@ -122,11 +123,11 @@ type ApiPath<T extends ApiSchema> = keyof T & string
 
 ```typescript
 const api = {
-  '/users/:id': { /* ... */ },
-  '/posts': { /* ... */ }
-};
+  "/users/:id": {/* ... */},
+  "/posts": {/* ... */},
+}
 
-type Path = ApiPath<typeof api>;
+type Path = ApiPath<typeof api>
 // Path = '/users/:id' | '/posts'
 ```
 
@@ -135,7 +136,7 @@ type Path = ApiPath<typeof api>;
 Extract the required fetch options for a specific API path.
 
 ```typescript
-type FetchOptions<T extends ApiSchema, Path extends ApiPath<T>> = 
+type FetchOptions<T extends ApiSchema, Path extends ApiPath<T>> =
   // Infers correct types for params, query, and body
 ```
 
@@ -145,13 +146,13 @@ Automatically infers the correct types for params, query, and body based on the 
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    query: z.object({ fields: z.string().optional() })
-  }
-};
+    query: z.object({ fields: z.string().optional() }),
+  },
+}
 
-type Options = FetchOptions<typeof api, '/users/:id'>;
+type Options = FetchOptions<typeof api, "/users/:id">
 // Options = { params: { id: number }, query?: { fields?: string } }
 ```
 
@@ -170,6 +171,7 @@ type ApiData<
 This is a flexible type that extracts the inferred TypeScript type for any schema option (`'params'`, `'query'`, `'body'`, or `'response'`) from a specific API path. This replaces the older `ApiResponse` type and provides more flexibility for working with different parts of your API schema.
 
 **Parameters:**
+
 - `Schemas` - The complete API schema type
 - `Path` - The specific API path to extract from
 - `Option` - The schema option to extract (`'params'`, `'query'`, `'body'`, or `'response'`)
@@ -178,30 +180,34 @@ This is a flexible type that extracts the inferred TypeScript type for any schem
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     query: z.object({ fields: z.string().optional() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
 
 // Extract params type
-type UserParams = ApiData<typeof api, '/users/:id', 'params'>;
+type UserParams = ApiData<typeof api, "/users/:id", "params">
 // UserParams = { id: number }
 
 // Extract query type
-type UserQuery = ApiData<typeof api, '/users/:id', 'query'>;
+type UserQuery = ApiData<typeof api, "/users/:id", "query">
 // UserQuery = { fields?: string }
 
 // Extract response type
-type UserResponse = ApiData<typeof api, '/users/:id', 'response'>;
+type UserResponse = ApiData<typeof api, "/users/:id", "response">
 // UserResponse = { id: number; name: string }
 ```
 
 **Note:** For backward compatibility, you can create a type alias:
+
 ```typescript
-type ApiResponse<T extends ApiSchema, Path extends ApiPath<T>> = 
-  ApiData<T, Path, 'response'>;
+type ApiResponse<T extends ApiSchema, Path extends ApiPath<T>> = ApiData<
+  T,
+  Path,
+  "response"
+>
 ```
 
 ---
@@ -224,19 +230,19 @@ When validation fails, the library throws an error with details about the valida
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
 // This will throw a validation error
 try {
-  await apiFetch('/users/:id', { params: { id: 'invalid' } });
+  await apiFetch("/users/:id", { params: { id: "invalid" } })
 } catch (error) {
-  console.error(error.message); // "Validation failed: [...]"
+  console.error(error.message) // "Validation failed: [...]"
 }
 ```
 
@@ -247,22 +253,23 @@ If your path contains URL parameters, you **must** define a params schema:
 ```typescript
 // ❌ This will throw an error
 const badApi = {
-  '/users/:id': {
-    response: z.object({ id: z.number(), name: z.string() })
+  "/users/:id": {
+    response: z.object({ id: z.number(), name: z.string() }),
     // Missing params schema!
-  }
-};
+  },
+}
 
 // ✅ This is correct
 const goodApi = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
 ```
 
 The library detects parameterized paths using the pattern `/:paramName` and will throw this error if no params schema is found:
+
 ```
 Path contains parameters but no "params" schema is defined.
 ```
@@ -275,21 +282,21 @@ Path contains parameters but no "params" schema is defined.
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
-  }
-};
+      email: z.string(),
+    }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-const user = await apiFetch('/users/:id', {
-  params: { id: 123 }
-});
+const user = await apiFetch("/users/:id", {
+  params: { id: 123 },
+})
 // GET https://api.example.com/users/123
 ```
 
@@ -297,24 +304,26 @@ const user = await apiFetch('/users/:id', {
 
 ```typescript
 const api = {
-  '/users': {
+  "/users": {
     query: z.object({
       limit: z.number().optional(),
       offset: z.number().optional(),
-      sort: z.string().optional()
+      sort: z.string().optional(),
     }),
-    response: z.array(z.object({
-      id: z.number(),
-      name: z.string()
-    }))
-  }
-};
+    response: z.array(
+      z.object({
+        id: z.number(),
+        name: z.string(),
+      }),
+    ),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-const users = await apiFetch('/users', {
-  query: { limit: 10, offset: 0, sort: 'name' }
-});
+const users = await apiFetch("/users", {
+  query: { limit: 10, offset: 0, sort: "name" },
+})
 // GET https://api.example.com/users?limit=10&offset=0&sort=name
 ```
 
@@ -322,25 +331,27 @@ const users = await apiFetch('/users', {
 
 ```typescript
 const api = {
-  '/users/:id/posts': {
+  "/users/:id/posts": {
     params: z.object({ id: z.number() }),
     query: z.object({
       limit: z.number().optional(),
-      published: z.boolean().optional()
+      published: z.boolean().optional(),
     }),
-    response: z.array(z.object({
-      id: z.number(),
-      title: z.string()
-    }))
-  }
-};
+    response: z.array(
+      z.object({
+        id: z.number(),
+        title: z.string(),
+      }),
+    ),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-const posts = await apiFetch('/users/:id/posts', {
+const posts = await apiFetch("/users/:id/posts", {
   params: { id: 123 },
-  query: { limit: 10, published: true }
-});
+  query: { limit: 10, published: true },
+})
 // GET https://api.example.com/users/123/posts?limit=10&published=true
 ```
 
@@ -348,27 +359,27 @@ const posts = await apiFetch('/users/:id/posts', {
 
 ```typescript
 const api = {
-  '/users': {
+  "/users": {
     body: z.object({
       name: z.string(),
-      email: z.string().email()
+      email: z.string().email(),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
-  }
-};
+      email: z.string(),
+    }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-const newUser = await apiFetch('/users', {
+const newUser = await apiFetch("/users", {
   body: {
-    name: 'John Doe',
-    email: 'john@example.com'
-  }
-});
+    name: "John Doe",
+    email: "john@example.com",
+  },
+})
 // POST https://api.example.com/users
 // Content-Type: application/json
 // Body: {"name":"John Doe","email":"john@example.com"}
@@ -378,26 +389,26 @@ const newUser = await apiFetch('/users', {
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
 const user = await apiFetch(
-  '/users/:id',
+  "/users/:id",
   { params: { id: 123 } },
   {
     headers: {
-      'Authorization': 'Bearer token',
-      'X-Custom-Header': 'value'
+      Authorization: "Bearer token",
+      "X-Custom-Header": "value",
     },
-    cache: 'no-cache',
-    signal: abortController.signal
-  }
-);
+    cache: "no-cache",
+    signal: abortController.signal,
+  },
+)
 ```
 
 ---
@@ -409,6 +420,7 @@ what-the-fetch automatically infers HTTP methods based on the presence of a requ
 ### Automatic Method Inference
 
 By default, what-the-fetch infers the HTTP method:
+
 - Requests **with a body** → `POST`
 - Requests **without a body** → `GET`
 
@@ -425,13 +437,13 @@ For explicit control or to use other HTTP methods, add the `@method` prefix:
 
 ```typescript
 const api = {
-  '@get/resource': { /* Explicit GET - same as /resource */ },
-  '/resource': { /* Implicit GET */ },
-  '@post/resource': { /* Explicit POST */ },
-  '@put/resource/:id': { /* PUT - prefix required */ },
-  '@patch/resource/:id': { /* PATCH - prefix required */ },
-  '@delete/resource/:id': { /* DELETE - prefix required */ }
-};
+  "@get/resource": {/* Explicit GET - same as /resource */},
+  "/resource": {/* Implicit GET */},
+  "@post/resource": {/* Explicit POST */},
+  "@put/resource/:id": {/* PUT - prefix required */},
+  "@patch/resource/:id": {/* PATCH - prefix required */},
+  "@delete/resource/:id": {/* DELETE - prefix required */},
+}
 ```
 
 **Note:** `/users/:id` and `@get/users/:id` are completely equivalent and both result in a GET request.
@@ -451,92 +463,92 @@ All standard HTTP methods are supported:
 ### Complete Example
 
 ```typescript
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 const api = {
   // GET - Retrieve a user
-  '@get/users/:id': {
+  "@get/users/:id": {
     params: z.object({ id: z.number() }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
+      email: z.string(),
+    }),
   },
-  
+
   // POST - Create a new user
-  '@post/users': {
+  "@post/users": {
     body: z.object({
       name: z.string(),
-      email: z.string().email()
+      email: z.string().email(),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
+      email: z.string(),
+    }),
   },
-  
+
   // PUT - Replace entire user
-  '@put/users/:id': {
+  "@put/users/:id": {
     params: z.object({ id: z.number() }),
     body: z.object({
       name: z.string(),
-      email: z.string().email()
+      email: z.string().email(),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
+      email: z.string(),
+    }),
   },
-  
+
   // PATCH - Partially update user
-  '@patch/users/:id': {
+  "@patch/users/:id": {
     params: z.object({ id: z.number() }),
     body: z.object({
       name: z.string().optional(),
-      email: z.string().email().optional()
+      email: z.string().email().optional(),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
+      email: z.string(),
+    }),
   },
-  
-  // DELETE - Remove a user
-  '@delete/users/:id': {
-    params: z.object({ id: z.number() }),
-    response: z.object({ success: z.boolean() })
-  }
-} as const;
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+  // DELETE - Remove a user
+  "@delete/users/:id": {
+    params: z.object({ id: z.number() }),
+    response: z.object({ success: z.boolean() }),
+  },
+} as const
+
+const apiFetch = createFetch(api, "https://api.example.com")
 
 // Make requests with explicit methods
-const user = await apiFetch('@get/users/:id', { params: { id: 123 } });
+const user = await apiFetch("@get/users/:id", { params: { id: 123 } })
 // GET https://api.example.com/users/123
 
-const newUser = await apiFetch('@post/users', {
-  body: { name: 'John Doe', email: 'john@example.com' }
-});
+const newUser = await apiFetch("@post/users", {
+  body: { name: "John Doe", email: "john@example.com" },
+})
 // POST https://api.example.com/users
 
-await apiFetch('@put/users/:id', {
+await apiFetch("@put/users/:id", {
   params: { id: 123 },
-  body: { name: 'Jane Doe', email: 'jane@example.com' }
-});
+  body: { name: "Jane Doe", email: "jane@example.com" },
+})
 // PUT https://api.example.com/users/123
 
-await apiFetch('@patch/users/:id', {
+await apiFetch("@patch/users/:id", {
   params: { id: 123 },
-  body: { name: 'Jane Smith' }
-});
+  body: { name: "Jane Smith" },
+})
 // PATCH https://api.example.com/users/123
 
-await apiFetch('@delete/users/:id', { params: { id: 123 } });
+await apiFetch("@delete/users/:id", { params: { id: 123 } })
 // DELETE https://api.example.com/users/123
 ```
 
@@ -547,35 +559,37 @@ The following path definitions are equivalent:
 ```typescript
 const api = {
   // These two are identical - both use GET
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
+    response: z.object({ id: z.number(), name: z.string() }),
   },
-  '@get/users/:id': {  // Same as above - @get is optional
+  "@get/users/:id": {
+    // Same as above - @get is optional
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
+    response: z.object({ id: z.number(), name: z.string() }),
   },
-  
-  // POST is inferred from body
-  '/users': {
-    body: z.object({ name: z.string(), email: z.string() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+  // POST is inferred from body
+  "/users": {
+    body: z.object({ name: z.string(), email: z.string() }),
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
+
+const apiFetch = createFetch(api, "https://api.example.com")
 
 // Both calls are equivalent - both use GET
-const user1 = await apiFetch('/users/:id', { params: { id: 123 } });
-const user2 = await apiFetch('@get/users/:id', { params: { id: 123 } });
+const user1 = await apiFetch("/users/:id", { params: { id: 123 } })
+const user2 = await apiFetch("@get/users/:id", { params: { id: 123 } })
 
 // POST (inferred from body)
-const newUser = await apiFetch('/users', {
-  body: { name: 'John', email: 'john@example.com' }
-});
+const newUser = await apiFetch("/users", {
+  body: { name: "John", email: "john@example.com" },
+})
 ```
 
 **Method inference rules:**
+
 - Request has a `body` → `POST`
 - Request has no `body` → `GET`
 - Method prefix specified → Uses that method
@@ -586,22 +600,22 @@ The method prefix works seamlessly with path parameters:
 
 ```typescript
 const api = {
-  '@put/users/:userId/posts/:postId': {
+  "@put/users/:userId/posts/:postId": {
     params: z.object({
       userId: z.number(),
-      postId: z.number()
+      postId: z.number(),
     }),
     body: z.object({ title: z.string(), content: z.string() }),
-    response: z.object({ success: z.boolean() })
-  }
-};
+    response: z.object({ success: z.boolean() }),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
-await apiFetch('@put/users/:userId/posts/:postId', {
+await apiFetch("@put/users/:userId/posts/:postId", {
   params: { userId: 123, postId: 456 },
-  body: { title: 'Updated', content: 'New content' }
-});
+  body: { title: "Updated", content: "New content" },
+})
 // PUT https://api.example.com/users/123/posts/456
 ```
 
@@ -611,10 +625,10 @@ Method prefixes are case-insensitive and converted to uppercase:
 
 ```typescript
 const api = {
-  '@GET/users': { /* ... */ },
-  '@get/posts': { /* ... */ },
-  '@GeT/comments': { /* ... */ }
-};
+  "@GET/users": {/* ... */},
+  "@get/posts": {/* ... */},
+  "@GeT/comments": {/* ... */},
+}
 
 // All are treated as GET
 ```
@@ -639,189 +653,183 @@ const api = {
 Use the third parameter of `createFetch()` to set shared options for all requests:
 
 ```typescript
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
+    response: z.object({ id: z.number(), name: z.string() }),
   },
-  '/posts': {
-    response: z.array(z.object({ id: z.number(), title: z.string() }))
-  }
-};
+  "/posts": {
+    response: z.array(z.object({ id: z.number(), title: z.string() })),
+  },
+}
 
 // Create fetch with shared headers that apply to all requests
-const apiFetch = createFetch(
-  api,
-  'https://api.example.com',
-  {
-    headers: {
-      'Authorization': 'Bearer my-token',
-      'X-API-Version': '2.0'
-    },
-    cache: 'no-cache'
-  }
-);
+const apiFetch = createFetch(api, "https://api.example.com", {
+  headers: {
+    Authorization: "Bearer my-token",
+    "X-API-Version": "2.0",
+  },
+  cache: "no-cache",
+})
 
 // All requests automatically include shared headers
-const user = await apiFetch('/users/:id', { params: { id: 123 } });
-const posts = await apiFetch('/posts');
+const user = await apiFetch("/users/:id", { params: { id: 123 } })
+const posts = await apiFetch("/posts")
 
 // Override or add additional headers per request
 const userWithCustomHeader = await apiFetch(
-  '/users/:id',
+  "/users/:id",
   { params: { id: 456 } },
   {
     headers: {
-      'X-Custom-Header': 'value' // Merged with shared headers
-    }
-  }
-);
+      "X-Custom-Header": "value", // Merged with shared headers
+    },
+  },
+)
 ```
 
 ### Multiple Endpoints with Shared Schemas
 
 ```typescript
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 // Define reusable schemas
 const UserSchema = z.object({
   id: z.number(),
   name: z.string(),
-  email: z.string()
-});
+  email: z.string(),
+})
 
 const PostSchema = z.object({
   id: z.number(),
   title: z.string(),
   content: z.string(),
-  authorId: z.number()
-});
+  authorId: z.number(),
+})
 
 // Use schemas in multiple endpoints
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: UserSchema
+    response: UserSchema,
   },
-  '/users': {
-    response: z.array(UserSchema)
+  "/users": {
+    response: z.array(UserSchema),
   },
-  '/posts/:id': {
+  "/posts/:id": {
     params: z.object({ id: z.number() }),
-    response: PostSchema
+    response: PostSchema,
   },
-  '/users/:id/posts': {
+  "/users/:id/posts": {
     params: z.object({ id: z.number() }),
-    response: z.array(PostSchema)
-  }
-};
+    response: z.array(PostSchema),
+  },
+}
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 ```
 
 ### Building a Complete API Client
 
 ```typescript
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 // Define comprehensive API schema
 const api = {
-  '/users': {
+  "/users": {
     // GET /users - List users with pagination
     query: z.object({
       page: z.number().optional(),
-      limit: z.number().optional()
+      limit: z.number().optional(),
     }),
     response: z.object({
-      users: z.array(z.object({
-        id: z.number(),
-        name: z.string()
-      })),
-      total: z.number()
-    })
+      users: z.array(
+        z.object({
+          id: z.number(),
+          name: z.string(),
+        }),
+      ),
+      total: z.number(),
+    }),
   },
-  '/users/:id': {
+  "/users/:id": {
     // GET /users/:id - Get user by ID
     params: z.object({ id: z.number() }),
     response: z.object({
       id: z.number(),
       name: z.string(),
       email: z.string(),
-      createdAt: z.string()
-    })
+      createdAt: z.string(),
+    }),
   },
-  '/users/create': {
+  "/users/create": {
     // POST /users/create - Create new user
     body: z.object({
       name: z.string().min(3),
       email: z.string().email(),
-      password: z.string().min(8)
+      password: z.string().min(8),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
+      email: z.string(),
+    }),
   },
-  '/users/:id/update': {
+  "/users/:id/update": {
     // PATCH /users/:id/update - Update user
     params: z.object({ id: z.number() }),
     body: z.object({
       name: z.string().min(3).optional(),
-      email: z.string().email().optional()
+      email: z.string().email().optional(),
     }),
     response: z.object({
       id: z.number(),
       name: z.string(),
-      email: z.string()
-    })
-  }
-} as const;
+      email: z.string(),
+    }),
+  },
+} as const
 
 // Create client with shared configuration
 class APIClient {
-  private fetch;
+  private fetch
 
   constructor(baseUrl: string, apiKey: string) {
     // Use shared headers for authentication
-    this.fetch = createFetch(
-      api,
-      baseUrl,
-      {
-        headers: {
-          'Authorization': `Bearer ${apiKey}`
-        }
-      }
-    );
+    this.fetch = createFetch(api, baseUrl, {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
   }
 
   async getUsers(page = 1, limit = 10) {
     // No need to pass auth header - it's shared
-    return this.fetch('/users', { query: { page, limit } });
+    return this.fetch("/users", { query: { page, limit } })
   }
 
   async getUser(id: number) {
-    return this.fetch('/users/:id', { params: { id } });
+    return this.fetch("/users/:id", { params: { id } })
   }
 
   async createUser(data: { name: string; email: string; password: string }) {
-    return this.fetch('/users/create', { body: data });
+    return this.fetch("/users/create", { body: data })
   }
 
   async updateUser(id: number, data: { name?: string; email?: string }) {
-    return this.fetch('/users/:id/update', { params: { id }, body: data });
+    return this.fetch("/users/:id/update", { params: { id }, body: data })
   }
 }
 
 // Usage
-const client = new APIClient('https://api.example.com', 'your-api-key');
-const users = await client.getUsers(1, 20);
-const user = await client.getUser(123);
+const client = new APIClient("https://api.example.com", "your-api-key")
+const users = await client.getUsers(1, 20)
+const user = await client.getUser(123)
 ```
 
 ---
@@ -833,40 +841,40 @@ what-the-fetch works with any schema library that implements [Standard Schema](h
 ### Zod
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod"
 
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+}
 ```
 
 ### Valibot
 
 ```typescript
-import * as v from 'valibot';
+import * as v from "valibot"
 
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: v.object({ id: v.number() }),
-    response: v.object({ id: v.number(), name: v.string() })
-  }
-};
+    response: v.object({ id: v.number(), name: v.string() }),
+  },
+}
 ```
 
 ### ArkType
 
 ```typescript
-import { type } from 'arktype';
+import { type } from "arktype"
 
 const api = {
-  '/users/:id': {
-    params: type({ id: 'number' }),
-    response: type({ id: 'number', name: 'string' })
-  }
-};
+  "/users/:id": {
+    params: type({ id: "number" }),
+    response: type({ id: "number", name: "string" }),
+  },
+}
 ```
 
 ---
@@ -879,9 +887,9 @@ what-the-fetch automatically throws an error for non-2xx status codes:
 
 ```typescript
 try {
-  const user = await apiFetch('/users/:id', { params: { id: 999 } });
+  const user = await apiFetch("/users/:id", { params: { id: 999 } })
 } catch (error) {
-  console.error('HTTP error:', error.message);
+  console.error("HTTP error:", error.message)
   // → "HTTP error! status: 404"
 }
 ```
@@ -892,20 +900,20 @@ Schema validation errors are thrown when response doesn't match the schema:
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     response: z.object({
       id: z.number(),
-      name: z.string() // Required field
-    })
-  }
-};
+      name: z.string(), // Required field
+    }),
+  },
+}
 
 try {
   // If server returns { id: 123 } without name field
-  const user = await apiFetch('/users/:id', { params: { id: 123 } });
+  const user = await apiFetch("/users/:id", { params: { id: 123 } })
 } catch (error) {
-  console.error('Validation error:', error);
+  console.error("Validation error:", error)
   // Schema validation failed
 }
 ```
@@ -918,18 +926,18 @@ try {
 
 ```typescript
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
-    response: z.object({ id: z.number(), name: z.string() })
-  }
-} as const;
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+} as const
 
-const apiFetch = createFetch(api, 'https://api.example.com');
+const apiFetch = createFetch(api, "https://api.example.com")
 
 // TypeScript infers everything:
-const user = await apiFetch('/users/:id', {
-  params: { id: 123 } // TypeScript knows params is required and id must be number
-});
+const user = await apiFetch("/users/:id", {
+  params: { id: 123 }, // TypeScript knows params is required and id must be number
+})
 // TypeScript knows user is { id: number; name: string }
 ```
 
@@ -946,16 +954,16 @@ When using what-the-fetch in TypeScript, you get full autocomplete for:
 
 ```typescript
 // ✅ This compiles
-await apiFetch('/users/:id', { params: { id: 123 } });
+await apiFetch("/users/:id", { params: { id: 123 } })
 
 // ❌ TypeScript error: Property 'params' is missing
-await apiFetch('/users/:id', {});
+await apiFetch("/users/:id", {})
 
 // ❌ TypeScript error: Type 'string' is not assignable to type 'number'
-await apiFetch('/users/:id', { params: { id: '123' } });
+await apiFetch("/users/:id", { params: { id: "123" } })
 
 // ❌ TypeScript error: '/invalid' is not assignable to type '/users/:id' | ...
-await apiFetch('/invalid', {});
+await apiFetch("/invalid", {})
 ```
 
 ---

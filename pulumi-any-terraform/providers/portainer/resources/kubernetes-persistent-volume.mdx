@@ -19,25 +19,25 @@ Construct with `new portainer.KubernetesPersistentVolume(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment the volume belongs to. |
-| `kubernetesPersistentVolumeId` | `string` | no |  |
-| `name` | `string` | no | Name of an existing PersistentVolume. Portainer has no API to create one, so this resource adopts a volume created by a manifest, a StorageClass provisioner or a Helm chart. |
-| `reclaimPolicy` | `string` | yes | Reclaim policy applied to the volume: `Retain`, `Delete` or `Recycle`. This is the one property of a bound PersistentVolume Kubernetes allows to be changed in place. |
+| Property                       | Type     | Required | Description                                                                                                                                                                   |
+| ------------------------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `environmentId`                | `number` | yes      | Identifier of the Portainer Kubernetes environment the volume belongs to.                                                                                                     |
+| `kubernetesPersistentVolumeId` | `string` | no       |                                                                                                                                                                               |
+| `name`                         | `string` | no       | Name of an existing PersistentVolume. Portainer has no API to create one, so this resource adopts a volume created by a manifest, a StorageClass provisioner or a Helm chart. |
+| `reclaimPolicy`                | `string` | yes      | Reclaim policy applied to the volume: `Retain`, `Delete` or `Recycle`. This is the one property of a bound PersistentVolume Kubernetes allows to be changed in place.         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessModes` | `string[]` | yes | Access modes the volume supports, such as `ReadWriteOnce` or `ReadWriteMany`. |
-| `capacity` | `string` | yes | Storage capacity of the volume as a Kubernetes quantity string (for example `10Gi`). |
-| `claimRef` | `string` | yes | PersistentVolumeClaim bound to this volume as `<namespace>/<name>`, empty while the volume is unbound. |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment the volume belongs to. |
-| `kubernetesPersistentVolumeId` | `string` | no |  |
-| `name` | `string` | no | Name of an existing PersistentVolume. Portainer has no API to create one, so this resource adopts a volume created by a manifest, a StorageClass provisioner or a Helm chart. |
-| `phase` | `string` | yes | Lifecycle phase of the volume: `Available`, `Bound`, `Released`, `Failed` or `Pending`. |
-| `reclaimPolicy` | `string` | no | Reclaim policy applied to the volume: `Retain`, `Delete` or `Recycle`. This is the one property of a bound PersistentVolume Kubernetes allows to be changed in place. |
-| `storageClass` | `string` | yes | StorageClass the volume belongs to, empty for a statically provisioned volume. |
+| Property                       | Type       | Computed | Description                                                                                                                                                                   |
+| ------------------------------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessModes`                  | `string[]` | yes      | Access modes the volume supports, such as `ReadWriteOnce` or `ReadWriteMany`.                                                                                                 |
+| `capacity`                     | `string`   | yes      | Storage capacity of the volume as a Kubernetes quantity string (for example `10Gi`).                                                                                          |
+| `claimRef`                     | `string`   | yes      | PersistentVolumeClaim bound to this volume as `<namespace>/<name>`, empty while the volume is unbound.                                                                        |
+| `environmentId`                | `number`   | no       | Identifier of the Portainer Kubernetes environment the volume belongs to.                                                                                                     |
+| `kubernetesPersistentVolumeId` | `string`   | no       |                                                                                                                                                                               |
+| `name`                         | `string`   | no       | Name of an existing PersistentVolume. Portainer has no API to create one, so this resource adopts a volume created by a manifest, a StorageClass provisioner or a Helm chart. |
+| `phase`                        | `string`   | yes      | Lifecycle phase of the volume: `Available`, `Bound`, `Released`, `Failed` or `Pending`.                                                                                       |
+| `reclaimPolicy`                | `string`   | no       | Reclaim policy applied to the volume: `Retain`, `Delete` or `Recycle`. This is the one property of a bound PersistentVolume Kubernetes allows to be changed in place.         |
+| `storageClass`                 | `string`   | yes      | StorageClass the volume belongs to, empty for a statically provisioned volume.                                                                                                |

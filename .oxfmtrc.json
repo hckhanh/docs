@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "endOfLine": "lf",
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "semi": false,
+  "singleQuote": false,
+  "ignorePatterns": [".docs7/", ".idea/", "tmp/"]
+}

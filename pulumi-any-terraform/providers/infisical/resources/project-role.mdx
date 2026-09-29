@@ -19,86 +19,86 @@ Construct with `new infisical.ProjectRole(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description for the new role. Defaults to an empty string. |
-| `name` | `string` | no | The name for the new role |
-| `permissions` | `ProjectRolePermission (input)[]` | no | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project role |
-| `permissionsV2s` | `ProjectRolePermissionsV2 (input)[]` | no | The permissions assigned to the project role. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage. |
-| `projectId` | `string` | no | The ID of the project to create role. Must provide either `projectId` or project_slug, but not both. |
-| `projectSlug` | `string` | no | The slug of the project to create role. Must provide either `projectSlug` or project_id, but not both. |
-| `slug` | `string` | yes | The slug for the new role |
+| Property         | Type                                 | Required | Description                                                                                                                                                                                                   |
+| ---------------- | ------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`    | `string`                             | no       | The description for the new role. Defaults to an empty string.                                                                                                                                                |
+| `name`           | `string`                             | no       | The name for the new role                                                                                                                                                                                     |
+| `permissions`    | `ProjectRolePermission (input)[]`    | no       | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project role |
+| `permissionsV2s` | `ProjectRolePermissionsV2 (input)[]` | no       | The permissions assigned to the project role. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage.                                             |
+| `projectId`      | `string`                             | no       | The ID of the project to create role. Must provide either `projectId` or project_slug, but not both.                                                                                                          |
+| `projectSlug`    | `string`                             | no       | The slug of the project to create role. Must provide either `projectSlug` or project_id, but not both.                                                                                                        |
+| `slug`           | `string`                             | yes      | The slug for the new role                                                                                                                                                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description for the new role. Defaults to an empty string. |
-| `name` | `string` | no | The name for the new role |
-| `permissions` | `ProjectRolePermission (output)[]` | no | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project role |
-| `permissionsV2s` | `ProjectRolePermissionsV2 (output)[]` | no | The permissions assigned to the project role. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage. |
-| `projectId` | `string` | no | The ID of the project to create role. Must provide either `projectId` or project_slug, but not both. |
-| `projectSlug` | `string` | no | The slug of the project to create role. Must provide either `projectSlug` or project_id, but not both. |
-| `slug` | `string` | no | The slug for the new role |
+| Property         | Type                                  | Computed | Description                                                                                                                                                                                                   |
+| ---------------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`    | `string`                              | no       | The description for the new role. Defaults to an empty string.                                                                                                                                                |
+| `name`           | `string`                              | no       | The name for the new role                                                                                                                                                                                     |
+| `permissions`    | `ProjectRolePermission (output)[]`    | no       | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project role |
+| `permissionsV2s` | `ProjectRolePermissionsV2 (output)[]` | no       | The permissions assigned to the project role. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage.                                             |
+| `projectId`      | `string`                              | no       | The ID of the project to create role. Must provide either `projectId` or project_slug, but not both.                                                                                                          |
+| `projectSlug`    | `string`                              | no       | The slug of the project to create role. Must provide either `projectSlug` or project_id, but not both.                                                                                                        |
+| `slug`           | `string`                              | no       | The slug for the new role                                                                                                                                                                                     |
 
 ## `ProjectRolePermission (input)`
 
 Input object `ProjectRolePermission`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | yes | Describe what action an entity can take. Enum: create,edit,delete,read |
-| `conditions` | `ProjectRolePermissionConditions (input)` | no | The conditions to scope permissions |
-| `subject` | `string` | yes | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
+| Property     | Type                                      | Required | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------ | ----------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `action`     | `string`                                  | yes      | Describe what action an entity can take. Enum: create,edit,delete,read                                                                                                                                                                                                                                                        |
+| `conditions` | `ProjectRolePermissionConditions (input)` | no       | The conditions to scope permissions                                                                                                                                                                                                                                                                                           |
+| `subject`    | `string`                                  | yes      | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
 
 ## `ProjectRolePermissionConditions (input)`
 
 Input object `ProjectRolePermissionConditions`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | no | The environment slug this permission should allow. |
-| `secretPath` | `string` | no | The secret path this permission should be scoped to |
+| Property      | Type     | Required | Description                                         |
+| ------------- | -------- | -------- | --------------------------------------------------- |
+| `environment` | `string` | no       | The environment slug this permission should allow.  |
+| `secretPath`  | `string` | no       | The secret path this permission should be scoped to |
 
 ## `ProjectRolePermissionsV2 (input)`
 
 Input object `ProjectRolePermissionsV2`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | no | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Required | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes      | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no       | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | no       | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes      | Describe the entity the permission pertains to.                                                                                                                                                                                           |
 
 ## `ProjectRolePermission (output)`
 
 Output object `ProjectRolePermission`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | yes | Describe what action an entity can take. Enum: create,edit,delete,read |
-| `conditions` | `ProjectRolePermissionConditions (output)` | no | The conditions to scope permissions |
-| `subject` | `string` | yes | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
+| Property     | Type                                       | Always present | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------ | ------------------------------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `action`     | `string`                                   | yes            | Describe what action an entity can take. Enum: create,edit,delete,read                                                                                                                                                                                                                                                        |
+| `conditions` | `ProjectRolePermissionConditions (output)` | no             | The conditions to scope permissions                                                                                                                                                                                                                                                                                           |
+| `subject`    | `string`                                   | yes            | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
 
 ## `ProjectRolePermissionConditions (output)`
 
 Output object `ProjectRolePermissionConditions`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | no | The environment slug this permission should allow. |
-| `secretPath` | `string` | no | The secret path this permission should be scoped to |
+| Property      | Type     | Always present | Description                                         |
+| ------------- | -------- | -------------- | --------------------------------------------------- |
+| `environment` | `string` | no             | The environment slug this permission should allow.  |
+| `secretPath`  | `string` | no             | The secret path this permission should be scoped to |
 
 ## `ProjectRolePermissionsV2 (output)`
 
 Output object `ProjectRolePermissionsV2`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | yes | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Always present | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes            | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no             | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | yes            | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes            | Describe the entity the permission pertains to.                                                                                                                                                                                           |

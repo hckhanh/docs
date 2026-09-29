@@ -19,18 +19,18 @@ Construct with `new portainer.KubernetesStorage(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes | Identifier of the Portainer Kubernetes endpoint where the storage class manifest is applied. |
-| `kubernetesStorageId` | `string` | no |  |
-| `manifest` | `string` | yes | YAML or JSON manifest describing the Kubernetes StorageClass or related storage resources. |
+| Property              | Type     | Required | Description                                                                                  |
+| --------------------- | -------- | -------- | -------------------------------------------------------------------------------------------- |
+| `endpointId`          | `number` | yes      | Identifier of the Portainer Kubernetes endpoint where the storage class manifest is applied. |
+| `kubernetesStorageId` | `string` | no       |                                                                                              |
+| `manifest`            | `string` | yes      | YAML or JSON manifest describing the Kubernetes StorageClass or related storage resources.   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Identifier of the Portainer Kubernetes endpoint where the storage class manifest is applied. |
-| `kubernetesStorageId` | `string` | no |  |
-| `manifest` | `string` | no | YAML or JSON manifest describing the Kubernetes StorageClass or related storage resources. |
+| Property              | Type     | Computed | Description                                                                                  |
+| --------------------- | -------- | -------- | -------------------------------------------------------------------------------------------- |
+| `endpointId`          | `number` | no       | Identifier of the Portainer Kubernetes endpoint where the storage class manifest is applied. |
+| `kubernetesStorageId` | `string` | no       |                                                                                              |
+| `manifest`            | `string` | no       | YAML or JSON manifest describing the Kubernetes StorageClass or related storage resources.   |

@@ -19,31 +19,31 @@ Call `buildkite.getCluster(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `name`   | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `color` | `string` | yes |  |
-| `description` | `string` | yes |  |
-| `emoji` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `maintainers` | `GetClusterMaintainer[]` | yes |  |
-| `name` | `string` | yes |  |
-| `uuid` | `string` | yes |  |
+| Property      | Type                     | Always present | Description |
+| ------------- | ------------------------ | -------------- | ----------- |
+| `color`       | `string`                 | yes            |             |
+| `description` | `string`                 | yes            |             |
+| `emoji`       | `string`                 | yes            |             |
+| `id`          | `string`                 | yes            |             |
+| `maintainers` | `GetClusterMaintainer[]` | yes            |             |
+| `name`        | `string`                 | yes            |             |
+| `uuid`        | `string`                 | yes            |             |
 
 ## `GetClusterMaintainer`
 
 Output object `GetClusterMaintainer`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actorEmail` | `string` | yes | The email of the actor (only for users). |
-| `actorName` | `string` | yes | The name of the actor. |
-| `actorSlug` | `string` | yes | The slug of the actor (only for teams). |
-| `actorType` | `string` | yes | The type of the actor (user or team). |
-| `actorUuid` | `string` | yes | The UUID of the actor (user or team). |
-| `permissionUuid` | `string` | yes | The UUID of the maintainer permission. |
+| Property         | Type     | Always present | Description                              |
+| ---------------- | -------- | -------------- | ---------------------------------------- |
+| `actorEmail`     | `string` | yes            | The email of the actor (only for users). |
+| `actorName`      | `string` | yes            | The name of the actor.                   |
+| `actorSlug`      | `string` | yes            | The slug of the actor (only for teams).  |
+| `actorType`      | `string` | yes            | The type of the actor (user or team).    |
+| `actorUuid`      | `string` | yes            | The UUID of the actor (user or team).    |
+| `permissionUuid` | `string` | yes            | The UUID of the maintainer permission.   |

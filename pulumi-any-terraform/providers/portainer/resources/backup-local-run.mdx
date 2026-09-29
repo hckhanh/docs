@@ -19,19 +19,19 @@ Construct with `new portainer.BackupLocalRun(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `backupLocalRunId` | `string` | no |  |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property           | Type                        | Required | Description                                                                                                                                                     |
+| ------------------ | --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `backupLocalRunId` | `string`                    | no       |                                                                                                                                                                 |
+| `triggers`         | `{ [key: string]: string }` | no       | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `backupLocalRunId` | `string` | no |  |
-| `failed` | `boolean` | yes | Whether Portainer reports the run as failed. |
-| `path` | `string` | yes | Path on the Portainer host where the archive was written, as reported after the run. |
-| `timestamp` | `string` | yes | UTC timestamp Portainer reports for the run. |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property           | Type                        | Computed | Description                                                                                                                                                     |
+| ------------------ | --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `backupLocalRunId` | `string`                    | no       |                                                                                                                                                                 |
+| `failed`           | `boolean`                   | yes      | Whether Portainer reports the run as failed.                                                                                                                    |
+| `path`             | `string`                    | yes      | Path on the Portainer host where the archive was written, as reported after the run.                                                                            |
+| `timestamp`        | `string`                    | yes      | UTC timestamp Portainer reports for the run.                                                                                                                    |
+| `triggers`         | `{ [key: string]: string }` | no       | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |

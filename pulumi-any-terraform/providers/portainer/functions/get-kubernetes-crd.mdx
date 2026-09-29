@@ -19,31 +19,31 @@ Call `portainer.getKubernetesCrd(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `name` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
+| `name`          | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `crds` | `GetKubernetesCrdCrd[]` | yes |  |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `name` | `string` | no |  |
+| Property        | Type                    | Always present | Description |
+| --------------- | ----------------------- | -------------- | ----------- |
+| `crds`          | `GetKubernetesCrdCrd[]` | yes            |             |
+| `environmentId` | `number`                | yes            |             |
+| `id`            | `string`                | yes            |             |
+| `name`          | `string`                | no             |             |
 
 ## `GetKubernetesCrdCrd`
 
 Output object `GetKubernetesCrdCrd`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `creationDate` | `string` | no |  |
-| `group` | `string` | no |  |
-| `name` | `string` | no |  |
-| `releaseName` | `string` | no |  |
-| `releaseNamespace` | `string` | no |  |
-| `releaseVersion` | `string` | no |  |
-| `scope` | `string` | no |  |
+| Property           | Type     | Always present | Description |
+| ------------------ | -------- | -------------- | ----------- |
+| `creationDate`     | `string` | no             |             |
+| `group`            | `string` | no             |             |
+| `name`             | `string` | no             |             |
+| `releaseName`      | `string` | no             |             |
+| `releaseNamespace` | `string` | no             |             |
+| `releaseVersion`   | `string` | no             |             |
+| `scope`            | `string` | no             |             |

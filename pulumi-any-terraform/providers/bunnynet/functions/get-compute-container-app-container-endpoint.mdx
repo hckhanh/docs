@@ -19,38 +19,38 @@ Call `bunnynet.getComputeContainerAppContainerEndpoint(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `app` | `string` | yes |  |
-| `container` | `string` | yes |  |
-| `name` | `string` | yes |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `app`       | `string` | yes      |             |
+| `container` | `string` | yes      |             |
+| `name`      | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `app` | `string` | yes |  |
-| `cdn` | `GetComputeContainerAppContainerEndpointCdn` | yes |  |
-| `container` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `publicHost` | `string` | yes |  |
-| `type` | `string` | yes |  |
+| Property     | Type                                         | Always present | Description |
+| ------------ | -------------------------------------------- | -------------- | ----------- |
+| `app`        | `string`                                     | yes            |             |
+| `cdn`        | `GetComputeContainerAppContainerEndpointCdn` | yes            |             |
+| `container`  | `string`                                     | yes            |             |
+| `id`         | `string`                                     | yes            |             |
+| `name`       | `string`                                     | yes            |             |
+| `publicHost` | `string`                                     | yes            |             |
+| `type`       | `string`                                     | yes            |             |
 
 ## `GetComputeContainerAppContainerEndpointCdn`
 
 Output object `GetComputeContainerAppContainerEndpointCdn`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `originSsl` | `boolean` | no |  |
-| `pullzoneId` | `number` | no |  |
-| `stickySessions` | `GetComputeContainerAppContainerEndpointCdnStickySession[]` | no |  |
+| Property         | Type                                                        | Always present | Description |
+| ---------------- | ----------------------------------------------------------- | -------------- | ----------- |
+| `originSsl`      | `boolean`                                                   | no             |             |
+| `pullzoneId`     | `number`                                                    | no             |             |
+| `stickySessions` | `GetComputeContainerAppContainerEndpointCdnStickySession[]` | no             |             |
 
 ## `GetComputeContainerAppContainerEndpointCdnStickySession`
 
 Output object `GetComputeContainerAppContainerEndpointCdnStickySession`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `headers` | `string[]` | no |  |
+| Property  | Type       | Always present | Description |
+| --------- | ---------- | -------------- | ----------- |
+| `headers` | `string[]` | no             |             |

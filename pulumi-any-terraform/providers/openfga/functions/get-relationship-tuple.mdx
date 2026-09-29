@@ -19,28 +19,28 @@ Call `openfga.getRelationshipTuple(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `object` | `string` | yes |  |
-| `relation` | `string` | yes |  |
-| `storeId` | `string` | yes |  |
-| `user` | `string` | yes |  |
+| Property   | Type     | Required | Description |
+| ---------- | -------- | -------- | ----------- |
+| `object`   | `string` | yes      |             |
+| `relation` | `string` | yes      |             |
+| `storeId`  | `string` | yes      |             |
+| `user`     | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `condition` | `GetRelationshipTupleCondition` | yes |  |
-| `object` | `string` | yes |  |
-| `relation` | `string` | yes |  |
-| `storeId` | `string` | yes |  |
-| `user` | `string` | yes |  |
+| Property    | Type                            | Always present | Description |
+| ----------- | ------------------------------- | -------------- | ----------- |
+| `condition` | `GetRelationshipTupleCondition` | yes            |             |
+| `object`    | `string`                        | yes            |             |
+| `relation`  | `string`                        | yes            |             |
+| `storeId`   | `string`                        | yes            |             |
+| `user`      | `string`                        | yes            |             |
 
 ## `GetRelationshipTupleCondition`
 
 Output object `GetRelationshipTupleCondition`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `contextJson` | `string` | yes | The (partial) context under which the condition is evaluated. |
-| `name` | `string` | yes | The name of the condition. |
+| Property      | Type     | Always present | Description                                                   |
+| ------------- | -------- | -------------- | ------------------------------------------------------------- |
+| `contextJson` | `string` | yes            | The (partial) context under which the condition is evaluated. |
+| `name`        | `string` | yes            | The name of the condition.                                    |

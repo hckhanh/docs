@@ -19,71 +19,71 @@ Construct with `new infisical.ProjectScopedIdentity(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `hasDeleteProtection` | `boolean` | no | Whether the identity has delete protection enabled. Defaults to false. |
-| `metadatas` | `ProjectScopedIdentityMetadata (input)[]` | no | The metadata associated with this identity. |
-| `name` | `string` | no | The name of the identity. |
-| `projectId` | `string` | yes | The ID of the project that owns this identity. |
-| `roles` | `ProjectScopedIdentityRole (input)[]` | yes | The roles assigned to the project-scoped identity. At least one permanent (non-temporary) role is required. |
+| Property              | Type                                      | Required | Description                                                                                                 |
+| --------------------- | ----------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `hasDeleteProtection` | `boolean`                                 | no       | Whether the identity has delete protection enabled. Defaults to false.                                      |
+| `metadatas`           | `ProjectScopedIdentityMetadata (input)[]` | no       | The metadata associated with this identity.                                                                 |
+| `name`                | `string`                                  | no       | The name of the identity.                                                                                   |
+| `projectId`           | `string`                                  | yes      | The ID of the project that owns this identity.                                                              |
+| `roles`               | `ProjectScopedIdentityRole (input)[]`     | yes      | The roles assigned to the project-scoped identity. At least one permanent (non-temporary) role is required. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `authMethods` | `string[]` | yes | The authentication methods configured for the identity. |
-| `hasDeleteProtection` | `boolean` | no | Whether the identity has delete protection enabled. Defaults to false. |
-| `metadatas` | `ProjectScopedIdentityMetadata (output)[]` | no | The metadata associated with this identity. |
-| `name` | `string` | no | The name of the identity. |
-| `projectId` | `string` | no | The ID of the project that owns this identity. |
-| `roles` | `ProjectScopedIdentityRole (output)[]` | no | The roles assigned to the project-scoped identity. At least one permanent (non-temporary) role is required. |
+| Property              | Type                                       | Computed | Description                                                                                                 |
+| --------------------- | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `authMethods`         | `string[]`                                 | yes      | The authentication methods configured for the identity.                                                     |
+| `hasDeleteProtection` | `boolean`                                  | no       | Whether the identity has delete protection enabled. Defaults to false.                                      |
+| `metadatas`           | `ProjectScopedIdentityMetadata (output)[]` | no       | The metadata associated with this identity.                                                                 |
+| `name`                | `string`                                   | no       | The name of the identity.                                                                                   |
+| `projectId`           | `string`                                   | no       | The ID of the project that owns this identity.                                                              |
+| `roles`               | `ProjectScopedIdentityRole (output)[]`     | no       | The roles assigned to the project-scoped identity. At least one permanent (non-temporary) role is required. |
 
 ## `ProjectScopedIdentityMetadata (input)`
 
 Input object `ProjectScopedIdentityMetadata`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | The key of the metadata entry. |
-| `value` | `string` | yes | The value of the metadata entry. |
+| Property | Type     | Required | Description                      |
+| -------- | -------- | -------- | -------------------------------- |
+| `key`    | `string` | yes      | The key of the metadata entry.   |
+| `value`  | `string` | yes      | The value of the metadata entry. |
 
 ## `ProjectScopedIdentityRole (input)`
 
 Input object `ProjectScopedIdentityRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | no | The id of the custom role. Read-only; reference custom roles via role_slug. |
-| `id` | `string` | no | The ID of the project identity role. |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role. To assign a custom role, set this to the custom role's slug. |
-| `temporaryAccessEndTime` | `string` | no | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | no | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Required | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | no       | The id of the custom role. Read-only; reference custom roles via role_slug.                                                                                           |
+| `id`                       | `string`  | no       | The ID of the project identity role.                                                                                                                                  |
+| `isTemporary`              | `boolean` | no       | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes      | The slug of the role. To assign a custom role, set this to the custom role's slug.                                                                                    |
+| `temporaryAccessEndTime`   | `string`  | no       | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | no       | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | no       | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |
 
 ## `ProjectScopedIdentityMetadata (output)`
 
 Output object `ProjectScopedIdentityMetadata`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | The key of the metadata entry. |
-| `value` | `string` | yes | The value of the metadata entry. |
+| Property | Type     | Always present | Description                      |
+| -------- | -------- | -------------- | -------------------------------- |
+| `key`    | `string` | yes            | The key of the metadata entry.   |
+| `value`  | `string` | yes            | The value of the metadata entry. |
 
 ## `ProjectScopedIdentityRole (output)`
 
 Output object `ProjectScopedIdentityRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | yes | The id of the custom role. Read-only; reference custom roles via role_slug. |
-| `id` | `string` | yes | The ID of the project identity role. |
-| `isTemporary` | `boolean` | yes | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role. To assign a custom role, set this to the custom role's slug. |
-| `temporaryAccessEndTime` | `string` | yes | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | yes | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | yes | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | yes | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Always present | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | yes            | The id of the custom role. Read-only; reference custom roles via role_slug.                                                                                           |
+| `id`                       | `string`  | yes            | The ID of the project identity role.                                                                                                                                  |
+| `isTemporary`              | `boolean` | yes            | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes            | The slug of the role. To assign a custom role, set this to the custom role's slug.                                                                                    |
+| `temporaryAccessEndTime`   | `string`  | yes            | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | yes            | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | yes            | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | yes            | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |

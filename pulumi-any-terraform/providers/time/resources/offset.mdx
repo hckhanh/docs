@@ -19,36 +19,36 @@ Construct with `new time.Offset(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `baseRfc3339` | `string` | no | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
-| `offsetDays` | `number` | no | Number of days to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetHours` | `number` | no | Number of hours to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetMinutes` | `number` | no | Number of minutes to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetMonths` | `number` | no | Number of months to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetSeconds` | `number` | no | Number of seconds to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetYears` | `number` | no | Number of years to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information. |
+| Property        | Type                        | Required | Description                                                                                                                                                                                                                            |
+| --------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `baseRfc3339`   | `string`                    | no       | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
+| `offsetDays`    | `number`                    | no       | Number of days to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                              |
+| `offsetHours`   | `number`                    | no       | Number of hours to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                             |
+| `offsetMinutes` | `number`                    | no       | Number of minutes to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                           |
+| `offsetMonths`  | `number`                    | no       | Number of months to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                            |
+| `offsetSeconds` | `number`                    | no       | Number of seconds to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                           |
+| `offsetYears`   | `number`                    | no       | Number of years to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                             |
+| `triggers`      | `{ [key: string]: string }` | no       | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information.                                                                             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `baseRfc3339` | `string` | no | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
-| `day` | `number` | yes | Number day of offset timestamp. |
-| `hour` | `number` | yes | Number hour of offset timestamp. |
-| `minute` | `number` | yes | Number minute of offset timestamp. |
-| `month` | `number` | yes | Number month of offset timestamp. |
-| `offsetDays` | `number` | no | Number of days to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetHours` | `number` | no | Number of hours to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetMinutes` | `number` | no | Number of minutes to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetMonths` | `number` | no | Number of months to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetSeconds` | `number` | no | Number of seconds to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `offsetYears` | `number` | no | Number of years to offset the base timestamp. At least one of the 'offset_' arguments must be configured. |
-| `rfc3339` | `string` | yes | RFC3339 format of the offset timestamp, e.g. `2020-02-12T06:36:13Z`. |
-| `second` | `number` | yes | Number second of offset timestamp. |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information. |
-| `unix` | `number` | yes | Number of seconds since epoch time, e.g. `1581489373`. |
-| `year` | `number` | yes | Number year of offset timestamp. |
+| Property        | Type                        | Computed | Description                                                                                                                                                                                                                            |
+| --------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `baseRfc3339`   | `string`                    | no       | Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time. |
+| `day`           | `number`                    | yes      | Number day of offset timestamp.                                                                                                                                                                                                        |
+| `hour`          | `number`                    | yes      | Number hour of offset timestamp.                                                                                                                                                                                                       |
+| `minute`        | `number`                    | yes      | Number minute of offset timestamp.                                                                                                                                                                                                     |
+| `month`         | `number`                    | yes      | Number month of offset timestamp.                                                                                                                                                                                                      |
+| `offsetDays`    | `number`                    | no       | Number of days to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                              |
+| `offsetHours`   | `number`                    | no       | Number of hours to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                             |
+| `offsetMinutes` | `number`                    | no       | Number of minutes to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                           |
+| `offsetMonths`  | `number`                    | no       | Number of months to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                            |
+| `offsetSeconds` | `number`                    | no       | Number of seconds to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                           |
+| `offsetYears`   | `number`                    | no       | Number of years to offset the base timestamp. At least one of the 'offset\_' arguments must be configured.                                                                                                                             |
+| `rfc3339`       | `string`                    | yes      | RFC3339 format of the offset timestamp, e.g. `2020-02-12T06:36:13Z`.                                                                                                                                                                   |
+| `second`        | `number`                    | yes      | Number second of offset timestamp.                                                                                                                                                                                                     |
+| `triggers`      | `{ [key: string]: string }` | no       | Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See the main provider documentation for more information.                                                                             |
+| `unix`          | `number`                    | yes      | Number of seconds since epoch time, e.g. `1581489373`.                                                                                                                                                                                 |
+| `year`          | `number`                    | yes      | Number year of offset timestamp.                                                                                                                                                                                                       |

@@ -9,8 +9,9 @@ description: Learn about what-the-fetch – a type-safe API client with schema v
 **Why what-the-fetch?**
 
 Building API clients manually is error-prone and lacks type safety. what-the-fetch
-  handles type-safe URL construction, automatic request/response validation,
-  and full TypeScript inference automatically.
+handles type-safe URL construction, automatic request/response validation,
+and full TypeScript inference automatically.
+
 </Note>
 
 ## Why what-the-fetch?
@@ -58,30 +59,30 @@ Building API clients manually is tedious and error-prone. what-the-fetch solves 
 
 ## Key Features
 
-  <Card title="Type-Safe">
-    Full TypeScript support with end-to-end type inference from schema
-    definition to response data
-  </Card>
-  <Card title="Schema Validation">
-    Built-in support for [Standard Schema](https://standardschema.dev) - compatible with Zod, Valibot,
-    ArkType, and more
-  </Card>
-  <Card title="Flexible">
-    Works with any schema library that implements [Standard Schema](https://standardschema.dev) for maximum
-    flexibility
-  </Card>
-  <Card title="Minimal">
-    Small bundle size with minimal dependencies - only fast-url library and
-    [Standard Schema](https://standardschema.dev) spec
-  </Card>
-  <Card title="URL Building">
-    Integrated with fast-url library for clean, safe URL construction with
-    path and query parameters
-  </Card>
-  <Card title="Developer Experience">
-    Excellent developer experience with full autocomplete and compile-time error
-    checking
-  </Card>
+<Card title="Type-Safe">
+  Full TypeScript support with end-to-end type inference from schema definition
+  to response data
+</Card>
+<Card title="Schema Validation">
+  Built-in support for [Standard Schema](https://standardschema.dev) -
+  compatible with Zod, Valibot, ArkType, and more
+</Card>
+<Card title="Flexible">
+  Works with any schema library that implements [Standard
+  Schema](https://standardschema.dev) for maximum flexibility
+</Card>
+<Card title="Minimal">
+  Small bundle size with minimal dependencies - only fast-url library and
+  [Standard Schema](https://standardschema.dev) spec
+</Card>
+<Card title="URL Building">
+  Integrated with fast-url library for clean, safe URL construction with path
+  and query parameters
+</Card>
+<Card title="Developer Experience">
+  Excellent developer experience with full autocomplete and compile-time error
+  checking
+</Card>
 
 ## The Problem
 
@@ -89,8 +90,8 @@ Building API clients manually lacks type safety and validation:
 
 ```typescript
 // ❌ No type safety, manual validation
-const response = await fetch(`${baseUrl}/users/${id}?fields=${fields}`);
-const data = await response.json();
+const response = await fetch(`${baseUrl}/users/${id}?fields=${fields}`)
+const data = await response.json()
 // What type is data? Who knows! Runtime errors waiting to happen
 ```
 
@@ -108,22 +109,22 @@ what-the-fetch provides a type-safe API client with automatic validation:
 
 ```typescript
 // ✅ Type-safe with validation
-import { createFetch } from 'what-the-fetch';
-import { z } from 'zod';
+import { createFetch } from "what-the-fetch"
+import { z } from "zod"
 
 const api = {
-  '/users/:id': {
+  "/users/:id": {
     params: z.object({ id: z.number() }),
     query: z.object({ fields: z.string().optional() }),
-    response: z.object({ id: z.number(), name: z.string(), email: z.string() })
-  }
-};
+    response: z.object({ id: z.number(), name: z.string(), email: z.string() }),
+  },
+}
 
-const apiFetch = createFetch(api, baseUrl);
-const user = await apiFetch('/users/:id', {
+const apiFetch = createFetch(api, baseUrl)
+const user = await apiFetch("/users/:id", {
   params: { id },
-  query: { fields }
-});
+  query: { fields },
+})
 // user is fully typed as { id: number; name: string; email: string }
 ```
 
@@ -139,7 +140,8 @@ const user = await apiFetch('/users/:id', {
 **Type Safety & Validation**
 
 what-the-fetch handles type-safe URL construction, automatic validation, and full
-  TypeScript inference - catching errors at compile time instead of runtime.
+TypeScript inference - catching errors at compile time instead of runtime.
+
 </Check>
 
 ## When to Use what-the-fetch

@@ -19,38 +19,38 @@ Construct with `new portainer.EndpointRelations(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointRelationsId` | `string` | no |  |
-| `relations` | `EndpointRelationsRelation (input)[]` | yes | Relations to apply, one block per environment. Portainer applies them in a single transaction, so either all of them land or none do. |
+| Property              | Type                                  | Required | Description                                                                                                                           |
+| --------------------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `endpointRelationsId` | `string`                              | no       |                                                                                                                                       |
+| `relations`           | `EndpointRelationsRelation (input)[]` | yes      | Relations to apply, one block per environment. Portainer applies them in a single transaction, so either all of them land or none do. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointRelationsId` | `string` | no |  |
-| `relations` | `EndpointRelationsRelation (output)[]` | no | Relations to apply, one block per environment. Portainer applies them in a single transaction, so either all of them land or none do. |
+| Property              | Type                                   | Computed | Description                                                                                                                           |
+| --------------------- | -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `endpointRelationsId` | `string`                               | no       |                                                                                                                                       |
+| `relations`           | `EndpointRelationsRelation (output)[]` | no       | Relations to apply, one block per environment. Portainer applies them in a single transaction, so either all of them land or none do. |
 
 ## `EndpointRelationsRelation (input)`
 
 Input object `EndpointRelationsRelation`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no | Edge group identifiers the environment belongs to, replacing whatever it had. Omit the attribute to leave its edge groups alone; there is no way to clear them here, because Portainer cannot tell an intentional "none" from "do not touch". |
-| `endpointId` | `number` | yes | Identifier of the environment the relations apply to. |
-| `groupId` | `number` | no | Environment group the environment is moved to. Zero, the default, leaves its group untouched — Portainer only applies a non-zero value. |
-| `tagIds` | `number[]` | no | Tag identifiers assigned to the environment, replacing whatever it had. Omit the attribute to leave its tags alone; use `portainer.Environment` to clear them. |
+| Property       | Type       | Required | Description                                                                                                                                                                                                                                   |
+| -------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edgeGroupIds` | `number[]` | no       | Edge group identifiers the environment belongs to, replacing whatever it had. Omit the attribute to leave its edge groups alone; there is no way to clear them here, because Portainer cannot tell an intentional "none" from "do not touch". |
+| `endpointId`   | `number`   | yes      | Identifier of the environment the relations apply to.                                                                                                                                                                                         |
+| `groupId`      | `number`   | no       | Environment group the environment is moved to. Zero, the default, leaves its group untouched — Portainer only applies a non-zero value.                                                                                                       |
+| `tagIds`       | `number[]` | no       | Tag identifiers assigned to the environment, replacing whatever it had. Omit the attribute to leave its tags alone; use `portainer.Environment` to clear them.                                                                                |
 
 ## `EndpointRelationsRelation (output)`
 
 Output object `EndpointRelationsRelation`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no | Edge group identifiers the environment belongs to, replacing whatever it had. Omit the attribute to leave its edge groups alone; there is no way to clear them here, because Portainer cannot tell an intentional "none" from "do not touch". |
-| `endpointId` | `number` | yes | Identifier of the environment the relations apply to. |
-| `groupId` | `number` | no | Environment group the environment is moved to. Zero, the default, leaves its group untouched — Portainer only applies a non-zero value. |
-| `tagIds` | `number[]` | no | Tag identifiers assigned to the environment, replacing whatever it had. Omit the attribute to leave its tags alone; use `portainer.Environment` to clear them. |
+| Property       | Type       | Always present | Description                                                                                                                                                                                                                                   |
+| -------------- | ---------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edgeGroupIds` | `number[]` | no             | Edge group identifiers the environment belongs to, replacing whatever it had. Omit the attribute to leave its edge groups alone; there is no way to clear them here, because Portainer cannot tell an intentional "none" from "do not touch". |
+| `endpointId`   | `number`   | yes            | Identifier of the environment the relations apply to.                                                                                                                                                                                         |
+| `groupId`      | `number`   | no             | Environment group the environment is moved to. Zero, the default, leaves its group untouched — Portainer only applies a non-zero value.                                                                                                       |
+| `tagIds`       | `number[]` | no             | Tag identifiers assigned to the environment, replacing whatever it had. Omit the attribute to leave its tags alone; use `portainer.Environment` to clear them.                                                                                |

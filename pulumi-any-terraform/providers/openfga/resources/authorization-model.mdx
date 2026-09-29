@@ -19,16 +19,16 @@ Construct with `new openfga.AuthorizationModel(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `modelJson` | `string` | yes | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
-| `storeId` | `string` | yes | The unique ID of the store this authorization model belongs to. |
+| Property    | Type     | Required | Description                                                                                                                  |
+| ----------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `modelJson` | `string` | yes      | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
+| `storeId`   | `string` | yes      | The unique ID of the store this authorization model belongs to.                                                              |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `modelJson` | `string` | no | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
-| `storeId` | `string` | no | The unique ID of the store this authorization model belongs to. |
+| Property    | Type     | Computed | Description                                                                                                                  |
+| ----------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `modelJson` | `string` | no       | The authorization model definition in JSON format. Consider using `openfga.getAuthorizationModelDocument` to set this field. |
+| `storeId`   | `string` | no       | The unique ID of the store this authorization model belongs to.                                                              |

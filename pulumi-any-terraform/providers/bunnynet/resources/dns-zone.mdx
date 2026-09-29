@@ -19,37 +19,37 @@ Construct with `new bunnynet.DnsZone(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dnssecEnabled` | `boolean` | no | Indicates whether DNSSEC is enabled. |
-| `domain` | `string` | yes | The domain name for the DNS zone. |
-| `logAnonymized` | `boolean` | no | Indicates whether DNS logs are anonymized. |
-| `logAnonymizedStyle` | `string` | no | Options: `Drop`, `OneDigit` |
-| `logEnabled` | `boolean` | no | Indicates whether permanent logging for DNS queries is enabled. |
-| `nameserver1` | `string` | no | The primary nameserver for the DNS zone. |
-| `nameserver2` | `string` | no | The secondary nameserver for the DNS zone. |
-| `nameserverCustom` | `boolean` | no | Indicates whether custom nameservers are used. |
-| `soaEmail` | `string` | no | The email address used in the Start of Authority (SOA) record for the DNS zone. |
+| Property             | Type      | Required | Description                                                                     |
+| -------------------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| `dnssecEnabled`      | `boolean` | no       | Indicates whether DNSSEC is enabled.                                            |
+| `domain`             | `string`  | yes      | The domain name for the DNS zone.                                               |
+| `logAnonymized`      | `boolean` | no       | Indicates whether DNS logs are anonymized.                                      |
+| `logAnonymizedStyle` | `string`  | no       | Options: `Drop`, `OneDigit`                                                     |
+| `logEnabled`         | `boolean` | no       | Indicates whether permanent logging for DNS queries is enabled.                 |
+| `nameserver1`        | `string`  | no       | The primary nameserver for the DNS zone.                                        |
+| `nameserver2`        | `string`  | no       | The secondary nameserver for the DNS zone.                                      |
+| `nameserverCustom`   | `boolean` | no       | Indicates whether custom nameservers are used.                                  |
+| `soaEmail`           | `string`  | no       | The email address used in the Start of Authority (SOA) record for the DNS zone. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `dnsZoneId` | `number` | yes | The unique identifier for the DNS zone. |
-| `dnssecAlgorithm` | `number` | yes | The DNSSEC algorithm. |
-| `dnssecDigest` | `string` | yes | The DNSSEC digest. |
-| `dnssecDigestType` | `number` | yes | The DNSSEC digest type. |
-| `dnssecEnabled` | `boolean` | no | Indicates whether DNSSEC is enabled. |
-| `dnssecFlags` | `number` | yes | The DNSSEC flags. |
-| `dnssecKeytag` | `number` | yes | The DNSSEC key tag. |
-| `dnssecPublicKey` | `string` | yes | The DNSSEC public key. |
-| `domain` | `string` | no | The domain name for the DNS zone. |
-| `logAnonymized` | `boolean` | no | Indicates whether DNS logs are anonymized. |
-| `logAnonymizedStyle` | `string` | no | Options: `Drop`, `OneDigit` |
-| `logEnabled` | `boolean` | no | Indicates whether permanent logging for DNS queries is enabled. |
-| `nameserver1` | `string` | no | The primary nameserver for the DNS zone. |
-| `nameserver2` | `string` | no | The secondary nameserver for the DNS zone. |
-| `nameserverCustom` | `boolean` | no | Indicates whether custom nameservers are used. |
-| `soaEmail` | `string` | no | The email address used in the Start of Authority (SOA) record for the DNS zone. |
+| Property             | Type      | Computed | Description                                                                     |
+| -------------------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| `dnsZoneId`          | `number`  | yes      | The unique identifier for the DNS zone.                                         |
+| `dnssecAlgorithm`    | `number`  | yes      | The DNSSEC algorithm.                                                           |
+| `dnssecDigest`       | `string`  | yes      | The DNSSEC digest.                                                              |
+| `dnssecDigestType`   | `number`  | yes      | The DNSSEC digest type.                                                         |
+| `dnssecEnabled`      | `boolean` | no       | Indicates whether DNSSEC is enabled.                                            |
+| `dnssecFlags`        | `number`  | yes      | The DNSSEC flags.                                                               |
+| `dnssecKeytag`       | `number`  | yes      | The DNSSEC key tag.                                                             |
+| `dnssecPublicKey`    | `string`  | yes      | The DNSSEC public key.                                                          |
+| `domain`             | `string`  | no       | The domain name for the DNS zone.                                               |
+| `logAnonymized`      | `boolean` | no       | Indicates whether DNS logs are anonymized.                                      |
+| `logAnonymizedStyle` | `string`  | no       | Options: `Drop`, `OneDigit`                                                     |
+| `logEnabled`         | `boolean` | no       | Indicates whether permanent logging for DNS queries is enabled.                 |
+| `nameserver1`        | `string`  | no       | The primary nameserver for the DNS zone.                                        |
+| `nameserver2`        | `string`  | no       | The secondary nameserver for the DNS zone.                                      |
+| `nameserverCustom`   | `boolean` | no       | Indicates whether custom nameservers are used.                                  |
+| `soaEmail`           | `string`  | no       | The email address used in the Start of Authority (SOA) record for the DNS zone. |

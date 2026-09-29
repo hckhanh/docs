@@ -19,19 +19,19 @@ Construct with `new portainer.UserAdmin(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `password` | `string` | yes | Password for the admin account. Only used during initial bootstrap. |
-| `userAdminId` | `string` | no |  |
-| `username` | `string` | no | Username of the admin account to initialize (defaults to 'admin'). |
+| Property      | Type     | Required | Description                                                         |
+| ------------- | -------- | -------- | ------------------------------------------------------------------- |
+| `password`    | `string` | yes      | Password for the admin account. Only used during initial bootstrap. |
+| `userAdminId` | `string` | no       |                                                                     |
+| `username`    | `string` | no       | Username of the admin account to initialize (defaults to 'admin').  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `initialized` | `boolean` | yes | Whether the admin user has been initialized via this resource. |
-| `password` | `string` | no | Password for the admin account. Only used during initial bootstrap. |
-| `userAdminId` | `string` | no |  |
-| `username` | `string` | no | Username of the admin account to initialize (defaults to 'admin'). |
+| Property      | Type      | Computed | Description                                                         |
+| ------------- | --------- | -------- | ------------------------------------------------------------------- |
+| `initialized` | `boolean` | yes      | Whether the admin user has been initialized via this resource.      |
+| `password`    | `string`  | no       | Password for the admin account. Only used during initial bootstrap. |
+| `userAdminId` | `string`  | no       |                                                                     |
+| `username`    | `string`  | no       | Username of the admin account to initialize (defaults to 'admin').  |

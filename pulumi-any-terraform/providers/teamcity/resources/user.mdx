@@ -19,40 +19,40 @@ Construct with `new teamcity.User(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `githubUsername` | `string` | no |  |
-| `password` | `string` | no |  |
-| `roles` | `UserRole (input)[]` | no |  |
-| `username` | `string` | yes |  |
+| Property         | Type                 | Required | Description |
+| ---------------- | -------------------- | -------- | ----------- |
+| `githubUsername` | `string`             | no       |             |
+| `password`       | `string`             | no       |             |
+| `roles`          | `UserRole (input)[]` | no       |             |
+| `username`       | `string`             | yes      |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `githubUsername` | `string` | no |  |
-| `password` | `string` | no |  |
-| `roles` | `UserRole (output)[]` | no |  |
-| `username` | `string` | no |  |
+| Property         | Type                  | Computed | Description |
+| ---------------- | --------------------- | -------- | ----------- |
+| `githubUsername` | `string`              | no       |             |
+| `password`       | `string`              | no       |             |
+| `roles`          | `UserRole (output)[]` | no       |             |
+| `username`       | `string`              | no       |             |
 
 ## `UserRole (input)`
 
 Input object `UserRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `global` | `boolean` | no |  |
-| `id` | `string` | yes |  |
-| `project` | `string` | no |  |
+| Property  | Type      | Required | Description |
+| --------- | --------- | -------- | ----------- |
+| `global`  | `boolean` | no       |             |
+| `id`      | `string`  | yes      |             |
+| `project` | `string`  | no       |             |
 
 ## `UserRole (output)`
 
 Output object `UserRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `global` | `boolean` | no |  |
-| `id` | `string` | yes |  |
-| `project` | `string` | no |  |
+| Property  | Type      | Always present | Description |
+| --------- | --------- | -------------- | ----------- |
+| `global`  | `boolean` | no             |             |
+| `id`      | `string`  | yes            |             |
+| `project` | `string`  | no             |             |

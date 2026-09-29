@@ -19,64 +19,64 @@ Construct with `new infisical.CertificateSyncAwsCertificateManager(name, args, o
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `applicationId` | `string` | yes | The ID of the Certificate Manager application to create the sync in. |
-| `autoSyncEnabled` | `boolean` | no | Whether certificates should be automatically synced to the destination when they are added or renewed. |
-| `connectionId` | `string` | yes | The ID of the aws Connection to use for syncing. |
-| `description` | `string` | no | An optional description for the AWS Certificate Manager sync. |
-| `destinationConfig` | `CertificateSyncAwsCertificateManagerDestinationConfig (input)` | yes | The destination configuration for the certificate sync. |
-| `name` | `string` | no | The name of the AWS Certificate Manager sync to create. |
-| `syncOptions` | `CertificateSyncAwsCertificateManagerSyncOptions (input)` | yes | Parameters to modify how certificates are synced. |
+| Property            | Type                                                            | Required | Description                                                                                            |
+| ------------------- | --------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `applicationId`     | `string`                                                        | yes      | The ID of the Certificate Manager application to create the sync in.                                   |
+| `autoSyncEnabled`   | `boolean`                                                       | no       | Whether certificates should be automatically synced to the destination when they are added or renewed. |
+| `connectionId`      | `string`                                                        | yes      | The ID of the aws Connection to use for syncing.                                                       |
+| `description`       | `string`                                                        | no       | An optional description for the AWS Certificate Manager sync.                                          |
+| `destinationConfig` | `CertificateSyncAwsCertificateManagerDestinationConfig (input)` | yes      | The destination configuration for the certificate sync.                                                |
+| `name`              | `string`                                                        | no       | The name of the AWS Certificate Manager sync to create.                                                |
+| `syncOptions`       | `CertificateSyncAwsCertificateManagerSyncOptions (input)`       | yes      | Parameters to modify how certificates are synced.                                                      |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `applicationId` | `string` | no | The ID of the Certificate Manager application to create the sync in. |
-| `autoSyncEnabled` | `boolean` | no | Whether certificates should be automatically synced to the destination when they are added or renewed. |
-| `connectionId` | `string` | no | The ID of the aws Connection to use for syncing. |
-| `description` | `string` | no | An optional description for the AWS Certificate Manager sync. |
-| `destinationConfig` | `CertificateSyncAwsCertificateManagerDestinationConfig (output)` | no | The destination configuration for the certificate sync. |
-| `name` | `string` | no | The name of the AWS Certificate Manager sync to create. |
-| `syncOptions` | `CertificateSyncAwsCertificateManagerSyncOptions (output)` | no | Parameters to modify how certificates are synced. |
+| Property            | Type                                                             | Computed | Description                                                                                            |
+| ------------------- | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `applicationId`     | `string`                                                         | no       | The ID of the Certificate Manager application to create the sync in.                                   |
+| `autoSyncEnabled`   | `boolean`                                                        | no       | Whether certificates should be automatically synced to the destination when they are added or renewed. |
+| `connectionId`      | `string`                                                         | no       | The ID of the aws Connection to use for syncing.                                                       |
+| `description`       | `string`                                                         | no       | An optional description for the AWS Certificate Manager sync.                                          |
+| `destinationConfig` | `CertificateSyncAwsCertificateManagerDestinationConfig (output)` | no       | The destination configuration for the certificate sync.                                                |
+| `name`              | `string`                                                         | no       | The name of the AWS Certificate Manager sync to create.                                                |
+| `syncOptions`       | `CertificateSyncAwsCertificateManagerSyncOptions (output)`       | no       | Parameters to modify how certificates are synced.                                                      |
 
 ## `CertificateSyncAwsCertificateManagerDestinationConfig (input)`
 
 Input object `CertificateSyncAwsCertificateManagerDestinationConfig`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `awsRegion` | `string` | yes | The AWS region to sync certificates to (e.g. us-east-1). |
+| Property    | Type     | Required | Description                                              |
+| ----------- | -------- | -------- | -------------------------------------------------------- |
+| `awsRegion` | `string` | yes      | The AWS region to sync certificates to (e.g. us-east-1). |
 
 ## `CertificateSyncAwsCertificateManagerSyncOptions (input)`
 
 Input object `CertificateSyncAwsCertificateManagerSyncOptions`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `canRemoveCertificates` | `boolean` | no | Whether Infisical should remove certificates from AWS Certificate Manager when they are no longer managed in Infisical. |
-| `certificateNameSchema` | `string` | yes | The naming scheme for synced certificates. Must include the &#123;&#123;certificateId&#125;&#125; or &#123;&#123;shortCertificateId&#125;&#125; placeholder. Available placeholders: &#123;&#123;certificateId&#125;&#125;, &#123;&#123;shortCertificateId&#125;&#125;, &#123;&#123;profileId&#125;&#125;, &#123;&#123;applicationId&#125;&#125;, &#123;&#123;applicationName&#125;&#125;, &#123;&#123;commonName&#125;&#125;. |
-| `includeRootCa` | `boolean` | no | Whether to include the root CA certificate in the synced certificate chain. |
-| `preserveArn` | `boolean` | no | Whether to preserve the AWS Certificate Manager ARN when a certificate is renewed, reimporting into the existing certificate instead of creating a new one. |
+| Property                | Type      | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `canRemoveCertificates` | `boolean` | no       | Whether Infisical should remove certificates from AWS Certificate Manager when they are no longer managed in Infisical.                                                                                                                                                                                                                                                                                                        |
+| `certificateNameSchema` | `string`  | yes      | The naming scheme for synced certificates. Must include the &#123;&#123;certificateId&#125;&#125; or &#123;&#123;shortCertificateId&#125;&#125; placeholder. Available placeholders: &#123;&#123;certificateId&#125;&#125;, &#123;&#123;shortCertificateId&#125;&#125;, &#123;&#123;profileId&#125;&#125;, &#123;&#123;applicationId&#125;&#125;, &#123;&#123;applicationName&#125;&#125;, &#123;&#123;commonName&#125;&#125;. |
+| `includeRootCa`         | `boolean` | no       | Whether to include the root CA certificate in the synced certificate chain.                                                                                                                                                                                                                                                                                                                                                    |
+| `preserveArn`           | `boolean` | no       | Whether to preserve the AWS Certificate Manager ARN when a certificate is renewed, reimporting into the existing certificate instead of creating a new one.                                                                                                                                                                                                                                                                    |
 
 ## `CertificateSyncAwsCertificateManagerDestinationConfig (output)`
 
 Output object `CertificateSyncAwsCertificateManagerDestinationConfig`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `awsRegion` | `string` | yes | The AWS region to sync certificates to (e.g. us-east-1). |
+| Property    | Type     | Always present | Description                                              |
+| ----------- | -------- | -------------- | -------------------------------------------------------- |
+| `awsRegion` | `string` | yes            | The AWS region to sync certificates to (e.g. us-east-1). |
 
 ## `CertificateSyncAwsCertificateManagerSyncOptions (output)`
 
 Output object `CertificateSyncAwsCertificateManagerSyncOptions`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `canRemoveCertificates` | `boolean` | yes | Whether Infisical should remove certificates from AWS Certificate Manager when they are no longer managed in Infisical. |
-| `certificateNameSchema` | `string` | yes | The naming scheme for synced certificates. Must include the &#123;&#123;certificateId&#125;&#125; or &#123;&#123;shortCertificateId&#125;&#125; placeholder. Available placeholders: &#123;&#123;certificateId&#125;&#125;, &#123;&#123;shortCertificateId&#125;&#125;, &#123;&#123;profileId&#125;&#125;, &#123;&#123;applicationId&#125;&#125;, &#123;&#123;applicationName&#125;&#125;, &#123;&#123;commonName&#125;&#125;. |
-| `includeRootCa` | `boolean` | yes | Whether to include the root CA certificate in the synced certificate chain. |
-| `preserveArn` | `boolean` | yes | Whether to preserve the AWS Certificate Manager ARN when a certificate is renewed, reimporting into the existing certificate instead of creating a new one. |
+| Property                | Type      | Always present | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `canRemoveCertificates` | `boolean` | yes            | Whether Infisical should remove certificates from AWS Certificate Manager when they are no longer managed in Infisical.                                                                                                                                                                                                                                                                                                        |
+| `certificateNameSchema` | `string`  | yes            | The naming scheme for synced certificates. Must include the &#123;&#123;certificateId&#125;&#125; or &#123;&#123;shortCertificateId&#125;&#125; placeholder. Available placeholders: &#123;&#123;certificateId&#125;&#125;, &#123;&#123;shortCertificateId&#125;&#125;, &#123;&#123;profileId&#125;&#125;, &#123;&#123;applicationId&#125;&#125;, &#123;&#123;applicationName&#125;&#125;, &#123;&#123;commonName&#125;&#125;. |
+| `includeRootCa`         | `boolean` | yes            | Whether to include the root CA certificate in the synced certificate chain.                                                                                                                                                                                                                                                                                                                                                    |
+| `preserveArn`           | `boolean` | yes            | Whether to preserve the AWS Certificate Manager ARN when a certificate is renewed, reimporting into the existing certificate instead of creating a new one.                                                                                                                                                                                                                                                                    |

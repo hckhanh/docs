@@ -19,19 +19,19 @@ Construct with `new portainer.Auth(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authId` | `string` | no |  |
-| `password` | `string` | yes | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
-| `username` | `string` | yes | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| Property   | Type     | Required | Description                                                                                                                                    |
+| ---------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authId`   | `string` | no       |                                                                                                                                                |
+| `password` | `string` | yes      | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| `username` | `string` | yes      | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `authId` | `string` | no |  |
-| `jwt` | `string` | yes | JWT bearer token issued by Portainer after successful authentication. Computed and stored in state as a sensitive value. |
-| `password` | `string` | no | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
-| `username` | `string` | no | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| Property   | Type     | Computed | Description                                                                                                                                    |
+| ---------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authId`   | `string` | no       |                                                                                                                                                |
+| `jwt`      | `string` | yes      | JWT bearer token issued by Portainer after successful authentication. Computed and stored in state as a sensitive value.                       |
+| `password` | `string` | no       | Password used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |
+| `username` | `string` | no       | Username used to authenticate against the Portainer API. Stored in state as a sensitive value. Changing this value forces resource recreation. |

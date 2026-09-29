@@ -19,29 +19,29 @@ Call `namecheap.getDomainRecords(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `domain` | `string` | yes |  |
-| `id` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `domain` | `string` | yes      |             |
+| `id`     | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `domain` | `string` | yes |  |
-| `emailType` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `nameservers` | `string[]` | yes |  |
-| `records` | `GetDomainRecordsRecord[]` | yes |  |
+| Property      | Type                       | Always present | Description |
+| ------------- | -------------------------- | -------------- | ----------- |
+| `domain`      | `string`                   | yes            |             |
+| `emailType`   | `string`                   | yes            |             |
+| `id`          | `string`                   | yes            |             |
+| `nameservers` | `string[]`                 | yes            |             |
+| `records`     | `GetDomainRecordsRecord[]` | yes            |             |
 
 ## `GetDomainRecordsRecord`
 
 Output object `GetDomainRecordsRecord`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `address` | `string` | no |  |
-| `hostname` | `string` | no |  |
-| `mxPref` | `number` | no |  |
-| `ttl` | `number` | no |  |
-| `type` | `string` | no |  |
+| Property   | Type     | Always present | Description |
+| ---------- | -------- | -------------- | ----------- |
+| `address`  | `string` | no             |             |
+| `hostname` | `string` | no             |             |
+| `mxPref`   | `number` | no             |             |
+| `ttl`      | `number` | no             |             |
+| `type`     | `string` | no             |             |

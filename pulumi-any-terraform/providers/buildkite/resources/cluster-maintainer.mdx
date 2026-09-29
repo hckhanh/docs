@@ -19,23 +19,23 @@ Construct with `new buildkite.ClusterMaintainer(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clusterUuid` | `string` | yes | The UUID of the cluster. |
-| `teamUuid` | `string` | no | The UUID of the team to add as a maintainer. This is mutually exclusive with user_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
-| `userUuid` | `string` | no | The UUID of the user to add as a maintainer. This is mutually exclusive with team_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
+| Property      | Type     | Required | Description                                                                                                                                    |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clusterUuid` | `string` | yes      | The UUID of the cluster.                                                                                                                       |
+| `teamUuid`    | `string` | no       | The UUID of the team to add as a maintainer. This is mutually exclusive with user_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
+| `userUuid`    | `string` | no       | The UUID of the user to add as a maintainer. This is mutually exclusive with team_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `actorEmail` | `string` | yes | The email of the actor (only for users). |
-| `actorName` | `string` | yes | The name of the actor. |
-| `actorSlug` | `string` | yes | The slug of the actor (only for teams). |
-| `actorType` | `string` | yes | The type of the actor (user or team). |
-| `actorUuid` | `string` | yes | The UUID of the actor (user or team) that is the maintainer. |
-| `clusterUuid` | `string` | no | The UUID of the cluster. |
-| `teamUuid` | `string` | no | The UUID of the team to add as a maintainer. This is mutually exclusive with user_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
-| `userUuid` | `string` | no | The UUID of the user to add as a maintainer. This is mutually exclusive with team_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
+| Property      | Type     | Computed | Description                                                                                                                                    |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actorEmail`  | `string` | yes      | The email of the actor (only for users).                                                                                                       |
+| `actorName`   | `string` | yes      | The name of the actor.                                                                                                                         |
+| `actorSlug`   | `string` | yes      | The slug of the actor (only for teams).                                                                                                        |
+| `actorType`   | `string` | yes      | The type of the actor (user or team).                                                                                                          |
+| `actorUuid`   | `string` | yes      | The UUID of the actor (user or team) that is the maintainer.                                                                                   |
+| `clusterUuid` | `string` | no       | The UUID of the cluster.                                                                                                                       |
+| `teamUuid`    | `string` | no       | The UUID of the team to add as a maintainer. This is mutually exclusive with user_uuid. Only one of `userUuid` or `teamUuid` can be specified. |
+| `userUuid`    | `string` | no       | The UUID of the user to add as a maintainer. This is mutually exclusive with team_uuid. Only one of `userUuid` or `teamUuid` can be specified. |

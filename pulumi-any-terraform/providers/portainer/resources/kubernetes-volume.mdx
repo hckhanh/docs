@@ -19,22 +19,22 @@ Construct with `new portainer.KubernetesVolume(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes | Identifier of the Portainer Kubernetes endpoint where the volume resource is managed. |
-| `kubernetesVolumeId` | `string` | no |  |
-| `manifest` | `string` | yes | YAML or JSON manifest describing the Kubernetes volume resource to deploy. |
-| `namespace` | `string` | no | Kubernetes namespace for namespaced volume resources (required for `persistent-volume-claim`). |
-| `type` | `string` | yes | Type of Kubernetes volume resource: `persistent-volume-claim`, `persistent-volume`, or `volume-attachment`. |
+| Property             | Type     | Required | Description                                                                                                 |
+| -------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `endpointId`         | `number` | yes      | Identifier of the Portainer Kubernetes endpoint where the volume resource is managed.                       |
+| `kubernetesVolumeId` | `string` | no       |                                                                                                             |
+| `manifest`           | `string` | yes      | YAML or JSON manifest describing the Kubernetes volume resource to deploy.                                  |
+| `namespace`          | `string` | no       | Kubernetes namespace for namespaced volume resources (required for `persistent-volume-claim`).              |
+| `type`               | `string` | yes      | Type of Kubernetes volume resource: `persistent-volume-claim`, `persistent-volume`, or `volume-attachment`. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Identifier of the Portainer Kubernetes endpoint where the volume resource is managed. |
-| `kubernetesVolumeId` | `string` | no |  |
-| `manifest` | `string` | no | YAML or JSON manifest describing the Kubernetes volume resource to deploy. |
-| `namespace` | `string` | no | Kubernetes namespace for namespaced volume resources (required for `persistent-volume-claim`). |
-| `type` | `string` | no | Type of Kubernetes volume resource: `persistent-volume-claim`, `persistent-volume`, or `volume-attachment`. |
+| Property             | Type     | Computed | Description                                                                                                 |
+| -------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `endpointId`         | `number` | no       | Identifier of the Portainer Kubernetes endpoint where the volume resource is managed.                       |
+| `kubernetesVolumeId` | `string` | no       |                                                                                                             |
+| `manifest`           | `string` | no       | YAML or JSON manifest describing the Kubernetes volume resource to deploy.                                  |
+| `namespace`          | `string` | no       | Kubernetes namespace for namespaced volume resources (required for `persistent-volume-claim`).              |
+| `type`               | `string` | no       | Type of Kubernetes volume resource: `persistent-volume-claim`, `persistent-volume`, or `volume-attachment`. |

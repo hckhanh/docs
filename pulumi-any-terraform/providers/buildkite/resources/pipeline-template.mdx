@@ -19,21 +19,21 @@ Construct with `new buildkite.PipelineTemplate(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `available` | `boolean` | no | If the pipeline template is available for assignment by non admin users. |
-| `configuration` | `string` | yes | The YAML step configuration for the pipeline template. |
-| `description` | `string` | no | A description for the pipeline template. |
-| `name` | `string` | no | The name of the pipeline template. |
+| Property        | Type      | Required | Description                                                              |
+| --------------- | --------- | -------- | ------------------------------------------------------------------------ |
+| `available`     | `boolean` | no       | If the pipeline template is available for assignment by non admin users. |
+| `configuration` | `string`  | yes      | The YAML step configuration for the pipeline template.                   |
+| `description`   | `string`  | no       | A description for the pipeline template.                                 |
+| `name`          | `string`  | no       | The name of the pipeline template.                                       |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `available` | `boolean` | no | If the pipeline template is available for assignment by non admin users. |
-| `configuration` | `string` | no | The YAML step configuration for the pipeline template. |
-| `description` | `string` | no | A description for the pipeline template. |
-| `name` | `string` | no | The name of the pipeline template. |
-| `uuid` | `string` | yes | The UUID of the pipeline template. |
+| Property        | Type      | Computed | Description                                                              |
+| --------------- | --------- | -------- | ------------------------------------------------------------------------ |
+| `available`     | `boolean` | no       | If the pipeline template is available for assignment by non admin users. |
+| `configuration` | `string`  | no       | The YAML step configuration for the pipeline template.                   |
+| `description`   | `string`  | no       | A description for the pipeline template.                                 |
+| `name`          | `string`  | no       | The name of the pipeline template.                                       |
+| `uuid`          | `string`  | yes      | The UUID of the pipeline template.                                       |

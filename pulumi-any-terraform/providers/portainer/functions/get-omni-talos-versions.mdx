@@ -19,25 +19,25 @@ Call `portainer.getOmniTalosVersions(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentialId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property       | Type     | Required | Description |
+| -------------- | -------- | -------- | ----------- |
+| `credentialId` | `number` | yes      |             |
+| `id`           | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `compatibilities` | `GetOmniTalosVersionsCompatibility[]` | yes |  |
-| `credentialId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `talosVersions` | `string[]` | yes |  |
+| Property          | Type                                  | Always present | Description |
+| ----------------- | ------------------------------------- | -------------- | ----------- |
+| `compatibilities` | `GetOmniTalosVersionsCompatibility[]` | yes            |             |
+| `credentialId`    | `number`                              | yes            |             |
+| `id`              | `string`                              | yes            |             |
+| `talosVersions`   | `string[]`                            | yes            |             |
 
 ## `GetOmniTalosVersionsCompatibility`
 
 Output object `GetOmniTalosVersionsCompatibility`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `kubernetesVersions` | `string[]` | no |  |
-| `talosVersion` | `string` | no |  |
+| Property             | Type       | Always present | Description |
+| -------------------- | ---------- | -------------- | ----------- |
+| `kubernetesVersions` | `string[]` | no             |             |
+| `talosVersion`       | `string`   | no             |             |

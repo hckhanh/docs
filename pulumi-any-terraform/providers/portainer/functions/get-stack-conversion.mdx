@@ -19,19 +19,19 @@ Call `portainer.getStackConversion(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `stackId` | `number` | yes |  |
-| `targetFormat` | `string` | yes |  |
+| Property       | Type     | Required | Description |
+| -------------- | -------- | -------- | ----------- |
+| `id`           | `string` | no       |             |
+| `namespace`    | `string` | no       |             |
+| `stackId`      | `number` | yes      |             |
+| `targetFormat` | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `files` | `{ [key: string]: string }` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | no |  |
-| `stackId` | `number` | yes |  |
-| `targetFormat` | `string` | yes |  |
+| Property       | Type                        | Always present | Description |
+| -------------- | --------------------------- | -------------- | ----------- |
+| `files`        | `{ [key: string]: string }` | yes            |             |
+| `id`           | `string`                    | yes            |             |
+| `namespace`    | `string`                    | no             |             |
+| `stackId`      | `number`                    | yes            |             |
+| `targetFormat` | `string`                    | yes            |             |

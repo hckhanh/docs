@@ -19,66 +19,66 @@ Construct with `new teamcity.GlobalSettings(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `artifactDirectories` | `string` | no |  |
-| `artifactsDomainIsolation` | `GlobalSettingsArtifactsDomainIsolation (input)` | no |  |
-| `defaultExecutionTimeout` | `number` | no |  |
-| `defaultQuietPeriod` | `number` | no |  |
-| `defaultVcsCheckInterval` | `number` | no |  |
-| `encryption` | `GlobalSettingsEncryption (input)` | no |  |
-| `enforceDefaultVcsCheckInterval` | `boolean` | no |  |
-| `maxArtifactNumber` | `number` | no |  |
-| `maxArtifactSize` | `number` | no |  |
-| `rootUrl` | `string` | no |  |
+| Property                         | Type                                             | Required | Description |
+| -------------------------------- | ------------------------------------------------ | -------- | ----------- |
+| `artifactDirectories`            | `string`                                         | no       |             |
+| `artifactsDomainIsolation`       | `GlobalSettingsArtifactsDomainIsolation (input)` | no       |             |
+| `defaultExecutionTimeout`        | `number`                                         | no       |             |
+| `defaultQuietPeriod`             | `number`                                         | no       |             |
+| `defaultVcsCheckInterval`        | `number`                                         | no       |             |
+| `encryption`                     | `GlobalSettingsEncryption (input)`               | no       |             |
+| `enforceDefaultVcsCheckInterval` | `boolean`                                        | no       |             |
+| `maxArtifactNumber`              | `number`                                         | no       |             |
+| `maxArtifactSize`                | `number`                                         | no       |             |
+| `rootUrl`                        | `string`                                         | no       |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `artifactDirectories` | `string` | no |  |
-| `artifactsDomainIsolation` | `GlobalSettingsArtifactsDomainIsolation (output)` | no |  |
-| `defaultExecutionTimeout` | `number` | no |  |
-| `defaultQuietPeriod` | `number` | no |  |
-| `defaultVcsCheckInterval` | `number` | no |  |
-| `encryption` | `GlobalSettingsEncryption (output)` | no |  |
-| `enforceDefaultVcsCheckInterval` | `boolean` | no |  |
-| `maxArtifactNumber` | `number` | no |  |
-| `maxArtifactSize` | `number` | no |  |
-| `rootUrl` | `string` | no |  |
+| Property                         | Type                                              | Computed | Description |
+| -------------------------------- | ------------------------------------------------- | -------- | ----------- |
+| `artifactDirectories`            | `string`                                          | no       |             |
+| `artifactsDomainIsolation`       | `GlobalSettingsArtifactsDomainIsolation (output)` | no       |             |
+| `defaultExecutionTimeout`        | `number`                                          | no       |             |
+| `defaultQuietPeriod`             | `number`                                          | no       |             |
+| `defaultVcsCheckInterval`        | `number`                                          | no       |             |
+| `encryption`                     | `GlobalSettingsEncryption (output)`               | no       |             |
+| `enforceDefaultVcsCheckInterval` | `boolean`                                         | no       |             |
+| `maxArtifactNumber`              | `number`                                          | no       |             |
+| `maxArtifactSize`                | `number`                                          | no       |             |
+| `rootUrl`                        | `string`                                          | no       |             |
 
 ## `GlobalSettingsArtifactsDomainIsolation (input)`
 
 Input object `GlobalSettingsArtifactsDomainIsolation`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `artifactsUrl` | `string` | no |  |
-| `enabled` | `boolean` | no | Enabled by default, set false if it needs to be disabled |
+| Property       | Type      | Required | Description                                              |
+| -------------- | --------- | -------- | -------------------------------------------------------- |
+| `artifactsUrl` | `string`  | no       |                                                          |
+| `enabled`      | `boolean` | no       | Enabled by default, set false if it needs to be disabled |
 
 ## `GlobalSettingsEncryption (input)`
 
 Input object `GlobalSettingsEncryption`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `key`    | `string` | yes      |             |
 
 ## `GlobalSettingsArtifactsDomainIsolation (output)`
 
 Output object `GlobalSettingsArtifactsDomainIsolation`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `artifactsUrl` | `string` | yes |  |
-| `enabled` | `boolean` | yes | Enabled by default, set false if it needs to be disabled |
+| Property       | Type      | Always present | Description                                              |
+| -------------- | --------- | -------------- | -------------------------------------------------------- |
+| `artifactsUrl` | `string`  | yes            |                                                          |
+| `enabled`      | `boolean` | yes            | Enabled by default, set false if it needs to be disabled |
 
 ## `GlobalSettingsEncryption (output)`
 
 Output object `GlobalSettingsEncryption`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `key`    | `string` | yes            |             |

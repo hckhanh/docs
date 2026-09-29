@@ -19,263 +19,263 @@ Construct with `new bunnynet.Pullzone(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `addCanonicalHeader` | `boolean` | no | Indicates whether the Canonical header is added to the responses. |
-| `allowReferers` | `string[]` | no | The list of referrer hostnames that are allowed to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
-| `blockIps` | `string[]` | no | The list of IPs that are blocked from accessing the pull zone. Requests coming from the following IPs will be rejected. If empty, all the IPs will be allowed |
-| `blockNoReferer` | `boolean` | no | Indicates whether requests without a referer should be blocked. |
-| `blockPostRequests` | `boolean` | no | Indicates whether to block POST requests. |
-| `blockReferers` | `string[]` | no | The list of referrer hostnames that are blocked to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
-| `blockRootPath` | `boolean` | no | This property indicates whether to block the root path. |
-| `cacheChunked` | `boolean` | no | Indicates whether the cache slice (Optimize for large object delivery) feature is enabled for the Pull Zone |
-| `cacheEnabled` | `boolean` | no | Indicates whether smart caching is enabled. |
-| `cacheErrors` | `boolean` | no | Indicates whether bunny.net should be caching error responses. |
-| `cacheExpirationTime` | `number` | no | The override cache time, in seconds. |
-| `cacheExpirationTimeBrowser` | `number` | no | The override cache time for the end client, in seconds. |
-| `cacheStales` | `string[]` | no | Options: `offline`, `updating` |
-| `cacheVaries` | `string[]` | no | Options: `avif`, `cookie`, `country`, `hostname`, `mobile`, `querystring`, `state`, `webp` |
-| `cacheVaryCookies` | `string[]` | no | Contains the list of vary parameters that will be used for vary cache by cookie string. If empty, cookie vary will not be used. |
-| `cacheVaryHeaders` | `string[]` | no | Contains the list of request headers will be used for vary cache. If empty, it will not be used. |
-| `cacheVaryQuerystrings` | `string[]` | no | Contains the list of vary parameters that will be used for vary cache by query string. If empty, all parameters will be used to construct the key |
-| `corsEnabled` | `boolean` | no | Indicates whether CORS (Cross-Origin Resource Sharing) is enabled. |
-| `corsExtensions` | `string[]` | no | A list of file extensions for which CORS is enabled. |
-| `disableLetsencrypt` | `boolean` | no | If true, the built-in let's encrypt is disabled and requests are passed to the origin. |
-| `errorpageCustomContent` | `string` | no | Contains the custom error page code that will be returned. |
-| `errorpageCustomEnabled` | `boolean` | no | Indicates whether custom error page code should be enabled. |
-| `errorpageStatuspageCode` | `string` | no | The statuspage code that will be used to build the status widget. |
-| `errorpageStatuspageEnabled` | `boolean` | no | Indicates whether the statuspage widget should be displayed on the error pages. |
-| `errorpageWhitelabel` | `boolean` | no | Indicates whether the error pages should be white-labelled or not |
-| `limitAfter` | `number` | no | The amount of data after the rate limit will be activated. |
-| `limitBandwidth` | `number` | no | The maximum bandwidth limit in bytes. |
-| `limitBurst` | `number` | no | Excessive requests are delayed until their number exceeds the maximum burst size. |
-| `limitConnections` | `number` | no | The number of connections limited per IP. |
-| `limitDownloadSpeed` | `number` | no | The maximum download speed, in kb/s. Use 0 for unlimited. |
-| `limitRequests` | `number` | no | The maximum amount of requests per IP per second. |
-| `logAnonymized` | `boolean` | no | Indicates whether logs are anonymized. |
-| `logAnonymizedStyle` | `string` | no | Options: `Drop`, `OneDigit` |
-| `logEnabled` | `boolean` | no | Indicates whether logging is enabled. |
-| `logForwardEnabled` | `boolean` | no | Indicates whether log forwarding is enabled. |
-| `logForwardFormat` | `string` | no | Options: `JSON`, `Plain` |
-| `logForwardPort` | `number` | no | The port number for log forwarding. |
-| `logForwardProtocol` | `string` | no | Options: `DataDog`, `TCP`, `TCPEncrypted`, `UDP` |
-| `logForwardServer` | `string` | no | The server address for log forwarding. |
-| `logForwardToken` | `string` | no | The token used for log forwarding authentication. |
-| `logStorageEnabled` | `boolean` | no | Indicates whether log storage is enabled. |
-| `logStorageZone` | `number` | no | The storage zone ID for log storage. |
-| `name` | `string` | no | The name of the pull zone. |
-| `optimizerBurrow` | `boolean` | no | Indicates whether Burrow Smart Routing should be enabled. |
-| `optimizerClassesForce` | `boolean` | no | Indicates whether the optimizer class list should be enforced. |
-| `optimizerDynamicImageApi` | `boolean` | no | Indicates whether the image manipulation should be enabled. |
-| `optimizerEnabled` | `boolean` | no | Indicates whether Bunny Optimizer should be enabled. |
-| `optimizerHtmlPrerender` | `boolean` | no | Indicates whether HTML Prerender should be enabled. |
-| `optimizerMinifyCss` | `boolean` | no | Indicates whether the CSS minification should be enabled. |
-| `optimizerMinifyJs` | `boolean` | no | Indicates whether the JavaScript minification should be enabled. |
-| `optimizerSmartimage` | `boolean` | no | Indicates whether the automatic image optimization should be enabled. |
-| `optimizerSmartimageDesktopMaxwidth` | `number` | no | The maximum automatic image size for desktop clients. |
-| `optimizerSmartimageDesktopQuality` | `number` | no | The image quality for desktop clients. |
-| `optimizerSmartimageMobileMaxwidth` | `number` | no | The maximum automatic image size for mobile clients. |
-| `optimizerSmartimageMobileQuality` | `number` | no | Determines the image quality for mobile clients |
-| `optimizerWatermark` | `boolean` | no | Indicates whether image watermarking should be enabled. |
-| `optimizerWatermarkBorderoffset` | `number` | no | The offset of the watermark image. |
-| `optimizerWatermarkMinsize` | `number` | no | The minimum image size to which the watermark will be added. |
-| `optimizerWatermarkPosition` | `string` | no | Options: `BottomLeft`, `BottomRight`, `Center`, `CenterStretch`, `TopLeft`, `TopRight` |
-| `optimizerWatermarkUrl` | `string` | no | The URL of the watermark image. |
-| `optimizerWebp` | `boolean` | no | Indicates whether the WebP optimization should be enabled. |
-| `origin` | `PullzoneOrigin (input)` | no |  |
-| `originshieldConcurrencyLimit` | `boolean` | no | Indicates whether there is a concurrency limit for Origin Shield. |
-| `originshieldConcurrencyRequests` | `number` | no | The number of concurrent requests for Origin Shield. |
-| `originshieldEnabled` | `boolean` | no | Indicates whether Origin Shield is enabled. |
-| `originshieldQueueRequests` | `number` | no | The number of queued requests for Origin Shield. |
-| `originshieldQueueWait` | `number` | no | The maximum wait time for queued requests in Origin Shield, in seconds. |
-| `originshieldZone` | `string` | no | Options: `FR`, `IL` |
-| `permacacheStoragezone` | `number` | no | The storage zone ID for Perma-Cache. |
-| `requestCoalescingEnabled` | `boolean` | no | Indicates whether request coalescing is enabled. |
-| `requestCoalescingTimeout` | `number` | no | Specifies the timeout period, in seconds, for request coalescing, determining how long to wait before sending combined requests to the origin. |
-| `routing` | `PullzoneRouting (input)` | no |  |
-| `s3AuthEnabled` | `boolean` | no | Indicates whether requests to origin will be signed with AWS Signature Version 4. |
-| `s3AuthKey` | `string` | no | The access key used to authenticate the requests. |
-| `s3AuthRegion` | `string` | no | The region name of the bucket used to authenticate the requests. |
-| `s3AuthSecret` | `string` | no | The secret key used to authenticate the requests. |
-| `safehopConnectionTimeout` | `number` | no | The amount of seconds to wait when connecting to the origin. Otherwise the request will fail or retry. |
-| `safehopEnabled` | `boolean` | no |  |
-| `safehopResponseTimeout` | `number` | no | The amount of seconds to wait when waiting for the origin reply. Otherwise the request will fail or retry. |
-| `safehopRetryCount` | `number` | no | The number of retries to the origin server. |
-| `safehopRetryDelay` | `number` | no | The amount of time that the CDN should wait before retrying an origin request. |
-| `safehopRetryReasons` | `string[]` | no | Options: `5xxResponse`, `connectionTimeout`, `responseTimeout` |
-| `sortQuerystring` | `boolean` | no | If enabled, the query parameters will be automatically sorted into a consistent order before checking the cache. |
-| `stripCookies` | `boolean` | no | If enabled, bunny.net will strip all the Set-Cookie headers from the HTTP responses. |
-| `tlsLevel` | `string` | no | Options: `Compatible`, `Legacy`, `ModernOnly` |
-| `tlsSupports` | `string[]` | no | Options: `TLSv1.0`, `TLSv1.1` |
-| `tokenAuthEnabled` | `boolean` | no | Indicates whether requests without a valid token and expiry timestamp will be rejected. |
-| `tokenAuthIpValidation` | `boolean` | no | Indicates whether the secure hash generated by the server will also include an IP address. |
-| `useBackgroundUpdate` | `boolean` | no | Indicates whether cache update is performed in the background. |
-| `websocketsEnabled` | `boolean` | no | Indicates whether the WebSocket support is enabled. |
-| `websocketsMaxConnections` | `number` | no | The maximum allowed concurrent WebSocket connections. |
+| Property                             | Type                      | Required | Description                                                                                                                                                                                                    |
+| ------------------------------------ | ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `addCanonicalHeader`                 | `boolean`                 | no       | Indicates whether the Canonical header is added to the responses.                                                                                                                                              |
+| `allowReferers`                      | `string[]`                | no       | The list of referrer hostnames that are allowed to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
+| `blockIps`                           | `string[]`                | no       | The list of IPs that are blocked from accessing the pull zone. Requests coming from the following IPs will be rejected. If empty, all the IPs will be allowed                                                  |
+| `blockNoReferer`                     | `boolean`                 | no       | Indicates whether requests without a referer should be blocked.                                                                                                                                                |
+| `blockPostRequests`                  | `boolean`                 | no       | Indicates whether to block POST requests.                                                                                                                                                                      |
+| `blockReferers`                      | `string[]`                | no       | The list of referrer hostnames that are blocked to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
+| `blockRootPath`                      | `boolean`                 | no       | This property indicates whether to block the root path.                                                                                                                                                        |
+| `cacheChunked`                       | `boolean`                 | no       | Indicates whether the cache slice (Optimize for large object delivery) feature is enabled for the Pull Zone                                                                                                    |
+| `cacheEnabled`                       | `boolean`                 | no       | Indicates whether smart caching is enabled.                                                                                                                                                                    |
+| `cacheErrors`                        | `boolean`                 | no       | Indicates whether bunny.net should be caching error responses.                                                                                                                                                 |
+| `cacheExpirationTime`                | `number`                  | no       | The override cache time, in seconds.                                                                                                                                                                           |
+| `cacheExpirationTimeBrowser`         | `number`                  | no       | The override cache time for the end client, in seconds.                                                                                                                                                        |
+| `cacheStales`                        | `string[]`                | no       | Options: `offline`, `updating`                                                                                                                                                                                 |
+| `cacheVaries`                        | `string[]`                | no       | Options: `avif`, `cookie`, `country`, `hostname`, `mobile`, `querystring`, `state`, `webp`                                                                                                                     |
+| `cacheVaryCookies`                   | `string[]`                | no       | Contains the list of vary parameters that will be used for vary cache by cookie string. If empty, cookie vary will not be used.                                                                                |
+| `cacheVaryHeaders`                   | `string[]`                | no       | Contains the list of request headers will be used for vary cache. If empty, it will not be used.                                                                                                               |
+| `cacheVaryQuerystrings`              | `string[]`                | no       | Contains the list of vary parameters that will be used for vary cache by query string. If empty, all parameters will be used to construct the key                                                              |
+| `corsEnabled`                        | `boolean`                 | no       | Indicates whether CORS (Cross-Origin Resource Sharing) is enabled.                                                                                                                                             |
+| `corsExtensions`                     | `string[]`                | no       | A list of file extensions for which CORS is enabled.                                                                                                                                                           |
+| `disableLetsencrypt`                 | `boolean`                 | no       | If true, the built-in let's encrypt is disabled and requests are passed to the origin.                                                                                                                         |
+| `errorpageCustomContent`             | `string`                  | no       | Contains the custom error page code that will be returned.                                                                                                                                                     |
+| `errorpageCustomEnabled`             | `boolean`                 | no       | Indicates whether custom error page code should be enabled.                                                                                                                                                    |
+| `errorpageStatuspageCode`            | `string`                  | no       | The statuspage code that will be used to build the status widget.                                                                                                                                              |
+| `errorpageStatuspageEnabled`         | `boolean`                 | no       | Indicates whether the statuspage widget should be displayed on the error pages.                                                                                                                                |
+| `errorpageWhitelabel`                | `boolean`                 | no       | Indicates whether the error pages should be white-labelled or not                                                                                                                                              |
+| `limitAfter`                         | `number`                  | no       | The amount of data after the rate limit will be activated.                                                                                                                                                     |
+| `limitBandwidth`                     | `number`                  | no       | The maximum bandwidth limit in bytes.                                                                                                                                                                          |
+| `limitBurst`                         | `number`                  | no       | Excessive requests are delayed until their number exceeds the maximum burst size.                                                                                                                              |
+| `limitConnections`                   | `number`                  | no       | The number of connections limited per IP.                                                                                                                                                                      |
+| `limitDownloadSpeed`                 | `number`                  | no       | The maximum download speed, in kb/s. Use 0 for unlimited.                                                                                                                                                      |
+| `limitRequests`                      | `number`                  | no       | The maximum amount of requests per IP per second.                                                                                                                                                              |
+| `logAnonymized`                      | `boolean`                 | no       | Indicates whether logs are anonymized.                                                                                                                                                                         |
+| `logAnonymizedStyle`                 | `string`                  | no       | Options: `Drop`, `OneDigit`                                                                                                                                                                                    |
+| `logEnabled`                         | `boolean`                 | no       | Indicates whether logging is enabled.                                                                                                                                                                          |
+| `logForwardEnabled`                  | `boolean`                 | no       | Indicates whether log forwarding is enabled.                                                                                                                                                                   |
+| `logForwardFormat`                   | `string`                  | no       | Options: `JSON`, `Plain`                                                                                                                                                                                       |
+| `logForwardPort`                     | `number`                  | no       | The port number for log forwarding.                                                                                                                                                                            |
+| `logForwardProtocol`                 | `string`                  | no       | Options: `DataDog`, `TCP`, `TCPEncrypted`, `UDP`                                                                                                                                                               |
+| `logForwardServer`                   | `string`                  | no       | The server address for log forwarding.                                                                                                                                                                         |
+| `logForwardToken`                    | `string`                  | no       | The token used for log forwarding authentication.                                                                                                                                                              |
+| `logStorageEnabled`                  | `boolean`                 | no       | Indicates whether log storage is enabled.                                                                                                                                                                      |
+| `logStorageZone`                     | `number`                  | no       | The storage zone ID for log storage.                                                                                                                                                                           |
+| `name`                               | `string`                  | no       | The name of the pull zone.                                                                                                                                                                                     |
+| `optimizerBurrow`                    | `boolean`                 | no       | Indicates whether Burrow Smart Routing should be enabled.                                                                                                                                                      |
+| `optimizerClassesForce`              | `boolean`                 | no       | Indicates whether the optimizer class list should be enforced.                                                                                                                                                 |
+| `optimizerDynamicImageApi`           | `boolean`                 | no       | Indicates whether the image manipulation should be enabled.                                                                                                                                                    |
+| `optimizerEnabled`                   | `boolean`                 | no       | Indicates whether Bunny Optimizer should be enabled.                                                                                                                                                           |
+| `optimizerHtmlPrerender`             | `boolean`                 | no       | Indicates whether HTML Prerender should be enabled.                                                                                                                                                            |
+| `optimizerMinifyCss`                 | `boolean`                 | no       | Indicates whether the CSS minification should be enabled.                                                                                                                                                      |
+| `optimizerMinifyJs`                  | `boolean`                 | no       | Indicates whether the JavaScript minification should be enabled.                                                                                                                                               |
+| `optimizerSmartimage`                | `boolean`                 | no       | Indicates whether the automatic image optimization should be enabled.                                                                                                                                          |
+| `optimizerSmartimageDesktopMaxwidth` | `number`                  | no       | The maximum automatic image size for desktop clients.                                                                                                                                                          |
+| `optimizerSmartimageDesktopQuality`  | `number`                  | no       | The image quality for desktop clients.                                                                                                                                                                         |
+| `optimizerSmartimageMobileMaxwidth`  | `number`                  | no       | The maximum automatic image size for mobile clients.                                                                                                                                                           |
+| `optimizerSmartimageMobileQuality`   | `number`                  | no       | Determines the image quality for mobile clients                                                                                                                                                                |
+| `optimizerWatermark`                 | `boolean`                 | no       | Indicates whether image watermarking should be enabled.                                                                                                                                                        |
+| `optimizerWatermarkBorderoffset`     | `number`                  | no       | The offset of the watermark image.                                                                                                                                                                             |
+| `optimizerWatermarkMinsize`          | `number`                  | no       | The minimum image size to which the watermark will be added.                                                                                                                                                   |
+| `optimizerWatermarkPosition`         | `string`                  | no       | Options: `BottomLeft`, `BottomRight`, `Center`, `CenterStretch`, `TopLeft`, `TopRight`                                                                                                                         |
+| `optimizerWatermarkUrl`              | `string`                  | no       | The URL of the watermark image.                                                                                                                                                                                |
+| `optimizerWebp`                      | `boolean`                 | no       | Indicates whether the WebP optimization should be enabled.                                                                                                                                                     |
+| `origin`                             | `PullzoneOrigin (input)`  | no       |                                                                                                                                                                                                                |
+| `originshieldConcurrencyLimit`       | `boolean`                 | no       | Indicates whether there is a concurrency limit for Origin Shield.                                                                                                                                              |
+| `originshieldConcurrencyRequests`    | `number`                  | no       | The number of concurrent requests for Origin Shield.                                                                                                                                                           |
+| `originshieldEnabled`                | `boolean`                 | no       | Indicates whether Origin Shield is enabled.                                                                                                                                                                    |
+| `originshieldQueueRequests`          | `number`                  | no       | The number of queued requests for Origin Shield.                                                                                                                                                               |
+| `originshieldQueueWait`              | `number`                  | no       | The maximum wait time for queued requests in Origin Shield, in seconds.                                                                                                                                        |
+| `originshieldZone`                   | `string`                  | no       | Options: `FR`, `IL`                                                                                                                                                                                            |
+| `permacacheStoragezone`              | `number`                  | no       | The storage zone ID for Perma-Cache.                                                                                                                                                                           |
+| `requestCoalescingEnabled`           | `boolean`                 | no       | Indicates whether request coalescing is enabled.                                                                                                                                                               |
+| `requestCoalescingTimeout`           | `number`                  | no       | Specifies the timeout period, in seconds, for request coalescing, determining how long to wait before sending combined requests to the origin.                                                                 |
+| `routing`                            | `PullzoneRouting (input)` | no       |                                                                                                                                                                                                                |
+| `s3AuthEnabled`                      | `boolean`                 | no       | Indicates whether requests to origin will be signed with AWS Signature Version 4.                                                                                                                              |
+| `s3AuthKey`                          | `string`                  | no       | The access key used to authenticate the requests.                                                                                                                                                              |
+| `s3AuthRegion`                       | `string`                  | no       | The region name of the bucket used to authenticate the requests.                                                                                                                                               |
+| `s3AuthSecret`                       | `string`                  | no       | The secret key used to authenticate the requests.                                                                                                                                                              |
+| `safehopConnectionTimeout`           | `number`                  | no       | The amount of seconds to wait when connecting to the origin. Otherwise the request will fail or retry.                                                                                                         |
+| `safehopEnabled`                     | `boolean`                 | no       |                                                                                                                                                                                                                |
+| `safehopResponseTimeout`             | `number`                  | no       | The amount of seconds to wait when waiting for the origin reply. Otherwise the request will fail or retry.                                                                                                     |
+| `safehopRetryCount`                  | `number`                  | no       | The number of retries to the origin server.                                                                                                                                                                    |
+| `safehopRetryDelay`                  | `number`                  | no       | The amount of time that the CDN should wait before retrying an origin request.                                                                                                                                 |
+| `safehopRetryReasons`                | `string[]`                | no       | Options: `5xxResponse`, `connectionTimeout`, `responseTimeout`                                                                                                                                                 |
+| `sortQuerystring`                    | `boolean`                 | no       | If enabled, the query parameters will be automatically sorted into a consistent order before checking the cache.                                                                                               |
+| `stripCookies`                       | `boolean`                 | no       | If enabled, bunny.net will strip all the Set-Cookie headers from the HTTP responses.                                                                                                                           |
+| `tlsLevel`                           | `string`                  | no       | Options: `Compatible`, `Legacy`, `ModernOnly`                                                                                                                                                                  |
+| `tlsSupports`                        | `string[]`                | no       | Options: `TLSv1.0`, `TLSv1.1`                                                                                                                                                                                  |
+| `tokenAuthEnabled`                   | `boolean`                 | no       | Indicates whether requests without a valid token and expiry timestamp will be rejected.                                                                                                                        |
+| `tokenAuthIpValidation`              | `boolean`                 | no       | Indicates whether the secure hash generated by the server will also include an IP address.                                                                                                                     |
+| `useBackgroundUpdate`                | `boolean`                 | no       | Indicates whether cache update is performed in the background.                                                                                                                                                 |
+| `websocketsEnabled`                  | `boolean`                 | no       | Indicates whether the WebSocket support is enabled.                                                                                                                                                            |
+| `websocketsMaxConnections`           | `number`                  | no       | The maximum allowed concurrent WebSocket connections.                                                                                                                                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `addCanonicalHeader` | `boolean` | no | Indicates whether the Canonical header is added to the responses. |
-| `allowReferers` | `string[]` | no | The list of referrer hostnames that are allowed to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
-| `blockIps` | `string[]` | no | The list of IPs that are blocked from accessing the pull zone. Requests coming from the following IPs will be rejected. If empty, all the IPs will be allowed |
-| `blockNoReferer` | `boolean` | no | Indicates whether requests without a referer should be blocked. |
-| `blockPostRequests` | `boolean` | no | Indicates whether to block POST requests. |
-| `blockReferers` | `string[]` | no | The list of referrer hostnames that are blocked to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
-| `blockRootPath` | `boolean` | no | This property indicates whether to block the root path. |
-| `cacheChunked` | `boolean` | no | Indicates whether the cache slice (Optimize for large object delivery) feature is enabled for the Pull Zone |
-| `cacheEnabled` | `boolean` | no | Indicates whether smart caching is enabled. |
-| `cacheErrors` | `boolean` | no | Indicates whether bunny.net should be caching error responses. |
-| `cacheExpirationTime` | `number` | no | The override cache time, in seconds. |
-| `cacheExpirationTimeBrowser` | `number` | no | The override cache time for the end client, in seconds. |
-| `cacheStales` | `string[]` | no | Options: `offline`, `updating` |
-| `cacheVaries` | `string[]` | no | Options: `avif`, `cookie`, `country`, `hostname`, `mobile`, `querystring`, `state`, `webp` |
-| `cacheVaryCookies` | `string[]` | no | Contains the list of vary parameters that will be used for vary cache by cookie string. If empty, cookie vary will not be used. |
-| `cacheVaryHeaders` | `string[]` | no | Contains the list of request headers will be used for vary cache. If empty, it will not be used. |
-| `cacheVaryQuerystrings` | `string[]` | no | Contains the list of vary parameters that will be used for vary cache by query string. If empty, all parameters will be used to construct the key |
-| `cdnDomain` | `string` | yes | The CNAME domain of the pull zone for setting up custom hostnames |
-| `corsEnabled` | `boolean` | no | Indicates whether CORS (Cross-Origin Resource Sharing) is enabled. |
-| `corsExtensions` | `string[]` | no | A list of file extensions for which CORS is enabled. |
-| `disableLetsencrypt` | `boolean` | no | If true, the built-in let's encrypt is disabled and requests are passed to the origin. |
-| `errorpageCustomContent` | `string` | no | Contains the custom error page code that will be returned. |
-| `errorpageCustomEnabled` | `boolean` | no | Indicates whether custom error page code should be enabled. |
-| `errorpageStatuspageCode` | `string` | no | The statuspage code that will be used to build the status widget. |
-| `errorpageStatuspageEnabled` | `boolean` | no | Indicates whether the statuspage widget should be displayed on the error pages. |
-| `errorpageWhitelabel` | `boolean` | no | Indicates whether the error pages should be white-labelled or not |
-| `limitAfter` | `number` | no | The amount of data after the rate limit will be activated. |
-| `limitBandwidth` | `number` | no | The maximum bandwidth limit in bytes. |
-| `limitBurst` | `number` | no | Excessive requests are delayed until their number exceeds the maximum burst size. |
-| `limitConnections` | `number` | no | The number of connections limited per IP. |
-| `limitDownloadSpeed` | `number` | no | The maximum download speed, in kb/s. Use 0 for unlimited. |
-| `limitRequests` | `number` | no | The maximum amount of requests per IP per second. |
-| `logAnonymized` | `boolean` | no | Indicates whether logs are anonymized. |
-| `logAnonymizedStyle` | `string` | no | Options: `Drop`, `OneDigit` |
-| `logEnabled` | `boolean` | no | Indicates whether logging is enabled. |
-| `logForwardEnabled` | `boolean` | no | Indicates whether log forwarding is enabled. |
-| `logForwardFormat` | `string` | no | Options: `JSON`, `Plain` |
-| `logForwardPort` | `number` | no | The port number for log forwarding. |
-| `logForwardProtocol` | `string` | no | Options: `DataDog`, `TCP`, `TCPEncrypted`, `UDP` |
-| `logForwardServer` | `string` | no | The server address for log forwarding. |
-| `logForwardToken` | `string` | no | The token used for log forwarding authentication. |
-| `logStorageEnabled` | `boolean` | no | Indicates whether log storage is enabled. |
-| `logStorageZone` | `number` | no | The storage zone ID for log storage. |
-| `name` | `string` | no | The name of the pull zone. |
-| `optimizerBurrow` | `boolean` | no | Indicates whether Burrow Smart Routing should be enabled. |
-| `optimizerClassesForce` | `boolean` | no | Indicates whether the optimizer class list should be enforced. |
-| `optimizerDynamicImageApi` | `boolean` | no | Indicates whether the image manipulation should be enabled. |
-| `optimizerEnabled` | `boolean` | no | Indicates whether Bunny Optimizer should be enabled. |
-| `optimizerHtmlPrerender` | `boolean` | no | Indicates whether HTML Prerender should be enabled. |
-| `optimizerMinifyCss` | `boolean` | no | Indicates whether the CSS minification should be enabled. |
-| `optimizerMinifyJs` | `boolean` | no | Indicates whether the JavaScript minification should be enabled. |
-| `optimizerSmartimage` | `boolean` | no | Indicates whether the automatic image optimization should be enabled. |
-| `optimizerSmartimageDesktopMaxwidth` | `number` | no | The maximum automatic image size for desktop clients. |
-| `optimizerSmartimageDesktopQuality` | `number` | no | The image quality for desktop clients. |
-| `optimizerSmartimageMobileMaxwidth` | `number` | no | The maximum automatic image size for mobile clients. |
-| `optimizerSmartimageMobileQuality` | `number` | no | Determines the image quality for mobile clients |
-| `optimizerWatermark` | `boolean` | no | Indicates whether image watermarking should be enabled. |
-| `optimizerWatermarkBorderoffset` | `number` | no | The offset of the watermark image. |
-| `optimizerWatermarkMinsize` | `number` | no | The minimum image size to which the watermark will be added. |
-| `optimizerWatermarkPosition` | `string` | no | Options: `BottomLeft`, `BottomRight`, `Center`, `CenterStretch`, `TopLeft`, `TopRight` |
-| `optimizerWatermarkUrl` | `string` | no | The URL of the watermark image. |
-| `optimizerWebp` | `boolean` | no | Indicates whether the WebP optimization should be enabled. |
-| `origin` | `PullzoneOrigin (output)` | no |  |
-| `originshieldConcurrencyLimit` | `boolean` | no | Indicates whether there is a concurrency limit for Origin Shield. |
-| `originshieldConcurrencyRequests` | `number` | no | The number of concurrent requests for Origin Shield. |
-| `originshieldEnabled` | `boolean` | no | Indicates whether Origin Shield is enabled. |
-| `originshieldQueueRequests` | `number` | no | The number of queued requests for Origin Shield. |
-| `originshieldQueueWait` | `number` | no | The maximum wait time for queued requests in Origin Shield, in seconds. |
-| `originshieldZone` | `string` | no | Options: `FR`, `IL` |
-| `permacacheStoragezone` | `number` | no | The storage zone ID for Perma-Cache. |
-| `pullzoneId` | `number` | yes | The unique ID of the pull zone. |
-| `requestCoalescingEnabled` | `boolean` | no | Indicates whether request coalescing is enabled. |
-| `requestCoalescingTimeout` | `number` | no | Specifies the timeout period, in seconds, for request coalescing, determining how long to wait before sending combined requests to the origin. |
-| `routing` | `PullzoneRouting (output)` | no |  |
-| `s3AuthEnabled` | `boolean` | no | Indicates whether requests to origin will be signed with AWS Signature Version 4. |
-| `s3AuthKey` | `string` | no | The access key used to authenticate the requests. |
-| `s3AuthRegion` | `string` | no | The region name of the bucket used to authenticate the requests. |
-| `s3AuthSecret` | `string` | no | The secret key used to authenticate the requests. |
-| `safehopConnectionTimeout` | `number` | no | The amount of seconds to wait when connecting to the origin. Otherwise the request will fail or retry. |
-| `safehopEnabled` | `boolean` | no |  |
-| `safehopResponseTimeout` | `number` | no | The amount of seconds to wait when waiting for the origin reply. Otherwise the request will fail or retry. |
-| `safehopRetryCount` | `number` | no | The number of retries to the origin server. |
-| `safehopRetryDelay` | `number` | no | The amount of time that the CDN should wait before retrying an origin request. |
-| `safehopRetryReasons` | `string[]` | no | Options: `5xxResponse`, `connectionTimeout`, `responseTimeout` |
-| `sortQuerystring` | `boolean` | no | If enabled, the query parameters will be automatically sorted into a consistent order before checking the cache. |
-| `stripCookies` | `boolean` | no | If enabled, bunny.net will strip all the Set-Cookie headers from the HTTP responses. |
-| `tlsLevel` | `string` | no | Options: `Compatible`, `Legacy`, `ModernOnly` |
-| `tlsSupports` | `string[]` | no | Options: `TLSv1.0`, `TLSv1.1` |
-| `tokenAuthEnabled` | `boolean` | no | Indicates whether requests without a valid token and expiry timestamp will be rejected. |
-| `tokenAuthIpValidation` | `boolean` | no | Indicates whether the secure hash generated by the server will also include an IP address. |
-| `tokenAuthKey` | `string` | yes | The auth key used for secure URL token authentication. |
-| `useBackgroundUpdate` | `boolean` | no | Indicates whether cache update is performed in the background. |
-| `websocketsEnabled` | `boolean` | no | Indicates whether the WebSocket support is enabled. |
-| `websocketsMaxConnections` | `number` | no | The maximum allowed concurrent WebSocket connections. |
+| Property                             | Type                       | Computed | Description                                                                                                                                                                                                    |
+| ------------------------------------ | -------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `addCanonicalHeader`                 | `boolean`                  | no       | Indicates whether the Canonical header is added to the responses.                                                                                                                                              |
+| `allowReferers`                      | `string[]`                 | no       | The list of referrer hostnames that are allowed to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
+| `blockIps`                           | `string[]`                 | no       | The list of IPs that are blocked from accessing the pull zone. Requests coming from the following IPs will be rejected. If empty, all the IPs will be allowed                                                  |
+| `blockNoReferer`                     | `boolean`                  | no       | Indicates whether requests without a referer should be blocked.                                                                                                                                                |
+| `blockPostRequests`                  | `boolean`                  | no       | Indicates whether to block POST requests.                                                                                                                                                                      |
+| `blockReferers`                      | `string[]`                 | no       | The list of referrer hostnames that are blocked to access the pull zone. Requests containing the header "Referer: hostname" that is not on the list will be rejected. If empty, all the referrers are allowed. |
+| `blockRootPath`                      | `boolean`                  | no       | This property indicates whether to block the root path.                                                                                                                                                        |
+| `cacheChunked`                       | `boolean`                  | no       | Indicates whether the cache slice (Optimize for large object delivery) feature is enabled for the Pull Zone                                                                                                    |
+| `cacheEnabled`                       | `boolean`                  | no       | Indicates whether smart caching is enabled.                                                                                                                                                                    |
+| `cacheErrors`                        | `boolean`                  | no       | Indicates whether bunny.net should be caching error responses.                                                                                                                                                 |
+| `cacheExpirationTime`                | `number`                   | no       | The override cache time, in seconds.                                                                                                                                                                           |
+| `cacheExpirationTimeBrowser`         | `number`                   | no       | The override cache time for the end client, in seconds.                                                                                                                                                        |
+| `cacheStales`                        | `string[]`                 | no       | Options: `offline`, `updating`                                                                                                                                                                                 |
+| `cacheVaries`                        | `string[]`                 | no       | Options: `avif`, `cookie`, `country`, `hostname`, `mobile`, `querystring`, `state`, `webp`                                                                                                                     |
+| `cacheVaryCookies`                   | `string[]`                 | no       | Contains the list of vary parameters that will be used for vary cache by cookie string. If empty, cookie vary will not be used.                                                                                |
+| `cacheVaryHeaders`                   | `string[]`                 | no       | Contains the list of request headers will be used for vary cache. If empty, it will not be used.                                                                                                               |
+| `cacheVaryQuerystrings`              | `string[]`                 | no       | Contains the list of vary parameters that will be used for vary cache by query string. If empty, all parameters will be used to construct the key                                                              |
+| `cdnDomain`                          | `string`                   | yes      | The CNAME domain of the pull zone for setting up custom hostnames                                                                                                                                              |
+| `corsEnabled`                        | `boolean`                  | no       | Indicates whether CORS (Cross-Origin Resource Sharing) is enabled.                                                                                                                                             |
+| `corsExtensions`                     | `string[]`                 | no       | A list of file extensions for which CORS is enabled.                                                                                                                                                           |
+| `disableLetsencrypt`                 | `boolean`                  | no       | If true, the built-in let's encrypt is disabled and requests are passed to the origin.                                                                                                                         |
+| `errorpageCustomContent`             | `string`                   | no       | Contains the custom error page code that will be returned.                                                                                                                                                     |
+| `errorpageCustomEnabled`             | `boolean`                  | no       | Indicates whether custom error page code should be enabled.                                                                                                                                                    |
+| `errorpageStatuspageCode`            | `string`                   | no       | The statuspage code that will be used to build the status widget.                                                                                                                                              |
+| `errorpageStatuspageEnabled`         | `boolean`                  | no       | Indicates whether the statuspage widget should be displayed on the error pages.                                                                                                                                |
+| `errorpageWhitelabel`                | `boolean`                  | no       | Indicates whether the error pages should be white-labelled or not                                                                                                                                              |
+| `limitAfter`                         | `number`                   | no       | The amount of data after the rate limit will be activated.                                                                                                                                                     |
+| `limitBandwidth`                     | `number`                   | no       | The maximum bandwidth limit in bytes.                                                                                                                                                                          |
+| `limitBurst`                         | `number`                   | no       | Excessive requests are delayed until their number exceeds the maximum burst size.                                                                                                                              |
+| `limitConnections`                   | `number`                   | no       | The number of connections limited per IP.                                                                                                                                                                      |
+| `limitDownloadSpeed`                 | `number`                   | no       | The maximum download speed, in kb/s. Use 0 for unlimited.                                                                                                                                                      |
+| `limitRequests`                      | `number`                   | no       | The maximum amount of requests per IP per second.                                                                                                                                                              |
+| `logAnonymized`                      | `boolean`                  | no       | Indicates whether logs are anonymized.                                                                                                                                                                         |
+| `logAnonymizedStyle`                 | `string`                   | no       | Options: `Drop`, `OneDigit`                                                                                                                                                                                    |
+| `logEnabled`                         | `boolean`                  | no       | Indicates whether logging is enabled.                                                                                                                                                                          |
+| `logForwardEnabled`                  | `boolean`                  | no       | Indicates whether log forwarding is enabled.                                                                                                                                                                   |
+| `logForwardFormat`                   | `string`                   | no       | Options: `JSON`, `Plain`                                                                                                                                                                                       |
+| `logForwardPort`                     | `number`                   | no       | The port number for log forwarding.                                                                                                                                                                            |
+| `logForwardProtocol`                 | `string`                   | no       | Options: `DataDog`, `TCP`, `TCPEncrypted`, `UDP`                                                                                                                                                               |
+| `logForwardServer`                   | `string`                   | no       | The server address for log forwarding.                                                                                                                                                                         |
+| `logForwardToken`                    | `string`                   | no       | The token used for log forwarding authentication.                                                                                                                                                              |
+| `logStorageEnabled`                  | `boolean`                  | no       | Indicates whether log storage is enabled.                                                                                                                                                                      |
+| `logStorageZone`                     | `number`                   | no       | The storage zone ID for log storage.                                                                                                                                                                           |
+| `name`                               | `string`                   | no       | The name of the pull zone.                                                                                                                                                                                     |
+| `optimizerBurrow`                    | `boolean`                  | no       | Indicates whether Burrow Smart Routing should be enabled.                                                                                                                                                      |
+| `optimizerClassesForce`              | `boolean`                  | no       | Indicates whether the optimizer class list should be enforced.                                                                                                                                                 |
+| `optimizerDynamicImageApi`           | `boolean`                  | no       | Indicates whether the image manipulation should be enabled.                                                                                                                                                    |
+| `optimizerEnabled`                   | `boolean`                  | no       | Indicates whether Bunny Optimizer should be enabled.                                                                                                                                                           |
+| `optimizerHtmlPrerender`             | `boolean`                  | no       | Indicates whether HTML Prerender should be enabled.                                                                                                                                                            |
+| `optimizerMinifyCss`                 | `boolean`                  | no       | Indicates whether the CSS minification should be enabled.                                                                                                                                                      |
+| `optimizerMinifyJs`                  | `boolean`                  | no       | Indicates whether the JavaScript minification should be enabled.                                                                                                                                               |
+| `optimizerSmartimage`                | `boolean`                  | no       | Indicates whether the automatic image optimization should be enabled.                                                                                                                                          |
+| `optimizerSmartimageDesktopMaxwidth` | `number`                   | no       | The maximum automatic image size for desktop clients.                                                                                                                                                          |
+| `optimizerSmartimageDesktopQuality`  | `number`                   | no       | The image quality for desktop clients.                                                                                                                                                                         |
+| `optimizerSmartimageMobileMaxwidth`  | `number`                   | no       | The maximum automatic image size for mobile clients.                                                                                                                                                           |
+| `optimizerSmartimageMobileQuality`   | `number`                   | no       | Determines the image quality for mobile clients                                                                                                                                                                |
+| `optimizerWatermark`                 | `boolean`                  | no       | Indicates whether image watermarking should be enabled.                                                                                                                                                        |
+| `optimizerWatermarkBorderoffset`     | `number`                   | no       | The offset of the watermark image.                                                                                                                                                                             |
+| `optimizerWatermarkMinsize`          | `number`                   | no       | The minimum image size to which the watermark will be added.                                                                                                                                                   |
+| `optimizerWatermarkPosition`         | `string`                   | no       | Options: `BottomLeft`, `BottomRight`, `Center`, `CenterStretch`, `TopLeft`, `TopRight`                                                                                                                         |
+| `optimizerWatermarkUrl`              | `string`                   | no       | The URL of the watermark image.                                                                                                                                                                                |
+| `optimizerWebp`                      | `boolean`                  | no       | Indicates whether the WebP optimization should be enabled.                                                                                                                                                     |
+| `origin`                             | `PullzoneOrigin (output)`  | no       |                                                                                                                                                                                                                |
+| `originshieldConcurrencyLimit`       | `boolean`                  | no       | Indicates whether there is a concurrency limit for Origin Shield.                                                                                                                                              |
+| `originshieldConcurrencyRequests`    | `number`                   | no       | The number of concurrent requests for Origin Shield.                                                                                                                                                           |
+| `originshieldEnabled`                | `boolean`                  | no       | Indicates whether Origin Shield is enabled.                                                                                                                                                                    |
+| `originshieldQueueRequests`          | `number`                   | no       | The number of queued requests for Origin Shield.                                                                                                                                                               |
+| `originshieldQueueWait`              | `number`                   | no       | The maximum wait time for queued requests in Origin Shield, in seconds.                                                                                                                                        |
+| `originshieldZone`                   | `string`                   | no       | Options: `FR`, `IL`                                                                                                                                                                                            |
+| `permacacheStoragezone`              | `number`                   | no       | The storage zone ID for Perma-Cache.                                                                                                                                                                           |
+| `pullzoneId`                         | `number`                   | yes      | The unique ID of the pull zone.                                                                                                                                                                                |
+| `requestCoalescingEnabled`           | `boolean`                  | no       | Indicates whether request coalescing is enabled.                                                                                                                                                               |
+| `requestCoalescingTimeout`           | `number`                   | no       | Specifies the timeout period, in seconds, for request coalescing, determining how long to wait before sending combined requests to the origin.                                                                 |
+| `routing`                            | `PullzoneRouting (output)` | no       |                                                                                                                                                                                                                |
+| `s3AuthEnabled`                      | `boolean`                  | no       | Indicates whether requests to origin will be signed with AWS Signature Version 4.                                                                                                                              |
+| `s3AuthKey`                          | `string`                   | no       | The access key used to authenticate the requests.                                                                                                                                                              |
+| `s3AuthRegion`                       | `string`                   | no       | The region name of the bucket used to authenticate the requests.                                                                                                                                               |
+| `s3AuthSecret`                       | `string`                   | no       | The secret key used to authenticate the requests.                                                                                                                                                              |
+| `safehopConnectionTimeout`           | `number`                   | no       | The amount of seconds to wait when connecting to the origin. Otherwise the request will fail or retry.                                                                                                         |
+| `safehopEnabled`                     | `boolean`                  | no       |                                                                                                                                                                                                                |
+| `safehopResponseTimeout`             | `number`                   | no       | The amount of seconds to wait when waiting for the origin reply. Otherwise the request will fail or retry.                                                                                                     |
+| `safehopRetryCount`                  | `number`                   | no       | The number of retries to the origin server.                                                                                                                                                                    |
+| `safehopRetryDelay`                  | `number`                   | no       | The amount of time that the CDN should wait before retrying an origin request.                                                                                                                                 |
+| `safehopRetryReasons`                | `string[]`                 | no       | Options: `5xxResponse`, `connectionTimeout`, `responseTimeout`                                                                                                                                                 |
+| `sortQuerystring`                    | `boolean`                  | no       | If enabled, the query parameters will be automatically sorted into a consistent order before checking the cache.                                                                                               |
+| `stripCookies`                       | `boolean`                  | no       | If enabled, bunny.net will strip all the Set-Cookie headers from the HTTP responses.                                                                                                                           |
+| `tlsLevel`                           | `string`                   | no       | Options: `Compatible`, `Legacy`, `ModernOnly`                                                                                                                                                                  |
+| `tlsSupports`                        | `string[]`                 | no       | Options: `TLSv1.0`, `TLSv1.1`                                                                                                                                                                                  |
+| `tokenAuthEnabled`                   | `boolean`                  | no       | Indicates whether requests without a valid token and expiry timestamp will be rejected.                                                                                                                        |
+| `tokenAuthIpValidation`              | `boolean`                  | no       | Indicates whether the secure hash generated by the server will also include an IP address.                                                                                                                     |
+| `tokenAuthKey`                       | `string`                   | yes      | The auth key used for secure URL token authentication.                                                                                                                                                         |
+| `useBackgroundUpdate`                | `boolean`                  | no       | Indicates whether cache update is performed in the background.                                                                                                                                                 |
+| `websocketsEnabled`                  | `boolean`                  | no       | Indicates whether the WebSocket support is enabled.                                                                                                                                                            |
+| `websocketsMaxConnections`           | `number`                   | no       | The maximum allowed concurrent WebSocket connections.                                                                                                                                                          |
 
 ## `PullzoneOrigin (input)`
 
 Input object `PullzoneOrigin`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `containerAppId` | `string` | no | The ID if the compute container app. |
-| `containerEndpointId` | `string` | no | The ID if the compute container app endpoint. |
-| `dnsPort` | `number` | no | The port for DNS Accelerated endpoints. |
-| `dnsScheme` | `string` | no | The scheme for DNS Accelerated endpoints. |
-| `followRedirects` | `boolean` | no | Indicates whether the zone will follow origin redirects. |
-| `forwardHostHeader` | `boolean` | no | Indicates whether the current hostname is forwarded to the origin. |
-| `hostHeader` | `string` | no | The host header that will be sent to the origin. |
-| `middlewareScript` | `number` | no | The ID of the compute script used as a middleware. |
-| `script` | `number` | no | The ID of the linked compute script. |
-| `scriptExecuteBeforeCache` | `boolean` | no | Indicates whether the script will execute ahead of the cache layer. |
-| `storagezone` | `number` | no | The ID of the linked storage zone. |
-| `type` | `string` | yes | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
-| `url` | `string` | no | The origin URL from where the files are fetched. |
-| `verifySsl` | `boolean` | no | Indicates whether the Origin's TLS certificate should be verified. |
+| Property                   | Type      | Required | Description                                                                               |
+| -------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------- |
+| `containerAppId`           | `string`  | no       | The ID if the compute container app.                                                      |
+| `containerEndpointId`      | `string`  | no       | The ID if the compute container app endpoint.                                             |
+| `dnsPort`                  | `number`  | no       | The port for DNS Accelerated endpoints.                                                   |
+| `dnsScheme`                | `string`  | no       | The scheme for DNS Accelerated endpoints.                                                 |
+| `followRedirects`          | `boolean` | no       | Indicates whether the zone will follow origin redirects.                                  |
+| `forwardHostHeader`        | `boolean` | no       | Indicates whether the current hostname is forwarded to the origin.                        |
+| `hostHeader`               | `string`  | no       | The host header that will be sent to the origin.                                          |
+| `middlewareScript`         | `number`  | no       | The ID of the compute script used as a middleware.                                        |
+| `script`                   | `number`  | no       | The ID of the linked compute script.                                                      |
+| `scriptExecuteBeforeCache` | `boolean` | no       | Indicates whether the script will execute ahead of the cache layer.                       |
+| `storagezone`              | `number`  | no       | The ID of the linked storage zone.                                                        |
+| `type`                     | `string`  | yes      | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
+| `url`                      | `string`  | no       | The origin URL from where the files are fetched.                                          |
+| `verifySsl`                | `boolean` | no       | Indicates whether the Origin's TLS certificate should be verified.                        |
 
 ## `PullzoneRouting (input)`
 
 Input object `PullzoneRouting`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `blockedCountries` | `string[]` | no | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level. |
-| `filters` | `string[]` | no | Options: `all`, `eea`, `eu`, `scripting` |
-| `redirectedCountries` | `string[]` | no | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
-| `tier` | `string` | no | Options: `Standard`, `Volume` |
-| `zones` | `string[]` | no | Options: `AF`, `ASIA`, `EU`, `SA`, `US` |
+| Property              | Type       | Required | Description                                                                                                                                                                            |
+| --------------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `blockedCountries`    | `string[]` | no       | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level.                                       |
+| `filters`             | `string[]` | no       | Options: `all`, `eea`, `eu`, `scripting`                                                                                                                                               |
+| `redirectedCountries` | `string[]` | no       | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
+| `tier`                | `string`   | no       | Options: `Standard`, `Volume`                                                                                                                                                          |
+| `zones`               | `string[]` | no       | Options: `AF`, `ASIA`, `EU`, `SA`, `US`                                                                                                                                                |
 
 ## `PullzoneOrigin (output)`
 
 Output object `PullzoneOrigin`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `containerAppId` | `string` | no | The ID if the compute container app. |
-| `containerEndpointId` | `string` | no | The ID if the compute container app endpoint. |
-| `dnsPort` | `number` | no | The port for DNS Accelerated endpoints. |
-| `dnsScheme` | `string` | no | The scheme for DNS Accelerated endpoints. |
-| `followRedirects` | `boolean` | yes | Indicates whether the zone will follow origin redirects. |
-| `forwardHostHeader` | `boolean` | yes | Indicates whether the current hostname is forwarded to the origin. |
-| `hostHeader` | `string` | yes | The host header that will be sent to the origin. |
-| `middlewareScript` | `number` | yes | The ID of the compute script used as a middleware. |
-| `script` | `number` | no | The ID of the linked compute script. |
-| `scriptExecuteBeforeCache` | `boolean` | yes | Indicates whether the script will execute ahead of the cache layer. |
-| `storagezone` | `number` | no | The ID of the linked storage zone. |
-| `type` | `string` | yes | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
-| `url` | `string` | no | The origin URL from where the files are fetched. |
-| `verifySsl` | `boolean` | yes | Indicates whether the Origin's TLS certificate should be verified. |
+| Property                   | Type      | Always present | Description                                                                               |
+| -------------------------- | --------- | -------------- | ----------------------------------------------------------------------------------------- |
+| `containerAppId`           | `string`  | no             | The ID if the compute container app.                                                      |
+| `containerEndpointId`      | `string`  | no             | The ID if the compute container app endpoint.                                             |
+| `dnsPort`                  | `number`  | no             | The port for DNS Accelerated endpoints.                                                   |
+| `dnsScheme`                | `string`  | no             | The scheme for DNS Accelerated endpoints.                                                 |
+| `followRedirects`          | `boolean` | yes            | Indicates whether the zone will follow origin redirects.                                  |
+| `forwardHostHeader`        | `boolean` | yes            | Indicates whether the current hostname is forwarded to the origin.                        |
+| `hostHeader`               | `string`  | yes            | The host header that will be sent to the origin.                                          |
+| `middlewareScript`         | `number`  | yes            | The ID of the compute script used as a middleware.                                        |
+| `script`                   | `number`  | no             | The ID of the linked compute script.                                                      |
+| `scriptExecuteBeforeCache` | `boolean` | yes            | Indicates whether the script will execute ahead of the cache layer.                       |
+| `storagezone`              | `number`  | no             | The ID of the linked storage zone.                                                        |
+| `type`                     | `string`  | yes            | Options: `ComputeContainer`, `ComputeScript`, `DnsAccelerate`, `OriginUrl`, `StorageZone` |
+| `url`                      | `string`  | no             | The origin URL from where the files are fetched.                                          |
+| `verifySsl`                | `boolean` | yes            | Indicates whether the Origin's TLS certificate should be verified.                        |
 
 ## `PullzoneRouting (output)`
 
 Output object `PullzoneRouting`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `blockedCountries` | `string[]` | yes | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level. |
-| `filters` | `string[]` | yes | Options: `all`, `eea`, `eu`, `scripting` |
-| `redirectedCountries` | `string[]` | yes | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
-| `tier` | `string` | yes | Options: `Standard`, `Volume` |
-| `zones` | `string[]` | yes | Options: `AF`, `ASIA`, `EU`, `SA`, `US` |
+| Property              | Type       | Always present | Description                                                                                                                                                                            |
+| --------------------- | ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `blockedCountries`    | `string[]` | yes            | The list of blocked countries with the two-letter Alpha2 ISO codes. Traffic connecting from a blocked country will be rejected on the DNS level.                                       |
+| `filters`             | `string[]` | yes            | Options: `all`, `eea`, `eu`, `scripting`                                                                                                                                               |
+| `redirectedCountries` | `string[]` | yes            | The list of budget redirected countries with the two-letter Alpha2 ISO codes. Traffic from a redirected country will connect to the cheapest possible node in North America or Europe. |
+| `tier`                | `string`   | yes            | Options: `Standard`, `Volume`                                                                                                                                                          |
+| `zones`               | `string[]` | yes            | Options: `AF`, `ASIA`, `EU`, `SA`, `US`                                                                                                                                                |

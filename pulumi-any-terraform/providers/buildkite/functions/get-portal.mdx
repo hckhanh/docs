@@ -19,30 +19,30 @@ Call `buildkite.getPortal(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `slug` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `slug`   | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedIpAddresses` | `string` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `createdBy` | `GetPortalCreatedBy` | yes |  |
-| `description` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `query` | `string` | yes |  |
-| `slug` | `string` | yes |  |
-| `userInvokable` | `boolean` | yes |  |
-| `uuid` | `string` | yes |  |
+| Property             | Type                 | Always present | Description |
+| -------------------- | -------------------- | -------------- | ----------- |
+| `allowedIpAddresses` | `string`             | yes            |             |
+| `createdAt`          | `string`             | yes            |             |
+| `createdBy`          | `GetPortalCreatedBy` | yes            |             |
+| `description`        | `string`             | yes            |             |
+| `name`               | `string`             | yes            |             |
+| `query`              | `string`             | yes            |             |
+| `slug`               | `string`             | yes            |             |
+| `userInvokable`      | `boolean`            | yes            |             |
+| `uuid`               | `string`             | yes            |             |
 
 ## `GetPortalCreatedBy`
 
 Output object `GetPortalCreatedBy`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | yes | The email of the user. |
-| `name` | `string` | yes | The name of the user. |
-| `uuid` | `string` | yes | The UUID of the user. |
+| Property | Type     | Always present | Description            |
+| -------- | -------- | -------------- | ---------------------- |
+| `email`  | `string` | yes            | The email of the user. |
+| `name`   | `string` | yes            | The name of the user.  |
+| `uuid`   | `string` | yes            | The UUID of the user.  |

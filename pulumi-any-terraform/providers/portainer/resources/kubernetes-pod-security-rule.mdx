@@ -19,446 +19,446 @@ Construct with `new portainer.KubernetesPodSecurityRule(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowFlexVolumes` | `KubernetesPodSecurityRuleAllowFlexVolumes (input)` | no | Which FlexVolume drivers are permitted. |
-| `allowPrivilegeEscalation` | `boolean` | no | Whether to block containers that may escalate their privileges. |
-| `allowProcMount` | `KubernetesPodSecurityRuleAllowProcMount (input)` | no | Which proc mount types are permitted. |
-| `appArmor` | `KubernetesPodSecurityRuleAppArmor (input)` | no | Which AppArmor profiles are permitted. |
-| `capabilities` | `KubernetesPodSecurityRuleCapabilities (input)` | no | Which Linux capabilities a container may hold. |
-| `enabled` | `boolean` | no | Whether the pod security rule is enforced at all. With this off, the individual sections below are stored but do nothing. |
-| `endpointId` | `number` | yes | Identifier of the Kubernetes environment the rule applies to. |
-| `forbiddenSysctls` | `KubernetesPodSecurityRuleForbiddenSysctls (input)` | no | Which sysctls a pod may not set. |
-| `hostFilesystem` | `KubernetesPodSecurityRuleHostFilesystem (input)` | no | Which host paths a pod may mount. |
-| `hostNamespaces` | `boolean` | no | Whether to block pods that join the host's namespaces. |
-| `hostPorts` | `KubernetesPodSecurityRuleHostPorts (input)` | no | Which host ports a pod may bind, and whether host networking is allowed at all. |
-| `kubernetesPodSecurityRuleId` | `string` | no |  |
-| `privilegedContainers` | `boolean` | no | Whether to block privileged containers. |
-| `readOnlyRootFilesystem` | `boolean` | no | Whether to require a read-only root filesystem. |
-| `restrictDefaultNamespace` | `boolean` | no | Whether to stop workloads being deployed into the `default` namespace. |
-| `restrictSecrets` | `boolean` | no | Whether to restrict access to secrets. |
-| `secComp` | `KubernetesPodSecurityRuleSecComp (input)` | no | Which seccomp profiles are permitted. |
-| `selinux` | `KubernetesPodSecurityRuleSelinux (input)` | no | Which SELinux contexts are permitted. |
-| `users` | `KubernetesPodSecurityRuleUsers (input)` | no | Which user and group identities a pod may run as. |
-| `volumeTypes` | `KubernetesPodSecurityRuleVolumeTypes (input)` | no | Which volume types a pod may use. |
+| Property                      | Type                                                | Required | Description                                                                                                               |
+| ----------------------------- | --------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `allowFlexVolumes`            | `KubernetesPodSecurityRuleAllowFlexVolumes (input)` | no       | Which FlexVolume drivers are permitted.                                                                                   |
+| `allowPrivilegeEscalation`    | `boolean`                                           | no       | Whether to block containers that may escalate their privileges.                                                           |
+| `allowProcMount`              | `KubernetesPodSecurityRuleAllowProcMount (input)`   | no       | Which proc mount types are permitted.                                                                                     |
+| `appArmor`                    | `KubernetesPodSecurityRuleAppArmor (input)`         | no       | Which AppArmor profiles are permitted.                                                                                    |
+| `capabilities`                | `KubernetesPodSecurityRuleCapabilities (input)`     | no       | Which Linux capabilities a container may hold.                                                                            |
+| `enabled`                     | `boolean`                                           | no       | Whether the pod security rule is enforced at all. With this off, the individual sections below are stored but do nothing. |
+| `endpointId`                  | `number`                                            | yes      | Identifier of the Kubernetes environment the rule applies to.                                                             |
+| `forbiddenSysctls`            | `KubernetesPodSecurityRuleForbiddenSysctls (input)` | no       | Which sysctls a pod may not set.                                                                                          |
+| `hostFilesystem`              | `KubernetesPodSecurityRuleHostFilesystem (input)`   | no       | Which host paths a pod may mount.                                                                                         |
+| `hostNamespaces`              | `boolean`                                           | no       | Whether to block pods that join the host's namespaces.                                                                    |
+| `hostPorts`                   | `KubernetesPodSecurityRuleHostPorts (input)`        | no       | Which host ports a pod may bind, and whether host networking is allowed at all.                                           |
+| `kubernetesPodSecurityRuleId` | `string`                                            | no       |                                                                                                                           |
+| `privilegedContainers`        | `boolean`                                           | no       | Whether to block privileged containers.                                                                                   |
+| `readOnlyRootFilesystem`      | `boolean`                                           | no       | Whether to require a read-only root filesystem.                                                                           |
+| `restrictDefaultNamespace`    | `boolean`                                           | no       | Whether to stop workloads being deployed into the `default` namespace.                                                    |
+| `restrictSecrets`             | `boolean`                                           | no       | Whether to restrict access to secrets.                                                                                    |
+| `secComp`                     | `KubernetesPodSecurityRuleSecComp (input)`          | no       | Which seccomp profiles are permitted.                                                                                     |
+| `selinux`                     | `KubernetesPodSecurityRuleSelinux (input)`          | no       | Which SELinux contexts are permitted.                                                                                     |
+| `users`                       | `KubernetesPodSecurityRuleUsers (input)`            | no       | Which user and group identities a pod may run as.                                                                         |
+| `volumeTypes`                 | `KubernetesPodSecurityRuleVolumeTypes (input)`      | no       | Which volume types a pod may use.                                                                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `allowFlexVolumes` | `KubernetesPodSecurityRuleAllowFlexVolumes (output)` | no | Which FlexVolume drivers are permitted. |
-| `allowPrivilegeEscalation` | `boolean` | no | Whether to block containers that may escalate their privileges. |
-| `allowProcMount` | `KubernetesPodSecurityRuleAllowProcMount (output)` | no | Which proc mount types are permitted. |
-| `appArmor` | `KubernetesPodSecurityRuleAppArmor (output)` | no | Which AppArmor profiles are permitted. |
-| `capabilities` | `KubernetesPodSecurityRuleCapabilities (output)` | no | Which Linux capabilities a container may hold. |
-| `enabled` | `boolean` | no | Whether the pod security rule is enforced at all. With this off, the individual sections below are stored but do nothing. |
-| `endpointId` | `number` | no | Identifier of the Kubernetes environment the rule applies to. |
-| `forbiddenSysctls` | `KubernetesPodSecurityRuleForbiddenSysctls (output)` | no | Which sysctls a pod may not set. |
-| `hostFilesystem` | `KubernetesPodSecurityRuleHostFilesystem (output)` | no | Which host paths a pod may mount. |
-| `hostNamespaces` | `boolean` | no | Whether to block pods that join the host's namespaces. |
-| `hostPorts` | `KubernetesPodSecurityRuleHostPorts (output)` | no | Which host ports a pod may bind, and whether host networking is allowed at all. |
-| `kubernetesPodSecurityRuleId` | `string` | no |  |
-| `privilegedContainers` | `boolean` | no | Whether to block privileged containers. |
-| `readOnlyRootFilesystem` | `boolean` | no | Whether to require a read-only root filesystem. |
-| `restrictDefaultNamespace` | `boolean` | no | Whether to stop workloads being deployed into the `default` namespace. |
-| `restrictSecrets` | `boolean` | no | Whether to restrict access to secrets. |
-| `secComp` | `KubernetesPodSecurityRuleSecComp (output)` | no | Which seccomp profiles are permitted. |
-| `selinux` | `KubernetesPodSecurityRuleSelinux (output)` | no | Which SELinux contexts are permitted. |
-| `users` | `KubernetesPodSecurityRuleUsers (output)` | no | Which user and group identities a pod may run as. |
-| `volumeTypes` | `KubernetesPodSecurityRuleVolumeTypes (output)` | no | Which volume types a pod may use. |
+| Property                      | Type                                                 | Computed | Description                                                                                                               |
+| ----------------------------- | ---------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `allowFlexVolumes`            | `KubernetesPodSecurityRuleAllowFlexVolumes (output)` | no       | Which FlexVolume drivers are permitted.                                                                                   |
+| `allowPrivilegeEscalation`    | `boolean`                                            | no       | Whether to block containers that may escalate their privileges.                                                           |
+| `allowProcMount`              | `KubernetesPodSecurityRuleAllowProcMount (output)`   | no       | Which proc mount types are permitted.                                                                                     |
+| `appArmor`                    | `KubernetesPodSecurityRuleAppArmor (output)`         | no       | Which AppArmor profiles are permitted.                                                                                    |
+| `capabilities`                | `KubernetesPodSecurityRuleCapabilities (output)`     | no       | Which Linux capabilities a container may hold.                                                                            |
+| `enabled`                     | `boolean`                                            | no       | Whether the pod security rule is enforced at all. With this off, the individual sections below are stored but do nothing. |
+| `endpointId`                  | `number`                                             | no       | Identifier of the Kubernetes environment the rule applies to.                                                             |
+| `forbiddenSysctls`            | `KubernetesPodSecurityRuleForbiddenSysctls (output)` | no       | Which sysctls a pod may not set.                                                                                          |
+| `hostFilesystem`              | `KubernetesPodSecurityRuleHostFilesystem (output)`   | no       | Which host paths a pod may mount.                                                                                         |
+| `hostNamespaces`              | `boolean`                                            | no       | Whether to block pods that join the host's namespaces.                                                                    |
+| `hostPorts`                   | `KubernetesPodSecurityRuleHostPorts (output)`        | no       | Which host ports a pod may bind, and whether host networking is allowed at all.                                           |
+| `kubernetesPodSecurityRuleId` | `string`                                             | no       |                                                                                                                           |
+| `privilegedContainers`        | `boolean`                                            | no       | Whether to block privileged containers.                                                                                   |
+| `readOnlyRootFilesystem`      | `boolean`                                            | no       | Whether to require a read-only root filesystem.                                                                           |
+| `restrictDefaultNamespace`    | `boolean`                                            | no       | Whether to stop workloads being deployed into the `default` namespace.                                                    |
+| `restrictSecrets`             | `boolean`                                            | no       | Whether to restrict access to secrets.                                                                                    |
+| `secComp`                     | `KubernetesPodSecurityRuleSecComp (output)`          | no       | Which seccomp profiles are permitted.                                                                                     |
+| `selinux`                     | `KubernetesPodSecurityRuleSelinux (output)`          | no       | Which SELinux contexts are permitted.                                                                                     |
+| `users`                       | `KubernetesPodSecurityRuleUsers (output)`            | no       | Which user and group identities a pod may run as.                                                                         |
+| `volumeTypes`                 | `KubernetesPodSecurityRuleVolumeTypes (output)`      | no       | Which volume types a pod may use.                                                                                         |
 
 ## `KubernetesPodSecurityRuleAllowFlexVolumes (input)`
 
 Input object `KubernetesPodSecurityRuleAllowFlexVolumes`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedVolumes` | `string[]` | no | FlexVolume drivers a pod may use. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property         | Type       | Required | Description                       |
+| ---------------- | ---------- | -------- | --------------------------------- |
+| `allowedVolumes` | `string[]` | no       | FlexVolume drivers a pod may use. |
+| `enabled`        | `boolean`  | no       | Whether this section is enforced. |
 
 ## `KubernetesPodSecurityRuleAllowProcMount (input)`
 
 Input object `KubernetesPodSecurityRuleAllowProcMount`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `procMountType` | `string` | no | The proc mount type to permit, for example `Default` or `Unmasked`. |
+| Property        | Type      | Required | Description                                                         |
+| --------------- | --------- | -------- | ------------------------------------------------------------------- |
+| `enabled`       | `boolean` | no       | Whether this section is enforced.                                   |
+| `procMountType` | `string`  | no       | The proc mount type to permit, for example `Default` or `Unmasked`. |
 
 ## `KubernetesPodSecurityRuleAppArmor (input)`
 
 Input object `KubernetesPodSecurityRuleAppArmor`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `types` | `string[]` | no | AppArmor profiles a pod may use. |
+| Property  | Type       | Required | Description                       |
+| --------- | ---------- | -------- | --------------------------------- |
+| `enabled` | `boolean`  | no       | Whether this section is enforced. |
+| `types`   | `string[]` | no       | AppArmor profiles a pod may use.  |
 
 ## `KubernetesPodSecurityRuleCapabilities (input)`
 
 Input object `KubernetesPodSecurityRuleCapabilities`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alloweds` | `string[]` | no | Capabilities a container may add. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `requiredDrops` | `string[]` | no | Capabilities every container has to drop. |
+| Property        | Type       | Required | Description                               |
+| --------------- | ---------- | -------- | ----------------------------------------- |
+| `alloweds`      | `string[]` | no       | Capabilities a container may add.         |
+| `enabled`       | `boolean`  | no       | Whether this section is enforced.         |
+| `requiredDrops` | `string[]` | no       | Capabilities every container has to drop. |
 
 ## `KubernetesPodSecurityRuleForbiddenSysctls (input)`
 
 Input object `KubernetesPodSecurityRuleForbiddenSysctls`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `sysctls` | `string[]` | no | Sysctls a pod may not set. |
+| Property  | Type       | Required | Description                       |
+| --------- | ---------- | -------- | --------------------------------- |
+| `enabled` | `boolean`  | no       | Whether this section is enforced. |
+| `sysctls` | `string[]` | no       | Sysctls a pod may not set.        |
 
 ## `KubernetesPodSecurityRuleHostFilesystem (input)`
 
 Input object `KubernetesPodSecurityRuleHostFilesystem`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedPaths` | `KubernetesPodSecurityRuleHostFilesystemAllowedPath (input)[]` | no | Host paths a pod may mount. Repeatable. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property       | Type                                                           | Required | Description                             |
+| -------------- | -------------------------------------------------------------- | -------- | --------------------------------------- |
+| `allowedPaths` | `KubernetesPodSecurityRuleHostFilesystemAllowedPath (input)[]` | no       | Host paths a pod may mount. Repeatable. |
+| `enabled`      | `boolean`                                                      | no       | Whether this section is enforced.       |
 
 ## `KubernetesPodSecurityRuleHostFilesystemAllowedPath (input)`
 
 Input object `KubernetesPodSecurityRuleHostFilesystemAllowedPath`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `pathPrefix` | `string` | yes | Path prefix that may be mounted. |
-| `readonly` | `boolean` | no | Whether the mount has to be read-only. |
+| Property     | Type      | Required | Description                            |
+| ------------ | --------- | -------- | -------------------------------------- |
+| `pathPrefix` | `string`  | yes      | Path prefix that may be mounted.       |
+| `readonly`   | `boolean` | no       | Whether the mount has to be read-only. |
 
 ## `KubernetesPodSecurityRuleHostPorts (input)`
 
 Input object `KubernetesPodSecurityRuleHostPorts`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `hostNetwork` | `boolean` | no | Whether a pod may use the host's network namespace. |
-| `max` | `number` | no | Highest host port a pod may bind. |
-| `min` | `number` | no | Lowest host port a pod may bind. |
+| Property      | Type      | Required | Description                                         |
+| ------------- | --------- | -------- | --------------------------------------------------- |
+| `enabled`     | `boolean` | no       | Whether this section is enforced.                   |
+| `hostNetwork` | `boolean` | no       | Whether a pod may use the host's network namespace. |
+| `max`         | `number`  | no       | Highest host port a pod may bind.                   |
+| `min`         | `number`  | no       | Lowest host port a pod may bind.                    |
 
 ## `KubernetesPodSecurityRuleSecComp (input)`
 
 Input object `KubernetesPodSecurityRuleSecComp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `types` | `string[]` | no | Seccomp profiles a pod may use. |
+| Property  | Type       | Required | Description                       |
+| --------- | ---------- | -------- | --------------------------------- |
+| `enabled` | `boolean`  | no       | Whether this section is enforced. |
+| `types`   | `string[]` | no       | Seccomp profiles a pod may use.   |
 
 ## `KubernetesPodSecurityRuleSelinux (input)`
 
 Input object `KubernetesPodSecurityRuleSelinux`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedContexts` | `KubernetesPodSecurityRuleSelinuxAllowedContext (input)[]` | no | SELinux contexts a pod may run under. Repeatable. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property          | Type                                                       | Required | Description                                       |
+| ----------------- | ---------------------------------------------------------- | -------- | ------------------------------------------------- |
+| `allowedContexts` | `KubernetesPodSecurityRuleSelinuxAllowedContext (input)[]` | no       | SELinux contexts a pod may run under. Repeatable. |
+| `enabled`         | `boolean`                                                  | no       | Whether this section is enforced.                 |
 
 ## `KubernetesPodSecurityRuleSelinuxAllowedContext (input)`
 
 Input object `KubernetesPodSecurityRuleSelinuxAllowedContext`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `level` | `string` | no | SELinux level. |
-| `role` | `string` | no | SELinux role. |
-| `type` | `string` | no | SELinux type. |
-| `user` | `string` | no | SELinux user. |
+| Property | Type     | Required | Description    |
+| -------- | -------- | -------- | -------------- |
+| `level`  | `string` | no       | SELinux level. |
+| `role`   | `string` | no       | SELinux role.  |
+| `type`   | `string` | no       | SELinux type.  |
+| `user`   | `string` | no       | SELinux user.  |
 
 ## `KubernetesPodSecurityRuleUsers (input)`
 
 Input object `KubernetesPodSecurityRuleUsers`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `fsGroups` | `KubernetesPodSecurityRuleUsersFsGroups (input)` | no | Strategy and ranges for the pod's filesystem groups. |
-| `runAsGroup` | `KubernetesPodSecurityRuleUsersRunAsGroup (input)` | no | Strategy and ranges for the group a container runs as. |
-| `runAsUser` | `KubernetesPodSecurityRuleUsersRunAsUser (input)` | no | Strategy and ranges for the user a container runs as. |
-| `supplementalGroups` | `KubernetesPodSecurityRuleUsersSupplementalGroups (input)` | no | Strategy and ranges for the pod's supplemental groups. |
+| Property             | Type                                                       | Required | Description                                            |
+| -------------------- | ---------------------------------------------------------- | -------- | ------------------------------------------------------ |
+| `enabled`            | `boolean`                                                  | no       | Whether this section is enforced.                      |
+| `fsGroups`           | `KubernetesPodSecurityRuleUsersFsGroups (input)`           | no       | Strategy and ranges for the pod's filesystem groups.   |
+| `runAsGroup`         | `KubernetesPodSecurityRuleUsersRunAsGroup (input)`         | no       | Strategy and ranges for the group a container runs as. |
+| `runAsUser`          | `KubernetesPodSecurityRuleUsersRunAsUser (input)`          | no       | Strategy and ranges for the user a container runs as.  |
+| `supplementalGroups` | `KubernetesPodSecurityRuleUsersSupplementalGroups (input)` | no       | Strategy and ranges for the pod's supplemental groups. |
 
 ## `KubernetesPodSecurityRuleUsersFsGroups (input)`
 
 Input object `KubernetesPodSecurityRuleUsersFsGroups`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersFsGroupsIdRange (input)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                      | Required | Description                                      |
+| ---------- | --------------------------------------------------------- | -------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersFsGroupsIdRange (input)[]` | no       | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                  | no       | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersFsGroupsIdRange (input)`
 
 Input object `KubernetesPodSecurityRuleUsersFsGroupsIdRange`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Required | Description                      |
+| -------- | -------- | -------- | -------------------------------- |
+| `max`    | `number` | yes      | Highest identifier in the range. |
+| `min`    | `number` | yes      | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersRunAsGroup (input)`
 
 Input object `KubernetesPodSecurityRuleUsersRunAsGroup`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (input)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                        | Required | Description                                      |
+| ---------- | ----------------------------------------------------------- | -------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (input)[]` | no       | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                    | no       | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (input)`
 
 Input object `KubernetesPodSecurityRuleUsersRunAsGroupIdRange`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Required | Description                      |
+| -------- | -------- | -------- | -------------------------------- |
+| `max`    | `number` | yes      | Highest identifier in the range. |
+| `min`    | `number` | yes      | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersRunAsUser (input)`
 
 Input object `KubernetesPodSecurityRuleUsersRunAsUser`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsUserIdRange (input)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                       | Required | Description                                      |
+| ---------- | ---------------------------------------------------------- | -------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsUserIdRange (input)[]` | no       | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                   | no       | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersRunAsUserIdRange (input)`
 
 Input object `KubernetesPodSecurityRuleUsersRunAsUserIdRange`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Required | Description                      |
+| -------- | -------- | -------- | -------------------------------- |
+| `max`    | `number` | yes      | Highest identifier in the range. |
+| `min`    | `number` | yes      | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersSupplementalGroups (input)`
 
 Input object `KubernetesPodSecurityRuleUsersSupplementalGroups`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (input)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                                | Required | Description                                      |
+| ---------- | ------------------------------------------------------------------- | -------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (input)[]` | no       | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                            | no       | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (input)`
 
 Input object `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Required | Description                      |
+| -------- | -------- | -------- | -------------------------------- |
+| `max`    | `number` | yes      | Highest identifier in the range. |
+| `min`    | `number` | yes      | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleVolumeTypes (input)`
 
 Input object `KubernetesPodSecurityRuleVolumeTypes`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowedTypes` | `string[]` | no | Volume types a pod may use, for example `configMap` or `emptyDir`. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property       | Type       | Required | Description                                                        |
+| -------------- | ---------- | -------- | ------------------------------------------------------------------ |
+| `allowedTypes` | `string[]` | no       | Volume types a pod may use, for example `configMap` or `emptyDir`. |
+| `enabled`      | `boolean`  | no       | Whether this section is enforced.                                  |
 
 ## `KubernetesPodSecurityRuleAllowFlexVolumes (output)`
 
 Output object `KubernetesPodSecurityRuleAllowFlexVolumes`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedVolumes` | `string[]` | no | FlexVolume drivers a pod may use. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property         | Type       | Always present | Description                       |
+| ---------------- | ---------- | -------------- | --------------------------------- |
+| `allowedVolumes` | `string[]` | no             | FlexVolume drivers a pod may use. |
+| `enabled`        | `boolean`  | no             | Whether this section is enforced. |
 
 ## `KubernetesPodSecurityRuleAllowProcMount (output)`
 
 Output object `KubernetesPodSecurityRuleAllowProcMount`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `procMountType` | `string` | no | The proc mount type to permit, for example `Default` or `Unmasked`. |
+| Property        | Type      | Always present | Description                                                         |
+| --------------- | --------- | -------------- | ------------------------------------------------------------------- |
+| `enabled`       | `boolean` | no             | Whether this section is enforced.                                   |
+| `procMountType` | `string`  | no             | The proc mount type to permit, for example `Default` or `Unmasked`. |
 
 ## `KubernetesPodSecurityRuleAppArmor (output)`
 
 Output object `KubernetesPodSecurityRuleAppArmor`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `types` | `string[]` | no | AppArmor profiles a pod may use. |
+| Property  | Type       | Always present | Description                       |
+| --------- | ---------- | -------------- | --------------------------------- |
+| `enabled` | `boolean`  | no             | Whether this section is enforced. |
+| `types`   | `string[]` | no             | AppArmor profiles a pod may use.  |
 
 ## `KubernetesPodSecurityRuleCapabilities (output)`
 
 Output object `KubernetesPodSecurityRuleCapabilities`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `alloweds` | `string[]` | no | Capabilities a container may add. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `requiredDrops` | `string[]` | no | Capabilities every container has to drop. |
+| Property        | Type       | Always present | Description                               |
+| --------------- | ---------- | -------------- | ----------------------------------------- |
+| `alloweds`      | `string[]` | no             | Capabilities a container may add.         |
+| `enabled`       | `boolean`  | no             | Whether this section is enforced.         |
+| `requiredDrops` | `string[]` | no             | Capabilities every container has to drop. |
 
 ## `KubernetesPodSecurityRuleForbiddenSysctls (output)`
 
 Output object `KubernetesPodSecurityRuleForbiddenSysctls`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `sysctls` | `string[]` | no | Sysctls a pod may not set. |
+| Property  | Type       | Always present | Description                       |
+| --------- | ---------- | -------------- | --------------------------------- |
+| `enabled` | `boolean`  | no             | Whether this section is enforced. |
+| `sysctls` | `string[]` | no             | Sysctls a pod may not set.        |
 
 ## `KubernetesPodSecurityRuleHostFilesystem (output)`
 
 Output object `KubernetesPodSecurityRuleHostFilesystem`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedPaths` | `KubernetesPodSecurityRuleHostFilesystemAllowedPath (output)[]` | no | Host paths a pod may mount. Repeatable. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property       | Type                                                            | Always present | Description                             |
+| -------------- | --------------------------------------------------------------- | -------------- | --------------------------------------- |
+| `allowedPaths` | `KubernetesPodSecurityRuleHostFilesystemAllowedPath (output)[]` | no             | Host paths a pod may mount. Repeatable. |
+| `enabled`      | `boolean`                                                       | no             | Whether this section is enforced.       |
 
 ## `KubernetesPodSecurityRuleHostFilesystemAllowedPath (output)`
 
 Output object `KubernetesPodSecurityRuleHostFilesystemAllowedPath`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `pathPrefix` | `string` | yes | Path prefix that may be mounted. |
-| `readonly` | `boolean` | no | Whether the mount has to be read-only. |
+| Property     | Type      | Always present | Description                            |
+| ------------ | --------- | -------------- | -------------------------------------- |
+| `pathPrefix` | `string`  | yes            | Path prefix that may be mounted.       |
+| `readonly`   | `boolean` | no             | Whether the mount has to be read-only. |
 
 ## `KubernetesPodSecurityRuleHostPorts (output)`
 
 Output object `KubernetesPodSecurityRuleHostPorts`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `hostNetwork` | `boolean` | no | Whether a pod may use the host's network namespace. |
-| `max` | `number` | no | Highest host port a pod may bind. |
-| `min` | `number` | no | Lowest host port a pod may bind. |
+| Property      | Type      | Always present | Description                                         |
+| ------------- | --------- | -------------- | --------------------------------------------------- |
+| `enabled`     | `boolean` | no             | Whether this section is enforced.                   |
+| `hostNetwork` | `boolean` | no             | Whether a pod may use the host's network namespace. |
+| `max`         | `number`  | no             | Highest host port a pod may bind.                   |
+| `min`         | `number`  | no             | Lowest host port a pod may bind.                    |
 
 ## `KubernetesPodSecurityRuleSecComp (output)`
 
 Output object `KubernetesPodSecurityRuleSecComp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `types` | `string[]` | no | Seccomp profiles a pod may use. |
+| Property  | Type       | Always present | Description                       |
+| --------- | ---------- | -------------- | --------------------------------- |
+| `enabled` | `boolean`  | no             | Whether this section is enforced. |
+| `types`   | `string[]` | no             | Seccomp profiles a pod may use.   |
 
 ## `KubernetesPodSecurityRuleSelinux (output)`
 
 Output object `KubernetesPodSecurityRuleSelinux`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedContexts` | `KubernetesPodSecurityRuleSelinuxAllowedContext (output)[]` | no | SELinux contexts a pod may run under. Repeatable. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property          | Type                                                        | Always present | Description                                       |
+| ----------------- | ----------------------------------------------------------- | -------------- | ------------------------------------------------- |
+| `allowedContexts` | `KubernetesPodSecurityRuleSelinuxAllowedContext (output)[]` | no             | SELinux contexts a pod may run under. Repeatable. |
+| `enabled`         | `boolean`                                                   | no             | Whether this section is enforced.                 |
 
 ## `KubernetesPodSecurityRuleSelinuxAllowedContext (output)`
 
 Output object `KubernetesPodSecurityRuleSelinuxAllowedContext`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `level` | `string` | no | SELinux level. |
-| `role` | `string` | no | SELinux role. |
-| `type` | `string` | no | SELinux type. |
-| `user` | `string` | no | SELinux user. |
+| Property | Type     | Always present | Description    |
+| -------- | -------- | -------------- | -------------- |
+| `level`  | `string` | no             | SELinux level. |
+| `role`   | `string` | no             | SELinux role.  |
+| `type`   | `string` | no             | SELinux type.  |
+| `user`   | `string` | no             | SELinux user.  |
 
 ## `KubernetesPodSecurityRuleUsers (output)`
 
 Output object `KubernetesPodSecurityRuleUsers`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
-| `fsGroups` | `KubernetesPodSecurityRuleUsersFsGroups (output)` | no | Strategy and ranges for the pod's filesystem groups. |
-| `runAsGroup` | `KubernetesPodSecurityRuleUsersRunAsGroup (output)` | no | Strategy and ranges for the group a container runs as. |
-| `runAsUser` | `KubernetesPodSecurityRuleUsersRunAsUser (output)` | no | Strategy and ranges for the user a container runs as. |
-| `supplementalGroups` | `KubernetesPodSecurityRuleUsersSupplementalGroups (output)` | no | Strategy and ranges for the pod's supplemental groups. |
+| Property             | Type                                                        | Always present | Description                                            |
+| -------------------- | ----------------------------------------------------------- | -------------- | ------------------------------------------------------ |
+| `enabled`            | `boolean`                                                   | no             | Whether this section is enforced.                      |
+| `fsGroups`           | `KubernetesPodSecurityRuleUsersFsGroups (output)`           | no             | Strategy and ranges for the pod's filesystem groups.   |
+| `runAsGroup`         | `KubernetesPodSecurityRuleUsersRunAsGroup (output)`         | no             | Strategy and ranges for the group a container runs as. |
+| `runAsUser`          | `KubernetesPodSecurityRuleUsersRunAsUser (output)`          | no             | Strategy and ranges for the user a container runs as.  |
+| `supplementalGroups` | `KubernetesPodSecurityRuleUsersSupplementalGroups (output)` | no             | Strategy and ranges for the pod's supplemental groups. |
 
 ## `KubernetesPodSecurityRuleUsersFsGroups (output)`
 
 Output object `KubernetesPodSecurityRuleUsersFsGroups`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersFsGroupsIdRange (output)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                       | Always present | Description                                      |
+| ---------- | ---------------------------------------------------------- | -------------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersFsGroupsIdRange (output)[]` | no             | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                   | no             | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersFsGroupsIdRange (output)`
 
 Output object `KubernetesPodSecurityRuleUsersFsGroupsIdRange`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Always present | Description                      |
+| -------- | -------- | -------------- | -------------------------------- |
+| `max`    | `number` | yes            | Highest identifier in the range. |
+| `min`    | `number` | yes            | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersRunAsGroup (output)`
 
 Output object `KubernetesPodSecurityRuleUsersRunAsGroup`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (output)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                         | Always present | Description                                      |
+| ---------- | ------------------------------------------------------------ | -------------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (output)[]` | no             | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                     | no             | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersRunAsGroupIdRange (output)`
 
 Output object `KubernetesPodSecurityRuleUsersRunAsGroupIdRange`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Always present | Description                      |
+| -------- | -------- | -------------- | -------------------------------- |
+| `max`    | `number` | yes            | Highest identifier in the range. |
+| `min`    | `number` | yes            | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersRunAsUser (output)`
 
 Output object `KubernetesPodSecurityRuleUsersRunAsUser`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsUserIdRange (output)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                        | Always present | Description                                      |
+| ---------- | ----------------------------------------------------------- | -------------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersRunAsUserIdRange (output)[]` | no             | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                    | no             | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersRunAsUserIdRange (output)`
 
 Output object `KubernetesPodSecurityRuleUsersRunAsUserIdRange`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Always present | Description                      |
+| -------- | -------- | -------------- | -------------------------------- |
+| `max`    | `number` | yes            | Highest identifier in the range. |
+| `min`    | `number` | yes            | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleUsersSupplementalGroups (output)`
 
 Output object `KubernetesPodSecurityRuleUsersSupplementalGroups`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `idRanges` | `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (output)[]` | no | Permitted identifier ranges. Repeatable. |
-| `type` | `string` | no | Strategy, for example `MustRunAs` or `RunAsAny`. |
+| Property   | Type                                                                 | Always present | Description                                      |
+| ---------- | -------------------------------------------------------------------- | -------------- | ------------------------------------------------ |
+| `idRanges` | `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (output)[]` | no             | Permitted identifier ranges. Repeatable.         |
+| `type`     | `string`                                                             | no             | Strategy, for example `MustRunAs` or `RunAsAny`. |
 
 ## `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange (output)`
 
 Output object `KubernetesPodSecurityRuleUsersSupplementalGroupsIdRange`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `max` | `number` | yes | Highest identifier in the range. |
-| `min` | `number` | yes | Lowest identifier in the range. |
+| Property | Type     | Always present | Description                      |
+| -------- | -------- | -------------- | -------------------------------- |
+| `max`    | `number` | yes            | Highest identifier in the range. |
+| `min`    | `number` | yes            | Lowest identifier in the range.  |
 
 ## `KubernetesPodSecurityRuleVolumeTypes (output)`
 
 Output object `KubernetesPodSecurityRuleVolumeTypes`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowedTypes` | `string[]` | no | Volume types a pod may use, for example `configMap` or `emptyDir`. |
-| `enabled` | `boolean` | no | Whether this section is enforced. |
+| Property       | Type       | Always present | Description                                                        |
+| -------------- | ---------- | -------------- | ------------------------------------------------------------------ |
+| `allowedTypes` | `string[]` | no             | Volume types a pod may use, for example `configMap` or `emptyDir`. |
+| `enabled`      | `boolean`  | no             | Whether this section is enforced.                                  |

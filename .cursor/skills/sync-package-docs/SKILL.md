@@ -14,14 +14,14 @@ Scratch files go in the operating-system temp directory. Do not create `tmp/` in
 
 ## Sources
 
-| Product | Repository | Read |
-| --- | --- | --- |
-| Pulumi Any Terraform | `hckhanh/pulumi-any-terraform` | `packages/*/index.ts` and the generated SDK |
-| fast-url | `/Users/khanh/Projects/fast-url` | `src/index.ts` |
-| format-prompt | `/Users/khanh/Projects/format-prompt` | `src/index.ts` |
-| what-the-fetch | `/Users/khanh/Projects/what-the-fetch` | `src/index.ts`, `src/types.ts` |
-| vn-number | `/Users/khanh/Projects/vn-number` | `src/index.ts` |
-| ja4 | `/Users/khanh/Projects/ja4` | `src/index.ts` |
+| Product              | Repository                             | Read                                        |
+| -------------------- | -------------------------------------- | ------------------------------------------- |
+| Pulumi Any Terraform | `hckhanh/pulumi-any-terraform`         | `packages/*/index.ts` and the generated SDK |
+| fast-url             | `/Users/khanh/Projects/fast-url`       | `src/index.ts`                              |
+| format-prompt        | `/Users/khanh/Projects/format-prompt`  | `src/index.ts`                              |
+| what-the-fetch       | `/Users/khanh/Projects/what-the-fetch` | `src/index.ts`, `src/types.ts`              |
+| vn-number            | `/Users/khanh/Projects/vn-number`      | `src/index.ts`                              |
+| ja4                  | `/Users/khanh/Projects/ja4`            | `src/index.ts`                              |
 
 Fetch `origin/main` in each repository first. Read that commit, not the working tree, when the checkout is on another branch.
 
@@ -34,6 +34,7 @@ git -C /Users/khanh/KhanhProjects/pulumi-any-terraform fetch origin main
 git -C /Users/khanh/KhanhProjects/pulumi-any-terraform worktree add --detach "$TMPDIR/pulumi-docs-src" origin/main
 PULUMI_PACKAGES="$TMPDIR/pulumi-docs-src/packages" node scripts/generate-provider-reference.mjs
 git -C /Users/khanh/KhanhProjects/pulumi-any-terraform worktree remove --force "$TMPDIR/pulumi-docs-src"
+npm run format
 ```
 
 Run the command from this repository. The script loads TypeScript from the Pulumi checkout's `node_modules` and writes pages here. The script exits non-zero when a documented field does not match the SDK. Do not hand-edit the generated MDX to silence that failure.

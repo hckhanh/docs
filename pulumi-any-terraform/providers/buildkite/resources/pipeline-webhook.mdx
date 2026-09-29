@@ -19,17 +19,17 @@ Construct with `new buildkite.PipelineWebhook(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `pipelineId` | `string` | yes | The GraphQL ID of the pipeline. |
-| `repository` | `string` | yes | The repository URL the webhook is configured for. The webhook will be replaced when this value changes. |
+| Property     | Type     | Required | Description                                                                                             |
+| ------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `pipelineId` | `string` | yes      | The GraphQL ID of the pipeline.                                                                         |
+| `repository` | `string` | yes      | The repository URL the webhook is configured for. The webhook will be replaced when this value changes. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `pipelineId` | `string` | no | The GraphQL ID of the pipeline. |
-| `repository` | `string` | no | The repository URL the webhook is configured for. The webhook will be replaced when this value changes. |
-| `webhookUrl` | `string` | yes | The Buildkite webhook URL that receives events from the repository. |
+| Property     | Type     | Computed | Description                                                                                             |
+| ------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `pipelineId` | `string` | no       | The GraphQL ID of the pipeline.                                                                         |
+| `repository` | `string` | no       | The repository URL the webhook is configured for. The webhook will be replaced when this value changes. |
+| `webhookUrl` | `string` | yes      | The Buildkite webhook URL that receives events from the repository.                                     |

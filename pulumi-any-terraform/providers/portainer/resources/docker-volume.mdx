@@ -19,163 +19,163 @@ Construct with `new portainer.DockerVolume(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clusterVolumeSpecs` | `DockerVolumeClusterVolumeSpec (input)[]` | no | Specification for a Swarm cluster volume (CSI-backed volume managed by Docker Swarm). |
-| `dockerVolumeId` | `string` | no |  |
-| `driver` | `string` | no | Driver used by the Docker volume (e.g., local, nfs, btrfs). |
-| `driverOpts` | `{ [key: string]: string }` | no | Driver-specific options passed to the Docker volume driver. |
-| `endpointId` | `number` | yes | ID of the Portainer environment (Docker host or Swarm) where the volume is created. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker volume. |
-| `name` | `string` | no | Name of the Docker volume. |
+| Property             | Type                                      | Required | Description                                                                           |
+| -------------------- | ----------------------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `clusterVolumeSpecs` | `DockerVolumeClusterVolumeSpec (input)[]` | no       | Specification for a Swarm cluster volume (CSI-backed volume managed by Docker Swarm). |
+| `dockerVolumeId`     | `string`                                  | no       |                                                                                       |
+| `driver`             | `string`                                  | no       | Driver used by the Docker volume (e.g., local, nfs, btrfs).                           |
+| `driverOpts`         | `{ [key: string]: string }`               | no       | Driver-specific options passed to the Docker volume driver.                           |
+| `endpointId`         | `number`                                  | yes      | ID of the Portainer environment (Docker host or Swarm) where the volume is created.   |
+| `labels`             | `{ [key: string]: string }`               | no       | Key/value labels attached to the Docker volume.                                       |
+| `name`               | `string`                                  | no       | Name of the Docker volume.                                                            |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `clusterVolumeSpecs` | `DockerVolumeClusterVolumeSpec (output)[]` | no | Specification for a Swarm cluster volume (CSI-backed volume managed by Docker Swarm). |
-| `dockerVolumeId` | `string` | no |  |
-| `driver` | `string` | no | Driver used by the Docker volume (e.g., local, nfs, btrfs). |
-| `driverOpts` | `{ [key: string]: string }` | no | Driver-specific options passed to the Docker volume driver. |
-| `endpointId` | `number` | no | ID of the Portainer environment (Docker host or Swarm) where the volume is created. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker volume. |
-| `name` | `string` | no | Name of the Docker volume. |
-| `resourceControlId` | `number` | yes | ID of the Portainer resource control associated with this Docker volume. |
+| Property             | Type                                       | Computed | Description                                                                           |
+| -------------------- | ------------------------------------------ | -------- | ------------------------------------------------------------------------------------- |
+| `clusterVolumeSpecs` | `DockerVolumeClusterVolumeSpec (output)[]` | no       | Specification for a Swarm cluster volume (CSI-backed volume managed by Docker Swarm). |
+| `dockerVolumeId`     | `string`                                   | no       |                                                                                       |
+| `driver`             | `string`                                   | no       | Driver used by the Docker volume (e.g., local, nfs, btrfs).                           |
+| `driverOpts`         | `{ [key: string]: string }`                | no       | Driver-specific options passed to the Docker volume driver.                           |
+| `endpointId`         | `number`                                   | no       | ID of the Portainer environment (Docker host or Swarm) where the volume is created.   |
+| `labels`             | `{ [key: string]: string }`                | no       | Key/value labels attached to the Docker volume.                                       |
+| `name`               | `string`                                   | no       | Name of the Docker volume.                                                            |
+| `resourceControlId`  | `number`                                   | yes      | ID of the Portainer resource control associated with this Docker volume.              |
 
 ## `DockerVolumeClusterVolumeSpec (input)`
 
 Input object `DockerVolumeClusterVolumeSpec`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessMode` | `DockerVolumeClusterVolumeSpecAccessMode (input)` | no | Access mode describing how the cluster volume may be mounted by tasks. |
-| `accessibilityRequirements` | `DockerVolumeClusterVolumeSpecAccessibilityRequirements (input)` | no | Topology constraints describing where the cluster volume can be accessed. |
-| `availability` | `string` | no | Availability of the cluster volume (active, pause, or drain). |
-| `capacityRange` | `DockerVolumeClusterVolumeSpecCapacityRange (input)` | no | Capacity bounds requested for the cluster volume. |
-| `group` | `string` | no | Group name used to associate related cluster volumes. |
-| `secrets` | `DockerVolumeClusterVolumeSpecSecret (input)[]` | no | Secrets passed to the CSI plugin when provisioning the cluster volume. |
+| Property                    | Type                                                             | Required | Description                                                               |
+| --------------------------- | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------- |
+| `accessMode`                | `DockerVolumeClusterVolumeSpecAccessMode (input)`                | no       | Access mode describing how the cluster volume may be mounted by tasks.    |
+| `accessibilityRequirements` | `DockerVolumeClusterVolumeSpecAccessibilityRequirements (input)` | no       | Topology constraints describing where the cluster volume can be accessed. |
+| `availability`              | `string`                                                         | no       | Availability of the cluster volume (active, pause, or drain).             |
+| `capacityRange`             | `DockerVolumeClusterVolumeSpecCapacityRange (input)`             | no       | Capacity bounds requested for the cluster volume.                         |
+| `group`                     | `string`                                                         | no       | Group name used to associate related cluster volumes.                     |
+| `secrets`                   | `DockerVolumeClusterVolumeSpecSecret (input)[]`                  | no       | Secrets passed to the CSI plugin when provisioning the cluster volume.    |
 
 ## `DockerVolumeClusterVolumeSpecAccessMode (input)`
 
 Input object `DockerVolumeClusterVolumeSpecAccessMode`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `mountVolume` | `{ [key: string]: string }` | no | Filesystem mount options applied when the cluster volume is attached. |
-| `scope` | `string` | no | Scope of the cluster volume access (e.g., single or multi node). |
-| `sharing` | `string` | no | Sharing mode for the cluster volume (e.g., none, readonly, onewriter, all). |
+| Property      | Type                        | Required | Description                                                                 |
+| ------------- | --------------------------- | -------- | --------------------------------------------------------------------------- |
+| `mountVolume` | `{ [key: string]: string }` | no       | Filesystem mount options applied when the cluster volume is attached.       |
+| `scope`       | `string`                    | no       | Scope of the cluster volume access (e.g., single or multi node).            |
+| `sharing`     | `string`                    | no       | Sharing mode for the cluster volume (e.g., none, readonly, onewriter, all). |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirements (input)`
 
 Input object `DockerVolumeClusterVolumeSpecAccessibilityRequirements`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `preferreds` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (input)[]` | no | Topologies in which the cluster volume should preferably be accessible. |
-| `requisites` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (input)[]` | no | Topologies in which the cluster volume must be accessible. |
+| Property     | Type                                                                        | Required | Description                                                             |
+| ------------ | --------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------- |
+| `preferreds` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (input)[]` | no       | Topologies in which the cluster volume should preferably be accessible. |
+| `requisites` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (input)[]` | no       | Topologies in which the cluster volume must be accessible.              |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (input)`
 
 Input object `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `property1` | `string` | no | First topology key/value pair describing a preferred location. |
-| `property2` | `string` | no | Second topology key/value pair describing a preferred location. |
+| Property    | Type     | Required | Description                                                     |
+| ----------- | -------- | -------- | --------------------------------------------------------------- |
+| `property1` | `string` | no       | First topology key/value pair describing a preferred location.  |
+| `property2` | `string` | no       | Second topology key/value pair describing a preferred location. |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (input)`
 
 Input object `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `property1` | `string` | no | First topology key/value pair describing a required location. |
-| `property2` | `string` | no | Second topology key/value pair describing a required location. |
+| Property    | Type     | Required | Description                                                    |
+| ----------- | -------- | -------- | -------------------------------------------------------------- |
+| `property1` | `string` | no       | First topology key/value pair describing a required location.  |
+| `property2` | `string` | no       | Second topology key/value pair describing a required location. |
 
 ## `DockerVolumeClusterVolumeSpecCapacityRange (input)`
 
 Input object `DockerVolumeClusterVolumeSpecCapacityRange`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `limitBytes` | `number` | no | Maximum allowed size of the cluster volume in bytes. |
-| `requiredBytes` | `number` | no | Minimum required size of the cluster volume in bytes. |
+| Property        | Type     | Required | Description                                           |
+| --------------- | -------- | -------- | ----------------------------------------------------- |
+| `limitBytes`    | `number` | no       | Maximum allowed size of the cluster volume in bytes.  |
+| `requiredBytes` | `number` | no       | Minimum required size of the cluster volume in bytes. |
 
 ## `DockerVolumeClusterVolumeSpecSecret (input)`
 
 Input object `DockerVolumeClusterVolumeSpecSecret`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | Key used by the CSI plugin to identify the secret value. |
-| `secret` | `string` | yes | Name of the Docker Swarm secret providing the value. |
+| Property | Type     | Required | Description                                              |
+| -------- | -------- | -------- | -------------------------------------------------------- |
+| `key`    | `string` | yes      | Key used by the CSI plugin to identify the secret value. |
+| `secret` | `string` | yes      | Name of the Docker Swarm secret providing the value.     |
 
 ## `DockerVolumeClusterVolumeSpec (output)`
 
 Output object `DockerVolumeClusterVolumeSpec`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `accessMode` | `DockerVolumeClusterVolumeSpecAccessMode (output)` | no | Access mode describing how the cluster volume may be mounted by tasks. |
-| `accessibilityRequirements` | `DockerVolumeClusterVolumeSpecAccessibilityRequirements (output)` | no | Topology constraints describing where the cluster volume can be accessed. |
-| `availability` | `string` | no | Availability of the cluster volume (active, pause, or drain). |
-| `capacityRange` | `DockerVolumeClusterVolumeSpecCapacityRange (output)` | no | Capacity bounds requested for the cluster volume. |
-| `group` | `string` | no | Group name used to associate related cluster volumes. |
-| `secrets` | `DockerVolumeClusterVolumeSpecSecret (output)[]` | no | Secrets passed to the CSI plugin when provisioning the cluster volume. |
+| Property                    | Type                                                              | Always present | Description                                                               |
+| --------------------------- | ----------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------- |
+| `accessMode`                | `DockerVolumeClusterVolumeSpecAccessMode (output)`                | no             | Access mode describing how the cluster volume may be mounted by tasks.    |
+| `accessibilityRequirements` | `DockerVolumeClusterVolumeSpecAccessibilityRequirements (output)` | no             | Topology constraints describing where the cluster volume can be accessed. |
+| `availability`              | `string`                                                          | no             | Availability of the cluster volume (active, pause, or drain).             |
+| `capacityRange`             | `DockerVolumeClusterVolumeSpecCapacityRange (output)`             | no             | Capacity bounds requested for the cluster volume.                         |
+| `group`                     | `string`                                                          | no             | Group name used to associate related cluster volumes.                     |
+| `secrets`                   | `DockerVolumeClusterVolumeSpecSecret (output)[]`                  | no             | Secrets passed to the CSI plugin when provisioning the cluster volume.    |
 
 ## `DockerVolumeClusterVolumeSpecAccessMode (output)`
 
 Output object `DockerVolumeClusterVolumeSpecAccessMode`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `mountVolume` | `{ [key: string]: string }` | no | Filesystem mount options applied when the cluster volume is attached. |
-| `scope` | `string` | no | Scope of the cluster volume access (e.g., single or multi node). |
-| `sharing` | `string` | no | Sharing mode for the cluster volume (e.g., none, readonly, onewriter, all). |
+| Property      | Type                        | Always present | Description                                                                 |
+| ------------- | --------------------------- | -------------- | --------------------------------------------------------------------------- |
+| `mountVolume` | `{ [key: string]: string }` | no             | Filesystem mount options applied when the cluster volume is attached.       |
+| `scope`       | `string`                    | no             | Scope of the cluster volume access (e.g., single or multi node).            |
+| `sharing`     | `string`                    | no             | Sharing mode for the cluster volume (e.g., none, readonly, onewriter, all). |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirements (output)`
 
 Output object `DockerVolumeClusterVolumeSpecAccessibilityRequirements`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `preferreds` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (output)[]` | no | Topologies in which the cluster volume should preferably be accessible. |
-| `requisites` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (output)[]` | no | Topologies in which the cluster volume must be accessible. |
+| Property     | Type                                                                         | Always present | Description                                                             |
+| ------------ | ---------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------- |
+| `preferreds` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (output)[]` | no             | Topologies in which the cluster volume should preferably be accessible. |
+| `requisites` | `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (output)[]` | no             | Topologies in which the cluster volume must be accessible.              |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred (output)`
 
 Output object `DockerVolumeClusterVolumeSpecAccessibilityRequirementsPreferred`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `property1` | `string` | no | First topology key/value pair describing a preferred location. |
-| `property2` | `string` | no | Second topology key/value pair describing a preferred location. |
+| Property    | Type     | Always present | Description                                                     |
+| ----------- | -------- | -------------- | --------------------------------------------------------------- |
+| `property1` | `string` | no             | First topology key/value pair describing a preferred location.  |
+| `property2` | `string` | no             | Second topology key/value pair describing a preferred location. |
 
 ## `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite (output)`
 
 Output object `DockerVolumeClusterVolumeSpecAccessibilityRequirementsRequisite`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `property1` | `string` | no | First topology key/value pair describing a required location. |
-| `property2` | `string` | no | Second topology key/value pair describing a required location. |
+| Property    | Type     | Always present | Description                                                    |
+| ----------- | -------- | -------------- | -------------------------------------------------------------- |
+| `property1` | `string` | no             | First topology key/value pair describing a required location.  |
+| `property2` | `string` | no             | Second topology key/value pair describing a required location. |
 
 ## `DockerVolumeClusterVolumeSpecCapacityRange (output)`
 
 Output object `DockerVolumeClusterVolumeSpecCapacityRange`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `limitBytes` | `number` | no | Maximum allowed size of the cluster volume in bytes. |
-| `requiredBytes` | `number` | no | Minimum required size of the cluster volume in bytes. |
+| Property        | Type     | Always present | Description                                           |
+| --------------- | -------- | -------------- | ----------------------------------------------------- |
+| `limitBytes`    | `number` | no             | Maximum allowed size of the cluster volume in bytes.  |
+| `requiredBytes` | `number` | no             | Minimum required size of the cluster volume in bytes. |
 
 ## `DockerVolumeClusterVolumeSpecSecret (output)`
 
 Output object `DockerVolumeClusterVolumeSpecSecret`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | Key used by the CSI plugin to identify the secret value. |
-| `secret` | `string` | yes | Name of the Docker Swarm secret providing the value. |
+| Property | Type     | Always present | Description                                              |
+| -------- | -------- | -------------- | -------------------------------------------------------- |
+| `key`    | `string` | yes            | Key used by the CSI plugin to identify the secret value. |
+| `secret` | `string` | yes            | Name of the Docker Swarm secret providing the value.     |

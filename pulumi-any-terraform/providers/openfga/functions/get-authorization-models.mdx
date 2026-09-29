@@ -19,22 +19,22 @@ Call `openfga.getAuthorizationModels(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `storeId` | `string` | yes |  |
+| Property  | Type     | Required | Description |
+| --------- | -------- | -------- | ----------- |
+| `storeId` | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authorizationModels` | `GetAuthorizationModelsAuthorizationModel[]` | yes |  |
-| `storeId` | `string` | yes |  |
+| Property              | Type                                         | Always present | Description |
+| --------------------- | -------------------------------------------- | -------------- | ----------- |
+| `authorizationModels` | `GetAuthorizationModelsAuthorizationModel[]` | yes            |             |
+| `storeId`             | `string`                                     | yes            |             |
 
 ## `GetAuthorizationModelsAuthorizationModel`
 
 Output object `GetAuthorizationModelsAuthorizationModel`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes | The unique ID of the authorization model. |
-| `modelJson` | `string` | yes | The authorization model definition in JSON format. |
+| Property    | Type     | Always present | Description                                        |
+| ----------- | -------- | -------------- | -------------------------------------------------- |
+| `id`        | `string` | yes            | The unique ID of the authorization model.          |
+| `modelJson` | `string` | yes            | The authorization model definition in JSON format. |

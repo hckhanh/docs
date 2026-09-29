@@ -19,56 +19,56 @@ Call `portainer.getLdapUsers(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `anonymousMode` | `boolean` | no |  |
-| `id` | `string` | no |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `searches` | `GetLdapUsersSearch (input)[]` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property        | Type                           | Required | Description |
+| --------------- | ------------------------------ | -------- | ----------- |
+| `anonymousMode` | `boolean`                      | no       |             |
+| `id`            | `string`                       | no       |             |
+| `password`      | `string`                       | no       |             |
+| `readerDn`      | `string`                       | no       |             |
+| `searches`      | `GetLdapUsersSearch (input)[]` | no       |             |
+| `startTls`      | `boolean`                      | no       |             |
+| `tlsSkipVerify` | `boolean`                      | no       |             |
+| `url`           | `string`                       | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `anonymousMode` | `boolean` | no |  |
-| `entries` | `GetLdapUsersEntry[]` | yes |  |
-| `id` | `string` | yes |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `searches` | `GetLdapUsersSearch (output)[]` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property        | Type                            | Always present | Description |
+| --------------- | ------------------------------- | -------------- | ----------- |
+| `anonymousMode` | `boolean`                       | no             |             |
+| `entries`       | `GetLdapUsersEntry[]`           | yes            |             |
+| `id`            | `string`                        | yes            |             |
+| `password`      | `string`                        | no             |             |
+| `readerDn`      | `string`                        | no             |             |
+| `searches`      | `GetLdapUsersSearch (output)[]` | no             |             |
+| `startTls`      | `boolean`                       | no             |             |
+| `tlsSkipVerify` | `boolean`                       | no             |             |
+| `url`           | `string`                        | yes            |             |
 
 ## `GetLdapUsersSearch (input)`
 
 Input object `GetLdapUsersSearch`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `baseDn` | `string` | yes | Distinguished name the search starts from. |
-| `filter` | `string` | no | LDAP filter narrowing the search, for example `(objectClass=person)`. |
-| `userNameAttribute` | `string` | no | Attribute holding the login name, for example `uid` or `sAMAccountName`. |
+| Property            | Type     | Required | Description                                                              |
+| ------------------- | -------- | -------- | ------------------------------------------------------------------------ |
+| `baseDn`            | `string` | yes      | Distinguished name the search starts from.                               |
+| `filter`            | `string` | no       | LDAP filter narrowing the search, for example `(objectClass=person)`.    |
+| `userNameAttribute` | `string` | no       | Attribute holding the login name, for example `uid` or `sAMAccountName`. |
 
 ## `GetLdapUsersEntry`
 
 Output object `GetLdapUsersEntry`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groups` | `string[]` | no |  |
-| `name` | `string` | no |  |
+| Property | Type       | Always present | Description |
+| -------- | ---------- | -------------- | ----------- |
+| `groups` | `string[]` | no             |             |
+| `name`   | `string`   | no             |             |
 
 ## `GetLdapUsersSearch (output)`
 
 Output object `GetLdapUsersSearch`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `baseDn` | `string` | yes | Distinguished name the search starts from. |
-| `filter` | `string` | no | LDAP filter narrowing the search, for example `(objectClass=person)`. |
-| `userNameAttribute` | `string` | no | Attribute holding the login name, for example `uid` or `sAMAccountName`. |
+| Property            | Type     | Always present | Description                                                              |
+| ------------------- | -------- | -------------- | ------------------------------------------------------------------------ |
+| `baseDn`            | `string` | yes            | Distinguished name the search starts from.                               |
+| `filter`            | `string` | no             | LDAP filter narrowing the search, for example `(objectClass=person)`.    |
+| `userNameAttribute` | `string` | no             | Attribute holding the login name, for example `uid` or `sAMAccountName`. |

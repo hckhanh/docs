@@ -19,48 +19,48 @@ Construct with `new portainer.AlertingSilence(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alertManagerUrl` | `string` | yes | URL of the AlertManager instance. |
-| `alertingSilenceId` | `string` | no |  |
-| `comment` | `string` | yes | Comment explaining the reason for the silence. |
-| `createdBy` | `string` | yes | Name of the user creating the silence. |
-| `endsAt` | `string` | yes | End time of the silence in RFC3339 format. |
-| `matchers` | `AlertingSilenceMatcher (input)[]` | yes | List of matchers to determine which alerts are silenced. |
-| `startsAt` | `string` | yes | Start time of the silence in RFC3339 format. |
+| Property            | Type                               | Required | Description                                              |
+| ------------------- | ---------------------------------- | -------- | -------------------------------------------------------- |
+| `alertManagerUrl`   | `string`                           | yes      | URL of the AlertManager instance.                        |
+| `alertingSilenceId` | `string`                           | no       |                                                          |
+| `comment`           | `string`                           | yes      | Comment explaining the reason for the silence.           |
+| `createdBy`         | `string`                           | yes      | Name of the user creating the silence.                   |
+| `endsAt`            | `string`                           | yes      | End time of the silence in RFC3339 format.               |
+| `matchers`          | `AlertingSilenceMatcher (input)[]` | yes      | List of matchers to determine which alerts are silenced. |
+| `startsAt`          | `string`                           | yes      | Start time of the silence in RFC3339 format.             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `alertManagerUrl` | `string` | no | URL of the AlertManager instance. |
-| `alertingSilenceId` | `string` | no |  |
-| `comment` | `string` | no | Comment explaining the reason for the silence. |
-| `createdBy` | `string` | no | Name of the user creating the silence. |
-| `endsAt` | `string` | no | End time of the silence in RFC3339 format. |
-| `matchers` | `AlertingSilenceMatcher (output)[]` | no | List of matchers to determine which alerts are silenced. |
-| `startsAt` | `string` | no | Start time of the silence in RFC3339 format. |
+| Property            | Type                                | Computed | Description                                              |
+| ------------------- | ----------------------------------- | -------- | -------------------------------------------------------- |
+| `alertManagerUrl`   | `string`                            | no       | URL of the AlertManager instance.                        |
+| `alertingSilenceId` | `string`                            | no       |                                                          |
+| `comment`           | `string`                            | no       | Comment explaining the reason for the silence.           |
+| `createdBy`         | `string`                            | no       | Name of the user creating the silence.                   |
+| `endsAt`            | `string`                            | no       | End time of the silence in RFC3339 format.               |
+| `matchers`          | `AlertingSilenceMatcher (output)[]` | no       | List of matchers to determine which alerts are silenced. |
+| `startsAt`          | `string`                            | no       | Start time of the silence in RFC3339 format.             |
 
 ## `AlertingSilenceMatcher (input)`
 
 Input object `AlertingSilenceMatcher`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `isEqual` | `boolean` | no | Whether to match for equality (true) or inequality (false). |
-| `isRegex` | `boolean` | yes | Whether the value is a regular expression. |
-| `name` | `string` | yes | Label name to match. |
-| `value` | `string` | yes | Label value to match. |
+| Property  | Type      | Required | Description                                                 |
+| --------- | --------- | -------- | ----------------------------------------------------------- |
+| `isEqual` | `boolean` | no       | Whether to match for equality (true) or inequality (false). |
+| `isRegex` | `boolean` | yes      | Whether the value is a regular expression.                  |
+| `name`    | `string`  | yes      | Label name to match.                                        |
+| `value`   | `string`  | yes      | Label value to match.                                       |
 
 ## `AlertingSilenceMatcher (output)`
 
 Output object `AlertingSilenceMatcher`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `isEqual` | `boolean` | no | Whether to match for equality (true) or inequality (false). |
-| `isRegex` | `boolean` | yes | Whether the value is a regular expression. |
-| `name` | `string` | yes | Label name to match. |
-| `value` | `string` | yes | Label value to match. |
+| Property  | Type      | Always present | Description                                                 |
+| --------- | --------- | -------------- | ----------------------------------------------------------- |
+| `isEqual` | `boolean` | no             | Whether to match for equality (true) or inequality (false). |
+| `isRegex` | `boolean` | yes            | Whether the value is a regular expression.                  |
+| `name`    | `string`  | yes            | Label name to match.                                        |
+| `value`   | `string`  | yes            | Label value to match.                                       |

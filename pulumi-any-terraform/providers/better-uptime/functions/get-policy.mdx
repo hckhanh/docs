@@ -19,69 +19,69 @@ Call `betteruptime.getPolicy(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `name`   | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `fallbackPolicyId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `incidentToken` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `policyGroupId` | `number` | yes |  |
-| `repeatCount` | `number` | yes |  |
-| `repeatDelay` | `number` | yes |  |
-| `steps` | `GetPolicyStep[]` | yes |  |
+| Property           | Type              | Always present | Description |
+| ------------------ | ----------------- | -------------- | ----------- |
+| `fallbackPolicyId` | `number`          | yes            |             |
+| `id`               | `string`          | yes            |             |
+| `incidentToken`    | `string`          | yes            |             |
+| `name`             | `string`          | yes            |             |
+| `policyGroupId`    | `number`          | yes            |             |
+| `repeatCount`      | `number`          | yes            |             |
+| `repeatDelay`      | `number`          | yes            |             |
+| `steps`            | `GetPolicyStep[]` | yes            |             |
 
 ## `GetPolicyStep`
 
 Output object `GetPolicyStep`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actionType` | `string` | no |  |
-| `comment` | `string` | no |  |
-| `days` | `string[]` | no |  |
-| `metadataKey` | `string` | no |  |
-| `metadataValue` | `GetPolicyStepMetadataValue[]` | no |  |
-| `metadataValues` | `string[]` | no |  |
-| `policyId` | `number` | no |  |
-| `policyMetadataKey` | `string` | no |  |
-| `reminderEnabled` | `boolean` | no |  |
-| `reminderIntervalHours` | `number` | no |  |
-| `stepMembers` | `GetPolicyStepStepMember[]` | no |  |
-| `timeFrom` | `string` | no |  |
-| `timeTo` | `string` | no |  |
-| `timezone` | `string` | no |  |
-| `type` | `string` | no |  |
-| `urgencyId` | `number` | no |  |
-| `waitBefore` | `number` | no |  |
-| `waitUntilTime` | `string` | no |  |
-| `waitUntilTimezone` | `string` | no |  |
+| Property                | Type                           | Always present | Description |
+| ----------------------- | ------------------------------ | -------------- | ----------- |
+| `actionType`            | `string`                       | no             |             |
+| `comment`               | `string`                       | no             |             |
+| `days`                  | `string[]`                     | no             |             |
+| `metadataKey`           | `string`                       | no             |             |
+| `metadataValue`         | `GetPolicyStepMetadataValue[]` | no             |             |
+| `metadataValues`        | `string[]`                     | no             |             |
+| `policyId`              | `number`                       | no             |             |
+| `policyMetadataKey`     | `string`                       | no             |             |
+| `reminderEnabled`       | `boolean`                      | no             |             |
+| `reminderIntervalHours` | `number`                       | no             |             |
+| `stepMembers`           | `GetPolicyStepStepMember[]`    | no             |             |
+| `timeFrom`              | `string`                       | no             |             |
+| `timeTo`                | `string`                       | no             |             |
+| `timezone`              | `string`                       | no             |             |
+| `type`                  | `string`                       | no             |             |
+| `urgencyId`             | `number`                       | no             |             |
+| `waitBefore`            | `number`                       | no             |             |
+| `waitUntilTime`         | `string`                       | no             |             |
+| `waitUntilTimezone`     | `string`                       | no             |             |
 
 ## `GetPolicyStepMetadataValue`
 
 Output object `GetPolicyStepMetadataValue`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | no |  |
-| `itemId` | `string` | no |  |
-| `name` | `string` | no |  |
-| `type` | `string` | no |  |
-| `value` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `email`  | `string` | no             |             |
+| `itemId` | `string` | no             |             |
+| `name`   | `string` | no             |             |
+| `type`   | `string` | no             |             |
+| `value`  | `string` | no             |             |
 
 ## `GetPolicyStepStepMember`
 
 Output object `GetPolicyStepStepMember`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | no |  |
-| `id` | `number` | no |  |
-| `metadataKey` | `string` | no |  |
-| `teamId` | `number` | no |  |
-| `type` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `email`       | `string` | no             |             |
+| `id`          | `number` | no             |             |
+| `metadataKey` | `string` | no             |             |
+| `teamId`      | `number` | no             |             |
+| `type`        | `string` | no             |             |

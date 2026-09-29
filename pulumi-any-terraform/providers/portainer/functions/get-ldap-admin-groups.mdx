@@ -19,47 +19,47 @@ Call `portainer.getLdapAdminGroups(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `adminGroupSearches` | `GetLdapAdminGroupsAdminGroupSearch (input)[]` | no |  |
-| `anonymousMode` | `boolean` | no |  |
-| `id` | `string` | no |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property             | Type                                           | Required | Description |
+| -------------------- | ---------------------------------------------- | -------- | ----------- |
+| `adminGroupSearches` | `GetLdapAdminGroupsAdminGroupSearch (input)[]` | no       |             |
+| `anonymousMode`      | `boolean`                                      | no       |             |
+| `id`                 | `string`                                       | no       |             |
+| `password`           | `string`                                       | no       |             |
+| `readerDn`           | `string`                                       | no       |             |
+| `startTls`           | `boolean`                                      | no       |             |
+| `tlsSkipVerify`      | `boolean`                                      | no       |             |
+| `url`                | `string`                                       | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `adminGroupSearches` | `GetLdapAdminGroupsAdminGroupSearch (output)[]` | no |  |
-| `anonymousMode` | `boolean` | no |  |
-| `groupNames` | `string[]` | yes |  |
-| `id` | `string` | yes |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property             | Type                                            | Always present | Description |
+| -------------------- | ----------------------------------------------- | -------------- | ----------- |
+| `adminGroupSearches` | `GetLdapAdminGroupsAdminGroupSearch (output)[]` | no             |             |
+| `anonymousMode`      | `boolean`                                       | no             |             |
+| `groupNames`         | `string[]`                                      | yes            |             |
+| `id`                 | `string`                                        | yes            |             |
+| `password`           | `string`                                        | no             |             |
+| `readerDn`           | `string`                                        | no             |             |
+| `startTls`           | `boolean`                                       | no             |             |
+| `tlsSkipVerify`      | `boolean`                                       | no             |             |
+| `url`                | `string`                                        | yes            |             |
 
 ## `GetLdapAdminGroupsAdminGroupSearch (input)`
 
 Input object `GetLdapAdminGroupsAdminGroupSearch`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | Attribute on a group entry listing its members. |
-| `groupBaseDn` | `string` | yes | Distinguished name the group search starts from. |
-| `groupFilter` | `string` | no | LDAP filter narrowing the group search. |
+| Property         | Type     | Required | Description                                      |
+| ---------------- | -------- | -------- | ------------------------------------------------ |
+| `groupAttribute` | `string` | no       | Attribute on a group entry listing its members.  |
+| `groupBaseDn`    | `string` | yes      | Distinguished name the group search starts from. |
+| `groupFilter`    | `string` | no       | LDAP filter narrowing the group search.          |
 
 ## `GetLdapAdminGroupsAdminGroupSearch (output)`
 
 Output object `GetLdapAdminGroupsAdminGroupSearch`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | Attribute on a group entry listing its members. |
-| `groupBaseDn` | `string` | yes | Distinguished name the group search starts from. |
-| `groupFilter` | `string` | no | LDAP filter narrowing the group search. |
+| Property         | Type     | Always present | Description                                      |
+| ---------------- | -------- | -------------- | ------------------------------------------------ |
+| `groupAttribute` | `string` | no             | Attribute on a group entry listing its members.  |
+| `groupBaseDn`    | `string` | yes            | Distinguished name the group search starts from. |
+| `groupFilter`    | `string` | no             | LDAP filter narrowing the group search.          |

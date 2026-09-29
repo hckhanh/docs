@@ -19,45 +19,45 @@ Construct with `new logtail.Connection(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clientType` | `string` | yes | Type of client connection. Currently only `clickhouse` is supported. |
-| `dataRegion` | `string` | no | Data region or private cluster name. Permitted values for most plans are: `usWest`, `germany`, `singapore`. |
-| `ipAllowlists` | `string[]` | no | Array of IP addresses or CIDR ranges that are allowed to use this connection. |
-| `note` | `string` | no | A descriptive note for the connection. |
-| `teamIds` | `number[]` | no | Array of team IDs to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
-| `teamNames` | `string[]` | no | Array of team names to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
-| `validUntil` | `string` | no | ISO 8601 timestamp when the connection expires. |
+| Property       | Type       | Required | Description                                                                                                    |
+| -------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `clientType`   | `string`   | yes      | Type of client connection. Currently only `clickhouse` is supported.                                           |
+| `dataRegion`   | `string`   | no       | Data region or private cluster name. Permitted values for most plans are: `usWest`, `germany`, `singapore`.    |
+| `ipAllowlists` | `string[]` | no       | Array of IP addresses or CIDR ranges that are allowed to use this connection.                                  |
+| `note`         | `string`   | no       | A descriptive note for the connection.                                                                         |
+| `teamIds`      | `number[]` | no       | Array of team IDs to associate with the connection. Only one of `teamNames` or `teamIds` should be provided.   |
+| `teamNames`    | `string[]` | no       | Array of team names to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
+| `validUntil`   | `string`   | no       | ISO 8601 timestamp when the connection expires.                                                                |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `clientType` | `string` | no | Type of client connection. Currently only `clickhouse` is supported. |
-| `createdAt` | `string` | yes | The time when this connection was created. |
-| `createdBy` | `{ [key: string]: string }` | yes | Information about the user who created this connection. |
-| `dataRegion` | `string` | no | Data region or private cluster name. Permitted values for most plans are: `usWest`, `germany`, `singapore`. |
-| `dataSources` | `ConnectionDataSource (output)[]` | yes | List of available data sources for this connection. |
-| `host` | `string` | yes | The connection hostname. |
-| `ipAllowlists` | `string[]` | no | Array of IP addresses or CIDR ranges that are allowed to use this connection. |
-| `note` | `string` | no | A descriptive note for the connection. |
-| `password` | `string` | yes | The connection password. Only available immediately after creation. |
-| `port` | `number` | yes | The connection port. |
-| `sampleQuery` | `string` | yes | A sample query showing how to use this connection. |
-| `teamIds` | `number[]` | no | Array of team IDs to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
-| `teamNames` | `string[]` | no | Array of team names to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
-| `username` | `string` | yes | The connection username. |
-| `validUntil` | `string` | no | ISO 8601 timestamp when the connection expires. |
+| Property       | Type                              | Computed | Description                                                                                                    |
+| -------------- | --------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `clientType`   | `string`                          | no       | Type of client connection. Currently only `clickhouse` is supported.                                           |
+| `createdAt`    | `string`                          | yes      | The time when this connection was created.                                                                     |
+| `createdBy`    | `{ [key: string]: string }`       | yes      | Information about the user who created this connection.                                                        |
+| `dataRegion`   | `string`                          | no       | Data region or private cluster name. Permitted values for most plans are: `usWest`, `germany`, `singapore`.    |
+| `dataSources`  | `ConnectionDataSource (output)[]` | yes      | List of available data sources for this connection.                                                            |
+| `host`         | `string`                          | yes      | The connection hostname.                                                                                       |
+| `ipAllowlists` | `string[]`                        | no       | Array of IP addresses or CIDR ranges that are allowed to use this connection.                                  |
+| `note`         | `string`                          | no       | A descriptive note for the connection.                                                                         |
+| `password`     | `string`                          | yes      | The connection password. Only available immediately after creation.                                            |
+| `port`         | `number`                          | yes      | The connection port.                                                                                           |
+| `sampleQuery`  | `string`                          | yes      | A sample query showing how to use this connection.                                                             |
+| `teamIds`      | `number[]`                        | no       | Array of team IDs to associate with the connection. Only one of `teamNames` or `teamIds` should be provided.   |
+| `teamNames`    | `string[]`                        | no       | Array of team names to associate with the connection. Only one of `teamNames` or `teamIds` should be provided. |
+| `username`     | `string`                          | yes      | The connection username.                                                                                       |
+| `validUntil`   | `string`                          | no       | ISO 8601 timestamp when the connection expires.                                                                |
 
 ## `ConnectionDataSource (output)`
 
 Output object `ConnectionDataSource`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `dataSources` | `string[]` | no |  |
-| `sourceId` | `number` | no |  |
-| `sourceName` | `string` | no |  |
-| `teamName` | `string` | no |  |
+| Property      | Type       | Always present | Description |
+| ------------- | ---------- | -------------- | ----------- |
+| `dataSources` | `string[]` | no             |             |
+| `sourceId`    | `number`   | no             |             |
+| `sourceName`  | `string`   | no             |             |
+| `teamName`    | `string`   | no             |             |

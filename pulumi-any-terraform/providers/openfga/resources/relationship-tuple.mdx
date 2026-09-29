@@ -19,42 +19,42 @@ Construct with `new openfga.RelationshipTuple(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authorizationModelId` | `string` | no | The unique ID of the authorization model this relationship tuple is related with. Can be left blank to refer to the latest authorization model. |
-| `condition` | `RelationshipTupleCondition (input)` | no | A condition of the relationship tuple. |
-| `object` | `string` | yes | The object of the relationship tuple. |
-| `relation` | `string` | yes | The relation of the relationship tuple. |
-| `storeId` | `string` | yes | The unique ID of the store this relationship tuple belongs to. |
-| `user` | `string` | yes | The user of the relationship tuple. |
+| Property               | Type                                 | Required | Description                                                                                                                                     |
+| ---------------------- | ------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authorizationModelId` | `string`                             | no       | The unique ID of the authorization model this relationship tuple is related with. Can be left blank to refer to the latest authorization model. |
+| `condition`            | `RelationshipTupleCondition (input)` | no       | A condition of the relationship tuple.                                                                                                          |
+| `object`               | `string`                             | yes      | The object of the relationship tuple.                                                                                                           |
+| `relation`             | `string`                             | yes      | The relation of the relationship tuple.                                                                                                         |
+| `storeId`              | `string`                             | yes      | The unique ID of the store this relationship tuple belongs to.                                                                                  |
+| `user`                 | `string`                             | yes      | The user of the relationship tuple.                                                                                                             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `authorizationModelId` | `string` | no | The unique ID of the authorization model this relationship tuple is related with. Can be left blank to refer to the latest authorization model. |
-| `condition` | `RelationshipTupleCondition (output)` | no | A condition of the relationship tuple. |
-| `object` | `string` | no | The object of the relationship tuple. |
-| `relation` | `string` | no | The relation of the relationship tuple. |
-| `storeId` | `string` | no | The unique ID of the store this relationship tuple belongs to. |
-| `user` | `string` | no | The user of the relationship tuple. |
+| Property               | Type                                  | Computed | Description                                                                                                                                     |
+| ---------------------- | ------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authorizationModelId` | `string`                              | no       | The unique ID of the authorization model this relationship tuple is related with. Can be left blank to refer to the latest authorization model. |
+| `condition`            | `RelationshipTupleCondition (output)` | no       | A condition of the relationship tuple.                                                                                                          |
+| `object`               | `string`                              | no       | The object of the relationship tuple.                                                                                                           |
+| `relation`             | `string`                              | no       | The relation of the relationship tuple.                                                                                                         |
+| `storeId`              | `string`                              | no       | The unique ID of the store this relationship tuple belongs to.                                                                                  |
+| `user`                 | `string`                              | no       | The user of the relationship tuple.                                                                                                             |
 
 ## `RelationshipTupleCondition (input)`
 
 Input object `RelationshipTupleCondition`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated. |
-| `name` | `string` | yes | The name of the condition. |
+| Property      | Type     | Required | Description                                                   |
+| ------------- | -------- | -------- | ------------------------------------------------------------- |
+| `contextJson` | `string` | no       | The (partial) context under which the condition is evaluated. |
+| `name`        | `string` | yes      | The name of the condition.                                    |
 
 ## `RelationshipTupleCondition (output)`
 
 Output object `RelationshipTupleCondition`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated. |
-| `name` | `string` | yes | The name of the condition. |
+| Property      | Type     | Always present | Description                                                   |
+| ------------- | -------- | -------------- | ------------------------------------------------------------- |
+| `contextJson` | `string` | no             | The (partial) context under which the condition is evaluated. |
+| `name`        | `string` | yes            | The name of the condition.                                    |

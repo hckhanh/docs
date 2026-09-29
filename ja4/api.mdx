@@ -35,13 +35,13 @@ Parses a JA4 fingerprint string in the format `{sectionA}_{sectionB}_{sectionC}`
 Extends `Error`. Thrown when the fingerprint string is malformed or contains invalid values.
 
 ```ts
-import { JA4ParseError, parseJA4 } from "@hckhanh/ja4";
+import { JA4ParseError, parseJA4 } from "@hckhanh/ja4"
 
 try {
-  parseJA4("invalid");
+  parseJA4("invalid")
 } catch (error) {
   if (error instanceof JA4ParseError) {
-    console.error(error.message);
+    console.error(error.message)
   }
 }
 ```

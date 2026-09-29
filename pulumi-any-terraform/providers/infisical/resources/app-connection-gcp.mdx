@@ -19,39 +19,39 @@ Construct with `new infisical.AppConnectionGcp(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionGcpCredentials (input)` | yes | The credentials for the GCP App Connection |
-| `description` | `string` | no | An optional description for the GCP App Connection. |
-| `method` | `string` | yes | The method used to authenticate with GCP. Possible values are: service-account-impersonation |
-| `name` | `string` | no | The name of the GCP App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                  | Required | Description                                                                                                                   |
+| ------------- | ------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionGcpCredentials (input)` | yes      | The credentials for the GCP App Connection                                                                                    |
+| `description` | `string`                              | no       | An optional description for the GCP App Connection.                                                                           |
+| `method`      | `string`                              | yes      | The method used to authenticate with GCP. Possible values are: service-account-impersonation                                  |
+| `name`        | `string`                              | no       | The name of the GCP App Connection to create. Must be slug-friendly                                                           |
+| `projectId`   | `string`                              | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionGcpCredentials (output)` | no | The credentials for the GCP App Connection |
-| `credentialsHash` | `string` | yes | The hash of the GCP App Connection credentials |
-| `description` | `string` | no | An optional description for the GCP App Connection. |
-| `method` | `string` | no | The method used to authenticate with GCP. Possible values are: service-account-impersonation |
-| `name` | `string` | no | The name of the GCP App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                   | Computed | Description                                                                                                                   |
+| ----------------- | -------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionGcpCredentials (output)` | no       | The credentials for the GCP App Connection                                                                                    |
+| `credentialsHash` | `string`                               | yes      | The hash of the GCP App Connection credentials                                                                                |
+| `description`     | `string`                               | no       | An optional description for the GCP App Connection.                                                                           |
+| `method`          | `string`                               | no       | The method used to authenticate with GCP. Possible values are: service-account-impersonation                                  |
+| `name`            | `string`                               | no       | The name of the GCP App Connection to create. Must be slug-friendly                                                           |
+| `projectId`       | `string`                               | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionGcpCredentials (input)`
 
 Input object `AppConnectionGcpCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `serviceAccountEmail` | `string` | no | The service account email to connect with GCP. The service account ID (the part of the email before '@') must be suffixed with the first two sections of your organization ID e.g. service-account-df92581a-0fe9@my-project.iam.gserviceaccount.com. For more details, refer to the documentation here https://infisical.com/docs/integrations/app-connections/gcp#configure-service-account-for-infisical |
+| Property              | Type     | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `serviceAccountEmail` | `string` | no       | The service account email to connect with GCP. The service account ID (the part of the email before '@') must be suffixed with the first two sections of your organization ID e.g. service-account-df92581a-0fe9@my-project.iam.gserviceaccount.com. For more details, refer to the documentation here https://infisical.com/docs/integrations/app-connections/gcp#configure-service-account-for-infisical |
 
 ## `AppConnectionGcpCredentials (output)`
 
 Output object `AppConnectionGcpCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `serviceAccountEmail` | `string` | no | The service account email to connect with GCP. The service account ID (the part of the email before '@') must be suffixed with the first two sections of your organization ID e.g. service-account-df92581a-0fe9@my-project.iam.gserviceaccount.com. For more details, refer to the documentation here https://infisical.com/docs/integrations/app-connections/gcp#configure-service-account-for-infisical |
+| Property              | Type     | Always present | Description                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `serviceAccountEmail` | `string` | no             | The service account email to connect with GCP. The service account ID (the part of the email before '@') must be suffixed with the first two sections of your organization ID e.g. service-account-df92581a-0fe9@my-project.iam.gserviceaccount.com. For more details, refer to the documentation here https://infisical.com/docs/integrations/app-connections/gcp#configure-service-account-for-infisical |

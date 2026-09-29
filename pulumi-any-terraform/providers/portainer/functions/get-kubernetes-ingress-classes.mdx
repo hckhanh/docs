@@ -19,27 +19,27 @@ Call `portainer.getKubernetesIngressClasses(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `defaultIngressClass` | `string` | yes |  |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `ingressClasses` | `GetKubernetesIngressClassesIngressClass[]` | yes |  |
+| Property              | Type                                        | Always present | Description |
+| --------------------- | ------------------------------------------- | -------------- | ----------- |
+| `defaultIngressClass` | `string`                                    | yes            |             |
+| `environmentId`       | `number`                                    | yes            |             |
+| `id`                  | `string`                                    | yes            |             |
+| `ingressClasses`      | `GetKubernetesIngressClassesIngressClass[]` | yes            |             |
 
 ## `GetKubernetesIngressClassesIngressClass`
 
 Output object `GetKubernetesIngressClassesIngressClass`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `annotations` | `{ [key: string]: string }` | no |  |
-| `controller` | `string` | no |  |
-| `isDefault` | `boolean` | no |  |
-| `name` | `string` | no |  |
+| Property      | Type                        | Always present | Description |
+| ------------- | --------------------------- | -------------- | ----------- |
+| `annotations` | `{ [key: string]: string }` | no             |             |
+| `controller`  | `string`                    | no             |             |
+| `isDefault`   | `boolean`                   | no             |             |
+| `name`        | `string`                    | no             |             |

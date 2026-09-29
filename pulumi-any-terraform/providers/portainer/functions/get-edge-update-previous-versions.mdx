@@ -19,26 +19,26 @@ Call `portainer.getEdgeUpdatePreviousVersions(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no |  |
-| `environmentIds` | `number[]` | no |  |
-| `id` | `string` | no |  |
+| Property         | Type       | Required | Description |
+| ---------------- | ---------- | -------- | ----------- |
+| `edgeGroupIds`   | `number[]` | no       |             |
+| `environmentIds` | `number[]` | no       |             |
+| `id`             | `string`   | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no |  |
-| `environmentIds` | `number[]` | no |  |
-| `id` | `string` | yes |  |
-| `previousVersions` | `GetEdgeUpdatePreviousVersionsPreviousVersion[]` | yes |  |
+| Property           | Type                                             | Always present | Description |
+| ------------------ | ------------------------------------------------ | -------------- | ----------- |
+| `edgeGroupIds`     | `number[]`                                       | no             |             |
+| `environmentIds`   | `number[]`                                       | no             |             |
+| `id`               | `string`                                         | yes            |             |
+| `previousVersions` | `GetEdgeUpdatePreviousVersionsPreviousVersion[]` | yes            |             |
 
 ## `GetEdgeUpdatePreviousVersionsPreviousVersion`
 
 Output object `GetEdgeUpdatePreviousVersionsPreviousVersion`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `string` | no |  |
-| `version` | `string` | no |  |
+| Property     | Type     | Always present | Description |
+| ------------ | -------- | -------------- | ----------- |
+| `endpointId` | `string` | no             |             |
+| `version`    | `string` | no             |             |

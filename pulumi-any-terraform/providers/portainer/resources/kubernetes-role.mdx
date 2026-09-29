@@ -19,20 +19,20 @@ Construct with `new portainer.KubernetesRole(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
-| `kubernetesRoleId` | `string` | no |  |
-| `manifest` | `string` | yes | Raw YAML or JSON manifest defining the Kubernetes Role. |
-| `namespace` | `string` | yes | Kubernetes namespace in which the Role is created. |
+| Property           | Type     | Required | Description                                                                                                                              |
+| ------------------ | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | yes      | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
+| `kubernetesRoleId` | `string` | no       |                                                                                                                                          |
+| `manifest`         | `string` | yes      | Raw YAML or JSON manifest defining the Kubernetes Role.                                                                                  |
+| `namespace`        | `string` | yes      | Kubernetes namespace in which the Role is created.                                                                                       |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
-| `kubernetesRoleId` | `string` | no |  |
-| `manifest` | `string` | no | Raw YAML or JSON manifest defining the Kubernetes Role. |
-| `namespace` | `string` | no | Kubernetes namespace in which the Role is created. |
+| Property           | Type     | Computed | Description                                                                                                                              |
+| ------------------ | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | no       | Identifier of the Portainer Kubernetes environment (endpoint) where the Role is managed. Changing this value forces resource recreation. |
+| `kubernetesRoleId` | `string` | no       |                                                                                                                                          |
+| `manifest`         | `string` | no       | Raw YAML or JSON manifest defining the Kubernetes Role.                                                                                  |
+| `namespace`        | `string` | no       | Kubernetes namespace in which the Role is created.                                                                                       |

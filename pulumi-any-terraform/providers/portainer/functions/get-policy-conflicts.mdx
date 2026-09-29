@@ -19,45 +19,45 @@ Call `portainer.getPolicyConflicts(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `policyJson` | `string` | yes |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `id`         | `string` | no       |             |
+| `policyJson` | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `conflicts` | `GetPolicyConflictsConflict[]` | yes |  |
-| `id` | `string` | yes |  |
-| `newGroups` | `GetPolicyConflictsNewGroup[]` | yes |  |
-| `policyJson` | `string` | yes |  |
-| `supportedEnvironments` | `number` | yes |  |
-| `totalEnvironments` | `number` | yes |  |
-| `unsupportedEnvironments` | `number` | yes |  |
+| Property                  | Type                           | Always present | Description |
+| ------------------------- | ------------------------------ | -------------- | ----------- |
+| `conflicts`               | `GetPolicyConflictsConflict[]` | yes            |             |
+| `id`                      | `string`                       | yes            |             |
+| `newGroups`               | `GetPolicyConflictsNewGroup[]` | yes            |             |
+| `policyJson`              | `string`                       | yes            |             |
+| `supportedEnvironments`   | `number`                       | yes            |             |
+| `totalEnvironments`       | `number`                       | yes            |             |
+| `unsupportedEnvironments` | `number`                       | yes            |             |
 
 ## `GetPolicyConflictsConflict`
 
 Output object `GetPolicyConflictsConflict`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentCount` | `number` | no |  |
-| `environmentGroupId` | `number` | no |  |
-| `environmentGroupName` | `string` | no |  |
-| `existingPolicyId` | `number` | no |  |
-| `existingPolicyName` | `string` | no |  |
-| `supportedEnvironments` | `number` | no |  |
-| `unsupportedEnvironments` | `number` | no |  |
+| Property                  | Type     | Always present | Description |
+| ------------------------- | -------- | -------------- | ----------- |
+| `environmentCount`        | `number` | no             |             |
+| `environmentGroupId`      | `number` | no             |             |
+| `environmentGroupName`    | `string` | no             |             |
+| `existingPolicyId`        | `number` | no             |             |
+| `existingPolicyName`      | `string` | no             |             |
+| `supportedEnvironments`   | `number` | no             |             |
+| `unsupportedEnvironments` | `number` | no             |             |
 
 ## `GetPolicyConflictsNewGroup`
 
 Output object `GetPolicyConflictsNewGroup`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentCount` | `number` | no |  |
-| `environmentGroupId` | `number` | no |  |
-| `environmentGroupName` | `string` | no |  |
-| `supportedEnvironments` | `number` | no |  |
-| `unsupportedEnvironments` | `number` | no |  |
+| Property                  | Type     | Always present | Description |
+| ------------------------- | -------- | -------------- | ----------- |
+| `environmentCount`        | `number` | no             |             |
+| `environmentGroupId`      | `number` | no             |             |
+| `environmentGroupName`    | `string` | no             |             |
+| `supportedEnvironments`   | `number` | no             |             |
+| `unsupportedEnvironments` | `number` | no             |             |

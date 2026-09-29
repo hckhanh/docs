@@ -19,26 +19,26 @@ Call `portainer.getUserNamespaces(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `userId` | `number` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `userId` | `number` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes |  |
-| `namespaces` | `GetUserNamespacesNamespace[]` | yes |  |
-| `raw` | `string` | yes |  |
-| `userId` | `number` | yes |  |
+| Property     | Type                           | Always present | Description |
+| ------------ | ------------------------------ | -------------- | ----------- |
+| `id`         | `string`                       | yes            |             |
+| `namespaces` | `GetUserNamespacesNamespace[]` | yes            |             |
+| `raw`        | `string`                       | yes            |             |
+| `userId`     | `number`                       | yes            |             |
 
 ## `GetUserNamespacesNamespace`
 
 Output object `GetUserNamespacesNamespace`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authorizations` | `string[]` | no |  |
-| `endpointId` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property         | Type       | Always present | Description |
+| ---------------- | ---------- | -------------- | ----------- |
+| `authorizations` | `string[]` | no             |             |
+| `endpointId`     | `string`   | no             |             |
+| `namespace`      | `string`   | no             |             |

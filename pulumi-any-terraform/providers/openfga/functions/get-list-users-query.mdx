@@ -19,65 +19,65 @@ Call `openfga.getListUsersQuery(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authorizationModelId` | `string` | no |  |
-| `contextJson` | `string` | no |  |
-| `contextualTuples` | `GetListUsersQueryContextualTuple (input)[]` | no |  |
-| `object` | `string` | yes |  |
-| `relation` | `string` | yes |  |
-| `storeId` | `string` | yes |  |
-| `type` | `string` | yes |  |
+| Property               | Type                                         | Required | Description |
+| ---------------------- | -------------------------------------------- | -------- | ----------- |
+| `authorizationModelId` | `string`                                     | no       |             |
+| `contextJson`          | `string`                                     | no       |             |
+| `contextualTuples`     | `GetListUsersQueryContextualTuple (input)[]` | no       |             |
+| `object`               | `string`                                     | yes      |             |
+| `relation`             | `string`                                     | yes      |             |
+| `storeId`              | `string`                                     | yes      |             |
+| `type`                 | `string`                                     | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authorizationModelId` | `string` | no |  |
-| `contextJson` | `string` | no |  |
-| `contextualTuples` | `GetListUsersQueryContextualTuple (output)[]` | no |  |
-| `object` | `string` | yes |  |
-| `relation` | `string` | yes |  |
-| `results` | `string[]` | yes |  |
-| `storeId` | `string` | yes |  |
-| `type` | `string` | yes |  |
+| Property               | Type                                          | Always present | Description |
+| ---------------------- | --------------------------------------------- | -------------- | ----------- |
+| `authorizationModelId` | `string`                                      | no             |             |
+| `contextJson`          | `string`                                      | no             |             |
+| `contextualTuples`     | `GetListUsersQueryContextualTuple (output)[]` | no             |             |
+| `object`               | `string`                                      | yes            |             |
+| `relation`             | `string`                                      | yes            |             |
+| `results`              | `string[]`                                    | yes            |             |
+| `storeId`              | `string`                                      | yes            |             |
+| `type`                 | `string`                                      | yes            |             |
 
 ## `GetListUsersQueryContextualTuple (input)`
 
 Input object `GetListUsersQueryContextualTuple`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `condition` | `GetListUsersQueryContextualTupleCondition (input)` | no | A condition of the contextual relationship tuple |
-| `object` | `string` | yes | The object of the contextual relationship tuple |
-| `relation` | `string` | yes | The relation of the contextual relationship tuple |
-| `user` | `string` | yes | The user of the contextual relationship tuple |
+| Property    | Type                                                | Required | Description                                       |
+| ----------- | --------------------------------------------------- | -------- | ------------------------------------------------- |
+| `condition` | `GetListUsersQueryContextualTupleCondition (input)` | no       | A condition of the contextual relationship tuple  |
+| `object`    | `string`                                            | yes      | The object of the contextual relationship tuple   |
+| `relation`  | `string`                                            | yes      | The relation of the contextual relationship tuple |
+| `user`      | `string`                                            | yes      | The user of the contextual relationship tuple     |
 
 ## `GetListUsersQueryContextualTupleCondition (input)`
 
 Input object `GetListUsersQueryContextualTupleCondition`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated |
-| `name` | `string` | yes | The name of the condition |
+| Property      | Type     | Required | Description                                                  |
+| ------------- | -------- | -------- | ------------------------------------------------------------ |
+| `contextJson` | `string` | no       | The (partial) context under which the condition is evaluated |
+| `name`        | `string` | yes      | The name of the condition                                    |
 
 ## `GetListUsersQueryContextualTuple (output)`
 
 Output object `GetListUsersQueryContextualTuple`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `condition` | `GetListUsersQueryContextualTupleCondition (output)` | no | A condition of the contextual relationship tuple |
-| `object` | `string` | yes | The object of the contextual relationship tuple |
-| `relation` | `string` | yes | The relation of the contextual relationship tuple |
-| `user` | `string` | yes | The user of the contextual relationship tuple |
+| Property    | Type                                                 | Always present | Description                                       |
+| ----------- | ---------------------------------------------------- | -------------- | ------------------------------------------------- |
+| `condition` | `GetListUsersQueryContextualTupleCondition (output)` | no             | A condition of the contextual relationship tuple  |
+| `object`    | `string`                                             | yes            | The object of the contextual relationship tuple   |
+| `relation`  | `string`                                             | yes            | The relation of the contextual relationship tuple |
+| `user`      | `string`                                             | yes            | The user of the contextual relationship tuple     |
 
 ## `GetListUsersQueryContextualTupleCondition (output)`
 
 Output object `GetListUsersQueryContextualTupleCondition`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `contextJson` | `string` | no | The (partial) context under which the condition is evaluated |
-| `name` | `string` | yes | The name of the condition |
+| Property      | Type     | Always present | Description                                                  |
+| ------------- | -------- | -------------- | ------------------------------------------------------------ |
+| `contextJson` | `string` | no             | The (partial) context under which the condition is evaluated |
+| `name`        | `string` | yes            | The name of the condition                                    |

@@ -19,36 +19,36 @@ Call `portainer.getKubernetesManifestDryRun(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `failOnInvalid` | `boolean` | no |  |
-| `id` | `string` | no |  |
-| `manifests` | `string[]` | yes |  |
-| `namespace` | `string` | no |  |
+| Property        | Type       | Required | Description |
+| --------------- | ---------- | -------- | ----------- |
+| `environmentId` | `number`   | yes      |             |
+| `failOnInvalid` | `boolean`  | no       |             |
+| `id`            | `string`   | no       |             |
+| `manifests`     | `string[]` | yes      |             |
+| `namespace`     | `string`   | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `failOnInvalid` | `boolean` | no |  |
-| `failedCount` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `manifests` | `string[]` | yes |  |
-| `namespace` | `string` | no |  |
-| `passed` | `boolean` | yes |  |
-| `results` | `GetKubernetesManifestDryRunResult[]` | yes |  |
+| Property        | Type                                  | Always present | Description |
+| --------------- | ------------------------------------- | -------------- | ----------- |
+| `environmentId` | `number`                              | yes            |             |
+| `failOnInvalid` | `boolean`                             | no             |             |
+| `failedCount`   | `number`                              | yes            |             |
+| `id`            | `string`                              | yes            |             |
+| `manifests`     | `string[]`                            | yes            |             |
+| `namespace`     | `string`                              | no             |             |
+| `passed`        | `boolean`                             | yes            |             |
+| `results`       | `GetKubernetesManifestDryRunResult[]` | yes            |             |
 
 ## `GetKubernetesManifestDryRunResult`
 
 Output object `GetKubernetesManifestDryRunResult`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `documentIndex` | `number` | no |  |
-| `kind` | `string` | no |  |
-| `message` | `string` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `status` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `documentIndex` | `number` | no             |             |
+| `kind`          | `string` | no             |             |
+| `message`       | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `namespace`     | `string` | no             |             |
+| `status`        | `string` | no             |             |

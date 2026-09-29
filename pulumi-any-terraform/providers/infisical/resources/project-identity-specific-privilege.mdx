@@ -19,92 +19,92 @@ Construct with `new infisical.ProjectIdentitySpecificPrivilege(name, args, opts?
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes | The identity id to create identity specific privilege |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned specific privilege is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `permission` | `ProjectIdentitySpecificPrivilegePermission (input)` | no | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project identity specific privilege |
-| `permissionsV2s` | `ProjectIdentitySpecificPrivilegePermissionsV2 (input)[]` | no | The permissions assigned to the project identity specific privilege. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage. |
-| `projectSlug` | `string` | yes | The slug of the project to create identity specific privilege |
-| `slug` | `string` | no | The slug for the new privilege |
-| `temporaryAccessEndTime` | `string` | no | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | no | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type                                                      | Required | Description                                                                                                                                                                                                                          |
+| -------------------------- | --------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `identityId`               | `string`                                                  | yes      | The identity id to create identity specific privilege                                                                                                                                                                                |
+| `isTemporary`              | `boolean`                                                 | no       | Flag to indicate the assigned specific privilege is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required.                                                  |
+| `permission`               | `ProjectIdentitySpecificPrivilegePermission (input)`      | no       | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project identity specific privilege |
+| `permissionsV2s`           | `ProjectIdentitySpecificPrivilegePermissionsV2 (input)[]` | no       | The permissions assigned to the project identity specific privilege. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage.                                             |
+| `projectSlug`              | `string`                                                  | yes      | The slug of the project to create identity specific privilege                                                                                                                                                                        |
+| `slug`                     | `string`                                                  | no       | The slug for the new privilege                                                                                                                                                                                                       |
+| `temporaryAccessEndTime`   | `string`                                                  | no       | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                                                                                     |
+| `temporaryAccessStartTime` | `string`                                                  | no       | ISO time for which temporary access should begin. The current time is used by default.                                                                                                                                               |
+| `temporaryMode`            | `string`                                                  | no       | Type of temporary access given. Types: relative. Default: relative                                                                                                                                                                   |
+| `temporaryRange`           | `string`                                                  | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                                                                                              |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | no | The identity id to create identity specific privilege |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned specific privilege is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `permission` | `ProjectIdentitySpecificPrivilegePermission (output)` | no | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project identity specific privilege |
-| `permissionsV2s` | `ProjectIdentitySpecificPrivilegePermissionsV2 (output)[]` | no | The permissions assigned to the project identity specific privilege. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage. |
-| `projectSlug` | `string` | no | The slug of the project to create identity specific privilege |
-| `slug` | `string` | no | The slug for the new privilege |
-| `temporaryAccessEndTime` | `string` | no | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | no | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type                                                       | Computed | Description                                                                                                                                                                                                                          |
+| -------------------------- | ---------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `identityId`               | `string`                                                   | no       | The identity id to create identity specific privilege                                                                                                                                                                                |
+| `isTemporary`              | `boolean`                                                  | no       | Flag to indicate the assigned specific privilege is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required.                                                  |
+| `permission`               | `ProjectIdentitySpecificPrivilegePermission (output)`      | no       | (DEPRECATED, USE permissions_v2. Refer to the migration guide in https://infisical.com/docs/internals/permissions#migrating-from-permission-v1-to-permission-v2) The permissions assigned to the project identity specific privilege |
+| `permissionsV2s`           | `ProjectIdentitySpecificPrivilegePermissionsV2 (output)[]` | no       | The permissions assigned to the project identity specific privilege. Refer to the documentation here https://infisical.com/docs/internals/permissions/project-permissions for its usage.                                             |
+| `projectSlug`              | `string`                                                   | no       | The slug of the project to create identity specific privilege                                                                                                                                                                        |
+| `slug`                     | `string`                                                   | no       | The slug for the new privilege                                                                                                                                                                                                       |
+| `temporaryAccessEndTime`   | `string`                                                   | no       | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                                                                                     |
+| `temporaryAccessStartTime` | `string`                                                   | no       | ISO time for which temporary access should begin. The current time is used by default.                                                                                                                                               |
+| `temporaryMode`            | `string`                                                   | no       | Type of temporary access given. Types: relative. Default: relative                                                                                                                                                                   |
+| `temporaryRange`           | `string`                                                   | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                                                                                              |
 
 ## `ProjectIdentitySpecificPrivilegePermission (input)`
 
 Input object `ProjectIdentitySpecificPrivilegePermission`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what action an entity can take. Enum: create,edit,delete,read |
-| `conditions` | `ProjectIdentitySpecificPrivilegePermissionConditions (input)` | yes | The conditions to scope permissions |
-| `subject` | `string` | yes | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
+| Property     | Type                                                           | Required | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------ | -------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]`                                                     | yes      | Describe what action an entity can take. Enum: create,edit,delete,read                                                                                                                                                                                                                                                        |
+| `conditions` | `ProjectIdentitySpecificPrivilegePermissionConditions (input)` | yes      | The conditions to scope permissions                                                                                                                                                                                                                                                                                           |
+| `subject`    | `string`                                                       | yes      | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
 
 ## `ProjectIdentitySpecificPrivilegePermissionConditions (input)`
 
 Input object `ProjectIdentitySpecificPrivilegePermissionConditions`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | yes | The environment slug this permission should allow. |
-| `secretPath` | `string` | no | The secret path this permission should be scoped to |
+| Property      | Type     | Required | Description                                         |
+| ------------- | -------- | -------- | --------------------------------------------------- |
+| `environment` | `string` | yes      | The environment slug this permission should allow.  |
+| `secretPath`  | `string` | no       | The secret path this permission should be scoped to |
 
 ## `ProjectIdentitySpecificPrivilegePermissionsV2 (input)`
 
 Input object `ProjectIdentitySpecificPrivilegePermissionsV2`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | no | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Required | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes      | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no       | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | no       | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes      | Describe the entity the permission pertains to.                                                                                                                                                                                           |
 
 ## `ProjectIdentitySpecificPrivilegePermission (output)`
 
 Output object `ProjectIdentitySpecificPrivilegePermission`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what action an entity can take. Enum: create,edit,delete,read |
-| `conditions` | `ProjectIdentitySpecificPrivilegePermissionConditions (output)` | yes | The conditions to scope permissions |
-| `subject` | `string` | yes | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
+| Property     | Type                                                            | Always present | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------ | --------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]`                                                      | yes            | Describe what action an entity can take. Enum: create,edit,delete,read                                                                                                                                                                                                                                                        |
+| `conditions` | `ProjectIdentitySpecificPrivilegePermissionConditions (output)` | yes            | The conditions to scope permissions                                                                                                                                                                                                                                                                                           |
+| `subject`    | `string`                                                        | yes            | Describe what action an entity can take. Enum: role,member,groups,settings,integrations,webhooks,service-tokens,environments,tags,audit-logs,ip-allowlist,workspace,secrets,secret-rollback,secret-approval,secret-rotation,identity,certificate-authorities,certificates,certificate-policies,kms,pki-alerts,pki-collections |
 
 ## `ProjectIdentitySpecificPrivilegePermissionConditions (output)`
 
 Output object `ProjectIdentitySpecificPrivilegePermissionConditions`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | yes | The environment slug this permission should allow. |
-| `secretPath` | `string` | no | The secret path this permission should be scoped to |
+| Property      | Type     | Always present | Description                                         |
+| ------------- | -------- | -------------- | --------------------------------------------------- |
+| `environment` | `string` | yes            | The environment slug this permission should allow.  |
+| `secretPath`  | `string` | no             | The secret path this permission should be scoped to |
 
 ## `ProjectIdentitySpecificPrivilegePermissionsV2 (output)`
 
 Output object `ProjectIdentitySpecificPrivilegePermissionsV2`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | yes | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Always present | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes            | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no             | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | yes            | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes            | Describe the entity the permission pertains to.                                                                                                                                                                                           |

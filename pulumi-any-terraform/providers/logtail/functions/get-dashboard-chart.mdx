@@ -19,39 +19,39 @@ Call `logtail.getDashboardChart(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dashboardId` | `string` | yes |  |
-| `name` | `string` | yes |  |
+| Property      | Type     | Required | Description |
+| ------------- | -------- | -------- | ----------- |
+| `dashboardId` | `string` | yes      |             |
+| `name`        | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `chartType` | `string` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `dashboardId` | `string` | yes |  |
-| `description` | `string` | yes |  |
-| `h` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `queries` | `GetDashboardChartQuery[]` | yes |  |
-| `settings` | `string` | yes |  |
-| `updatedAt` | `string` | yes |  |
-| `w` | `number` | yes |  |
-| `x` | `number` | yes |  |
-| `y` | `number` | yes |  |
+| Property      | Type                       | Always present | Description |
+| ------------- | -------------------------- | -------------- | ----------- |
+| `chartType`   | `string`                   | yes            |             |
+| `createdAt`   | `string`                   | yes            |             |
+| `dashboardId` | `string`                   | yes            |             |
+| `description` | `string`                   | yes            |             |
+| `h`           | `number`                   | yes            |             |
+| `id`          | `string`                   | yes            |             |
+| `name`        | `string`                   | yes            |             |
+| `queries`     | `GetDashboardChartQuery[]` | yes            |             |
+| `settings`    | `string`                   | yes            |             |
+| `updatedAt`   | `string`                   | yes            |             |
+| `w`           | `number`                   | yes            |             |
+| `x`           | `number`                   | yes            |             |
+| `y`           | `number`                   | yes            |             |
 
 ## `GetDashboardChartQuery`
 
 Output object `GetDashboardChartQuery`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `number` | no |  |
-| `name` | `string` | no |  |
-| `queryType` | `string` | no |  |
-| `sourceVariable` | `string` | no |  |
-| `sqlQuery` | `string` | no |  |
-| `staticText` | `string` | no |  |
-| `whereCondition` | `string` | no |  |
+| Property         | Type     | Always present | Description |
+| ---------------- | -------- | -------------- | ----------- |
+| `id`             | `number` | no             |             |
+| `name`           | `string` | no             |             |
+| `queryType`      | `string` | no             |             |
+| `sourceVariable` | `string` | no             |             |
+| `sqlQuery`       | `string` | no             |             |
+| `staticText`     | `string` | no             |             |
+| `whereCondition` | `string` | no             |             |

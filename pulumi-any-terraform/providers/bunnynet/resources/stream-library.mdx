@@ -19,105 +19,105 @@ Construct with `new bunnynet.StreamLibrary(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `bitrate1080p` | `number` | no | The bitrate used for encoding 1080p videos, in kilobits per second. |
-| `bitrate1440p` | `number` | no | The bitrate used for encoding 1440p videos, in kilobits per second. |
-| `bitrate2160p` | `number` | no | The bitrate used for encoding 2160p videos, in kilobits per second. |
-| `bitrate240p` | `number` | no | The bitrate used for encoding 240p videos, in kilobits per second. |
-| `bitrate360p` | `number` | no | The bitrate used for encoding 360p videos, in kilobits per second. |
-| `bitrate480p` | `number` | no | The bitrate used for encoding 480p videos, in kilobits per second. |
-| `bitrate720p` | `number` | no | The bitrate used for encoding 720p videos, in kilobits per second. |
-| `cdnTokenAuthenticationRequired` | `boolean` | no | Indicates whether CDN token authentication is required. |
-| `contentTaggingEnabled` | `boolean` | no | Indicates whether content tagging is enabled. |
-| `directPlayEnabled` | `boolean` | no | Determines direct play URLs are enabled. |
-| `directUrlFileAccessBlocked` | `boolean` | no | Indicates whether the requests without a referrer are blocked. |
-| `drmMediacageBasicEnabled` | `boolean` | no | Indicates whether the MediaCage basic DRM is enabled |
-| `earlyPlayEnabled` | `boolean` | no | Indicates whether the Early-Play feature is enabled. |
-| `encodingTier` | `string` | no | Options: `Free`, `Premium` |
-| `jitEncoding` | `boolean` | no | Indicates whether Just-In-Time Encoding is enabled |
-| `mp4FallbackEnabled` | `boolean` | no | Indicates whether the MP4 fallback feature is enabled. |
-| `multiAudioTrackSupportEnabled` | `boolean` | no | Indicates whether multiple output audio track support is enabled. |
-| `name` | `string` | no | The name of the stream library. |
-| `originalFilesKeep` | `boolean` | no | Indicates whether to keep original files after encoding. |
-| `outputCodecs` | `string[]` | no | Options: `av1`, `hevc`, `vp9`, `x264` |
-| `playerCaptionsBackgroundColor` | `string` | no | The background color of the captions in the video player. |
-| `playerCaptionsFontColor` | `string` | no | The font color of the captions in the video player. |
-| `playerCaptionsFontSize` | `number` | no | The font size of the captions in the video player. |
-| `playerControls` | `string[]` | no | Options: `airplay`, `captions`, `chromecast`, `current-time`, `duration`, `fast-forward`, `fullscreen`, `mute`, `pip`, `play`, `play-large`, `progress`, `rewind`, `settings`, `volume` |
-| `playerCustomHead` | `string` | no | Custom HTML to be included in the head of the video player. |
-| `playerFontFamily` | `string` | no | Options: `arial`, `inter`, `lato`, `oswald`, `raleway`, `roboto`, `rubik`, `ubuntu` |
-| `playerLanguage` | `string` | no | Specifies the language for the video player interface. |
-| `playerPrimaryColor` | `string` | no | Customizes the appearance of the video player. |
-| `playerVersion` | `number` | no | Specifies the video player version. |
-| `playerWatchtimeHeatmapEnabled` | `boolean` | no | Indicates whether the video watch heatmap should be displayed in the player. |
-| `referersAlloweds` | `string[]` | no | The list of allowed referrer domains allowed to access videos in this library. |
-| `referersBlockeds` | `string[]` | no | The list of blocked referrer domains blocked from accessing videos in this library. |
-| `resolutions` | `string[]` | no | A list of resolutions available for the videos. |
-| `transcribingEnabled` | `boolean` | no | Indicates whether the automatic audio transcribing is currently enabled for this zone. |
-| `transcribingLanguages` | `string[]` | no | The list of languages that the captions will be automatically transcribed to. |
-| `transcribingSmartDescriptionEnabled` | `boolean` | no | Indicates whether automatic transcribing description generation is currently enabled. |
-| `transcribingSmartTitleEnabled` | `boolean` | no | Indicates whether automatic transcribing title generation is currently enabled. |
-| `vastTagUrl` | `string` | no | The URL of the VAST tag for ad integration. |
-| `viewTokenAuthenticationRequired` | `boolean` | no | Indicates whether the player token authentication is enabled |
-| `watermarkHeight` | `number` | no | The height of the watermark (in %). |
-| `watermarkPositionLeft` | `number` | no | The left offset of the watermark position (in %). |
-| `watermarkPositionTop` | `number` | no | The top offset of the watermark position (in %). |
-| `watermarkWidth` | `number` | no | The width of the watermark (in %). |
-| `webhookUrl` | `string` | no | The URL for webhook notifications. |
+| Property                              | Type       | Required | Description                                                                                                                                                                             |
+| ------------------------------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bitrate1080p`                        | `number`   | no       | The bitrate used for encoding 1080p videos, in kilobits per second.                                                                                                                     |
+| `bitrate1440p`                        | `number`   | no       | The bitrate used for encoding 1440p videos, in kilobits per second.                                                                                                                     |
+| `bitrate2160p`                        | `number`   | no       | The bitrate used for encoding 2160p videos, in kilobits per second.                                                                                                                     |
+| `bitrate240p`                         | `number`   | no       | The bitrate used for encoding 240p videos, in kilobits per second.                                                                                                                      |
+| `bitrate360p`                         | `number`   | no       | The bitrate used for encoding 360p videos, in kilobits per second.                                                                                                                      |
+| `bitrate480p`                         | `number`   | no       | The bitrate used for encoding 480p videos, in kilobits per second.                                                                                                                      |
+| `bitrate720p`                         | `number`   | no       | The bitrate used for encoding 720p videos, in kilobits per second.                                                                                                                      |
+| `cdnTokenAuthenticationRequired`      | `boolean`  | no       | Indicates whether CDN token authentication is required.                                                                                                                                 |
+| `contentTaggingEnabled`               | `boolean`  | no       | Indicates whether content tagging is enabled.                                                                                                                                           |
+| `directPlayEnabled`                   | `boolean`  | no       | Determines direct play URLs are enabled.                                                                                                                                                |
+| `directUrlFileAccessBlocked`          | `boolean`  | no       | Indicates whether the requests without a referrer are blocked.                                                                                                                          |
+| `drmMediacageBasicEnabled`            | `boolean`  | no       | Indicates whether the MediaCage basic DRM is enabled                                                                                                                                    |
+| `earlyPlayEnabled`                    | `boolean`  | no       | Indicates whether the Early-Play feature is enabled.                                                                                                                                    |
+| `encodingTier`                        | `string`   | no       | Options: `Free`, `Premium`                                                                                                                                                              |
+| `jitEncoding`                         | `boolean`  | no       | Indicates whether Just-In-Time Encoding is enabled                                                                                                                                      |
+| `mp4FallbackEnabled`                  | `boolean`  | no       | Indicates whether the MP4 fallback feature is enabled.                                                                                                                                  |
+| `multiAudioTrackSupportEnabled`       | `boolean`  | no       | Indicates whether multiple output audio track support is enabled.                                                                                                                       |
+| `name`                                | `string`   | no       | The name of the stream library.                                                                                                                                                         |
+| `originalFilesKeep`                   | `boolean`  | no       | Indicates whether to keep original files after encoding.                                                                                                                                |
+| `outputCodecs`                        | `string[]` | no       | Options: `av1`, `hevc`, `vp9`, `x264`                                                                                                                                                   |
+| `playerCaptionsBackgroundColor`       | `string`   | no       | The background color of the captions in the video player.                                                                                                                               |
+| `playerCaptionsFontColor`             | `string`   | no       | The font color of the captions in the video player.                                                                                                                                     |
+| `playerCaptionsFontSize`              | `number`   | no       | The font size of the captions in the video player.                                                                                                                                      |
+| `playerControls`                      | `string[]` | no       | Options: `airplay`, `captions`, `chromecast`, `current-time`, `duration`, `fast-forward`, `fullscreen`, `mute`, `pip`, `play`, `play-large`, `progress`, `rewind`, `settings`, `volume` |
+| `playerCustomHead`                    | `string`   | no       | Custom HTML to be included in the head of the video player.                                                                                                                             |
+| `playerFontFamily`                    | `string`   | no       | Options: `arial`, `inter`, `lato`, `oswald`, `raleway`, `roboto`, `rubik`, `ubuntu`                                                                                                     |
+| `playerLanguage`                      | `string`   | no       | Specifies the language for the video player interface.                                                                                                                                  |
+| `playerPrimaryColor`                  | `string`   | no       | Customizes the appearance of the video player.                                                                                                                                          |
+| `playerVersion`                       | `number`   | no       | Specifies the video player version.                                                                                                                                                     |
+| `playerWatchtimeHeatmapEnabled`       | `boolean`  | no       | Indicates whether the video watch heatmap should be displayed in the player.                                                                                                            |
+| `referersAlloweds`                    | `string[]` | no       | The list of allowed referrer domains allowed to access videos in this library.                                                                                                          |
+| `referersBlockeds`                    | `string[]` | no       | The list of blocked referrer domains blocked from accessing videos in this library.                                                                                                     |
+| `resolutions`                         | `string[]` | no       | A list of resolutions available for the videos.                                                                                                                                         |
+| `transcribingEnabled`                 | `boolean`  | no       | Indicates whether the automatic audio transcribing is currently enabled for this zone.                                                                                                  |
+| `transcribingLanguages`               | `string[]` | no       | The list of languages that the captions will be automatically transcribed to.                                                                                                           |
+| `transcribingSmartDescriptionEnabled` | `boolean`  | no       | Indicates whether automatic transcribing description generation is currently enabled.                                                                                                   |
+| `transcribingSmartTitleEnabled`       | `boolean`  | no       | Indicates whether automatic transcribing title generation is currently enabled.                                                                                                         |
+| `vastTagUrl`                          | `string`   | no       | The URL of the VAST tag for ad integration.                                                                                                                                             |
+| `viewTokenAuthenticationRequired`     | `boolean`  | no       | Indicates whether the player token authentication is enabled                                                                                                                            |
+| `watermarkHeight`                     | `number`   | no       | The height of the watermark (in %).                                                                                                                                                     |
+| `watermarkPositionLeft`               | `number`   | no       | The left offset of the watermark position (in %).                                                                                                                                       |
+| `watermarkPositionTop`                | `number`   | no       | The top offset of the watermark position (in %).                                                                                                                                        |
+| `watermarkWidth`                      | `number`   | no       | The width of the watermark (in %).                                                                                                                                                      |
+| `webhookUrl`                          | `string`   | no       | The URL for webhook notifications.                                                                                                                                                      |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | yes | The API key for accessing the stream library. |
-| `apiKeyReadonly` | `string` | yes | The read-only API key for accessing the stream library. |
-| `bitrate1080p` | `number` | no | The bitrate used for encoding 1080p videos, in kilobits per second. |
-| `bitrate1440p` | `number` | no | The bitrate used for encoding 1440p videos, in kilobits per second. |
-| `bitrate2160p` | `number` | no | The bitrate used for encoding 2160p videos, in kilobits per second. |
-| `bitrate240p` | `number` | no | The bitrate used for encoding 240p videos, in kilobits per second. |
-| `bitrate360p` | `number` | no | The bitrate used for encoding 360p videos, in kilobits per second. |
-| `bitrate480p` | `number` | no | The bitrate used for encoding 480p videos, in kilobits per second. |
-| `bitrate720p` | `number` | no | The bitrate used for encoding 720p videos, in kilobits per second. |
-| `cdnTokenAuthenticationRequired` | `boolean` | no | Indicates whether CDN token authentication is required. |
-| `contentTaggingEnabled` | `boolean` | no | Indicates whether content tagging is enabled. |
-| `directPlayEnabled` | `boolean` | no | Determines direct play URLs are enabled. |
-| `directUrlFileAccessBlocked` | `boolean` | no | Indicates whether the requests without a referrer are blocked. |
-| `drmMediacageBasicEnabled` | `boolean` | no | Indicates whether the MediaCage basic DRM is enabled |
-| `earlyPlayEnabled` | `boolean` | no | Indicates whether the Early-Play feature is enabled. |
-| `encodingTier` | `string` | no | Options: `Free`, `Premium` |
-| `jitEncoding` | `boolean` | no | Indicates whether Just-In-Time Encoding is enabled |
-| `mp4FallbackEnabled` | `boolean` | no | Indicates whether the MP4 fallback feature is enabled. |
-| `multiAudioTrackSupportEnabled` | `boolean` | no | Indicates whether multiple output audio track support is enabled. |
-| `name` | `string` | no | The name of the stream library. |
-| `originalFilesKeep` | `boolean` | no | Indicates whether to keep original files after encoding. |
-| `outputCodecs` | `string[]` | no | Options: `av1`, `hevc`, `vp9`, `x264` |
-| `playerCaptionsBackgroundColor` | `string` | no | The background color of the captions in the video player. |
-| `playerCaptionsFontColor` | `string` | no | The font color of the captions in the video player. |
-| `playerCaptionsFontSize` | `number` | no | The font size of the captions in the video player. |
-| `playerControls` | `string[]` | no | Options: `airplay`, `captions`, `chromecast`, `current-time`, `duration`, `fast-forward`, `fullscreen`, `mute`, `pip`, `play`, `play-large`, `progress`, `rewind`, `settings`, `volume` |
-| `playerCustomHead` | `string` | no | Custom HTML to be included in the head of the video player. |
-| `playerFontFamily` | `string` | no | Options: `arial`, `inter`, `lato`, `oswald`, `raleway`, `roboto`, `rubik`, `ubuntu` |
-| `playerLanguage` | `string` | no | Specifies the language for the video player interface. |
-| `playerPrimaryColor` | `string` | no | Customizes the appearance of the video player. |
-| `playerVersion` | `number` | no | Specifies the video player version. |
-| `playerWatchtimeHeatmapEnabled` | `boolean` | no | Indicates whether the video watch heatmap should be displayed in the player. |
-| `pullzone` | `number` | yes | The ID of the linked pullzone. |
-| `referersAlloweds` | `string[]` | no | The list of allowed referrer domains allowed to access videos in this library. |
-| `referersBlockeds` | `string[]` | no | The list of blocked referrer domains blocked from accessing videos in this library. |
-| `resolutions` | `string[]` | no | A list of resolutions available for the videos. |
-| `storageZone` | `number` | yes | The ID of the linked storage zone. |
-| `streamLibraryId` | `number` | yes |  |
-| `transcribingEnabled` | `boolean` | no | Indicates whether the automatic audio transcribing is currently enabled for this zone. |
-| `transcribingLanguages` | `string[]` | no | The list of languages that the captions will be automatically transcribed to. |
-| `transcribingSmartDescriptionEnabled` | `boolean` | no | Indicates whether automatic transcribing description generation is currently enabled. |
-| `transcribingSmartTitleEnabled` | `boolean` | no | Indicates whether automatic transcribing title generation is currently enabled. |
-| `vastTagUrl` | `string` | no | The URL of the VAST tag for ad integration. |
-| `viewTokenAuthenticationRequired` | `boolean` | no | Indicates whether the player token authentication is enabled |
-| `watermarkHeight` | `number` | no | The height of the watermark (in %). |
-| `watermarkPositionLeft` | `number` | no | The left offset of the watermark position (in %). |
-| `watermarkPositionTop` | `number` | no | The top offset of the watermark position (in %). |
-| `watermarkWidth` | `number` | no | The width of the watermark (in %). |
-| `webhookUrl` | `string` | no | The URL for webhook notifications. |
+| Property                              | Type       | Computed | Description                                                                                                                                                                             |
+| ------------------------------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`                              | `string`   | yes      | The API key for accessing the stream library.                                                                                                                                           |
+| `apiKeyReadonly`                      | `string`   | yes      | The read-only API key for accessing the stream library.                                                                                                                                 |
+| `bitrate1080p`                        | `number`   | no       | The bitrate used for encoding 1080p videos, in kilobits per second.                                                                                                                     |
+| `bitrate1440p`                        | `number`   | no       | The bitrate used for encoding 1440p videos, in kilobits per second.                                                                                                                     |
+| `bitrate2160p`                        | `number`   | no       | The bitrate used for encoding 2160p videos, in kilobits per second.                                                                                                                     |
+| `bitrate240p`                         | `number`   | no       | The bitrate used for encoding 240p videos, in kilobits per second.                                                                                                                      |
+| `bitrate360p`                         | `number`   | no       | The bitrate used for encoding 360p videos, in kilobits per second.                                                                                                                      |
+| `bitrate480p`                         | `number`   | no       | The bitrate used for encoding 480p videos, in kilobits per second.                                                                                                                      |
+| `bitrate720p`                         | `number`   | no       | The bitrate used for encoding 720p videos, in kilobits per second.                                                                                                                      |
+| `cdnTokenAuthenticationRequired`      | `boolean`  | no       | Indicates whether CDN token authentication is required.                                                                                                                                 |
+| `contentTaggingEnabled`               | `boolean`  | no       | Indicates whether content tagging is enabled.                                                                                                                                           |
+| `directPlayEnabled`                   | `boolean`  | no       | Determines direct play URLs are enabled.                                                                                                                                                |
+| `directUrlFileAccessBlocked`          | `boolean`  | no       | Indicates whether the requests without a referrer are blocked.                                                                                                                          |
+| `drmMediacageBasicEnabled`            | `boolean`  | no       | Indicates whether the MediaCage basic DRM is enabled                                                                                                                                    |
+| `earlyPlayEnabled`                    | `boolean`  | no       | Indicates whether the Early-Play feature is enabled.                                                                                                                                    |
+| `encodingTier`                        | `string`   | no       | Options: `Free`, `Premium`                                                                                                                                                              |
+| `jitEncoding`                         | `boolean`  | no       | Indicates whether Just-In-Time Encoding is enabled                                                                                                                                      |
+| `mp4FallbackEnabled`                  | `boolean`  | no       | Indicates whether the MP4 fallback feature is enabled.                                                                                                                                  |
+| `multiAudioTrackSupportEnabled`       | `boolean`  | no       | Indicates whether multiple output audio track support is enabled.                                                                                                                       |
+| `name`                                | `string`   | no       | The name of the stream library.                                                                                                                                                         |
+| `originalFilesKeep`                   | `boolean`  | no       | Indicates whether to keep original files after encoding.                                                                                                                                |
+| `outputCodecs`                        | `string[]` | no       | Options: `av1`, `hevc`, `vp9`, `x264`                                                                                                                                                   |
+| `playerCaptionsBackgroundColor`       | `string`   | no       | The background color of the captions in the video player.                                                                                                                               |
+| `playerCaptionsFontColor`             | `string`   | no       | The font color of the captions in the video player.                                                                                                                                     |
+| `playerCaptionsFontSize`              | `number`   | no       | The font size of the captions in the video player.                                                                                                                                      |
+| `playerControls`                      | `string[]` | no       | Options: `airplay`, `captions`, `chromecast`, `current-time`, `duration`, `fast-forward`, `fullscreen`, `mute`, `pip`, `play`, `play-large`, `progress`, `rewind`, `settings`, `volume` |
+| `playerCustomHead`                    | `string`   | no       | Custom HTML to be included in the head of the video player.                                                                                                                             |
+| `playerFontFamily`                    | `string`   | no       | Options: `arial`, `inter`, `lato`, `oswald`, `raleway`, `roboto`, `rubik`, `ubuntu`                                                                                                     |
+| `playerLanguage`                      | `string`   | no       | Specifies the language for the video player interface.                                                                                                                                  |
+| `playerPrimaryColor`                  | `string`   | no       | Customizes the appearance of the video player.                                                                                                                                          |
+| `playerVersion`                       | `number`   | no       | Specifies the video player version.                                                                                                                                                     |
+| `playerWatchtimeHeatmapEnabled`       | `boolean`  | no       | Indicates whether the video watch heatmap should be displayed in the player.                                                                                                            |
+| `pullzone`                            | `number`   | yes      | The ID of the linked pullzone.                                                                                                                                                          |
+| `referersAlloweds`                    | `string[]` | no       | The list of allowed referrer domains allowed to access videos in this library.                                                                                                          |
+| `referersBlockeds`                    | `string[]` | no       | The list of blocked referrer domains blocked from accessing videos in this library.                                                                                                     |
+| `resolutions`                         | `string[]` | no       | A list of resolutions available for the videos.                                                                                                                                         |
+| `storageZone`                         | `number`   | yes      | The ID of the linked storage zone.                                                                                                                                                      |
+| `streamLibraryId`                     | `number`   | yes      |                                                                                                                                                                                         |
+| `transcribingEnabled`                 | `boolean`  | no       | Indicates whether the automatic audio transcribing is currently enabled for this zone.                                                                                                  |
+| `transcribingLanguages`               | `string[]` | no       | The list of languages that the captions will be automatically transcribed to.                                                                                                           |
+| `transcribingSmartDescriptionEnabled` | `boolean`  | no       | Indicates whether automatic transcribing description generation is currently enabled.                                                                                                   |
+| `transcribingSmartTitleEnabled`       | `boolean`  | no       | Indicates whether automatic transcribing title generation is currently enabled.                                                                                                         |
+| `vastTagUrl`                          | `string`   | no       | The URL of the VAST tag for ad integration.                                                                                                                                             |
+| `viewTokenAuthenticationRequired`     | `boolean`  | no       | Indicates whether the player token authentication is enabled                                                                                                                            |
+| `watermarkHeight`                     | `number`   | no       | The height of the watermark (in %).                                                                                                                                                     |
+| `watermarkPositionLeft`               | `number`   | no       | The left offset of the watermark position (in %).                                                                                                                                       |
+| `watermarkPositionTop`                | `number`   | no       | The top offset of the watermark position (in %).                                                                                                                                        |
+| `watermarkWidth`                      | `number`   | no       | The width of the watermark (in %).                                                                                                                                                      |
+| `webhookUrl`                          | `string`   | no       | The URL for webhook notifications.                                                                                                                                                      |

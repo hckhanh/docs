@@ -19,62 +19,62 @@ Construct with `new infisical.ProjectIdentity(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `adoptExisting` | `boolean` | no | When true, if the identity is already a member of the project (e.g. auto-added by Infisical when the project was created by this identity), the existing membership is adopted and its roles are updated to match the desired state instead of returning an error. Defaults to false. |
-| `identityId` | `string` | yes | The id of the identity. |
-| `projectId` | `string` | yes | The id of the project |
-| `roles` | `ProjectIdentityRole (input)[]` | yes | The roles assigned to the project identity |
+| Property        | Type                            | Required | Description                                                                                                                                                                                                                                                                           |
+| --------------- | ------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adoptExisting` | `boolean`                       | no       | When true, if the identity is already a member of the project (e.g. auto-added by Infisical when the project was created by this identity), the existing membership is adopted and its roles are updated to match the desired state instead of returning an error. Defaults to false. |
+| `identityId`    | `string`                        | yes      | The id of the identity.                                                                                                                                                                                                                                                               |
+| `projectId`     | `string`                        | yes      | The id of the project                                                                                                                                                                                                                                                                 |
+| `roles`         | `ProjectIdentityRole (input)[]` | yes      | The roles assigned to the project identity                                                                                                                                                                                                                                            |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `adoptExisting` | `boolean` | no | When true, if the identity is already a member of the project (e.g. auto-added by Infisical when the project was created by this identity), the existing membership is adopted and its roles are updated to match the desired state instead of returning an error. Defaults to false. |
-| `identity` | `ProjectIdentityIdentity (output)` | yes | The identity details of the project identity |
-| `identityId` | `string` | no | The id of the identity. |
-| `membershipId` | `string` | yes | The membership Id of the project identity |
-| `projectId` | `string` | no | The id of the project |
-| `roles` | `ProjectIdentityRole (output)[]` | no | The roles assigned to the project identity |
+| Property        | Type                               | Computed | Description                                                                                                                                                                                                                                                                           |
+| --------------- | ---------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adoptExisting` | `boolean`                          | no       | When true, if the identity is already a member of the project (e.g. auto-added by Infisical when the project was created by this identity), the existing membership is adopted and its roles are updated to match the desired state instead of returning an error. Defaults to false. |
+| `identity`      | `ProjectIdentityIdentity (output)` | yes      | The identity details of the project identity                                                                                                                                                                                                                                          |
+| `identityId`    | `string`                           | no       | The id of the identity.                                                                                                                                                                                                                                                               |
+| `membershipId`  | `string`                           | yes      | The membership Id of the project identity                                                                                                                                                                                                                                             |
+| `projectId`     | `string`                           | no       | The id of the project                                                                                                                                                                                                                                                                 |
+| `roles`         | `ProjectIdentityRole (output)[]`   | no       | The roles assigned to the project identity                                                                                                                                                                                                                                            |
 
 ## `ProjectIdentityRole (input)`
 
 Input object `ProjectIdentityRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | no | The id of the custom role slug |
-| `id` | `string` | no | The ID of the project identity role. |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessEndTime` | `string` | no | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | no | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Required | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | no       | The id of the custom role slug                                                                                                                                        |
+| `id`                       | `string`  | no       | The ID of the project identity role.                                                                                                                                  |
+| `isTemporary`              | `boolean` | no       | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes      | The slug of the role                                                                                                                                                  |
+| `temporaryAccessEndTime`   | `string`  | no       | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | no       | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | no       | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |
 
 ## `ProjectIdentityIdentity (output)`
 
 Output object `ProjectIdentityIdentity`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authMethods` | `string[]` | yes | The auth methods for the identity |
-| `id` | `string` | yes | The ID of the identity |
-| `name` | `string` | yes | The name of the identity |
+| Property      | Type       | Always present | Description                       |
+| ------------- | ---------- | -------------- | --------------------------------- |
+| `authMethods` | `string[]` | yes            | The auth methods for the identity |
+| `id`          | `string`   | yes            | The ID of the identity            |
+| `name`        | `string`   | yes            | The name of the identity          |
 
 ## `ProjectIdentityRole (output)`
 
 Output object `ProjectIdentityRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | yes | The id of the custom role slug |
-| `id` | `string` | yes | The ID of the project identity role. |
-| `isTemporary` | `boolean` | yes | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessEndTime` | `string` | yes | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | yes | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | yes | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | yes | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Always present | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | yes            | The id of the custom role slug                                                                                                                                        |
+| `id`                       | `string`  | yes            | The ID of the project identity role.                                                                                                                                  |
+| `isTemporary`              | `boolean` | yes            | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes            | The slug of the role                                                                                                                                                  |
+| `temporaryAccessEndTime`   | `string`  | yes            | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | yes            | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | yes            | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | yes            | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |

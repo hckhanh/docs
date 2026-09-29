@@ -19,22 +19,22 @@ Construct with `new logtail.SourceGcpProject(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `gcpAccountId` | `string` | no | The ID of an already-connected GCP project to link this source to. Provide this instead of `gcpProjectId`/`gcpProjectNumber` to reuse a project you've already connected. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `gcpProjectId` | `string` | no | The GCP project ID to connect - the `projectId` output of the Better Stack GCP Terraform module (or the value you passed to the setup script). Provide together with `gcpProjectNumber`. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `gcpProjectNumber` | `string` | no | The GCP project number - the `projectNumber` output of the Better Stack GCP Terraform module. Provide together with `gcpProjectId`. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `sourceGcpProjectId` | `string` | no |  |
-| `sourceId` | `string` | yes | The ID of the `logtail.Source` (with `platform = "gcp"`) to link the GCP project to. Changing this forces a new resource, re-running the project connect against the new source. |
+| Property             | Type     | Required | Description                                                                                                                                                                                                                                                        |
+| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `gcpAccountId`       | `string` | no       | The ID of an already-connected GCP project to link this source to. Provide this instead of `gcpProjectId`/`gcpProjectNumber` to reuse a project you've already connected. Write-only: the API does not return it, so it isn't refreshed from state.                |
+| `gcpProjectId`       | `string` | no       | The GCP project ID to connect - the `projectId` output of the Better Stack GCP Terraform module (or the value you passed to the setup script). Provide together with `gcpProjectNumber`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `gcpProjectNumber`   | `string` | no       | The GCP project number - the `projectNumber` output of the Better Stack GCP Terraform module. Provide together with `gcpProjectId`. Write-only: the API does not return it, so it isn't refreshed from state.                                                      |
+| `sourceGcpProjectId` | `string` | no       |                                                                                                                                                                                                                                                                    |
+| `sourceId`           | `string` | yes      | The ID of the `logtail.Source` (with `platform = "gcp"`) to link the GCP project to. Changing this forces a new resource, re-running the project connect against the new source.                                                                                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `gcpAccountId` | `string` | no | The ID of an already-connected GCP project to link this source to. Provide this instead of `gcpProjectId`/`gcpProjectNumber` to reuse a project you've already connected. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `gcpProjectId` | `string` | no | The GCP project ID to connect - the `projectId` output of the Better Stack GCP Terraform module (or the value you passed to the setup script). Provide together with `gcpProjectNumber`. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `gcpProjectNumber` | `string` | no | The GCP project number - the `projectNumber` output of the Better Stack GCP Terraform module. Provide together with `gcpProjectId`. Write-only: the API does not return it, so it isn't refreshed from state. |
-| `sourceGcpProjectId` | `string` | no |  |
-| `sourceId` | `string` | no | The ID of the `logtail.Source` (with `platform = "gcp"`) to link the GCP project to. Changing this forces a new resource, re-running the project connect against the new source. |
+| Property             | Type     | Computed | Description                                                                                                                                                                                                                                                        |
+| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `gcpAccountId`       | `string` | no       | The ID of an already-connected GCP project to link this source to. Provide this instead of `gcpProjectId`/`gcpProjectNumber` to reuse a project you've already connected. Write-only: the API does not return it, so it isn't refreshed from state.                |
+| `gcpProjectId`       | `string` | no       | The GCP project ID to connect - the `projectId` output of the Better Stack GCP Terraform module (or the value you passed to the setup script). Provide together with `gcpProjectNumber`. Write-only: the API does not return it, so it isn't refreshed from state. |
+| `gcpProjectNumber`   | `string` | no       | The GCP project number - the `projectNumber` output of the Better Stack GCP Terraform module. Provide together with `gcpProjectId`. Write-only: the API does not return it, so it isn't refreshed from state.                                                      |
+| `sourceGcpProjectId` | `string` | no       |                                                                                                                                                                                                                                                                    |
+| `sourceId`           | `string` | no       | The ID of the `logtail.Source` (with `platform = "gcp"`) to link the GCP project to. Changing this forces a new resource, re-running the project connect against the new source.                                                                                   |

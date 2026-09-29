@@ -19,35 +19,35 @@ Call `portainer.getRecommendations(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `category` | `string` | no |  |
-| `id` | `string` | no |  |
-| `severity` | `string` | no |  |
+| Property   | Type     | Required | Description |
+| ---------- | -------- | -------- | ----------- |
+| `category` | `string` | no       |             |
+| `id`       | `string` | no       |             |
+| `severity` | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `category` | `string` | no |  |
-| `categoryCounts` | `{ [key: string]: number }` | yes |  |
-| `id` | `string` | yes |  |
-| `recommendations` | `GetRecommendationsRecommendation[]` | yes |  |
-| `severity` | `string` | no |  |
-| `severityCounts` | `{ [key: string]: number }` | yes |  |
-| `total` | `number` | yes |  |
-| `totalTypes` | `number` | yes |  |
+| Property          | Type                                 | Always present | Description |
+| ----------------- | ------------------------------------ | -------------- | ----------- |
+| `category`        | `string`                             | no             |             |
+| `categoryCounts`  | `{ [key: string]: number }`          | yes            |             |
+| `id`              | `string`                             | yes            |             |
+| `recommendations` | `GetRecommendationsRecommendation[]` | yes            |             |
+| `severity`        | `string`                             | no             |             |
+| `severityCounts`  | `{ [key: string]: number }`          | yes            |             |
+| `total`           | `number`                             | yes            |             |
+| `totalTypes`      | `number`                             | yes            |             |
 
 ## `GetRecommendationsRecommendation`
 
 Output object `GetRecommendationsRecommendation`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actionLabel` | `string` | no |  |
-| `actionUrl` | `string` | no |  |
-| `category` | `string` | no |  |
-| `description` | `string` | no |  |
-| `severity` | `string` | no |  |
-| `title` | `string` | no |  |
-| `typeId` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `actionLabel` | `string` | no             |             |
+| `actionUrl`   | `string` | no             |             |
+| `category`    | `string` | no             |             |
+| `description` | `string` | no             |             |
+| `severity`    | `string` | no             |             |
+| `title`       | `string` | no             |             |
+| `typeId`      | `string` | no             |             |

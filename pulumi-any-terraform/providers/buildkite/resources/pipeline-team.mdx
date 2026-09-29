@@ -19,19 +19,19 @@ Construct with `new buildkite.PipelineTeam(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | yes | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
-| `pipelineId` | `string` | yes | The GraphQL ID of the pipeline. |
-| `teamId` | `string` | yes | The GraphQL ID of the team. |
+| Property      | Type     | Required | Description                                                                                     |
+| ------------- | -------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | yes      | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
+| `pipelineId`  | `string` | yes      | The GraphQL ID of the pipeline.                                                                 |
+| `teamId`      | `string` | yes      | The GraphQL ID of the team.                                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | no | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
-| `pipelineId` | `string` | no | The GraphQL ID of the pipeline. |
-| `teamId` | `string` | no | The GraphQL ID of the team. |
-| `uuid` | `string` | yes | The UUID of the pipeline-team relationship. |
+| Property      | Type     | Computed | Description                                                                                     |
+| ------------- | -------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | no       | The access level for the team. Either `READ_ONLY`, `BUILD_AND_READ` or `MANAGE_BUILD_AND_READ`. |
+| `pipelineId`  | `string` | no       | The GraphQL ID of the pipeline.                                                                 |
+| `teamId`      | `string` | no       | The GraphQL ID of the team.                                                                     |
+| `uuid`        | `string` | yes      | The UUID of the pipeline-team relationship.                                                     |

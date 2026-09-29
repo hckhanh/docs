@@ -19,28 +19,28 @@ Construct with `new infisical.Webhook(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | yes | The slug of the environment the webhook listens to. |
-| `eventsFilters` | `string[]` | no | The events that trigger the webhook. Options: secrets.modified, secrets.rotation-failed. An empty set means the webhook fires on every supported event. |
-| `isDisabled` | `boolean` | no | Whether the webhook is disabled. Defaults to false. |
-| `projectId` | `string` | yes | The ID of the project the webhook belongs to. |
-| `secretPath` | `string` | no | The secret path the webhook listens to. Defaults to '/'. |
-| `type` | `string` | no | The webhook type. Options: general, slack, microsoft-teams. Defaults to 'general'. |
-| `webhookSecretKey` | `string` | no | The secret key used to sign the webhook payload so the receiver can verify it. Write-only: it is never returned by the API, so it cannot be imported. |
-| `webhookUrl` | `string` | yes | The URL Infisical sends the event payload to. |
+| Property           | Type       | Required | Description                                                                                                                                             |
+| ------------------ | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `environment`      | `string`   | yes      | The slug of the environment the webhook listens to.                                                                                                     |
+| `eventsFilters`    | `string[]` | no       | The events that trigger the webhook. Options: secrets.modified, secrets.rotation-failed. An empty set means the webhook fires on every supported event. |
+| `isDisabled`       | `boolean`  | no       | Whether the webhook is disabled. Defaults to false.                                                                                                     |
+| `projectId`        | `string`   | yes      | The ID of the project the webhook belongs to.                                                                                                           |
+| `secretPath`       | `string`   | no       | The secret path the webhook listens to. Defaults to '/'.                                                                                                |
+| `type`             | `string`   | no       | The webhook type. Options: general, slack, microsoft-teams. Defaults to 'general'.                                                                      |
+| `webhookSecretKey` | `string`   | no       | The secret key used to sign the webhook payload so the receiver can verify it. Write-only: it is never returned by the API, so it cannot be imported.   |
+| `webhookUrl`       | `string`   | yes      | The URL Infisical sends the event payload to.                                                                                                           |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `environment` | `string` | no | The slug of the environment the webhook listens to. |
-| `eventsFilters` | `string[]` | no | The events that trigger the webhook. Options: secrets.modified, secrets.rotation-failed. An empty set means the webhook fires on every supported event. |
-| `isDisabled` | `boolean` | no | Whether the webhook is disabled. Defaults to false. |
-| `projectId` | `string` | no | The ID of the project the webhook belongs to. |
-| `secretPath` | `string` | no | The secret path the webhook listens to. Defaults to '/'. |
-| `type` | `string` | no | The webhook type. Options: general, slack, microsoft-teams. Defaults to 'general'. |
-| `webhookSecretKey` | `string` | no | The secret key used to sign the webhook payload so the receiver can verify it. Write-only: it is never returned by the API, so it cannot be imported. |
-| `webhookUrl` | `string` | no | The URL Infisical sends the event payload to. |
+| Property           | Type       | Computed | Description                                                                                                                                             |
+| ------------------ | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `environment`      | `string`   | no       | The slug of the environment the webhook listens to.                                                                                                     |
+| `eventsFilters`    | `string[]` | no       | The events that trigger the webhook. Options: secrets.modified, secrets.rotation-failed. An empty set means the webhook fires on every supported event. |
+| `isDisabled`       | `boolean`  | no       | Whether the webhook is disabled. Defaults to false.                                                                                                     |
+| `projectId`        | `string`   | no       | The ID of the project the webhook belongs to.                                                                                                           |
+| `secretPath`       | `string`   | no       | The secret path the webhook listens to. Defaults to '/'.                                                                                                |
+| `type`             | `string`   | no       | The webhook type. Options: general, slack, microsoft-teams. Defaults to 'general'.                                                                      |
+| `webhookSecretKey` | `string`   | no       | The secret key used to sign the webhook payload so the receiver can verify it. Write-only: it is never returned by the API, so it cannot be imported.   |
+| `webhookUrl`       | `string`   | no       | The URL Infisical sends the event payload to.                                                                                                           |

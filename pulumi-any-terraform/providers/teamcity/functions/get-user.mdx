@@ -19,26 +19,26 @@ Call `teamcity.getUser(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `username` | `string` | no |  |
+| Property   | Type     | Required | Description |
+| ---------- | -------- | -------- | ----------- |
+| `id`       | `string` | no       |             |
+| `username` | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `githubUsername` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `roles` | `GetUserRole[]` | yes |  |
-| `username` | `string` | yes |  |
+| Property         | Type            | Always present | Description |
+| ---------------- | --------------- | -------------- | ----------- |
+| `githubUsername` | `string`        | yes            |             |
+| `id`             | `string`        | yes            |             |
+| `roles`          | `GetUserRole[]` | yes            |             |
+| `username`       | `string`        | yes            |             |
 
 ## `GetUserRole`
 
 Output object `GetUserRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `global` | `boolean` | yes | Whether the role is assigned globally. |
-| `id` | `string` | yes | The role ID. |
-| `project` | `string` | yes | The project ID if the role is project-specific. |
+| Property  | Type      | Always present | Description                                     |
+| --------- | --------- | -------------- | ----------------------------------------------- |
+| `global`  | `boolean` | yes            | Whether the role is assigned globally.          |
+| `id`      | `string`  | yes            | The role ID.                                    |
+| `project` | `string`  | yes            | The project ID if the role is project-specific. |

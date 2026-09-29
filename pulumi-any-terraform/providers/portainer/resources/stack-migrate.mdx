@@ -19,24 +19,24 @@ Construct with `new portainer.StackMigrate(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Optional source environment (endpoint) identifier. Required for stacks created before Portainer 1.18.0. |
-| `stackId` | `number` | yes | Stack identifier to migrate. |
-| `stackMigrateId` | `string` | no |  |
-| `stackName` | `string` | no | New name for the stack after migration. If not set, the original name is kept. |
-| `swarmId` | `string` | no | Swarm cluster identifier (required when migrating to a Swarm environment). |
-| `targetEndpointId` | `number` | yes | Target environment (endpoint) identifier to migrate the stack to. |
+| Property           | Type     | Required | Description                                                                                             |
+| ------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | no       | Optional source environment (endpoint) identifier. Required for stacks created before Portainer 1.18.0. |
+| `stackId`          | `number` | yes      | Stack identifier to migrate.                                                                            |
+| `stackMigrateId`   | `string` | no       |                                                                                                         |
+| `stackName`        | `string` | no       | New name for the stack after migration. If not set, the original name is kept.                          |
+| `swarmId`          | `string` | no       | Swarm cluster identifier (required when migrating to a Swarm environment).                              |
+| `targetEndpointId` | `number` | yes      | Target environment (endpoint) identifier to migrate the stack to.                                       |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Optional source environment (endpoint) identifier. Required for stacks created before Portainer 1.18.0. |
-| `stackId` | `number` | no | Stack identifier to migrate. |
-| `stackMigrateId` | `string` | no |  |
-| `stackName` | `string` | no | New name for the stack after migration. If not set, the original name is kept. |
-| `swarmId` | `string` | no | Swarm cluster identifier (required when migrating to a Swarm environment). |
-| `targetEndpointId` | `number` | no | Target environment (endpoint) identifier to migrate the stack to. |
+| Property           | Type     | Computed | Description                                                                                             |
+| ------------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | no       | Optional source environment (endpoint) identifier. Required for stacks created before Portainer 1.18.0. |
+| `stackId`          | `number` | no       | Stack identifier to migrate.                                                                            |
+| `stackMigrateId`   | `string` | no       |                                                                                                         |
+| `stackName`        | `string` | no       | New name for the stack after migration. If not set, the original name is kept.                          |
+| `swarmId`          | `string` | no       | Swarm cluster identifier (required when migrating to a Swarm environment).                              |
+| `targetEndpointId` | `number` | no       | Target environment (endpoint) identifier to migrate the stack to.                                       |

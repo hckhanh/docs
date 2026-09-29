@@ -19,40 +19,40 @@ Construct with `new portainer.BackupAzureExecute(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authMethod` | `string` | yes | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. The other fields required depend on which one is chosen. |
-| `backupAzureExecuteId` | `string` | no |  |
-| `clientCertificate` | `string` | no | PEM-encoded client certificate of the service principal. Used with 'authMethod'= "servicePrincipalCertificate"'. |
-| `clientCertificatePassword` | `string` | no | Password protecting `clientCertificate`, when it is encrypted. |
-| `clientId` | `string` | no | Application (client) ID of the service principal. |
-| `clientSecret` | `string` | no | Client secret of the service principal. Used with 'authMethod'= "servicePrincipalSecret"'. |
-| `containerName` | `string` | yes | Blob container the backups are written to. |
-| `managedIdentityClientId` | `string` | no | Client ID of the user-assigned managed identity. Used with 'authMethod'= "managedIdentity"'; leave unset for a system-assigned identity. |
-| `password` | `string` | no | Password the backup archive itself is encrypted with. Leave unset for an unencrypted archive. |
-| `serviceUrl` | `string` | no | Blob service endpoint, for a sovereign cloud or a storage emulator. Leave unset for the public Azure cloud. |
-| `storageAccountKey` | `string` | no | Storage account access key. Used with 'authMethod'= "storageAccountKey"'. |
-| `storageAccountName` | `string` | yes | Name of the Azure storage account holding the container. |
-| `tenantId` | `string` | no | Entra ID tenant of the service principal. Used with both `servicePrincipal*` methods. |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property                    | Type                        | Required | Description                                                                                                                                                                                            |
+| --------------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `authMethod`                | `string`                    | yes      | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. The other fields required depend on which one is chosen. |
+| `backupAzureExecuteId`      | `string`                    | no       |                                                                                                                                                                                                        |
+| `clientCertificate`         | `string`                    | no       | PEM-encoded client certificate of the service principal. Used with 'authMethod'= "servicePrincipalCertificate"'.                                                                                       |
+| `clientCertificatePassword` | `string`                    | no       | Password protecting `clientCertificate`, when it is encrypted.                                                                                                                                         |
+| `clientId`                  | `string`                    | no       | Application (client) ID of the service principal.                                                                                                                                                      |
+| `clientSecret`              | `string`                    | no       | Client secret of the service principal. Used with 'authMethod'= "servicePrincipalSecret"'.                                                                                                             |
+| `containerName`             | `string`                    | yes      | Blob container the backups are written to.                                                                                                                                                             |
+| `managedIdentityClientId`   | `string`                    | no       | Client ID of the user-assigned managed identity. Used with 'authMethod'= "managedIdentity"'; leave unset for a system-assigned identity.                                                               |
+| `password`                  | `string`                    | no       | Password the backup archive itself is encrypted with. Leave unset for an unencrypted archive.                                                                                                          |
+| `serviceUrl`                | `string`                    | no       | Blob service endpoint, for a sovereign cloud or a storage emulator. Leave unset for the public Azure cloud.                                                                                            |
+| `storageAccountKey`         | `string`                    | no       | Storage account access key. Used with 'authMethod'= "storageAccountKey"'.                                                                                                                              |
+| `storageAccountName`        | `string`                    | yes      | Name of the Azure storage account holding the container.                                                                                                                                               |
+| `tenantId`                  | `string`                    | no       | Entra ID tenant of the service principal. Used with both `servicePrincipal*` methods.                                                                                                                  |
+| `triggers`                  | `{ [key: string]: string }` | no       | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put.                                        |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `authMethod` | `string` | no | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. The other fields required depend on which one is chosen. |
-| `backupAzureExecuteId` | `string` | no |  |
-| `clientCertificate` | `string` | no | PEM-encoded client certificate of the service principal. Used with 'authMethod'= "servicePrincipalCertificate"'. |
-| `clientCertificatePassword` | `string` | no | Password protecting `clientCertificate`, when it is encrypted. |
-| `clientId` | `string` | no | Application (client) ID of the service principal. |
-| `clientSecret` | `string` | no | Client secret of the service principal. Used with 'authMethod'= "servicePrincipalSecret"'. |
-| `containerName` | `string` | no | Blob container the backups are written to. |
-| `managedIdentityClientId` | `string` | no | Client ID of the user-assigned managed identity. Used with 'authMethod'= "managedIdentity"'; leave unset for a system-assigned identity. |
-| `password` | `string` | no | Password the backup archive itself is encrypted with. Leave unset for an unencrypted archive. |
-| `serviceUrl` | `string` | no | Blob service endpoint, for a sovereign cloud or a storage emulator. Leave unset for the public Azure cloud. |
-| `storageAccountKey` | `string` | no | Storage account access key. Used with 'authMethod'= "storageAccountKey"'. |
-| `storageAccountName` | `string` | no | Name of the Azure storage account holding the container. |
-| `tenantId` | `string` | no | Entra ID tenant of the service principal. Used with both `servicePrincipal*` methods. |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property                    | Type                        | Computed | Description                                                                                                                                                                                            |
+| --------------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `authMethod`                | `string`                    | no       | How Portainer authenticates against Azure: `servicePrincipalSecret`, `servicePrincipalCertificate`, `managedIdentity` or `storageAccountKey`. The other fields required depend on which one is chosen. |
+| `backupAzureExecuteId`      | `string`                    | no       |                                                                                                                                                                                                        |
+| `clientCertificate`         | `string`                    | no       | PEM-encoded client certificate of the service principal. Used with 'authMethod'= "servicePrincipalCertificate"'.                                                                                       |
+| `clientCertificatePassword` | `string`                    | no       | Password protecting `clientCertificate`, when it is encrypted.                                                                                                                                         |
+| `clientId`                  | `string`                    | no       | Application (client) ID of the service principal.                                                                                                                                                      |
+| `clientSecret`              | `string`                    | no       | Client secret of the service principal. Used with 'authMethod'= "servicePrincipalSecret"'.                                                                                                             |
+| `containerName`             | `string`                    | no       | Blob container the backups are written to.                                                                                                                                                             |
+| `managedIdentityClientId`   | `string`                    | no       | Client ID of the user-assigned managed identity. Used with 'authMethod'= "managedIdentity"'; leave unset for a system-assigned identity.                                                               |
+| `password`                  | `string`                    | no       | Password the backup archive itself is encrypted with. Leave unset for an unencrypted archive.                                                                                                          |
+| `serviceUrl`                | `string`                    | no       | Blob service endpoint, for a sovereign cloud or a storage emulator. Leave unset for the public Azure cloud.                                                                                            |
+| `storageAccountKey`         | `string`                    | no       | Storage account access key. Used with 'authMethod'= "storageAccountKey"'.                                                                                                                              |
+| `storageAccountName`        | `string`                    | no       | Name of the Azure storage account holding the container.                                                                                                                                               |
+| `tenantId`                  | `string`                    | no       | Entra ID tenant of the service principal. Used with both `servicePrincipal*` methods.                                                                                                                  |
+| `triggers`                  | `{ [key: string]: string }` | no       | Arbitrary values that force another backup run when they change. A backup is a one-shot action, so without a trigger the resource runs once and then stays put.                                        |

@@ -19,40 +19,40 @@ Call `portainer.getKubernetesPodMetrics(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | yes |  |
-| `pod` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
+| `namespace`     | `string` | yes      |             |
+| `pod`           | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | yes |  |
-| `pod` | `string` | no |  |
-| `pods` | `GetKubernetesPodMetricsPod[]` | yes |  |
+| Property        | Type                           | Always present | Description |
+| --------------- | ------------------------------ | -------------- | ----------- |
+| `environmentId` | `number`                       | yes            |             |
+| `id`            | `string`                       | yes            |             |
+| `namespace`     | `string`                       | yes            |             |
+| `pod`           | `string`                       | no             |             |
+| `pods`          | `GetKubernetesPodMetricsPod[]` | yes            |             |
 
 ## `GetKubernetesPodMetricsPod`
 
 Output object `GetKubernetesPodMetricsPod`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `containers` | `GetKubernetesPodMetricsPodContainer[]` | no |  |
-| `name` | `string` | no |  |
-| `timestamp` | `string` | no |  |
-| `window` | `string` | no |  |
+| Property     | Type                                    | Always present | Description |
+| ------------ | --------------------------------------- | -------------- | ----------- |
+| `containers` | `GetKubernetesPodMetricsPodContainer[]` | no             |             |
+| `name`       | `string`                                | no             |             |
+| `timestamp`  | `string`                                | no             |             |
+| `window`     | `string`                                | no             |             |
 
 ## `GetKubernetesPodMetricsPodContainer`
 
 Output object `GetKubernetesPodMetricsPodContainer`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `cpu` | `string` | no |  |
-| `memory` | `string` | no |  |
-| `name` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `cpu`    | `string` | no             |             |
+| `memory` | `string` | no             |             |
+| `name`   | `string` | no             |             |

@@ -19,30 +19,30 @@ Construct with `new portainer.OpenAmt(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `certFileContent` | `string` | yes | Sensitive base64-encoded content of the OpenAMT provisioning certificate file. |
-| `certFileName` | `string` | yes | File name of the OpenAMT provisioning certificate. |
-| `certFilePassword` | `string` | yes | Sensitive password protecting the OpenAMT provisioning certificate. |
-| `domainName` | `string` | yes | Domain name configured for OpenAMT provisioning. |
-| `enabled` | `boolean` | yes | Whether the OpenAMT integration is enabled in Portainer. |
-| `mpspassword` | `string` | yes | Sensitive password used to authenticate against the OpenAMT MPS (Management Presence Server). |
-| `mpsserver` | `string` | yes | Hostname or URL of the OpenAMT MPS (Management Presence Server). |
-| `mpsuser` | `string` | yes | Username used to authenticate against the OpenAMT MPS (Management Presence Server). |
-| `openAmtId` | `string` | no |  |
+| Property           | Type      | Required | Description                                                                                   |
+| ------------------ | --------- | -------- | --------------------------------------------------------------------------------------------- |
+| `certFileContent`  | `string`  | yes      | Sensitive base64-encoded content of the OpenAMT provisioning certificate file.                |
+| `certFileName`     | `string`  | yes      | File name of the OpenAMT provisioning certificate.                                            |
+| `certFilePassword` | `string`  | yes      | Sensitive password protecting the OpenAMT provisioning certificate.                           |
+| `domainName`       | `string`  | yes      | Domain name configured for OpenAMT provisioning.                                              |
+| `enabled`          | `boolean` | yes      | Whether the OpenAMT integration is enabled in Portainer.                                      |
+| `mpspassword`      | `string`  | yes      | Sensitive password used to authenticate against the OpenAMT MPS (Management Presence Server). |
+| `mpsserver`        | `string`  | yes      | Hostname or URL of the OpenAMT MPS (Management Presence Server).                              |
+| `mpsuser`          | `string`  | yes      | Username used to authenticate against the OpenAMT MPS (Management Presence Server).           |
+| `openAmtId`        | `string`  | no       |                                                                                               |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `certFileContent` | `string` | no | Sensitive base64-encoded content of the OpenAMT provisioning certificate file. |
-| `certFileName` | `string` | no | File name of the OpenAMT provisioning certificate. |
-| `certFilePassword` | `string` | no | Sensitive password protecting the OpenAMT provisioning certificate. |
-| `domainName` | `string` | no | Domain name configured for OpenAMT provisioning. |
-| `enabled` | `boolean` | no | Whether the OpenAMT integration is enabled in Portainer. |
-| `mpspassword` | `string` | no | Sensitive password used to authenticate against the OpenAMT MPS (Management Presence Server). |
-| `mpsserver` | `string` | no | Hostname or URL of the OpenAMT MPS (Management Presence Server). |
-| `mpsuser` | `string` | no | Username used to authenticate against the OpenAMT MPS (Management Presence Server). |
-| `openAmtId` | `string` | no |  |
+| Property           | Type      | Computed | Description                                                                                   |
+| ------------------ | --------- | -------- | --------------------------------------------------------------------------------------------- |
+| `certFileContent`  | `string`  | no       | Sensitive base64-encoded content of the OpenAMT provisioning certificate file.                |
+| `certFileName`     | `string`  | no       | File name of the OpenAMT provisioning certificate.                                            |
+| `certFilePassword` | `string`  | no       | Sensitive password protecting the OpenAMT provisioning certificate.                           |
+| `domainName`       | `string`  | no       | Domain name configured for OpenAMT provisioning.                                              |
+| `enabled`          | `boolean` | no       | Whether the OpenAMT integration is enabled in Portainer.                                      |
+| `mpspassword`      | `string`  | no       | Sensitive password used to authenticate against the OpenAMT MPS (Management Presence Server). |
+| `mpsserver`        | `string`  | no       | Hostname or URL of the OpenAMT MPS (Management Presence Server).                              |
+| `mpsuser`          | `string`  | no       | Username used to authenticate against the OpenAMT MPS (Management Presence Server).           |
+| `openAmtId`        | `string`  | no       |                                                                                               |

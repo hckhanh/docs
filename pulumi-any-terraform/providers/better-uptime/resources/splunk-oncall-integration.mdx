@@ -19,20 +19,20 @@ Construct with `new betteruptime.SplunkOncallIntegration(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no | The name of the Splunk On-Call Integration. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `url` | `string` | yes | The Splunk On-Call URL to post webhooks to. |
+| Property                          | Type      | Required | Description                                                                                                                              |
+| --------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                            | `string`  | no       | The name of the Splunk On-Call Integration.                                                                                              |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `teamName`                        | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                  |
+| `url`                             | `string`  | yes      | The Splunk On-Call URL to post webhooks to.                                                                                              |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no | The name of the Splunk On-Call Integration. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `url` | `string` | no | The Splunk On-Call URL to post webhooks to. |
+| Property                          | Type      | Computed | Description                                                                                                                              |
+| --------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                            | `string`  | no       | The name of the Splunk On-Call Integration.                                                                                              |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `teamName`                        | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                  |
+| `url`                             | `string`  | no       | The Splunk On-Call URL to post webhooks to.                                                                                              |

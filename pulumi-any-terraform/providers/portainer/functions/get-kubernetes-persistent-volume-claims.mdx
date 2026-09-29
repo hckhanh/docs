@@ -19,38 +19,38 @@ Call `portainer.getKubernetesPersistentVolumeClaims(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `endpointId` | `number` | yes      |             |
+| `id`         | `string` | no       |             |
+| `namespace`  | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `claims` | `GetKubernetesPersistentVolumeClaimsClaim[]` | yes |  |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | no |  |
+| Property     | Type                                         | Always present | Description |
+| ------------ | -------------------------------------------- | -------------- | ----------- |
+| `claims`     | `GetKubernetesPersistentVolumeClaimsClaim[]` | yes            |             |
+| `endpointId` | `number`                                     | yes            |             |
+| `id`         | `string`                                     | yes            |             |
+| `namespace`  | `string`                                     | no             |             |
 
 ## `GetKubernetesPersistentVolumeClaimsClaim`
 
 Output object `GetKubernetesPersistentVolumeClaimsClaim`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `accessModes` | `string[]` | no |  |
-| `creationDate` | `string` | no |  |
-| `humanReadableAccessModes` | `string[]` | no |  |
-| `id` | `string` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `owningApplications` | `string[]` | no |  |
-| `phase` | `string` | no |  |
-| `storage` | `number` | no |  |
-| `storageClass` | `string` | no |  |
-| `storageRequest` | `string` | no |  |
-| `volumeMode` | `string` | no |  |
-| `volumeName` | `string` | no |  |
+| Property                   | Type                        | Always present | Description |
+| -------------------------- | --------------------------- | -------------- | ----------- |
+| `accessModes`              | `string[]`                  | no             |             |
+| `creationDate`             | `string`                    | no             |             |
+| `humanReadableAccessModes` | `string[]`                  | no             |             |
+| `id`                       | `string`                    | no             |             |
+| `labels`                   | `{ [key: string]: string }` | no             |             |
+| `name`                     | `string`                    | no             |             |
+| `namespace`                | `string`                    | no             |             |
+| `owningApplications`       | `string[]`                  | no             |             |
+| `phase`                    | `string`                    | no             |             |
+| `storage`                  | `number`                    | no             |             |
+| `storageClass`             | `string`                    | no             |             |
+| `storageRequest`           | `string`                    | no             |             |
+| `volumeMode`               | `string`                    | no             |             |
+| `volumeName`               | `string`                    | no             |             |

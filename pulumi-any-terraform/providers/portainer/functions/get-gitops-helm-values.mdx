@@ -19,29 +19,29 @@ Call `portainer.getGitopsHelmValues(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `password` | `string` | no |  |
-| `reference` | `string` | yes |  |
-| `repository` | `string` | yes |  |
-| `sourceId` | `number` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `username` | `string` | no |  |
-| `valuesFiles` | `string[]` | yes |  |
+| Property        | Type       | Required | Description |
+| --------------- | ---------- | -------- | ----------- |
+| `id`            | `string`   | no       |             |
+| `password`      | `string`   | no       |             |
+| `reference`     | `string`   | yes      |             |
+| `repository`    | `string`   | yes      |             |
+| `sourceId`      | `number`   | no       |             |
+| `tlsSkipVerify` | `boolean`  | no       |             |
+| `username`      | `string`   | no       |             |
+| `valuesFiles`   | `string[]` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `commitHash` | `string` | yes |  |
-| `filesProcesseds` | `string[]` | yes |  |
-| `id` | `string` | yes |  |
-| `mergedValues` | `string` | yes |  |
-| `password` | `string` | no |  |
-| `reference` | `string` | yes |  |
-| `repository` | `string` | yes |  |
-| `sourceId` | `number` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `username` | `string` | no |  |
-| `valuesFiles` | `string[]` | yes |  |
+| Property          | Type       | Always present | Description |
+| ----------------- | ---------- | -------------- | ----------- |
+| `commitHash`      | `string`   | yes            |             |
+| `filesProcesseds` | `string[]` | yes            |             |
+| `id`              | `string`   | yes            |             |
+| `mergedValues`    | `string`   | yes            |             |
+| `password`        | `string`   | no             |             |
+| `reference`       | `string`   | yes            |             |
+| `repository`      | `string`   | yes            |             |
+| `sourceId`        | `number`   | no             |             |
+| `tlsSkipVerify`   | `boolean`  | no             |             |
+| `username`        | `string`   | no             |             |
+| `valuesFiles`     | `string[]` | yes            |             |

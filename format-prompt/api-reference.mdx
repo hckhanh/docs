@@ -10,10 +10,7 @@ description: Complete API documentation for format-prompt
 The main function exported by format-prompt. It's a template tag function that formats template literal strings.
 
 ```typescript
-function prompt(
-  strings: TemplateStringsArray,
-  ...values: unknown[]
-): string
+function prompt(strings: TemplateStringsArray, ...values: unknown[]): string
 ```
 
 **Parameters:**
@@ -26,12 +23,12 @@ function prompt(
 **Example:**
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 const result = prompt`
   This is a prompt
   with multiple lines
-`;
+`
 // Returns: "This is a prompt\nwith multiple lines"
 ```
 
@@ -52,7 +49,7 @@ The `prompt` function processes whitespace in the following way:
 #### Basic Formatting
 
 ```typescript
-const result = prompt`  Hello  World  `;
+const result = prompt`  Hello  World  `
 // Returns: "Hello World"
 ```
 
@@ -63,7 +60,7 @@ const result = prompt`
   Line 1
   Line 2
   Line 3
-`;
+`
 // Returns: "Line 1\nLine 2\nLine 3"
 ```
 
@@ -76,7 +73,7 @@ const result = prompt`
   Body paragraph
   
   Footer
-`;
+`
 // Returns: "Title\n\nBody paragraph\n\nFooter"
 ```
 
@@ -85,25 +82,25 @@ const result = prompt`
 The function supports standard template literal interpolation:
 
 ```typescript
-const name = 'Alice';
-const age = 30;
+const name = "Alice"
+const age = 30
 
-const result = prompt`Name: ${name}, Age: ${age}`;
+const result = prompt`Name: ${name}, Age: ${age}`
 // Returns: "Name: Alice, Age: 30"
 ```
 
 Interpolated values are converted to strings using `String()`:
 
 ```typescript
-const obj = { key: 'value' };
-const num = 42;
-const bool = true;
+const obj = { key: "value" }
+const num = 42
+const bool = true
 
 const result = prompt`
   Object: ${obj}
   Number: ${num}
   Boolean: ${bool}
-`;
+`
 // Object is converted to "[object Object]"
 // Number is converted to "42"
 // Boolean is converted to "true"
@@ -126,7 +123,7 @@ This is a built-in TypeScript type representing the strings in a template litera
 
 ```typescript
 interface TemplateStringsArray extends ReadonlyArray<string> {
-  readonly raw: ReadonlyArray<string>;
+  readonly raw: ReadonlyArray<string>
 }
 ```
 
@@ -142,7 +139,7 @@ function createChatPrompt(systemRole: string, userMessage: string) {
     User: ${userMessage}
     
     Assistant:
-  `;
+  `
 }
 ```
 
@@ -155,7 +152,7 @@ function formatEmail(to: string, subject: string, body: string) {
     Subject: ${subject}
     
     ${body}
-  `;
+  `
 }
 ```
 
@@ -164,10 +161,10 @@ function formatEmail(to: string, subject: string, body: string) {
 ```typescript
 function generateFunction(name: string, params: string[], body: string) {
   return prompt`
-    function ${name}(${params.join(', ')}) {
+    function ${name}(${params.join(", ")}) {
       ${body}
     }
-  `;
+  `
 }
 ```
 
@@ -196,10 +193,10 @@ function createPrompt(includeContext: boolean, context?: string) {
   return prompt`
     Answer the following question.
     
-    ${includeContext && context ? `Context: ${context}\n\n` : ''}
+    ${includeContext && context ? `Context: ${context}\n\n` : ""}
     
     Provide a detailed response.
-  `;
+  `
 }
 ```
 
@@ -209,20 +206,20 @@ function createPrompt(includeContext: boolean, context?: string) {
 function formatList(items: string[]) {
   return prompt`
     Items:
-    ${items.map(item => `  * ${item}`).join('\n')}
-  `;
+    ${items.map((item) => `  * ${item}`).join("\n")}
+  `
 }
 ```
 
 ### Nested Templates
 
 ```typescript
-const section1 = prompt`Section 1 content`;
-const section2 = prompt`Section 2 content`;
+const section1 = prompt`Section 1 content`
+const section2 = prompt`Section 2 content`
 
 const combined = prompt`
   ${section1}
   
   ${section2}
-`;
+`
 ```

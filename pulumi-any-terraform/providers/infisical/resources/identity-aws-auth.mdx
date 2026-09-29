@@ -19,44 +19,44 @@ Construct with `new infisical.IdentityAwsAuth(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityAwsAuthAccessTokenTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `allowedAccountIds` | `string[]` | no | List of trusted AWS account IDs that are allowed to authenticate with Infisical. |
-| `allowedPrincipalArns` | `string[]` | no | List of trusted IAM principal ARNs that are allowed to authenticate with Infisical. The values should take one of three forms: `arn:aws:iam::123456789012:user/MyUserName`, `arn:aws:iam::123456789012:role/MyRoleName`, or `arn:aws:iam::123456789012:*`. Using a wildcard in this case allows any IAM principal in the account `123456789012` to authenticate with Infisical under the identity |
-| `identityId` | `string` | yes | The ID of the identity to attach the configuration onto. |
-| `stsEndpoint` | `string` | no | The endpoint URL for the AWS STS API. This value should be adjusted based on the AWS region you are operating in (e.g. `https://sts.us-east-1.amazonaws.com/`); refer to the list of regional STS endpoints [here](https://docs.aws.amazon.com/general/latest/gr/sts.html). |
+| Property                  | Type                                            | Required | Description                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------- | ----------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                        | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                                                                                                                              |
+| `accessTokenNumUsesLimit` | `number`                                        | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                                                                                                                                                                                                                             |
+| `accessTokenTrustedIps`   | `IdentityAwsAuthAccessTokenTrustedIp (input)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                                                                                                                                                                                                                                |
+| `accessTokenTtl`          | `number`                                        | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                                                                                                                                      |
+| `allowedAccountIds`       | `string[]`                                      | no       | List of trusted AWS account IDs that are allowed to authenticate with Infisical.                                                                                                                                                                                                                                                                                                                  |
+| `allowedPrincipalArns`    | `string[]`                                      | no       | List of trusted IAM principal ARNs that are allowed to authenticate with Infisical. The values should take one of three forms: `arn:aws:iam::123456789012:user/MyUserName`, `arn:aws:iam::123456789012:role/MyRoleName`, or `arn:aws:iam::123456789012:*`. Using a wildcard in this case allows any IAM principal in the account `123456789012` to authenticate with Infisical under the identity |
+| `identityId`              | `string`                                        | yes      | The ID of the identity to attach the configuration onto.                                                                                                                                                                                                                                                                                                                                          |
+| `stsEndpoint`             | `string`                                        | no       | The endpoint URL for the AWS STS API. This value should be adjusted based on the AWS region you are operating in (e.g. `https://sts.us-east-1.amazonaws.com/`); refer to the list of regional STS endpoints [here](https://docs.aws.amazon.com/general/latest/gr/sts.html).                                                                                                                       |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityAwsAuthAccessTokenTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `allowedAccountIds` | `string[]` | no | List of trusted AWS account IDs that are allowed to authenticate with Infisical. |
-| `allowedPrincipalArns` | `string[]` | no | List of trusted IAM principal ARNs that are allowed to authenticate with Infisical. The values should take one of three forms: `arn:aws:iam::123456789012:user/MyUserName`, `arn:aws:iam::123456789012:role/MyRoleName`, or `arn:aws:iam::123456789012:*`. Using a wildcard in this case allows any IAM principal in the account `123456789012` to authenticate with Infisical under the identity |
-| `identityId` | `string` | no | The ID of the identity to attach the configuration onto. |
-| `stsEndpoint` | `string` | no | The endpoint URL for the AWS STS API. This value should be adjusted based on the AWS region you are operating in (e.g. `https://sts.us-east-1.amazonaws.com/`); refer to the list of regional STS endpoints [here](https://docs.aws.amazon.com/general/latest/gr/sts.html). |
+| Property                  | Type                                             | Computed | Description                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------- | ------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                         | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                                                                                                                              |
+| `accessTokenNumUsesLimit` | `number`                                         | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                                                                                                                                                                                                                             |
+| `accessTokenTrustedIps`   | `IdentityAwsAuthAccessTokenTrustedIp (output)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                                                                                                                                                                                                                                |
+| `accessTokenTtl`          | `number`                                         | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                                                                                                                                      |
+| `allowedAccountIds`       | `string[]`                                       | no       | List of trusted AWS account IDs that are allowed to authenticate with Infisical.                                                                                                                                                                                                                                                                                                                  |
+| `allowedPrincipalArns`    | `string[]`                                       | no       | List of trusted IAM principal ARNs that are allowed to authenticate with Infisical. The values should take one of three forms: `arn:aws:iam::123456789012:user/MyUserName`, `arn:aws:iam::123456789012:role/MyRoleName`, or `arn:aws:iam::123456789012:*`. Using a wildcard in this case allows any IAM principal in the account `123456789012` to authenticate with Infisical under the identity |
+| `identityId`              | `string`                                         | no       | The ID of the identity to attach the configuration onto.                                                                                                                                                                                                                                                                                                                                          |
+| `stsEndpoint`             | `string`                                         | no       | The endpoint URL for the AWS STS API. This value should be adjusted based on the AWS region you are operating in (e.g. `https://sts.us-east-1.amazonaws.com/`); refer to the list of regional STS endpoints [here](https://docs.aws.amazon.com/general/latest/gr/sts.html).                                                                                                                       |
 
 ## `IdentityAwsAuthAccessTokenTrustedIp (input)`
 
 Input object `IdentityAwsAuthAccessTokenTrustedIp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | no |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `ipAddress` | `string` | no       |             |
 
 ## `IdentityAwsAuthAccessTokenTrustedIp (output)`
 
 Output object `IdentityAwsAuthAccessTokenTrustedIp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | yes |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `ipAddress` | `string` | yes            |             |

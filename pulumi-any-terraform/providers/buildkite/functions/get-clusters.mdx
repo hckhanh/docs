@@ -23,45 +23,45 @@ This function takes no arguments.
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `clusters` | `GetClustersCluster[]` | yes |  |
+| Property   | Type                   | Always present | Description |
+| ---------- | ---------------------- | -------------- | ----------- |
+| `clusters` | `GetClustersCluster[]` | yes            |             |
 
 ## `GetClustersCluster`
 
 Output object `GetClustersCluster`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `color` | `string` | yes | The color for the cluster. |
-| `defaultQueue` | `GetClustersClusterDefaultQueue` | yes | The default queue for the cluster. |
-| `description` | `string` | yes | The description of the cluster. |
-| `emoji` | `string` | yes | The emoji for the cluster. |
-| `id` | `string` | yes | The GraphQL ID of the cluster. |
-| `maintainers` | `GetClustersClusterMaintainer[]` | yes | List of maintainers (users and teams) for this cluster. |
-| `name` | `string` | yes | The name of the cluster. |
-| `uuid` | `string` | yes | The UUID of the cluster. |
+| Property       | Type                             | Always present | Description                                             |
+| -------------- | -------------------------------- | -------------- | ------------------------------------------------------- |
+| `color`        | `string`                         | yes            | The color for the cluster.                              |
+| `defaultQueue` | `GetClustersClusterDefaultQueue` | yes            | The default queue for the cluster.                      |
+| `description`  | `string`                         | yes            | The description of the cluster.                         |
+| `emoji`        | `string`                         | yes            | The emoji for the cluster.                              |
+| `id`           | `string`                         | yes            | The GraphQL ID of the cluster.                          |
+| `maintainers`  | `GetClustersClusterMaintainer[]` | yes            | List of maintainers (users and teams) for this cluster. |
+| `name`         | `string`                         | yes            | The name of the cluster.                                |
+| `uuid`         | `string`                         | yes            | The UUID of the cluster.                                |
 
 ## `GetClustersClusterDefaultQueue`
 
 Output object `GetClustersClusterDefaultQueue`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | yes | The description of the default queue. |
-| `id` | `string` | yes | The GraphQL ID of the default queue. |
-| `key` | `string` | yes | The key of the default queue. |
-| `uuid` | `string` | yes | The UUID of the default queue. |
+| Property      | Type     | Always present | Description                           |
+| ------------- | -------- | -------------- | ------------------------------------- |
+| `description` | `string` | yes            | The description of the default queue. |
+| `id`          | `string` | yes            | The GraphQL ID of the default queue.  |
+| `key`         | `string` | yes            | The key of the default queue.         |
+| `uuid`        | `string` | yes            | The UUID of the default queue.        |
 
 ## `GetClustersClusterMaintainer`
 
 Output object `GetClustersClusterMaintainer`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actorEmail` | `string` | yes | The email of the actor (only for users). |
-| `actorName` | `string` | yes | The name of the actor. |
-| `actorSlug` | `string` | yes | The slug of the actor (only for teams). |
-| `actorType` | `string` | yes | The type of the actor (user or team). |
-| `actorUuid` | `string` | yes | The UUID of the actor (user or team). |
-| `permissionUuid` | `string` | yes | The UUID of the maintainer permission. |
+| Property         | Type     | Always present | Description                              |
+| ---------------- | -------- | -------------- | ---------------------------------------- |
+| `actorEmail`     | `string` | yes            | The email of the actor (only for users). |
+| `actorName`      | `string` | yes            | The name of the actor.                   |
+| `actorSlug`      | `string` | yes            | The slug of the actor (only for teams).  |
+| `actorType`      | `string` | yes            | The type of the actor (user or team).    |
+| `actorUuid`      | `string` | yes            | The UUID of the actor (user or team).    |
+| `permissionUuid` | `string` | yes            | The UUID of the maintainer permission.   |

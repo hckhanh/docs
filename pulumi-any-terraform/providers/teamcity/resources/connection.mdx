@@ -19,45 +19,45 @@ Construct with `new teamcity.Connection(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `githubApp` | `ConnectionGithubApp (input)` | yes |  |
-| `projectId` | `string` | yes |  |
+| Property    | Type                          | Required | Description |
+| ----------- | ----------------------------- | -------- | ----------- |
+| `githubApp` | `ConnectionGithubApp (input)` | yes      |             |
+| `projectId` | `string`                      | yes      |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `featureId` | `string` | yes |  |
-| `githubApp` | `ConnectionGithubApp (output)` | no |  |
-| `projectId` | `string` | no |  |
+| Property    | Type                           | Computed | Description |
+| ----------- | ------------------------------ | -------- | ----------- |
+| `featureId` | `string`                       | yes      |             |
+| `githubApp` | `ConnectionGithubApp (output)` | no       |             |
+| `projectId` | `string`                       | no       |             |
 
 ## `ConnectionGithubApp (input)`
 
 Input object `ConnectionGithubApp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `appId` | `string` | yes |  |
-| `clientId` | `string` | yes |  |
-| `clientSecret` | `string` | yes |  |
-| `displayName` | `string` | yes |  |
-| `ownerUrl` | `string` | yes |  |
-| `privateKey` | `string` | yes |  |
-| `webhookSecret` | `string` | yes |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `appId`         | `string` | yes      |             |
+| `clientId`      | `string` | yes      |             |
+| `clientSecret`  | `string` | yes      |             |
+| `displayName`   | `string` | yes      |             |
+| `ownerUrl`      | `string` | yes      |             |
+| `privateKey`    | `string` | yes      |             |
+| `webhookSecret` | `string` | yes      |             |
 
 ## `ConnectionGithubApp (output)`
 
 Output object `ConnectionGithubApp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `appId` | `string` | yes |  |
-| `clientId` | `string` | yes |  |
-| `clientSecret` | `string` | yes |  |
-| `displayName` | `string` | yes |  |
-| `ownerUrl` | `string` | yes |  |
-| `privateKey` | `string` | yes |  |
-| `webhookSecret` | `string` | yes |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `appId`         | `string` | yes            |             |
+| `clientId`      | `string` | yes            |             |
+| `clientSecret`  | `string` | yes            |             |
+| `displayName`   | `string` | yes            |             |
+| `ownerUrl`      | `string` | yes            |             |
+| `privateKey`    | `string` | yes            |             |
+| `webhookSecret` | `string` | yes            |             |

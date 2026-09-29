@@ -26,43 +26,43 @@ yarn add format-prompt
 ### Importing
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 ```
 
 ### Simple Example
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 const result = prompt`
   Hello world!
   This is a formatted prompt.
-`;
+`
 
-console.log(result);
+console.log(result)
 // Output: "Hello world!\nThis is a formatted prompt."
 ```
 
 ### With Variables
 
 ```typescript
-const name = 'John';
-const age = 30;
+const name = "John"
+const age = 30
 
 const result = prompt`
   User Information:
     Name: ${name}
     Age: ${age}
-`;
+`
 
-console.log(result);
+console.log(result)
 // Clean output without extra whitespace
 ```
 
 ### Complex Example
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 function createAnalysisPrompt(email: string) {
   return prompt`
@@ -76,10 +76,10 @@ function createAnalysisPrompt(email: string) {
     ${email}
     
     Provide a detailed security assessment.
-  `;
+  `
 }
 
-const analysis = createAnalysisPrompt('test@example.com');
+const analysis = createAnalysisPrompt("test@example.com")
 ```
 
 ## How It Works
@@ -98,10 +98,10 @@ The `prompt` function:
 format-prompt is written in TypeScript and includes type definitions:
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 // Full type safety
-const result: string = prompt`Your prompt here`;
+const result: string = prompt`Your prompt here`
 ```
 
 ## Best Practices
@@ -116,13 +116,13 @@ const result: string = prompt`Your prompt here`;
 ### List Formatting
 
 ```typescript
-const items = ['item1', 'item2', 'item3'];
+const items = ["item1", "item2", "item3"]
 const result = prompt`
   Please analyze:
     * ${items[0]}
     * ${items[1]}
     * ${items[2]}
-`;
+`
 ```
 
 ### Multi-line Instructions
@@ -134,7 +134,7 @@ const result = prompt`
   Step 3: Generate output
   
   Be thorough and accurate.
-`;
+`
 ```
 
 ### Dynamic Content
@@ -147,6 +147,6 @@ function generatePrompt(context: string, question: string) {
     Question: ${question}
     
     Provide a detailed answer based on the context.
-  `;
+  `
 }
 ```

@@ -19,24 +19,24 @@ Construct with `new portainer.RegistryAccess(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes | Identifier of the Portainer endpoint to which the registry access policy applies. |
-| `registryAccessId` | `string` | no |  |
-| `registryId` | `number` | yes | Identifier of the Portainer registry whose access policy is being managed. |
-| `roleId` | `number` | no | Role identifier assigned to the user or team for the registry on the given endpoint. |
-| `teamId` | `number` | no | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
-| `userId` | `number` | no | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |
+| Property           | Type     | Required | Description                                                                              |
+| ------------------ | -------- | -------- | ---------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | yes      | Identifier of the Portainer endpoint to which the registry access policy applies.        |
+| `registryAccessId` | `string` | no       |                                                                                          |
+| `registryId`       | `number` | yes      | Identifier of the Portainer registry whose access policy is being managed.               |
+| `roleId`           | `number` | no       | Role identifier assigned to the user or team for the registry on the given endpoint.     |
+| `teamId`           | `number` | no       | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
+| `userId`           | `number` | no       | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Identifier of the Portainer endpoint to which the registry access policy applies. |
-| `registryAccessId` | `string` | no |  |
-| `registryId` | `number` | no | Identifier of the Portainer registry whose access policy is being managed. |
-| `roleId` | `number` | no | Role identifier assigned to the user or team for the registry on the given endpoint. |
-| `teamId` | `number` | no | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
-| `userId` | `number` | no | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |
+| Property           | Type     | Computed | Description                                                                              |
+| ------------------ | -------- | -------- | ---------------------------------------------------------------------------------------- |
+| `endpointId`       | `number` | no       | Identifier of the Portainer endpoint to which the registry access policy applies.        |
+| `registryAccessId` | `string` | no       |                                                                                          |
+| `registryId`       | `number` | no       | Identifier of the Portainer registry whose access policy is being managed.               |
+| `roleId`           | `number` | no       | Role identifier assigned to the user or team for the registry on the given endpoint.     |
+| `teamId`           | `number` | no       | Identifier of the team granted access to the registry. Mutually exclusive with `userId`. |
+| `userId`           | `number` | no       | Identifier of the user granted access to the registry. Mutually exclusive with `teamId`. |

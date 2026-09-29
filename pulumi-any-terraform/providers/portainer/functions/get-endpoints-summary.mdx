@@ -19,33 +19,33 @@ Call `portainer.getEndpointsSummary(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `azure` | `number` | yes |  |
-| `byGroups` | `GetEndpointsSummaryByGroup[]` | yes |  |
-| `docker` | `number` | yes |  |
-| `down` | `number` | yes |  |
-| `heartbeat` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `kubernetes` | `number` | yes |  |
-| `outdated` | `number` | yes |  |
-| `podman` | `number` | yes |  |
-| `total` | `number` | yes |  |
-| `unassigned` | `number` | yes |  |
-| `up` | `number` | yes |  |
+| Property     | Type                           | Always present | Description |
+| ------------ | ------------------------------ | -------------- | ----------- |
+| `azure`      | `number`                       | yes            |             |
+| `byGroups`   | `GetEndpointsSummaryByGroup[]` | yes            |             |
+| `docker`     | `number`                       | yes            |             |
+| `down`       | `number`                       | yes            |             |
+| `heartbeat`  | `number`                       | yes            |             |
+| `id`         | `string`                       | yes            |             |
+| `kubernetes` | `number`                       | yes            |             |
+| `outdated`   | `number`                       | yes            |             |
+| `podman`     | `number`                       | yes            |             |
+| `total`      | `number`                       | yes            |             |
+| `unassigned` | `number`                       | yes            |             |
+| `up`         | `number`                       | yes            |             |
 
 ## `GetEndpointsSummaryByGroup`
 
 Output object `GetEndpointsSummaryByGroup`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `count` | `number` | no |  |
-| `groupId` | `number` | no |  |
-| `groupName` | `string` | no |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `count`     | `number` | no             |             |
+| `groupId`   | `number` | no             |             |
+| `groupName` | `string` | no             |             |

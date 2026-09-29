@@ -19,56 +19,56 @@ Call `portainer.getLdapGroups(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `anonymousMode` | `boolean` | no |  |
-| `groupSearches` | `GetLdapGroupsGroupSearch (input)[]` | no |  |
-| `id` | `string` | no |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property        | Type                                 | Required | Description |
+| --------------- | ------------------------------------ | -------- | ----------- |
+| `anonymousMode` | `boolean`                            | no       |             |
+| `groupSearches` | `GetLdapGroupsGroupSearch (input)[]` | no       |             |
+| `id`            | `string`                             | no       |             |
+| `password`      | `string`                             | no       |             |
+| `readerDn`      | `string`                             | no       |             |
+| `startTls`      | `boolean`                            | no       |             |
+| `tlsSkipVerify` | `boolean`                            | no       |             |
+| `url`           | `string`                             | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `anonymousMode` | `boolean` | no |  |
-| `entries` | `GetLdapGroupsEntry[]` | yes |  |
-| `groupSearches` | `GetLdapGroupsGroupSearch (output)[]` | no |  |
-| `id` | `string` | yes |  |
-| `password` | `string` | no |  |
-| `readerDn` | `string` | no |  |
-| `startTls` | `boolean` | no |  |
-| `tlsSkipVerify` | `boolean` | no |  |
-| `url` | `string` | yes |  |
+| Property        | Type                                  | Always present | Description |
+| --------------- | ------------------------------------- | -------------- | ----------- |
+| `anonymousMode` | `boolean`                             | no             |             |
+| `entries`       | `GetLdapGroupsEntry[]`                | yes            |             |
+| `groupSearches` | `GetLdapGroupsGroupSearch (output)[]` | no             |             |
+| `id`            | `string`                              | yes            |             |
+| `password`      | `string`                              | no             |             |
+| `readerDn`      | `string`                              | no             |             |
+| `startTls`      | `boolean`                             | no             |             |
+| `tlsSkipVerify` | `boolean`                             | no             |             |
+| `url`           | `string`                              | yes            |             |
 
 ## `GetLdapGroupsGroupSearch (input)`
 
 Input object `GetLdapGroupsGroupSearch`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | Attribute on a group entry listing its members. |
-| `groupBaseDn` | `string` | yes | Distinguished name the group search starts from. |
-| `groupFilter` | `string` | no | LDAP filter narrowing the group search. |
+| Property         | Type     | Required | Description                                      |
+| ---------------- | -------- | -------- | ------------------------------------------------ |
+| `groupAttribute` | `string` | no       | Attribute on a group entry listing its members.  |
+| `groupBaseDn`    | `string` | yes      | Distinguished name the group search starts from. |
+| `groupFilter`    | `string` | no       | LDAP filter narrowing the group search.          |
 
 ## `GetLdapGroupsEntry`
 
 Output object `GetLdapGroupsEntry`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groups` | `string[]` | no |  |
-| `name` | `string` | no |  |
+| Property | Type       | Always present | Description |
+| -------- | ---------- | -------------- | ----------- |
+| `groups` | `string[]` | no             |             |
+| `name`   | `string`   | no             |             |
 
 ## `GetLdapGroupsGroupSearch (output)`
 
 Output object `GetLdapGroupsGroupSearch`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | Attribute on a group entry listing its members. |
-| `groupBaseDn` | `string` | yes | Distinguished name the group search starts from. |
-| `groupFilter` | `string` | no | LDAP filter narrowing the group search. |
+| Property         | Type     | Always present | Description                                      |
+| ---------------- | -------- | -------------- | ------------------------------------------------ |
+| `groupAttribute` | `string` | no             | Attribute on a group entry listing its members.  |
+| `groupBaseDn`    | `string` | yes            | Distinguished name the group search starts from. |
+| `groupFilter`    | `string` | no             | LDAP filter narrowing the group search.          |

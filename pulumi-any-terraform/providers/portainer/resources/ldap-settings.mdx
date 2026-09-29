@@ -19,126 +19,126 @@ Construct with `new portainer.LdapSettings(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `adminAutoPopulate` | `boolean` | no | Whether auto admin population is enabled |
-| `adminGroupSearchSettings` | `LdapSettingsAdminGroupSearchSetting (input)[]` | no | LDAP admin group search settings |
-| `adminGroups` | `string[]` | no | Saved admin group list |
-| `anonymousMode` | `boolean` | no | Enable anonymous mode. When enabled, ReaderDN and Password will not be used |
-| `autoCreateUsers` | `boolean` | no | Automatically provision users and assign them to matching LDAP group names |
-| `groupSearchSettings` | `LdapSettingsGroupSearchSetting (input)[]` | no | LDAP group search settings |
-| `ldapSettingsId` | `string` | no |  |
-| `password` | `string` | no | Password of the account used to search users |
-| `readerDn` | `string` | no | Account that will be used to search for users (e.g. cn=readonly-account,dc=ldap,dc=domain,dc=tld) |
-| `searchSettings` | `LdapSettingsSearchSetting (input)[]` | no | LDAP user search settings |
-| `serverType` | `number` | no | LDAP server type |
-| `startTls` | `boolean` | no | Whether LDAP connection should use StartTLS |
-| `tlsConfig` | `LdapSettingsTlsConfig (input)` | no | TLS configuration for LDAP |
-| `url` | `string` | no | URL or IP address of the LDAP server (deprecated, use urls) |
-| `urls` | `string[]` | no | URLs or IP addresses of the LDAP server |
+| Property                   | Type                                            | Required | Description                                                                                       |
+| -------------------------- | ----------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `adminAutoPopulate`        | `boolean`                                       | no       | Whether auto admin population is enabled                                                          |
+| `adminGroupSearchSettings` | `LdapSettingsAdminGroupSearchSetting (input)[]` | no       | LDAP admin group search settings                                                                  |
+| `adminGroups`              | `string[]`                                      | no       | Saved admin group list                                                                            |
+| `anonymousMode`            | `boolean`                                       | no       | Enable anonymous mode. When enabled, ReaderDN and Password will not be used                       |
+| `autoCreateUsers`          | `boolean`                                       | no       | Automatically provision users and assign them to matching LDAP group names                        |
+| `groupSearchSettings`      | `LdapSettingsGroupSearchSetting (input)[]`      | no       | LDAP group search settings                                                                        |
+| `ldapSettingsId`           | `string`                                        | no       |                                                                                                   |
+| `password`                 | `string`                                        | no       | Password of the account used to search users                                                      |
+| `readerDn`                 | `string`                                        | no       | Account that will be used to search for users (e.g. cn=readonly-account,dc=ldap,dc=domain,dc=tld) |
+| `searchSettings`           | `LdapSettingsSearchSetting (input)[]`           | no       | LDAP user search settings                                                                         |
+| `serverType`               | `number`                                        | no       | LDAP server type                                                                                  |
+| `startTls`                 | `boolean`                                       | no       | Whether LDAP connection should use StartTLS                                                       |
+| `tlsConfig`                | `LdapSettingsTlsConfig (input)`                 | no       | TLS configuration for LDAP                                                                        |
+| `url`                      | `string`                                        | no       | URL or IP address of the LDAP server (deprecated, use urls)                                       |
+| `urls`                     | `string[]`                                      | no       | URLs or IP addresses of the LDAP server                                                           |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `adminAutoPopulate` | `boolean` | no | Whether auto admin population is enabled |
-| `adminGroupSearchSettings` | `LdapSettingsAdminGroupSearchSetting (output)[]` | no | LDAP admin group search settings |
-| `adminGroups` | `string[]` | no | Saved admin group list |
-| `anonymousMode` | `boolean` | no | Enable anonymous mode. When enabled, ReaderDN and Password will not be used |
-| `autoCreateUsers` | `boolean` | no | Automatically provision users and assign them to matching LDAP group names |
-| `groupSearchSettings` | `LdapSettingsGroupSearchSetting (output)[]` | no | LDAP group search settings |
-| `ldapSettingsId` | `string` | no |  |
-| `password` | `string` | no | Password of the account used to search users |
-| `readerDn` | `string` | no | Account that will be used to search for users (e.g. cn=readonly-account,dc=ldap,dc=domain,dc=tld) |
-| `searchSettings` | `LdapSettingsSearchSetting (output)[]` | no | LDAP user search settings |
-| `serverType` | `number` | no | LDAP server type |
-| `startTls` | `boolean` | no | Whether LDAP connection should use StartTLS |
-| `tlsConfig` | `LdapSettingsTlsConfig (output)` | no | TLS configuration for LDAP |
-| `url` | `string` | no | URL or IP address of the LDAP server (deprecated, use urls) |
-| `urls` | `string[]` | no | URLs or IP addresses of the LDAP server |
+| Property                   | Type                                             | Computed | Description                                                                                       |
+| -------------------------- | ------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------- |
+| `adminAutoPopulate`        | `boolean`                                        | no       | Whether auto admin population is enabled                                                          |
+| `adminGroupSearchSettings` | `LdapSettingsAdminGroupSearchSetting (output)[]` | no       | LDAP admin group search settings                                                                  |
+| `adminGroups`              | `string[]`                                       | no       | Saved admin group list                                                                            |
+| `anonymousMode`            | `boolean`                                        | no       | Enable anonymous mode. When enabled, ReaderDN and Password will not be used                       |
+| `autoCreateUsers`          | `boolean`                                        | no       | Automatically provision users and assign them to matching LDAP group names                        |
+| `groupSearchSettings`      | `LdapSettingsGroupSearchSetting (output)[]`      | no       | LDAP group search settings                                                                        |
+| `ldapSettingsId`           | `string`                                         | no       |                                                                                                   |
+| `password`                 | `string`                                         | no       | Password of the account used to search users                                                      |
+| `readerDn`                 | `string`                                         | no       | Account that will be used to search for users (e.g. cn=readonly-account,dc=ldap,dc=domain,dc=tld) |
+| `searchSettings`           | `LdapSettingsSearchSetting (output)[]`           | no       | LDAP user search settings                                                                         |
+| `serverType`               | `number`                                         | no       | LDAP server type                                                                                  |
+| `startTls`                 | `boolean`                                        | no       | Whether LDAP connection should use StartTLS                                                       |
+| `tlsConfig`                | `LdapSettingsTlsConfig (output)`                 | no       | TLS configuration for LDAP                                                                        |
+| `url`                      | `string`                                         | no       | URL or IP address of the LDAP server (deprecated, use urls)                                       |
+| `urls`                     | `string[]`                                       | no       | URLs or IP addresses of the LDAP server                                                           |
 
 ## `LdapSettingsAdminGroupSearchSetting (input)`
 
 Input object `LdapSettingsAdminGroupSearchSetting`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | LDAP attribute used to identify group membership for admin users (e.g. `member`). |
-| `groupBaseDn` | `string` | no | Base distinguished name under which to search for admin groups. |
-| `groupFilter` | `string` | no | LDAP search filter used to match admin groups (e.g. `(objectClass=groupOfNames)`). |
+| Property         | Type     | Required | Description                                                                        |
+| ---------------- | -------- | -------- | ---------------------------------------------------------------------------------- |
+| `groupAttribute` | `string` | no       | LDAP attribute used to identify group membership for admin users (e.g. `member`).  |
+| `groupBaseDn`    | `string` | no       | Base distinguished name under which to search for admin groups.                    |
+| `groupFilter`    | `string` | no       | LDAP search filter used to match admin groups (e.g. `(objectClass=groupOfNames)`). |
 
 ## `LdapSettingsGroupSearchSetting (input)`
 
 Input object `LdapSettingsGroupSearchSetting`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | no | LDAP group attribute |
-| `groupBaseDn` | `string` | no | Base DN for group search |
-| `groupFilter` | `string` | no | LDAP group search filter |
+| Property         | Type     | Required | Description              |
+| ---------------- | -------- | -------- | ------------------------ |
+| `groupAttribute` | `string` | no       | LDAP group attribute     |
+| `groupBaseDn`    | `string` | no       | Base DN for group search |
+| `groupFilter`    | `string` | no       | LDAP group search filter |
 
 ## `LdapSettingsSearchSetting (input)`
 
 Input object `LdapSettingsSearchSetting`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `baseDn` | `string` | no | Base DN for user search |
-| `filter` | `string` | no | LDAP search filter |
-| `userNameAttribute` | `string` | no | Attribute used for username |
+| Property            | Type     | Required | Description                 |
+| ------------------- | -------- | -------- | --------------------------- |
+| `baseDn`            | `string` | no       | Base DN for user search     |
+| `filter`            | `string` | no       | LDAP search filter          |
+| `userNameAttribute` | `string` | no       | Attribute used for username |
 
 ## `LdapSettingsTlsConfig (input)`
 
 Input object `LdapSettingsTlsConfig`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `tls` | `boolean` | no | Whether TLS is enabled |
-| `tlsCaCert` | `string` | no | TLS CA certificate |
-| `tlsCert` | `string` | no | TLS certificate |
-| `tlsKey` | `string` | no | TLS key |
-| `tlsSkipVerify` | `boolean` | no | Skip TLS verification |
+| Property        | Type      | Required | Description            |
+| --------------- | --------- | -------- | ---------------------- |
+| `tls`           | `boolean` | no       | Whether TLS is enabled |
+| `tlsCaCert`     | `string`  | no       | TLS CA certificate     |
+| `tlsCert`       | `string`  | no       | TLS certificate        |
+| `tlsKey`        | `string`  | no       | TLS key                |
+| `tlsSkipVerify` | `boolean` | no       | Skip TLS verification  |
 
 ## `LdapSettingsAdminGroupSearchSetting (output)`
 
 Output object `LdapSettingsAdminGroupSearchSetting`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | yes | LDAP attribute used to identify group membership for admin users (e.g. `member`). |
-| `groupBaseDn` | `string` | yes | Base distinguished name under which to search for admin groups. |
-| `groupFilter` | `string` | yes | LDAP search filter used to match admin groups (e.g. `(objectClass=groupOfNames)`). |
+| Property         | Type     | Always present | Description                                                                        |
+| ---------------- | -------- | -------------- | ---------------------------------------------------------------------------------- |
+| `groupAttribute` | `string` | yes            | LDAP attribute used to identify group membership for admin users (e.g. `member`).  |
+| `groupBaseDn`    | `string` | yes            | Base distinguished name under which to search for admin groups.                    |
+| `groupFilter`    | `string` | yes            | LDAP search filter used to match admin groups (e.g. `(objectClass=groupOfNames)`). |
 
 ## `LdapSettingsGroupSearchSetting (output)`
 
 Output object `LdapSettingsGroupSearchSetting`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groupAttribute` | `string` | yes | LDAP group attribute |
-| `groupBaseDn` | `string` | yes | Base DN for group search |
-| `groupFilter` | `string` | yes | LDAP group search filter |
+| Property         | Type     | Always present | Description              |
+| ---------------- | -------- | -------------- | ------------------------ |
+| `groupAttribute` | `string` | yes            | LDAP group attribute     |
+| `groupBaseDn`    | `string` | yes            | Base DN for group search |
+| `groupFilter`    | `string` | yes            | LDAP group search filter |
 
 ## `LdapSettingsSearchSetting (output)`
 
 Output object `LdapSettingsSearchSetting`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `baseDn` | `string` | yes | Base DN for user search |
-| `filter` | `string` | yes | LDAP search filter |
-| `userNameAttribute` | `string` | yes | Attribute used for username |
+| Property            | Type     | Always present | Description                 |
+| ------------------- | -------- | -------------- | --------------------------- |
+| `baseDn`            | `string` | yes            | Base DN for user search     |
+| `filter`            | `string` | yes            | LDAP search filter          |
+| `userNameAttribute` | `string` | yes            | Attribute used for username |
 
 ## `LdapSettingsTlsConfig (output)`
 
 Output object `LdapSettingsTlsConfig`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `tls` | `boolean` | yes | Whether TLS is enabled |
-| `tlsCaCert` | `string` | yes | TLS CA certificate |
-| `tlsCert` | `string` | yes | TLS certificate |
-| `tlsKey` | `string` | yes | TLS key |
-| `tlsSkipVerify` | `boolean` | yes | Skip TLS verification |
+| Property        | Type      | Always present | Description            |
+| --------------- | --------- | -------------- | ---------------------- |
+| `tls`           | `boolean` | yes            | Whether TLS is enabled |
+| `tlsCaCert`     | `string`  | yes            | TLS CA certificate     |
+| `tlsCert`       | `string`  | yes            | TLS certificate        |
+| `tlsKey`        | `string`  | yes            | TLS key                |
+| `tlsSkipVerify` | `boolean` | yes            | Skip TLS verification  |

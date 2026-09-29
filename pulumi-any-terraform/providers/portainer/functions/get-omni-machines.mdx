@@ -19,32 +19,32 @@ Call `portainer.getOmniMachines(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentialId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property       | Type     | Required | Description |
+| -------------- | -------- | -------- | ----------- |
+| `credentialId` | `number` | yes      |             |
+| `id`           | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `credentialId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `machines` | `GetOmniMachinesMachine[]` | yes |  |
+| Property       | Type                       | Always present | Description |
+| -------------- | -------------------------- | -------------- | ----------- |
+| `credentialId` | `number`                   | yes            |             |
+| `id`           | `string`                   | yes            |             |
+| `machines`     | `GetOmniMachinesMachine[]` | yes            |             |
 
 ## `GetOmniMachinesMachine`
 
 Output object `GetOmniMachinesMachine`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `cluster` | `string` | no |  |
-| `connected` | `boolean` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `lastError` | `string` | no |  |
-| `machineName` | `string` | no |  |
-| `maintenance` | `boolean` | no |  |
-| `managementAddress` | `string` | no |  |
-| `powerState` | `string` | no |  |
-| `role` | `string` | no |  |
-| `talosVersion` | `string` | no |  |
+| Property            | Type                        | Always present | Description |
+| ------------------- | --------------------------- | -------------- | ----------- |
+| `cluster`           | `string`                    | no             |             |
+| `connected`         | `boolean`                   | no             |             |
+| `labels`            | `{ [key: string]: string }` | no             |             |
+| `lastError`         | `string`                    | no             |             |
+| `machineName`       | `string`                    | no             |             |
+| `maintenance`       | `boolean`                   | no             |             |
+| `managementAddress` | `string`                    | no             |             |
+| `powerState`        | `string`                    | no             |             |
+| `role`              | `string`                    | no             |             |
+| `talosVersion`      | `string`                    | no             |             |

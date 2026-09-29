@@ -19,31 +19,31 @@ Construct with `new portainer.Check(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `checkId` | `string` | no |  |
-| `desiredState` | `string` | no | Desired container state (e.g. running). |
-| `endpointId` | `number` | yes | Identifier of the Portainer endpoint hosting the stack to check. |
-| `maxRetries` | `number` | no | Maximum retries for each service check. |
-| `revision` | `string` | yes | Expected revision (image tag) of running containers/services. |
-| `servicesList` | `string` | yes | Comma-separated list of service names (without stack prefix). |
-| `stackName` | `string` | yes | Name of the Portainer stack whose service status is being validated. |
-| `wait` | `number` | no | Initial wait before the first check (seconds). |
-| `waitBetweenChecks` | `number` | no | Wait time between retry checks (seconds). |
+| Property            | Type     | Required | Description                                                          |
+| ------------------- | -------- | -------- | -------------------------------------------------------------------- |
+| `checkId`           | `string` | no       |                                                                      |
+| `desiredState`      | `string` | no       | Desired container state (e.g. running).                              |
+| `endpointId`        | `number` | yes      | Identifier of the Portainer endpoint hosting the stack to check.     |
+| `maxRetries`        | `number` | no       | Maximum retries for each service check.                              |
+| `revision`          | `string` | yes      | Expected revision (image tag) of running containers/services.        |
+| `servicesList`      | `string` | yes      | Comma-separated list of service names (without stack prefix).        |
+| `stackName`         | `string` | yes      | Name of the Portainer stack whose service status is being validated. |
+| `wait`              | `number` | no       | Initial wait before the first check (seconds).                       |
+| `waitBetweenChecks` | `number` | no       | Wait time between retry checks (seconds).                            |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `checkId` | `string` | no |  |
-| `desiredState` | `string` | no | Desired container state (e.g. running). |
-| `endpointId` | `number` | no | Identifier of the Portainer endpoint hosting the stack to check. |
-| `maxRetries` | `number` | no | Maximum retries for each service check. |
-| `output` | `string` | yes | Human-readable summary of the check results returned by the provider. |
-| `revision` | `string` | no | Expected revision (image tag) of running containers/services. |
-| `servicesList` | `string` | no | Comma-separated list of service names (without stack prefix). |
-| `stackName` | `string` | no | Name of the Portainer stack whose service status is being validated. |
-| `wait` | `number` | no | Initial wait before the first check (seconds). |
-| `waitBetweenChecks` | `number` | no | Wait time between retry checks (seconds). |
+| Property            | Type     | Computed | Description                                                           |
+| ------------------- | -------- | -------- | --------------------------------------------------------------------- |
+| `checkId`           | `string` | no       |                                                                       |
+| `desiredState`      | `string` | no       | Desired container state (e.g. running).                               |
+| `endpointId`        | `number` | no       | Identifier of the Portainer endpoint hosting the stack to check.      |
+| `maxRetries`        | `number` | no       | Maximum retries for each service check.                               |
+| `output`            | `string` | yes      | Human-readable summary of the check results returned by the provider. |
+| `revision`          | `string` | no       | Expected revision (image tag) of running containers/services.         |
+| `servicesList`      | `string` | no       | Comma-separated list of service names (without stack prefix).         |
+| `stackName`         | `string` | no       | Name of the Portainer stack whose service status is being validated.  |
+| `wait`              | `number` | no       | Initial wait before the first check (seconds).                        |
+| `waitBetweenChecks` | `number` | no       | Wait time between retry checks (seconds).                             |

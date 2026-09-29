@@ -11,10 +11,10 @@ These numbers are from one local run on 27 September 2026, Bun 1.4.2, Apple Sili
 
 The schema validates `params`, `query`, and `response`. The mock validator returns the input unchanged.
 
-| Implementation | ops/s | time per call |
-| --- | ---: | ---: |
-| `createFetch` | 744,348 | 1,343 ns |
-| `createUrl` + `fetch` + `response.json()` | 1,616,118 | 619 ns |
+| Implementation                            |     ops/s | time per call |
+| ----------------------------------------- | --------: | ------------: |
+| `createFetch`                             |   744,348 |      1,343 ns |
+| `createUrl` + `fetch` + `response.json()` | 1,616,118 |        619 ns |
 
 The manual call did about 2.2× as many requests per second. `createFetch` spent about 724 ns more per call. That gap is method parsing, URL building through fast-url, and three schema validations. A real schema such as Zod does more work than this mock, so a production schema will be slower than the row above.
 

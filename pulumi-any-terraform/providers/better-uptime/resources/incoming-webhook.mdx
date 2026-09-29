@@ -19,374 +19,374 @@ Construct with `new betteruptime.IncomingWebhook(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `acknowledgedAlertIdField` | `IncomingWebhookAcknowledgedAlertIdField (input)` | no | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `acknowledgedRuleType` | `string` | yes | Should an incident be acknowledged for all webhooks, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `acknowledgedRules` | `IncomingWebhookAcknowledgedRule (input)[]` | no | An array of rules to match to acknowledge an incident. |
-| `call` | `boolean` | no | Whether to call when a new incident is created. |
-| `causeField` | `IncomingWebhookCauseField (input)` | no | A field describing how to extract an incident cause, used as a short description shared with the team member on-call. |
-| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
-| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
-| `name` | `string` | no | The name of this incoming webhook. |
-| `otherAcknowledgedFields` | `IncomingWebhookOtherAcknowledgedField (input)[]` | no | An array of additional fields, which will be extracted when acknowledging an incident. |
-| `otherResolvedFields` | `IncomingWebhookOtherResolvedField (input)[]` | no | An array of additional fields, which will be extracted when resolving an incident. |
-| `otherStartedFields` | `IncomingWebhookOtherStartedField (input)[]` | no | An array of additional fields, which will be extracted when starting an incident. |
-| `paused` | `boolean` | no | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring. |
-| `policyId` | `string` | no | ID of the escalation policy associated with the incoming webhook. |
-| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
-| `recoveryPeriod` | `number` | no | How long the integration must be up to automatically mark an incident as resolved after being down. |
-| `resolvedAlertIdField` | `IncomingWebhookResolvedAlertIdField (input)` | no | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `resolvedRuleType` | `string` | yes | Should an incident be resolved for all webhooks, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `resolvedRules` | `IncomingWebhookResolvedRule (input)[]` | no | An array of rules to match to resolved an incident. |
-| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
-| `startedAlertIdField` | `IncomingWebhookStartedAlertIdField (input)` | no | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `startedRuleType` | `string` | yes | Should an incident be started for all webhooks, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `startedRules` | `IncomingWebhookStartedRule (input)[]` | no | An array of rules to match to start a new incident. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `teamWait` | `number` | no | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team. |
-| `titleField` | `IncomingWebhookTitleField (input)` | no | An optional field describing how to extract a customized incident title. |
+| Property                   | Type                                              | Required | Description                                                                                                                                                         |
+| -------------------------- | ------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `acknowledgedAlertIdField` | `IncomingWebhookAcknowledgedAlertIdField (input)` | no       | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                      |
+| `acknowledgedRuleType`     | `string`                                          | yes      | Should an incident be acknowledged for all webhooks, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `acknowledgedRules`        | `IncomingWebhookAcknowledgedRule (input)[]`       | no       | An array of rules to match to acknowledge an incident.                                                                                                              |
+| `call`                     | `boolean`                                         | no       | Whether to call when a new incident is created.                                                                                                                     |
+| `causeField`               | `IncomingWebhookCauseField (input)`               | no       | A field describing how to extract an incident cause, used as a short description shared with the team member on-call.                                               |
+| `criticalAlert`            | `boolean`                                         | no       | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created.                                   |
+| `email`                    | `boolean`                                         | no       | Whether to send an email when a new incident is created.                                                                                                            |
+| `name`                     | `string`                                          | no       | The name of this incoming webhook.                                                                                                                                  |
+| `otherAcknowledgedFields`  | `IncomingWebhookOtherAcknowledgedField (input)[]` | no       | An array of additional fields, which will be extracted when acknowledging an incident.                                                                              |
+| `otherResolvedFields`      | `IncomingWebhookOtherResolvedField (input)[]`     | no       | An array of additional fields, which will be extracted when resolving an incident.                                                                                  |
+| `otherStartedFields`       | `IncomingWebhookOtherStartedField (input)[]`      | no       | An array of additional fields, which will be extracted when starting an incident.                                                                                   |
+| `paused`                   | `boolean`                                         | no       | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring.                                                            |
+| `policyId`                 | `string`                                          | no       | ID of the escalation policy associated with the incoming webhook.                                                                                                   |
+| `push`                     | `boolean`                                         | no       | Whether to send a push notification when a new incident is created.                                                                                                 |
+| `recoveryPeriod`           | `number`                                          | no       | How long the integration must be up to automatically mark an incident as resolved after being down.                                                                 |
+| `resolvedAlertIdField`     | `IncomingWebhookResolvedAlertIdField (input)`     | no       | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                          |
+| `resolvedRuleType`         | `string`                                          | yes      | Should an incident be resolved for all webhooks, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any         |
+| `resolvedRules`            | `IncomingWebhookResolvedRule (input)[]`           | no       | An array of rules to match to resolved an incident.                                                                                                                 |
+| `sms`                      | `boolean`                                         | no       | Whether to send an SMS when a new incident is created.                                                                                                              |
+| `startedAlertIdField`      | `IncomingWebhookStartedAlertIdField (input)`      | no       | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                           |
+| `startedRuleType`          | `string`                                          | yes      | Should an incident be started for all webhooks, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any           |
+| `startedRules`             | `IncomingWebhookStartedRule (input)[]`            | no       | An array of rules to match to start a new incident.                                                                                                                 |
+| `teamName`                 | `string`                                          | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                             |
+| `teamWait`                 | `number`                                          | no       | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team.                                            |
+| `titleField`               | `IncomingWebhookTitleField (input)`               | no       | An optional field describing how to extract a customized incident title.                                                                                            |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `acknowledgedAlertIdField` | `IncomingWebhookAcknowledgedAlertIdField (output)` | no | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `acknowledgedRuleType` | `string` | no | Should an incident be acknowledged for all webhooks, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `acknowledgedRules` | `IncomingWebhookAcknowledgedRule (output)[]` | no | An array of rules to match to acknowledge an incident. |
-| `call` | `boolean` | no | Whether to call when a new incident is created. |
-| `causeField` | `IncomingWebhookCauseField (output)` | no | A field describing how to extract an incident cause, used as a short description shared with the team member on-call. |
-| `createdAt` | `string` | yes | The time when this incoming webhook was created. |
-| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
-| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
-| `name` | `string` | no | The name of this incoming webhook. |
-| `otherAcknowledgedFields` | `IncomingWebhookOtherAcknowledgedField (output)[]` | no | An array of additional fields, which will be extracted when acknowledging an incident. |
-| `otherResolvedFields` | `IncomingWebhookOtherResolvedField (output)[]` | no | An array of additional fields, which will be extracted when resolving an incident. |
-| `otherStartedFields` | `IncomingWebhookOtherStartedField (output)[]` | no | An array of additional fields, which will be extracted when starting an incident. |
-| `paused` | `boolean` | no | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring. |
-| `policyId` | `string` | no | ID of the escalation policy associated with the incoming webhook. |
-| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
-| `recoveryPeriod` | `number` | no | How long the integration must be up to automatically mark an incident as resolved after being down. |
-| `resolvedAlertIdField` | `IncomingWebhookResolvedAlertIdField (output)` | no | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `resolvedRuleType` | `string` | no | Should an incident be resolved for all webhooks, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `resolvedRules` | `IncomingWebhookResolvedRule (output)[]` | no | An array of rules to match to resolved an incident. |
-| `sampleBody` | `string` | yes | Sample request body the webhook. Used only to make the configuration easier. |
-| `sampleHeaders` | `string` | yes | Sample request HTTP headers the webhook (separated by a newline). Used only to make the configuration easier. |
-| `sampleQueryString` | `string` | yes | Sample query string of the webhook (without the leading ?). Used only to make the configuration easier. |
-| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
-| `startedAlertIdField` | `IncomingWebhookStartedAlertIdField (output)` | no | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents. |
-| `startedRuleType` | `string` | no | Should an incident be started for all webhooks, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any |
-| `startedRules` | `IncomingWebhookStartedRule (output)[]` | no | An array of rules to match to start a new incident. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `teamWait` | `number` | no | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team. |
-| `titleField` | `IncomingWebhookTitleField (output)` | no | An optional field describing how to extract a customized incident title. |
-| `updatedAt` | `string` | yes | The time when this incoming webhook was updated. |
-| `url` | `string` | yes | The url at which we expect to receive the webhook. |
+| Property                   | Type                                               | Computed | Description                                                                                                                                                         |
+| -------------------------- | -------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `acknowledgedAlertIdField` | `IncomingWebhookAcknowledgedAlertIdField (output)` | no       | When acknowledging an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                      |
+| `acknowledgedRuleType`     | `string`                                           | no       | Should an incident be acknowledged for all webhooks, those satisfying all acknowledged_rules, or those satisfying any of them. Valid values are unused, all, or any |
+| `acknowledgedRules`        | `IncomingWebhookAcknowledgedRule (output)[]`       | no       | An array of rules to match to acknowledge an incident.                                                                                                              |
+| `call`                     | `boolean`                                          | no       | Whether to call when a new incident is created.                                                                                                                     |
+| `causeField`               | `IncomingWebhookCauseField (output)`               | no       | A field describing how to extract an incident cause, used as a short description shared with the team member on-call.                                               |
+| `createdAt`                | `string`                                           | yes      | The time when this incoming webhook was created.                                                                                                                    |
+| `criticalAlert`            | `boolean`                                          | no       | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created.                                   |
+| `email`                    | `boolean`                                          | no       | Whether to send an email when a new incident is created.                                                                                                            |
+| `name`                     | `string`                                           | no       | The name of this incoming webhook.                                                                                                                                  |
+| `otherAcknowledgedFields`  | `IncomingWebhookOtherAcknowledgedField (output)[]` | no       | An array of additional fields, which will be extracted when acknowledging an incident.                                                                              |
+| `otherResolvedFields`      | `IncomingWebhookOtherResolvedField (output)[]`     | no       | An array of additional fields, which will be extracted when resolving an incident.                                                                                  |
+| `otherStartedFields`       | `IncomingWebhookOtherStartedField (output)[]`      | no       | An array of additional fields, which will be extracted when starting an incident.                                                                                   |
+| `paused`                   | `boolean`                                          | no       | Set to true to pause monitoring - we won't notify you about downtime. Set to false to resume monitoring.                                                            |
+| `policyId`                 | `string`                                           | no       | ID of the escalation policy associated with the incoming webhook.                                                                                                   |
+| `push`                     | `boolean`                                          | no       | Whether to send a push notification when a new incident is created.                                                                                                 |
+| `recoveryPeriod`           | `number`                                           | no       | How long the integration must be up to automatically mark an incident as resolved after being down.                                                                 |
+| `resolvedAlertIdField`     | `IncomingWebhookResolvedAlertIdField (output)`     | no       | When resolving an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                          |
+| `resolvedRuleType`         | `string`                                           | no       | Should an incident be resolved for all webhooks, those satisfying all resolved_rules, or those satisfying any of them. Valid values are unused, all, or any         |
+| `resolvedRules`            | `IncomingWebhookResolvedRule (output)[]`           | no       | An array of rules to match to resolved an incident.                                                                                                                 |
+| `sampleBody`               | `string`                                           | yes      | Sample request body the webhook. Used only to make the configuration easier.                                                                                        |
+| `sampleHeaders`            | `string`                                           | yes      | Sample request HTTP headers the webhook (separated by a newline). Used only to make the configuration easier.                                                       |
+| `sampleQueryString`        | `string`                                           | yes      | Sample query string of the webhook (without the leading ?). Used only to make the configuration easier.                                                             |
+| `sms`                      | `boolean`                                          | no       | Whether to send an SMS when a new incident is created.                                                                                                              |
+| `startedAlertIdField`      | `IncomingWebhookStartedAlertIdField (output)`      | no       | When starting an incident, how to extract an alert id, a unique alert identifier which will be used to acknowledge and resolve incidents.                           |
+| `startedRuleType`          | `string`                                           | no       | Should an incident be started for all webhooks, those satisfying all started_rules, or those satisfying any of them. Valid values are unused, all, or any           |
+| `startedRules`             | `IncomingWebhookStartedRule (output)[]`            | no       | An array of rules to match to start a new incident.                                                                                                                 |
+| `teamName`                 | `string`                                           | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                             |
+| `teamWait`                 | `number`                                           | no       | How long to wait before escalating the incident alert to the team. Leave blank to disable escalating to the entire team.                                            |
+| `titleField`               | `IncomingWebhookTitleField (output)`               | no       | An optional field describing how to extract a customized incident title.                                                                                            |
+| `updatedAt`                | `string`                                           | yes      | The time when this incoming webhook was updated.                                                                                                                    |
+| `url`                      | `string`                                           | yes      | The url at which we expect to receive the webhook.                                                                                                                  |
 
 ## `IncomingWebhookAcknowledgedAlertIdField (input)`
 
 Input object `IncomingWebhookAcknowledgedAlertIdField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookAcknowledgedRule (input)`
 
 Input object `IncomingWebhookAcknowledgedRule`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Required | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | no       | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | no       | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | no       | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | no       | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookCauseField (input)`
 
 Input object `IncomingWebhookCauseField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherAcknowledgedField (input)`
 
 Input object `IncomingWebhookOtherAcknowledgedField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherResolvedField (input)`
 
 Input object `IncomingWebhookOtherResolvedField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherStartedField (input)`
 
 Input object `IncomingWebhookOtherStartedField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookResolvedAlertIdField (input)`
 
 Input object `IncomingWebhookResolvedAlertIdField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookResolvedRule (input)`
 
 Input object `IncomingWebhookResolvedRule`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Required | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | no       | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | no       | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | no       | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | no       | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookStartedAlertIdField (input)`
 
 Input object `IncomingWebhookStartedAlertIdField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookStartedRule (input)`
 
 Input object `IncomingWebhookStartedRule`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | no | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | no | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | no | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Required | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | no       | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | no       | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | no       | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | no       | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookTitleField (input)`
 
 Input object `IncomingWebhookTitleField`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | no | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | no | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | no | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | no | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | no | The name of the field. |
-| `specialType` | `string` | no | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | no | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | no       | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | no       | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | no       | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | no       | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | no       | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | no       | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | no       | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | no       | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookAcknowledgedAlertIdField (output)`
 
 Output object `IncomingWebhookAcknowledgedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookAcknowledgedRule (output)`
 
 Output object `IncomingWebhookAcknowledgedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Always present | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | yes            | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | yes            | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | yes            | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | yes            | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookCauseField (output)`
 
 Output object `IncomingWebhookCauseField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherAcknowledgedField (output)`
 
 Output object `IncomingWebhookOtherAcknowledgedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherResolvedField (output)`
 
 Output object `IncomingWebhookOtherResolvedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookOtherStartedField (output)`
 
 Output object `IncomingWebhookOtherStartedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookResolvedAlertIdField (output)`
 
 Output object `IncomingWebhookResolvedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookResolvedRule (output)`
 
 Output object `IncomingWebhookResolvedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Always present | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | yes            | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | yes            | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | yes            | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | yes            | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookStartedAlertIdField (output)`
 
 Output object `IncomingWebhookStartedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookStartedRule (output)`
 
 Output object `IncomingWebhookStartedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex. |
-| `matchType` | `string` | yes | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not. |
-| `ruleTarget` | `string` | yes | The target of the rule. Can be any of the following: query_string, header, body, json, or xml. |
-| `targetField` | `string` | yes | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property      | Type     | Always present | Description                                                                                                                                                                                                            |
+| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`     | `string` | yes            | The content we should match to satisfy the rule. Should be a valid regular expression when `matchType` is matches_regex.                                                                                               |
+| `matchType`   | `string` | yes            | The type of the rule. Can be any of the following: contains, contains_not, matches_regex, matches_regex_not, equals, or equals_not.                                                                                    |
+| `ruleTarget`  | `string` | yes            | The target of the rule. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `targetField` | `string` | yes            | The target field within the content of the rule_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
 
 ## `IncomingWebhookTitleField (output)`
 
 Output object `IncomingWebhookTitleField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex. |
-| `contentAfter` | `string` | yes | When should we start extracting content for the field. Required when `matchType` is match_between. |
-| `contentBefore` | `string` | yes | When should we stop extracting content for the field. Required when `matchType` is match_between. |
-| `fieldTarget` | `string` | yes | The target of the field. Can be any of the following: query_string, header, body, json, or xml. |
-| `matchType` | `string` | yes | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything. |
-| `name` | `string` | yes | The name of the field. |
-| `specialType` | `string` | yes | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field. |
-| `targetField` | `string` | yes | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                             |
+| --------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`       | `string` | yes            | The content to match. Required when `matchType` is match_before, match_after, or match_regex. Should be a valid regular expression when `matchType` is match_regex.                                                     |
+| `contentAfter`  | `string` | yes            | When should we start extracting content for the field. Required when `matchType` is match_between.                                                                                                                      |
+| `contentBefore` | `string` | yes            | When should we stop extracting content for the field. Required when `matchType` is match_between.                                                                                                                       |
+| `fieldTarget`   | `string` | yes            | The target of the field. Can be any of the following: query_string, header, body, json, or xml.                                                                                                                         |
+| `matchType`     | `string` | yes            | The match type of the field. Can be any of the following: match_before, match_after, match_between, match_regex, or match_everything.                                                                                   |
+| `name`          | `string` | yes            | The name of the field.                                                                                                                                                                                                  |
+| `specialType`   | `string` | yes            | A special type of the field. Can be `alertId` or cause or otherwise null for a custom field.                                                                                                                            |
+| `targetField`   | `string` | yes            | The target field within the content of the field_target. Should be a JSON key when the target is json, a CSS selector when it is xml, the header name when it is header, or the parameter name when it is query_string. |

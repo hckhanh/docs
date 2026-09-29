@@ -19,58 +19,58 @@ Construct with `new portainer.AddonAccess(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `addonAccessId` | `string` | no |  |
-| `addonId` | `string` | yes | Catalog identifier of the addon whose access configuration this resource owns, for example `portal-template`. |
-| `enabled` | `boolean` | no | Whether the addon is switched on. A disabled addon stays installed but is hidden from users. |
-| `teamAccesses` | `AddonAccessTeamAccess (input)[]` | no | Teams granted access to the addon. The set is authoritative: a team missing from it has no grant. |
-| `userAccesses` | `AddonAccessUserAccess (input)[]` | no | Users granted access to the addon. The set is authoritative: a user missing from it has no grant. |
+| Property        | Type                              | Required | Description                                                                                                   |
+| --------------- | --------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- |
+| `addonAccessId` | `string`                          | no       |                                                                                                               |
+| `addonId`       | `string`                          | yes      | Catalog identifier of the addon whose access configuration this resource owns, for example `portal-template`. |
+| `enabled`       | `boolean`                         | no       | Whether the addon is switched on. A disabled addon stays installed but is hidden from users.                  |
+| `teamAccesses`  | `AddonAccessTeamAccess (input)[]` | no       | Teams granted access to the addon. The set is authoritative: a team missing from it has no grant.             |
+| `userAccesses`  | `AddonAccessUserAccess (input)[]` | no       | Users granted access to the addon. The set is authoritative: a user missing from it has no grant.             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `addonAccessId` | `string` | no |  |
-| `addonId` | `string` | no | Catalog identifier of the addon whose access configuration this resource owns, for example `portal-template`. |
-| `enabled` | `boolean` | no | Whether the addon is switched on. A disabled addon stays installed but is hidden from users. |
-| `teamAccesses` | `AddonAccessTeamAccess (output)[]` | no | Teams granted access to the addon. The set is authoritative: a team missing from it has no grant. |
-| `userAccesses` | `AddonAccessUserAccess (output)[]` | no | Users granted access to the addon. The set is authoritative: a user missing from it has no grant. |
+| Property        | Type                               | Computed | Description                                                                                                   |
+| --------------- | ---------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------- |
+| `addonAccessId` | `string`                           | no       |                                                                                                               |
+| `addonId`       | `string`                           | no       | Catalog identifier of the addon whose access configuration this resource owns, for example `portal-template`. |
+| `enabled`       | `boolean`                          | no       | Whether the addon is switched on. A disabled addon stays installed but is hidden from users.                  |
+| `teamAccesses`  | `AddonAccessTeamAccess (output)[]` | no       | Teams granted access to the addon. The set is authoritative: a team missing from it has no grant.             |
+| `userAccesses`  | `AddonAccessUserAccess (output)[]` | no       | Users granted access to the addon. The set is authoritative: a user missing from it has no grant.             |
 
 ## `AddonAccessTeamAccess (input)`
 
 Input object `AddonAccessTeamAccess`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `roleId` | `number` | yes | Identifier of the role the team is granted on the addon. |
-| `teamId` | `number` | yes | Identifier of the team granted access. |
+| Property | Type     | Required | Description                                              |
+| -------- | -------- | -------- | -------------------------------------------------------- |
+| `roleId` | `number` | yes      | Identifier of the role the team is granted on the addon. |
+| `teamId` | `number` | yes      | Identifier of the team granted access.                   |
 
 ## `AddonAccessUserAccess (input)`
 
 Input object `AddonAccessUserAccess`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `roleId` | `number` | yes | Identifier of the role the user is granted on the addon. |
-| `userId` | `number` | yes | Identifier of the user granted access. |
+| Property | Type     | Required | Description                                              |
+| -------- | -------- | -------- | -------------------------------------------------------- |
+| `roleId` | `number` | yes      | Identifier of the role the user is granted on the addon. |
+| `userId` | `number` | yes      | Identifier of the user granted access.                   |
 
 ## `AddonAccessTeamAccess (output)`
 
 Output object `AddonAccessTeamAccess`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `roleId` | `number` | yes | Identifier of the role the team is granted on the addon. |
-| `teamId` | `number` | yes | Identifier of the team granted access. |
+| Property | Type     | Always present | Description                                              |
+| -------- | -------- | -------------- | -------------------------------------------------------- |
+| `roleId` | `number` | yes            | Identifier of the role the team is granted on the addon. |
+| `teamId` | `number` | yes            | Identifier of the team granted access.                   |
 
 ## `AddonAccessUserAccess (output)`
 
 Output object `AddonAccessUserAccess`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `roleId` | `number` | yes | Identifier of the role the user is granted on the addon. |
-| `userId` | `number` | yes | Identifier of the user granted access. |
+| Property | Type     | Always present | Description                                              |
+| -------- | -------- | -------------- | -------------------------------------------------------- |
+| `roleId` | `number` | yes            | Identifier of the role the user is granted on the addon. |
+| `userId` | `number` | yes            | Identifier of the user granted access.                   |

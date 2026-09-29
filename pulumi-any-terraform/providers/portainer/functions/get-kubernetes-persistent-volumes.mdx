@@ -19,30 +19,30 @@ Call `portainer.getKubernetesPersistentVolumes(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `persistentVolumes` | `GetKubernetesPersistentVolumesPersistentVolume[]` | yes |  |
-| `releasedCount` | `number` | yes |  |
+| Property            | Type                                               | Always present | Description |
+| ------------------- | -------------------------------------------------- | -------------- | ----------- |
+| `environmentId`     | `number`                                           | yes            |             |
+| `id`                | `string`                                           | yes            |             |
+| `persistentVolumes` | `GetKubernetesPersistentVolumesPersistentVolume[]` | yes            |             |
+| `releasedCount`     | `number`                                           | yes            |             |
 
 ## `GetKubernetesPersistentVolumesPersistentVolume`
 
 Output object `GetKubernetesPersistentVolumesPersistentVolume`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `accessModes` | `string[]` | no |  |
-| `capacity` | `string` | no |  |
-| `claimRef` | `string` | no |  |
-| `name` | `string` | no |  |
-| `phase` | `string` | no |  |
-| `reclaimPolicy` | `string` | no |  |
-| `storageClass` | `string` | no |  |
+| Property        | Type       | Always present | Description |
+| --------------- | ---------- | -------------- | ----------- |
+| `accessModes`   | `string[]` | no             |             |
+| `capacity`      | `string`   | no             |             |
+| `claimRef`      | `string`   | no             |             |
+| `name`          | `string`   | no             |             |
+| `phase`         | `string`   | no             |             |
+| `reclaimPolicy` | `string`   | no             |             |
+| `storageClass`  | `string`   | no             |             |

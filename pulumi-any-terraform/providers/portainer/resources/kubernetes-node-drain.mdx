@@ -19,30 +19,30 @@ Construct with `new portainer.KubernetesNodeDrain(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `deleteEmptyDirData` | `boolean` | no | Whether to evict pods that use an emptyDir volume, whose data is lost once the pod is deleted. Mirrors `kubectl drain --delete-emptydir-data`. |
-| `disableEviction` | `boolean` | no | Whether to delete pods directly instead of going through the eviction API, which ignores any configured PodDisruptionBudget. Mirrors `kubectl drain --disable-eviction`. |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment the node belongs to. |
-| `force` | `boolean` | no | Whether to allow deletion of standalone pods that are not managed by a controller. Such pods are lost for good, so the drain refuses them unless this is enabled. Mirrors `kubectl drain --force`. |
-| `gracePeriodSeconds` | `number` | no | Termination grace period in seconds to apply to every evicted pod. `-1` keeps each pod's own grace period. Mirrors `kubectl drain --grace-period`. |
-| `ignoreDaemonSets` | `boolean` | no | Whether to skip DaemonSet-managed pods, which would otherwise block the drain because their controller recreates them immediately. Mirrors `kubectl drain --ignore-daemonsets`. |
-| `kubernetesNodeDrainId` | `string` | no |  |
-| `nodeName` | `string` | yes | Name of the Kubernetes node to drain. |
-| `timeoutSeconds` | `number` | no | Overall time in seconds to wait for the drain to complete. Mirrors `kubectl drain --timeout`. |
+| Property                | Type      | Required | Description                                                                                                                                                                                        |
+| ----------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `deleteEmptyDirData`    | `boolean` | no       | Whether to evict pods that use an emptyDir volume, whose data is lost once the pod is deleted. Mirrors `kubectl drain --delete-emptydir-data`.                                                     |
+| `disableEviction`       | `boolean` | no       | Whether to delete pods directly instead of going through the eviction API, which ignores any configured PodDisruptionBudget. Mirrors `kubectl drain --disable-eviction`.                           |
+| `environmentId`         | `number`  | yes      | Identifier of the Portainer Kubernetes environment the node belongs to.                                                                                                                            |
+| `force`                 | `boolean` | no       | Whether to allow deletion of standalone pods that are not managed by a controller. Such pods are lost for good, so the drain refuses them unless this is enabled. Mirrors `kubectl drain --force`. |
+| `gracePeriodSeconds`    | `number`  | no       | Termination grace period in seconds to apply to every evicted pod. `-1` keeps each pod's own grace period. Mirrors `kubectl drain --grace-period`.                                                 |
+| `ignoreDaemonSets`      | `boolean` | no       | Whether to skip DaemonSet-managed pods, which would otherwise block the drain because their controller recreates them immediately. Mirrors `kubectl drain --ignore-daemonsets`.                    |
+| `kubernetesNodeDrainId` | `string`  | no       |                                                                                                                                                                                                    |
+| `nodeName`              | `string`  | yes      | Name of the Kubernetes node to drain.                                                                                                                                                              |
+| `timeoutSeconds`        | `number`  | no       | Overall time in seconds to wait for the drain to complete. Mirrors `kubectl drain --timeout`.                                                                                                      |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `deleteEmptyDirData` | `boolean` | no | Whether to evict pods that use an emptyDir volume, whose data is lost once the pod is deleted. Mirrors `kubectl drain --delete-emptydir-data`. |
-| `disableEviction` | `boolean` | no | Whether to delete pods directly instead of going through the eviction API, which ignores any configured PodDisruptionBudget. Mirrors `kubectl drain --disable-eviction`. |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment the node belongs to. |
-| `force` | `boolean` | no | Whether to allow deletion of standalone pods that are not managed by a controller. Such pods are lost for good, so the drain refuses them unless this is enabled. Mirrors `kubectl drain --force`. |
-| `gracePeriodSeconds` | `number` | no | Termination grace period in seconds to apply to every evicted pod. `-1` keeps each pod's own grace period. Mirrors `kubectl drain --grace-period`. |
-| `ignoreDaemonSets` | `boolean` | no | Whether to skip DaemonSet-managed pods, which would otherwise block the drain because their controller recreates them immediately. Mirrors `kubectl drain --ignore-daemonsets`. |
-| `kubernetesNodeDrainId` | `string` | no |  |
-| `nodeName` | `string` | no | Name of the Kubernetes node to drain. |
-| `timeoutSeconds` | `number` | no | Overall time in seconds to wait for the drain to complete. Mirrors `kubectl drain --timeout`. |
+| Property                | Type      | Computed | Description                                                                                                                                                                                        |
+| ----------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `deleteEmptyDirData`    | `boolean` | no       | Whether to evict pods that use an emptyDir volume, whose data is lost once the pod is deleted. Mirrors `kubectl drain --delete-emptydir-data`.                                                     |
+| `disableEviction`       | `boolean` | no       | Whether to delete pods directly instead of going through the eviction API, which ignores any configured PodDisruptionBudget. Mirrors `kubectl drain --disable-eviction`.                           |
+| `environmentId`         | `number`  | no       | Identifier of the Portainer Kubernetes environment the node belongs to.                                                                                                                            |
+| `force`                 | `boolean` | no       | Whether to allow deletion of standalone pods that are not managed by a controller. Such pods are lost for good, so the drain refuses them unless this is enabled. Mirrors `kubectl drain --force`. |
+| `gracePeriodSeconds`    | `number`  | no       | Termination grace period in seconds to apply to every evicted pod. `-1` keeps each pod's own grace period. Mirrors `kubectl drain --grace-period`.                                                 |
+| `ignoreDaemonSets`      | `boolean` | no       | Whether to skip DaemonSet-managed pods, which would otherwise block the drain because their controller recreates them immediately. Mirrors `kubectl drain --ignore-daemonsets`.                    |
+| `kubernetesNodeDrainId` | `string`  | no       |                                                                                                                                                                                                    |
+| `nodeName`              | `string`  | no       | Name of the Kubernetes node to drain.                                                                                                                                                              |
+| `timeoutSeconds`        | `number`  | no       | Overall time in seconds to wait for the drain to complete. Mirrors `kubectl drain --timeout`.                                                                                                      |

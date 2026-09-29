@@ -19,53 +19,53 @@ Construct with `new bunnynet.DnsRecord(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accelerated` | `boolean` | no | Indicates whether the DNS record should utilize bunny.net’s acceleration services. |
-| `comment` | `string` | no | This property allows users to add descriptive notes for documentation and management purposes. |
-| `enabled` | `boolean` | no | Indicates whether the DNS record is enabled. |
-| `flags` | `number` | no | Flags for advanced DNS settings. |
-| `geolocationLat` | `number` | no | The latitude for geolocation-based routing. |
-| `geolocationLong` | `number` | no | The longitude for geolocation-based routing. |
-| `latencyZone` | `string` | no | The latency zone for latency-based routing. |
-| `monitorType` | `string` | no | Options: `Http`, `Monitor`, `None`, `Ping` |
-| `name` | `string` | no | The name of the DNS record. Use &lt;code&gt;name = ""&lt;/code&gt; for apex domain records. |
-| `port` | `number` | no | The port number for services that require a specific port. |
-| `priority` | `number` | no | The priority of the DNS record. |
-| `pullzoneId` | `number` | no | The ID of the linked pullzone. |
-| `smartRoutingType` | `string` | no | Options: `Geolocation`, `Latency`, `None` |
-| `tag` | `string` | no | A tag for the DNS record. |
-| `ttl` | `number` | no | The time-to-live value for the DNS record. |
-| `type` | `string` | yes | Options: `A`, `AAAA`, `CAA`, `CNAME`, `Flatten`, `HTTPS`, `MX`, `NS`, `PTR`, `PullZone`, `Redirect`, `SRV`, `SVCB`, `Script`, `TLSA`, `TXT` |
-| `value` | `string` | yes | The value of the DNS record. |
-| `weight` | `number` | no | The weight of the DNS record. It is used in load balancing scenarios to distribute traffic based on the specified weight. |
-| `zone` | `number` | yes | ID of the related DNS zone. |
+| Property           | Type      | Required | Description                                                                                                                                 |
+| ------------------ | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accelerated`      | `boolean` | no       | Indicates whether the DNS record should utilize bunny.net’s acceleration services.                                                          |
+| `comment`          | `string`  | no       | This property allows users to add descriptive notes for documentation and management purposes.                                              |
+| `enabled`          | `boolean` | no       | Indicates whether the DNS record is enabled.                                                                                                |
+| `flags`            | `number`  | no       | Flags for advanced DNS settings.                                                                                                            |
+| `geolocationLat`   | `number`  | no       | The latitude for geolocation-based routing.                                                                                                 |
+| `geolocationLong`  | `number`  | no       | The longitude for geolocation-based routing.                                                                                                |
+| `latencyZone`      | `string`  | no       | The latency zone for latency-based routing.                                                                                                 |
+| `monitorType`      | `string`  | no       | Options: `Http`, `Monitor`, `None`, `Ping`                                                                                                  |
+| `name`             | `string`  | no       | The name of the DNS record. Use &lt;code&gt;name = ""&lt;/code&gt; for apex domain records.                                                 |
+| `port`             | `number`  | no       | The port number for services that require a specific port.                                                                                  |
+| `priority`         | `number`  | no       | The priority of the DNS record.                                                                                                             |
+| `pullzoneId`       | `number`  | no       | The ID of the linked pullzone.                                                                                                              |
+| `smartRoutingType` | `string`  | no       | Options: `Geolocation`, `Latency`, `None`                                                                                                   |
+| `tag`              | `string`  | no       | A tag for the DNS record.                                                                                                                   |
+| `ttl`              | `number`  | no       | The time-to-live value for the DNS record.                                                                                                  |
+| `type`             | `string`  | yes      | Options: `A`, `AAAA`, `CAA`, `CNAME`, `Flatten`, `HTTPS`, `MX`, `NS`, `PTR`, `PullZone`, `Redirect`, `SRV`, `SVCB`, `Script`, `TLSA`, `TXT` |
+| `value`            | `string`  | yes      | The value of the DNS record.                                                                                                                |
+| `weight`           | `number`  | no       | The weight of the DNS record. It is used in load balancing scenarios to distribute traffic based on the specified weight.                   |
+| `zone`             | `number`  | yes      | ID of the related DNS zone.                                                                                                                 |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accelerated` | `boolean` | no | Indicates whether the DNS record should utilize bunny.net’s acceleration services. |
-| `acceleratedPullzone` | `number` | yes | The ID of the accelerated pull zone. |
-| `comment` | `string` | no | This property allows users to add descriptive notes for documentation and management purposes. |
-| `dnsRecordId` | `number` | yes | The unique identifier for the DNS record. |
-| `enabled` | `boolean` | no | Indicates whether the DNS record is enabled. |
-| `flags` | `number` | no | Flags for advanced DNS settings. |
-| `geolocationLat` | `number` | no | The latitude for geolocation-based routing. |
-| `geolocationLong` | `number` | no | The longitude for geolocation-based routing. |
-| `latencyZone` | `string` | no | The latency zone for latency-based routing. |
-| `linkName` | `string` | yes | The name of the linked resource. |
-| `monitorType` | `string` | no | Options: `Http`, `Monitor`, `None`, `Ping` |
-| `name` | `string` | no | The name of the DNS record. Use &lt;code&gt;name = ""&lt;/code&gt; for apex domain records. |
-| `port` | `number` | no | The port number for services that require a specific port. |
-| `priority` | `number` | no | The priority of the DNS record. |
-| `pullzoneId` | `number` | no | The ID of the linked pullzone. |
-| `smartRoutingType` | `string` | no | Options: `Geolocation`, `Latency`, `None` |
-| `tag` | `string` | no | A tag for the DNS record. |
-| `ttl` | `number` | no | The time-to-live value for the DNS record. |
-| `type` | `string` | no | Options: `A`, `AAAA`, `CAA`, `CNAME`, `Flatten`, `HTTPS`, `MX`, `NS`, `PTR`, `PullZone`, `Redirect`, `SRV`, `SVCB`, `Script`, `TLSA`, `TXT` |
-| `value` | `string` | no | The value of the DNS record. |
-| `weight` | `number` | no | The weight of the DNS record. It is used in load balancing scenarios to distribute traffic based on the specified weight. |
-| `zone` | `number` | no | ID of the related DNS zone. |
+| Property              | Type      | Computed | Description                                                                                                                                 |
+| --------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accelerated`         | `boolean` | no       | Indicates whether the DNS record should utilize bunny.net’s acceleration services.                                                          |
+| `acceleratedPullzone` | `number`  | yes      | The ID of the accelerated pull zone.                                                                                                        |
+| `comment`             | `string`  | no       | This property allows users to add descriptive notes for documentation and management purposes.                                              |
+| `dnsRecordId`         | `number`  | yes      | The unique identifier for the DNS record.                                                                                                   |
+| `enabled`             | `boolean` | no       | Indicates whether the DNS record is enabled.                                                                                                |
+| `flags`               | `number`  | no       | Flags for advanced DNS settings.                                                                                                            |
+| `geolocationLat`      | `number`  | no       | The latitude for geolocation-based routing.                                                                                                 |
+| `geolocationLong`     | `number`  | no       | The longitude for geolocation-based routing.                                                                                                |
+| `latencyZone`         | `string`  | no       | The latency zone for latency-based routing.                                                                                                 |
+| `linkName`            | `string`  | yes      | The name of the linked resource.                                                                                                            |
+| `monitorType`         | `string`  | no       | Options: `Http`, `Monitor`, `None`, `Ping`                                                                                                  |
+| `name`                | `string`  | no       | The name of the DNS record. Use &lt;code&gt;name = ""&lt;/code&gt; for apex domain records.                                                 |
+| `port`                | `number`  | no       | The port number for services that require a specific port.                                                                                  |
+| `priority`            | `number`  | no       | The priority of the DNS record.                                                                                                             |
+| `pullzoneId`          | `number`  | no       | The ID of the linked pullzone.                                                                                                              |
+| `smartRoutingType`    | `string`  | no       | Options: `Geolocation`, `Latency`, `None`                                                                                                   |
+| `tag`                 | `string`  | no       | A tag for the DNS record.                                                                                                                   |
+| `ttl`                 | `number`  | no       | The time-to-live value for the DNS record.                                                                                                  |
+| `type`                | `string`  | no       | Options: `A`, `AAAA`, `CAA`, `CNAME`, `Flatten`, `HTTPS`, `MX`, `NS`, `PTR`, `PullZone`, `Redirect`, `SRV`, `SVCB`, `Script`, `TLSA`, `TXT` |
+| `value`               | `string`  | no       | The value of the DNS record.                                                                                                                |
+| `weight`              | `number`  | no       | The weight of the DNS record. It is used in load balancing scenarios to distribute traffic based on the specified weight.                   |
+| `zone`                | `number`  | no       | ID of the related DNS zone.                                                                                                                 |

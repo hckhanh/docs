@@ -19,62 +19,62 @@ Construct with `new infisical.CertManagerCertificateProfile(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `caId` | `string` | no | The ID of the certificate authority to use (required unless `issuerType` is 'self-signed') |
-| `certificatePolicyId` | `string` | yes | The ID of the certificate policy to use |
-| `defaults` | `CertManagerCertificateProfileDefaults (input)` | no | Default certificate attribute values applied when issuing certificates from this profile |
-| `description` | `string` | no | The description of the certificate profile |
-| `issuerType` | `string` | no | The issuer type for the profile. Supported values: ca, self-signed. Defaults to 'ca'. |
-| `name` | `string` | no | The unique name of the certificate profile |
+| Property              | Type                                            | Required | Description                                                                                |
+| --------------------- | ----------------------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `caId`                | `string`                                        | no       | The ID of the certificate authority to use (required unless `issuerType` is 'self-signed') |
+| `certificatePolicyId` | `string`                                        | yes      | The ID of the certificate policy to use                                                    |
+| `defaults`            | `CertManagerCertificateProfileDefaults (input)` | no       | Default certificate attribute values applied when issuing certificates from this profile   |
+| `description`         | `string`                                        | no       | The description of the certificate profile                                                 |
+| `issuerType`          | `string`                                        | no       | The issuer type for the profile. Supported values: ca, self-signed. Defaults to 'ca'.      |
+| `name`                | `string`                                        | no       | The unique name of the certificate profile                                                 |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `caId` | `string` | no | The ID of the certificate authority to use (required unless `issuerType` is 'self-signed') |
-| `certificatePolicyId` | `string` | no | The ID of the certificate policy to use |
-| `defaults` | `CertManagerCertificateProfileDefaults (output)` | no | Default certificate attribute values applied when issuing certificates from this profile |
-| `description` | `string` | no | The description of the certificate profile |
-| `issuerType` | `string` | no | The issuer type for the profile. Supported values: ca, self-signed. Defaults to 'ca'. |
-| `name` | `string` | no | The unique name of the certificate profile |
+| Property              | Type                                             | Computed | Description                                                                                |
+| --------------------- | ------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------ |
+| `caId`                | `string`                                         | no       | The ID of the certificate authority to use (required unless `issuerType` is 'self-signed') |
+| `certificatePolicyId` | `string`                                         | no       | The ID of the certificate policy to use                                                    |
+| `defaults`            | `CertManagerCertificateProfileDefaults (output)` | no       | Default certificate attribute values applied when issuing certificates from this profile   |
+| `description`         | `string`                                         | no       | The description of the certificate profile                                                 |
+| `issuerType`          | `string`                                         | no       | The issuer type for the profile. Supported values: ca, self-signed. Defaults to 'ca'.      |
+| `name`                | `string`                                         | no       | The unique name of the certificate profile                                                 |
 
 ## `CertManagerCertificateProfileDefaults (input)`
 
 Input object `CertManagerCertificateProfileDefaults`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `commonName` | `string` | no | Default common name |
-| `country` | `string` | no | Default country (C) |
-| `domainComponents` | `string[]` | no | Default domain components (DC). Multi-valued; each entry becomes a DC attribute in the certificate subject. |
-| `extendedKeyUsages` | `string[]` | no | Default extended key usages. Supported values: client_auth, server_auth, code_signing, email_protection, ocsp_signing, time_stamping |
-| `keyAlgorithm` | `string` | no | Default key algorithm. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1 |
-| `keyUsages` | `string[]` | no | Default key usages. Supported values: digital_signature, key_encipherment, non_repudiation, data_encipherment, key_agreement, key_cert_sign, crl_sign, encipher_only, decipher_only |
-| `locality` | `string` | no | Default locality (L) |
-| `organization` | `string` | no | Default organization (O) |
-| `organizationalUnit` | `string` | no | Default organizational unit (OU) |
-| `signatureAlgorithm` | `string` | no | Default signature algorithm. Supported values: RSA-SHA256, RSA-SHA384, RSA-SHA512, ECDSA-SHA256, ECDSA-SHA384, ECDSA-SHA512 |
-| `state` | `string` | no | Default state/province (ST) |
-| `ttlDays` | `number` | no | Default certificate validity in days |
+| Property             | Type       | Required | Description                                                                                                                                                                         |
+| -------------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `commonName`         | `string`   | no       | Default common name                                                                                                                                                                 |
+| `country`            | `string`   | no       | Default country (C)                                                                                                                                                                 |
+| `domainComponents`   | `string[]` | no       | Default domain components (DC). Multi-valued; each entry becomes a DC attribute in the certificate subject.                                                                         |
+| `extendedKeyUsages`  | `string[]` | no       | Default extended key usages. Supported values: client_auth, server_auth, code_signing, email_protection, ocsp_signing, time_stamping                                                |
+| `keyAlgorithm`       | `string`   | no       | Default key algorithm. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1                                                                    |
+| `keyUsages`          | `string[]` | no       | Default key usages. Supported values: digital_signature, key_encipherment, non_repudiation, data_encipherment, key_agreement, key_cert_sign, crl_sign, encipher_only, decipher_only |
+| `locality`           | `string`   | no       | Default locality (L)                                                                                                                                                                |
+| `organization`       | `string`   | no       | Default organization (O)                                                                                                                                                            |
+| `organizationalUnit` | `string`   | no       | Default organizational unit (OU)                                                                                                                                                    |
+| `signatureAlgorithm` | `string`   | no       | Default signature algorithm. Supported values: RSA-SHA256, RSA-SHA384, RSA-SHA512, ECDSA-SHA256, ECDSA-SHA384, ECDSA-SHA512                                                         |
+| `state`              | `string`   | no       | Default state/province (ST)                                                                                                                                                         |
+| `ttlDays`            | `number`   | no       | Default certificate validity in days                                                                                                                                                |
 
 ## `CertManagerCertificateProfileDefaults (output)`
 
 Output object `CertManagerCertificateProfileDefaults`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `commonName` | `string` | no | Default common name |
-| `country` | `string` | no | Default country (C) |
-| `domainComponents` | `string[]` | no | Default domain components (DC). Multi-valued; each entry becomes a DC attribute in the certificate subject. |
-| `extendedKeyUsages` | `string[]` | no | Default extended key usages. Supported values: client_auth, server_auth, code_signing, email_protection, ocsp_signing, time_stamping |
-| `keyAlgorithm` | `string` | no | Default key algorithm. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1 |
-| `keyUsages` | `string[]` | no | Default key usages. Supported values: digital_signature, key_encipherment, non_repudiation, data_encipherment, key_agreement, key_cert_sign, crl_sign, encipher_only, decipher_only |
-| `locality` | `string` | no | Default locality (L) |
-| `organization` | `string` | no | Default organization (O) |
-| `organizationalUnit` | `string` | no | Default organizational unit (OU) |
-| `signatureAlgorithm` | `string` | no | Default signature algorithm. Supported values: RSA-SHA256, RSA-SHA384, RSA-SHA512, ECDSA-SHA256, ECDSA-SHA384, ECDSA-SHA512 |
-| `state` | `string` | no | Default state/province (ST) |
-| `ttlDays` | `number` | no | Default certificate validity in days |
+| Property             | Type       | Always present | Description                                                                                                                                                                         |
+| -------------------- | ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `commonName`         | `string`   | no             | Default common name                                                                                                                                                                 |
+| `country`            | `string`   | no             | Default country (C)                                                                                                                                                                 |
+| `domainComponents`   | `string[]` | no             | Default domain components (DC). Multi-valued; each entry becomes a DC attribute in the certificate subject.                                                                         |
+| `extendedKeyUsages`  | `string[]` | no             | Default extended key usages. Supported values: client_auth, server_auth, code_signing, email_protection, ocsp_signing, time_stamping                                                |
+| `keyAlgorithm`       | `string`   | no             | Default key algorithm. Supported values: RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1                                                                    |
+| `keyUsages`          | `string[]` | no             | Default key usages. Supported values: digital_signature, key_encipherment, non_repudiation, data_encipherment, key_agreement, key_cert_sign, crl_sign, encipher_only, decipher_only |
+| `locality`           | `string`   | no             | Default locality (L)                                                                                                                                                                |
+| `organization`       | `string`   | no             | Default organization (O)                                                                                                                                                            |
+| `organizationalUnit` | `string`   | no             | Default organizational unit (OU)                                                                                                                                                    |
+| `signatureAlgorithm` | `string`   | no             | Default signature algorithm. Supported values: RSA-SHA256, RSA-SHA384, RSA-SHA512, ECDSA-SHA256, ECDSA-SHA384, ECDSA-SHA512                                                         |
+| `state`              | `string`   | no             | Default state/province (ST)                                                                                                                                                         |
+| `ttlDays`            | `number`   | no             | Default certificate validity in days                                                                                                                                                |

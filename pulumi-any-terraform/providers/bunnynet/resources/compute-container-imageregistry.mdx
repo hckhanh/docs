@@ -19,19 +19,19 @@ Construct with `new bunnynet.ComputeContainerImageregistry(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `registry` | `string` | yes | Options: `DockerHub`, `GitHub` |
-| `token` | `string` | yes | The token used to authenticate to the registry. If you are importing a resource, declare the token as an empty string. |
-| `username` | `string` | yes | The username used to authenticate to the registry. |
+| Property   | Type     | Required | Description                                                                                                            |
+| ---------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `registry` | `string` | yes      | Options: `DockerHub`, `GitHub`                                                                                         |
+| `token`    | `string` | yes      | The token used to authenticate to the registry. If you are importing a resource, declare the token as an empty string. |
+| `username` | `string` | yes      | The username used to authenticate to the registry.                                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `computeContainerImageregistryId` | `number` | yes | The unique identifier for the image registry. |
-| `registry` | `string` | no | Options: `DockerHub`, `GitHub` |
-| `token` | `string` | no | The token used to authenticate to the registry. If you are importing a resource, declare the token as an empty string. |
-| `username` | `string` | no | The username used to authenticate to the registry. |
+| Property                          | Type     | Computed | Description                                                                                                            |
+| --------------------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `computeContainerImageregistryId` | `number` | yes      | The unique identifier for the image registry.                                                                          |
+| `registry`                        | `string` | no       | Options: `DockerHub`, `GitHub`                                                                                         |
+| `token`                           | `string` | no       | The token used to authenticate to the registry. If you are importing a resource, declare the token as an empty string. |
+| `username`                        | `string` | no       | The username used to authenticate to the registry.                                                                     |

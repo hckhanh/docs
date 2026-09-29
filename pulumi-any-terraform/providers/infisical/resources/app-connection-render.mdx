@@ -19,39 +19,39 @@ Construct with `new infisical.AppConnectionRender(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionRenderCredentials (input)` | yes | The credentials for the Render App Connection |
-| `description` | `string` | no | An optional description for the Render App Connection. |
-| `method` | `string` | yes | The method used to authenticate with Render. Possible values are: api-key |
-| `name` | `string` | no | The name of the Render App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                     | Required | Description                                                                                                                   |
+| ------------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionRenderCredentials (input)` | yes      | The credentials for the Render App Connection                                                                                 |
+| `description` | `string`                                 | no       | An optional description for the Render App Connection.                                                                        |
+| `method`      | `string`                                 | yes      | The method used to authenticate with Render. Possible values are: api-key                                                     |
+| `name`        | `string`                                 | no       | The name of the Render App Connection to create. Must be slug-friendly                                                        |
+| `projectId`   | `string`                                 | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionRenderCredentials (output)` | no | The credentials for the Render App Connection |
-| `credentialsHash` | `string` | yes | The hash of the Render App Connection credentials |
-| `description` | `string` | no | An optional description for the Render App Connection. |
-| `method` | `string` | no | The method used to authenticate with Render. Possible values are: api-key |
-| `name` | `string` | no | The name of the Render App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                      | Computed | Description                                                                                                                   |
+| ----------------- | ----------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionRenderCredentials (output)` | no       | The credentials for the Render App Connection                                                                                 |
+| `credentialsHash` | `string`                                  | yes      | The hash of the Render App Connection credentials                                                                             |
+| `description`     | `string`                                  | no       | An optional description for the Render App Connection.                                                                        |
+| `method`          | `string`                                  | no       | The method used to authenticate with Render. Possible values are: api-key                                                     |
+| `name`            | `string`                                  | no       | The name of the Render App Connection to create. Must be slug-friendly                                                        |
+| `projectId`       | `string`                                  | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionRenderCredentials (input)`
 
 Input object `AppConnectionRenderCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | yes | The API key to use for authentication. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/render |
+| Property | Type     | Required | Description                                                                                                                                     |
+| -------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey` | `string` | yes      | The API key to use for authentication. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/render |
 
 ## `AppConnectionRenderCredentials (output)`
 
 Output object `AppConnectionRenderCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | yes | The API key to use for authentication. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/render |
+| Property | Type     | Always present | Description                                                                                                                                     |
+| -------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey` | `string` | yes            | The API key to use for authentication. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/render |

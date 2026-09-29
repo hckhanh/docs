@@ -19,34 +19,34 @@ Call `portainer.getHelmReleaseHistory(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `releaseName` | `string` | yes |  |
+| Property      | Type     | Required | Description |
+| ------------- | -------- | -------- | ----------- |
+| `endpointId`  | `number` | yes      |             |
+| `id`          | `string` | no       |             |
+| `namespace`   | `string` | no       |             |
+| `releaseName` | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | no |  |
-| `releaseName` | `string` | yes |  |
-| `revisions` | `GetHelmReleaseHistoryRevision[]` | yes |  |
+| Property      | Type                              | Always present | Description |
+| ------------- | --------------------------------- | -------------- | ----------- |
+| `endpointId`  | `number`                          | yes            |             |
+| `id`          | `string`                          | yes            |             |
+| `namespace`   | `string`                          | no             |             |
+| `releaseName` | `string`                          | yes            |             |
+| `revisions`   | `GetHelmReleaseHistoryRevision[]` | yes            |             |
 
 ## `GetHelmReleaseHistoryRevision`
 
 Output object `GetHelmReleaseHistoryRevision`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `appVersion` | `string` | no |  |
-| `chart` | `string` | no |  |
-| `description` | `string` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `revision` | `number` | no |  |
-| `status` | `string` | no |  |
-| `updated` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `appVersion`  | `string` | no             |             |
+| `chart`       | `string` | no             |             |
+| `description` | `string` | no             |             |
+| `name`        | `string` | no             |             |
+| `namespace`   | `string` | no             |             |
+| `revision`    | `number` | no             |             |
+| `status`      | `string` | no             |             |
+| `updated`     | `string` | no             |             |

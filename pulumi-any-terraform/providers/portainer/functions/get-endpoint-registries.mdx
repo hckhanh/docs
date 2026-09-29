@@ -19,35 +19,35 @@ Call `portainer.getEndpointRegistries(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dockerhubRegistryId` | `number` | no |  |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property              | Type     | Required | Description |
+| --------------------- | -------- | -------- | ----------- |
+| `dockerhubRegistryId` | `number` | no       |             |
+| `environmentId`       | `number` | yes      |             |
+| `id`                  | `string` | no       |             |
+| `namespace`           | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `dockerhubRateLimit` | `number` | yes |  |
-| `dockerhubRateRemaining` | `number` | yes |  |
-| `dockerhubRegistryId` | `number` | no |  |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | no |  |
-| `registries` | `GetEndpointRegistriesRegistry[]` | yes |  |
+| Property                 | Type                              | Always present | Description |
+| ------------------------ | --------------------------------- | -------------- | ----------- |
+| `dockerhubRateLimit`     | `number`                          | yes            |             |
+| `dockerhubRateRemaining` | `number`                          | yes            |             |
+| `dockerhubRegistryId`    | `number`                          | no             |             |
+| `environmentId`          | `number`                          | yes            |             |
+| `id`                     | `string`                          | yes            |             |
+| `namespace`              | `string`                          | no             |             |
+| `registries`             | `GetEndpointRegistriesRegistry[]` | yes            |             |
 
 ## `GetEndpointRegistriesRegistry`
 
 Output object `GetEndpointRegistriesRegistry`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authentication` | `boolean` | no |  |
-| `baseUrl` | `string` | no |  |
-| `id` | `number` | no |  |
-| `name` | `string` | no |  |
-| `type` | `number` | no |  |
-| `url` | `string` | no |  |
-| `username` | `string` | no |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `authentication` | `boolean` | no             |             |
+| `baseUrl`        | `string`  | no             |             |
+| `id`             | `number`  | no             |             |
+| `name`           | `string`  | no             |             |
+| `type`           | `number`  | no             |             |
+| `url`            | `string`  | no             |             |
+| `username`       | `string`  | no             |             |

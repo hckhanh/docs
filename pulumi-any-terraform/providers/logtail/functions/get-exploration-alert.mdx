@@ -19,82 +19,82 @@ Call `logtail.getExplorationAlert(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `explorationId` | `string` | yes |  |
-| `name` | `string` | yes |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `explorationId` | `string` | yes      |             |
+| `name`          | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `additionalConditions` | `GetExplorationAlertAdditionalCondition[]` | yes |  |
-| `aggregationInterval` | `number` | yes |  |
-| `alertType` | `string` | yes |  |
-| `anomalySensitivity` | `number` | yes |  |
-| `anomalyTrainingRangeDays` | `number` | yes |  |
-| `anomalyTrigger` | `string` | yes |  |
-| `call` | `boolean` | yes |  |
-| `checkPeriod` | `number` | yes |  |
-| `confirmationPeriod` | `number` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `criticalAlert` | `boolean` | yes |  |
-| `email` | `boolean` | yes |  |
-| `escalationTargets` | `GetExplorationAlertEscalationTarget[]` | yes |  |
-| `explorationId` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `incidentCause` | `string` | yes |  |
-| `incidentPerSeries` | `boolean` | yes |  |
-| `metadata` | `{ [key: string]: string }` | yes |  |
-| `name` | `string` | yes |  |
-| `onMissingData` | `string` | yes |  |
-| `operator` | `string` | yes |  |
-| `paused` | `boolean` | yes |  |
-| `pausedReason` | `string` | yes |  |
-| `push` | `boolean` | yes |  |
-| `queryPeriod` | `number` | yes |  |
-| `recoveryPeriod` | `number` | yes |  |
-| `seriesNames` | `string[]` | yes |  |
-| `seriesNamesExcepts` | `string[]` | yes |  |
-| `sms` | `boolean` | yes |  |
-| `sourceMode` | `string` | yes |  |
-| `sourcePlatforms` | `string[]` | yes |  |
-| `sourceVariable` | `string` | yes |  |
-| `stringValue` | `string` | yes |  |
-| `updatedAt` | `string` | yes |  |
-| `value` | `number` | yes |  |
-| `variableValues` | `GetExplorationAlertVariableValue[]` | yes |  |
+| Property                   | Type                                       | Always present | Description |
+| -------------------------- | ------------------------------------------ | -------------- | ----------- |
+| `additionalConditions`     | `GetExplorationAlertAdditionalCondition[]` | yes            |             |
+| `aggregationInterval`      | `number`                                   | yes            |             |
+| `alertType`                | `string`                                   | yes            |             |
+| `anomalySensitivity`       | `number`                                   | yes            |             |
+| `anomalyTrainingRangeDays` | `number`                                   | yes            |             |
+| `anomalyTrigger`           | `string`                                   | yes            |             |
+| `call`                     | `boolean`                                  | yes            |             |
+| `checkPeriod`              | `number`                                   | yes            |             |
+| `confirmationPeriod`       | `number`                                   | yes            |             |
+| `createdAt`                | `string`                                   | yes            |             |
+| `criticalAlert`            | `boolean`                                  | yes            |             |
+| `email`                    | `boolean`                                  | yes            |             |
+| `escalationTargets`        | `GetExplorationAlertEscalationTarget[]`    | yes            |             |
+| `explorationId`            | `string`                                   | yes            |             |
+| `id`                       | `string`                                   | yes            |             |
+| `incidentCause`            | `string`                                   | yes            |             |
+| `incidentPerSeries`        | `boolean`                                  | yes            |             |
+| `metadata`                 | `{ [key: string]: string }`                | yes            |             |
+| `name`                     | `string`                                   | yes            |             |
+| `onMissingData`            | `string`                                   | yes            |             |
+| `operator`                 | `string`                                   | yes            |             |
+| `paused`                   | `boolean`                                  | yes            |             |
+| `pausedReason`             | `string`                                   | yes            |             |
+| `push`                     | `boolean`                                  | yes            |             |
+| `queryPeriod`              | `number`                                   | yes            |             |
+| `recoveryPeriod`           | `number`                                   | yes            |             |
+| `seriesNames`              | `string[]`                                 | yes            |             |
+| `seriesNamesExcepts`       | `string[]`                                 | yes            |             |
+| `sms`                      | `boolean`                                  | yes            |             |
+| `sourceMode`               | `string`                                   | yes            |             |
+| `sourcePlatforms`          | `string[]`                                 | yes            |             |
+| `sourceVariable`           | `string`                                   | yes            |             |
+| `stringValue`              | `string`                                   | yes            |             |
+| `updatedAt`                | `string`                                   | yes            |             |
+| `value`                    | `number`                                   | yes            |             |
+| `variableValues`           | `GetExplorationAlertVariableValue[]`       | yes            |             |
 
 ## `GetExplorationAlertAdditionalCondition`
 
 Output object `GetExplorationAlertAdditionalCondition`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `alertType` | `string` | no |  |
-| `operator` | `string` | no |  |
-| `seriesNames` | `string[]` | no |  |
-| `seriesNamesExcepts` | `string[]` | no |  |
-| `stringValue` | `string` | no |  |
-| `value` | `number` | no |  |
+| Property             | Type       | Always present | Description |
+| -------------------- | ---------- | -------------- | ----------- |
+| `alertType`          | `string`   | no             |             |
+| `operator`           | `string`   | no             |             |
+| `seriesNames`        | `string[]` | no             |             |
+| `seriesNamesExcepts` | `string[]` | no             |             |
+| `stringValue`        | `string`   | no             |             |
+| `value`              | `number`   | no             |             |
 
 ## `GetExplorationAlertEscalationTarget`
 
 Output object `GetExplorationAlertEscalationTarget`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `policyId` | `number` | no |  |
-| `policyName` | `string` | no |  |
-| `teamId` | `number` | no |  |
-| `teamName` | `string` | no |  |
+| Property     | Type     | Always present | Description |
+| ------------ | -------- | -------------- | ----------- |
+| `policyId`   | `number` | no             |             |
+| `policyName` | `string` | no             |             |
+| `teamId`     | `number` | no             |             |
+| `teamName`   | `string` | no             |             |
 
 ## `GetExplorationAlertVariableValue`
 
 Output object `GetExplorationAlertVariableValue`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no |  |
-| `selectedLabel` | `string` | no |  |
-| `values` | `string[]` | no |  |
+| Property        | Type       | Always present | Description |
+| --------------- | ---------- | -------------- | ----------- |
+| `name`          | `string`   | no             |             |
+| `selectedLabel` | `string`   | no             |             |
+| `values`        | `string[]` | no             |             |

@@ -19,38 +19,38 @@ Call `portainer.getAddons(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `view` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `view`   | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `addons` | `GetAddonsAddon[]` | yes |  |
-| `catalogError` | `string` | yes |  |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `view` | `string` | no |  |
+| Property        | Type               | Always present | Description |
+| --------------- | ------------------ | -------------- | ----------- |
+| `addons`        | `GetAddonsAddon[]` | yes            |             |
+| `catalogError`  | `string`           | yes            |             |
+| `environmentId` | `number`           | yes            |             |
+| `id`            | `string`           | yes            |             |
+| `view`          | `string`           | no             |             |
 
 ## `GetAddonsAddon`
 
 Output object `GetAddonsAddon`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `availableVersions` | `string[]` | no |  |
-| `chartVersion` | `string` | no |  |
-| `description` | `string` | no |  |
-| `displayName` | `string` | no |  |
-| `enabled` | `boolean` | no |  |
-| `healthMessage` | `string` | no |  |
-| `healthStatus` | `string` | no |  |
-| `icon` | `string` | no |  |
-| `id` | `string` | no |  |
-| `lifecycleStatus` | `string` | no |  |
-| `lifecycleStatusMessage` | `string` | no |  |
-| `path` | `string` | no |  |
-| `shortDescription` | `string` | no |  |
-| `upgradeAvailable` | `boolean` | no |  |
+| Property                 | Type       | Always present | Description |
+| ------------------------ | ---------- | -------------- | ----------- |
+| `availableVersions`      | `string[]` | no             |             |
+| `chartVersion`           | `string`   | no             |             |
+| `description`            | `string`   | no             |             |
+| `displayName`            | `string`   | no             |             |
+| `enabled`                | `boolean`  | no             |             |
+| `healthMessage`          | `string`   | no             |             |
+| `healthStatus`           | `string`   | no             |             |
+| `icon`                   | `string`   | no             |             |
+| `id`                     | `string`   | no             |             |
+| `lifecycleStatus`        | `string`   | no             |             |
+| `lifecycleStatusMessage` | `string`   | no             |             |
+| `path`                   | `string`   | no             |             |
+| `shortDescription`       | `string`   | no             |             |
+| `upgradeAvailable`       | `boolean`  | no             |             |

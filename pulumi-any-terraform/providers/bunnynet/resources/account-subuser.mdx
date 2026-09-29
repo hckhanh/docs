@@ -19,22 +19,22 @@ Construct with `new bunnynet.AccountSubuser(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | yes | The user's email address. |
-| `firstname` | `string` | yes | The user's first name. |
-| `lastname` | `string` | yes | The user's last name. |
-| `password` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. The user's password. This is a write-only field: to update it after creation, re-create the resource. |
-| `permissions` | `string[]` | yes | Options: `abuse`, `billing`, `support`, `users`, `zones` |
+| Property      | Type       | Required | Description                                                                                                                                                                                                     |
+| ------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`       | `string`   | yes      | The user's email address.                                                                                                                                                                                       |
+| `firstname`   | `string`   | yes      | The user's first name.                                                                                                                                                                                          |
+| `lastname`    | `string`   | yes      | The user's last name.                                                                                                                                                                                           |
+| `password`    | `string`   | no       | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. The user's password. This is a write-only field: to update it after creation, re-create the resource. |
+| `permissions` | `string[]` | yes      | Options: `abuse`, `billing`, `support`, `users`, `zones`                                                                                                                                                        |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | no | The user's email address. |
-| `firstname` | `string` | no | The user's first name. |
-| `lastname` | `string` | no | The user's last name. |
-| `password` | `string` | no | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. The user's password. This is a write-only field: to update it after creation, re-create the resource. |
-| `permissions` | `string[]` | no | Options: `abuse`, `billing`, `support`, `users`, `zones` |
+| Property      | Type       | Computed | Description                                                                                                                                                                                                     |
+| ------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`       | `string`   | no       | The user's email address.                                                                                                                                                                                       |
+| `firstname`   | `string`   | no       | The user's first name.                                                                                                                                                                                          |
+| `lastname`    | `string`   | no       | The user's last name.                                                                                                                                                                                           |
+| `password`    | `string`   | no       | **NOTE:** This field is write-only and its value will not be updated in state as part of read operations. The user's password. This is a write-only field: to update it after creation, re-create the resource. |
+| `permissions` | `string[]` | no       | Options: `abuse`, `billing`, `support`, `users`, `zones`                                                                                                                                                        |

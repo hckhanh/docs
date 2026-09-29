@@ -19,38 +19,38 @@ Construct with `new infisical.IdentityTokenAuth(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityTokenAuthAccessTokenTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address... |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `identityId` | `string` | yes | The ID of the identity to attach the configuration onto. |
+| Property                  | Type                                              | Required | Description                                                                                                                         |
+| ------------------------- | ------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                          | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                |
+| `accessTokenNumUsesLimit` | `number`                                          | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0               |
+| `accessTokenTrustedIps`   | `IdentityTokenAuthAccessTokenTrustedIp (input)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address... |
+| `accessTokenTtl`          | `number`                                          | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                        |
+| `identityId`              | `string`                                          | yes      | The ID of the identity to attach the configuration onto.                                                                            |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityTokenAuthAccessTokenTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address... |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `identityId` | `string` | no | The ID of the identity to attach the configuration onto. |
+| Property                  | Type                                               | Computed | Description                                                                                                                         |
+| ------------------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                           | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                |
+| `accessTokenNumUsesLimit` | `number`                                           | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0               |
+| `accessTokenTrustedIps`   | `IdentityTokenAuthAccessTokenTrustedIp (output)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address... |
+| `accessTokenTtl`          | `number`                                           | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                        |
+| `identityId`              | `string`                                           | no       | The ID of the identity to attach the configuration onto.                                                                            |
 
 ## `IdentityTokenAuthAccessTokenTrustedIp (input)`
 
 Input object `IdentityTokenAuthAccessTokenTrustedIp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | no |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `ipAddress` | `string` | no       |             |
 
 ## `IdentityTokenAuthAccessTokenTrustedIp (output)`
 
 Output object `IdentityTokenAuthAccessTokenTrustedIp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | yes |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `ipAddress` | `string` | yes            |             |

@@ -19,80 +19,80 @@ Construct with `new buildkite.ClusterQueue(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clusterId` | `string` | yes | The ID of the cluster that this cluster queue belongs to. |
-| `description` | `string` | no | A description for the cluster queue. |
-| `dispatchPaused` | `boolean` | no | The dispatch state of a cluster queue. |
-| `hostedAgents` | `ClusterQueueHostedAgents (input)` | no | Control the settings for the Buildkite hosted agents. |
-| `key` | `string` | yes | The key of the cluster queue. |
-| `retryAgentAffinity` | `string` | no | Specifies which agent should be preferred when a job is retried. Valid values are `prefer-warmest` (prefer agents that have recently finished jobs) and `prefer-different` (prefer a different agent if available). Defaults to `prefer-warmest`. |
+| Property             | Type                               | Required | Description                                                                                                                                                                                                                                       |
+| -------------------- | ---------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clusterId`          | `string`                           | yes      | The ID of the cluster that this cluster queue belongs to.                                                                                                                                                                                         |
+| `description`        | `string`                           | no       | A description for the cluster queue.                                                                                                                                                                                                              |
+| `dispatchPaused`     | `boolean`                          | no       | The dispatch state of a cluster queue.                                                                                                                                                                                                            |
+| `hostedAgents`       | `ClusterQueueHostedAgents (input)` | no       | Control the settings for the Buildkite hosted agents.                                                                                                                                                                                             |
+| `key`                | `string`                           | yes      | The key of the cluster queue.                                                                                                                                                                                                                     |
+| `retryAgentAffinity` | `string`                           | no       | Specifies which agent should be preferred when a job is retried. Valid values are `prefer-warmest` (prefer agents that have recently finished jobs) and `prefer-different` (prefer a different agent if available). Defaults to `prefer-warmest`. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `clusterId` | `string` | no | The ID of the cluster that this cluster queue belongs to. |
-| `clusterUuid` | `string` | yes | The UUID of the cluster this queue belongs to. |
-| `description` | `string` | no | A description for the cluster queue. |
-| `dispatchPaused` | `boolean` | no | The dispatch state of a cluster queue. |
-| `hostedAgents` | `ClusterQueueHostedAgents (output)` | no | Control the settings for the Buildkite hosted agents. |
-| `key` | `string` | no | The key of the cluster queue. |
-| `retryAgentAffinity` | `string` | no | Specifies which agent should be preferred when a job is retried. Valid values are `prefer-warmest` (prefer agents that have recently finished jobs) and `prefer-different` (prefer a different agent if available). Defaults to `prefer-warmest`. |
-| `uuid` | `string` | yes | The UUID of the cluster queue. |
+| Property             | Type                                | Computed | Description                                                                                                                                                                                                                                       |
+| -------------------- | ----------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clusterId`          | `string`                            | no       | The ID of the cluster that this cluster queue belongs to.                                                                                                                                                                                         |
+| `clusterUuid`        | `string`                            | yes      | The UUID of the cluster this queue belongs to.                                                                                                                                                                                                    |
+| `description`        | `string`                            | no       | A description for the cluster queue.                                                                                                                                                                                                              |
+| `dispatchPaused`     | `boolean`                           | no       | The dispatch state of a cluster queue.                                                                                                                                                                                                            |
+| `hostedAgents`       | `ClusterQueueHostedAgents (output)` | no       | Control the settings for the Buildkite hosted agents.                                                                                                                                                                                             |
+| `key`                | `string`                            | no       | The key of the cluster queue.                                                                                                                                                                                                                     |
+| `retryAgentAffinity` | `string`                            | no       | Specifies which agent should be preferred when a job is retried. Valid values are `prefer-warmest` (prefer agents that have recently finished jobs) and `prefer-different` (prefer a different agent if available). Defaults to `prefer-warmest`. |
+| `uuid`               | `string`                            | yes      | The UUID of the cluster queue.                                                                                                                                                                                                                    |
 
 ## `ClusterQueueHostedAgents (input)`
 
 Input object `ClusterQueueHostedAgents`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `instanceShape` | `string` | yes | The instance shape to use for the Hosted Agent cluster queue. This can be a MacOS instance shape or a Linux instance shape. Valid values are: - MACOS_ARM64_M4_6X28 - MACOS_ARM64_M4_12X56 - LINUX_AMD64_2X4 - LINUX_AMD64_4X16 - LINUX_AMD64_8X32 - LINUX_AMD64_16X64 - LINUX_AMD64_32X128 - LINUX_AMD64_64X256 - LINUX_ARM64_2X4 - LINUX_ARM64_4X16 - LINUX_ARM64_8X32 - LINUX_ARM64_16X64 - LINUX_ARM64_32X128 - LINUX_ARM64_64X256 |
-| `linux` | `ClusterQueueHostedAgentsLinux (input)` | no |  |
-| `mac` | `ClusterQueueHostedAgentsMac (input)` | no |  |
+| Property        | Type                                    | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `instanceShape` | `string`                                | yes      | The instance shape to use for the Hosted Agent cluster queue. This can be a MacOS instance shape or a Linux instance shape. Valid values are: - MACOS_ARM64_M4_6X28 - MACOS_ARM64_M4_12X56 - LINUX_AMD64_2X4 - LINUX_AMD64_4X16 - LINUX_AMD64_8X32 - LINUX_AMD64_16X64 - LINUX_AMD64_32X128 - LINUX_AMD64_64X256 - LINUX_ARM64_2X4 - LINUX_ARM64_4X16 - LINUX_ARM64_8X32 - LINUX_ARM64_16X64 - LINUX_ARM64_32X128 - LINUX_ARM64_64X256 |
+| `linux`         | `ClusterQueueHostedAgentsLinux (input)` | no       |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `mac`           | `ClusterQueueHostedAgentsMac (input)`   | no       |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ## `ClusterQueueHostedAgentsLinux (input)`
 
 Input object `ClusterQueueHostedAgentsLinux`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `agentImageRef` | `string` | yes | A URL reference to a container image that will be used for jobs running within the queue. This URL is required to be publicly available, or pushed to the internal registry available within the cluster. Please note that this value is currently experimental and in preview. Please contact support@buildkite.com to enable this functionality for your organization. |
+| Property        | Type     | Required | Description                                                                                                                                                                                                                                                                                                                                                              |
+| --------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `agentImageRef` | `string` | yes      | A URL reference to a container image that will be used for jobs running within the queue. This URL is required to be publicly available, or pushed to the internal registry available within the cluster. Please note that this value is currently experimental and in preview. Please contact support@buildkite.com to enable this functionality for your organization. |
 
 ## `ClusterQueueHostedAgentsMac (input)`
 
 Input object `ClusterQueueHostedAgentsMac`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `macosVersion` | `string` | no | The macOS version available to jobs in this queue. Buildkite selects the current default when this is omitted. This setting is experimental and may not work as expected. |
-| `xcodeVersion` | `string` | yes | Required selection of a specific XCode version to be selected for jobs in the queue to have available. Please note that this value is currently experimental and may not function as expected. |
+| Property       | Type     | Required | Description                                                                                                                                                                                    |
+| -------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `macosVersion` | `string` | no       | The macOS version available to jobs in this queue. Buildkite selects the current default when this is omitted. This setting is experimental and may not work as expected.                      |
+| `xcodeVersion` | `string` | yes      | Required selection of a specific XCode version to be selected for jobs in the queue to have available. Please note that this value is currently experimental and may not function as expected. |
 
 ## `ClusterQueueHostedAgents (output)`
 
 Output object `ClusterQueueHostedAgents`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `instanceShape` | `string` | yes | The instance shape to use for the Hosted Agent cluster queue. This can be a MacOS instance shape or a Linux instance shape. Valid values are: - MACOS_ARM64_M4_6X28 - MACOS_ARM64_M4_12X56 - LINUX_AMD64_2X4 - LINUX_AMD64_4X16 - LINUX_AMD64_8X32 - LINUX_AMD64_16X64 - LINUX_AMD64_32X128 - LINUX_AMD64_64X256 - LINUX_ARM64_2X4 - LINUX_ARM64_4X16 - LINUX_ARM64_8X32 - LINUX_ARM64_16X64 - LINUX_ARM64_32X128 - LINUX_ARM64_64X256 |
-| `linux` | `ClusterQueueHostedAgentsLinux (output)` | no |  |
-| `mac` | `ClusterQueueHostedAgentsMac (output)` | no |  |
+| Property        | Type                                     | Always present | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ---------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `instanceShape` | `string`                                 | yes            | The instance shape to use for the Hosted Agent cluster queue. This can be a MacOS instance shape or a Linux instance shape. Valid values are: - MACOS_ARM64_M4_6X28 - MACOS_ARM64_M4_12X56 - LINUX_AMD64_2X4 - LINUX_AMD64_4X16 - LINUX_AMD64_8X32 - LINUX_AMD64_16X64 - LINUX_AMD64_32X128 - LINUX_AMD64_64X256 - LINUX_ARM64_2X4 - LINUX_ARM64_4X16 - LINUX_ARM64_8X32 - LINUX_ARM64_16X64 - LINUX_ARM64_32X128 - LINUX_ARM64_64X256 |
+| `linux`         | `ClusterQueueHostedAgentsLinux (output)` | no             |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `mac`           | `ClusterQueueHostedAgentsMac (output)`   | no             |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ## `ClusterQueueHostedAgentsLinux (output)`
 
 Output object `ClusterQueueHostedAgentsLinux`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `agentImageRef` | `string` | yes | A URL reference to a container image that will be used for jobs running within the queue. This URL is required to be publicly available, or pushed to the internal registry available within the cluster. Please note that this value is currently experimental and in preview. Please contact support@buildkite.com to enable this functionality for your organization. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                                                                                                                                                                                              |
+| --------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `agentImageRef` | `string` | yes            | A URL reference to a container image that will be used for jobs running within the queue. This URL is required to be publicly available, or pushed to the internal registry available within the cluster. Please note that this value is currently experimental and in preview. Please contact support@buildkite.com to enable this functionality for your organization. |
 
 ## `ClusterQueueHostedAgentsMac (output)`
 
 Output object `ClusterQueueHostedAgentsMac`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `macosVersion` | `string` | yes | The macOS version available to jobs in this queue. Buildkite selects the current default when this is omitted. This setting is experimental and may not work as expected. |
-| `xcodeVersion` | `string` | yes | Required selection of a specific XCode version to be selected for jobs in the queue to have available. Please note that this value is currently experimental and may not function as expected. |
+| Property       | Type     | Always present | Description                                                                                                                                                                                    |
+| -------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `macosVersion` | `string` | yes            | The macOS version available to jobs in this queue. Buildkite selects the current default when this is omitted. This setting is experimental and may not work as expected.                      |
+| `xcodeVersion` | `string` | yes            | Required selection of a specific XCode version to be selected for jobs in the queue to have available. Please note that this value is currently experimental and may not function as expected. |

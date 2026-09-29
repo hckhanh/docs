@@ -19,18 +19,18 @@ Construct with `new portainer.UserMembershipsSync(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another synchronisation when they change. A sync is a one-shot action, so without a trigger the resource runs once and then stays put. |
-| `userId` | `number` | yes | Identifier of the user whose team memberships are synchronised. |
-| `userMembershipsSyncId` | `string` | no |  |
+| Property                | Type                        | Required | Description                                                                                                                                                        |
+| ----------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `triggers`              | `{ [key: string]: string }` | no       | Arbitrary values that force another synchronisation when they change. A sync is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| `userId`                | `number`                    | yes      | Identifier of the user whose team memberships are synchronised.                                                                                                    |
+| `userMembershipsSyncId` | `string`                    | no       |                                                                                                                                                                    |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another synchronisation when they change. A sync is a one-shot action, so without a trigger the resource runs once and then stays put. |
-| `userId` | `number` | no | Identifier of the user whose team memberships are synchronised. |
-| `userMembershipsSyncId` | `string` | no |  |
+| Property                | Type                        | Computed | Description                                                                                                                                                        |
+| ----------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `triggers`              | `{ [key: string]: string }` | no       | Arbitrary values that force another synchronisation when they change. A sync is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| `userId`                | `number`                    | no       | Identifier of the user whose team memberships are synchronised.                                                                                                    |
+| `userMembershipsSyncId` | `string`                    | no       |                                                                                                                                                                    |

@@ -19,33 +19,33 @@ Call `infisical.getProjects(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `slug` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `slug`   | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `autoCapitalization` | `boolean` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `environments` | `{ [key: string]: GetProjectsEnvironments }` | yes |  |
-| `id` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `orgId` | `string` | yes |  |
-| `slug` | `string` | yes |  |
-| `type` | `string` | yes |  |
-| `updatedAt` | `string` | yes |  |
-| `upgradeStatus` | `string` | yes |  |
-| `version` | `number` | yes |  |
+| Property             | Type                                         | Always present | Description |
+| -------------------- | -------------------------------------------- | -------------- | ----------- |
+| `autoCapitalization` | `boolean`                                    | yes            |             |
+| `createdAt`          | `string`                                     | yes            |             |
+| `environments`       | `{ [key: string]: GetProjectsEnvironments }` | yes            |             |
+| `id`                 | `string`                                     | yes            |             |
+| `name`               | `string`                                     | yes            |             |
+| `orgId`              | `string`                                     | yes            |             |
+| `slug`               | `string`                                     | yes            |             |
+| `type`               | `string`                                     | yes            |             |
+| `updatedAt`          | `string`                                     | yes            |             |
+| `upgradeStatus`      | `string`                                     | yes            |             |
+| `version`            | `number`                                     | yes            |             |
 
 ## `GetProjectsEnvironments`
 
 Output object `GetProjectsEnvironments`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes | The ID of the environment |
-| `name` | `string` | yes | The name of the environment |
-| `slug` | `string` | yes | The slug of the environment |
+| Property | Type     | Always present | Description                 |
+| -------- | -------- | -------------- | --------------------------- |
+| `id`     | `string` | yes            | The ID of the environment   |
+| `name`   | `string` | yes            | The name of the environment |
+| `slug`   | `string` | yes            | The slug of the environment |

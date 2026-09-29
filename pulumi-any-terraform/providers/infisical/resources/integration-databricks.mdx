@@ -19,26 +19,26 @@ Construct with `new infisical.IntegrationDatabricks(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `databricksHost` | `string` | yes | The Databricks host URL. |
-| `databricksSecretScope` | `string` | yes | The Databricks secret scope. Example: your-secret-scope |
-| `databricksToken` | `string` | yes | The Databricks access token. |
-| `environment` | `string` | yes | The slug of the environment to sync to Databricks (prod, dev, staging, etc). |
-| `projectId` | `string` | yes | The ID of your Infisical project. |
-| `secretPath` | `string` | yes | The secret path in Infisical to sync secrets from. |
+| Property                | Type     | Required | Description                                                                  |
+| ----------------------- | -------- | -------- | ---------------------------------------------------------------------------- |
+| `databricksHost`        | `string` | yes      | The Databricks host URL.                                                     |
+| `databricksSecretScope` | `string` | yes      | The Databricks secret scope. Example: your-secret-scope                      |
+| `databricksToken`       | `string` | yes      | The Databricks access token.                                                 |
+| `environment`           | `string` | yes      | The slug of the environment to sync to Databricks (prod, dev, staging, etc). |
+| `projectId`             | `string` | yes      | The ID of your Infisical project.                                            |
+| `secretPath`            | `string` | yes      | The secret path in Infisical to sync secrets from.                           |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `databricksHost` | `string` | no | The Databricks host URL. |
-| `databricksSecretScope` | `string` | no | The Databricks secret scope. Example: your-secret-scope |
-| `databricksToken` | `string` | no | The Databricks access token. |
-| `environment` | `string` | no | The slug of the environment to sync to Databricks (prod, dev, staging, etc). |
-| `integrationAuthId` | `string` | yes | The ID of the integration auth, used internally by Infisical. |
-| `integrationId` | `string` | yes | The ID of the integration, used internally by Infisical. |
-| `projectId` | `string` | no | The ID of your Infisical project. |
-| `secretPath` | `string` | no | The secret path in Infisical to sync secrets from. |
+| Property                | Type     | Computed | Description                                                                  |
+| ----------------------- | -------- | -------- | ---------------------------------------------------------------------------- |
+| `databricksHost`        | `string` | no       | The Databricks host URL.                                                     |
+| `databricksSecretScope` | `string` | no       | The Databricks secret scope. Example: your-secret-scope                      |
+| `databricksToken`       | `string` | no       | The Databricks access token.                                                 |
+| `environment`           | `string` | no       | The slug of the environment to sync to Databricks (prod, dev, staging, etc). |
+| `integrationAuthId`     | `string` | yes      | The ID of the integration auth, used internally by Infisical.                |
+| `integrationId`         | `string` | yes      | The ID of the integration, used internally by Infisical.                     |
+| `projectId`             | `string` | no       | The ID of your Infisical project.                                            |
+| `secretPath`            | `string` | no       | The secret path in Infisical to sync secrets from.                           |

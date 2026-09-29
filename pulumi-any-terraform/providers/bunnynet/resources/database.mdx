@@ -19,21 +19,21 @@ Construct with `new bunnynet.Database(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no | The name of the database. |
-| `regionsPrimaries` | `string[]` | yes |  |
-| `regionsReplicas` | `string[]` | no |  |
-| `storageRegion` | `string` | no | Options: `eu-west-1`, `us-east-1` |
+| Property           | Type       | Required | Description                       |
+| ------------------ | ---------- | -------- | --------------------------------- |
+| `name`             | `string`   | no       | The name of the database.         |
+| `regionsPrimaries` | `string[]` | yes      |                                   |
+| `regionsReplicas`  | `string[]` | no       |                                   |
+| `storageRegion`    | `string`   | no       | Options: `eu-west-1`, `us-east-1` |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no | The name of the database. |
-| `regionsPrimaries` | `string[]` | no |  |
-| `regionsReplicas` | `string[]` | no |  |
-| `storageRegion` | `string` | no | Options: `eu-west-1`, `us-east-1` |
-| `url` | `string` | yes | The connection URL for the database. |
+| Property           | Type       | Computed | Description                          |
+| ------------------ | ---------- | -------- | ------------------------------------ |
+| `name`             | `string`   | no       | The name of the database.            |
+| `regionsPrimaries` | `string[]` | no       |                                      |
+| `regionsReplicas`  | `string[]` | no       |                                      |
+| `storageRegion`    | `string`   | no       | Options: `eu-west-1`, `us-east-1`    |
+| `url`              | `string`   | yes      | The connection URL for the database. |

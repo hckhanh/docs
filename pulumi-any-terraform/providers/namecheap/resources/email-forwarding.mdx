@@ -19,18 +19,18 @@ Construct with `new namecheap.EmailForwarding(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `domain` | `string` | yes | The registered root domain whose email forwarding is managed (e.g. "example.com"). Must be a root domain, not a subdomain. |
-| `emailForwardingId` | `string` | no |  |
-| `forwards` | `{ [key: string]: string }` | yes | Map of mailbox alias to destination email address, e.g. &#123; info = "me@example.com" &#125;. Use "*" as the alias for a catch-all. This resource owns the domain's entire forwarding table: it must be non-empty (destroy the resource to clear all forwarding) and any rule not listed here is removed on the next apply. |
+| Property            | Type                        | Required | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------------- | --------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `domain`            | `string`                    | yes      | The registered root domain whose email forwarding is managed (e.g. "example.com"). Must be a root domain, not a subdomain.                                                                                                                                                                                                    |
+| `emailForwardingId` | `string`                    | no       |                                                                                                                                                                                                                                                                                                                               |
+| `forwards`          | `{ [key: string]: string }` | yes      | Map of mailbox alias to destination email address, e.g. &#123; info = "me@example.com" &#125;. Use "\*" as the alias for a catch-all. This resource owns the domain's entire forwarding table: it must be non-empty (destroy the resource to clear all forwarding) and any rule not listed here is removed on the next apply. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `domain` | `string` | no | The registered root domain whose email forwarding is managed (e.g. "example.com"). Must be a root domain, not a subdomain. |
-| `emailForwardingId` | `string` | no |  |
-| `forwards` | `{ [key: string]: string }` | no | Map of mailbox alias to destination email address, e.g. &#123; info = "me@example.com" &#125;. Use "*" as the alias for a catch-all. This resource owns the domain's entire forwarding table: it must be non-empty (destroy the resource to clear all forwarding) and any rule not listed here is removed on the next apply. |
+| Property            | Type                        | Computed | Description                                                                                                                                                                                                                                                                                                                   |
+| ------------------- | --------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `domain`            | `string`                    | no       | The registered root domain whose email forwarding is managed (e.g. "example.com"). Must be a root domain, not a subdomain.                                                                                                                                                                                                    |
+| `emailForwardingId` | `string`                    | no       |                                                                                                                                                                                                                                                                                                                               |
+| `forwards`          | `{ [key: string]: string }` | no       | Map of mailbox alias to destination email address, e.g. &#123; info = "me@example.com" &#125;. Use "\*" as the alias for a catch-all. This resource owns the domain's entire forwarding table: it must be non-empty (destroy the resource to clear all forwarding) and any rule not listed here is removed on the next apply. |

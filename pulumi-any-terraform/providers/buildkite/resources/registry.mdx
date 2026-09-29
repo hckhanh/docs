@@ -19,30 +19,30 @@ Construct with `new buildkite.Registry(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `color` | `string` | no | A color representation of the registry. Accepts hex codes, eg #BADA55. |
-| `description` | `string` | no | This is a description for the registry, this may describe the usage for it, the region, or something else which would help identify the registry's purpose. |
-| `ecosystem` | `string` | yes | The ecosystem of the registry. This value cannot be changed after creation. |
-| `emoji` | `string` | no | An emoji to use with the registry, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀. |
-| `name` | `string` | no | The name of the registry. Can only contain numbers and letters, no spaces or special characters. |
-| `oidcPolicy` | `string` | no | The registry's OIDC policy, in YAML format. |
-| `teamIds` | `string[]` | yes | The team UUIDs that have access to the registry. At least one team must be specified. This value cannot be changed after creation. |
+| Property      | Type       | Required | Description                                                                                                                                                 |
+| ------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `color`       | `string`   | no       | A color representation of the registry. Accepts hex codes, eg #BADA55.                                                                                      |
+| `description` | `string`   | no       | This is a description for the registry, this may describe the usage for it, the region, or something else which would help identify the registry's purpose. |
+| `ecosystem`   | `string`   | yes      | The ecosystem of the registry. This value cannot be changed after creation.                                                                                 |
+| `emoji`       | `string`   | no       | An emoji to use with the registry, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀.                                 |
+| `name`        | `string`   | no       | The name of the registry. Can only contain numbers and letters, no spaces or special characters.                                                            |
+| `oidcPolicy`  | `string`   | no       | The registry's OIDC policy, in YAML format.                                                                                                                 |
+| `teamIds`     | `string[]` | yes      | The team UUIDs that have access to the registry. At least one team must be specified. This value cannot be changed after creation.                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `color` | `string` | no | A color representation of the registry. Accepts hex codes, eg #BADA55. |
-| `description` | `string` | no | This is a description for the registry, this may describe the usage for it, the region, or something else which would help identify the registry's purpose. |
-| `ecosystem` | `string` | no | The ecosystem of the registry. This value cannot be changed after creation. |
-| `emoji` | `string` | no | An emoji to use with the registry, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀. |
-| `name` | `string` | no | The name of the registry. Can only contain numbers and letters, no spaces or special characters. |
-| `oidcPolicy` | `string` | no | The registry's OIDC policy, in YAML format. |
-| `public` | `boolean` | yes | Whether the registry is publicly accessible. |
-| `registryType` | `string` | yes | The type of the registry (e.g. `source`). |
-| `slug` | `string` | yes | The slug of the registry. |
-| `teamIds` | `string[]` | no | The team UUIDs that have access to the registry. At least one team must be specified. This value cannot be changed after creation. |
-| `uuid` | `string` | yes | The UUID of the registry. |
+| Property       | Type       | Computed | Description                                                                                                                                                 |
+| -------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `color`        | `string`   | no       | A color representation of the registry. Accepts hex codes, eg #BADA55.                                                                                      |
+| `description`  | `string`   | no       | This is a description for the registry, this may describe the usage for it, the region, or something else which would help identify the registry's purpose. |
+| `ecosystem`    | `string`   | no       | The ecosystem of the registry. This value cannot be changed after creation.                                                                                 |
+| `emoji`        | `string`   | no       | An emoji to use with the registry, this can either be set using :buildkite: notation, or with the emoji itself, such as 🚀.                                 |
+| `name`         | `string`   | no       | The name of the registry. Can only contain numbers and letters, no spaces or special characters.                                                            |
+| `oidcPolicy`   | `string`   | no       | The registry's OIDC policy, in YAML format.                                                                                                                 |
+| `public`       | `boolean`  | yes      | Whether the registry is publicly accessible.                                                                                                                |
+| `registryType` | `string`   | yes      | The type of the registry (e.g. `source`).                                                                                                                   |
+| `slug`         | `string`   | yes      | The slug of the registry.                                                                                                                                   |
+| `teamIds`      | `string[]` | no       | The team UUIDs that have access to the registry. At least one team must be specified. This value cannot be changed after creation.                          |
+| `uuid`         | `string`   | yes      | The UUID of the registry.                                                                                                                                   |

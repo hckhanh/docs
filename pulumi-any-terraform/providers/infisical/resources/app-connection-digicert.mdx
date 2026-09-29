@@ -19,41 +19,41 @@ Construct with `new infisical.AppConnectionDigicert(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionDigicertCredentials (input)` | yes | The credentials for the DigiCert App Connection |
-| `description` | `string` | no | An optional description for the DigiCert App Connection. |
-| `method` | `string` | yes | The method used to authenticate with DigiCert. Possible values are: api-key |
-| `name` | `string` | no | The name of the DigiCert App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                       | Required | Description                                                                                                                   |
+| ------------- | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionDigicertCredentials (input)` | yes      | The credentials for the DigiCert App Connection                                                                               |
+| `description` | `string`                                   | no       | An optional description for the DigiCert App Connection.                                                                      |
+| `method`      | `string`                                   | yes      | The method used to authenticate with DigiCert. Possible values are: api-key                                                   |
+| `name`        | `string`                                   | no       | The name of the DigiCert App Connection to create. Must be slug-friendly                                                      |
+| `projectId`   | `string`                                   | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionDigicertCredentials (output)` | no | The credentials for the DigiCert App Connection |
-| `credentialsHash` | `string` | yes | The hash of the DigiCert App Connection credentials |
-| `description` | `string` | no | An optional description for the DigiCert App Connection. |
-| `method` | `string` | no | The method used to authenticate with DigiCert. Possible values are: api-key |
-| `name` | `string` | no | The name of the DigiCert App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                        | Computed | Description                                                                                                                   |
+| ----------------- | ------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionDigicertCredentials (output)` | no       | The credentials for the DigiCert App Connection                                                                               |
+| `credentialsHash` | `string`                                    | yes      | The hash of the DigiCert App Connection credentials                                                                           |
+| `description`     | `string`                                    | no       | An optional description for the DigiCert App Connection.                                                                      |
+| `method`          | `string`                                    | no       | The method used to authenticate with DigiCert. Possible values are: api-key                                                   |
+| `name`            | `string`                                    | no       | The name of the DigiCert App Connection to create. Must be slug-friendly                                                      |
+| `projectId`       | `string`                                    | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionDigicertCredentials (input)`
 
 Input object `AppConnectionDigicertCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | yes | The DigiCert CertCentral API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/digicert |
-| `region` | `string` | yes | The DigiCert CertCentral region your account belongs to. Possible values are: us, eu |
+| Property | Type     | Required | Description                                                                                                                                                                |
+| -------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey` | `string` | yes      | The DigiCert CertCentral API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/digicert |
+| `region` | `string` | yes      | The DigiCert CertCentral region your account belongs to. Possible values are: us, eu                                                                                       |
 
 ## `AppConnectionDigicertCredentials (output)`
 
 Output object `AppConnectionDigicertCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `apiKey` | `string` | yes | The DigiCert CertCentral API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/digicert |
-| `region` | `string` | yes | The DigiCert CertCentral region your account belongs to. Possible values are: us, eu |
+| Property | Type     | Always present | Description                                                                                                                                                                |
+| -------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey` | `string` | yes            | The DigiCert CertCentral API key used to authenticate requests. For more details, refer to the documentation here infisical.com/docs/integrations/app-connections/digicert |
+| `region` | `string` | yes            | The DigiCert CertCentral region your account belongs to. Possible values are: us, eu                                                                                       |

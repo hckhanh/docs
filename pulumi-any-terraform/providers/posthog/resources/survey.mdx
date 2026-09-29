@@ -19,73 +19,73 @@ Construct with `new posthog.Survey(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `appearanceJson` | `string` | no | JSON object describing survey appearance settings. |
-| `archived` | `boolean` | no | Whether the survey is archived. |
-| `conditionsJson` | `string` | no | JSON object describing survey display and targeting conditions. |
-| `createInFolder` | `string` | no | Folder identifier used only during survey creation. |
-| `description` | `string` | no | Survey description. |
-| `enableIframeEmbedding` | `boolean` | no | Whether the survey is embeddable in an iframe. |
-| `enablePartialResponses` | `boolean` | no | Whether partial responses are stored when a respondent exits early. |
-| `endDate` | `string` | no | RFC3339 end date for the survey. |
-| `formContentJson` | `string` | no | JSON object describing custom form content. |
-| `iterationCount` | `number` | no | Number of survey recurrences when `schedule` is `recurring`. |
-| `iterationFrequencyDays` | `number` | no | Number of days between recurrences when `schedule` is `recurring`. |
-| `linkedFlagId` | `number` | no | Feature flag ID linked to the survey. Remove this attribute to unlink the flag from the survey. |
-| `linkedInsightId` | `number` | no | Insight ID linked to the survey. This field is write-only in the PostHog API and is preserved from Terraform state when configured. |
-| `name` | `string` | no | Survey name. |
-| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
-| `questionsJson` | `string` | yes | JSON array describing the survey questions. |
-| `responseSamplingDailyLimitsJson` | `string` | no | JSON object describing daily response sampling limits. |
-| `responseSamplingInterval` | `number` | no | Response sampling interval value. |
-| `responseSamplingIntervalType` | `string` | no | Response sampling interval type. Supported values are `day`, `week`, and `month`. |
-| `responseSamplingLimit` | `number` | no | Maximum responses allowed during each sampling interval. |
-| `responseSamplingStartDate` | `string` | no | RFC3339 date when response sampling starts. |
-| `responsesLimit` | `number` | no | Maximum number of responses allowed for the survey. |
-| `schedule` | `string` | no | Survey schedule. Supported values are `once`, `recurring`, and `always`. |
-| `startDate` | `string` | no | RFC3339 start date for the survey. |
-| `targetingFlagFiltersJson` | `string` | no | JSON object describing targeting flag filters. This input is write-only in the PostHog API and is preserved from Terraform state when configured. |
-| `targetingFlagId` | `number` | no | Existing targeting feature flag ID to use for this survey. Remove this attribute to detach the targeting flag. |
-| `translationsJson` | `string` | no | JSON object describing translated survey content. |
-| `type` | `string` | yes | Survey type. Supported values are `popover`, `widget`, `externalSurvey`, and `api`. |
+| Property                          | Type      | Required | Description                                                                                                                                       |
+| --------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appearanceJson`                  | `string`  | no       | JSON object describing survey appearance settings.                                                                                                |
+| `archived`                        | `boolean` | no       | Whether the survey is archived.                                                                                                                   |
+| `conditionsJson`                  | `string`  | no       | JSON object describing survey display and targeting conditions.                                                                                   |
+| `createInFolder`                  | `string`  | no       | Folder identifier used only during survey creation.                                                                                               |
+| `description`                     | `string`  | no       | Survey description.                                                                                                                               |
+| `enableIframeEmbedding`           | `boolean` | no       | Whether the survey is embeddable in an iframe.                                                                                                    |
+| `enablePartialResponses`          | `boolean` | no       | Whether partial responses are stored when a respondent exits early.                                                                               |
+| `endDate`                         | `string`  | no       | RFC3339 end date for the survey.                                                                                                                  |
+| `formContentJson`                 | `string`  | no       | JSON object describing custom form content.                                                                                                       |
+| `iterationCount`                  | `number`  | no       | Number of survey recurrences when `schedule` is `recurring`.                                                                                      |
+| `iterationFrequencyDays`          | `number`  | no       | Number of days between recurrences when `schedule` is `recurring`.                                                                                |
+| `linkedFlagId`                    | `number`  | no       | Feature flag ID linked to the survey. Remove this attribute to unlink the flag from the survey.                                                   |
+| `linkedInsightId`                 | `number`  | no       | Insight ID linked to the survey. This field is write-only in the PostHog API and is preserved from Terraform state when configured.               |
+| `name`                            | `string`  | no       | Survey name.                                                                                                                                      |
+| `projectId`                       | `string`  | no       | Project ID (environment) for this resource. Overrides the provider-level project_id.                                                              |
+| `questionsJson`                   | `string`  | yes      | JSON array describing the survey questions.                                                                                                       |
+| `responseSamplingDailyLimitsJson` | `string`  | no       | JSON object describing daily response sampling limits.                                                                                            |
+| `responseSamplingInterval`        | `number`  | no       | Response sampling interval value.                                                                                                                 |
+| `responseSamplingIntervalType`    | `string`  | no       | Response sampling interval type. Supported values are `day`, `week`, and `month`.                                                                 |
+| `responseSamplingLimit`           | `number`  | no       | Maximum responses allowed during each sampling interval.                                                                                          |
+| `responseSamplingStartDate`       | `string`  | no       | RFC3339 date when response sampling starts.                                                                                                       |
+| `responsesLimit`                  | `number`  | no       | Maximum number of responses allowed for the survey.                                                                                               |
+| `schedule`                        | `string`  | no       | Survey schedule. Supported values are `once`, `recurring`, and `always`.                                                                          |
+| `startDate`                       | `string`  | no       | RFC3339 start date for the survey.                                                                                                                |
+| `targetingFlagFiltersJson`        | `string`  | no       | JSON object describing targeting flag filters. This input is write-only in the PostHog API and is preserved from Terraform state when configured. |
+| `targetingFlagId`                 | `number`  | no       | Existing targeting feature flag ID to use for this survey. Remove this attribute to detach the targeting flag.                                    |
+| `translationsJson`                | `string`  | no       | JSON object describing translated survey content.                                                                                                 |
+| `type`                            | `string`  | yes      | Survey type. Supported values are `popover`, `widget`, `externalSurvey`, and `api`.                                                               |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `appearanceJson` | `string` | no | JSON object describing survey appearance settings. |
-| `archived` | `boolean` | no | Whether the survey is archived. |
-| `conditionsJson` | `string` | no | JSON object describing survey display and targeting conditions. |
-| `createInFolder` | `string` | no | Folder identifier used only during survey creation. |
-| `createdAt` | `string` | yes | RFC3339 creation timestamp of the survey. |
-| `createdByJson` | `string` | yes | JSON object describing the survey creator. |
-| `description` | `string` | no | Survey description. |
-| `enableIframeEmbedding` | `boolean` | no | Whether the survey is embeddable in an iframe. |
-| `enablePartialResponses` | `boolean` | no | Whether partial responses are stored when a respondent exits early. |
-| `endDate` | `string` | no | RFC3339 end date for the survey. |
-| `formContentJson` | `string` | no | JSON object describing custom form content. |
-| `internalTargetingFlagJson` | `string` | yes | JSON object describing the internal targeting feature flag returned by the API. |
-| `iterationCount` | `number` | no | Number of survey recurrences when `schedule` is `recurring`. |
-| `iterationFrequencyDays` | `number` | no | Number of days between recurrences when `schedule` is `recurring`. |
-| `linkedFlagId` | `number` | no | Feature flag ID linked to the survey. Remove this attribute to unlink the flag from the survey. |
-| `linkedFlagJson` | `string` | yes | JSON object describing the linked feature flag returned by the API. |
-| `linkedInsightId` | `number` | no | Insight ID linked to the survey. This field is write-only in the PostHog API and is preserved from Terraform state when configured. |
-| `name` | `string` | no | Survey name. |
-| `projectId` | `string` | no | Project ID (environment) for this resource. Overrides the provider-level project_id. |
-| `questionsJson` | `string` | no | JSON array describing the survey questions. |
-| `responseSamplingDailyLimitsJson` | `string` | no | JSON object describing daily response sampling limits. |
-| `responseSamplingInterval` | `number` | no | Response sampling interval value. |
-| `responseSamplingIntervalType` | `string` | no | Response sampling interval type. Supported values are `day`, `week`, and `month`. |
-| `responseSamplingLimit` | `number` | no | Maximum responses allowed during each sampling interval. |
-| `responseSamplingStartDate` | `string` | no | RFC3339 date when response sampling starts. |
-| `responsesLimit` | `number` | no | Maximum number of responses allowed for the survey. |
-| `schedule` | `string` | no | Survey schedule. Supported values are `once`, `recurring`, and `always`. |
-| `startDate` | `string` | no | RFC3339 start date for the survey. |
-| `targetingFlagFiltersJson` | `string` | no | JSON object describing targeting flag filters. This input is write-only in the PostHog API and is preserved from Terraform state when configured. |
-| `targetingFlagId` | `number` | no | Existing targeting feature flag ID to use for this survey. Remove this attribute to detach the targeting flag. |
-| `targetingFlagJson` | `string` | yes | JSON object describing the targeting feature flag returned by the API. |
-| `translationsJson` | `string` | no | JSON object describing translated survey content. |
-| `type` | `string` | no | Survey type. Supported values are `popover`, `widget`, `externalSurvey`, and `api`. |
+| Property                          | Type      | Computed | Description                                                                                                                                       |
+| --------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appearanceJson`                  | `string`  | no       | JSON object describing survey appearance settings.                                                                                                |
+| `archived`                        | `boolean` | no       | Whether the survey is archived.                                                                                                                   |
+| `conditionsJson`                  | `string`  | no       | JSON object describing survey display and targeting conditions.                                                                                   |
+| `createInFolder`                  | `string`  | no       | Folder identifier used only during survey creation.                                                                                               |
+| `createdAt`                       | `string`  | yes      | RFC3339 creation timestamp of the survey.                                                                                                         |
+| `createdByJson`                   | `string`  | yes      | JSON object describing the survey creator.                                                                                                        |
+| `description`                     | `string`  | no       | Survey description.                                                                                                                               |
+| `enableIframeEmbedding`           | `boolean` | no       | Whether the survey is embeddable in an iframe.                                                                                                    |
+| `enablePartialResponses`          | `boolean` | no       | Whether partial responses are stored when a respondent exits early.                                                                               |
+| `endDate`                         | `string`  | no       | RFC3339 end date for the survey.                                                                                                                  |
+| `formContentJson`                 | `string`  | no       | JSON object describing custom form content.                                                                                                       |
+| `internalTargetingFlagJson`       | `string`  | yes      | JSON object describing the internal targeting feature flag returned by the API.                                                                   |
+| `iterationCount`                  | `number`  | no       | Number of survey recurrences when `schedule` is `recurring`.                                                                                      |
+| `iterationFrequencyDays`          | `number`  | no       | Number of days between recurrences when `schedule` is `recurring`.                                                                                |
+| `linkedFlagId`                    | `number`  | no       | Feature flag ID linked to the survey. Remove this attribute to unlink the flag from the survey.                                                   |
+| `linkedFlagJson`                  | `string`  | yes      | JSON object describing the linked feature flag returned by the API.                                                                               |
+| `linkedInsightId`                 | `number`  | no       | Insight ID linked to the survey. This field is write-only in the PostHog API and is preserved from Terraform state when configured.               |
+| `name`                            | `string`  | no       | Survey name.                                                                                                                                      |
+| `projectId`                       | `string`  | no       | Project ID (environment) for this resource. Overrides the provider-level project_id.                                                              |
+| `questionsJson`                   | `string`  | no       | JSON array describing the survey questions.                                                                                                       |
+| `responseSamplingDailyLimitsJson` | `string`  | no       | JSON object describing daily response sampling limits.                                                                                            |
+| `responseSamplingInterval`        | `number`  | no       | Response sampling interval value.                                                                                                                 |
+| `responseSamplingIntervalType`    | `string`  | no       | Response sampling interval type. Supported values are `day`, `week`, and `month`.                                                                 |
+| `responseSamplingLimit`           | `number`  | no       | Maximum responses allowed during each sampling interval.                                                                                          |
+| `responseSamplingStartDate`       | `string`  | no       | RFC3339 date when response sampling starts.                                                                                                       |
+| `responsesLimit`                  | `number`  | no       | Maximum number of responses allowed for the survey.                                                                                               |
+| `schedule`                        | `string`  | no       | Survey schedule. Supported values are `once`, `recurring`, and `always`.                                                                          |
+| `startDate`                       | `string`  | no       | RFC3339 start date for the survey.                                                                                                                |
+| `targetingFlagFiltersJson`        | `string`  | no       | JSON object describing targeting flag filters. This input is write-only in the PostHog API and is preserved from Terraform state when configured. |
+| `targetingFlagId`                 | `number`  | no       | Existing targeting feature flag ID to use for this survey. Remove this attribute to detach the targeting flag.                                    |
+| `targetingFlagJson`               | `string`  | yes      | JSON object describing the targeting feature flag returned by the API.                                                                            |
+| `translationsJson`                | `string`  | no       | JSON object describing translated survey content.                                                                                                 |
+| `type`                            | `string`  | no       | Survey type. Supported values are `popover`, `widget`, `externalSurvey`, and `api`.                                                               |

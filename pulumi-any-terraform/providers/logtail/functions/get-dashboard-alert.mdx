@@ -19,84 +19,84 @@ Call `logtail.getDashboardAlert(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `chartId` | `string` | yes |  |
-| `dashboardId` | `string` | yes |  |
-| `name` | `string` | yes |  |
+| Property      | Type     | Required | Description |
+| ------------- | -------- | -------- | ----------- |
+| `chartId`     | `string` | yes      |             |
+| `dashboardId` | `string` | yes      |             |
+| `name`        | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `additionalConditions` | `GetDashboardAlertAdditionalCondition[]` | yes |  |
-| `aggregationInterval` | `number` | yes |  |
-| `alertType` | `string` | yes |  |
-| `anomalySensitivity` | `number` | yes |  |
-| `anomalyTrainingRangeDays` | `number` | yes |  |
-| `anomalyTrigger` | `string` | yes |  |
-| `call` | `boolean` | yes |  |
-| `chartId` | `string` | yes |  |
-| `checkPeriod` | `number` | yes |  |
-| `confirmationPeriod` | `number` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `criticalAlert` | `boolean` | yes |  |
-| `dashboardId` | `string` | yes |  |
-| `email` | `boolean` | yes |  |
-| `escalationTargets` | `GetDashboardAlertEscalationTarget[]` | yes |  |
-| `id` | `string` | yes |  |
-| `incidentCause` | `string` | yes |  |
-| `incidentPerSeries` | `boolean` | yes |  |
-| `metadata` | `{ [key: string]: string }` | yes |  |
-| `name` | `string` | yes |  |
-| `onMissingData` | `string` | yes |  |
-| `operator` | `string` | yes |  |
-| `paused` | `boolean` | yes |  |
-| `pausedReason` | `string` | yes |  |
-| `push` | `boolean` | yes |  |
-| `queryPeriod` | `number` | yes |  |
-| `recoveryPeriod` | `number` | yes |  |
-| `seriesNames` | `string[]` | yes |  |
-| `seriesNamesExcepts` | `string[]` | yes |  |
-| `sms` | `boolean` | yes |  |
-| `sourceMode` | `string` | yes |  |
-| `sourcePlatforms` | `string[]` | yes |  |
-| `sourceVariable` | `string` | yes |  |
-| `stringValue` | `string` | yes |  |
-| `updatedAt` | `string` | yes |  |
-| `value` | `number` | yes |  |
-| `variableValues` | `GetDashboardAlertVariableValue[]` | yes |  |
+| Property                   | Type                                     | Always present | Description |
+| -------------------------- | ---------------------------------------- | -------------- | ----------- |
+| `additionalConditions`     | `GetDashboardAlertAdditionalCondition[]` | yes            |             |
+| `aggregationInterval`      | `number`                                 | yes            |             |
+| `alertType`                | `string`                                 | yes            |             |
+| `anomalySensitivity`       | `number`                                 | yes            |             |
+| `anomalyTrainingRangeDays` | `number`                                 | yes            |             |
+| `anomalyTrigger`           | `string`                                 | yes            |             |
+| `call`                     | `boolean`                                | yes            |             |
+| `chartId`                  | `string`                                 | yes            |             |
+| `checkPeriod`              | `number`                                 | yes            |             |
+| `confirmationPeriod`       | `number`                                 | yes            |             |
+| `createdAt`                | `string`                                 | yes            |             |
+| `criticalAlert`            | `boolean`                                | yes            |             |
+| `dashboardId`              | `string`                                 | yes            |             |
+| `email`                    | `boolean`                                | yes            |             |
+| `escalationTargets`        | `GetDashboardAlertEscalationTarget[]`    | yes            |             |
+| `id`                       | `string`                                 | yes            |             |
+| `incidentCause`            | `string`                                 | yes            |             |
+| `incidentPerSeries`        | `boolean`                                | yes            |             |
+| `metadata`                 | `{ [key: string]: string }`              | yes            |             |
+| `name`                     | `string`                                 | yes            |             |
+| `onMissingData`            | `string`                                 | yes            |             |
+| `operator`                 | `string`                                 | yes            |             |
+| `paused`                   | `boolean`                                | yes            |             |
+| `pausedReason`             | `string`                                 | yes            |             |
+| `push`                     | `boolean`                                | yes            |             |
+| `queryPeriod`              | `number`                                 | yes            |             |
+| `recoveryPeriod`           | `number`                                 | yes            |             |
+| `seriesNames`              | `string[]`                               | yes            |             |
+| `seriesNamesExcepts`       | `string[]`                               | yes            |             |
+| `sms`                      | `boolean`                                | yes            |             |
+| `sourceMode`               | `string`                                 | yes            |             |
+| `sourcePlatforms`          | `string[]`                               | yes            |             |
+| `sourceVariable`           | `string`                                 | yes            |             |
+| `stringValue`              | `string`                                 | yes            |             |
+| `updatedAt`                | `string`                                 | yes            |             |
+| `value`                    | `number`                                 | yes            |             |
+| `variableValues`           | `GetDashboardAlertVariableValue[]`       | yes            |             |
 
 ## `GetDashboardAlertAdditionalCondition`
 
 Output object `GetDashboardAlertAdditionalCondition`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `alertType` | `string` | no |  |
-| `operator` | `string` | no |  |
-| `seriesNames` | `string[]` | no |  |
-| `seriesNamesExcepts` | `string[]` | no |  |
-| `stringValue` | `string` | no |  |
-| `value` | `number` | no |  |
+| Property             | Type       | Always present | Description |
+| -------------------- | ---------- | -------------- | ----------- |
+| `alertType`          | `string`   | no             |             |
+| `operator`           | `string`   | no             |             |
+| `seriesNames`        | `string[]` | no             |             |
+| `seriesNamesExcepts` | `string[]` | no             |             |
+| `stringValue`        | `string`   | no             |             |
+| `value`              | `number`   | no             |             |
 
 ## `GetDashboardAlertEscalationTarget`
 
 Output object `GetDashboardAlertEscalationTarget`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `policyId` | `number` | no |  |
-| `policyName` | `string` | no |  |
-| `teamId` | `number` | no |  |
-| `teamName` | `string` | no |  |
+| Property     | Type     | Always present | Description |
+| ------------ | -------- | -------------- | ----------- |
+| `policyId`   | `number` | no             |             |
+| `policyName` | `string` | no             |             |
+| `teamId`     | `number` | no             |             |
+| `teamName`   | `string` | no             |             |
 
 ## `GetDashboardAlertVariableValue`
 
 Output object `GetDashboardAlertVariableValue`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no |  |
-| `selectedLabel` | `string` | no |  |
-| `values` | `string[]` | no |  |
+| Property        | Type       | Always present | Description |
+| --------------- | ---------- | -------------- | ----------- |
+| `name`          | `string`   | no             |             |
+| `selectedLabel` | `string`   | no             |             |
+| `values`        | `string[]` | no             |             |

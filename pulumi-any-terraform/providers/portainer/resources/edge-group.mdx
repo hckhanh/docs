@@ -19,24 +19,24 @@ Construct with `new portainer.EdgeGroup(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dynamic` | `boolean` | yes | Whether the Edge group is dynamic (membership determined by tags) or static (explicit endpoints). |
-| `edgeGroupId` | `string` | no |  |
-| `endpoints` | `number[]` | no | List of Portainer environment (endpoint) IDs that are statically assigned to the Edge group. Used when dynamic is false. |
-| `name` | `string` | no | Name of the Portainer Edge group. |
-| `partialMatch` | `boolean` | no | For dynamic groups, whether to match endpoints with any (true) or all (false) of the specified tags. |
-| `tagIds` | `number[]` | no | List of tag IDs used to dynamically select endpoints. Used when dynamic is true. |
+| Property       | Type       | Required | Description                                                                                                              |
+| -------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `dynamic`      | `boolean`  | yes      | Whether the Edge group is dynamic (membership determined by tags) or static (explicit endpoints).                        |
+| `edgeGroupId`  | `string`   | no       |                                                                                                                          |
+| `endpoints`    | `number[]` | no       | List of Portainer environment (endpoint) IDs that are statically assigned to the Edge group. Used when dynamic is false. |
+| `name`         | `string`   | no       | Name of the Portainer Edge group.                                                                                        |
+| `partialMatch` | `boolean`  | no       | For dynamic groups, whether to match endpoints with any (true) or all (false) of the specified tags.                     |
+| `tagIds`       | `number[]` | no       | List of tag IDs used to dynamically select endpoints. Used when dynamic is true.                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `dynamic` | `boolean` | no | Whether the Edge group is dynamic (membership determined by tags) or static (explicit endpoints). |
-| `edgeGroupId` | `string` | no |  |
-| `endpoints` | `number[]` | no | List of Portainer environment (endpoint) IDs that are statically assigned to the Edge group. Used when dynamic is false. |
-| `name` | `string` | no | Name of the Portainer Edge group. |
-| `partialMatch` | `boolean` | no | For dynamic groups, whether to match endpoints with any (true) or all (false) of the specified tags. |
-| `tagIds` | `number[]` | no | List of tag IDs used to dynamically select endpoints. Used when dynamic is true. |
+| Property       | Type       | Computed | Description                                                                                                              |
+| -------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `dynamic`      | `boolean`  | no       | Whether the Edge group is dynamic (membership determined by tags) or static (explicit endpoints).                        |
+| `edgeGroupId`  | `string`   | no       |                                                                                                                          |
+| `endpoints`    | `number[]` | no       | List of Portainer environment (endpoint) IDs that are statically assigned to the Edge group. Used when dynamic is false. |
+| `name`         | `string`   | no       | Name of the Portainer Edge group.                                                                                        |
+| `partialMatch` | `boolean`  | no       | For dynamic groups, whether to match endpoints with any (true) or all (false) of the specified tags.                     |
+| `tagIds`       | `number[]` | no       | List of tag IDs used to dynamically select endpoints. Used when dynamic is true.                                         |

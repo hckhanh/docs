@@ -19,144 +19,144 @@ Construct with `new infisical.ProjectTemplate(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description of the project template |
-| `environments` | `ProjectTemplateEnvironment (input)[]` | no | The environments for the project template |
-| `groups` | `ProjectTemplateGroup (input)[]` | no | The groups assigned to projects created from this template |
-| `identities` | `ProjectTemplateIdentity (input)[]` | no | The identities assigned to projects created from this template |
-| `name` | `string` | no | The name of the project template |
-| `roles` | `ProjectTemplateRole (input)[]` | no | The roles for the project template |
-| `type` | `string` | yes | The type of the project template. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-type for the available options |
-| `users` | `ProjectTemplateUser (input)[]` | no | The users assigned to projects created from this template |
+| Property       | Type                                   | Required | Description                                                                                                                                                                       |
+| -------------- | -------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`  | `string`                               | no       | The description of the project template                                                                                                                                           |
+| `environments` | `ProjectTemplateEnvironment (input)[]` | no       | The environments for the project template                                                                                                                                         |
+| `groups`       | `ProjectTemplateGroup (input)[]`       | no       | The groups assigned to projects created from this template                                                                                                                        |
+| `identities`   | `ProjectTemplateIdentity (input)[]`    | no       | The identities assigned to projects created from this template                                                                                                                    |
+| `name`         | `string`                               | no       | The name of the project template                                                                                                                                                  |
+| `roles`        | `ProjectTemplateRole (input)[]`        | no       | The roles for the project template                                                                                                                                                |
+| `type`         | `string`                               | yes      | The type of the project template. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-type for the available options |
+| `users`        | `ProjectTemplateUser (input)[]`        | no       | The users assigned to projects created from this template                                                                                                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description of the project template |
-| `environments` | `ProjectTemplateEnvironment (output)[]` | no | The environments for the project template |
-| `groups` | `ProjectTemplateGroup (output)[]` | no | The groups assigned to projects created from this template |
-| `identities` | `ProjectTemplateIdentity (output)[]` | no | The identities assigned to projects created from this template |
-| `name` | `string` | no | The name of the project template |
-| `roles` | `ProjectTemplateRole (output)[]` | no | The roles for the project template |
-| `type` | `string` | no | The type of the project template. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-type for the available options |
-| `users` | `ProjectTemplateUser (output)[]` | no | The users assigned to projects created from this template |
+| Property       | Type                                    | Computed | Description                                                                                                                                                                       |
+| -------------- | --------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`  | `string`                                | no       | The description of the project template                                                                                                                                           |
+| `environments` | `ProjectTemplateEnvironment (output)[]` | no       | The environments for the project template                                                                                                                                         |
+| `groups`       | `ProjectTemplateGroup (output)[]`       | no       | The groups assigned to projects created from this template                                                                                                                        |
+| `identities`   | `ProjectTemplateIdentity (output)[]`    | no       | The identities assigned to projects created from this template                                                                                                                    |
+| `name`         | `string`                                | no       | The name of the project template                                                                                                                                                  |
+| `roles`        | `ProjectTemplateRole (output)[]`        | no       | The roles for the project template                                                                                                                                                |
+| `type`         | `string`                                | no       | The type of the project template. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-type for the available options |
+| `users`        | `ProjectTemplateUser (output)[]`        | no       | The users assigned to projects created from this template                                                                                                                         |
 
 ## `ProjectTemplateEnvironment (input)`
 
 Input object `ProjectTemplateEnvironment`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the environment |
-| `position` | `number` | yes | The position of the environment |
-| `slug` | `string` | yes | The slug of the environment |
+| Property   | Type     | Required | Description                     |
+| ---------- | -------- | -------- | ------------------------------- |
+| `name`     | `string` | yes      | The name of the environment     |
+| `position` | `number` | yes      | The position of the environment |
+| `slug`     | `string` | yes      | The slug of the environment     |
 
 ## `ProjectTemplateGroup (input)`
 
 Input object `ProjectTemplateGroup`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupSlug` | `string` | yes | The slug of the group |
-| `roles` | `string[]` | yes | The role slugs to assign to the group. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| Property    | Type       | Required | Description                                                                                                                                       |
+| ----------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `groupSlug` | `string`   | yes      | The slug of the group                                                                                                                             |
+| `roles`     | `string[]` | yes      | The role slugs to assign to the group. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
 
 ## `ProjectTemplateIdentity (input)`
 
 Input object `ProjectTemplateIdentity`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes | The ID of the identity |
-| `roles` | `string[]` | yes | The role slugs to assign to the identity. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| Property     | Type       | Required | Description                                                                                                                                          |
+| ------------ | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `identityId` | `string`   | yes      | The ID of the identity                                                                                                                               |
+| `roles`      | `string[]` | yes      | The role slugs to assign to the identity. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
 
 ## `ProjectTemplateRole (input)`
 
 Input object `ProjectTemplateRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the role |
-| `permissions` | `ProjectTemplateRolePermission (input)[]` | no | The permissions assigned to the role. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-roles-permissions for its usage. |
-| `slug` | `string` | yes | The slug of the role |
+| Property      | Type                                      | Required | Description                                                                                                                                                                             |
+| ------------- | ----------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`        | `string`                                  | yes      | The name of the role                                                                                                                                                                    |
+| `permissions` | `ProjectTemplateRolePermission (input)[]` | no       | The permissions assigned to the role. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-roles-permissions for its usage. |
+| `slug`        | `string`                                  | yes      | The slug of the role                                                                                                                                                                    |
 
 ## `ProjectTemplateRolePermission (input)`
 
 Input object `ProjectTemplateRolePermission`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | no | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Required | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes      | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no       | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | no       | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes      | Describe the entity the permission pertains to.                                                                                                                                                                                           |
 
 ## `ProjectTemplateUser (input)`
 
 Input object `ProjectTemplateUser`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `roles` | `string[]` | yes | The role slugs to assign to the user. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
-| `username` | `string` | yes | The username of the user. |
+| Property   | Type       | Required | Description                                                                                                                                      |
+| ---------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `roles`    | `string[]` | yes      | The role slugs to assign to the user. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| `username` | `string`   | yes      | The username of the user.                                                                                                                        |
 
 ## `ProjectTemplateEnvironment (output)`
 
 Output object `ProjectTemplateEnvironment`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the environment |
-| `position` | `number` | yes | The position of the environment |
-| `slug` | `string` | yes | The slug of the environment |
+| Property   | Type     | Always present | Description                     |
+| ---------- | -------- | -------------- | ------------------------------- |
+| `name`     | `string` | yes            | The name of the environment     |
+| `position` | `number` | yes            | The position of the environment |
+| `slug`     | `string` | yes            | The slug of the environment     |
 
 ## `ProjectTemplateGroup (output)`
 
 Output object `ProjectTemplateGroup`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `groupSlug` | `string` | yes | The slug of the group |
-| `roles` | `string[]` | yes | The role slugs to assign to the group. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| Property    | Type       | Always present | Description                                                                                                                                       |
+| ----------- | ---------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `groupSlug` | `string`   | yes            | The slug of the group                                                                                                                             |
+| `roles`     | `string[]` | yes            | The role slugs to assign to the group. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
 
 ## `ProjectTemplateIdentity (output)`
 
 Output object `ProjectTemplateIdentity`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes | The ID of the identity |
-| `roles` | `string[]` | yes | The role slugs to assign to the identity. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| Property     | Type       | Always present | Description                                                                                                                                          |
+| ------------ | ---------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `identityId` | `string`   | yes            | The ID of the identity                                                                                                                               |
+| `roles`      | `string[]` | yes            | The role slugs to assign to the identity. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
 
 ## `ProjectTemplateRole (output)`
 
 Output object `ProjectTemplateRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the role |
-| `permissions` | `ProjectTemplateRolePermission (output)[]` | yes | The permissions assigned to the role. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-roles-permissions for its usage. |
-| `slug` | `string` | yes | The slug of the role |
+| Property      | Type                                       | Always present | Description                                                                                                                                                                             |
+| ------------- | ------------------------------------------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`        | `string`                                   | yes            | The name of the role                                                                                                                                                                    |
+| `permissions` | `ProjectTemplateRolePermission (output)[]` | yes            | The permissions assigned to the role. Refer to the documentation here https://infisical.com/docs/api-reference/endpoints/project-templates/create#body-roles-permissions for its usage. |
+| `slug`        | `string`                                   | yes            | The slug of the role                                                                                                                                                                    |
 
 ## `ProjectTemplateRolePermission (output)`
 
 Output object `ProjectTemplateRolePermission`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | yes | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Always present | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes            | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no             | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | yes            | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes            | Describe the entity the permission pertains to.                                                                                                                                                                                           |
 
 ## `ProjectTemplateUser (output)`
 
 Output object `ProjectTemplateUser`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `roles` | `string[]` | yes | The role slugs to assign to the user. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
-| `username` | `string` | yes | The username of the user. |
+| Property   | Type       | Always present | Description                                                                                                                                      |
+| ---------- | ---------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `roles`    | `string[]` | yes            | The role slugs to assign to the user. Must reference roles defined in this template or predefined role slugs (admin, member, viewer, no-access). |
+| `username` | `string`   | yes            | The username of the user.                                                                                                                        |

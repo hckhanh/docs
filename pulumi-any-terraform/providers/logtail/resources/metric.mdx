@@ -19,22 +19,22 @@ Construct with `new logtail.Metric(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `aggregations` | `string[]` | no | The list of aggregations to perform on the metric. Optional: omit it (or set it to an empty list) to create a Label (a group-by dimension) instead of a Metric. |
-| `name` | `string` | no | The name of this metric. |
-| `sourceId` | `string` | yes | The ID of the source this metric belongs to. |
-| `sqlExpression` | `string` | yes | The SQL expression used to extract the metric value. |
-| `type` | `string` | no | The type of the metric. |
+| Property        | Type       | Required | Description                                                                                                                                                     |
+| --------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aggregations`  | `string[]` | no       | The list of aggregations to perform on the metric. Optional: omit it (or set it to an empty list) to create a Label (a group-by dimension) instead of a Metric. |
+| `name`          | `string`   | no       | The name of this metric.                                                                                                                                        |
+| `sourceId`      | `string`   | yes      | The ID of the source this metric belongs to.                                                                                                                    |
+| `sqlExpression` | `string`   | yes      | The SQL expression used to extract the metric value.                                                                                                            |
+| `type`          | `string`   | no       | The type of the metric.                                                                                                                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `aggregations` | `string[]` | no | The list of aggregations to perform on the metric. Optional: omit it (or set it to an empty list) to create a Label (a group-by dimension) instead of a Metric. |
-| `name` | `string` | no | The name of this metric. |
-| `sourceId` | `string` | no | The ID of the source this metric belongs to. |
-| `sqlExpression` | `string` | no | The SQL expression used to extract the metric value. |
-| `type` | `string` | no | The type of the metric. |
+| Property        | Type       | Computed | Description                                                                                                                                                     |
+| --------------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aggregations`  | `string[]` | no       | The list of aggregations to perform on the metric. Optional: omit it (or set it to an empty list) to create a Label (a group-by dimension) instead of a Metric. |
+| `name`          | `string`   | no       | The name of this metric.                                                                                                                                        |
+| `sourceId`      | `string`   | no       | The ID of the source this metric belongs to.                                                                                                                    |
+| `sqlExpression` | `string`   | no       | The SQL expression used to extract the metric value.                                                                                                            |
+| `type`          | `string`   | no       | The type of the metric.                                                                                                                                         |

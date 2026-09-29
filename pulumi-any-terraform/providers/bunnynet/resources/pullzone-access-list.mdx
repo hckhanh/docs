@@ -19,25 +19,25 @@ Construct with `new bunnynet.PullzoneAccessList(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | yes | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log` |
-| `enabled` | `boolean` | no | Indicated whether the Access List is enabled. |
-| `entries` | `string[]` | yes | The Access List entries. |
-| `name` | `string` | no | The Access List name. |
-| `pullzone` | `number` | yes | The ID of the linked pullzone. |
-| `type` | `string` | yes | Options: `ASN`, `CIDR`, `Country`, `IP`, `JA4`, `Organization` |
+| Property   | Type       | Required | Description                                                    |
+| ---------- | ---------- | -------- | -------------------------------------------------------------- |
+| `action`   | `string`   | yes      | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log`        |
+| `enabled`  | `boolean`  | no       | Indicated whether the Access List is enabled.                  |
+| `entries`  | `string[]` | yes      | The Access List entries.                                       |
+| `name`     | `string`   | no       | The Access List name.                                          |
+| `pullzone` | `number`   | yes      | The ID of the linked pullzone.                                 |
+| `type`     | `string`   | yes      | Options: `ASN`, `CIDR`, `Country`, `IP`, `JA4`, `Organization` |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | no | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log` |
-| `enabled` | `boolean` | no | Indicated whether the Access List is enabled. |
-| `entries` | `string[]` | no | The Access List entries. |
-| `name` | `string` | no | The Access List name. |
-| `pullzone` | `number` | no | The ID of the linked pullzone. |
-| `pullzoneAccessListId` | `number` | yes | The ID of the Access List. |
-| `type` | `string` | no | Options: `ASN`, `CIDR`, `Country`, `IP`, `JA4`, `Organization` |
+| Property               | Type       | Computed | Description                                                    |
+| ---------------------- | ---------- | -------- | -------------------------------------------------------------- |
+| `action`               | `string`   | no       | Options: `Allow`, `Block`, `Bypass`, `Challenge`, `Log`        |
+| `enabled`              | `boolean`  | no       | Indicated whether the Access List is enabled.                  |
+| `entries`              | `string[]` | no       | The Access List entries.                                       |
+| `name`                 | `string`   | no       | The Access List name.                                          |
+| `pullzone`             | `number`   | no       | The ID of the linked pullzone.                                 |
+| `pullzoneAccessListId` | `number`   | yes      | The ID of the Access List.                                     |
+| `type`                 | `string`   | no       | Options: `ASN`, `CIDR`, `Country`, `IP`, `JA4`, `Organization` |

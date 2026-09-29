@@ -19,19 +19,19 @@ Construct with `new portainer.Licenses(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `force` | `boolean` | no | Force attach even if there are conflicting licenses |
-| `key` | `string` | yes | License key to be attached |
-| `licensesId` | `string` | no |  |
+| Property     | Type      | Required | Description                                         |
+| ------------ | --------- | -------- | --------------------------------------------------- |
+| `force`      | `boolean` | no       | Force attach even if there are conflicting licenses |
+| `key`        | `string`  | yes      | License key to be attached                          |
+| `licensesId` | `string`  | no       |                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `conflictingKeys` | `string[]` | yes | List of conflicting license keys, if any |
-| `force` | `boolean` | no | Force attach even if there are conflicting licenses |
-| `key` | `string` | no | License key to be attached |
-| `licensesId` | `string` | no |  |
+| Property          | Type       | Computed | Description                                         |
+| ----------------- | ---------- | -------- | --------------------------------------------------- |
+| `conflictingKeys` | `string[]` | yes      | List of conflicting license keys, if any            |
+| `force`           | `boolean`  | no       | Force attach even if there are conflicting licenses |
+| `key`             | `string`   | no       | License key to be attached                          |
+| `licensesId`      | `string`   | no       |                                                     |

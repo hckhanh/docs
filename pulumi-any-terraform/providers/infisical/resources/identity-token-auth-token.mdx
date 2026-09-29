@@ -19,22 +19,22 @@ Construct with `new infisical.IdentityTokenAuthToken(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes | The ID of the identity to create a token for |
-| `name` | `string` | no | The name of the token auth token |
+| Property     | Type     | Required | Description                                  |
+| ------------ | -------- | -------- | -------------------------------------------- |
+| `identityId` | `string` | yes      | The ID of the identity to create a token for |
+| `name`       | `string` | no       | The name of the token auth token             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `createdAt` | `string` | yes | The UTC timestamp of the created at date. |
-| `identityId` | `string` | no | The ID of the identity to create a token for |
-| `isRevoked` | `boolean` | yes | A flag indicating token has been revoked |
-| `name` | `string` | no | The name of the token auth token |
-| `numberOfUses` | `number` | yes | The number of times that the token is used |
-| `numberOfUsesLimit` | `number` | yes | The maximum number of times that the token can be used; a value of 0 implies infinite number of uses. Default: 0 |
-| `token` | `string` | yes | The token. |
-| `ttl` | `number` | yes | The lifetime for the token in seconds. Default: 0 - not expiring |
+| Property            | Type      | Computed | Description                                                                                                      |
+| ------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `createdAt`         | `string`  | yes      | The UTC timestamp of the created at date.                                                                        |
+| `identityId`        | `string`  | no       | The ID of the identity to create a token for                                                                     |
+| `isRevoked`         | `boolean` | yes      | A flag indicating token has been revoked                                                                         |
+| `name`              | `string`  | no       | The name of the token auth token                                                                                 |
+| `numberOfUses`      | `number`  | yes      | The number of times that the token is used                                                                       |
+| `numberOfUsesLimit` | `number`  | yes      | The maximum number of times that the token can be used; a value of 0 implies infinite number of uses. Default: 0 |
+| `token`             | `string`  | yes      | The token.                                                                                                       |
+| `ttl`               | `number`  | yes      | The lifetime for the token in seconds. Default: 0 - not expiring                                                 |

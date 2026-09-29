@@ -17,9 +17,7 @@
       "name": "Khanh",
       "url": "https://khanh.id",
       "id": "https://khanh.id/#organization",
-      "sameAs": [
-        "https://github.com/hckhanh"
-      ]
+      "sameAs": ["https://github.com/hckhanh"]
     }
   },
   "markdown": {
@@ -40,12 +38,7 @@
   "filterSidebar": true,
   "poweredByDocs7": true,
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude"]
   },
   "navbar": {
     "links": [
@@ -64,9 +57,7 @@
     "tabs": [
       {
         "tab": "Documentation",
-        "pages": [
-          "index"
-        ],
+        "pages": ["index"],
         "productGroups": [
           {
             "group": "Libraries",
@@ -78,9 +69,7 @@
                 "groups": [
                   {
                     "group": "Overview",
-                    "pages": [
-                      "pulumi-any-terraform/overview"
-                    ]
+                    "pages": ["pulumi-any-terraform/overview"]
                   },
                   {
                     "group": "Better Uptime",
@@ -1007,20 +996,13 @@
                 "product": "vn-number",
                 "icon": "/images/vn-number.svg",
                 "description": "Utility functions that work with numbers in Vietnamese",
-                "pages": [
-                  "vn-number/overview",
-                  "vn-number/api-reference"
-                ]
+                "pages": ["vn-number/overview", "vn-number/api-reference"]
               },
               {
                 "product": "ja4",
                 "icon": "/images/ja4.svg",
                 "description": "Parse JA4 TLS fingerprint strings into structured objects",
-                "pages": [
-                  "ja4/overview",
-                  "ja4/api",
-                  "ja4/concepts"
-                ]
+                "pages": ["ja4/overview", "ja4/api", "ja4/concepts"]
               },
               {
                 "product": "what-the-fetch",

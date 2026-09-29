@@ -19,56 +19,56 @@ Construct with `new infisical.IdentityUniversalAuth(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityUniversalAuthAccessTokenTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `clientSecretTrustedIps` | `IdentityUniversalAuthClientSecretTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that the Client Secret can be used from together with the Client ID to get back an access token. You can use 0.0.0.0/0, to allow usage from any network address. |
-| `identityId` | `string` | yes | The ID of the identity to attach the configuration onto. |
+| Property                  | Type                                                   | Required | Description                                                                                                                                                                                   |
+| ------------------------- | ------------------------------------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                               | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                          |
+| `accessTokenNumUsesLimit` | `number`                                               | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                         |
+| `accessTokenTrustedIps`   | `IdentityUniversalAuthAccessTokenTrustedIp (input)[]`  | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                            |
+| `accessTokenTtl`          | `number`                                               | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                  |
+| `clientSecretTrustedIps`  | `IdentityUniversalAuthClientSecretTrustedIp (input)[]` | no       | A list of IPs or CIDR ranges that the Client Secret can be used from together with the Client ID to get back an access token. You can use 0.0.0.0/0, to allow usage from any network address. |
+| `identityId`              | `string`                                               | yes      | The ID of the identity to attach the configuration onto.                                                                                                                                      |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityUniversalAuthAccessTokenTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `clientSecretTrustedIps` | `IdentityUniversalAuthClientSecretTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that the Client Secret can be used from together with the Client ID to get back an access token. You can use 0.0.0.0/0, to allow usage from any network address. |
-| `identityId` | `string` | no | The ID of the identity to attach the configuration onto. |
+| Property                  | Type                                                    | Computed | Description                                                                                                                                                                                   |
+| ------------------------- | ------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`       | `number`                                                | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                          |
+| `accessTokenNumUsesLimit` | `number`                                                | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                         |
+| `accessTokenTrustedIps`   | `IdentityUniversalAuthAccessTokenTrustedIp (output)[]`  | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                            |
+| `accessTokenTtl`          | `number`                                                | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                  |
+| `clientSecretTrustedIps`  | `IdentityUniversalAuthClientSecretTrustedIp (output)[]` | no       | A list of IPs or CIDR ranges that the Client Secret can be used from together with the Client ID to get back an access token. You can use 0.0.0.0/0, to allow usage from any network address. |
+| `identityId`              | `string`                                                | no       | The ID of the identity to attach the configuration onto.                                                                                                                                      |
 
 ## `IdentityUniversalAuthAccessTokenTrustedIp (input)`
 
 Input object `IdentityUniversalAuthAccessTokenTrustedIp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | no |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `ipAddress` | `string` | no       |             |
 
 ## `IdentityUniversalAuthClientSecretTrustedIp (input)`
 
 Input object `IdentityUniversalAuthClientSecretTrustedIp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | no |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `ipAddress` | `string` | no       |             |
 
 ## `IdentityUniversalAuthAccessTokenTrustedIp (output)`
 
 Output object `IdentityUniversalAuthAccessTokenTrustedIp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | yes |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `ipAddress` | `string` | yes            |             |
 
 ## `IdentityUniversalAuthClientSecretTrustedIp (output)`
 
 Output object `IdentityUniversalAuthClientSecretTrustedIp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | yes |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `ipAddress` | `string` | yes            |             |

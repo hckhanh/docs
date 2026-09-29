@@ -11,10 +11,10 @@ These numbers are from one local run on 27 September 2026, Bun 1.4.2, Apple Sili
 
 The call substitutes `:userId` and `:postId`, then appends `sort` and `order` as a query string.
 
-| Implementation | ops/s | time per call |
-| --- | ---: | ---: |
-| `createUrl` | 2,003,232 | 499 ns |
-| urlcat 3.1.0 | 908,646 | 1,101 ns |
+| Implementation |     ops/s | time per call |
+| -------------- | --------: | ------------: |
+| `createUrl`    | 2,003,232 |        499 ns |
+| urlcat 3.1.0   |   908,646 |      1,101 ns |
 
 `createUrl` did about 2.2× as many calls per second as urlcat on this input.
 
@@ -24,10 +24,10 @@ A hand-written `URL` plus `URLSearchParams` on the same machine reached 4,365,24
 
 No path template. Fifteen string values become one query string.
 
-| Implementation | ops/s | time per call |
-| --- | ---: | ---: |
-| `createUrl` | 1,048,012 | 954 ns |
-| urlcat 3.1.0 | 218,184 | 4,583 ns |
+| Implementation |     ops/s | time per call |
+| -------------- | --------: | ------------: |
+| `createUrl`    | 1,048,012 |        954 ns |
+| urlcat 3.1.0   |   218,184 |      4,583 ns |
 
 `createUrl` did about 4.8× as many calls per second as urlcat on this input.
 

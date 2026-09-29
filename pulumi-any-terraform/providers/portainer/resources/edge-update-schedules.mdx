@@ -19,28 +19,28 @@ Construct with `new portainer.EdgeUpdateSchedules(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `agentImage` | `string` | yes | Container image used as the target Portainer Edge agent image after the update runs. |
-| `edgeUpdateSchedulesId` | `string` | no |  |
-| `groupIds` | `number[]` | yes | List of edge group identifiers targeted by the update schedule. |
-| `name` | `string` | no | Name of the Portainer edge update schedule. |
-| `registryId` | `number` | yes | Identifier of the Portainer registry from which the agent and updater images are pulled. |
-| `scheduledTime` | `string` | yes | Time in RFC3339 format |
-| `type` | `number` | yes | 0 = update, 1 = rollback |
-| `updaterImage` | `string` | yes | Container image used to perform the Edge agent update. |
+| Property                | Type       | Required | Description                                                                              |
+| ----------------------- | ---------- | -------- | ---------------------------------------------------------------------------------------- |
+| `agentImage`            | `string`   | yes      | Container image used as the target Portainer Edge agent image after the update runs.     |
+| `edgeUpdateSchedulesId` | `string`   | no       |                                                                                          |
+| `groupIds`              | `number[]` | yes      | List of edge group identifiers targeted by the update schedule.                          |
+| `name`                  | `string`   | no       | Name of the Portainer edge update schedule.                                              |
+| `registryId`            | `number`   | yes      | Identifier of the Portainer registry from which the agent and updater images are pulled. |
+| `scheduledTime`         | `string`   | yes      | Time in RFC3339 format                                                                   |
+| `type`                  | `number`   | yes      | 0 = update, 1 = rollback                                                                 |
+| `updaterImage`          | `string`   | yes      | Container image used to perform the Edge agent update.                                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `agentImage` | `string` | no | Container image used as the target Portainer Edge agent image after the update runs. |
-| `edgeUpdateSchedulesId` | `string` | no |  |
-| `groupIds` | `number[]` | no | List of edge group identifiers targeted by the update schedule. |
-| `name` | `string` | no | Name of the Portainer edge update schedule. |
-| `registryId` | `number` | no | Identifier of the Portainer registry from which the agent and updater images are pulled. |
-| `scheduledTime` | `string` | no | Time in RFC3339 format |
-| `type` | `number` | no | 0 = update, 1 = rollback |
-| `updaterImage` | `string` | no | Container image used to perform the Edge agent update. |
+| Property                | Type       | Computed | Description                                                                              |
+| ----------------------- | ---------- | -------- | ---------------------------------------------------------------------------------------- |
+| `agentImage`            | `string`   | no       | Container image used as the target Portainer Edge agent image after the update runs.     |
+| `edgeUpdateSchedulesId` | `string`   | no       |                                                                                          |
+| `groupIds`              | `number[]` | no       | List of edge group identifiers targeted by the update schedule.                          |
+| `name`                  | `string`   | no       | Name of the Portainer edge update schedule.                                              |
+| `registryId`            | `number`   | no       | Identifier of the Portainer registry from which the agent and updater images are pulled. |
+| `scheduledTime`         | `string`   | no       | Time in RFC3339 format                                                                   |
+| `type`                  | `number`   | no       | 0 = update, 1 = rollback                                                                 |
+| `updaterImage`          | `string`   | no       | Container image used to perform the Edge agent update.                                   |

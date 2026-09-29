@@ -19,17 +19,17 @@ Construct with `new portainer.ComposeConvert(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `composeContent` | `string` | yes | The content of the docker-compose.yml file. |
-| `composeConvertId` | `string` | no |  |
+| Property           | Type     | Required | Description                                 |
+| ------------------ | -------- | -------- | ------------------------------------------- |
+| `composeContent`   | `string` | yes      | The content of the docker-compose.yml file. |
+| `composeConvertId` | `string` | no       |                                             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `composeContent` | `string` | no | The content of the docker-compose.yml file. |
-| `composeConvertId` | `string` | no |  |
-| `manifests` | `{ [key: string]: string }` | yes | Map of generated Kubernetes YAML manifests. |
+| Property           | Type                        | Computed | Description                                 |
+| ------------------ | --------------------------- | -------- | ------------------------------------------- |
+| `composeContent`   | `string`                    | no       | The content of the docker-compose.yml file. |
+| `composeConvertId` | `string`                    | no       |                                             |
+| `manifests`        | `{ [key: string]: string }` | yes      | Map of generated Kubernetes YAML manifests. |

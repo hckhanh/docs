@@ -19,40 +19,40 @@ Construct with `new portainer.Registry(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authentication` | `boolean` | no | Whether the registry requires authentication. When true, username and password are sent to Portainer. |
-| `awsRegion` | `string` | no | AWS region used by ECR (type 7) registries. |
-| `baseUrl` | `string` | no | Optional base URL of the registry used by Portainer for web-based actions and links. |
-| `githubOrganisationName` | `string` | no | Name of the GitHub organisation used when `githubUseOrganisation` is true (type 8). |
-| `githubUseOrganisation` | `boolean` | no | Whether the GitHub (type 8) registry should be scoped to an organisation rather than a user account. |
-| `instanceUrl` | `string` | no | Instance URL used by GitLab (type 4) registries to identify the GitLab instance. |
-| `name` | `string` | no | Name of the registry as displayed in Portainer. |
-| `password` | `string` | no | Password used to authenticate against the registry when authentication is enabled. Stored in state as a sensitive value. |
-| `quayOrganisationName` | `string` | no | Name of the Quay organisation used when `quayUseOrganisation` is true (type 1). |
-| `quayUseOrganisation` | `boolean` | no | Whether the Quay (type 1) registry should be scoped to an organisation rather than a user account. |
-| `registryId` | `string` | no |  |
-| `type` | `number` | yes | Registry type: 1 = Quay, 2 = Azure, 3 = Custom, 4 = GitLab, 5 = ProGet, 6 = DockerHub, 7 = ECR, 8 = GitHub. Changing this value forces resource recreation. |
-| `url` | `string` | yes | URL of the registry (e.g. registry hostname). Used by Portainer to push and pull images. |
-| `username` | `string` | no | Username used to authenticate against the registry when authentication is enabled. |
+| Property                 | Type      | Required | Description                                                                                                                                                 |
+| ------------------------ | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authentication`         | `boolean` | no       | Whether the registry requires authentication. When true, username and password are sent to Portainer.                                                       |
+| `awsRegion`              | `string`  | no       | AWS region used by ECR (type 7) registries.                                                                                                                 |
+| `baseUrl`                | `string`  | no       | Optional base URL of the registry used by Portainer for web-based actions and links.                                                                        |
+| `githubOrganisationName` | `string`  | no       | Name of the GitHub organisation used when `githubUseOrganisation` is true (type 8).                                                                         |
+| `githubUseOrganisation`  | `boolean` | no       | Whether the GitHub (type 8) registry should be scoped to an organisation rather than a user account.                                                        |
+| `instanceUrl`            | `string`  | no       | Instance URL used by GitLab (type 4) registries to identify the GitLab instance.                                                                            |
+| `name`                   | `string`  | no       | Name of the registry as displayed in Portainer.                                                                                                             |
+| `password`               | `string`  | no       | Password used to authenticate against the registry when authentication is enabled. Stored in state as a sensitive value.                                    |
+| `quayOrganisationName`   | `string`  | no       | Name of the Quay organisation used when `quayUseOrganisation` is true (type 1).                                                                             |
+| `quayUseOrganisation`    | `boolean` | no       | Whether the Quay (type 1) registry should be scoped to an organisation rather than a user account.                                                          |
+| `registryId`             | `string`  | no       |                                                                                                                                                             |
+| `type`                   | `number`  | yes      | Registry type: 1 = Quay, 2 = Azure, 3 = Custom, 4 = GitLab, 5 = ProGet, 6 = DockerHub, 7 = ECR, 8 = GitHub. Changing this value forces resource recreation. |
+| `url`                    | `string`  | yes      | URL of the registry (e.g. registry hostname). Used by Portainer to push and pull images.                                                                    |
+| `username`               | `string`  | no       | Username used to authenticate against the registry when authentication is enabled.                                                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `authentication` | `boolean` | no | Whether the registry requires authentication. When true, username and password are sent to Portainer. |
-| `awsRegion` | `string` | no | AWS region used by ECR (type 7) registries. |
-| `baseUrl` | `string` | no | Optional base URL of the registry used by Portainer for web-based actions and links. |
-| `githubOrganisationName` | `string` | no | Name of the GitHub organisation used when `githubUseOrganisation` is true (type 8). |
-| `githubUseOrganisation` | `boolean` | no | Whether the GitHub (type 8) registry should be scoped to an organisation rather than a user account. |
-| `instanceUrl` | `string` | no | Instance URL used by GitLab (type 4) registries to identify the GitLab instance. |
-| `name` | `string` | no | Name of the registry as displayed in Portainer. |
-| `password` | `string` | no | Password used to authenticate against the registry when authentication is enabled. Stored in state as a sensitive value. |
-| `quayOrganisationName` | `string` | no | Name of the Quay organisation used when `quayUseOrganisation` is true (type 1). |
-| `quayUseOrganisation` | `boolean` | no | Whether the Quay (type 1) registry should be scoped to an organisation rather than a user account. |
-| `registryId` | `string` | no |  |
-| `type` | `number` | no | Registry type: 1 = Quay, 2 = Azure, 3 = Custom, 4 = GitLab, 5 = ProGet, 6 = DockerHub, 7 = ECR, 8 = GitHub. Changing this value forces resource recreation. |
-| `url` | `string` | no | URL of the registry (e.g. registry hostname). Used by Portainer to push and pull images. |
-| `username` | `string` | no | Username used to authenticate against the registry when authentication is enabled. |
+| Property                 | Type      | Computed | Description                                                                                                                                                 |
+| ------------------------ | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authentication`         | `boolean` | no       | Whether the registry requires authentication. When true, username and password are sent to Portainer.                                                       |
+| `awsRegion`              | `string`  | no       | AWS region used by ECR (type 7) registries.                                                                                                                 |
+| `baseUrl`                | `string`  | no       | Optional base URL of the registry used by Portainer for web-based actions and links.                                                                        |
+| `githubOrganisationName` | `string`  | no       | Name of the GitHub organisation used when `githubUseOrganisation` is true (type 8).                                                                         |
+| `githubUseOrganisation`  | `boolean` | no       | Whether the GitHub (type 8) registry should be scoped to an organisation rather than a user account.                                                        |
+| `instanceUrl`            | `string`  | no       | Instance URL used by GitLab (type 4) registries to identify the GitLab instance.                                                                            |
+| `name`                   | `string`  | no       | Name of the registry as displayed in Portainer.                                                                                                             |
+| `password`               | `string`  | no       | Password used to authenticate against the registry when authentication is enabled. Stored in state as a sensitive value.                                    |
+| `quayOrganisationName`   | `string`  | no       | Name of the Quay organisation used when `quayUseOrganisation` is true (type 1).                                                                             |
+| `quayUseOrganisation`    | `boolean` | no       | Whether the Quay (type 1) registry should be scoped to an organisation rather than a user account.                                                          |
+| `registryId`             | `string`  | no       |                                                                                                                                                             |
+| `type`                   | `number`  | no       | Registry type: 1 = Quay, 2 = Azure, 3 = Custom, 4 = GitLab, 5 = ProGet, 6 = DockerHub, 7 = ECR, 8 = GitHub. Changing this value forces resource recreation. |
+| `url`                    | `string`  | no       | URL of the registry (e.g. registry hostname). Used by Portainer to push and pull images.                                                                    |
+| `username`               | `string`  | no       | Username used to authenticate against the registry when authentication is enabled.                                                                          |

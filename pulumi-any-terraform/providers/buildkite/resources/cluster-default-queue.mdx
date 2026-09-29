@@ -19,18 +19,18 @@ Construct with `new buildkite.ClusterDefaultQueue(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clusterId` | `string` | yes | The GraphQL ID of the cluster to which to add a default queue. |
-| `queueId` | `string` | yes | The GraphQL ID of the cluster queue to set as default on the cluster. |
+| Property    | Type     | Required | Description                                                           |
+| ----------- | -------- | -------- | --------------------------------------------------------------------- |
+| `clusterId` | `string` | yes      | The GraphQL ID of the cluster to which to add a default queue.        |
+| `queueId`   | `string` | yes      | The GraphQL ID of the cluster queue to set as default on the cluster. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `clusterId` | `string` | no | The GraphQL ID of the cluster to which to add a default queue. |
-| `key` | `string` | yes | The Key for the cluster queue; its unique identifier |
-| `queueId` | `string` | no | The GraphQL ID of the cluster queue to set as default on the cluster. |
-| `uuid` | `string` | yes | The UUID of the cluster. |
+| Property    | Type     | Computed | Description                                                           |
+| ----------- | -------- | -------- | --------------------------------------------------------------------- |
+| `clusterId` | `string` | no       | The GraphQL ID of the cluster to which to add a default queue.        |
+| `key`       | `string` | yes      | The Key for the cluster queue; its unique identifier                  |
+| `queueId`   | `string` | no       | The GraphQL ID of the cluster queue to set as default on the cluster. |
+| `uuid`      | `string` | yes      | The UUID of the cluster.                                              |

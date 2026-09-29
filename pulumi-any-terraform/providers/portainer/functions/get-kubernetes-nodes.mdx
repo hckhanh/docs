@@ -19,35 +19,35 @@ Call `portainer.getKubernetesNodes(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `nodes` | `GetKubernetesNodesNode[]` | yes |  |
+| Property        | Type                       | Always present | Description |
+| --------------- | -------------------------- | -------------- | ----------- |
+| `environmentId` | `number`                   | yes            |             |
+| `id`            | `string`                   | yes            |             |
+| `nodes`         | `GetKubernetesNodesNode[]` | yes            |             |
 
 ## `GetKubernetesNodesNode`
 
 Output object `GetKubernetesNodesNode`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `availableCpu` | `number` | no |  |
-| `availableMemory` | `number` | no |  |
-| `capacityCpu` | `string` | no |  |
-| `capacityMemory` | `string` | no |  |
-| `internalIp` | `string` | no |  |
-| `kubeletVersion` | `string` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `name` | `string` | no |  |
-| `osImage` | `string` | no |  |
-| `ready` | `boolean` | no |  |
-| `unschedulable` | `boolean` | no |  |
-| `usageCpu` | `string` | no |  |
-| `usageMemory` | `string` | no |  |
+| Property          | Type                        | Always present | Description |
+| ----------------- | --------------------------- | -------------- | ----------- |
+| `availableCpu`    | `number`                    | no             |             |
+| `availableMemory` | `number`                    | no             |             |
+| `capacityCpu`     | `string`                    | no             |             |
+| `capacityMemory`  | `string`                    | no             |             |
+| `internalIp`      | `string`                    | no             |             |
+| `kubeletVersion`  | `string`                    | no             |             |
+| `labels`          | `{ [key: string]: string }` | no             |             |
+| `name`            | `string`                    | no             |             |
+| `osImage`         | `string`                    | no             |             |
+| `ready`           | `boolean`                   | no             |             |
+| `unschedulable`   | `boolean`                   | no             |             |
+| `usageCpu`        | `string`                    | no             |             |
+| `usageMemory`     | `string`                    | no             |             |

@@ -19,37 +19,37 @@ Call `portainer.getKubernetesEvents(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `resourceId` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
+| `namespace`     | `string` | no       |             |
+| `resourceId`    | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `events` | `GetKubernetesEventsEvent[]` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | no |  |
-| `resourceId` | `string` | no |  |
-| `warningCount` | `number` | yes |  |
+| Property        | Type                         | Always present | Description |
+| --------------- | ---------------------------- | -------------- | ----------- |
+| `environmentId` | `number`                     | yes            |             |
+| `events`        | `GetKubernetesEventsEvent[]` | yes            |             |
+| `id`            | `string`                     | yes            |             |
+| `namespace`     | `string`                     | no             |             |
+| `resourceId`    | `string`                     | no             |             |
+| `warningCount`  | `number`                     | yes            |             |
 
 ## `GetKubernetesEventsEvent`
 
 Output object `GetKubernetesEventsEvent`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `count` | `number` | no |  |
-| `firstTimestamp` | `string` | no |  |
-| `kind` | `string` | no |  |
-| `lastTimestamp` | `string` | no |  |
-| `message` | `string` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `reason` | `string` | no |  |
-| `type` | `string` | no |  |
-| `uid` | `string` | no |  |
+| Property         | Type     | Always present | Description |
+| ---------------- | -------- | -------------- | ----------- |
+| `count`          | `number` | no             |             |
+| `firstTimestamp` | `string` | no             |             |
+| `kind`           | `string` | no             |             |
+| `lastTimestamp`  | `string` | no             |             |
+| `message`        | `string` | no             |             |
+| `name`           | `string` | no             |             |
+| `namespace`      | `string` | no             |             |
+| `reason`         | `string` | no             |             |
+| `type`           | `string` | no             |             |
+| `uid`            | `string` | no             |             |

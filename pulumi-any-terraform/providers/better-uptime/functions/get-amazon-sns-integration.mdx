@@ -19,197 +19,197 @@ Call `betteruptime.getAmazonSnsIntegration(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `name`   | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `acknowledgedAlertIdFields` | `GetAmazonSnsIntegrationAcknowledgedAlertIdField[]` | yes |  |
-| `acknowledgedRuleType` | `string` | yes |  |
-| `acknowledgedRules` | `GetAmazonSnsIntegrationAcknowledgedRule[]` | yes |  |
-| `call` | `boolean` | yes |  |
-| `causeFields` | `GetAmazonSnsIntegrationCauseField[]` | yes |  |
-| `createdAt` | `string` | yes |  |
-| `criticalAlert` | `boolean` | yes |  |
-| `email` | `boolean` | yes |  |
-| `id` | `string` | yes |  |
-| `name` | `string` | yes |  |
-| `otherAcknowledgedFields` | `GetAmazonSnsIntegrationOtherAcknowledgedField[]` | yes |  |
-| `otherResolvedFields` | `GetAmazonSnsIntegrationOtherResolvedField[]` | yes |  |
-| `otherStartedFields` | `GetAmazonSnsIntegrationOtherStartedField[]` | yes |  |
-| `paused` | `boolean` | yes |  |
-| `policyId` | `string` | yes |  |
-| `push` | `boolean` | yes |  |
-| `recoveryPeriod` | `number` | yes |  |
-| `resolvedAlertIdFields` | `GetAmazonSnsIntegrationResolvedAlertIdField[]` | yes |  |
-| `resolvedRuleType` | `string` | yes |  |
-| `resolvedRules` | `GetAmazonSnsIntegrationResolvedRule[]` | yes |  |
-| `sampleBody` | `string` | yes |  |
-| `sampleHeaders` | `string` | yes |  |
-| `sampleQueryString` | `string` | yes |  |
-| `sms` | `boolean` | yes |  |
-| `startedAlertIdFields` | `GetAmazonSnsIntegrationStartedAlertIdField[]` | yes |  |
-| `startedRuleType` | `string` | yes |  |
-| `startedRules` | `GetAmazonSnsIntegrationStartedRule[]` | yes |  |
-| `subscriptionState` | `string` | yes |  |
-| `teamWait` | `number` | yes |  |
-| `titleFields` | `GetAmazonSnsIntegrationTitleField[]` | yes |  |
-| `topicArn` | `string` | yes |  |
-| `updatedAt` | `string` | yes |  |
-| `url` | `string` | yes |  |
+| Property                    | Type                                                | Always present | Description |
+| --------------------------- | --------------------------------------------------- | -------------- | ----------- |
+| `acknowledgedAlertIdFields` | `GetAmazonSnsIntegrationAcknowledgedAlertIdField[]` | yes            |             |
+| `acknowledgedRuleType`      | `string`                                            | yes            |             |
+| `acknowledgedRules`         | `GetAmazonSnsIntegrationAcknowledgedRule[]`         | yes            |             |
+| `call`                      | `boolean`                                           | yes            |             |
+| `causeFields`               | `GetAmazonSnsIntegrationCauseField[]`               | yes            |             |
+| `createdAt`                 | `string`                                            | yes            |             |
+| `criticalAlert`             | `boolean`                                           | yes            |             |
+| `email`                     | `boolean`                                           | yes            |             |
+| `id`                        | `string`                                            | yes            |             |
+| `name`                      | `string`                                            | yes            |             |
+| `otherAcknowledgedFields`   | `GetAmazonSnsIntegrationOtherAcknowledgedField[]`   | yes            |             |
+| `otherResolvedFields`       | `GetAmazonSnsIntegrationOtherResolvedField[]`       | yes            |             |
+| `otherStartedFields`        | `GetAmazonSnsIntegrationOtherStartedField[]`        | yes            |             |
+| `paused`                    | `boolean`                                           | yes            |             |
+| `policyId`                  | `string`                                            | yes            |             |
+| `push`                      | `boolean`                                           | yes            |             |
+| `recoveryPeriod`            | `number`                                            | yes            |             |
+| `resolvedAlertIdFields`     | `GetAmazonSnsIntegrationResolvedAlertIdField[]`     | yes            |             |
+| `resolvedRuleType`          | `string`                                            | yes            |             |
+| `resolvedRules`             | `GetAmazonSnsIntegrationResolvedRule[]`             | yes            |             |
+| `sampleBody`                | `string`                                            | yes            |             |
+| `sampleHeaders`             | `string`                                            | yes            |             |
+| `sampleQueryString`         | `string`                                            | yes            |             |
+| `sms`                       | `boolean`                                           | yes            |             |
+| `startedAlertIdFields`      | `GetAmazonSnsIntegrationStartedAlertIdField[]`      | yes            |             |
+| `startedRuleType`           | `string`                                            | yes            |             |
+| `startedRules`              | `GetAmazonSnsIntegrationStartedRule[]`              | yes            |             |
+| `subscriptionState`         | `string`                                            | yes            |             |
+| `teamWait`                  | `number`                                            | yes            |             |
+| `titleFields`               | `GetAmazonSnsIntegrationTitleField[]`               | yes            |             |
+| `topicArn`                  | `string`                                            | yes            |             |
+| `updatedAt`                 | `string`                                            | yes            |             |
+| `url`                       | `string`                                            | yes            |             |
 
 ## `GetAmazonSnsIntegrationAcknowledgedAlertIdField`
 
 Output object `GetAmazonSnsIntegrationAcknowledgedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationAcknowledgedRule`
 
 Output object `GetAmazonSnsIntegrationAcknowledgedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `ruleTarget` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `content`     | `string` | no             |             |
+| `matchType`   | `string` | no             |             |
+| `ruleTarget`  | `string` | no             |             |
+| `targetField` | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationCauseField`
 
 Output object `GetAmazonSnsIntegrationCauseField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationOtherAcknowledgedField`
 
 Output object `GetAmazonSnsIntegrationOtherAcknowledgedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationOtherResolvedField`
 
 Output object `GetAmazonSnsIntegrationOtherResolvedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationOtherStartedField`
 
 Output object `GetAmazonSnsIntegrationOtherStartedField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationResolvedAlertIdField`
 
 Output object `GetAmazonSnsIntegrationResolvedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationResolvedRule`
 
 Output object `GetAmazonSnsIntegrationResolvedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `ruleTarget` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `content`     | `string` | no             |             |
+| `matchType`   | `string` | no             |             |
+| `ruleTarget`  | `string` | no             |             |
+| `targetField` | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationStartedAlertIdField`
 
 Output object `GetAmazonSnsIntegrationStartedAlertIdField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationStartedRule`
 
 Output object `GetAmazonSnsIntegrationStartedRule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `ruleTarget` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property      | Type     | Always present | Description |
+| ------------- | -------- | -------------- | ----------- |
+| `content`     | `string` | no             |             |
+| `matchType`   | `string` | no             |             |
+| `ruleTarget`  | `string` | no             |             |
+| `targetField` | `string` | no             |             |
 
 ## `GetAmazonSnsIntegrationTitleField`
 
 Output object `GetAmazonSnsIntegrationTitleField`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | no |  |
-| `contentAfter` | `string` | no |  |
-| `contentBefore` | `string` | no |  |
-| `fieldTarget` | `string` | no |  |
-| `matchType` | `string` | no |  |
-| `name` | `string` | no |  |
-| `specialType` | `string` | no |  |
-| `targetField` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `content`       | `string` | no             |             |
+| `contentAfter`  | `string` | no             |             |
+| `contentBefore` | `string` | no             |             |
+| `fieldTarget`   | `string` | no             |             |
+| `matchType`     | `string` | no             |             |
+| `name`          | `string` | no             |             |
+| `specialType`   | `string` | no             |             |
+| `targetField`   | `string` | no             |             |

@@ -19,68 +19,68 @@ Construct with `new infisical.IntegrationAwsParameterStore(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessKeyId` | `string` | no | The AWS access key ID. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `assumeRoleArn` | `string` | no | The ARN of the role to assume when syncing secrets to AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `awsRegion` | `string` | yes | The AWS region to sync secrets to. (us-east-1, us-east-2, etc) |
-| `environment` | `string` | yes | The slug of the environment to sync to AWS Parameter Store (prod, dev, staging, etc). |
-| `options` | `IntegrationAwsParameterStoreOptions (input)` | no | Integration options |
-| `parameterStorePath` | `string` | yes | The path in AWS Parameter Store to sync secrets to. |
-| `projectId` | `string` | yes | The ID of your Infisical project. |
-| `secretAccessKey` | `string` | no | The AWS secret access key. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `secretPath` | `string` | yes | The secret path in Infisical to sync secrets from. |
+| Property             | Type                                          | Required | Description                                                                                                                                                                  |
+| -------------------- | --------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessKeyId`        | `string`                                      | no       | The AWS access key ID. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role.      |
+| `assumeRoleArn`      | `string`                                      | no       | The ARN of the role to assume when syncing secrets to AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
+| `awsRegion`          | `string`                                      | yes      | The AWS region to sync secrets to. (us-east-1, us-east-2, etc)                                                                                                               |
+| `environment`        | `string`                                      | yes      | The slug of the environment to sync to AWS Parameter Store (prod, dev, staging, etc).                                                                                        |
+| `options`            | `IntegrationAwsParameterStoreOptions (input)` | no       | Integration options                                                                                                                                                          |
+| `parameterStorePath` | `string`                                      | yes      | The path in AWS Parameter Store to sync secrets to.                                                                                                                          |
+| `projectId`          | `string`                                      | yes      | The ID of your Infisical project.                                                                                                                                            |
+| `secretAccessKey`    | `string`                                      | no       | The AWS secret access key. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role.  |
+| `secretPath`         | `string`                                      | yes      | The secret path in Infisical to sync secrets from.                                                                                                                           |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessKeyId` | `string` | no | The AWS access key ID. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `assumeRoleArn` | `string` | no | The ARN of the role to assume when syncing secrets to AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `awsRegion` | `string` | no | The AWS region to sync secrets to. (us-east-1, us-east-2, etc) |
-| `environment` | `string` | no | The slug of the environment to sync to AWS Parameter Store (prod, dev, staging, etc). |
-| `integrationAuthId` | `string` | yes | The ID of the integration auth, used internally by Infisical. |
-| `integrationId` | `string` | yes | The ID of the integration, used internally by Infisical. |
-| `options` | `IntegrationAwsParameterStoreOptions (output)` | no | Integration options |
-| `parameterStorePath` | `string` | no | The path in AWS Parameter Store to sync secrets to. |
-| `projectId` | `string` | no | The ID of your Infisical project. |
-| `secretAccessKey` | `string` | no | The AWS secret access key. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
-| `secretPath` | `string` | no | The secret path in Infisical to sync secrets from. |
+| Property             | Type                                           | Computed | Description                                                                                                                                                                  |
+| -------------------- | ---------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessKeyId`        | `string`                                       | no       | The AWS access key ID. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role.      |
+| `assumeRoleArn`      | `string`                                       | no       | The ARN of the role to assume when syncing secrets to AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role. |
+| `awsRegion`          | `string`                                       | no       | The AWS region to sync secrets to. (us-east-1, us-east-2, etc)                                                                                                               |
+| `environment`        | `string`                                       | no       | The slug of the environment to sync to AWS Parameter Store (prod, dev, staging, etc).                                                                                        |
+| `integrationAuthId`  | `string`                                       | yes      | The ID of the integration auth, used internally by Infisical.                                                                                                                |
+| `integrationId`      | `string`                                       | yes      | The ID of the integration, used internally by Infisical.                                                                                                                     |
+| `options`            | `IntegrationAwsParameterStoreOptions (output)` | no       | Integration options                                                                                                                                                          |
+| `parameterStorePath` | `string`                                       | no       | The path in AWS Parameter Store to sync secrets to.                                                                                                                          |
+| `projectId`          | `string`                                       | no       | The ID of your Infisical project.                                                                                                                                            |
+| `secretAccessKey`    | `string`                                       | no       | The AWS secret access key. Used to authenticate with AWS Parameter Store. You must either set `secretAccessKey` and access_key_id, or set `assumeRoleArn` to assume a role.  |
+| `secretPath`         | `string`                                       | no       | The secret path in Infisical to sync secrets from.                                                                                                                           |
 
 ## `IntegrationAwsParameterStoreOptions (input)`
 
 Input object `IntegrationAwsParameterStoreOptions`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `awsTags` | `IntegrationAwsParameterStoreOptionsAwsTag (input)[]` | no | Tags to attach to the AWS parameter store secrets. |
-| `shouldDisableDelete` | `boolean` | no | Whether to disable deletion of existing secrets in AWS Parameter Store. |
+| Property              | Type                                                  | Required | Description                                                             |
+| --------------------- | ----------------------------------------------------- | -------- | ----------------------------------------------------------------------- |
+| `awsTags`             | `IntegrationAwsParameterStoreOptionsAwsTag (input)[]` | no       | Tags to attach to the AWS parameter store secrets.                      |
+| `shouldDisableDelete` | `boolean`                                             | no       | Whether to disable deletion of existing secrets in AWS Parameter Store. |
 
 ## `IntegrationAwsParameterStoreOptionsAwsTag (input)`
 
 Input object `IntegrationAwsParameterStoreOptionsAwsTag`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | no | The key of the tag. |
-| `value` | `string` | no | The value of the tag. |
+| Property | Type     | Required | Description           |
+| -------- | -------- | -------- | --------------------- |
+| `key`    | `string` | no       | The key of the tag.   |
+| `value`  | `string` | no       | The value of the tag. |
 
 ## `IntegrationAwsParameterStoreOptions (output)`
 
 Output object `IntegrationAwsParameterStoreOptions`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `awsTags` | `IntegrationAwsParameterStoreOptionsAwsTag (output)[]` | no | Tags to attach to the AWS parameter store secrets. |
-| `shouldDisableDelete` | `boolean` | yes | Whether to disable deletion of existing secrets in AWS Parameter Store. |
+| Property              | Type                                                   | Always present | Description                                                             |
+| --------------------- | ------------------------------------------------------ | -------------- | ----------------------------------------------------------------------- |
+| `awsTags`             | `IntegrationAwsParameterStoreOptionsAwsTag (output)[]` | no             | Tags to attach to the AWS parameter store secrets.                      |
+| `shouldDisableDelete` | `boolean`                                              | yes            | Whether to disable deletion of existing secrets in AWS Parameter Store. |
 
 ## `IntegrationAwsParameterStoreOptionsAwsTag (output)`
 
 Output object `IntegrationAwsParameterStoreOptionsAwsTag`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | no | The key of the tag. |
-| `value` | `string` | no | The value of the tag. |
+| Property | Type     | Always present | Description           |
+| -------- | -------- | -------------- | --------------------- |
+| `key`    | `string` | no             | The key of the tag.   |
+| `value`  | `string` | no             | The value of the tag. |

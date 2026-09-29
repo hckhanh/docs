@@ -19,26 +19,26 @@ Call `portainer.getTeamMemberships(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `teamId` | `number` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `teamId` | `number` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes |  |
-| `leaderUserIds` | `number[]` | yes |  |
-| `memberships` | `GetTeamMembershipsMembership[]` | yes |  |
-| `teamId` | `number` | yes |  |
+| Property        | Type                             | Always present | Description |
+| --------------- | -------------------------------- | -------------- | ----------- |
+| `id`            | `string`                         | yes            |             |
+| `leaderUserIds` | `number[]`                       | yes            |             |
+| `memberships`   | `GetTeamMembershipsMembership[]` | yes            |             |
+| `teamId`        | `number`                         | yes            |             |
 
 ## `GetTeamMembershipsMembership`
 
 Output object `GetTeamMembershipsMembership`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `number` | no |  |
-| `role` | `number` | no |  |
-| `userId` | `number` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `id`     | `number` | no             |             |
+| `role`   | `number` | no             |             |
+| `userId` | `number` | no             |             |

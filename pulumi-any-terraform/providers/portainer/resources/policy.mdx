@@ -19,28 +19,28 @@ Construct with `new portainer.Policy(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowOverride` | `boolean` | no | Whether to allow environments to override this policy. |
-| `data` | `string` | no | Policy data as a JSON string. Structure depends on policy_type. |
-| `environmentGroups` | `number[]` | no | List of environment group IDs to which the policy applies. |
-| `environmentType` | `string` | yes | Environment type for the policy (kubernetes, docker, podman, swarm). |
-| `name` | `string` | no | Name of the policy. |
-| `policyId` | `string` | no |  |
-| `policyType` | `string` | yes | Policy type (e.g. rbac-k8s, security-docker). |
+| Property            | Type       | Required | Description                                                          |
+| ------------------- | ---------- | -------- | -------------------------------------------------------------------- |
+| `allowOverride`     | `boolean`  | no       | Whether to allow environments to override this policy.               |
+| `data`              | `string`   | no       | Policy data as a JSON string. Structure depends on policy_type.      |
+| `environmentGroups` | `number[]` | no       | List of environment group IDs to which the policy applies.           |
+| `environmentType`   | `string`   | yes      | Environment type for the policy (kubernetes, docker, podman, swarm). |
+| `name`              | `string`   | no       | Name of the policy.                                                  |
+| `policyId`          | `string`   | no       |                                                                      |
+| `policyType`        | `string`   | yes      | Policy type (e.g. rbac-k8s, security-docker).                        |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `allowOverride` | `boolean` | no | Whether to allow environments to override this policy. |
-| `createdAt` | `string` | yes | Timestamp when the policy was created. |
-| `data` | `string` | no | Policy data as a JSON string. Structure depends on policy_type. |
-| `environmentGroups` | `number[]` | no | List of environment group IDs to which the policy applies. |
-| `environmentType` | `string` | no | Environment type for the policy (kubernetes, docker, podman, swarm). |
-| `name` | `string` | no | Name of the policy. |
-| `policyId` | `string` | no |  |
-| `policyType` | `string` | no | Policy type (e.g. rbac-k8s, security-docker). |
-| `updatedAt` | `string` | yes | Timestamp when the policy was last updated. |
+| Property            | Type       | Computed | Description                                                          |
+| ------------------- | ---------- | -------- | -------------------------------------------------------------------- |
+| `allowOverride`     | `boolean`  | no       | Whether to allow environments to override this policy.               |
+| `createdAt`         | `string`   | yes      | Timestamp when the policy was created.                               |
+| `data`              | `string`   | no       | Policy data as a JSON string. Structure depends on policy_type.      |
+| `environmentGroups` | `number[]` | no       | List of environment group IDs to which the policy applies.           |
+| `environmentType`   | `string`   | no       | Environment type for the policy (kubernetes, docker, podman, swarm). |
+| `name`              | `string`   | no       | Name of the policy.                                                  |
+| `policyId`          | `string`   | no       |                                                                      |
+| `policyType`        | `string`   | no       | Policy type (e.g. rbac-k8s, security-docker).                        |
+| `updatedAt`         | `string`   | yes      | Timestamp when the policy was last updated.                          |

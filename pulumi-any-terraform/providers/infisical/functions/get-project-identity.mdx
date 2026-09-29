@@ -19,31 +19,31 @@ Call `infisical.getProjectIdentity(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes |  |
-| `projectId` | `string` | yes |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `identityId` | `string` | yes      |             |
+| `projectId`  | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `identityId` | `string` | yes |  |
-| `membershipId` | `string` | yes |  |
-| `projectId` | `string` | yes |  |
-| `roles` | `GetProjectIdentityRole[]` | yes |  |
+| Property       | Type                       | Always present | Description |
+| -------------- | -------------------------- | -------------- | ----------- |
+| `identityId`   | `string`                   | yes            |             |
+| `membershipId` | `string`                   | yes            |             |
+| `projectId`    | `string`                   | yes            |             |
+| `roles`        | `GetProjectIdentityRole[]` | yes            |             |
 
 ## `GetProjectIdentityRole`
 
 Output object `GetProjectIdentityRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | yes | The ID of the custom role, if applicable. |
-| `id` | `string` | yes | The ID of the project identity role. |
-| `isTemporary` | `boolean` | yes | Flag to indicate whether the assigned role is temporary. |
-| `roleSlug` | `string` | yes | The slug of the role. |
-| `temporaryAccessEndTime` | `string` | yes | ISO time at which temporary access ends. Null for permanent roles. |
-| `temporaryAccessStartTime` | `string` | yes | ISO time at which temporary access begins. Null for permanent roles. |
-| `temporaryMode` | `string` | yes | Type of temporary access given. Null for permanent roles. |
-| `temporaryRange` | `string` | yes | TTL for the temporary access. Null for permanent roles. |
+| Property                   | Type      | Always present | Description                                                          |
+| -------------------------- | --------- | -------------- | -------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | yes            | The ID of the custom role, if applicable.                            |
+| `id`                       | `string`  | yes            | The ID of the project identity role.                                 |
+| `isTemporary`              | `boolean` | yes            | Flag to indicate whether the assigned role is temporary.             |
+| `roleSlug`                 | `string`  | yes            | The slug of the role.                                                |
+| `temporaryAccessEndTime`   | `string`  | yes            | ISO time at which temporary access ends. Null for permanent roles.   |
+| `temporaryAccessStartTime` | `string`  | yes            | ISO time at which temporary access begins. Null for permanent roles. |
+| `temporaryMode`            | `string`  | yes            | Type of temporary access given. Null for permanent roles.            |
+| `temporaryRange`           | `string`  | yes            | TTL for the temporary access. Null for permanent roles.              |

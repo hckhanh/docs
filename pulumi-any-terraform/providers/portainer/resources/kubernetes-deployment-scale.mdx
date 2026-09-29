@@ -19,24 +19,24 @@ Construct with `new portainer.KubernetesDeploymentScale(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `deploymentName` | `string` | yes | Name of the deployment to scale. The deployment must already exist; this resource manages only its replica count. |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment the deployment belongs to. |
-| `kubernetesDeploymentScaleId` | `string` | no |  |
-| `namespace` | `string` | yes | Namespace the deployment lives in. |
-| `replicas` | `number` | yes | Desired number of replicas. Changing this scales the deployment in place. |
+| Property                      | Type     | Required | Description                                                                                                       |
+| ----------------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `deploymentName`              | `string` | yes      | Name of the deployment to scale. The deployment must already exist; this resource manages only its replica count. |
+| `environmentId`               | `number` | yes      | Identifier of the Portainer Kubernetes environment the deployment belongs to.                                     |
+| `kubernetesDeploymentScaleId` | `string` | no       |                                                                                                                   |
+| `namespace`                   | `string` | yes      | Namespace the deployment lives in.                                                                                |
+| `replicas`                    | `number` | yes      | Desired number of replicas. Changing this scales the deployment in place.                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `availableReplicas` | `number` | yes | Number of replicas available for at least the configured minimum ready seconds, as reported after the scale request. |
-| `deploymentName` | `string` | no | Name of the deployment to scale. The deployment must already exist; this resource manages only its replica count. |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment the deployment belongs to. |
-| `kubernetesDeploymentScaleId` | `string` | no |  |
-| `namespace` | `string` | no | Namespace the deployment lives in. |
-| `readyReplicas` | `number` | yes | Number of replicas passing their readiness checks, as reported after the scale request. |
-| `replicas` | `number` | no | Desired number of replicas. Changing this scales the deployment in place. |
+| Property                      | Type     | Computed | Description                                                                                                          |
+| ----------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `availableReplicas`           | `number` | yes      | Number of replicas available for at least the configured minimum ready seconds, as reported after the scale request. |
+| `deploymentName`              | `string` | no       | Name of the deployment to scale. The deployment must already exist; this resource manages only its replica count.    |
+| `environmentId`               | `number` | no       | Identifier of the Portainer Kubernetes environment the deployment belongs to.                                        |
+| `kubernetesDeploymentScaleId` | `string` | no       |                                                                                                                      |
+| `namespace`                   | `string` | no       | Namespace the deployment lives in.                                                                                   |
+| `readyReplicas`               | `number` | yes      | Number of replicas passing their readiness checks, as reported after the scale request.                              |
+| `replicas`                    | `number` | no       | Desired number of replicas. Changing this scales the deployment in place.                                            |

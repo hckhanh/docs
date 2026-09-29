@@ -19,26 +19,26 @@ Call `portainer.getEdgeUpdateSchedulesActive(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentIds` | `number[]` | yes |  |
-| `id` | `string` | no |  |
+| Property         | Type       | Required | Description |
+| ---------------- | ---------- | -------- | ----------- |
+| `environmentIds` | `number[]` | yes      |             |
+| `id`             | `string`   | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentIds` | `number[]` | yes |  |
-| `id` | `string` | yes |  |
-| `schedules` | `GetEdgeUpdateSchedulesActiveSchedule[]` | yes |  |
+| Property         | Type                                     | Always present | Description |
+| ---------------- | ---------------------------------------- | -------------- | ----------- |
+| `environmentIds` | `number[]`                               | yes            |             |
+| `id`             | `string`                                 | yes            |             |
+| `schedules`      | `GetEdgeUpdateSchedulesActiveSchedule[]` | yes            |             |
 
 ## `GetEdgeUpdateSchedulesActiveSchedule`
 
 Output object `GetEdgeUpdateSchedulesActiveSchedule`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `edgeStackId` | `number` | no |  |
-| `endpointId` | `number` | no |  |
-| `scheduleId` | `number` | no |  |
-| `targetVersion` | `string` | no |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `edgeStackId`   | `number` | no             |             |
+| `endpointId`    | `number` | no             |             |
+| `scheduleId`    | `number` | no             |             |
+| `targetVersion` | `string` | no             |             |

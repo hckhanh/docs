@@ -19,38 +19,38 @@ Construct with `new portainer.GitopsSource(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `administratorsOnly` | `boolean` | no | Whether the source is restricted to administrators. Only honoured at creation time; Portainer's update API does not carry this field. |
-| `gitopsSourceId` | `string` | no |  |
-| `interval` | `string` | no | Polling interval for the repository as a Go duration string (for example `5m`). Leave unset to keep Portainer's default. |
-| `name` | `string` | no | Name of the GitOps source as displayed in Portainer. Portainer derives one from the repository URL when this is not set. |
-| `password` | `string` | no | Password or personal access token paired with `username`. Portainer never returns it, so it is kept from configuration and cannot detect drift. |
-| `public` | `boolean` | no | Whether every user can use this source. Changing it is applied through the source's access-control endpoint. |
-| `teamAccesses` | `number[]` | no | IDs of teams granted access to the source. Applied through the source's access-control endpoint. |
-| `tlsSkipVerify` | `boolean` | no | Whether to skip TLS certificate verification when contacting the Git repository. |
-| `url` | `string` | yes | URL of the Git repository the source syncs from. |
-| `userAccesses` | `number[]` | no | IDs of users granted access to the source. Applied through the source's access-control endpoint. |
-| `username` | `string` | no | Username used to authenticate against the Git repository. Leave unset for a public repository. |
+| Property             | Type       | Required | Description                                                                                                                                     |
+| -------------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `administratorsOnly` | `boolean`  | no       | Whether the source is restricted to administrators. Only honoured at creation time; Portainer's update API does not carry this field.           |
+| `gitopsSourceId`     | `string`   | no       |                                                                                                                                                 |
+| `interval`           | `string`   | no       | Polling interval for the repository as a Go duration string (for example `5m`). Leave unset to keep Portainer's default.                        |
+| `name`               | `string`   | no       | Name of the GitOps source as displayed in Portainer. Portainer derives one from the repository URL when this is not set.                        |
+| `password`           | `string`   | no       | Password or personal access token paired with `username`. Portainer never returns it, so it is kept from configuration and cannot detect drift. |
+| `public`             | `boolean`  | no       | Whether every user can use this source. Changing it is applied through the source's access-control endpoint.                                    |
+| `teamAccesses`       | `number[]` | no       | IDs of teams granted access to the source. Applied through the source's access-control endpoint.                                                |
+| `tlsSkipVerify`      | `boolean`  | no       | Whether to skip TLS certificate verification when contacting the Git repository.                                                                |
+| `url`                | `string`   | yes      | URL of the Git repository the source syncs from.                                                                                                |
+| `userAccesses`       | `number[]` | no       | IDs of users granted access to the source. Applied through the source's access-control endpoint.                                                |
+| `username`           | `string`   | no       | Username used to authenticate against the Git repository. Leave unset for a public repository.                                                  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `administratorsOnly` | `boolean` | no | Whether the source is restricted to administrators. Only honoured at creation time; Portainer's update API does not carry this field. |
-| `gitopsSourceId` | `string` | no |  |
-| `interval` | `string` | no | Polling interval for the repository as a Go duration string (for example `5m`). Leave unset to keep Portainer's default. |
-| `lastSync` | `number` | yes | Unix timestamp of the last successful synchronisation, zero when the source has never synced. |
-| `name` | `string` | no | Name of the GitOps source as displayed in Portainer. Portainer derives one from the repository URL when this is not set. |
-| `password` | `string` | no | Password or personal access token paired with `username`. Portainer never returns it, so it is kept from configuration and cannot detect drift. |
-| `public` | `boolean` | no | Whether every user can use this source. Changing it is applied through the source's access-control endpoint. |
-| `status` | `string` | yes | Sync status of the source: `healthy`, `syncing`, `error`, `paused` or `unknown`. |
-| `statusError` | `string` | yes | Error reported by the last synchronisation attempt, empty while the source is healthy. |
-| `teamAccesses` | `number[]` | no | IDs of teams granted access to the source. Applied through the source's access-control endpoint. |
-| `tlsSkipVerify` | `boolean` | no | Whether to skip TLS certificate verification when contacting the Git repository. |
-| `type` | `string` | yes | Source type reported by Portainer: `git`, `helm` or `oci`. This resource always creates a `git` source. |
-| `url` | `string` | no | URL of the Git repository the source syncs from. |
-| `userAccesses` | `number[]` | no | IDs of users granted access to the source. Applied through the source's access-control endpoint. |
-| `username` | `string` | no | Username used to authenticate against the Git repository. Leave unset for a public repository. |
+| Property             | Type       | Computed | Description                                                                                                                                     |
+| -------------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `administratorsOnly` | `boolean`  | no       | Whether the source is restricted to administrators. Only honoured at creation time; Portainer's update API does not carry this field.           |
+| `gitopsSourceId`     | `string`   | no       |                                                                                                                                                 |
+| `interval`           | `string`   | no       | Polling interval for the repository as a Go duration string (for example `5m`). Leave unset to keep Portainer's default.                        |
+| `lastSync`           | `number`   | yes      | Unix timestamp of the last successful synchronisation, zero when the source has never synced.                                                   |
+| `name`               | `string`   | no       | Name of the GitOps source as displayed in Portainer. Portainer derives one from the repository URL when this is not set.                        |
+| `password`           | `string`   | no       | Password or personal access token paired with `username`. Portainer never returns it, so it is kept from configuration and cannot detect drift. |
+| `public`             | `boolean`  | no       | Whether every user can use this source. Changing it is applied through the source's access-control endpoint.                                    |
+| `status`             | `string`   | yes      | Sync status of the source: `healthy`, `syncing`, `error`, `paused` or `unknown`.                                                                |
+| `statusError`        | `string`   | yes      | Error reported by the last synchronisation attempt, empty while the source is healthy.                                                          |
+| `teamAccesses`       | `number[]` | no       | IDs of teams granted access to the source. Applied through the source's access-control endpoint.                                                |
+| `tlsSkipVerify`      | `boolean`  | no       | Whether to skip TLS certificate verification when contacting the Git repository.                                                                |
+| `type`               | `string`   | yes      | Source type reported by Portainer: `git`, `helm` or `oci`. This resource always creates a `git` source.                                         |
+| `url`                | `string`   | no       | URL of the Git repository the source syncs from.                                                                                                |
+| `userAccesses`       | `number[]` | no       | IDs of users granted access to the source. Applied through the source's access-control endpoint.                                                |
+| `username`           | `string`   | no       | Username used to authenticate against the Git repository. Leave unset for a public repository.                                                  |

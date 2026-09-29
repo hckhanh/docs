@@ -19,51 +19,51 @@ Call `portainer.getKubernetesPods(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `fieldSelector` | `string` | no |  |
-| `id` | `string` | no |  |
-| `labelSelector` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `fieldSelector` | `string` | no       |             |
+| `id`            | `string` | no       |             |
+| `labelSelector` | `string` | no       |             |
+| `namespace`     | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `fieldSelector` | `string` | no |  |
-| `id` | `string` | yes |  |
-| `labelSelector` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `pods` | `GetKubernetesPodsPod[]` | yes |  |
+| Property        | Type                     | Always present | Description |
+| --------------- | ------------------------ | -------------- | ----------- |
+| `environmentId` | `number`                 | yes            |             |
+| `fieldSelector` | `string`                 | no             |             |
+| `id`            | `string`                 | yes            |             |
+| `labelSelector` | `string`                 | no             |             |
+| `namespace`     | `string`                 | no             |             |
+| `pods`          | `GetKubernetesPodsPod[]` | yes            |             |
 
 ## `GetKubernetesPodsPod`
 
 Output object `GetKubernetesPodsPod`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `containers` | `GetKubernetesPodsPodContainer[]` | no |  |
-| `hostIp` | `string` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `nodeName` | `string` | no |  |
-| `phase` | `string` | no |  |
-| `podIp` | `string` | no |  |
-| `ready` | `boolean` | no |  |
-| `restartCount` | `number` | no |  |
-| `serviceAccount` | `string` | no |  |
-| `startTime` | `string` | no |  |
+| Property         | Type                              | Always present | Description |
+| ---------------- | --------------------------------- | -------------- | ----------- |
+| `containers`     | `GetKubernetesPodsPodContainer[]` | no             |             |
+| `hostIp`         | `string`                          | no             |             |
+| `labels`         | `{ [key: string]: string }`       | no             |             |
+| `name`           | `string`                          | no             |             |
+| `namespace`      | `string`                          | no             |             |
+| `nodeName`       | `string`                          | no             |             |
+| `phase`          | `string`                          | no             |             |
+| `podIp`          | `string`                          | no             |             |
+| `ready`          | `boolean`                         | no             |             |
+| `restartCount`   | `number`                          | no             |             |
+| `serviceAccount` | `string`                          | no             |             |
+| `startTime`      | `string`                          | no             |             |
 
 ## `GetKubernetesPodsPodContainer`
 
 Output object `GetKubernetesPodsPodContainer`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `image` | `string` | no |  |
-| `name` | `string` | no |  |
-| `ready` | `boolean` | no |  |
-| `restartCount` | `number` | no |  |
+| Property       | Type      | Always present | Description |
+| -------------- | --------- | -------------- | ----------- |
+| `image`        | `string`  | no             |             |
+| `name`         | `string`  | no             |             |
+| `ready`        | `boolean` | no             |             |
+| `restartCount` | `number`  | no             |             |

@@ -19,28 +19,28 @@ Construct with `new portainer.DockerNode(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `availability` | `string` | no | Desired availability of the Swarm node (active, pause, or drain). |
-| `dockerNodeId` | `string` | no |  |
-| `endpointId` | `number` | yes | ID of the Portainer environment (Docker Swarm cluster) where the node is managed. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels assigned to the Swarm node for placement and selection. |
-| `name` | `string` | no | Desired display name for the Swarm node. |
-| `nodeId` | `string` | yes | Docker Swarm node ID to update. |
-| `role` | `string` | no | Desired role of the Swarm node (worker or manager). |
-| `version` | `number` | yes | Swarm node version required for update operation |
+| Property       | Type                        | Required | Description                                                                       |
+| -------------- | --------------------------- | -------- | --------------------------------------------------------------------------------- |
+| `availability` | `string`                    | no       | Desired availability of the Swarm node (active, pause, or drain).                 |
+| `dockerNodeId` | `string`                    | no       |                                                                                   |
+| `endpointId`   | `number`                    | yes      | ID of the Portainer environment (Docker Swarm cluster) where the node is managed. |
+| `labels`       | `{ [key: string]: string }` | no       | Key/value labels assigned to the Swarm node for placement and selection.          |
+| `name`         | `string`                    | no       | Desired display name for the Swarm node.                                          |
+| `nodeId`       | `string`                    | yes      | Docker Swarm node ID to update.                                                   |
+| `role`         | `string`                    | no       | Desired role of the Swarm node (worker or manager).                               |
+| `version`      | `number`                    | yes      | Swarm node version required for update operation                                  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `availability` | `string` | no | Desired availability of the Swarm node (active, pause, or drain). |
-| `dockerNodeId` | `string` | no |  |
-| `endpointId` | `number` | no | ID of the Portainer environment (Docker Swarm cluster) where the node is managed. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels assigned to the Swarm node for placement and selection. |
-| `name` | `string` | no | Desired display name for the Swarm node. |
-| `nodeId` | `string` | no | Docker Swarm node ID to update. |
-| `role` | `string` | no | Desired role of the Swarm node (worker or manager). |
-| `version` | `number` | no | Swarm node version required for update operation |
+| Property       | Type                        | Computed | Description                                                                       |
+| -------------- | --------------------------- | -------- | --------------------------------------------------------------------------------- |
+| `availability` | `string`                    | no       | Desired availability of the Swarm node (active, pause, or drain).                 |
+| `dockerNodeId` | `string`                    | no       |                                                                                   |
+| `endpointId`   | `number`                    | no       | ID of the Portainer environment (Docker Swarm cluster) where the node is managed. |
+| `labels`       | `{ [key: string]: string }` | no       | Key/value labels assigned to the Swarm node for placement and selection.          |
+| `name`         | `string`                    | no       | Desired display name for the Swarm node.                                          |
+| `nodeId`       | `string`                    | no       | Docker Swarm node ID to update.                                                   |
+| `role`         | `string`                    | no       | Desired role of the Swarm node (worker or manager).                               |
+| `version`      | `number`                    | no       | Swarm node version required for update operation                                  |

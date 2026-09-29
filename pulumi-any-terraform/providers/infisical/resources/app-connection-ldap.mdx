@@ -19,49 +19,49 @@ Construct with `new infisical.AppConnectionLdap(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionLdapCredentials (input)` | yes | The credentials for the LDAP App Connection |
-| `description` | `string` | no | An optional description for the LDAP App Connection. |
-| `method` | `string` | yes | The method used to authenticate with LDAP. Possible values are: simple-bind |
-| `name` | `string` | no | The name of the LDAP App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                   | Required | Description                                                                                                                   |
+| ------------- | -------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionLdapCredentials (input)` | yes      | The credentials for the LDAP App Connection                                                                                   |
+| `description` | `string`                               | no       | An optional description for the LDAP App Connection.                                                                          |
+| `method`      | `string`                               | yes      | The method used to authenticate with LDAP. Possible values are: simple-bind                                                   |
+| `name`        | `string`                               | no       | The name of the LDAP App Connection to create. Must be slug-friendly                                                          |
+| `projectId`   | `string`                               | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionLdapCredentials (output)` | no | The credentials for the LDAP App Connection |
-| `credentialsHash` | `string` | yes | The hash of the LDAP App Connection credentials |
-| `description` | `string` | no | An optional description for the LDAP App Connection. |
-| `method` | `string` | no | The method used to authenticate with LDAP. Possible values are: simple-bind |
-| `name` | `string` | no | The name of the LDAP App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                    | Computed | Description                                                                                                                   |
+| ----------------- | --------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionLdapCredentials (output)` | no       | The credentials for the LDAP App Connection                                                                                   |
+| `credentialsHash` | `string`                                | yes      | The hash of the LDAP App Connection credentials                                                                               |
+| `description`     | `string`                                | no       | An optional description for the LDAP App Connection.                                                                          |
+| `method`          | `string`                                | no       | The method used to authenticate with LDAP. Possible values are: simple-bind                                                   |
+| `name`            | `string`                                | no       | The name of the LDAP App Connection to create. Must be slug-friendly                                                          |
+| `projectId`       | `string`                                | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionLdapCredentials (input)`
 
 Input object `AppConnectionLdapCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dn` | `string` | yes | The Distinguished Name (DN) or User Principal Name (UPN) of the principal to bind with (e.g., 'CN=John,CN=Users,DC=example,DC=com'). |
-| `password` | `string` | yes | The password to bind with for authentication. |
-| `provider` | `string` | yes | The LDAP provider (e.g., 'active-directory'). |
-| `sslCertificate` | `string` | no | The SSL certificate (PEM format) to use for secure connection when using ldaps:// with a self-signed certificate. |
-| `sslRejectUnauthorized` | `boolean` | no | Whether or not to reject unauthorized SSL certificates (true/false) when using ldaps://. Set to false only in test environments. |
-| `url` | `string` | yes | The LDAP server URL (e.g., 'ldap://example.com:389' or 'ldaps://example.com:636'). |
+| Property                | Type      | Required | Description                                                                                                                          |
+| ----------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `dn`                    | `string`  | yes      | The Distinguished Name (DN) or User Principal Name (UPN) of the principal to bind with (e.g., 'CN=John,CN=Users,DC=example,DC=com'). |
+| `password`              | `string`  | yes      | The password to bind with for authentication.                                                                                        |
+| `provider`              | `string`  | yes      | The LDAP provider (e.g., 'active-directory').                                                                                        |
+| `sslCertificate`        | `string`  | no       | The SSL certificate (PEM format) to use for secure connection when using ldaps:// with a self-signed certificate.                    |
+| `sslRejectUnauthorized` | `boolean` | no       | Whether or not to reject unauthorized SSL certificates (true/false) when using ldaps://. Set to false only in test environments.     |
+| `url`                   | `string`  | yes      | The LDAP server URL (e.g., 'ldap://example.com:389' or 'ldaps://example.com:636').                                                   |
 
 ## `AppConnectionLdapCredentials (output)`
 
 Output object `AppConnectionLdapCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `dn` | `string` | yes | The Distinguished Name (DN) or User Principal Name (UPN) of the principal to bind with (e.g., 'CN=John,CN=Users,DC=example,DC=com'). |
-| `password` | `string` | yes | The password to bind with for authentication. |
-| `provider` | `string` | yes | The LDAP provider (e.g., 'active-directory'). |
-| `sslCertificate` | `string` | no | The SSL certificate (PEM format) to use for secure connection when using ldaps:// with a self-signed certificate. |
-| `sslRejectUnauthorized` | `boolean` | yes | Whether or not to reject unauthorized SSL certificates (true/false) when using ldaps://. Set to false only in test environments. |
-| `url` | `string` | yes | The LDAP server URL (e.g., 'ldap://example.com:389' or 'ldaps://example.com:636'). |
+| Property                | Type      | Always present | Description                                                                                                                          |
+| ----------------------- | --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `dn`                    | `string`  | yes            | The Distinguished Name (DN) or User Principal Name (UPN) of the principal to bind with (e.g., 'CN=John,CN=Users,DC=example,DC=com'). |
+| `password`              | `string`  | yes            | The password to bind with for authentication.                                                                                        |
+| `provider`              | `string`  | yes            | The LDAP provider (e.g., 'active-directory').                                                                                        |
+| `sslCertificate`        | `string`  | no             | The SSL certificate (PEM format) to use for secure connection when using ldaps:// with a self-signed certificate.                    |
+| `sslRejectUnauthorized` | `boolean` | yes            | Whether or not to reject unauthorized SSL certificates (true/false) when using ldaps://. Set to false only in test environments.     |
+| `url`                   | `string`  | yes            | The LDAP server URL (e.g., 'ldap://example.com:389' or 'ldaps://example.com:636').                                                   |

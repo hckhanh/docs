@@ -19,410 +19,410 @@ Construct with `new bunnynet.ComputeContainerApp(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `autoscalingMax` | `number` | no | The maximum number of instances that will be provisioned per active region. |
-| `autoscalingMin` | `number` | no | The minimum number of instances that will be provisioned per active region. |
-| `containers` | `ComputeContainerAppContainer (input)[]` | no | Defines a container for the application. |
-| `name` | `string` | no | The name of the application. |
-| `regionsAlloweds` | `string[]` | yes | The regions that will be dynamically provisionable based on the user latency. |
-| `regionsMaxAllowed` | `number` | no | The maximum amount of regions to be deployed at any given time. |
-| `regionsRequireds` | `string[]` | yes | The regions that will be statically provisioned and will always be running and available to users. |
-| `version` | `number` | no |  |
-| `volumes` | `ComputeContainerAppVolume (input)[]` | no | Defines a persistent volume to be used by the application. |
+| Property            | Type                                     | Required | Description                                                                                        |
+| ------------------- | ---------------------------------------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `autoscalingMax`    | `number`                                 | no       | The maximum number of instances that will be provisioned per active region.                        |
+| `autoscalingMin`    | `number`                                 | no       | The minimum number of instances that will be provisioned per active region.                        |
+| `containers`        | `ComputeContainerAppContainer (input)[]` | no       | Defines a container for the application.                                                           |
+| `name`              | `string`                                 | no       | The name of the application.                                                                       |
+| `regionsAlloweds`   | `string[]`                               | yes      | The regions that will be dynamically provisionable based on the user latency.                      |
+| `regionsMaxAllowed` | `number`                                 | no       | The maximum amount of regions to be deployed at any given time.                                    |
+| `regionsRequireds`  | `string[]`                               | yes      | The regions that will be statically provisioned and will always be running and available to users. |
+| `version`           | `number`                                 | no       |                                                                                                    |
+| `volumes`           | `ComputeContainerAppVolume (input)[]`    | no       | Defines a persistent volume to be used by the application.                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `autoscalingMax` | `number` | no | The maximum number of instances that will be provisioned per active region. |
-| `autoscalingMin` | `number` | no | The minimum number of instances that will be provisioned per active region. |
-| `containers` | `ComputeContainerAppContainer (output)[]` | no | Defines a container for the application. |
-| `name` | `string` | no | The name of the application. |
-| `regionsAlloweds` | `string[]` | no | The regions that will be dynamically provisionable based on the user latency. |
-| `regionsMaxAllowed` | `number` | no | The maximum amount of regions to be deployed at any given time. |
-| `regionsRequireds` | `string[]` | no | The regions that will be statically provisioned and will always be running and available to users. |
-| `version` | `number` | no |  |
-| `volumes` | `ComputeContainerAppVolume (output)[]` | no | Defines a persistent volume to be used by the application. |
+| Property            | Type                                      | Computed | Description                                                                                        |
+| ------------------- | ----------------------------------------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `autoscalingMax`    | `number`                                  | no       | The maximum number of instances that will be provisioned per active region.                        |
+| `autoscalingMin`    | `number`                                  | no       | The minimum number of instances that will be provisioned per active region.                        |
+| `containers`        | `ComputeContainerAppContainer (output)[]` | no       | Defines a container for the application.                                                           |
+| `name`              | `string`                                  | no       | The name of the application.                                                                       |
+| `regionsAlloweds`   | `string[]`                                | no       | The regions that will be dynamically provisionable based on the user latency.                      |
+| `regionsMaxAllowed` | `number`                                  | no       | The maximum amount of regions to be deployed at any given time.                                    |
+| `regionsRequireds`  | `string[]`                                | no       | The regions that will be statically provisioned and will always be running and available to users. |
+| `version`           | `number`                                  | no       |                                                                                                    |
+| `volumes`           | `ComputeContainerAppVolume (output)[]`    | no       | Defines a persistent volume to be used by the application.                                         |
 
 ## `ComputeContainerAppContainer (input)`
 
 Input object `ComputeContainerAppContainer`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `arguments` | `string` | no | The arguments that will be added to the container entry point when starting the image. |
-| `command` | `string` | no | A custom startup command that will execute once the container is launched. |
-| `endpoints` | `ComputeContainerAppContainerEndpoint (input)[]` | no | Defines a public endpoint for the application. |
-| `envs` | `ComputeContainerAppContainerEnv (input)[]` | no | Defines an environment variable for the container |
-| `id` | `string` | no | The unique identifier for the container. |
-| `imageDigest` | `string` | no | The image digest. |
-| `imageName` | `string` | yes | The image name within the registry, without the domain prefix (i.e.: `my-app`). |
-| `imageNamespace` | `string` | yes | The image namespace within the registry, without the domain prefix (i.e.: `my-org`). |
-| `imagePullPolicy` | `string` | no | Options: `Always`, `IfNotPresent` |
-| `imageRegistry` | `number` | yes | The image registry for the container. |
-| `imageTag` | `string` | yes | The image tag (i.e.: `2.9-alpine`). |
-| `livenessProbes` | `ComputeContainerAppContainerLivenessProbe (input)[]` | no | Checks that the application is actively running without issues. It the check fails, the container will be automatically restarted |
-| `name` | `string` | yes | The name of the container. |
-| `readinessProbes` | `ComputeContainerAppContainerReadinessProbe (input)[]` | no | Checks if the application is fully prepared to handle incoming requests. No requests will be routed to the application until this check is successful. |
-| `startupProbes` | `ComputeContainerAppContainerStartupProbe (input)[]` | no | Checks if the application has successfully started. No requests will be routed to the application until this check is successful. |
-| `volumemounts` | `ComputeContainerAppContainerVolumemount (input)[]` | no | Mounts a volume within a container |
-| `workingDir` | `string` | no | The working directory of the container runtime. |
+| Property          | Type                                                   | Required | Description                                                                                                                                            |
+| ----------------- | ------------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `arguments`       | `string`                                               | no       | The arguments that will be added to the container entry point when starting the image.                                                                 |
+| `command`         | `string`                                               | no       | A custom startup command that will execute once the container is launched.                                                                             |
+| `endpoints`       | `ComputeContainerAppContainerEndpoint (input)[]`       | no       | Defines a public endpoint for the application.                                                                                                         |
+| `envs`            | `ComputeContainerAppContainerEnv (input)[]`            | no       | Defines an environment variable for the container                                                                                                      |
+| `id`              | `string`                                               | no       | The unique identifier for the container.                                                                                                               |
+| `imageDigest`     | `string`                                               | no       | The image digest.                                                                                                                                      |
+| `imageName`       | `string`                                               | yes      | The image name within the registry, without the domain prefix (i.e.: `my-app`).                                                                        |
+| `imageNamespace`  | `string`                                               | yes      | The image namespace within the registry, without the domain prefix (i.e.: `my-org`).                                                                   |
+| `imagePullPolicy` | `string`                                               | no       | Options: `Always`, `IfNotPresent`                                                                                                                      |
+| `imageRegistry`   | `number`                                               | yes      | The image registry for the container.                                                                                                                  |
+| `imageTag`        | `string`                                               | yes      | The image tag (i.e.: `2.9-alpine`).                                                                                                                    |
+| `livenessProbes`  | `ComputeContainerAppContainerLivenessProbe (input)[]`  | no       | Checks that the application is actively running without issues. It the check fails, the container will be automatically restarted                      |
+| `name`            | `string`                                               | yes      | The name of the container.                                                                                                                             |
+| `readinessProbes` | `ComputeContainerAppContainerReadinessProbe (input)[]` | no       | Checks if the application is fully prepared to handle incoming requests. No requests will be routed to the application until this check is successful. |
+| `startupProbes`   | `ComputeContainerAppContainerStartupProbe (input)[]`   | no       | Checks if the application has successfully started. No requests will be routed to the application until this check is successful.                      |
+| `volumemounts`    | `ComputeContainerAppContainerVolumemount (input)[]`    | no       | Mounts a volume within a container                                                                                                                     |
+| `workingDir`      | `string`                                               | no       | The working directory of the container runtime.                                                                                                        |
 
 ## `ComputeContainerAppContainerEndpoint (input)`
 
 Input object `ComputeContainerAppContainerEndpoint`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `cdns` | `ComputeContainerAppContainerEndpointCdn (input)[]` | no | Configurations for CDN endpoint. |
-| `id` | `string` | no | The ID of the endpoint. |
-| `name` | `string` | yes | The name of the endpoint. |
-| `ports` | `ComputeContainerAppContainerEndpointPort (input)[]` | no | Endpoint port configuration. |
-| `type` | `string` | yes | Options: `Anycast`, `CDN`, `InternalIP` |
+| Property | Type                                                 | Required | Description                             |
+| -------- | ---------------------------------------------------- | -------- | --------------------------------------- |
+| `cdns`   | `ComputeContainerAppContainerEndpointCdn (input)[]`  | no       | Configurations for CDN endpoint.        |
+| `id`     | `string`                                             | no       | The ID of the endpoint.                 |
+| `name`   | `string`                                             | yes      | The name of the endpoint.               |
+| `ports`  | `ComputeContainerAppContainerEndpointPort (input)[]` | no       | Endpoint port configuration.            |
+| `type`   | `string`                                             | yes      | Options: `Anycast`, `CDN`, `InternalIP` |
 
 ## `ComputeContainerAppContainerEndpointCdn (input)`
 
 Input object `ComputeContainerAppContainerEndpointCdn`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `originSsl` | `boolean` | no | Indicates whether the container will handle TLS termination. |
-| `pullzoneId` | `number` | no | The ID of the pullzone associated with the endpoint. |
-| `stickySessions` | `ComputeContainerAppContainerEndpointCdnStickySession (input)[]` | no | Indicates whether sticky sessions is enabled. |
+| Property         | Type                                                             | Required | Description                                                  |
+| ---------------- | ---------------------------------------------------------------- | -------- | ------------------------------------------------------------ |
+| `originSsl`      | `boolean`                                                        | no       | Indicates whether the container will handle TLS termination. |
+| `pullzoneId`     | `number`                                                         | no       | The ID of the pullzone associated with the endpoint.         |
+| `stickySessions` | `ComputeContainerAppContainerEndpointCdnStickySession (input)[]` | no       | Indicates whether sticky sessions is enabled.                |
 
 ## `ComputeContainerAppContainerEndpointCdnStickySession (input)`
 
 Input object `ComputeContainerAppContainerEndpointCdnStickySession`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `headers` | `string[]` | yes | Incoming request headers used to select a pod for sticky sessions. |
+| Property  | Type       | Required | Description                                                        |
+| --------- | ---------- | -------- | ------------------------------------------------------------------ |
+| `headers` | `string[]` | yes      | Incoming request headers used to select a pod for sticky sessions. |
 
 ## `ComputeContainerAppContainerEndpointPort (input)`
 
 Input object `ComputeContainerAppContainerEndpointPort`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `container` | `number` | yes | The container port number. |
-| `exposed` | `number` | no | The exposed port number. |
-| `protocols` | `string[]` | no | Options: `SCTP`, `TCP`, `UDP` |
+| Property    | Type       | Required | Description                   |
+| ----------- | ---------- | -------- | ----------------------------- |
+| `container` | `number`   | yes      | The container port number.    |
+| `exposed`   | `number`   | no       | The exposed port number.      |
+| `protocols` | `string[]` | no       | Options: `SCTP`, `TCP`, `UDP` |
 
 ## `ComputeContainerAppContainerEnv (input)`
 
 Input object `ComputeContainerAppContainerEnv`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the environment variable. |
-| `value` | `string` | yes | The value of the environment variable. |
+| Property | Type     | Required | Description                            |
+| -------- | -------- | -------- | -------------------------------------- |
+| `name`   | `string` | yes      | The name of the environment variable.  |
+| `value`  | `string` | yes      | The value of the environment variable. |
 
 ## `ComputeContainerAppContainerLivenessProbe (input)`
 
 Input object `ComputeContainerAppContainerLivenessProbe`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | no | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerLivenessProbeGrpc (input)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerLivenessProbeHttp (input)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | no | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | no | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | no | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | no | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                      | Required | Description                                                                                          |
+| ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                  | no       | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerLivenessProbeGrpc (input)[]` | no       | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerLivenessProbeHttp (input)[]` | no       | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                  | no       | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                  | no       | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                  | yes      | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                  | no       | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                  | no       | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                  | yes      | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerLivenessProbeGrpc (input)`
 
 Input object `ComputeContainerAppContainerLivenessProbeGrpc`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Required | Description            |
+| --------- | -------- | -------- | ---------------------- |
+| `service` | `string` | yes      | The gRPC service name. |
 
 ## `ComputeContainerAppContainerLivenessProbeHttp (input)`
 
 Input object `ComputeContainerAppContainerLivenessProbeHttp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | no | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Required | Description                             |
+| ---------------- | -------- | -------- | --------------------------------------- |
+| `expectedStatus` | `number` | no       | The expected HTTP response status code. |
+| `path`           | `string` | yes      | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerReadinessProbe (input)`
 
 Input object `ComputeContainerAppContainerReadinessProbe`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | no | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerReadinessProbeGrpc (input)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerReadinessProbeHttp (input)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | no | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | no | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | no | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | no | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                       | Required | Description                                                                                          |
+| ------------------ | ---------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                   | no       | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerReadinessProbeGrpc (input)[]` | no       | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerReadinessProbeHttp (input)[]` | no       | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                   | no       | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                   | no       | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                   | yes      | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                   | no       | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                   | no       | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                   | yes      | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerReadinessProbeGrpc (input)`
 
 Input object `ComputeContainerAppContainerReadinessProbeGrpc`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Required | Description            |
+| --------- | -------- | -------- | ---------------------- |
+| `service` | `string` | yes      | The gRPC service name. |
 
 ## `ComputeContainerAppContainerReadinessProbeHttp (input)`
 
 Input object `ComputeContainerAppContainerReadinessProbeHttp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | no | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Required | Description                             |
+| ---------------- | -------- | -------- | --------------------------------------- |
+| `expectedStatus` | `number` | no       | The expected HTTP response status code. |
+| `path`           | `string` | yes      | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerStartupProbe (input)`
 
 Input object `ComputeContainerAppContainerStartupProbe`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | no | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerStartupProbeGrpc (input)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerStartupProbeHttp (input)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | no | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | no | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | no | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | no | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                     | Required | Description                                                                                          |
+| ------------------ | -------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                 | no       | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerStartupProbeGrpc (input)[]` | no       | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerStartupProbeHttp (input)[]` | no       | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                 | no       | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                 | no       | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                 | yes      | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                 | no       | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                 | no       | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                 | yes      | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerStartupProbeGrpc (input)`
 
 Input object `ComputeContainerAppContainerStartupProbeGrpc`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Required | Description            |
+| --------- | -------- | -------- | ---------------------- |
+| `service` | `string` | yes      | The gRPC service name. |
 
 ## `ComputeContainerAppContainerStartupProbeHttp (input)`
 
 Input object `ComputeContainerAppContainerStartupProbeHttp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | no | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Required | Description                             |
+| ---------------- | -------- | -------- | --------------------------------------- |
+| `expectedStatus` | `number` | no       | The expected HTTP response status code. |
+| `path`           | `string` | yes      | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerVolumemount (input)`
 
 Input object `ComputeContainerAppContainerVolumemount`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the volume. |
-| `path` | `string` | yes | The path within the container where the volume will be mounted. |
+| Property | Type     | Required | Description                                                     |
+| -------- | -------- | -------- | --------------------------------------------------------------- |
+| `name`   | `string` | yes      | The name of the volume.                                         |
+| `path`   | `string` | yes      | The path within the container where the volume will be mounted. |
 
 ## `ComputeContainerAppVolume (input)`
 
 Input object `ComputeContainerAppVolume`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the volume. |
-| `size` | `number` | yes | The size of the volume, in Gigabytes (10^9 bytes). |
+| Property | Type     | Required | Description                                        |
+| -------- | -------- | -------- | -------------------------------------------------- |
+| `name`   | `string` | yes      | The name of the volume.                            |
+| `size`   | `number` | yes      | The size of the volume, in Gigabytes (10^9 bytes). |
 
 ## `ComputeContainerAppContainer (output)`
 
 Output object `ComputeContainerAppContainer`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `arguments` | `string` | no | The arguments that will be added to the container entry point when starting the image. |
-| `command` | `string` | no | A custom startup command that will execute once the container is launched. |
-| `endpoints` | `ComputeContainerAppContainerEndpoint (output)[]` | no | Defines a public endpoint for the application. |
-| `envs` | `ComputeContainerAppContainerEnv (output)[]` | no | Defines an environment variable for the container |
-| `id` | `string` | yes | The unique identifier for the container. |
-| `imageDigest` | `string` | yes | The image digest. |
-| `imageName` | `string` | yes | The image name within the registry, without the domain prefix (i.e.: `my-app`). |
-| `imageNamespace` | `string` | yes | The image namespace within the registry, without the domain prefix (i.e.: `my-org`). |
-| `imagePullPolicy` | `string` | yes | Options: `Always`, `IfNotPresent` |
-| `imageRegistry` | `number` | yes | The image registry for the container. |
-| `imageTag` | `string` | yes | The image tag (i.e.: `2.9-alpine`). |
-| `livenessProbes` | `ComputeContainerAppContainerLivenessProbe (output)[]` | no | Checks that the application is actively running without issues. It the check fails, the container will be automatically restarted |
-| `name` | `string` | yes | The name of the container. |
-| `readinessProbes` | `ComputeContainerAppContainerReadinessProbe (output)[]` | no | Checks if the application is fully prepared to handle incoming requests. No requests will be routed to the application until this check is successful. |
-| `startupProbes` | `ComputeContainerAppContainerStartupProbe (output)[]` | no | Checks if the application has successfully started. No requests will be routed to the application until this check is successful. |
-| `volumemounts` | `ComputeContainerAppContainerVolumemount (output)[]` | no | Mounts a volume within a container |
-| `workingDir` | `string` | no | The working directory of the container runtime. |
+| Property          | Type                                                    | Always present | Description                                                                                                                                            |
+| ----------------- | ------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `arguments`       | `string`                                                | no             | The arguments that will be added to the container entry point when starting the image.                                                                 |
+| `command`         | `string`                                                | no             | A custom startup command that will execute once the container is launched.                                                                             |
+| `endpoints`       | `ComputeContainerAppContainerEndpoint (output)[]`       | no             | Defines a public endpoint for the application.                                                                                                         |
+| `envs`            | `ComputeContainerAppContainerEnv (output)[]`            | no             | Defines an environment variable for the container                                                                                                      |
+| `id`              | `string`                                                | yes            | The unique identifier for the container.                                                                                                               |
+| `imageDigest`     | `string`                                                | yes            | The image digest.                                                                                                                                      |
+| `imageName`       | `string`                                                | yes            | The image name within the registry, without the domain prefix (i.e.: `my-app`).                                                                        |
+| `imageNamespace`  | `string`                                                | yes            | The image namespace within the registry, without the domain prefix (i.e.: `my-org`).                                                                   |
+| `imagePullPolicy` | `string`                                                | yes            | Options: `Always`, `IfNotPresent`                                                                                                                      |
+| `imageRegistry`   | `number`                                                | yes            | The image registry for the container.                                                                                                                  |
+| `imageTag`        | `string`                                                | yes            | The image tag (i.e.: `2.9-alpine`).                                                                                                                    |
+| `livenessProbes`  | `ComputeContainerAppContainerLivenessProbe (output)[]`  | no             | Checks that the application is actively running without issues. It the check fails, the container will be automatically restarted                      |
+| `name`            | `string`                                                | yes            | The name of the container.                                                                                                                             |
+| `readinessProbes` | `ComputeContainerAppContainerReadinessProbe (output)[]` | no             | Checks if the application is fully prepared to handle incoming requests. No requests will be routed to the application until this check is successful. |
+| `startupProbes`   | `ComputeContainerAppContainerStartupProbe (output)[]`   | no             | Checks if the application has successfully started. No requests will be routed to the application until this check is successful.                      |
+| `volumemounts`    | `ComputeContainerAppContainerVolumemount (output)[]`    | no             | Mounts a volume within a container                                                                                                                     |
+| `workingDir`      | `string`                                                | no             | The working directory of the container runtime.                                                                                                        |
 
 ## `ComputeContainerAppContainerEndpoint (output)`
 
 Output object `ComputeContainerAppContainerEndpoint`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `cdns` | `ComputeContainerAppContainerEndpointCdn (output)[]` | no | Configurations for CDN endpoint. |
-| `id` | `string` | yes | The ID of the endpoint. |
-| `name` | `string` | yes | The name of the endpoint. |
-| `ports` | `ComputeContainerAppContainerEndpointPort (output)[]` | no | Endpoint port configuration. |
-| `type` | `string` | yes | Options: `Anycast`, `CDN`, `InternalIP` |
+| Property | Type                                                  | Always present | Description                             |
+| -------- | ----------------------------------------------------- | -------------- | --------------------------------------- |
+| `cdns`   | `ComputeContainerAppContainerEndpointCdn (output)[]`  | no             | Configurations for CDN endpoint.        |
+| `id`     | `string`                                              | yes            | The ID of the endpoint.                 |
+| `name`   | `string`                                              | yes            | The name of the endpoint.               |
+| `ports`  | `ComputeContainerAppContainerEndpointPort (output)[]` | no             | Endpoint port configuration.            |
+| `type`   | `string`                                              | yes            | Options: `Anycast`, `CDN`, `InternalIP` |
 
 ## `ComputeContainerAppContainerEndpointCdn (output)`
 
 Output object `ComputeContainerAppContainerEndpointCdn`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `originSsl` | `boolean` | yes | Indicates whether the container will handle TLS termination. |
-| `pullzoneId` | `number` | yes | The ID of the pullzone associated with the endpoint. |
-| `stickySessions` | `ComputeContainerAppContainerEndpointCdnStickySession (output)[]` | no | Indicates whether sticky sessions is enabled. |
+| Property         | Type                                                              | Always present | Description                                                  |
+| ---------------- | ----------------------------------------------------------------- | -------------- | ------------------------------------------------------------ |
+| `originSsl`      | `boolean`                                                         | yes            | Indicates whether the container will handle TLS termination. |
+| `pullzoneId`     | `number`                                                          | yes            | The ID of the pullzone associated with the endpoint.         |
+| `stickySessions` | `ComputeContainerAppContainerEndpointCdnStickySession (output)[]` | no             | Indicates whether sticky sessions is enabled.                |
 
 ## `ComputeContainerAppContainerEndpointCdnStickySession (output)`
 
 Output object `ComputeContainerAppContainerEndpointCdnStickySession`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `headers` | `string[]` | yes | Incoming request headers used to select a pod for sticky sessions. |
+| Property  | Type       | Always present | Description                                                        |
+| --------- | ---------- | -------------- | ------------------------------------------------------------------ |
+| `headers` | `string[]` | yes            | Incoming request headers used to select a pod for sticky sessions. |
 
 ## `ComputeContainerAppContainerEndpointPort (output)`
 
 Output object `ComputeContainerAppContainerEndpointPort`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `container` | `number` | yes | The container port number. |
-| `exposed` | `number` | no | The exposed port number. |
-| `protocols` | `string[]` | no | Options: `SCTP`, `TCP`, `UDP` |
+| Property    | Type       | Always present | Description                   |
+| ----------- | ---------- | -------------- | ----------------------------- |
+| `container` | `number`   | yes            | The container port number.    |
+| `exposed`   | `number`   | no             | The exposed port number.      |
+| `protocols` | `string[]` | no             | Options: `SCTP`, `TCP`, `UDP` |
 
 ## `ComputeContainerAppContainerEnv (output)`
 
 Output object `ComputeContainerAppContainerEnv`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the environment variable. |
-| `value` | `string` | yes | The value of the environment variable. |
+| Property | Type     | Always present | Description                            |
+| -------- | -------- | -------------- | -------------------------------------- |
+| `name`   | `string` | yes            | The name of the environment variable.  |
+| `value`  | `string` | yes            | The value of the environment variable. |
 
 ## `ComputeContainerAppContainerLivenessProbe (output)`
 
 Output object `ComputeContainerAppContainerLivenessProbe`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | yes | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerLivenessProbeGrpc (output)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerLivenessProbeHttp (output)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | yes | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | yes | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | yes | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | yes | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                       | Always present | Description                                                                                          |
+| ------------------ | ---------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                   | yes            | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerLivenessProbeGrpc (output)[]` | no             | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerLivenessProbeHttp (output)[]` | no             | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                   | yes            | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                   | yes            | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                   | yes            | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                   | yes            | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                   | yes            | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                   | yes            | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerLivenessProbeGrpc (output)`
 
 Output object `ComputeContainerAppContainerLivenessProbeGrpc`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Always present | Description            |
+| --------- | -------- | -------------- | ---------------------- |
+| `service` | `string` | yes            | The gRPC service name. |
 
 ## `ComputeContainerAppContainerLivenessProbeHttp (output)`
 
 Output object `ComputeContainerAppContainerLivenessProbeHttp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | yes | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Always present | Description                             |
+| ---------------- | -------- | -------------- | --------------------------------------- |
+| `expectedStatus` | `number` | yes            | The expected HTTP response status code. |
+| `path`           | `string` | yes            | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerReadinessProbe (output)`
 
 Output object `ComputeContainerAppContainerReadinessProbe`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | yes | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerReadinessProbeGrpc (output)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerReadinessProbeHttp (output)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | yes | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | yes | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | yes | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | yes | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                        | Always present | Description                                                                                          |
+| ------------------ | ----------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                    | yes            | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerReadinessProbeGrpc (output)[]` | no             | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerReadinessProbeHttp (output)[]` | no             | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                    | yes            | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                    | yes            | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                    | yes            | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                    | yes            | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                    | yes            | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                    | yes            | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerReadinessProbeGrpc (output)`
 
 Output object `ComputeContainerAppContainerReadinessProbeGrpc`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Always present | Description            |
+| --------- | -------- | -------------- | ---------------------- |
+| `service` | `string` | yes            | The gRPC service name. |
 
 ## `ComputeContainerAppContainerReadinessProbeHttp (output)`
 
 Output object `ComputeContainerAppContainerReadinessProbeHttp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | yes | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Always present | Description                             |
+| ---------------- | -------- | -------------- | --------------------------------------- |
+| `expectedStatus` | `number` | yes            | The expected HTTP response status code. |
+| `path`           | `string` | yes            | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerStartupProbe (output)`
 
 Output object `ComputeContainerAppContainerStartupProbe`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `failureThreshold` | `number` | yes | The number of failed probes to consider the container unhealthy. |
-| `grpcs` | `ComputeContainerAppContainerStartupProbeGrpc (output)[]` | no | gRPC-specific configurations. |
-| `https` | `ComputeContainerAppContainerStartupProbeHttp (output)[]` | no | HTTP-specific configurations. |
-| `initialDelay` | `number` | yes | The amount of time in seconds after the container is started to wait before the first probe is sent. |
-| `period` | `number` | yes | The amount of time in seconds between each probe. |
-| `port` | `number` | yes | The port within the container the probe will connect to. |
-| `successThreshold` | `number` | yes | The number of successful probes to consider the container healthy. |
-| `timeout` | `number` | yes | The amount of time in seconds the probe will wait for a response before considering it a failure. |
-| `type` | `string` | yes | Options: `grpc`, `http`, `tcp` |
+| Property           | Type                                                      | Always present | Description                                                                                          |
+| ------------------ | --------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| `failureThreshold` | `number`                                                  | yes            | The number of failed probes to consider the container unhealthy.                                     |
+| `grpcs`            | `ComputeContainerAppContainerStartupProbeGrpc (output)[]` | no             | gRPC-specific configurations.                                                                        |
+| `https`            | `ComputeContainerAppContainerStartupProbeHttp (output)[]` | no             | HTTP-specific configurations.                                                                        |
+| `initialDelay`     | `number`                                                  | yes            | The amount of time in seconds after the container is started to wait before the first probe is sent. |
+| `period`           | `number`                                                  | yes            | The amount of time in seconds between each probe.                                                    |
+| `port`             | `number`                                                  | yes            | The port within the container the probe will connect to.                                             |
+| `successThreshold` | `number`                                                  | yes            | The number of successful probes to consider the container healthy.                                   |
+| `timeout`          | `number`                                                  | yes            | The amount of time in seconds the probe will wait for a response before considering it a failure.    |
+| `type`             | `string`                                                  | yes            | Options: `grpc`, `http`, `tcp`                                                                       |
 
 ## `ComputeContainerAppContainerStartupProbeGrpc (output)`
 
 Output object `ComputeContainerAppContainerStartupProbeGrpc`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `service` | `string` | yes | The gRPC service name. |
+| Property  | Type     | Always present | Description            |
+| --------- | -------- | -------------- | ---------------------- |
+| `service` | `string` | yes            | The gRPC service name. |
 
 ## `ComputeContainerAppContainerStartupProbeHttp (output)`
 
 Output object `ComputeContainerAppContainerStartupProbeHttp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `expectedStatus` | `number` | yes | The expected HTTP response status code. |
-| `path` | `string` | yes | The HTTP path to be requested. |
+| Property         | Type     | Always present | Description                             |
+| ---------------- | -------- | -------------- | --------------------------------------- |
+| `expectedStatus` | `number` | yes            | The expected HTTP response status code. |
+| `path`           | `string` | yes            | The HTTP path to be requested.          |
 
 ## `ComputeContainerAppContainerVolumemount (output)`
 
 Output object `ComputeContainerAppContainerVolumemount`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the volume. |
-| `path` | `string` | yes | The path within the container where the volume will be mounted. |
+| Property | Type     | Always present | Description                                                     |
+| -------- | -------- | -------------- | --------------------------------------------------------------- |
+| `name`   | `string` | yes            | The name of the volume.                                         |
+| `path`   | `string` | yes            | The path within the container where the volume will be mounted. |
 
 ## `ComputeContainerAppVolume (output)`
 
 Output object `ComputeContainerAppVolume`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes | The name of the volume. |
-| `size` | `number` | yes | The size of the volume, in Gigabytes (10^9 bytes). |
+| Property | Type     | Always present | Description                                        |
+| -------- | -------- | -------------- | -------------------------------------------------- |
+| `name`   | `string` | yes            | The name of the volume.                            |
+| `size`   | `number` | yes            | The size of the volume, in Gigabytes (10^9 bytes). |

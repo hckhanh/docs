@@ -19,24 +19,24 @@ Construct with `new teamcity.BuildConfiguration(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | no | ID of the build configuration. If not provided, it will be generated from the name. |
-| `buildType` | `string` | no | Type of the build configuration. Possible values: regular, composite, deployment. Default: regular. |
-| `description` | `string` | no |  |
-| `name` | `string` | no |  |
-| `paused` | `boolean` | no | Whether the build configuration is paused. |
-| `projectId` | `string` | yes | ID of the project where the build configuration will be created. |
+| Property               | Type      | Required | Description                                                                                         |
+| ---------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`  | no       | ID of the build configuration. If not provided, it will be generated from the name.                 |
+| `buildType`            | `string`  | no       | Type of the build configuration. Possible values: regular, composite, deployment. Default: regular. |
+| `description`          | `string`  | no       |                                                                                                     |
+| `name`                 | `string`  | no       |                                                                                                     |
+| `paused`               | `boolean` | no       | Whether the build configuration is paused.                                                          |
+| `projectId`            | `string`  | yes      | ID of the project where the build configuration will be created.                                    |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | no | ID of the build configuration. If not provided, it will be generated from the name. |
-| `buildType` | `string` | no | Type of the build configuration. Possible values: regular, composite, deployment. Default: regular. |
-| `description` | `string` | no |  |
-| `name` | `string` | no |  |
-| `paused` | `boolean` | no | Whether the build configuration is paused. |
-| `projectId` | `string` | no | ID of the project where the build configuration will be created. |
+| Property               | Type      | Computed | Description                                                                                         |
+| ---------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`  | no       | ID of the build configuration. If not provided, it will be generated from the name.                 |
+| `buildType`            | `string`  | no       | Type of the build configuration. Possible values: regular, composite, deployment. Default: regular. |
+| `description`          | `string`  | no       |                                                                                                     |
+| `name`                 | `string`  | no       |                                                                                                     |
+| `paused`               | `boolean` | no       | Whether the build configuration is paused.                                                          |
+| `projectId`            | `string`  | no       | ID of the project where the build configuration will be created.                                    |

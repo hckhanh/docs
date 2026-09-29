@@ -19,24 +19,24 @@ Construct with `new portainer.UserApiKey(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | yes | Description of the key, shown in Portainer's user settings. Portainer requires it to be unique per user. |
-| `password` | `string` | yes | Password of the user the key is generated for. Portainer requires it to authorize the request; it is not stored on the key itself. |
-| `userApiKeyId` | `string` | no |  |
-| `userId` | `number` | yes | Identifier of the user the API key belongs to. |
+| Property       | Type     | Required | Description                                                                                                                        |
+| -------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `description`  | `string` | yes      | Description of the key, shown in Portainer's user settings. Portainer requires it to be unique per user.                           |
+| `password`     | `string` | yes      | Password of the user the key is generated for. Portainer requires it to authorize the request; it is not stored on the key itself. |
+| `userApiKeyId` | `string` | no       |                                                                                                                                    |
+| `userId`       | `number` | yes      | Identifier of the user the API key belongs to.                                                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `dateCreated` | `number` | yes | Unix timestamp at which the key was created. |
-| `description` | `string` | no | Description of the key, shown in Portainer's user settings. Portainer requires it to be unique per user. |
-| `lastUsed` | `number` | yes | Unix timestamp of the key's last use, zero when it has never been used. |
-| `password` | `string` | no | Password of the user the key is generated for. Portainer requires it to authorize the request; it is not stored on the key itself. |
-| `prefix` | `string` | yes | Non-secret prefix of the key, which is what Portainer displays to identify it. |
-| `rawApiKey` | `string` | yes | The generated API key. Portainer returns it exactly once, at creation, so it is only ever available from the state written by that apply. |
-| `userApiKeyId` | `string` | no |  |
-| `userId` | `number` | no | Identifier of the user the API key belongs to. |
+| Property       | Type     | Computed | Description                                                                                                                               |
+| -------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `dateCreated`  | `number` | yes      | Unix timestamp at which the key was created.                                                                                              |
+| `description`  | `string` | no       | Description of the key, shown in Portainer's user settings. Portainer requires it to be unique per user.                                  |
+| `lastUsed`     | `number` | yes      | Unix timestamp of the key's last use, zero when it has never been used.                                                                   |
+| `password`     | `string` | no       | Password of the user the key is generated for. Portainer requires it to authorize the request; it is not stored on the key itself.        |
+| `prefix`       | `string` | yes      | Non-secret prefix of the key, which is what Portainer displays to identify it.                                                            |
+| `rawApiKey`    | `string` | yes      | The generated API key. Portainer returns it exactly once, at creation, so it is only ever available from the state written by that apply. |
+| `userApiKeyId` | `string` | no       |                                                                                                                                           |
+| `userId`       | `number` | no       | Identifier of the user the API key belongs to.                                                                                            |

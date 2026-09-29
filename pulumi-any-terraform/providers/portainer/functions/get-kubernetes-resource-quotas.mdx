@@ -19,30 +19,30 @@ Call `portainer.getKubernetesResourceQuotas(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | no |  |
-| `namespace` | `string` | yes |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `id`            | `string` | no       |             |
+| `namespace`     | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `namespace` | `string` | yes |  |
-| `resourceQuotas` | `GetKubernetesResourceQuotasResourceQuota[]` | yes |  |
+| Property         | Type                                         | Always present | Description |
+| ---------------- | -------------------------------------------- | -------------- | ----------- |
+| `environmentId`  | `number`                                     | yes            |             |
+| `id`             | `string`                                     | yes            |             |
+| `namespace`      | `string`                                     | yes            |             |
+| `resourceQuotas` | `GetKubernetesResourceQuotasResourceQuota[]` | yes            |             |
 
 ## `GetKubernetesResourceQuotasResourceQuota`
 
 Output object `GetKubernetesResourceQuotasResourceQuota`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `creationTimestamp` | `string` | no |  |
-| `hard` | `{ [key: string]: string }` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `scopes` | `string[]` | no |  |
-| `used` | `{ [key: string]: string }` | no |  |
+| Property            | Type                        | Always present | Description |
+| ------------------- | --------------------------- | -------------- | ----------- |
+| `creationTimestamp` | `string`                    | no             |             |
+| `hard`              | `{ [key: string]: string }` | no             |             |
+| `name`              | `string`                    | no             |             |
+| `namespace`         | `string`                    | no             |             |
+| `scopes`            | `string[]`                  | no             |             |
+| `used`              | `{ [key: string]: string }` | no             |             |

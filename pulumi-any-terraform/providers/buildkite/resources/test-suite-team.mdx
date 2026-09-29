@@ -19,19 +19,19 @@ Construct with `new buildkite.TestSuiteTeam(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | yes | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
-| `teamId` | `string` | yes | The GraphQL ID of the team. |
-| `testSuiteId` | `string` | yes | The GraphQL ID of the test suite. |
+| Property      | Type     | Required | Description                                                                               |
+| ------------- | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | yes      | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
+| `teamId`      | `string` | yes      | The GraphQL ID of the team.                                                               |
+| `testSuiteId` | `string` | yes      | The GraphQL ID of the test suite.                                                         |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | no | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
-| `teamId` | `string` | no | The GraphQL ID of the team. |
-| `testSuiteId` | `string` | no | The GraphQL ID of the test suite. |
-| `uuid` | `string` | yes | The UUID of the test suite-team relationship. |
+| Property      | Type     | Computed | Description                                                                               |
+| ------------- | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | no       | The access level the team has on the test suite. Either `READ_ONLY` or `MANAGE_AND_READ`. |
+| `teamId`      | `string` | no       | The GraphQL ID of the team.                                                               |
+| `testSuiteId` | `string` | no       | The GraphQL ID of the test suite.                                                         |
+| `uuid`        | `string` | yes      | The UUID of the test suite-team relationship.                                             |

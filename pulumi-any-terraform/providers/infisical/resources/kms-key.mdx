@@ -19,30 +19,30 @@ Construct with `new infisical.KmsKey(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description of the KMS key. Maximum 500 characters. |
-| `encryptionAlgorithm` | `string` | no | The encryption algorithm for the key. Options: aes-256-gcm, aes-128-gcm, RSA_4096, ECC_NIST_P256. Defaults to 'aes-256-gcm'. |
-| `isDisabled` | `boolean` | no | Whether the key is disabled. Defaults to false. |
-| `isExportable` | `boolean` | no | Whether the raw key material can be exported. Defaults to true. Changing this value requires replacing the key. |
-| `keyUsage` | `string` | no | The usage of the key. Options: encrypt-decrypt, sign-verify. Defaults to 'encrypt-decrypt'. |
-| `name` | `string` | no | The name of the KMS key. Must be 1-32 characters. |
-| `projectId` | `string` | yes | The ID of the project where the KMS key will be created. |
+| Property              | Type      | Required | Description                                                                                                                  |
+| --------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `description`         | `string`  | no       | The description of the KMS key. Maximum 500 characters.                                                                      |
+| `encryptionAlgorithm` | `string`  | no       | The encryption algorithm for the key. Options: aes-256-gcm, aes-128-gcm, RSA_4096, ECC_NIST_P256. Defaults to 'aes-256-gcm'. |
+| `isDisabled`          | `boolean` | no       | Whether the key is disabled. Defaults to false.                                                                              |
+| `isExportable`        | `boolean` | no       | Whether the raw key material can be exported. Defaults to true. Changing this value requires replacing the key.              |
+| `keyUsage`            | `string`  | no       | The usage of the key. Options: encrypt-decrypt, sign-verify. Defaults to 'encrypt-decrypt'.                                  |
+| `name`                | `string`  | no       | The name of the KMS key. Must be 1-32 characters.                                                                            |
+| `projectId`           | `string`  | yes      | The ID of the project where the KMS key will be created.                                                                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `createdAt` | `string` | yes | The creation timestamp of the key. |
-| `description` | `string` | no | The description of the KMS key. Maximum 500 characters. |
-| `encryptionAlgorithm` | `string` | no | The encryption algorithm for the key. Options: aes-256-gcm, aes-128-gcm, RSA_4096, ECC_NIST_P256. Defaults to 'aes-256-gcm'. |
-| `isDisabled` | `boolean` | no | Whether the key is disabled. Defaults to false. |
-| `isExportable` | `boolean` | no | Whether the raw key material can be exported. Defaults to true. Changing this value requires replacing the key. |
-| `keyUsage` | `string` | no | The usage of the key. Options: encrypt-decrypt, sign-verify. Defaults to 'encrypt-decrypt'. |
-| `name` | `string` | no | The name of the KMS key. Must be 1-32 characters. |
-| `orgId` | `string` | yes | The ID of the organization. |
-| `projectId` | `string` | no | The ID of the project where the KMS key will be created. |
-| `updatedAt` | `string` | yes | The last update timestamp of the key. |
-| `version` | `number` | yes | The version of the key. |
+| Property              | Type      | Computed | Description                                                                                                                  |
+| --------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `createdAt`           | `string`  | yes      | The creation timestamp of the key.                                                                                           |
+| `description`         | `string`  | no       | The description of the KMS key. Maximum 500 characters.                                                                      |
+| `encryptionAlgorithm` | `string`  | no       | The encryption algorithm for the key. Options: aes-256-gcm, aes-128-gcm, RSA_4096, ECC_NIST_P256. Defaults to 'aes-256-gcm'. |
+| `isDisabled`          | `boolean` | no       | Whether the key is disabled. Defaults to false.                                                                              |
+| `isExportable`        | `boolean` | no       | Whether the raw key material can be exported. Defaults to true. Changing this value requires replacing the key.              |
+| `keyUsage`            | `string`  | no       | The usage of the key. Options: encrypt-decrypt, sign-verify. Defaults to 'encrypt-decrypt'.                                  |
+| `name`                | `string`  | no       | The name of the KMS key. Must be 1-32 characters.                                                                            |
+| `orgId`               | `string`  | yes      | The ID of the organization.                                                                                                  |
+| `projectId`           | `string`  | no       | The ID of the project where the KMS key will be created.                                                                     |
+| `updatedAt`           | `string`  | yes      | The last update timestamp of the key.                                                                                        |
+| `version`             | `number`  | yes      | The version of the key.                                                                                                      |

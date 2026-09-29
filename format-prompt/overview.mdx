@@ -12,6 +12,7 @@ A utility to format prompts for a cleaner presentation and optimal token usage. 
 When working with LLMs and AI prompts, you often want to write readable, well-formatted prompts in your code with proper indentation. However, this adds unnecessary whitespace that wastes tokens and can affect prompt quality.
 
 **format-prompt** solves this by:
+
 - Removing leading and trailing whitespace from each line
 - Collapsing multiple spaces into single spaces
 - Trimming unnecessary line breaks
@@ -21,7 +22,7 @@ When working with LLMs and AI prompts, you often want to write readable, well-fo
 ## Quick Example
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 const result = prompt`
   You are a helpful assistant that analyzes text for:
@@ -30,7 +31,7 @@ const result = prompt`
     * Action items
     
   Please analyze the following text and provide insights.
-`;
+`
 // Output: Clean, token-efficient prompt without extra whitespace
 ```
 
@@ -55,11 +56,11 @@ pnpm add format-prompt
 ## Basic Usage
 
 ```typescript
-import { prompt } from 'format-prompt';
+import { prompt } from "format-prompt"
 
 // With interpolation
-const userName = 'Alice';
-const userQuery = 'What is the weather?';
+const userName = "Alice"
+const userQuery = "What is the weather?"
 
 const formattedPrompt = prompt`
   You are a helpful assistant.
@@ -68,5 +69,5 @@ const formattedPrompt = prompt`
   Query: ${userQuery}
   
   Please provide a helpful response.
-`;
+`
 ```

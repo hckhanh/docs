@@ -19,45 +19,45 @@ Call `portainer.getAlertingRuleEnvironments(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `ruleId` | `number` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `id`     | `string` | no       |             |
+| `ruleId` | `number` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `active` | `number` | yes |  |
-| `error` | `number` | yes |  |
-| `excluded` | `number` | yes |  |
-| `groups` | `GetAlertingRuleEnvironmentsGroup[]` | yes |  |
-| `id` | `string` | yes |  |
-| `notSupported` | `number` | yes |  |
-| `pending` | `number` | yes |  |
-| `ruleId` | `number` | yes |  |
-| `total` | `number` | yes |  |
+| Property       | Type                                 | Always present | Description |
+| -------------- | ------------------------------------ | -------------- | ----------- |
+| `active`       | `number`                             | yes            |             |
+| `error`        | `number`                             | yes            |             |
+| `excluded`     | `number`                             | yes            |             |
+| `groups`       | `GetAlertingRuleEnvironmentsGroup[]` | yes            |             |
+| `id`           | `string`                             | yes            |             |
+| `notSupported` | `number`                             | yes            |             |
+| `pending`      | `number`                             | yes            |             |
+| `ruleId`       | `number`                             | yes            |             |
+| `total`        | `number`                             | yes            |             |
 
 ## `GetAlertingRuleEnvironmentsGroup`
 
 Output object `GetAlertingRuleEnvironmentsGroup`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointGroupId` | `number` | no |  |
-| `endpointGroupName` | `string` | no |  |
-| `environments` | `GetAlertingRuleEnvironmentsGroupEnvironment[]` | no |  |
-| `size` | `number` | no |  |
+| Property            | Type                                            | Always present | Description |
+| ------------------- | ----------------------------------------------- | -------------- | ----------- |
+| `endpointGroupId`   | `number`                                        | no             |             |
+| `endpointGroupName` | `string`                                        | no             |             |
+| `environments`      | `GetAlertingRuleEnvironmentsGroupEnvironment[]` | no             |             |
+| `size`              | `number`                                        | no             |             |
 
 ## `GetAlertingRuleEnvironmentsGroupEnvironment`
 
 Output object `GetAlertingRuleEnvironmentsGroupEnvironment`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no |  |
-| `message` | `string` | no |  |
-| `name` | `string` | no |  |
-| `reasonCode` | `string` | no |  |
-| `status` | `string` | no |  |
-| `updatedAt` | `number` | no |  |
+| Property     | Type     | Always present | Description |
+| ------------ | -------- | -------------- | ----------- |
+| `endpointId` | `number` | no             |             |
+| `message`    | `string` | no             |             |
+| `name`       | `string` | no             |             |
+| `reasonCode` | `string` | no             |             |
+| `status`     | `string` | no             |             |
+| `updatedAt`  | `number` | no             |             |

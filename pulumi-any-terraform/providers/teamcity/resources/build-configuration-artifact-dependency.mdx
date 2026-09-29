@@ -19,18 +19,18 @@ Construct with `new teamcity.BuildConfigurationArtifactDependency(name, args, op
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | yes | ID of the build configuration to which this dependency belongs. |
-| `dependsOnId` | `string` | yes | ID of the build configuration on which this one depends. |
-| `properties` | `{ [key: string]: string }` | no | Properties for the artifact dependency (e.g., pathRules, revisionName, revisionValue). |
+| Property               | Type                        | Required | Description                                                                            |
+| ---------------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`                    | yes      | ID of the build configuration to which this dependency belongs.                        |
+| `dependsOnId`          | `string`                    | yes      | ID of the build configuration on which this one depends.                               |
+| `properties`           | `{ [key: string]: string }` | no       | Properties for the artifact dependency (e.g., pathRules, revisionName, revisionValue). |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | no | ID of the build configuration to which this dependency belongs. |
-| `dependsOnId` | `string` | no | ID of the build configuration on which this one depends. |
-| `properties` | `{ [key: string]: string }` | no | Properties for the artifact dependency (e.g., pathRules, revisionName, revisionValue). |
+| Property               | Type                        | Computed | Description                                                                            |
+| ---------------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`                    | no       | ID of the build configuration to which this dependency belongs.                        |
+| `dependsOnId`          | `string`                    | no       | ID of the build configuration on which this one depends.                               |
+| `properties`           | `{ [key: string]: string }` | no       | Properties for the artifact dependency (e.g., pathRules, revisionName, revisionValue). |

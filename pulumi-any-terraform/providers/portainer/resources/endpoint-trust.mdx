@@ -19,25 +19,25 @@ Construct with `new portainer.EndpointTrust(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no | Identifiers of the edge groups to add the environment to when trust is granted. Leave unset to keep the edge groups the environment already has. |
-| `endpointId` | `number` | yes | Identifier of the edge environment in the waiting room to trust. Use the `portainer.getEdgeWaitingRoom` data source to find environments awaiting trust. |
-| `endpointTrustId` | `string` | no |  |
-| `groupId` | `number` | no | Identifier of the endpoint group to place the environment in when trust is granted. Leave unset to keep the group the environment already has. |
-| `tagIds` | `number[]` | no | Identifiers of the tags to apply to the environment when trust is granted. Leave unset to keep the tags the environment already has. |
+| Property          | Type       | Required | Description                                                                                                                                              |
+| ----------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edgeGroupIds`    | `number[]` | no       | Identifiers of the edge groups to add the environment to when trust is granted. Leave unset to keep the edge groups the environment already has.         |
+| `endpointId`      | `number`   | yes      | Identifier of the edge environment in the waiting room to trust. Use the `portainer.getEdgeWaitingRoom` data source to find environments awaiting trust. |
+| `endpointTrustId` | `string`   | no       |                                                                                                                                                          |
+| `groupId`         | `number`   | no       | Identifier of the endpoint group to place the environment in when trust is granted. Leave unset to keep the group the environment already has.           |
+| `tagIds`          | `number[]` | no       | Identifiers of the tags to apply to the environment when trust is granted. Leave unset to keep the tags the environment already has.                     |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `edgeGroupIds` | `number[]` | no | Identifiers of the edge groups to add the environment to when trust is granted. Leave unset to keep the edge groups the environment already has. |
-| `edgeId` | `string` | yes | Edge identifier the agent reports for the environment. |
-| `endpointId` | `number` | no | Identifier of the edge environment in the waiting room to trust. Use the `portainer.getEdgeWaitingRoom` data source to find environments awaiting trust. |
-| `endpointTrustId` | `string` | no |  |
-| `groupId` | `number` | no | Identifier of the endpoint group to place the environment in when trust is granted. Leave unset to keep the group the environment already has. |
-| `name` | `string` | yes | Name of the trusted environment. |
-| `tagIds` | `number[]` | no | Identifiers of the tags to apply to the environment when trust is granted. Leave unset to keep the tags the environment already has. |
-| `trusted` | `boolean` | yes | Whether Portainer reports the environment as trusted. |
+| Property          | Type       | Computed | Description                                                                                                                                              |
+| ----------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edgeGroupIds`    | `number[]` | no       | Identifiers of the edge groups to add the environment to when trust is granted. Leave unset to keep the edge groups the environment already has.         |
+| `edgeId`          | `string`   | yes      | Edge identifier the agent reports for the environment.                                                                                                   |
+| `endpointId`      | `number`   | no       | Identifier of the edge environment in the waiting room to trust. Use the `portainer.getEdgeWaitingRoom` data source to find environments awaiting trust. |
+| `endpointTrustId` | `string`   | no       |                                                                                                                                                          |
+| `groupId`         | `number`   | no       | Identifier of the endpoint group to place the environment in when trust is granted. Leave unset to keep the group the environment already has.           |
+| `name`            | `string`   | yes      | Name of the trusted environment.                                                                                                                         |
+| `tagIds`          | `number[]` | no       | Identifiers of the tags to apply to the environment when trust is granted. Leave unset to keep the tags the environment already has.                     |
+| `trusted`         | `boolean`  | yes      | Whether Portainer reports the environment as trusted.                                                                                                    |

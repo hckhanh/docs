@@ -19,45 +19,45 @@ Construct with `new teamcity.AuthSettings(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allowGuest` | `boolean` | yes |  |
-| `collapseLoginForm` | `boolean` | yes |  |
-| `emailVerification` | `boolean` | yes |  |
-| `guestUsername` | `string` | yes |  |
-| `modules` | `AuthSettingsModules (input)` | yes |  |
-| `perProjectPermissions` | `boolean` | yes |  |
-| `welcomeText` | `string` | yes |  |
+| Property                | Type                          | Required | Description |
+| ----------------------- | ----------------------------- | -------- | ----------- |
+| `allowGuest`            | `boolean`                     | yes      |             |
+| `collapseLoginForm`     | `boolean`                     | yes      |             |
+| `emailVerification`     | `boolean`                     | yes      |             |
+| `guestUsername`         | `string`                      | yes      |             |
+| `modules`               | `AuthSettingsModules (input)` | yes      |             |
+| `perProjectPermissions` | `boolean`                     | yes      |             |
+| `welcomeText`           | `string`                      | yes      |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `allowGuest` | `boolean` | no |  |
-| `collapseLoginForm` | `boolean` | no |  |
-| `emailVerification` | `boolean` | no |  |
-| `guestUsername` | `string` | no |  |
-| `modules` | `AuthSettingsModules (output)` | no |  |
-| `perProjectPermissions` | `boolean` | no |  |
-| `welcomeText` | `string` | no |  |
+| Property                | Type                           | Computed | Description |
+| ----------------------- | ------------------------------ | -------- | ----------- |
+| `allowGuest`            | `boolean`                      | no       |             |
+| `collapseLoginForm`     | `boolean`                      | no       |             |
+| `emailVerification`     | `boolean`                      | no       |             |
+| `guestUsername`         | `string`                       | no       |             |
+| `modules`               | `AuthSettingsModules (output)` | no       |             |
+| `perProjectPermissions` | `boolean`                      | no       |             |
+| `welcomeText`           | `string`                       | no       |             |
 
 ## `AuthSettingsModules (input)`
 
 Input object `AuthSettingsModules`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `basicHttp` | `AuthSettingsModulesBasicHttp (input)` | no |  |
-| `builtIn` | `AuthSettingsModulesBuiltIn (input)` | no |  |
-| `github` | `AuthSettingsModulesGithub (input)` | no |  |
-| `githubApp` | `AuthSettingsModulesGithubApp (input)` | no |  |
-| `githubEnterprise` | `AuthSettingsModulesGithubEnterprise (input)` | no |  |
-| `google` | `AuthSettingsModulesGoogle (input)` | no |  |
-| `jetbrainsSpace` | `AuthSettingsModulesJetbrainsSpace (input)` | no |  |
-| `ldap` | `AuthSettingsModulesLdap (input)` | no |  |
-| `token` | `AuthSettingsModulesToken (input)` | yes |  |
+| Property           | Type                                          | Required | Description |
+| ------------------ | --------------------------------------------- | -------- | ----------- |
+| `basicHttp`        | `AuthSettingsModulesBasicHttp (input)`        | no       |             |
+| `builtIn`          | `AuthSettingsModulesBuiltIn (input)`          | no       |             |
+| `github`           | `AuthSettingsModulesGithub (input)`           | no       |             |
+| `githubApp`        | `AuthSettingsModulesGithubApp (input)`        | no       |             |
+| `githubEnterprise` | `AuthSettingsModulesGithubEnterprise (input)` | no       |             |
+| `google`           | `AuthSettingsModulesGoogle (input)`           | no       |             |
+| `jetbrainsSpace`   | `AuthSettingsModulesJetbrainsSpace (input)`   | no       |             |
+| `ldap`             | `AuthSettingsModulesLdap (input)`             | no       |             |
+| `token`            | `AuthSettingsModulesToken (input)`            | yes      |             |
 
 ## `AuthSettingsModulesBasicHttp (input)`
 
@@ -69,64 +69,64 @@ This object has no fields.
 
 Input object `AuthSettingsModulesBuiltIn`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `changePasswords` | `boolean` | yes |  |
-| `registration` | `boolean` | yes |  |
-| `resetPasswords` | `boolean` | no |  |
+| Property          | Type      | Required | Description |
+| ----------------- | --------- | -------- | ----------- |
+| `changePasswords` | `boolean` | yes      |             |
+| `registration`    | `boolean` | yes      |             |
+| `resetPasswords`  | `boolean` | no       |             |
 
 ## `AuthSettingsModulesGithub (input)`
 
 Input object `AuthSettingsModulesGithub`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `createNewUsers` | `boolean` | yes      |             |
+| `organizations`  | `string`  | yes      |             |
 
 ## `AuthSettingsModulesGithubApp (input)`
 
 Input object `AuthSettingsModulesGithubApp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `createNewUsers` | `boolean` | yes      |             |
+| `organizations`  | `string`  | yes      |             |
 
 ## `AuthSettingsModulesGithubEnterprise (input)`
 
 Input object `AuthSettingsModulesGithubEnterprise`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `createNewUsers` | `boolean` | yes      |             |
+| `organizations`  | `string`  | yes      |             |
 
 ## `AuthSettingsModulesGoogle (input)`
 
 Input object `AuthSettingsModulesGoogle`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `allDomains` | `boolean` | yes |  |
-| `createNewUsers` | `boolean` | yes |  |
-| `domains` | `string` | no |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `allDomains`     | `boolean` | yes      |             |
+| `createNewUsers` | `boolean` | yes      |             |
+| `domains`        | `string`  | no       |             |
 
 ## `AuthSettingsModulesJetbrainsSpace (input)`
 
 Input object `AuthSettingsModulesJetbrainsSpace`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `createNewUsers` | `boolean` | yes      |             |
 
 ## `AuthSettingsModulesLdap (input)`
 
 Input object `AuthSettingsModulesLdap`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
+| Property         | Type      | Required | Description |
+| ---------------- | --------- | -------- | ----------- |
+| `createNewUsers` | `boolean` | yes      |             |
 
 ## `AuthSettingsModulesToken (input)`
 
@@ -138,17 +138,17 @@ This object has no fields.
 
 Output object `AuthSettingsModules`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `basicHttp` | `AuthSettingsModulesBasicHttp (output)` | no |  |
-| `builtIn` | `AuthSettingsModulesBuiltIn (output)` | no |  |
-| `github` | `AuthSettingsModulesGithub (output)` | no |  |
-| `githubApp` | `AuthSettingsModulesGithubApp (output)` | no |  |
-| `githubEnterprise` | `AuthSettingsModulesGithubEnterprise (output)` | no |  |
-| `google` | `AuthSettingsModulesGoogle (output)` | no |  |
-| `jetbrainsSpace` | `AuthSettingsModulesJetbrainsSpace (output)` | no |  |
-| `ldap` | `AuthSettingsModulesLdap (output)` | no |  |
-| `token` | `AuthSettingsModulesToken (output)` | yes |  |
+| Property           | Type                                           | Always present | Description |
+| ------------------ | ---------------------------------------------- | -------------- | ----------- |
+| `basicHttp`        | `AuthSettingsModulesBasicHttp (output)`        | no             |             |
+| `builtIn`          | `AuthSettingsModulesBuiltIn (output)`          | no             |             |
+| `github`           | `AuthSettingsModulesGithub (output)`           | no             |             |
+| `githubApp`        | `AuthSettingsModulesGithubApp (output)`        | no             |             |
+| `githubEnterprise` | `AuthSettingsModulesGithubEnterprise (output)` | no             |             |
+| `google`           | `AuthSettingsModulesGoogle (output)`           | no             |             |
+| `jetbrainsSpace`   | `AuthSettingsModulesJetbrainsSpace (output)`   | no             |             |
+| `ldap`             | `AuthSettingsModulesLdap (output)`             | no             |             |
+| `token`            | `AuthSettingsModulesToken (output)`            | yes            |             |
 
 ## `AuthSettingsModulesBasicHttp (output)`
 
@@ -160,64 +160,64 @@ This object has no fields.
 
 Output object `AuthSettingsModulesBuiltIn`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `changePasswords` | `boolean` | yes |  |
-| `registration` | `boolean` | yes |  |
-| `resetPasswords` | `boolean` | no |  |
+| Property          | Type      | Always present | Description |
+| ----------------- | --------- | -------------- | ----------- |
+| `changePasswords` | `boolean` | yes            |             |
+| `registration`    | `boolean` | yes            |             |
+| `resetPasswords`  | `boolean` | no             |             |
 
 ## `AuthSettingsModulesGithub (output)`
 
 Output object `AuthSettingsModulesGithub`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `createNewUsers` | `boolean` | yes            |             |
+| `organizations`  | `string`  | yes            |             |
 
 ## `AuthSettingsModulesGithubApp (output)`
 
 Output object `AuthSettingsModulesGithubApp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `createNewUsers` | `boolean` | yes            |             |
+| `organizations`  | `string`  | yes            |             |
 
 ## `AuthSettingsModulesGithubEnterprise (output)`
 
 Output object `AuthSettingsModulesGithubEnterprise`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
-| `organizations` | `string` | yes |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `createNewUsers` | `boolean` | yes            |             |
+| `organizations`  | `string`  | yes            |             |
 
 ## `AuthSettingsModulesGoogle (output)`
 
 Output object `AuthSettingsModulesGoogle`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allDomains` | `boolean` | yes |  |
-| `createNewUsers` | `boolean` | yes |  |
-| `domains` | `string` | no |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `allDomains`     | `boolean` | yes            |             |
+| `createNewUsers` | `boolean` | yes            |             |
+| `domains`        | `string`  | no             |             |
 
 ## `AuthSettingsModulesJetbrainsSpace (output)`
 
 Output object `AuthSettingsModulesJetbrainsSpace`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `createNewUsers` | `boolean` | yes            |             |
 
 ## `AuthSettingsModulesLdap (output)`
 
 Output object `AuthSettingsModulesLdap`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `createNewUsers` | `boolean` | yes |  |
+| Property         | Type      | Always present | Description |
+| ---------------- | --------- | -------------- | ----------- |
+| `createNewUsers` | `boolean` | yes            |             |
 
 ## `AuthSettingsModulesToken (output)`
 

@@ -19,40 +19,40 @@ Construct with `new portainer.DockerImage(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `dockerImageId` | `string` | no |  |
-| `endpointId` | `number` | yes | Identifier of the Portainer endpoint on which the Docker image should be pulled. |
-| `image` | `string` | yes | Image reference to pull (for example `nginx:latest`). |
-| `registryAuth` | `string` | no | Sensitive base64-encoded JSON object with registry credentials (username, password, email, serveraddress) used to pull the image. |
-| `timeouts` | `DockerImageTimeouts (input)` | no |  |
+| Property        | Type                          | Required | Description                                                                                                                       |
+| --------------- | ----------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `dockerImageId` | `string`                      | no       |                                                                                                                                   |
+| `endpointId`    | `number`                      | yes      | Identifier of the Portainer endpoint on which the Docker image should be pulled.                                                  |
+| `image`         | `string`                      | yes      | Image reference to pull (for example `nginx:latest`).                                                                             |
+| `registryAuth`  | `string`                      | no       | Sensitive base64-encoded JSON object with registry credentials (username, password, email, serveraddress) used to pull the image. |
+| `timeouts`      | `DockerImageTimeouts (input)` | no       |                                                                                                                                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `dockerImageId` | `string` | no |  |
-| `endpointId` | `number` | no | Identifier of the Portainer endpoint on which the Docker image should be pulled. |
-| `image` | `string` | no | Image reference to pull (for example `nginx:latest`). |
-| `registryAuth` | `string` | no | Sensitive base64-encoded JSON object with registry credentials (username, password, email, serveraddress) used to pull the image. |
-| `timeouts` | `DockerImageTimeouts (output)` | no |  |
+| Property        | Type                           | Computed | Description                                                                                                                       |
+| --------------- | ------------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `dockerImageId` | `string`                       | no       |                                                                                                                                   |
+| `endpointId`    | `number`                       | no       | Identifier of the Portainer endpoint on which the Docker image should be pulled.                                                  |
+| `image`         | `string`                       | no       | Image reference to pull (for example `nginx:latest`).                                                                             |
+| `registryAuth`  | `string`                       | no       | Sensitive base64-encoded JSON object with registry credentials (username, password, email, serveraddress) used to pull the image. |
+| `timeouts`      | `DockerImageTimeouts (output)` | no       |                                                                                                                                   |
 
 ## `DockerImageTimeouts (input)`
 
 Input object `DockerImageTimeouts`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
-| `delete` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `create` | `string` | no       |             |
+| `delete` | `string` | no       |             |
 
 ## `DockerImageTimeouts (output)`
 
 Output object `DockerImageTimeouts`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
-| `delete` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `create` | `string` | no             |             |
+| `delete` | `string` | no             |             |

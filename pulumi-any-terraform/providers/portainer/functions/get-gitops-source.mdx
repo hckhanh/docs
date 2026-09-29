@@ -19,43 +19,43 @@ Call `portainer.getGitopsSource(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | no |  |
-| `sourceId` | `number` | yes |  |
+| Property   | Type     | Required | Description |
+| ---------- | -------- | -------- | ----------- |
+| `id`       | `string` | no       |             |
+| `sourceId` | `number` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes |  |
-| `interval` | `string` | yes |  |
-| `lastSync` | `number` | yes |  |
-| `name` | `string` | yes |  |
-| `public` | `boolean` | yes |  |
-| `sourceId` | `number` | yes |  |
-| `status` | `string` | yes |  |
-| `statusError` | `string` | yes |  |
-| `teamAccesses` | `number[]` | yes |  |
-| `tlsSkipVerify` | `boolean` | yes |  |
-| `type` | `string` | yes |  |
-| `url` | `string` | yes |  |
-| `userAccesses` | `number[]` | yes |  |
-| `username` | `string` | yes |  |
-| `workflows` | `GetGitopsSourceWorkflow[]` | yes |  |
+| Property        | Type                        | Always present | Description |
+| --------------- | --------------------------- | -------------- | ----------- |
+| `id`            | `string`                    | yes            |             |
+| `interval`      | `string`                    | yes            |             |
+| `lastSync`      | `number`                    | yes            |             |
+| `name`          | `string`                    | yes            |             |
+| `public`        | `boolean`                   | yes            |             |
+| `sourceId`      | `number`                    | yes            |             |
+| `status`        | `string`                    | yes            |             |
+| `statusError`   | `string`                    | yes            |             |
+| `teamAccesses`  | `number[]`                  | yes            |             |
+| `tlsSkipVerify` | `boolean`                   | yes            |             |
+| `type`          | `string`                    | yes            |             |
+| `url`           | `string`                    | yes            |             |
+| `userAccesses`  | `number[]`                  | yes            |             |
+| `username`      | `string`                    | yes            |             |
+| `workflows`     | `GetGitopsSourceWorkflow[]` | yes            |             |
 
 ## `GetGitopsSourceWorkflow`
 
 Output object `GetGitopsSourceWorkflow`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `creationDate` | `number` | no |  |
-| `edgeGroupIds` | `number[]` | no |  |
-| `endpointId` | `number` | no |  |
-| `id` | `number` | no |  |
-| `lastSyncDate` | `number` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `platform` | `string` | no |  |
-| `type` | `string` | no |  |
+| Property       | Type       | Always present | Description |
+| -------------- | ---------- | -------------- | ----------- |
+| `creationDate` | `number`   | no             |             |
+| `edgeGroupIds` | `number[]` | no             |             |
+| `endpointId`   | `number`   | no             |             |
+| `id`           | `number`   | no             |             |
+| `lastSyncDate` | `number`   | no             |             |
+| `name`         | `string`   | no             |             |
+| `namespace`    | `string`   | no             |             |
+| `platform`     | `string`   | no             |             |
+| `type`         | `string`   | no             |             |

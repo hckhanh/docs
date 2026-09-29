@@ -19,47 +19,47 @@ Construct with `new portainer.AlertingRuleTiers(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alertingRuleTiersId` | `string` | no |  |
-| `conditionOperator` | `string` | no | Comparison the thresholds are evaluated with: `>`, `<`, `=`, `>=` or `<=`. Some built-in rules fix the operator and reject a change to it. |
-| `description` | `string` | no | Description stored on the rule. Leave unset to keep what the rule already has. |
-| `duration` | `number` | no | How long the condition has to hold before the rule fires, in the unit the rule itself uses. |
-| `enabled` | `boolean` | no | Whether the rule is enabled. |
-| `ruleId` | `number` | yes | Identifier of the alert rule to configure. The rule has to be an editable internal rule; Portainer rejects the call for others. |
-| `tiers` | `AlertingRuleTiersTier (input)[]` | yes | Severity tiers of the rule, in order. Each tier fires at its own threshold. |
+| Property              | Type                              | Required | Description                                                                                                                                |
+| --------------------- | --------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `alertingRuleTiersId` | `string`                          | no       |                                                                                                                                            |
+| `conditionOperator`   | `string`                          | no       | Comparison the thresholds are evaluated with: `>`, `<`, `=`, `>=` or `<=`. Some built-in rules fix the operator and reject a change to it. |
+| `description`         | `string`                          | no       | Description stored on the rule. Leave unset to keep what the rule already has.                                                             |
+| `duration`            | `number`                          | no       | How long the condition has to hold before the rule fires, in the unit the rule itself uses.                                                |
+| `enabled`             | `boolean`                         | no       | Whether the rule is enabled.                                                                                                               |
+| `ruleId`              | `number`                          | yes      | Identifier of the alert rule to configure. The rule has to be an editable internal rule; Portainer rejects the call for others.            |
+| `tiers`               | `AlertingRuleTiersTier (input)[]` | yes      | Severity tiers of the rule, in order. Each tier fires at its own threshold.                                                                |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `alertingRuleTiersId` | `string` | no |  |
-| `conditionOperator` | `string` | no | Comparison the thresholds are evaluated with: `>`, `<`, `=`, `>=` or `<=`. Some built-in rules fix the operator and reject a change to it. |
-| `description` | `string` | no | Description stored on the rule. Leave unset to keep what the rule already has. |
-| `duration` | `number` | no | How long the condition has to hold before the rule fires, in the unit the rule itself uses. |
-| `enabled` | `boolean` | no | Whether the rule is enabled. |
-| `ruleId` | `number` | no | Identifier of the alert rule to configure. The rule has to be an editable internal rule; Portainer rejects the call for others. |
-| `tiers` | `AlertingRuleTiersTier (output)[]` | no | Severity tiers of the rule, in order. Each tier fires at its own threshold. |
-| `useTiers` | `boolean` | yes | Whether Portainer actually evaluates the rule per tier. A rule that reports `false` here is still using its single threshold. |
+| Property              | Type                               | Computed | Description                                                                                                                                |
+| --------------------- | ---------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `alertingRuleTiersId` | `string`                           | no       |                                                                                                                                            |
+| `conditionOperator`   | `string`                           | no       | Comparison the thresholds are evaluated with: `>`, `<`, `=`, `>=` or `<=`. Some built-in rules fix the operator and reject a change to it. |
+| `description`         | `string`                           | no       | Description stored on the rule. Leave unset to keep what the rule already has.                                                             |
+| `duration`            | `number`                           | no       | How long the condition has to hold before the rule fires, in the unit the rule itself uses.                                                |
+| `enabled`             | `boolean`                          | no       | Whether the rule is enabled.                                                                                                               |
+| `ruleId`              | `number`                           | no       | Identifier of the alert rule to configure. The rule has to be an editable internal rule; Portainer rejects the call for others.            |
+| `tiers`               | `AlertingRuleTiersTier (output)[]` | no       | Severity tiers of the rule, in order. Each tier fires at its own threshold.                                                                |
+| `useTiers`            | `boolean`                          | yes      | Whether Portainer actually evaluates the rule per tier. A rule that reports `false` here is still using its single threshold.              |
 
 ## `AlertingRuleTiersTier (input)`
 
 Input object `AlertingRuleTiersTier`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this tier is evaluated. |
-| `severity` | `string` | yes | Severity this tier raises: `critical`, `warning` or `info`. |
-| `threshold` | `number` | yes | Value the metric is compared against for this tier. |
+| Property    | Type      | Required | Description                                                 |
+| ----------- | --------- | -------- | ----------------------------------------------------------- |
+| `enabled`   | `boolean` | no       | Whether this tier is evaluated.                             |
+| `severity`  | `string`  | yes      | Severity this tier raises: `critical`, `warning` or `info`. |
+| `threshold` | `number`  | yes      | Value the metric is compared against for this tier.         |
 
 ## `AlertingRuleTiersTier (output)`
 
 Output object `AlertingRuleTiersTier`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `enabled` | `boolean` | no | Whether this tier is evaluated. |
-| `severity` | `string` | yes | Severity this tier raises: `critical`, `warning` or `info`. |
-| `threshold` | `number` | yes | Value the metric is compared against for this tier. |
+| Property    | Type      | Always present | Description                                                 |
+| ----------- | --------- | -------------- | ----------------------------------------------------------- |
+| `enabled`   | `boolean` | no             | Whether this tier is evaluated.                             |
+| `severity`  | `string`  | yes            | Severity this tier raises: `critical`, `warning` or `info`. |
+| `threshold` | `number`  | yes            | Value the metric is compared against for this tier.         |

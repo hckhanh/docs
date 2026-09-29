@@ -19,22 +19,22 @@ Construct with `new betteruptime.PagerdutyIntegration(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | yes | The PagerDuty routing key. |
-| `name` | `string` | no | The name of the PagerDuty Integration. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
-| `severity` | `string` | yes | The PagerDuty alert severity. Can be any of the following: info, warning, error, or critical. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| Property                          | Type      | Required | Description                                                                                                                              |
+| --------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `key`                             | `string`  | yes      | The PagerDuty routing key.                                                                                                               |
+| `name`                            | `string`  | no       | The name of the PagerDuty Integration.                                                                                                   |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `severity`                        | `string`  | yes      | The PagerDuty alert severity. Can be any of the following: info, warning, error, or critical.                                            |
+| `teamName`                        | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `key` | `string` | no | The PagerDuty routing key. |
-| `name` | `string` | no | The name of the PagerDuty Integration. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
-| `severity` | `string` | no | The PagerDuty alert severity. Can be any of the following: info, warning, error, or critical. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
+| Property                          | Type      | Computed | Description                                                                                                                              |
+| --------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `key`                             | `string`  | no       | The PagerDuty routing key.                                                                                                               |
+| `name`                            | `string`  | no       | The name of the PagerDuty Integration.                                                                                                   |
+| `notifyAlongsidePrimaryResponder` | `boolean` | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Defaults to `true`. |
+| `severity`                        | `string`  | no       | The PagerDuty alert severity. Can be any of the following: info, warning, error, or critical.                                            |
+| `teamName`                        | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                  |

@@ -19,19 +19,19 @@ Construct with `new buildkite.TeamRegistry(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | yes | The access level the team has on the registry. Either `READ_ONLY`, `READ_AND_WRITE` or `READ_WRITE_AND_ADMIN`. |
-| `registryId` | `string` | yes | The GraphQL ID of the registry. |
-| `teamId` | `string` | yes | The GraphQL ID of the team. |
+| Property      | Type     | Required | Description                                                                                                    |
+| ------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | yes      | The access level the team has on the registry. Either `READ_ONLY`, `READ_AND_WRITE` or `READ_WRITE_AND_ADMIN`. |
+| `registryId`  | `string` | yes      | The GraphQL ID of the registry.                                                                                |
+| `teamId`      | `string` | yes      | The GraphQL ID of the team.                                                                                    |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessLevel` | `string` | no | The access level the team has on the registry. Either `READ_ONLY`, `READ_AND_WRITE` or `READ_WRITE_AND_ADMIN`. |
-| `registryId` | `string` | no | The GraphQL ID of the registry. |
-| `teamId` | `string` | no | The GraphQL ID of the team. |
-| `uuid` | `string` | yes | The UUID of the team-registry relationship. |
+| Property      | Type     | Computed | Description                                                                                                    |
+| ------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `accessLevel` | `string` | no       | The access level the team has on the registry. Either `READ_ONLY`, `READ_AND_WRITE` or `READ_WRITE_AND_ADMIN`. |
+| `registryId`  | `string` | no       | The GraphQL ID of the registry.                                                                                |
+| `teamId`      | `string` | no       | The GraphQL ID of the team.                                                                                    |
+| `uuid`        | `string` | yes      | The UUID of the team-registry relationship.                                                                    |

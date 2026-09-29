@@ -19,32 +19,32 @@ Call `portainer.getKubernetesStorageClasses(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `endpointId` | `number` | yes      |             |
+| `id`         | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `storageClasses` | `GetKubernetesStorageClassesStorageClass[]` | yes |  |
+| Property         | Type                                        | Always present | Description |
+| ---------------- | ------------------------------------------- | -------------- | ----------- |
+| `endpointId`     | `number`                                    | yes            |             |
+| `id`             | `string`                                    | yes            |             |
+| `storageClasses` | `GetKubernetesStorageClassesStorageClass[]` | yes            |             |
 
 ## `GetKubernetesStorageClassesStorageClass`
 
 Output object `GetKubernetesStorageClassesStorageClass`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `allowVolumeExpansion` | `boolean` | no |  |
-| `annotations` | `{ [key: string]: string }` | no |  |
-| `creationDate` | `string` | no |  |
-| `isDefault` | `boolean` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `mountOptions` | `string[]` | no |  |
-| `name` | `string` | no |  |
-| `parameters` | `{ [key: string]: string }` | no |  |
-| `provisioner` | `string` | no |  |
-| `reclaimPolicy` | `string` | no |  |
+| Property               | Type                        | Always present | Description |
+| ---------------------- | --------------------------- | -------------- | ----------- |
+| `allowVolumeExpansion` | `boolean`                   | no             |             |
+| `annotations`          | `{ [key: string]: string }` | no             |             |
+| `creationDate`         | `string`                    | no             |             |
+| `isDefault`            | `boolean`                   | no             |             |
+| `labels`               | `{ [key: string]: string }` | no             |             |
+| `mountOptions`         | `string[]`                  | no             |             |
+| `name`                 | `string`                    | no             |             |
+| `parameters`           | `{ [key: string]: string }` | no             |             |
+| `provisioner`          | `string`                    | no             |             |
+| `reclaimPolicy`        | `string`                    | no             |             |

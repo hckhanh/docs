@@ -19,78 +19,78 @@ Construct with `new betteruptime.OutgoingWebhook(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `customWebhookTemplateAttributes` | `OutgoingWebhookCustomWebhookTemplateAttributes (input)` | no | Custom webhook template configuration. |
-| `name` | `string` | no | The name of the outgoing webhook. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Only applies to `incidentChange` webhooks. Defaults to `true`. |
-| `onIncidentAcknowledged` | `boolean` | no | Whether to trigger webhook when incident is acknowledged. Only when `trigger_type=incident_change`. |
-| `onIncidentComment` | `boolean` | no | Whether to trigger webhook when a comment is posted on an incident. Only when `trigger_type=incident_change`. |
-| `onIncidentReopened` | `boolean` | no | Whether to trigger webhook when incident is reopened. Only when `trigger_type=incident_change`. |
-| `onIncidentResolved` | `boolean` | no | Whether to trigger webhook when incident is resolved. Only when `trigger_type=incident_change`. |
-| `onIncidentStarted` | `boolean` | no | Whether to trigger webhook when incident starts. Only when `trigger_type=incident_change`. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `triggerType` | `string` | yes | The type of trigger for the webhook. Only settable during creation. Available values: `incidentChange`, `onCallChange`, `monitorChange`. |
-| `url` | `string` | yes | The URL to send webhooks to. |
+| Property                          | Type                                                     | Required | Description                                                                                                                                                                         |
+| --------------------------------- | -------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customWebhookTemplateAttributes` | `OutgoingWebhookCustomWebhookTemplateAttributes (input)` | no       | Custom webhook template configuration.                                                                                                                                              |
+| `name`                            | `string`                                                 | no       | The name of the outgoing webhook.                                                                                                                                                   |
+| `notifyAlongsidePrimaryResponder` | `boolean`                                                | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Only applies to `incidentChange` webhooks. Defaults to `true`. |
+| `onIncidentAcknowledged`          | `boolean`                                                | no       | Whether to trigger webhook when incident is acknowledged. Only when `trigger_type=incident_change`.                                                                                 |
+| `onIncidentComment`               | `boolean`                                                | no       | Whether to trigger webhook when a comment is posted on an incident. Only when `trigger_type=incident_change`.                                                                       |
+| `onIncidentReopened`              | `boolean`                                                | no       | Whether to trigger webhook when incident is reopened. Only when `trigger_type=incident_change`.                                                                                     |
+| `onIncidentResolved`              | `boolean`                                                | no       | Whether to trigger webhook when incident is resolved. Only when `trigger_type=incident_change`.                                                                                     |
+| `onIncidentStarted`               | `boolean`                                                | no       | Whether to trigger webhook when incident starts. Only when `trigger_type=incident_change`.                                                                                          |
+| `teamName`                        | `string`                                                 | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                                             |
+| `triggerType`                     | `string`                                                 | yes      | The type of trigger for the webhook. Only settable during creation. Available values: `incidentChange`, `onCallChange`, `monitorChange`.                                            |
+| `url`                             | `string`                                                 | yes      | The URL to send webhooks to.                                                                                                                                                        |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `customWebhookTemplateAttributes` | `OutgoingWebhookCustomWebhookTemplateAttributes (output)` | no | Custom webhook template configuration. |
-| `name` | `string` | no | The name of the outgoing webhook. |
-| `notifyAlongsidePrimaryResponder` | `boolean` | no | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Only applies to `incidentChange` webhooks. Defaults to `true`. |
-| `onIncidentAcknowledged` | `boolean` | no | Whether to trigger webhook when incident is acknowledged. Only when `trigger_type=incident_change`. |
-| `onIncidentComment` | `boolean` | no | Whether to trigger webhook when a comment is posted on an incident. Only when `trigger_type=incident_change`. |
-| `onIncidentReopened` | `boolean` | no | Whether to trigger webhook when incident is reopened. Only when `trigger_type=incident_change`. |
-| `onIncidentResolved` | `boolean` | no | Whether to trigger webhook when incident is resolved. Only when `trigger_type=incident_change`. |
-| `onIncidentStarted` | `boolean` | no | Whether to trigger webhook when incident starts. Only when `trigger_type=incident_change`. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `triggerType` | `string` | no | The type of trigger for the webhook. Only settable during creation. Available values: `incidentChange`, `onCallChange`, `monitorChange`. |
-| `url` | `string` | no | The URL to send webhooks to. |
+| Property                          | Type                                                      | Computed | Description                                                                                                                                                                         |
+| --------------------------------- | --------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customWebhookTemplateAttributes` | `OutgoingWebhookCustomWebhookTemplateAttributes (output)` | no       | Custom webhook template configuration.                                                                                                                                              |
+| `name`                            | `string`                                                  | no       | The name of the outgoing webhook.                                                                                                                                                   |
+| `notifyAlongsidePrimaryResponder` | `boolean`                                                 | no       | Whether this integration should be notified alongside the primary responder when no escalation policy is configured. Only applies to `incidentChange` webhooks. Defaults to `true`. |
+| `onIncidentAcknowledged`          | `boolean`                                                 | no       | Whether to trigger webhook when incident is acknowledged. Only when `trigger_type=incident_change`.                                                                                 |
+| `onIncidentComment`               | `boolean`                                                 | no       | Whether to trigger webhook when a comment is posted on an incident. Only when `trigger_type=incident_change`.                                                                       |
+| `onIncidentReopened`              | `boolean`                                                 | no       | Whether to trigger webhook when incident is reopened. Only when `trigger_type=incident_change`.                                                                                     |
+| `onIncidentResolved`              | `boolean`                                                 | no       | Whether to trigger webhook when incident is resolved. Only when `trigger_type=incident_change`.                                                                                     |
+| `onIncidentStarted`               | `boolean`                                                 | no       | Whether to trigger webhook when incident starts. Only when `trigger_type=incident_change`.                                                                                          |
+| `teamName`                        | `string`                                                  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.                                                             |
+| `triggerType`                     | `string`                                                  | no       | The type of trigger for the webhook. Only settable during creation. Available values: `incidentChange`, `onCallChange`, `monitorChange`.                                            |
+| `url`                             | `string`                                                  | no       | The URL to send webhooks to.                                                                                                                                                        |
 
 ## `OutgoingWebhookCustomWebhookTemplateAttributes (input)`
 
 Input object `OutgoingWebhookCustomWebhookTemplateAttributes`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authPassword` | `string` | no | The password to use for basic authentication. |
-| `authUsername` | `string` | no | The username to use for basic authentication. |
-| `bodyTemplate` | `string` | no | The body of the webhook request. |
-| `headersTemplates` | `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (input)[]` | no | The headers to include in the webhook request. |
-| `httpMethod` | `string` | no | The HTTP method to use when sending the webhook. Possible values: `get`, `post`, `put`, `patch` and `head`. |
-| `id` | `string` | no |  |
+| Property           | Type                                                                      | Required | Description                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `authPassword`     | `string`                                                                  | no       | The password to use for basic authentication.                                                               |
+| `authUsername`     | `string`                                                                  | no       | The username to use for basic authentication.                                                               |
+| `bodyTemplate`     | `string`                                                                  | no       | The body of the webhook request.                                                                            |
+| `headersTemplates` | `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (input)[]` | no       | The headers to include in the webhook request.                                                              |
+| `httpMethod`       | `string`                                                                  | no       | The HTTP method to use when sending the webhook. Possible values: `get`, `post`, `put`, `patch` and `head`. |
+| `id`               | `string`                                                                  | no       |                                                                                                             |
 
 ## `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (input)`
 
 Input object `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes |  |
-| `value` | `string` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `name`   | `string` | yes      |             |
+| `value`  | `string` | yes      |             |
 
 ## `OutgoingWebhookCustomWebhookTemplateAttributes (output)`
 
 Output object `OutgoingWebhookCustomWebhookTemplateAttributes`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authPassword` | `string` | no | The password to use for basic authentication. |
-| `authUsername` | `string` | no | The username to use for basic authentication. |
-| `bodyTemplate` | `string` | no | The body of the webhook request. |
-| `headersTemplates` | `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (output)[]` | no | The headers to include in the webhook request. |
-| `httpMethod` | `string` | no | The HTTP method to use when sending the webhook. Possible values: `get`, `post`, `put`, `patch` and `head`. |
-| `id` | `string` | yes |  |
+| Property           | Type                                                                       | Always present | Description                                                                                                 |
+| ------------------ | -------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- |
+| `authPassword`     | `string`                                                                   | no             | The password to use for basic authentication.                                                               |
+| `authUsername`     | `string`                                                                   | no             | The username to use for basic authentication.                                                               |
+| `bodyTemplate`     | `string`                                                                   | no             | The body of the webhook request.                                                                            |
+| `headersTemplates` | `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (output)[]` | no             | The headers to include in the webhook request.                                                              |
+| `httpMethod`       | `string`                                                                   | no             | The HTTP method to use when sending the webhook. Possible values: `get`, `post`, `put`, `patch` and `head`. |
+| `id`               | `string`                                                                   | yes            |                                                                                                             |
 
 ## `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate (output)`
 
 Output object `OutgoingWebhookCustomWebhookTemplateAttributesHeadersTemplate`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | yes |  |
-| `value` | `string` | yes |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `name`   | `string` | yes            |             |
+| `value`  | `string` | yes            |             |

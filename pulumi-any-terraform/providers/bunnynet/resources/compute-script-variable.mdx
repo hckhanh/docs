@@ -19,21 +19,21 @@ Construct with `new bunnynet.ComputeScriptVariable(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `defaultValue` | `string` | yes | The default value of the environment variable. |
-| `name` | `string` | no | The name of the environment variable. |
-| `required` | `boolean` | yes | Indicates whether the environment variable is required. |
-| `script` | `number` | yes | The ID of the associated compute script. |
+| Property       | Type      | Required | Description                                             |
+| -------------- | --------- | -------- | ------------------------------------------------------- |
+| `defaultValue` | `string`  | yes      | The default value of the environment variable.          |
+| `name`         | `string`  | no       | The name of the environment variable.                   |
+| `required`     | `boolean` | yes      | Indicates whether the environment variable is required. |
+| `script`       | `number`  | yes      | The ID of the associated compute script.                |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `computeScriptVariableId` | `number` | yes | The ID of the environment variable. |
-| `defaultValue` | `string` | no | The default value of the environment variable. |
-| `name` | `string` | no | The name of the environment variable. |
-| `required` | `boolean` | no | Indicates whether the environment variable is required. |
-| `script` | `number` | no | The ID of the associated compute script. |
+| Property                  | Type      | Computed | Description                                             |
+| ------------------------- | --------- | -------- | ------------------------------------------------------- |
+| `computeScriptVariableId` | `number`  | yes      | The ID of the environment variable.                     |
+| `defaultValue`            | `string`  | no       | The default value of the environment variable.          |
+| `name`                    | `string`  | no       | The name of the environment variable.                   |
+| `required`                | `boolean` | no       | Indicates whether the environment variable is required. |
+| `script`                  | `number`  | no       | The ID of the associated compute script.                |

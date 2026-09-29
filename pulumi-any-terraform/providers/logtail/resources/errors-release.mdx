@@ -19,22 +19,22 @@ Construct with `new logtail.ErrorsRelease(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `applicationId` | `number` | yes | The ID of the Errors application this release belongs to. The API resolves the value to the canonical application ID, which may differ from the one you provide when the application has sibling sources - state always keeps the canonical ID. |
-| `environments` | `string[]` | no | Environments the release was deployed to, e.g. `["production"]`. The server keeps merging in environments the release is later seen in, so state always keeps the configured value. |
-| `version` | `string` | yes | Release version or commit ref, e.g. `v1.2.3` or a commit SHA. |
+| Property        | Type       | Required | Description                                                                                                                                                                                                                                     |
+| --------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `applicationId` | `number`   | yes      | The ID of the Errors application this release belongs to. The API resolves the value to the canonical application ID, which may differ from the one you provide when the application has sibling sources - state always keeps the canonical ID. |
+| `environments`  | `string[]` | no       | Environments the release was deployed to, e.g. `["production"]`. The server keeps merging in environments the release is later seen in, so state always keeps the configured value.                                                             |
+| `version`       | `string`   | yes      | Release version or commit ref, e.g. `v1.2.3` or a commit SHA.                                                                                                                                                                                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `applicationId` | `number` | no | The ID of the Errors application this release belongs to. The API resolves the value to the canonical application ID, which may differ from the one you provide when the application has sibling sources - state always keeps the canonical ID. |
-| `createdAt` | `string` | yes | The time when this release was created. |
-| `environments` | `string[]` | no | Environments the release was deployed to, e.g. `["production"]`. The server keeps merging in environments the release is later seen in, so state always keeps the configured value. |
-| `firstSeenAt` | `string` | yes | The time when this release was first seen. |
-| `origin` | `string` | yes | How this release was detected, e.g. `reported` for releases registered via the API. |
-| `updatedAt` | `string` | yes | The time when this release was last updated. |
-| `version` | `string` | no | Release version or commit ref, e.g. `v1.2.3` or a commit SHA. |
+| Property        | Type       | Computed | Description                                                                                                                                                                                                                                     |
+| --------------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `applicationId` | `number`   | no       | The ID of the Errors application this release belongs to. The API resolves the value to the canonical application ID, which may differ from the one you provide when the application has sibling sources - state always keeps the canonical ID. |
+| `createdAt`     | `string`   | yes      | The time when this release was created.                                                                                                                                                                                                         |
+| `environments`  | `string[]` | no       | Environments the release was deployed to, e.g. `["production"]`. The server keeps merging in environments the release is later seen in, so state always keeps the configured value.                                                             |
+| `firstSeenAt`   | `string`   | yes      | The time when this release was first seen.                                                                                                                                                                                                      |
+| `origin`        | `string`   | yes      | How this release was detected, e.g. `reported` for releases registered via the API.                                                                                                                                                             |
+| `updatedAt`     | `string`   | yes      | The time when this release was last updated.                                                                                                                                                                                                    |
+| `version`       | `string`   | no       | Release version or commit ref, e.g. `v1.2.3` or a commit SHA.                                                                                                                                                                                   |

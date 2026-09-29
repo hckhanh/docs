@@ -19,18 +19,18 @@ Construct with `new teamcity.BuildConfigurationFeature(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | yes | ID of the build configuration to which this feature belongs. |
-| `properties` | `{ [key: string]: string }` | no | Properties for the build feature. |
-| `type` | `string` | yes | The type of the build feature (e.g., swabra, freeDiskSpace, xml-report-plugin). |
+| Property               | Type                        | Required | Description                                                                     |
+| ---------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`                    | yes      | ID of the build configuration to which this feature belongs.                    |
+| `properties`           | `{ [key: string]: string }` | no       | Properties for the build feature.                                               |
+| `type`                 | `string`                    | yes      | The type of the build feature (e.g., swabra, freeDiskSpace, xml-report-plugin). |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `buildConfigurationId` | `string` | no | ID of the build configuration to which this feature belongs. |
-| `properties` | `{ [key: string]: string }` | no | Properties for the build feature. |
-| `type` | `string` | no | The type of the build feature (e.g., swabra, freeDiskSpace, xml-report-plugin). |
+| Property               | Type                        | Computed | Description                                                                     |
+| ---------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------- |
+| `buildConfigurationId` | `string`                    | no       | ID of the build configuration to which this feature belongs.                    |
+| `properties`           | `{ [key: string]: string }` | no       | Properties for the build feature.                                               |
+| `type`                 | `string`                    | no       | The type of the build feature (e.g., swabra, freeDiskSpace, xml-report-plugin). |

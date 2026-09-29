@@ -19,20 +19,20 @@ Construct with `new portainer.OpenAmtDevicesAction(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | yes | The out-of-band action to execute on the device (e.g. poweron, poweroff, reset). |
-| `deviceId` | `number` | yes | The ID of the AMT managed device. |
-| `environmentId` | `number` | yes | The ID of the environment (endpoint). |
-| `openAmtDevicesActionId` | `string` | no |  |
+| Property                 | Type     | Required | Description                                                                      |
+| ------------------------ | -------- | -------- | -------------------------------------------------------------------------------- |
+| `action`                 | `string` | yes      | The out-of-band action to execute on the device (e.g. poweron, poweroff, reset). |
+| `deviceId`               | `number` | yes      | The ID of the AMT managed device.                                                |
+| `environmentId`          | `number` | yes      | The ID of the environment (endpoint).                                            |
+| `openAmtDevicesActionId` | `string` | no       |                                                                                  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `action` | `string` | no | The out-of-band action to execute on the device (e.g. poweron, poweroff, reset). |
-| `deviceId` | `number` | no | The ID of the AMT managed device. |
-| `environmentId` | `number` | no | The ID of the environment (endpoint). |
-| `openAmtDevicesActionId` | `string` | no |  |
+| Property                 | Type     | Computed | Description                                                                      |
+| ------------------------ | -------- | -------- | -------------------------------------------------------------------------------- |
+| `action`                 | `string` | no       | The out-of-band action to execute on the device (e.g. poweron, poweroff, reset). |
+| `deviceId`               | `number` | no       | The ID of the AMT managed device.                                                |
+| `environmentId`          | `number` | no       | The ID of the environment (endpoint).                                            |
+| `openAmtDevicesActionId` | `string` | no       |                                                                                  |

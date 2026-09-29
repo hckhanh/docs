@@ -19,36 +19,36 @@ Construct with `new portainer.CloudProviderProvision(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `cloudProvider` | `string` | yes | Cloud provider (civo, digitalocean, linode, amazon, azure, gke) |
-| `cloudProviderProvisionId` | `string` | no |  |
-| `payload` | `{ [key: string]: string }` | yes | Raw payload with provisioning parameters. |
-| `timeouts` | `CloudProviderProvisionTimeouts (input)` | no |  |
+| Property                   | Type                                     | Required | Description                                                     |
+| -------------------------- | ---------------------------------------- | -------- | --------------------------------------------------------------- |
+| `cloudProvider`            | `string`                                 | yes      | Cloud provider (civo, digitalocean, linode, amazon, azure, gke) |
+| `cloudProviderProvisionId` | `string`                                 | no       |                                                                 |
+| `payload`                  | `{ [key: string]: string }`              | yes      | Raw payload with provisioning parameters.                       |
+| `timeouts`                 | `CloudProviderProvisionTimeouts (input)` | no       |                                                                 |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `cloudProvider` | `string` | no | Cloud provider (civo, digitalocean, linode, amazon, azure, gke) |
-| `cloudProviderProvisionId` | `string` | no |  |
-| `payload` | `{ [key: string]: string }` | no | Raw payload with provisioning parameters. |
-| `timeouts` | `CloudProviderProvisionTimeouts (output)` | no |  |
+| Property                   | Type                                      | Computed | Description                                                     |
+| -------------------------- | ----------------------------------------- | -------- | --------------------------------------------------------------- |
+| `cloudProvider`            | `string`                                  | no       | Cloud provider (civo, digitalocean, linode, amazon, azure, gke) |
+| `cloudProviderProvisionId` | `string`                                  | no       |                                                                 |
+| `payload`                  | `{ [key: string]: string }`               | no       | Raw payload with provisioning parameters.                       |
+| `timeouts`                 | `CloudProviderProvisionTimeouts (output)` | no       |                                                                 |
 
 ## `CloudProviderProvisionTimeouts (input)`
 
 Input object `CloudProviderProvisionTimeouts`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `create` | `string` | no       |             |
 
 ## `CloudProviderProvisionTimeouts (output)`
 
 Output object `CloudProviderProvisionTimeouts`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `create` | `string` | no             |             |

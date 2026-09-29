@@ -19,21 +19,21 @@ Construct with `new bunnynet.ComputeScript(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content` | `string` | yes | The code of the script. |
-| `name` | `string` | no | The name of the script. |
-| `type` | `string` | yes | Options: `middleware`, `standalone` |
+| Property  | Type     | Required | Description                         |
+| --------- | -------- | -------- | ----------------------------------- |
+| `content` | `string` | yes      | The code of the script.             |
+| `name`    | `string` | no       | The name of the script.             |
+| `type`    | `string` | yes      | Options: `middleware`, `standalone` |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `computeScriptId` | `number` | yes | The ID of the script. |
-| `content` | `string` | no | The code of the script. |
-| `deploymentKey` | `string` | yes | The deployment key for the script. |
-| `name` | `string` | no | The name of the script. |
-| `release` | `string` | yes | The current release identifier for the script. |
-| `type` | `string` | no | Options: `middleware`, `standalone` |
+| Property          | Type     | Computed | Description                                    |
+| ----------------- | -------- | -------- | ---------------------------------------------- |
+| `computeScriptId` | `number` | yes      | The ID of the script.                          |
+| `content`         | `string` | no       | The code of the script.                        |
+| `deploymentKey`   | `string` | yes      | The deployment key for the script.             |
+| `name`            | `string` | no       | The name of the script.                        |
+| `release`         | `string` | yes      | The current release identifier for the script. |
+| `type`            | `string` | no       | Options: `middleware`, `standalone`            |

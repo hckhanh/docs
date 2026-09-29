@@ -19,62 +19,62 @@ Construct with `new teamcity.CleanupSettings(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `cron` | `CleanupSettingsCron (input)` | no |  |
-| `daily` | `CleanupSettingsDaily (input)` | no |  |
-| `enabled` | `boolean` | yes |  |
-| `maxDuration` | `number` | yes |  |
+| Property      | Type                           | Required | Description |
+| ------------- | ------------------------------ | -------- | ----------- |
+| `cron`        | `CleanupSettingsCron (input)`  | no       |             |
+| `daily`       | `CleanupSettingsDaily (input)` | no       |             |
+| `enabled`     | `boolean`                      | yes      |             |
+| `maxDuration` | `number`                       | yes      |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `cron` | `CleanupSettingsCron (output)` | no |  |
-| `daily` | `CleanupSettingsDaily (output)` | no |  |
-| `enabled` | `boolean` | no |  |
-| `maxDuration` | `number` | no |  |
+| Property      | Type                            | Computed | Description |
+| ------------- | ------------------------------- | -------- | ----------- |
+| `cron`        | `CleanupSettingsCron (output)`  | no       |             |
+| `daily`       | `CleanupSettingsDaily (output)` | no       |             |
+| `enabled`     | `boolean`                       | no       |             |
+| `maxDuration` | `number`                        | no       |             |
 
 ## `CleanupSettingsCron (input)`
 
 Input object `CleanupSettingsCron`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `day` | `string` | yes |  |
-| `dayWeek` | `string` | yes |  |
-| `hour` | `string` | yes |  |
-| `minute` | `string` | yes |  |
-| `month` | `string` | yes |  |
+| Property  | Type     | Required | Description |
+| --------- | -------- | -------- | ----------- |
+| `day`     | `string` | yes      |             |
+| `dayWeek` | `string` | yes      |             |
+| `hour`    | `string` | yes      |             |
+| `minute`  | `string` | yes      |             |
+| `month`   | `string` | yes      |             |
 
 ## `CleanupSettingsDaily (input)`
 
 Input object `CleanupSettingsDaily`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `hour` | `number` | yes |  |
-| `minute` | `number` | yes |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `hour`   | `number` | yes      |             |
+| `minute` | `number` | yes      |             |
 
 ## `CleanupSettingsCron (output)`
 
 Output object `CleanupSettingsCron`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `day` | `string` | yes |  |
-| `dayWeek` | `string` | yes |  |
-| `hour` | `string` | yes |  |
-| `minute` | `string` | yes |  |
-| `month` | `string` | yes |  |
+| Property  | Type     | Always present | Description |
+| --------- | -------- | -------------- | ----------- |
+| `day`     | `string` | yes            |             |
+| `dayWeek` | `string` | yes            |             |
+| `hour`    | `string` | yes            |             |
+| `minute`  | `string` | yes            |             |
+| `month`   | `string` | yes            |             |
 
 ## `CleanupSettingsDaily (output)`
 
 Output object `CleanupSettingsDaily`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `hour` | `number` | yes |  |
-| `minute` | `number` | yes |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `hour`   | `number` | yes            |             |
+| `minute` | `number` | yes            |             |

@@ -19,37 +19,37 @@ Call `portainer.getKubernetesEndpoints(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `endpointId` | `number` | yes      |             |
+| `id`         | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `endpoints` | `GetKubernetesEndpointsEndpoint[]` | yes |  |
-| `id` | `string` | yes |  |
+| Property     | Type                               | Always present | Description |
+| ------------ | ---------------------------------- | -------------- | ----------- |
+| `endpointId` | `number`                           | yes            |             |
+| `endpoints`  | `GetKubernetesEndpointsEndpoint[]` | yes            |             |
+| `id`         | `string`                           | yes            |             |
 
 ## `GetKubernetesEndpointsEndpoint`
 
 Output object `GetKubernetesEndpointsEndpoint`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `addresses` | `string[]` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `ports` | `GetKubernetesEndpointsEndpointPort[]` | no |  |
-| `uid` | `string` | no |  |
+| Property    | Type                                   | Always present | Description |
+| ----------- | -------------------------------------- | -------------- | ----------- |
+| `addresses` | `string[]`                             | no             |             |
+| `name`      | `string`                               | no             |             |
+| `namespace` | `string`                               | no             |             |
+| `ports`     | `GetKubernetesEndpointsEndpointPort[]` | no             |             |
+| `uid`       | `string`                               | no             |             |
 
 ## `GetKubernetesEndpointsEndpointPort`
 
 Output object `GetKubernetesEndpointsEndpointPort`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `name` | `string` | no |  |
-| `port` | `number` | no |  |
-| `protocol` | `string` | no |  |
+| Property   | Type     | Always present | Description |
+| ---------- | -------- | -------------- | ----------- |
+| `name`     | `string` | no             |             |
+| `port`     | `number` | no             |             |
+| `protocol` | `string` | no             |             |

@@ -19,45 +19,45 @@ Call `portainer.getEnvironmentLogs(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `from` | `string` | yes |  |
-| `id` | `string` | no |  |
-| `kind` | `string` | no |  |
-| `limit` | `number` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `search` | `string` | no |  |
-| `severity` | `string` | no |  |
-| `skip` | `number` | no |  |
-| `to` | `string` | yes |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `endpointId` | `number` | yes      |             |
+| `from`       | `string` | yes      |             |
+| `id`         | `string` | no       |             |
+| `kind`       | `string` | no       |             |
+| `limit`      | `number` | no       |             |
+| `name`       | `string` | no       |             |
+| `namespace`  | `string` | no       |             |
+| `search`     | `string` | no       |             |
+| `severity`   | `string` | no       |             |
+| `skip`       | `number` | no       |             |
+| `to`         | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes |  |
-| `from` | `string` | yes |  |
-| `id` | `string` | yes |  |
-| `kind` | `string` | no |  |
-| `limit` | `number` | no |  |
-| `logs` | `GetEnvironmentLogsLog[]` | yes |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `search` | `string` | no |  |
-| `severity` | `string` | no |  |
-| `skip` | `number` | no |  |
-| `to` | `string` | yes |  |
+| Property     | Type                      | Always present | Description |
+| ------------ | ------------------------- | -------------- | ----------- |
+| `endpointId` | `number`                  | yes            |             |
+| `from`       | `string`                  | yes            |             |
+| `id`         | `string`                  | yes            |             |
+| `kind`       | `string`                  | no             |             |
+| `limit`      | `number`                  | no             |             |
+| `logs`       | `GetEnvironmentLogsLog[]` | yes            |             |
+| `name`       | `string`                  | no             |             |
+| `namespace`  | `string`                  | no             |             |
+| `search`     | `string`                  | no             |             |
+| `severity`   | `string`                  | no             |             |
+| `skip`       | `number`                  | no             |             |
+| `to`         | `string`                  | yes            |             |
 
 ## `GetEnvironmentLogsLog`
 
 Output object `GetEnvironmentLogsLog`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `message` | `string` | no |  |
-| `severity` | `string` | no |  |
-| `source` | `string` | no |  |
-| `time` | `string` | no |  |
+| Property   | Type                        | Always present | Description |
+| ---------- | --------------------------- | -------------- | ----------- |
+| `labels`   | `{ [key: string]: string }` | no             |             |
+| `message`  | `string`                    | no             |             |
+| `severity` | `string`                    | no             |             |
+| `source`   | `string`                    | no             |             |
+| `time`     | `string`                    | no             |             |

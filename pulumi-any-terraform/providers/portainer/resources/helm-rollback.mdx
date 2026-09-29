@@ -19,32 +19,32 @@ Construct with `new portainer.HelmRollback(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | yes | Environment (Endpoint) identifier |
-| `force` | `boolean` | no | Force resource update through delete/recreate if needed |
-| `helmRollbackId` | `string` | no |  |
-| `namespace` | `string` | no | Kubernetes namespace of the release |
-| `recreate` | `boolean` | no | Perform pods restart for the resource if applicable |
-| `releaseName` | `string` | yes | Name of the Helm release to rollback |
-| `revision` | `number` | no | Revision number to rollback to (defaults to previous revision if not specified) |
-| `timeout` | `number` | no | Time to wait for any individual Kubernetes operation in seconds |
-| `wait` | `boolean` | no | Wait for resources to be ready |
-| `waitForJobs` | `boolean` | no | Wait for jobs to complete before marking the release as successful |
+| Property         | Type      | Required | Description                                                                     |
+| ---------------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| `endpointId`     | `number`  | yes      | Environment (Endpoint) identifier                                               |
+| `force`          | `boolean` | no       | Force resource update through delete/recreate if needed                         |
+| `helmRollbackId` | `string`  | no       |                                                                                 |
+| `namespace`      | `string`  | no       | Kubernetes namespace of the release                                             |
+| `recreate`       | `boolean` | no       | Perform pods restart for the resource if applicable                             |
+| `releaseName`    | `string`  | yes      | Name of the Helm release to rollback                                            |
+| `revision`       | `number`  | no       | Revision number to rollback to (defaults to previous revision if not specified) |
+| `timeout`        | `number`  | no       | Time to wait for any individual Kubernetes operation in seconds                 |
+| `wait`           | `boolean` | no       | Wait for resources to be ready                                                  |
+| `waitForJobs`    | `boolean` | no       | Wait for jobs to complete before marking the release as successful              |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `endpointId` | `number` | no | Environment (Endpoint) identifier |
-| `force` | `boolean` | no | Force resource update through delete/recreate if needed |
-| `helmRollbackId` | `string` | no |  |
-| `namespace` | `string` | no | Kubernetes namespace of the release |
-| `recreate` | `boolean` | no | Perform pods restart for the resource if applicable |
-| `releaseName` | `string` | no | Name of the Helm release to rollback |
-| `revision` | `number` | no | Revision number to rollback to (defaults to previous revision if not specified) |
-| `timeout` | `number` | no | Time to wait for any individual Kubernetes operation in seconds |
-| `wait` | `boolean` | no | Wait for resources to be ready |
-| `waitForJobs` | `boolean` | no | Wait for jobs to complete before marking the release as successful |
+| Property         | Type      | Computed | Description                                                                     |
+| ---------------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| `endpointId`     | `number`  | no       | Environment (Endpoint) identifier                                               |
+| `force`          | `boolean` | no       | Force resource update through delete/recreate if needed                         |
+| `helmRollbackId` | `string`  | no       |                                                                                 |
+| `namespace`      | `string`  | no       | Kubernetes namespace of the release                                             |
+| `recreate`       | `boolean` | no       | Perform pods restart for the resource if applicable                             |
+| `releaseName`    | `string`  | no       | Name of the Helm release to rollback                                            |
+| `revision`       | `number`  | no       | Revision number to rollback to (defaults to previous revision if not specified) |
+| `timeout`        | `number`  | no       | Time to wait for any individual Kubernetes operation in seconds                 |
+| `wait`           | `boolean` | no       | Wait for resources to be ready                                                  |
+| `waitForJobs`    | `boolean` | no       | Wait for jobs to complete before marking the release as successful              |

@@ -19,61 +19,61 @@ Construct with `new infisical.ProjectUser(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `projectId` | `string` | yes | The id of the project |
-| `roles` | `ProjectUserRole (input)[]` | yes | The roles assigned to the project user |
-| `username` | `string` | yes | The usename of the user. By default its the email |
+| Property    | Type                        | Required | Description                                       |
+| ----------- | --------------------------- | -------- | ------------------------------------------------- |
+| `projectId` | `string`                    | yes      | The id of the project                             |
+| `roles`     | `ProjectUserRole (input)[]` | yes      | The roles assigned to the project user            |
+| `username`  | `string`                    | yes      | The usename of the user. By default its the email |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `membershipId` | `string` | yes | The membershipId of the project user |
-| `projectId` | `string` | no | The id of the project |
-| `roles` | `ProjectUserRole (output)[]` | no | The roles assigned to the project user |
-| `user` | `ProjectUserUser (output)` | yes | The user details of the project user |
-| `username` | `string` | no | The usename of the user. By default its the email |
+| Property       | Type                         | Computed | Description                                       |
+| -------------- | ---------------------------- | -------- | ------------------------------------------------- |
+| `membershipId` | `string`                     | yes      | The membershipId of the project user              |
+| `projectId`    | `string`                     | no       | The id of the project                             |
+| `roles`        | `ProjectUserRole (output)[]` | no       | The roles assigned to the project user            |
+| `user`         | `ProjectUserUser (output)`   | yes      | The user details of the project user              |
+| `username`     | `string`                     | no       | The usename of the user. By default its the email |
 
 ## `ProjectUserRole (input)`
 
 Input object `ProjectUserRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | no | The id of the custom role slug |
-| `id` | `string` | no | The ID of the project user role. |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessEndTime` | `string` | no | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | no | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Required | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | no       | The id of the custom role slug                                                                                                                                        |
+| `id`                       | `string`  | no       | The ID of the project user role.                                                                                                                                      |
+| `isTemporary`              | `boolean` | no       | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes      | The slug of the role                                                                                                                                                  |
+| `temporaryAccessEndTime`   | `string`  | no       | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | no       | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | no       | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |
 
 ## `ProjectUserRole (output)`
 
 Output object `ProjectUserRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `customRoleId` | `string` | yes | The id of the custom role slug |
-| `id` | `string` | yes | The ID of the project user role. |
-| `isTemporary` | `boolean` | yes | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessEndTime` | `string` | yes | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time |
-| `temporaryAccessStartTime` | `string` | yes | ISO time for which temporary access should begin. The current time is used by default. |
-| `temporaryMode` | `string` | yes | Type of temporary access given. Types: relative. Default: relative |
-| `temporaryRange` | `string` | yes | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Always present | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `customRoleId`             | `string`  | yes            | The id of the custom role slug                                                                                                                                        |
+| `id`                       | `string`  | yes            | The ID of the project user role.                                                                                                                                      |
+| `isTemporary`              | `boolean` | yes            | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes            | The slug of the role                                                                                                                                                  |
+| `temporaryAccessEndTime`   | `string`  | yes            | ISO time for which temporary access will end. Computed based on `temporaryRange` and temporary_access_start_time                                                      |
+| `temporaryAccessStartTime` | `string`  | yes            | ISO time for which temporary access should begin. The current time is used by default.                                                                                |
+| `temporaryMode`            | `string`  | yes            | Type of temporary access given. Types: relative. Default: relative                                                                                                    |
+| `temporaryRange`           | `string`  | yes            | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |
 
 ## `ProjectUserUser (output)`
 
 Output object `ProjectUserUser`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | yes | The email of the user |
-| `firstName` | `string` | yes | The first name of the user |
-| `id` | `string` | yes | The id of the user |
-| `lastName` | `string` | yes | The last name of the user |
+| Property    | Type     | Always present | Description                |
+| ----------- | -------- | -------------- | -------------------------- |
+| `email`     | `string` | yes            | The email of the user      |
+| `firstName` | `string` | yes            | The first name of the user |
+| `id`        | `string` | yes            | The id of the user         |
+| `lastName`  | `string` | yes            | The last name of the user  |

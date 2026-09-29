@@ -19,49 +19,49 @@ Construct with `new infisical.AppConnectionHashicorpVault(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionHashicorpVaultCredentials (input)` | yes | The credentials for the HashiCorp Vault App Connection |
-| `description` | `string` | no | An optional description for the HashiCorp Vault App Connection. |
-| `gatewayId` | `string` | no | The Gateway ID to use for the app connection. If not specified, the Internet Gateway will be used. |
-| `method` | `string` | yes | The method used to authenticate with HashiCorp Vault. Possible values are: access-token, app-role |
-| `name` | `string` | no | The name of the HashiCorp Vault App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                             | Required | Description                                                                                                                   |
+| ------------- | ------------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionHashicorpVaultCredentials (input)` | yes      | The credentials for the HashiCorp Vault App Connection                                                                        |
+| `description` | `string`                                         | no       | An optional description for the HashiCorp Vault App Connection.                                                               |
+| `gatewayId`   | `string`                                         | no       | The Gateway ID to use for the app connection. If not specified, the Internet Gateway will be used.                            |
+| `method`      | `string`                                         | yes      | The method used to authenticate with HashiCorp Vault. Possible values are: access-token, app-role                             |
+| `name`        | `string`                                         | no       | The name of the HashiCorp Vault App Connection to create. Must be slug-friendly                                               |
+| `projectId`   | `string`                                         | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionHashicorpVaultCredentials (output)` | no | The credentials for the HashiCorp Vault App Connection |
-| `credentialsHash` | `string` | yes | The hash of the HashiCorp Vault App Connection credentials |
-| `description` | `string` | no | An optional description for the HashiCorp Vault App Connection. |
-| `gatewayId` | `string` | no | The Gateway ID to use for the app connection. If not specified, the Internet Gateway will be used. |
-| `method` | `string` | no | The method used to authenticate with HashiCorp Vault. Possible values are: access-token, app-role |
-| `name` | `string` | no | The name of the HashiCorp Vault App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                              | Computed | Description                                                                                                                   |
+| ----------------- | ------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionHashicorpVaultCredentials (output)` | no       | The credentials for the HashiCorp Vault App Connection                                                                        |
+| `credentialsHash` | `string`                                          | yes      | The hash of the HashiCorp Vault App Connection credentials                                                                    |
+| `description`     | `string`                                          | no       | An optional description for the HashiCorp Vault App Connection.                                                               |
+| `gatewayId`       | `string`                                          | no       | The Gateway ID to use for the app connection. If not specified, the Internet Gateway will be used.                            |
+| `method`          | `string`                                          | no       | The method used to authenticate with HashiCorp Vault. Possible values are: access-token, app-role                             |
+| `name`            | `string`                                          | no       | The name of the HashiCorp Vault App Connection to create. Must be slug-friendly                                               |
+| `projectId`       | `string`                                          | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionHashicorpVaultCredentials (input)`
 
 Input object `AppConnectionHashicorpVaultCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessToken` | `string` | no | The Vault access token. Required for the `access-token` method. |
-| `instanceUrl` | `string` | no | The URL of the HashiCorp Vault instance, e.g. `https://vault.example.com`. Required for all methods. |
-| `namespace` | `string` | no | Optional Vault namespace. Only applicable to HCP Vault Dedicated and Enterprise deployments. |
-| `roleId` | `string` | no | The AppRole role ID. Required for the `app-role` method. |
-| `secretId` | `string` | no | The AppRole secret ID. Required for the `app-role` method. |
+| Property      | Type     | Required | Description                                                                                          |
+| ------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `accessToken` | `string` | no       | The Vault access token. Required for the `access-token` method.                                      |
+| `instanceUrl` | `string` | no       | The URL of the HashiCorp Vault instance, e.g. `https://vault.example.com`. Required for all methods. |
+| `namespace`   | `string` | no       | Optional Vault namespace. Only applicable to HCP Vault Dedicated and Enterprise deployments.         |
+| `roleId`      | `string` | no       | The AppRole role ID. Required for the `app-role` method.                                             |
+| `secretId`    | `string` | no       | The AppRole secret ID. Required for the `app-role` method.                                           |
 
 ## `AppConnectionHashicorpVaultCredentials (output)`
 
 Output object `AppConnectionHashicorpVaultCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `accessToken` | `string` | no | The Vault access token. Required for the `access-token` method. |
-| `instanceUrl` | `string` | no | The URL of the HashiCorp Vault instance, e.g. `https://vault.example.com`. Required for all methods. |
-| `namespace` | `string` | no | Optional Vault namespace. Only applicable to HCP Vault Dedicated and Enterprise deployments. |
-| `roleId` | `string` | no | The AppRole role ID. Required for the `app-role` method. |
-| `secretId` | `string` | no | The AppRole secret ID. Required for the `app-role` method. |
+| Property      | Type     | Always present | Description                                                                                          |
+| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| `accessToken` | `string` | no             | The Vault access token. Required for the `access-token` method.                                      |
+| `instanceUrl` | `string` | no             | The URL of the HashiCorp Vault instance, e.g. `https://vault.example.com`. Required for all methods. |
+| `namespace`   | `string` | no             | Optional Vault namespace. Only applicable to HCP Vault Dedicated and Enterprise deployments.         |
+| `roleId`      | `string` | no             | The AppRole role ID. Required for the `app-role` method.                                             |
+| `secretId`    | `string` | no             | The AppRole secret ID. Required for the `app-role` method.                                           |

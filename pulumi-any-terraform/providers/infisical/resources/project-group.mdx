@@ -19,43 +19,43 @@ Construct with `new infisical.ProjectGroup(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `groupId` | `string` | no | The id of the group. |
-| `groupName` | `string` | no | The name of the group. |
-| `projectId` | `string` | yes | The id of the project. |
-| `roles` | `ProjectGroupRole (input)[]` | yes | The roles assigned to the project group |
+| Property    | Type                         | Required | Description                             |
+| ----------- | ---------------------------- | -------- | --------------------------------------- |
+| `groupId`   | `string`                     | no       | The id of the group.                    |
+| `groupName` | `string`                     | no       | The name of the group.                  |
+| `projectId` | `string`                     | yes      | The id of the project.                  |
+| `roles`     | `ProjectGroupRole (input)[]` | yes      | The roles assigned to the project group |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `groupId` | `string` | no | The id of the group. |
-| `groupName` | `string` | no | The name of the group. |
-| `membershipId` | `string` | yes | The membership Id of the project group |
-| `projectId` | `string` | no | The id of the project. |
-| `roles` | `ProjectGroupRole (output)[]` | no | The roles assigned to the project group |
+| Property       | Type                          | Computed | Description                             |
+| -------------- | ----------------------------- | -------- | --------------------------------------- |
+| `groupId`      | `string`                      | no       | The id of the group.                    |
+| `groupName`    | `string`                      | no       | The name of the group.                  |
+| `membershipId` | `string`                      | yes      | The membership Id of the project group  |
+| `projectId`    | `string`                      | no       | The id of the project.                  |
+| `roles`        | `ProjectGroupRole (output)[]` | no       | The roles assigned to the project group |
 
 ## `ProjectGroupRole (input)`
 
 Input object `ProjectGroupRole`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. This is in the format YYYY-MM-DDTHH:MM:SSZ e.g. 2024-09-19T12:43:13Z |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Required | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isTemporary`              | `boolean` | no       | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes      | The slug of the role                                                                                                                                                  |
+| `temporaryAccessStartTime` | `string`  | no       | ISO time for which temporary access should begin. This is in the format YYYY-MM-DDTHH:MM:SSZ e.g. 2024-09-19T12:43:13Z                                                |
+| `temporaryRange`           | `string`  | no       | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |
 
 ## `ProjectGroupRole (output)`
 
 Output object `ProjectGroupRole`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `isTemporary` | `boolean` | no | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
-| `roleSlug` | `string` | yes | The slug of the role |
-| `temporaryAccessStartTime` | `string` | no | ISO time for which temporary access should begin. This is in the format YYYY-MM-DDTHH:MM:SSZ e.g. 2024-09-19T12:43:13Z |
-| `temporaryRange` | `string` | no | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h |
+| Property                   | Type      | Always present | Description                                                                                                                                                           |
+| -------------------------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isTemporary`              | `boolean` | no             | Flag to indicate the assigned role is temporary or not. When `isTemporary` is true fields temporary_mode,`temporaryRange` and `temporaryAccessStartTime` is required. |
+| `roleSlug`                 | `string`  | yes            | The slug of the role                                                                                                                                                  |
+| `temporaryAccessStartTime` | `string`  | no             | ISO time for which temporary access should begin. This is in the format YYYY-MM-DDTHH:MM:SSZ e.g. 2024-09-19T12:43:13Z                                                |
+| `temporaryRange`           | `string`  | no             | TTL for the temporary time. Eg: 1m, 1h, 1d. Default: 1h                                                                                                               |

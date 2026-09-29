@@ -19,42 +19,42 @@ Construct with `new infisical.OrgRole(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description for the new role. Defaults to an empty string. |
-| `name` | `string` | no | The name for the new role |
-| `permissions` | `OrgRolePermission (input)[]` | yes | The permissions assigned to the organization role. Refer to the documentation here https://infisical.com/docs/internals/permissions for its usage. |
-| `slug` | `string` | yes | The slug for the new role |
+| Property      | Type                          | Required | Description                                                                                                                                        |
+| ------------- | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description` | `string`                      | no       | The description for the new role. Defaults to an empty string.                                                                                     |
+| `name`        | `string`                      | no       | The name for the new role                                                                                                                          |
+| `permissions` | `OrgRolePermission (input)[]` | yes      | The permissions assigned to the organization role. Refer to the documentation here https://infisical.com/docs/internals/permissions for its usage. |
+| `slug`        | `string`                      | yes      | The slug for the new role                                                                                                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `description` | `string` | no | The description for the new role. Defaults to an empty string. |
-| `name` | `string` | no | The name for the new role |
-| `permissions` | `OrgRolePermission (output)[]` | no | The permissions assigned to the organization role. Refer to the documentation here https://infisical.com/docs/internals/permissions for its usage. |
-| `slug` | `string` | no | The slug for the new role |
+| Property      | Type                           | Computed | Description                                                                                                                                        |
+| ------------- | ------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description` | `string`                       | no       | The description for the new role. Defaults to an empty string.                                                                                     |
+| `name`        | `string`                       | no       | The name for the new role                                                                                                                          |
+| `permissions` | `OrgRolePermission (output)[]` | no       | The permissions assigned to the organization role. Refer to the documentation here https://infisical.com/docs/internals/permissions for its usage. |
+| `slug`        | `string`                       | no       | The slug for the new role                                                                                                                          |
 
 ## `OrgRolePermission (input)`
 
 Input object `OrgRolePermission`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | no | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Required | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes      | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no       | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | no       | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes      | Describe the entity the permission pertains to.                                                                                                                                                                                           |
 
 ## `OrgRolePermission (output)`
 
 Output object `OrgRolePermission`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `actions` | `string[]` | yes | Describe what actions an entity can take. |
-| `conditions` | `string` | no | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
-| `inverted` | `boolean` | yes | Whether rule forbids. Set this to true if permission forbids. |
-| `subject` | `string` | yes | Describe the entity the permission pertains to. |
+| Property     | Type       | Always present | Description                                                                                                                                                                                                                               |
+| ------------ | ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions`    | `string[]` | yes            | Describe what actions an entity can take.                                                                                                                                                                                                 |
+| `conditions` | `string`   | no             | When specified, only matching conditions will be allowed to access given resource. Refer to the documentation in https://infisical.com/docs/internals/permissions#conditions for the complete list of supported properties and operators. |
+| `inverted`   | `boolean`  | yes            | Whether rule forbids. Set this to true if permission forbids.                                                                                                                                                                             |
+| `subject`    | `string`   | yes            | Describe the entity the permission pertains to.                                                                                                                                                                                           |

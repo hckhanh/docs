@@ -19,21 +19,21 @@ Call `buildkite.getSignedPipelineSteps(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `jwks` | `string` | no |  |
-| `jwksFile` | `string` | no |  |
-| `jwksKeyId` | `string` | no |  |
-| `repository` | `string` | yes |  |
-| `unsignedSteps` | `string` | yes |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `jwks`          | `string` | no       |             |
+| `jwksFile`      | `string` | no       |             |
+| `jwksKeyId`     | `string` | no       |             |
+| `repository`    | `string` | yes      |             |
+| `unsignedSteps` | `string` | yes      |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `jwks` | `string` | no |  |
-| `jwksFile` | `string` | no |  |
-| `jwksKeyId` | `string` | no |  |
-| `repository` | `string` | yes |  |
-| `steps` | `string` | yes |  |
-| `unsignedSteps` | `string` | yes |  |
+| Property        | Type     | Always present | Description |
+| --------------- | -------- | -------------- | ----------- |
+| `jwks`          | `string` | no             |             |
+| `jwksFile`      | `string` | no             |             |
+| `jwksKeyId`     | `string` | no             |             |
+| `repository`    | `string` | yes            |             |
+| `steps`         | `string` | yes            |             |
+| `unsignedSteps` | `string` | yes            |             |

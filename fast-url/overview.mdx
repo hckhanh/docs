@@ -9,8 +9,9 @@ description: Learn about fast-url – a high-performance URL building library th
 **Why fast-url?**
 
 Building URLs manually is error-prone and tedious. fast-url handles parameter
-  escaping, proper URL segment joining, and clean separation of path and query
-  parameters automatically.
+escaping, proper URL segment joining, and clean separation of path and query
+parameters automatically.
+
 </Note>
 
 ## Why This Fork Was Created
@@ -54,30 +55,30 @@ The original [urlcat](https://github.com/balazsbotond/urlcat) library is a solid
 
 ## Key Features
 
-  <Card title="Lightweight">
-    Only one dependency (fast-querystring) with minimal bundle size - perfect
-    for performance-critical applications
-  </Card>
-  <Card title="Type Safe">
-    Written in TypeScript with full type definitions for better development
-    experience and compile-time safety
-  </Card>
-  <Card title="URL Safe">
-    Automatically escapes parameters and handles edge cases - no more broken
-    URLs from special characters
-  </Card>
-  <Card title="Unicode-aware">
-    Uses `codePointAt` for proper Unicode handling, including graceful encoding
-    of lone surrogates and emojis
-  </Card>
-  <Card title="Flexible">
-    Multiple ways to build URLs for different use cases - from simple
-    concatenation to complex path and query parameters
-  </Card>
-  <Card title="High Performance">
-    Optimized for speed with benchmarks showing significant improvements over
-    the original implementation
-  </Card>
+<Card title="Lightweight">
+  Only one dependency (fast-querystring) with minimal bundle size - perfect for
+  performance-critical applications
+</Card>
+<Card title="Type Safe">
+  Written in TypeScript with full type definitions for better development
+  experience and compile-time safety
+</Card>
+<Card title="URL Safe">
+  Automatically escapes parameters and handles edge cases - no more broken URLs
+  from special characters
+</Card>
+<Card title="Unicode-aware">
+  Uses `codePointAt` for proper Unicode handling, including graceful encoding of
+  lone surrogates and emojis
+</Card>
+<Card title="Flexible">
+  Multiple ways to build URLs for different use cases - from simple
+  concatenation to complex path and query parameters
+</Card>
+<Card title="High Performance">
+  Optimized for speed with benchmarks showing significant improvements over the
+  original implementation
+</Card>
 
 ## The Problem
 
@@ -85,9 +86,9 @@ Building URLs manually is error-prone and difficult to maintain:
 
 ```javascript
 // ❌ Error-prone manual approach
-const url = `${baseUrl}/users/${id}/posts?limit=${limit}&offset=${offset}`;
+const url = `${baseUrl}/users/${id}/posts?limit=${limit}&offset=${offset}`
 
-await fetch(url);
+await fetch(url)
 ```
 
 **Issues with manual URL building:**
@@ -104,11 +105,11 @@ fast-url provides a clean, safe API for URL construction:
 
 ```javascript
 // ✅ Clean and safe with fast-url
-import { createUrl } from 'fast-url';
+import { createUrl } from "fast-url"
 
-const url = createUrl(baseUrl, '/users/:id/posts', { id, limit, offset });
+const url = createUrl(baseUrl, "/users/:id/posts", { id, limit, offset })
 
-await fetch(url);
+await fetch(url)
 ```
 
 **Benefits:**
@@ -123,17 +124,31 @@ await fetch(url);
 **Performance Matters**
 
 In performance benchmarks, fast-url matches or exceeds the original urlcat
-  implementation while providing additional safety features and better Unicode
-  handling.
+implementation while providing additional safety features and better Unicode
+handling.
+
 </Check>
 
 ## Visual Example
 
 Here's a visual representation of how fast-url simplifies URL building:
 
-<div role="img" aria-label="Basic usage example showing how fast-url builds URLs">
-  <img src="/images/fast-url/urlcat-basic-usage.svg" alt="Basic usage example showing how fast-url builds URLs" className="block dark:hidden" aria-hidden="true" />
-  <img src="/images/fast-url/urlcat-basic-usage-dark.svg" alt="Basic usage example showing how fast-url builds URLs" className="hidden dark:block" aria-hidden="true" />
+<div
+  role="img"
+  aria-label="Basic usage example showing how fast-url builds URLs"
+>
+  <img
+    src="/images/fast-url/urlcat-basic-usage.svg"
+    alt="Basic usage example showing how fast-url builds URLs"
+    className="block dark:hidden"
+    aria-hidden="true"
+  />
+  <img
+    src="/images/fast-url/urlcat-basic-usage-dark.svg"
+    alt="Basic usage example showing how fast-url builds URLs"
+    className="hidden dark:block"
+    aria-hidden="true"
+  />
 </div>
 
 ## When to Use fast-url

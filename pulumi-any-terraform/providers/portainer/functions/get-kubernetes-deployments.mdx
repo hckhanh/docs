@@ -19,40 +19,40 @@ Call `portainer.getKubernetesDeployments(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes |  |
-| `fieldSelector` | `string` | no |  |
-| `id` | `string` | no |  |
-| `labelSelector` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property        | Type     | Required | Description |
+| --------------- | -------- | -------- | ----------- |
+| `environmentId` | `number` | yes      |             |
+| `fieldSelector` | `string` | no       |             |
+| `id`            | `string` | no       |             |
+| `labelSelector` | `string` | no       |             |
+| `namespace`     | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `deployments` | `GetKubernetesDeploymentsDeployment[]` | yes |  |
-| `environmentId` | `number` | yes |  |
-| `fieldSelector` | `string` | no |  |
-| `id` | `string` | yes |  |
-| `labelSelector` | `string` | no |  |
-| `namespace` | `string` | no |  |
+| Property        | Type                                   | Always present | Description |
+| --------------- | -------------------------------------- | -------------- | ----------- |
+| `deployments`   | `GetKubernetesDeploymentsDeployment[]` | yes            |             |
+| `environmentId` | `number`                               | yes            |             |
+| `fieldSelector` | `string`                               | no             |             |
+| `id`            | `string`                               | yes            |             |
+| `labelSelector` | `string`                               | no             |             |
+| `namespace`     | `string`                               | no             |             |
 
 ## `GetKubernetesDeploymentsDeployment`
 
 Output object `GetKubernetesDeploymentsDeployment`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `availableReplicas` | `number` | no |  |
-| `creationTimestamp` | `string` | no |  |
-| `generation` | `number` | no |  |
-| `images` | `string[]` | no |  |
-| `labels` | `{ [key: string]: string }` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `observedGeneration` | `number` | no |  |
-| `readyReplicas` | `number` | no |  |
-| `replicas` | `number` | no |  |
-| `unavailableReplicas` | `number` | no |  |
-| `updatedReplicas` | `number` | no |  |
+| Property              | Type                        | Always present | Description |
+| --------------------- | --------------------------- | -------------- | ----------- |
+| `availableReplicas`   | `number`                    | no             |             |
+| `creationTimestamp`   | `string`                    | no             |             |
+| `generation`          | `number`                    | no             |             |
+| `images`              | `string[]`                  | no             |             |
+| `labels`              | `{ [key: string]: string }` | no             |             |
+| `name`                | `string`                    | no             |             |
+| `namespace`           | `string`                    | no             |             |
+| `observedGeneration`  | `number`                    | no             |             |
+| `readyReplicas`       | `number`                    | no             |             |
+| `replicas`            | `number`                    | no             |             |
+| `unavailableReplicas` | `number`                    | no             |             |
+| `updatedReplicas`     | `number`                    | no             |             |

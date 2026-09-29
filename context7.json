@@ -10,12 +10,8 @@
     "vn-number",
     "what-the-fetch"
   ],
-  "excludeFolders": [
-    ".docs7"
-  ],
-  "excludeFiles": [
-    "README.md"
-  ],
+  "excludeFolders": [".docs7"],
+  "excludeFiles": ["README.md"],
   "rules": [
     "The published site is https://docs.khanh.id.",
     "Each library is its own product. Pages start at /<library>/overview.",

@@ -19,35 +19,35 @@ Construct with `new betteruptime.AzureIntegration(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `call` | `boolean` | no | Whether to call when a new incident is created. |
-| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
-| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
-| `name` | `string` | no | The name of the Azure Integration. |
-| `paused` | `boolean` | no | Is the Azure integration paused. |
-| `policyId` | `number` | no | ID of the escalation policy associated with the Azure integration. |
-| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
-| `recoveryPeriod` | `number` | no | How long the alert must be up to automatically mark an incident as resolved. In seconds. |
-| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `teamWait` | `number` | no | How long we wait before escalating the incident alert to the team. In seconds. |
+| Property         | Type      | Required | Description                                                                                                                       |
+| ---------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `call`           | `boolean` | no       | Whether to call when a new incident is created.                                                                                   |
+| `criticalAlert`  | `boolean` | no       | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
+| `email`          | `boolean` | no       | Whether to send an email when a new incident is created.                                                                          |
+| `name`           | `string`  | no       | The name of the Azure Integration.                                                                                                |
+| `paused`         | `boolean` | no       | Is the Azure integration paused.                                                                                                  |
+| `policyId`       | `number`  | no       | ID of the escalation policy associated with the Azure integration.                                                                |
+| `push`           | `boolean` | no       | Whether to send a push notification when a new incident is created.                                                               |
+| `recoveryPeriod` | `number`  | no       | How long the alert must be up to automatically mark an incident as resolved. In seconds.                                          |
+| `sms`            | `boolean` | no       | Whether to send an SMS when a new incident is created.                                                                            |
+| `teamName`       | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.           |
+| `teamWait`       | `number`  | no       | How long we wait before escalating the incident alert to the team. In seconds.                                                    |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `call` | `boolean` | no | Whether to call when a new incident is created. |
-| `criticalAlert` | `boolean` | no | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
-| `email` | `boolean` | no | Whether to send an email when a new incident is created. |
-| `name` | `string` | no | The name of the Azure Integration. |
-| `paused` | `boolean` | no | Is the Azure integration paused. |
-| `policyId` | `number` | no | ID of the escalation policy associated with the Azure integration. |
-| `push` | `boolean` | no | Whether to send a push notification when a new incident is created. |
-| `recoveryPeriod` | `number` | no | How long the alert must be up to automatically mark an incident as resolved. In seconds. |
-| `sms` | `boolean` | no | Whether to send an SMS when a new incident is created. |
-| `teamName` | `string` | no | Used to specify the team the resource should be created in when using global tokens. You can't update this value later. |
-| `teamWait` | `number` | no | How long we wait before escalating the incident alert to the team. In seconds. |
-| `webhookUrl` | `string` | yes | The webhook URL for the Azure integration. |
+| Property         | Type      | Computed | Description                                                                                                                       |
+| ---------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `call`           | `boolean` | no       | Whether to call when a new incident is created.                                                                                   |
+| `criticalAlert`  | `boolean` | no       | Whether to send a critical push notification that ignores the mute switch and Do not Disturb mode when a new incident is created. |
+| `email`          | `boolean` | no       | Whether to send an email when a new incident is created.                                                                          |
+| `name`           | `string`  | no       | The name of the Azure Integration.                                                                                                |
+| `paused`         | `boolean` | no       | Is the Azure integration paused.                                                                                                  |
+| `policyId`       | `number`  | no       | ID of the escalation policy associated with the Azure integration.                                                                |
+| `push`           | `boolean` | no       | Whether to send a push notification when a new incident is created.                                                               |
+| `recoveryPeriod` | `number`  | no       | How long the alert must be up to automatically mark an incident as resolved. In seconds.                                          |
+| `sms`            | `boolean` | no       | Whether to send an SMS when a new incident is created.                                                                            |
+| `teamName`       | `string`  | no       | Used to specify the team the resource should be created in when using global tokens. You can't update this value later.           |
+| `teamWait`       | `number`  | no       | How long we wait before escalating the incident alert to the team. In seconds.                                                    |
+| `webhookUrl`     | `string`  | yes      | The webhook URL for the Azure integration.                                                                                        |

@@ -19,78 +19,78 @@ Construct with `new teamcity.Vcsroot(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `git` | `VcsrootGit (input)` | yes |  |
-| `name` | `string` | no |  |
-| `pollingInterval` | `number` | no |  |
-| `projectId` | `string` | yes |  |
-| `vcsrootId` | `string` | no |  |
+| Property          | Type                 | Required | Description |
+| ----------------- | -------------------- | -------- | ----------- |
+| `git`             | `VcsrootGit (input)` | yes      |             |
+| `name`            | `string`             | no       |             |
+| `pollingInterval` | `number`             | no       |             |
+| `projectId`       | `string`             | yes      |             |
+| `vcsrootId`       | `string`             | no       |             |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `git` | `VcsrootGit (output)` | no |  |
-| `name` | `string` | no |  |
-| `pollingInterval` | `number` | no |  |
-| `projectId` | `string` | no |  |
-| `vcsrootId` | `string` | no |  |
+| Property          | Type                  | Computed | Description |
+| ----------------- | --------------------- | -------- | ----------- |
+| `git`             | `VcsrootGit (output)` | no       |             |
+| `name`            | `string`              | no       |             |
+| `pollingInterval` | `number`              | no       |             |
+| `projectId`       | `string`              | no       |             |
+| `vcsrootId`       | `string`              | no       |             |
 
 ## `VcsrootGit (input)`
 
 Input object `VcsrootGit`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `authMethod` | `string` | no |  |
-| `branch` | `string` | yes |  |
-| `branchSpec` | `string` | no |  |
-| `checkoutPolicy` | `string` | no |  |
-| `cleanFilesPolicy` | `string` | no |  |
-| `cleanPolicy` | `string` | no |  |
-| `convertCrlf` | `boolean` | no |  |
-| `ignoreKnownHosts` | `boolean` | no |  |
-| `passphrase` | `string` | no |  |
-| `password` | `string` | no |  |
-| `pathToGit` | `string` | no |  |
-| `privateKeyPath` | `string` | no |  |
-| `pushUrl` | `string` | no |  |
-| `submodules` | `string` | no |  |
-| `tagsAsBranches` | `boolean` | no |  |
-| `tokenId` | `string` | no |  |
-| `uploadedKey` | `string` | no |  |
-| `url` | `string` | yes |  |
-| `username` | `string` | no |  |
-| `usernameForTags` | `string` | no |  |
-| `usernameStyle` | `string` | no |  |
+| Property           | Type      | Required | Description |
+| ------------------ | --------- | -------- | ----------- |
+| `authMethod`       | `string`  | no       |             |
+| `branch`           | `string`  | yes      |             |
+| `branchSpec`       | `string`  | no       |             |
+| `checkoutPolicy`   | `string`  | no       |             |
+| `cleanFilesPolicy` | `string`  | no       |             |
+| `cleanPolicy`      | `string`  | no       |             |
+| `convertCrlf`      | `boolean` | no       |             |
+| `ignoreKnownHosts` | `boolean` | no       |             |
+| `passphrase`       | `string`  | no       |             |
+| `password`         | `string`  | no       |             |
+| `pathToGit`        | `string`  | no       |             |
+| `privateKeyPath`   | `string`  | no       |             |
+| `pushUrl`          | `string`  | no       |             |
+| `submodules`       | `string`  | no       |             |
+| `tagsAsBranches`   | `boolean` | no       |             |
+| `tokenId`          | `string`  | no       |             |
+| `uploadedKey`      | `string`  | no       |             |
+| `url`              | `string`  | yes      |             |
+| `username`         | `string`  | no       |             |
+| `usernameForTags`  | `string`  | no       |             |
+| `usernameStyle`    | `string`  | no       |             |
 
 ## `VcsrootGit (output)`
 
 Output object `VcsrootGit`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `authMethod` | `string` | no |  |
-| `branch` | `string` | yes |  |
-| `branchSpec` | `string` | no |  |
-| `checkoutPolicy` | `string` | yes |  |
-| `cleanFilesPolicy` | `string` | yes |  |
-| `cleanPolicy` | `string` | yes |  |
-| `convertCrlf` | `boolean` | no |  |
-| `ignoreKnownHosts` | `boolean` | yes |  |
-| `passphrase` | `string` | no |  |
-| `password` | `string` | no |  |
-| `pathToGit` | `string` | no |  |
-| `privateKeyPath` | `string` | no |  |
-| `pushUrl` | `string` | no |  |
-| `submodules` | `string` | yes |  |
-| `tagsAsBranches` | `boolean` | no |  |
-| `tokenId` | `string` | no |  |
-| `uploadedKey` | `string` | no |  |
-| `url` | `string` | yes |  |
-| `username` | `string` | no |  |
-| `usernameForTags` | `string` | no |  |
-| `usernameStyle` | `string` | yes |  |
+| Property           | Type      | Always present | Description |
+| ------------------ | --------- | -------------- | ----------- |
+| `authMethod`       | `string`  | no             |             |
+| `branch`           | `string`  | yes            |             |
+| `branchSpec`       | `string`  | no             |             |
+| `checkoutPolicy`   | `string`  | yes            |             |
+| `cleanFilesPolicy` | `string`  | yes            |             |
+| `cleanPolicy`      | `string`  | yes            |             |
+| `convertCrlf`      | `boolean` | no             |             |
+| `ignoreKnownHosts` | `boolean` | yes            |             |
+| `passphrase`       | `string`  | no             |             |
+| `password`         | `string`  | no             |             |
+| `pathToGit`        | `string`  | no             |             |
+| `privateKeyPath`   | `string`  | no             |             |
+| `pushUrl`          | `string`  | no             |             |
+| `submodules`       | `string`  | yes            |             |
+| `tagsAsBranches`   | `boolean` | no             |             |
+| `tokenId`          | `string`  | no             |             |
+| `uploadedKey`      | `string`  | no             |             |
+| `url`              | `string`  | yes            |             |
+| `username`         | `string`  | no             |             |
+| `usernameForTags`  | `string`  | no             |             |
+| `usernameStyle`    | `string`  | yes            |             |

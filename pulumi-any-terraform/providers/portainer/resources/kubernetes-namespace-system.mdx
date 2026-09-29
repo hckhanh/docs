@@ -19,20 +19,20 @@ Construct with `new portainer.KubernetesNamespaceSystem(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment owning the namespace. |
-| `kubernetesNamespaceSystemId` | `string` | no |  |
-| `namespace` | `string` | yes | Name of the Kubernetes namespace whose system flag is being toggled. |
-| `system` | `boolean` | yes | Whether the namespace should be marked as a Portainer system namespace. |
+| Property                      | Type      | Required | Description                                                              |
+| ----------------------------- | --------- | -------- | ------------------------------------------------------------------------ |
+| `environmentId`               | `number`  | yes      | Identifier of the Portainer Kubernetes environment owning the namespace. |
+| `kubernetesNamespaceSystemId` | `string`  | no       |                                                                          |
+| `namespace`                   | `string`  | yes      | Name of the Kubernetes namespace whose system flag is being toggled.     |
+| `system`                      | `boolean` | yes      | Whether the namespace should be marked as a Portainer system namespace.  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment owning the namespace. |
-| `kubernetesNamespaceSystemId` | `string` | no |  |
-| `namespace` | `string` | no | Name of the Kubernetes namespace whose system flag is being toggled. |
-| `system` | `boolean` | no | Whether the namespace should be marked as a Portainer system namespace. |
+| Property                      | Type      | Computed | Description                                                              |
+| ----------------------------- | --------- | -------- | ------------------------------------------------------------------------ |
+| `environmentId`               | `number`  | no       | Identifier of the Portainer Kubernetes environment owning the namespace. |
+| `kubernetesNamespaceSystemId` | `string`  | no       |                                                                          |
+| `namespace`                   | `string`  | no       | Name of the Kubernetes namespace whose system flag is being toggled.     |
+| `system`                      | `boolean` | no       | Whether the namespace should be marked as a Portainer system namespace.  |

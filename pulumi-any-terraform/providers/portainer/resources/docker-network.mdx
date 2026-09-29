@@ -19,71 +19,71 @@ Construct with `new portainer.DockerNetwork(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `attachable` | `boolean` | no | Whether standalone containers may attach to this Swarm overlay network. |
-| `configFrom` | `string` | no | Name of a config-only network from which to copy configuration. |
-| `configOnly` | `boolean` | no | Whether this is a config-only network that contains only configuration for other networks. |
-| `dockerNetworkId` | `string` | no |  |
-| `driver` | `string` | no | Driver used by the Docker network (e.g., bridge, overlay, macvlan, host, null). |
-| `enableIpv4` | `boolean` | no | Whether IPv4 is enabled on the Docker network. |
-| `enableIpv6` | `boolean` | no | Whether IPv6 is enabled on the Docker network. |
-| `endpointId` | `number` | yes | ID of the Portainer environment (Docker host or Swarm) where the network is created. |
-| `ingress` | `boolean` | no | Whether the network is a Swarm ingress network used for the routing mesh. |
-| `internal` | `boolean` | no | Whether the network is restricted to internal use only (no external connectivity). |
-| `ipamConfigs` | `DockerNetworkIpamConfig (input)[]` | no | List of IPAM configuration blocks defining subnets, gateways, and IP ranges. |
-| `ipamDriver` | `string` | no | IPAM driver used to allocate IP addresses for the Docker network. |
-| `ipamOptions` | `{ [key: string]: string }` | no | Driver-specific options passed to the IPAM driver. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker network. |
-| `name` | `string` | no | Name of the Docker network. |
-| `options` | `{ [key: string]: string }` | no | Driver-specific options passed to the Docker network driver. |
-| `scope` | `string` | no | Scope of the Docker network (local, global, or swarm). |
-| `swarmNodeId` | `string` | no | Swarm node ID where the network operation is targeted, when applicable. |
+| Property          | Type                                | Required | Description                                                                                |
+| ----------------- | ----------------------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| `attachable`      | `boolean`                           | no       | Whether standalone containers may attach to this Swarm overlay network.                    |
+| `configFrom`      | `string`                            | no       | Name of a config-only network from which to copy configuration.                            |
+| `configOnly`      | `boolean`                           | no       | Whether this is a config-only network that contains only configuration for other networks. |
+| `dockerNetworkId` | `string`                            | no       |                                                                                            |
+| `driver`          | `string`                            | no       | Driver used by the Docker network (e.g., bridge, overlay, macvlan, host, null).            |
+| `enableIpv4`      | `boolean`                           | no       | Whether IPv4 is enabled on the Docker network.                                             |
+| `enableIpv6`      | `boolean`                           | no       | Whether IPv6 is enabled on the Docker network.                                             |
+| `endpointId`      | `number`                            | yes      | ID of the Portainer environment (Docker host or Swarm) where the network is created.       |
+| `ingress`         | `boolean`                           | no       | Whether the network is a Swarm ingress network used for the routing mesh.                  |
+| `internal`        | `boolean`                           | no       | Whether the network is restricted to internal use only (no external connectivity).         |
+| `ipamConfigs`     | `DockerNetworkIpamConfig (input)[]` | no       | List of IPAM configuration blocks defining subnets, gateways, and IP ranges.               |
+| `ipamDriver`      | `string`                            | no       | IPAM driver used to allocate IP addresses for the Docker network.                          |
+| `ipamOptions`     | `{ [key: string]: string }`         | no       | Driver-specific options passed to the IPAM driver.                                         |
+| `labels`          | `{ [key: string]: string }`         | no       | Key/value labels attached to the Docker network.                                           |
+| `name`            | `string`                            | no       | Name of the Docker network.                                                                |
+| `options`         | `{ [key: string]: string }`         | no       | Driver-specific options passed to the Docker network driver.                               |
+| `scope`           | `string`                            | no       | Scope of the Docker network (local, global, or swarm).                                     |
+| `swarmNodeId`     | `string`                            | no       | Swarm node ID where the network operation is targeted, when applicable.                    |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `attachable` | `boolean` | no | Whether standalone containers may attach to this Swarm overlay network. |
-| `configFrom` | `string` | no | Name of a config-only network from which to copy configuration. |
-| `configOnly` | `boolean` | no | Whether this is a config-only network that contains only configuration for other networks. |
-| `dockerNetworkId` | `string` | no |  |
-| `driver` | `string` | no | Driver used by the Docker network (e.g., bridge, overlay, macvlan, host, null). |
-| `enableIpv4` | `boolean` | no | Whether IPv4 is enabled on the Docker network. |
-| `enableIpv6` | `boolean` | no | Whether IPv6 is enabled on the Docker network. |
-| `endpointId` | `number` | no | ID of the Portainer environment (Docker host or Swarm) where the network is created. |
-| `ingress` | `boolean` | no | Whether the network is a Swarm ingress network used for the routing mesh. |
-| `internal` | `boolean` | no | Whether the network is restricted to internal use only (no external connectivity). |
-| `ipamConfigs` | `DockerNetworkIpamConfig (output)[]` | no | List of IPAM configuration blocks defining subnets, gateways, and IP ranges. |
-| `ipamDriver` | `string` | no | IPAM driver used to allocate IP addresses for the Docker network. |
-| `ipamOptions` | `{ [key: string]: string }` | no | Driver-specific options passed to the IPAM driver. |
-| `labels` | `{ [key: string]: string }` | no | Key/value labels attached to the Docker network. |
-| `name` | `string` | no | Name of the Docker network. |
-| `options` | `{ [key: string]: string }` | no | Driver-specific options passed to the Docker network driver. |
-| `resourceControlId` | `number` | yes | ID of the Portainer resource control associated with this Docker network. |
-| `scope` | `string` | no | Scope of the Docker network (local, global, or swarm). |
-| `swarmNodeId` | `string` | no | Swarm node ID where the network operation is targeted, when applicable. |
+| Property            | Type                                 | Computed | Description                                                                                |
+| ------------------- | ------------------------------------ | -------- | ------------------------------------------------------------------------------------------ |
+| `attachable`        | `boolean`                            | no       | Whether standalone containers may attach to this Swarm overlay network.                    |
+| `configFrom`        | `string`                             | no       | Name of a config-only network from which to copy configuration.                            |
+| `configOnly`        | `boolean`                            | no       | Whether this is a config-only network that contains only configuration for other networks. |
+| `dockerNetworkId`   | `string`                             | no       |                                                                                            |
+| `driver`            | `string`                             | no       | Driver used by the Docker network (e.g., bridge, overlay, macvlan, host, null).            |
+| `enableIpv4`        | `boolean`                            | no       | Whether IPv4 is enabled on the Docker network.                                             |
+| `enableIpv6`        | `boolean`                            | no       | Whether IPv6 is enabled on the Docker network.                                             |
+| `endpointId`        | `number`                             | no       | ID of the Portainer environment (Docker host or Swarm) where the network is created.       |
+| `ingress`           | `boolean`                            | no       | Whether the network is a Swarm ingress network used for the routing mesh.                  |
+| `internal`          | `boolean`                            | no       | Whether the network is restricted to internal use only (no external connectivity).         |
+| `ipamConfigs`       | `DockerNetworkIpamConfig (output)[]` | no       | List of IPAM configuration blocks defining subnets, gateways, and IP ranges.               |
+| `ipamDriver`        | `string`                             | no       | IPAM driver used to allocate IP addresses for the Docker network.                          |
+| `ipamOptions`       | `{ [key: string]: string }`          | no       | Driver-specific options passed to the IPAM driver.                                         |
+| `labels`            | `{ [key: string]: string }`          | no       | Key/value labels attached to the Docker network.                                           |
+| `name`              | `string`                             | no       | Name of the Docker network.                                                                |
+| `options`           | `{ [key: string]: string }`          | no       | Driver-specific options passed to the Docker network driver.                               |
+| `resourceControlId` | `number`                             | yes      | ID of the Portainer resource control associated with this Docker network.                  |
+| `scope`             | `string`                             | no       | Scope of the Docker network (local, global, or swarm).                                     |
+| `swarmNodeId`       | `string`                             | no       | Swarm node ID where the network operation is targeted, when applicable.                    |
 
 ## `DockerNetworkIpamConfig (input)`
 
 Input object `DockerNetworkIpamConfig`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `auxiliaryAddresses` | `{ [key: string]: string }` | no | Auxiliary IPv4 or IPv6 addresses used by the network driver, keyed by name. |
-| `gateway` | `string` | no | Gateway IPv4 or IPv6 address for the subnet. |
-| `ipRange` | `string` | no | Sub-range of IP addresses within the subnet from which to allocate container IPs. |
-| `subnet` | `string` | yes | Subnet in CIDR notation for the IPAM pool. |
+| Property             | Type                        | Required | Description                                                                       |
+| -------------------- | --------------------------- | -------- | --------------------------------------------------------------------------------- |
+| `auxiliaryAddresses` | `{ [key: string]: string }` | no       | Auxiliary IPv4 or IPv6 addresses used by the network driver, keyed by name.       |
+| `gateway`            | `string`                    | no       | Gateway IPv4 or IPv6 address for the subnet.                                      |
+| `ipRange`            | `string`                    | no       | Sub-range of IP addresses within the subnet from which to allocate container IPs. |
+| `subnet`             | `string`                    | yes      | Subnet in CIDR notation for the IPAM pool.                                        |
 
 ## `DockerNetworkIpamConfig (output)`
 
 Output object `DockerNetworkIpamConfig`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `auxiliaryAddresses` | `{ [key: string]: string }` | no | Auxiliary IPv4 or IPv6 addresses used by the network driver, keyed by name. |
-| `gateway` | `string` | no | Gateway IPv4 or IPv6 address for the subnet. |
-| `ipRange` | `string` | no | Sub-range of IP addresses within the subnet from which to allocate container IPs. |
-| `subnet` | `string` | yes | Subnet in CIDR notation for the IPAM pool. |
+| Property             | Type                        | Always present | Description                                                                       |
+| -------------------- | --------------------------- | -------------- | --------------------------------------------------------------------------------- |
+| `auxiliaryAddresses` | `{ [key: string]: string }` | no             | Auxiliary IPv4 or IPv6 addresses used by the network driver, keyed by name.       |
+| `gateway`            | `string`                    | no             | Gateway IPv4 or IPv6 address for the subnet.                                      |
+| `ipRange`            | `string`                    | no             | Sub-range of IP addresses within the subnet from which to allocate container IPs. |
+| `subnet`             | `string`                    | yes            | Subnet in CIDR notation for the IPAM pool.                                        |

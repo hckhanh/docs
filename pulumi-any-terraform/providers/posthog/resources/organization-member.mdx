@@ -19,25 +19,25 @@ Construct with `new posthog.OrganizationMember(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `level` | `string` | no | The access level for the member. Valid values are 'member', 'admin', or 'owner'. Defaults to 'member'. |
-| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
-| `retainOnDestroy` | `boolean` | no | If true, the user will remain in the organization when this resource is destroyed. Defaults to false. |
-| `userUuid` | `string` | yes | The UUID of the user. Use the `posthog.getUser` data source to look up users by email. |
+| Property          | Type      | Required | Description                                                                                                                                                                                                                                                                                                     |
+| ----------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `level`           | `string`  | no       | The access level for the member. Valid values are 'member', 'admin', or 'owner'. Defaults to 'member'.                                                                                                                                                                                                          |
+| `organizationId`  | `string`  | no       | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+| `retainOnDestroy` | `boolean` | no       | If true, the user will remain in the organization when this resource is destroyed. Defaults to false.                                                                                                                                                                                                           |
+| `userUuid`        | `string`  | yes      | The UUID of the user. Use the `posthog.getUser` data source to look up users by email.                                                                                                                                                                                                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `email` | `string` | yes | The email address of the user. |
-| `firstName` | `string` | yes | The first name of the user. |
-| `is2faEnabled` | `boolean` | yes | Whether two-factor authentication is enabled for the user. |
-| `joinedAt` | `string` | yes | Timestamp when the user joined the organization. |
-| `lastName` | `string` | yes | The last name of the user. |
-| `level` | `string` | no | The access level for the member. Valid values are 'member', 'admin', or 'owner'. Defaults to 'member'. |
-| `organizationId` | `string` | no | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
-| `retainOnDestroy` | `boolean` | no | If true, the user will remain in the organization when this resource is destroyed. Defaults to false. |
-| `userUuid` | `string` | no | The UUID of the user. Use the `posthog.getUser` data source to look up users by email. |
+| Property          | Type      | Computed | Description                                                                                                                                                                                                                                                                                                     |
+| ----------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`           | `string`  | yes      | The email address of the user.                                                                                                                                                                                                                                                                                  |
+| `firstName`       | `string`  | yes      | The first name of the user.                                                                                                                                                                                                                                                                                     |
+| `is2faEnabled`    | `boolean` | yes      | Whether two-factor authentication is enabled for the user.                                                                                                                                                                                                                                                      |
+| `joinedAt`        | `string`  | yes      | Timestamp when the user joined the organization.                                                                                                                                                                                                                                                                |
+| `lastName`        | `string`  | yes      | The last name of the user.                                                                                                                                                                                                                                                                                      |
+| `level`           | `string`  | no       | The access level for the member. Valid values are 'member', 'admin', or 'owner'. Defaults to 'member'.                                                                                                                                                                                                          |
+| `organizationId`  | `string`  | no       | Organization for this resource. Overrides the provider-level organization_id. Accepts an organization UUID, an organization slug, or the literal `@current` (the authenticated user's organization); slugs and `@current` are resolved to a UUID for API calls while your original value is preserved in state. |
+| `retainOnDestroy` | `boolean` | no       | If true, the user will remain in the organization when this resource is destroyed. Defaults to false.                                                                                                                                                                                                           |
+| `userUuid`        | `string`  | no       | The UUID of the user. Use the `posthog.getUser` data source to look up users by email.                                                                                                                                                                                                                          |

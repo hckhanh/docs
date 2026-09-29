@@ -19,129 +19,129 @@ Construct with `new portainer.GitopsWorkflow(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `artifacts` | `GitopsWorkflowArtifact (input)[]` | yes | The artifacts the workflow deploys. Repeatable. |
-| `gitopsWorkflowId` | `string` | no |  |
-| `name` | `string` | no | Name of the workflow. |
-| `onDestroy` | `string` | no | What happens to the deployed artifacts when the workflow is destroyed: `destroy` tears them down, `detach` leaves them running and only unlinks them from GitOps. Defaults to `destroy`. |
+| Property           | Type                               | Required | Description                                                                                                                                                                              |
+| ------------------ | ---------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `artifacts`        | `GitopsWorkflowArtifact (input)[]` | yes      | The artifacts the workflow deploys. Repeatable.                                                                                                                                          |
+| `gitopsWorkflowId` | `string`                           | no       |                                                                                                                                                                                          |
+| `name`             | `string`                           | no       | Name of the workflow.                                                                                                                                                                    |
+| `onDestroy`        | `string`                           | no       | What happens to the deployed artifacts when the workflow is destroyed: `destroy` tears them down, `detach` leaves them running and only unlinks them from GitOps. Defaults to `destroy`. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `artifacts` | `GitopsWorkflowArtifact (output)[]` | no | The artifacts the workflow deploys. Repeatable. |
-| `gitopsWorkflowId` | `string` | no |  |
-| `name` | `string` | no | Name of the workflow. |
-| `onDestroy` | `string` | no | What happens to the deployed artifacts when the workflow is destroyed: `destroy` tears them down, `detach` leaves them running and only unlinks them from GitOps. Defaults to `destroy`. |
-| `workflowId` | `number` | yes | Identifier of the workflow. |
+| Property           | Type                                | Computed | Description                                                                                                                                                                              |
+| ------------------ | ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `artifacts`        | `GitopsWorkflowArtifact (output)[]` | no       | The artifacts the workflow deploys. Repeatable.                                                                                                                                          |
+| `gitopsWorkflowId` | `string`                            | no       |                                                                                                                                                                                          |
+| `name`             | `string`                            | no       | Name of the workflow.                                                                                                                                                                    |
+| `onDestroy`        | `string`                            | no       | What happens to the deployed artifacts when the workflow is destroyed: `destroy` tears them down, `detach` leaves them running and only unlinks them from GitOps. Defaults to `destroy`. |
+| `workflowId`       | `number`                            | yes      | Identifier of the workflow.                                                                                                                                                              |
 
 ## `GitopsWorkflowArtifact (input)`
 
 Input object `GitopsWorkflowArtifact`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `artifactId` | `number` | no | Identifier Portainer assigned to the artifact, which the update call needs. |
-| `config` | `GitopsWorkflowArtifactConfig (input)` | no | Deployment options for the artifact. |
-| `deploymentType` | `string` | yes | Deployment type of the artifact, for example `compose` or `kubernetes`. |
-| `edgeGroupIds` | `number[]` | yes | Edge groups the artifact is deployed to. |
-| `files` | `GitopsWorkflowArtifactFile (input)[]` | yes | Files in a GitOps source the artifact is built from. Repeatable. |
-| `name` | `string` | yes | Name of the artifact. Portainer cannot rename an artifact, so changing it forces a new resource. |
-| `type` | `string` | no | What the artifact deploys as: `stack` or `edgeStack`. Defaults to `edgeStack`. |
+| Property         | Type                                   | Required | Description                                                                                      |
+| ---------------- | -------------------------------------- | -------- | ------------------------------------------------------------------------------------------------ |
+| `artifactId`     | `number`                               | no       | Identifier Portainer assigned to the artifact, which the update call needs.                      |
+| `config`         | `GitopsWorkflowArtifactConfig (input)` | no       | Deployment options for the artifact.                                                             |
+| `deploymentType` | `string`                               | yes      | Deployment type of the artifact, for example `compose` or `kubernetes`.                          |
+| `edgeGroupIds`   | `number[]`                             | yes      | Edge groups the artifact is deployed to.                                                         |
+| `files`          | `GitopsWorkflowArtifactFile (input)[]` | yes      | Files in a GitOps source the artifact is built from. Repeatable.                                 |
+| `name`           | `string`                               | yes      | Name of the artifact. Portainer cannot rename an artifact, so changing it forces a new resource. |
+| `type`           | `string`                               | no       | What the artifact deploys as: `stack` or `edgeStack`. Defaults to `edgeStack`.                   |
 
 ## `GitopsWorkflowArtifactConfig (input)`
 
 Input object `GitopsWorkflowArtifactConfig`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alwaysCloneGitRepo` | `boolean` | no | Whether the agent always clones the git repository for relative paths. |
-| `environment` | `{ [key: string]: string }` | no | Environment variables injected into the deployment. |
-| `localFilesystemPath` | `string` | no | Path on the agent used for relative path volumes. |
-| `parallel` | `GitopsWorkflowArtifactConfigParallel (input)` | no | Staggered rollout settings. |
-| `perDeviceConfigsGroupMatchType` | `string` | no | How per-device group configurations are matched: `file` or `dir`. |
-| `perDeviceConfigsMatchType` | `string` | no | How per-device configurations are matched: `file` or `dir`. |
-| `perDeviceConfigsPath` | `string` | no | Path within the repository holding per-device configurations. |
-| `prePullImage` | `boolean` | no | Whether agents pull the images before deploying. |
-| `registryIds` | `number[]` | no | Registries the deployment pulls images from. |
-| `retryPeriod` | `number` | no | How long an agent keeps retrying a failed deployment, in seconds. |
-| `useManifestNamespaces` | `boolean` | no | Whether to use the namespaces in the manifest rather than the default one. |
+| Property                         | Type                                           | Required | Description                                                                |
+| -------------------------------- | ---------------------------------------------- | -------- | -------------------------------------------------------------------------- |
+| `alwaysCloneGitRepo`             | `boolean`                                      | no       | Whether the agent always clones the git repository for relative paths.     |
+| `environment`                    | `{ [key: string]: string }`                    | no       | Environment variables injected into the deployment.                        |
+| `localFilesystemPath`            | `string`                                       | no       | Path on the agent used for relative path volumes.                          |
+| `parallel`                       | `GitopsWorkflowArtifactConfigParallel (input)` | no       | Staggered rollout settings.                                                |
+| `perDeviceConfigsGroupMatchType` | `string`                                       | no       | How per-device group configurations are matched: `file` or `dir`.          |
+| `perDeviceConfigsMatchType`      | `string`                                       | no       | How per-device configurations are matched: `file` or `dir`.                |
+| `perDeviceConfigsPath`           | `string`                                       | no       | Path within the repository holding per-device configurations.              |
+| `prePullImage`                   | `boolean`                                      | no       | Whether agents pull the images before deploying.                           |
+| `registryIds`                    | `number[]`                                     | no       | Registries the deployment pulls images from.                               |
+| `retryPeriod`                    | `number`                                       | no       | How long an agent keeps retrying a failed deployment, in seconds.          |
+| `useManifestNamespaces`          | `boolean`                                      | no       | Whether to use the namespaces in the manifest rather than the default one. |
 
 ## `GitopsWorkflowArtifactConfigParallel (input)`
 
 Input object `GitopsWorkflowArtifactConfigParallel`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `batchCount` | `number` | no | Devices updated at once. A value above zero turns parallel deployment on. |
-| `batchIncrementBy` | `number` | no | How much the batch grows each round, for an incremental rollout. |
-| `delay` | `string` | no | Pause between batches. |
-| `failureAction` | `string` | no | What happens when a batch fails. |
-| `timeout` | `string` | no | How long a batch may take before it is given up on. |
+| Property           | Type     | Required | Description                                                               |
+| ------------------ | -------- | -------- | ------------------------------------------------------------------------- |
+| `batchCount`       | `number` | no       | Devices updated at once. A value above zero turns parallel deployment on. |
+| `batchIncrementBy` | `number` | no       | How much the batch grows each round, for an incremental rollout.          |
+| `delay`            | `string` | no       | Pause between batches.                                                    |
+| `failureAction`    | `string` | no       | What happens when a batch fails.                                          |
+| `timeout`          | `string` | no       | How long a batch may take before it is given up on.                       |
 
 ## `GitopsWorkflowArtifactFile (input)`
 
 Input object `GitopsWorkflowArtifactFile`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `path` | `string` | yes | Path of the file within the source, for example `portainer.yaml`. |
-| `ref` | `string` | yes | Git reference to read the file at, for example `refs/heads/main`. |
-| `sourceId` | `number` | yes | Identifier of the GitOps source the file comes from. |
+| Property   | Type     | Required | Description                                                       |
+| ---------- | -------- | -------- | ----------------------------------------------------------------- |
+| `path`     | `string` | yes      | Path of the file within the source, for example `portainer.yaml`. |
+| `ref`      | `string` | yes      | Git reference to read the file at, for example `refs/heads/main`. |
+| `sourceId` | `number` | yes      | Identifier of the GitOps source the file comes from.              |
 
 ## `GitopsWorkflowArtifact (output)`
 
 Output object `GitopsWorkflowArtifact`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `artifactId` | `number` | yes | Identifier Portainer assigned to the artifact, which the update call needs. |
-| `config` | `GitopsWorkflowArtifactConfig (output)` | no | Deployment options for the artifact. |
-| `deploymentType` | `string` | yes | Deployment type of the artifact, for example `compose` or `kubernetes`. |
-| `edgeGroupIds` | `number[]` | yes | Edge groups the artifact is deployed to. |
-| `files` | `GitopsWorkflowArtifactFile (output)[]` | yes | Files in a GitOps source the artifact is built from. Repeatable. |
-| `name` | `string` | yes | Name of the artifact. Portainer cannot rename an artifact, so changing it forces a new resource. |
-| `type` | `string` | no | What the artifact deploys as: `stack` or `edgeStack`. Defaults to `edgeStack`. |
+| Property         | Type                                    | Always present | Description                                                                                      |
+| ---------------- | --------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------ |
+| `artifactId`     | `number`                                | yes            | Identifier Portainer assigned to the artifact, which the update call needs.                      |
+| `config`         | `GitopsWorkflowArtifactConfig (output)` | no             | Deployment options for the artifact.                                                             |
+| `deploymentType` | `string`                                | yes            | Deployment type of the artifact, for example `compose` or `kubernetes`.                          |
+| `edgeGroupIds`   | `number[]`                              | yes            | Edge groups the artifact is deployed to.                                                         |
+| `files`          | `GitopsWorkflowArtifactFile (output)[]` | yes            | Files in a GitOps source the artifact is built from. Repeatable.                                 |
+| `name`           | `string`                                | yes            | Name of the artifact. Portainer cannot rename an artifact, so changing it forces a new resource. |
+| `type`           | `string`                                | no             | What the artifact deploys as: `stack` or `edgeStack`. Defaults to `edgeStack`.                   |
 
 ## `GitopsWorkflowArtifactConfig (output)`
 
 Output object `GitopsWorkflowArtifactConfig`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `alwaysCloneGitRepo` | `boolean` | no | Whether the agent always clones the git repository for relative paths. |
-| `environment` | `{ [key: string]: string }` | no | Environment variables injected into the deployment. |
-| `localFilesystemPath` | `string` | no | Path on the agent used for relative path volumes. |
-| `parallel` | `GitopsWorkflowArtifactConfigParallel (output)` | no | Staggered rollout settings. |
-| `perDeviceConfigsGroupMatchType` | `string` | no | How per-device group configurations are matched: `file` or `dir`. |
-| `perDeviceConfigsMatchType` | `string` | no | How per-device configurations are matched: `file` or `dir`. |
-| `perDeviceConfigsPath` | `string` | no | Path within the repository holding per-device configurations. |
-| `prePullImage` | `boolean` | no | Whether agents pull the images before deploying. |
-| `registryIds` | `number[]` | no | Registries the deployment pulls images from. |
-| `retryPeriod` | `number` | no | How long an agent keeps retrying a failed deployment, in seconds. |
-| `useManifestNamespaces` | `boolean` | no | Whether to use the namespaces in the manifest rather than the default one. |
+| Property                         | Type                                            | Always present | Description                                                                |
+| -------------------------------- | ----------------------------------------------- | -------------- | -------------------------------------------------------------------------- |
+| `alwaysCloneGitRepo`             | `boolean`                                       | no             | Whether the agent always clones the git repository for relative paths.     |
+| `environment`                    | `{ [key: string]: string }`                     | no             | Environment variables injected into the deployment.                        |
+| `localFilesystemPath`            | `string`                                        | no             | Path on the agent used for relative path volumes.                          |
+| `parallel`                       | `GitopsWorkflowArtifactConfigParallel (output)` | no             | Staggered rollout settings.                                                |
+| `perDeviceConfigsGroupMatchType` | `string`                                        | no             | How per-device group configurations are matched: `file` or `dir`.          |
+| `perDeviceConfigsMatchType`      | `string`                                        | no             | How per-device configurations are matched: `file` or `dir`.                |
+| `perDeviceConfigsPath`           | `string`                                        | no             | Path within the repository holding per-device configurations.              |
+| `prePullImage`                   | `boolean`                                       | no             | Whether agents pull the images before deploying.                           |
+| `registryIds`                    | `number[]`                                      | no             | Registries the deployment pulls images from.                               |
+| `retryPeriod`                    | `number`                                        | no             | How long an agent keeps retrying a failed deployment, in seconds.          |
+| `useManifestNamespaces`          | `boolean`                                       | no             | Whether to use the namespaces in the manifest rather than the default one. |
 
 ## `GitopsWorkflowArtifactConfigParallel (output)`
 
 Output object `GitopsWorkflowArtifactConfigParallel`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `batchCount` | `number` | no | Devices updated at once. A value above zero turns parallel deployment on. |
-| `batchIncrementBy` | `number` | no | How much the batch grows each round, for an incremental rollout. |
-| `delay` | `string` | no | Pause between batches. |
-| `failureAction` | `string` | no | What happens when a batch fails. |
-| `timeout` | `string` | no | How long a batch may take before it is given up on. |
+| Property           | Type     | Always present | Description                                                               |
+| ------------------ | -------- | -------------- | ------------------------------------------------------------------------- |
+| `batchCount`       | `number` | no             | Devices updated at once. A value above zero turns parallel deployment on. |
+| `batchIncrementBy` | `number` | no             | How much the batch grows each round, for an incremental rollout.          |
+| `delay`            | `string` | no             | Pause between batches.                                                    |
+| `failureAction`    | `string` | no             | What happens when a batch fails.                                          |
+| `timeout`          | `string` | no             | How long a batch may take before it is given up on.                       |
 
 ## `GitopsWorkflowArtifactFile (output)`
 
 Output object `GitopsWorkflowArtifactFile`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `path` | `string` | yes | Path of the file within the source, for example `portainer.yaml`. |
-| `ref` | `string` | yes | Git reference to read the file at, for example `refs/heads/main`. |
-| `sourceId` | `number` | yes | Identifier of the GitOps source the file comes from. |
+| Property   | Type     | Always present | Description                                                       |
+| ---------- | -------- | -------------- | ----------------------------------------------------------------- |
+| `path`     | `string` | yes            | Path of the file within the source, for example `portainer.yaml`. |
+| `ref`      | `string` | yes            | Git reference to read the file at, for example `refs/heads/main`. |
+| `sourceId` | `number` | yes            | Identifier of the GitOps source the file comes from.              |

@@ -19,46 +19,46 @@ Construct with `new infisical.IdentityGcpAuth(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityGcpAuthAccessTokenTrustedIp (input)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `allowedProjects` | `string[]` | no | List of trusted GCP projects that the GCE instance must belong to authenticate with Infisical. Note that this validation property will only work for GCE instances |
-| `allowedServiceAccountEmails` | `string[]` | no | List of trusted service account emails corresponding to the GCE resource(s) allowed to authenticate with Infisical; this could be something like `test@project.iam.gserviceaccount.com`, `12345-compute@developer.gserviceaccount.com`, etc. |
-| `allowedZones` | `string[]` | no | List of trusted zones that the GCE instances must belong to authenticate with Infisical; this should be the fully-qualified zone name in the format `<region>-<zone>`like `us-central1-a`, `us-west1-b`, etc. Note that this validation property will only work for GCE instances. |
-| `identityId` | `string` | yes | The ID of the identity to attach the configuration onto. |
-| `type` | `string` | no | The Type of GCP Auth Method to use: Options are gce, iam. Default:gce |
+| Property                      | Type                                            | Required | Description                                                                                                                                                                                                                                                                        |
+| ----------------------------- | ----------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`           | `number`                                        | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                               |
+| `accessTokenNumUsesLimit`     | `number`                                        | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                                                                                                              |
+| `accessTokenTrustedIps`       | `IdentityGcpAuthAccessTokenTrustedIp (input)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                                                                                                                 |
+| `accessTokenTtl`              | `number`                                        | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                       |
+| `allowedProjects`             | `string[]`                                      | no       | List of trusted GCP projects that the GCE instance must belong to authenticate with Infisical. Note that this validation property will only work for GCE instances                                                                                                                 |
+| `allowedServiceAccountEmails` | `string[]`                                      | no       | List of trusted service account emails corresponding to the GCE resource(s) allowed to authenticate with Infisical; this could be something like `test@project.iam.gserviceaccount.com`, `12345-compute@developer.gserviceaccount.com`, etc.                                       |
+| `allowedZones`                | `string[]`                                      | no       | List of trusted zones that the GCE instances must belong to authenticate with Infisical; this should be the fully-qualified zone name in the format `<region>-<zone>`like `us-central1-a`, `us-west1-b`, etc. Note that this validation property will only work for GCE instances. |
+| `identityId`                  | `string`                                        | yes      | The ID of the identity to attach the configuration onto.                                                                                                                                                                                                                           |
+| `type`                        | `string`                                        | no       | The Type of GCP Auth Method to use: Options are gce, iam. Default:gce                                                                                                                                                                                                              |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `accessTokenMaxTtl` | `number` | no | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `accessTokenNumUsesLimit` | `number` | no | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0 |
-| `accessTokenTrustedIps` | `IdentityGcpAuthAccessTokenTrustedIp (output)[]` | no | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address.. |
-| `accessTokenTtl` | `number` | no | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000 |
-| `allowedProjects` | `string[]` | no | List of trusted GCP projects that the GCE instance must belong to authenticate with Infisical. Note that this validation property will only work for GCE instances |
-| `allowedServiceAccountEmails` | `string[]` | no | List of trusted service account emails corresponding to the GCE resource(s) allowed to authenticate with Infisical; this could be something like `test@project.iam.gserviceaccount.com`, `12345-compute@developer.gserviceaccount.com`, etc. |
-| `allowedZones` | `string[]` | no | List of trusted zones that the GCE instances must belong to authenticate with Infisical; this should be the fully-qualified zone name in the format `<region>-<zone>`like `us-central1-a`, `us-west1-b`, etc. Note that this validation property will only work for GCE instances. |
-| `identityId` | `string` | no | The ID of the identity to attach the configuration onto. |
-| `type` | `string` | no | The Type of GCP Auth Method to use: Options are gce, iam. Default:gce |
+| Property                      | Type                                             | Computed | Description                                                                                                                                                                                                                                                                        |
+| ----------------------------- | ------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessTokenMaxTtl`           | `number`                                         | no       | The maximum lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                               |
+| `accessTokenNumUsesLimit`     | `number`                                         | no       | The maximum number of times that an access token can be used; a value of 0 implies infinite number of uses. Default:0                                                                                                                                                              |
+| `accessTokenTrustedIps`       | `IdentityGcpAuthAccessTokenTrustedIp (output)[]` | no       | A list of IPs or CIDR ranges that access tokens can be used from. You can use 0.0.0.0/0, to allow usage from any network address..                                                                                                                                                 |
+| `accessTokenTtl`              | `number`                                         | no       | The lifetime for an access token in seconds. This value will be referenced at renewal time. Default: 2592000                                                                                                                                                                       |
+| `allowedProjects`             | `string[]`                                       | no       | List of trusted GCP projects that the GCE instance must belong to authenticate with Infisical. Note that this validation property will only work for GCE instances                                                                                                                 |
+| `allowedServiceAccountEmails` | `string[]`                                       | no       | List of trusted service account emails corresponding to the GCE resource(s) allowed to authenticate with Infisical; this could be something like `test@project.iam.gserviceaccount.com`, `12345-compute@developer.gserviceaccount.com`, etc.                                       |
+| `allowedZones`                | `string[]`                                       | no       | List of trusted zones that the GCE instances must belong to authenticate with Infisical; this should be the fully-qualified zone name in the format `<region>-<zone>`like `us-central1-a`, `us-west1-b`, etc. Note that this validation property will only work for GCE instances. |
+| `identityId`                  | `string`                                         | no       | The ID of the identity to attach the configuration onto.                                                                                                                                                                                                                           |
+| `type`                        | `string`                                         | no       | The Type of GCP Auth Method to use: Options are gce, iam. Default:gce                                                                                                                                                                                                              |
 
 ## `IdentityGcpAuthAccessTokenTrustedIp (input)`
 
 Input object `IdentityGcpAuthAccessTokenTrustedIp`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | no |  |
+| Property    | Type     | Required | Description |
+| ----------- | -------- | -------- | ----------- |
+| `ipAddress` | `string` | no       |             |
 
 ## `IdentityGcpAuthAccessTokenTrustedIp (output)`
 
 Output object `IdentityGcpAuthAccessTokenTrustedIp`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `ipAddress` | `string` | yes |  |
+| Property    | Type     | Always present | Description |
+| ----------- | -------- | -------------- | ----------- |
+| `ipAddress` | `string` | yes            |             |

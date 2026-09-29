@@ -19,46 +19,46 @@ Construct with `new portainer.KubernetesHelm(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `chart` | `string` | yes | Name of the Helm chart to install. |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment where the Helm chart is installed. |
-| `kubernetesHelmId` | `string` | no |  |
-| `name` | `string` | no | Helm release name used to install the chart. |
-| `namespace` | `string` | yes | Kubernetes namespace in which the Helm release is created. |
-| `repo` | `string` | yes | URL of the Helm chart repository hosting the chart. |
-| `timeouts` | `KubernetesHelmTimeouts (input)` | no |  |
-| `values` | `string` | no | Optional Helm values document (YAML) used to customise the release. |
+| Property           | Type                             | Required | Description                                                                           |
+| ------------------ | -------------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `chart`            | `string`                         | yes      | Name of the Helm chart to install.                                                    |
+| `environmentId`    | `number`                         | yes      | Identifier of the Portainer Kubernetes environment where the Helm chart is installed. |
+| `kubernetesHelmId` | `string`                         | no       |                                                                                       |
+| `name`             | `string`                         | no       | Helm release name used to install the chart.                                          |
+| `namespace`        | `string`                         | yes      | Kubernetes namespace in which the Helm release is created.                            |
+| `repo`             | `string`                         | yes      | URL of the Helm chart repository hosting the chart.                                   |
+| `timeouts`         | `KubernetesHelmTimeouts (input)` | no       |                                                                                       |
+| `values`           | `string`                         | no       | Optional Helm values document (YAML) used to customise the release.                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `chart` | `string` | no | Name of the Helm chart to install. |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment where the Helm chart is installed. |
-| `kubernetesHelmId` | `string` | no |  |
-| `name` | `string` | no | Helm release name used to install the chart. |
-| `namespace` | `string` | no | Kubernetes namespace in which the Helm release is created. |
-| `repo` | `string` | no | URL of the Helm chart repository hosting the chart. |
-| `timeouts` | `KubernetesHelmTimeouts (output)` | no |  |
-| `values` | `string` | no | Optional Helm values document (YAML) used to customise the release. |
+| Property           | Type                              | Computed | Description                                                                           |
+| ------------------ | --------------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `chart`            | `string`                          | no       | Name of the Helm chart to install.                                                    |
+| `environmentId`    | `number`                          | no       | Identifier of the Portainer Kubernetes environment where the Helm chart is installed. |
+| `kubernetesHelmId` | `string`                          | no       |                                                                                       |
+| `name`             | `string`                          | no       | Helm release name used to install the chart.                                          |
+| `namespace`        | `string`                          | no       | Kubernetes namespace in which the Helm release is created.                            |
+| `repo`             | `string`                          | no       | URL of the Helm chart repository hosting the chart.                                   |
+| `timeouts`         | `KubernetesHelmTimeouts (output)` | no       |                                                                                       |
+| `values`           | `string`                          | no       | Optional Helm values document (YAML) used to customise the release.                   |
 
 ## `KubernetesHelmTimeouts (input)`
 
 Input object `KubernetesHelmTimeouts`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
-| `delete` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `create` | `string` | no       |             |
+| `delete` | `string` | no       |             |
 
 ## `KubernetesHelmTimeouts (output)`
 
 Output object `KubernetesHelmTimeouts`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
-| `delete` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `create` | `string` | no             |             |
+| `delete` | `string` | no             |             |

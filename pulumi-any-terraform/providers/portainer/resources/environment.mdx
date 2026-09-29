@@ -19,44 +19,44 @@ Construct with `new portainer.Environment(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `environmentAddress` | `string` | yes | Connection URL of the environment (e.g. tcp://host:port for Docker, https://host for Kubernetes/Agent). Used as the endpoint URL Portainer connects to. |
-| `environmentId` | `string` | no |  |
-| `groupId` | `number` | no | ID of the Portainer endpoint group. Default is 1 (Unassigned). |
-| `name` | `string` | no | Name of the Portainer environment (endpoint) as displayed in the UI. |
-| `publicIp` | `string` | no | Public IP/URL used by Portainer for Published Ports (maps to PublicURL). |
-| `tagIds` | `number[]` | no | List of tag IDs to assign to the environment. |
-| `teamAccessPolicies` | `{ [key: string]: number }` | no | Map of team IDs to role IDs (e.g. teamID &gt; roleID) |
-| `tlsCaCert` | `string` | no | PEM-encoded TLS CA certificate used to verify the environment's server certificate. Stored in state as a sensitive value. |
-| `tlsCert` | `string` | no | PEM-encoded TLS client certificate presented by Portainer when connecting to the environment. Stored in state as a sensitive value. |
-| `tlsEnabled` | `boolean` | no | Whether TLS is enabled for the connection to the environment. |
-| `tlsKey` | `string` | no | PEM-encoded TLS client private key paired with tls_cert. Stored in state as a sensitive value. |
-| `tlsSkipClientVerify` | `boolean` | no | Whether to skip client TLS certificate verification when Portainer connects to the environment. |
-| `tlsSkipVerify` | `boolean` | no | Whether to skip server TLS certificate verification when connecting to the environment. |
-| `type` | `number` | yes | Environment type: 1 = Docker, 2 = Agent, 3 = Azure, 4 = Edge Agent, 5 = Kubernetes, 6 = Kubernetes via agent, 7 = Kubernetes Edge Agent |
-| `userAccessPolicies` | `{ [key: string]: number }` | no | Map of user IDs to role IDs (e.g. userID &gt; roleID) |
+| Property              | Type                        | Required | Description                                                                                                                                             |
+| --------------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `environmentAddress`  | `string`                    | yes      | Connection URL of the environment (e.g. tcp://host:port for Docker, https://host for Kubernetes/Agent). Used as the endpoint URL Portainer connects to. |
+| `environmentId`       | `string`                    | no       |                                                                                                                                                         |
+| `groupId`             | `number`                    | no       | ID of the Portainer endpoint group. Default is 1 (Unassigned).                                                                                          |
+| `name`                | `string`                    | no       | Name of the Portainer environment (endpoint) as displayed in the UI.                                                                                    |
+| `publicIp`            | `string`                    | no       | Public IP/URL used by Portainer for Published Ports (maps to PublicURL).                                                                                |
+| `tagIds`              | `number[]`                  | no       | List of tag IDs to assign to the environment.                                                                                                           |
+| `teamAccessPolicies`  | `{ [key: string]: number }` | no       | Map of team IDs to role IDs (e.g. teamID &gt; roleID)                                                                                                   |
+| `tlsCaCert`           | `string`                    | no       | PEM-encoded TLS CA certificate used to verify the environment's server certificate. Stored in state as a sensitive value.                               |
+| `tlsCert`             | `string`                    | no       | PEM-encoded TLS client certificate presented by Portainer when connecting to the environment. Stored in state as a sensitive value.                     |
+| `tlsEnabled`          | `boolean`                   | no       | Whether TLS is enabled for the connection to the environment.                                                                                           |
+| `tlsKey`              | `string`                    | no       | PEM-encoded TLS client private key paired with tls_cert. Stored in state as a sensitive value.                                                          |
+| `tlsSkipClientVerify` | `boolean`                   | no       | Whether to skip client TLS certificate verification when Portainer connects to the environment.                                                         |
+| `tlsSkipVerify`       | `boolean`                   | no       | Whether to skip server TLS certificate verification when connecting to the environment.                                                                 |
+| `type`                | `number`                    | yes      | Environment type: 1 = Docker, 2 = Agent, 3 = Azure, 4 = Edge Agent, 5 = Kubernetes, 6 = Kubernetes via agent, 7 = Kubernetes Edge Agent                 |
+| `userAccessPolicies`  | `{ [key: string]: number }` | no       | Map of user IDs to role IDs (e.g. userID &gt; roleID)                                                                                                   |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `edgeId` | `string` | yes | Edge identifier (UUID) for type 4/7 (Edge Agent) environments, to pass to the Edge Agent as PORTAINER_EDGE_ID. Returned by Portainer when the EnforceEdgeID setting is enabled, otherwise generated by the provider at create time. Empty for all other environment types. |
-| `edgeKey` | `string` | yes | Edge key generated by Portainer for type 4/7 (Edge Agent) environments. Used by the Edge Agent to register with Portainer. |
-| `environmentAddress` | `string` | no | Connection URL of the environment (e.g. tcp://host:port for Docker, https://host for Kubernetes/Agent). Used as the endpoint URL Portainer connects to. |
-| `environmentId` | `string` | no |  |
-| `groupId` | `number` | no | ID of the Portainer endpoint group. Default is 1 (Unassigned). |
-| `name` | `string` | no | Name of the Portainer environment (endpoint) as displayed in the UI. |
-| `publicIp` | `string` | no | Public IP/URL used by Portainer for Published Ports (maps to PublicURL). |
-| `tagIds` | `number[]` | no | List of tag IDs to assign to the environment. |
-| `teamAccessPolicies` | `{ [key: string]: number }` | no | Map of team IDs to role IDs (e.g. teamID &gt; roleID) |
-| `tlsCaCert` | `string` | no | PEM-encoded TLS CA certificate used to verify the environment's server certificate. Stored in state as a sensitive value. |
-| `tlsCert` | `string` | no | PEM-encoded TLS client certificate presented by Portainer when connecting to the environment. Stored in state as a sensitive value. |
-| `tlsEnabled` | `boolean` | no | Whether TLS is enabled for the connection to the environment. |
-| `tlsKey` | `string` | no | PEM-encoded TLS client private key paired with tls_cert. Stored in state as a sensitive value. |
-| `tlsSkipClientVerify` | `boolean` | no | Whether to skip client TLS certificate verification when Portainer connects to the environment. |
-| `tlsSkipVerify` | `boolean` | no | Whether to skip server TLS certificate verification when connecting to the environment. |
-| `type` | `number` | no | Environment type: 1 = Docker, 2 = Agent, 3 = Azure, 4 = Edge Agent, 5 = Kubernetes, 6 = Kubernetes via agent, 7 = Kubernetes Edge Agent |
-| `userAccessPolicies` | `{ [key: string]: number }` | no | Map of user IDs to role IDs (e.g. userID &gt; roleID) |
+| Property              | Type                        | Computed | Description                                                                                                                                                                                                                                                                |
+| --------------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edgeId`              | `string`                    | yes      | Edge identifier (UUID) for type 4/7 (Edge Agent) environments, to pass to the Edge Agent as PORTAINER_EDGE_ID. Returned by Portainer when the EnforceEdgeID setting is enabled, otherwise generated by the provider at create time. Empty for all other environment types. |
+| `edgeKey`             | `string`                    | yes      | Edge key generated by Portainer for type 4/7 (Edge Agent) environments. Used by the Edge Agent to register with Portainer.                                                                                                                                                 |
+| `environmentAddress`  | `string`                    | no       | Connection URL of the environment (e.g. tcp://host:port for Docker, https://host for Kubernetes/Agent). Used as the endpoint URL Portainer connects to.                                                                                                                    |
+| `environmentId`       | `string`                    | no       |                                                                                                                                                                                                                                                                            |
+| `groupId`             | `number`                    | no       | ID of the Portainer endpoint group. Default is 1 (Unassigned).                                                                                                                                                                                                             |
+| `name`                | `string`                    | no       | Name of the Portainer environment (endpoint) as displayed in the UI.                                                                                                                                                                                                       |
+| `publicIp`            | `string`                    | no       | Public IP/URL used by Portainer for Published Ports (maps to PublicURL).                                                                                                                                                                                                   |
+| `tagIds`              | `number[]`                  | no       | List of tag IDs to assign to the environment.                                                                                                                                                                                                                              |
+| `teamAccessPolicies`  | `{ [key: string]: number }` | no       | Map of team IDs to role IDs (e.g. teamID &gt; roleID)                                                                                                                                                                                                                      |
+| `tlsCaCert`           | `string`                    | no       | PEM-encoded TLS CA certificate used to verify the environment's server certificate. Stored in state as a sensitive value.                                                                                                                                                  |
+| `tlsCert`             | `string`                    | no       | PEM-encoded TLS client certificate presented by Portainer when connecting to the environment. Stored in state as a sensitive value.                                                                                                                                        |
+| `tlsEnabled`          | `boolean`                   | no       | Whether TLS is enabled for the connection to the environment.                                                                                                                                                                                                              |
+| `tlsKey`              | `string`                    | no       | PEM-encoded TLS client private key paired with tls_cert. Stored in state as a sensitive value.                                                                                                                                                                             |
+| `tlsSkipClientVerify` | `boolean`                   | no       | Whether to skip client TLS certificate verification when Portainer connects to the environment.                                                                                                                                                                            |
+| `tlsSkipVerify`       | `boolean`                   | no       | Whether to skip server TLS certificate verification when connecting to the environment.                                                                                                                                                                                    |
+| `type`                | `number`                    | no       | Environment type: 1 = Docker, 2 = Agent, 3 = Azure, 4 = Edge Agent, 5 = Kubernetes, 6 = Kubernetes via agent, 7 = Kubernetes Edge Agent                                                                                                                                    |
+| `userAccessPolicies`  | `{ [key: string]: number }` | no       | Map of user IDs to role IDs (e.g. userID &gt; roleID)                                                                                                                                                                                                                      |

@@ -19,22 +19,22 @@ Construct with `new portainer.OmniNodeReboot(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `cluster` | `string` | yes | Name of the cluster the node belongs to. |
-| `credentialId` | `number` | yes | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key. |
-| `node` | `string` | yes | Name of the node to reboot. |
-| `omniNodeRebootId` | `string` | no |  |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another reboot when they change. A reboot is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property           | Type                        | Required | Description                                                                                                                                                 |
+| ------------------ | --------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cluster`          | `string`                    | yes      | Name of the cluster the node belongs to.                                                                                                                    |
+| `credentialId`     | `number`                    | yes      | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key.                                                             |
+| `node`             | `string`                    | yes      | Name of the node to reboot.                                                                                                                                 |
+| `omniNodeRebootId` | `string`                    | no       |                                                                                                                                                             |
+| `triggers`         | `{ [key: string]: string }` | no       | Arbitrary values that force another reboot when they change. A reboot is a one-shot action, so without a trigger the resource runs once and then stays put. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `cluster` | `string` | no | Name of the cluster the node belongs to. |
-| `credentialId` | `number` | no | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key. |
-| `node` | `string` | no | Name of the node to reboot. |
-| `omniNodeRebootId` | `string` | no |  |
-| `triggers` | `{ [key: string]: string }` | no | Arbitrary values that force another reboot when they change. A reboot is a one-shot action, so without a trigger the resource runs once and then stays put. |
+| Property           | Type                        | Computed | Description                                                                                                                                                 |
+| ------------------ | --------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cluster`          | `string`                    | no       | Name of the cluster the node belongs to.                                                                                                                    |
+| `credentialId`     | `number`                    | no       | Identifier of the Portainer cloud credential holding the Omni endpoint and service account key.                                                             |
+| `node`             | `string`                    | no       | Name of the node to reboot.                                                                                                                                 |
+| `omniNodeRebootId` | `string`                    | no       |                                                                                                                                                             |
+| `triggers`         | `{ [key: string]: string }` | no       | Arbitrary values that force another reboot when they change. A reboot is a one-shot action, so without a trigger the resource runs once and then stays put. |

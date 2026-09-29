@@ -19,44 +19,44 @@ Construct with `new teamcity.CloudProfile(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `cloudProviderId` | `string` | yes | The TeamCity cloud provider ID, for example amazon. |
-| `images` | `CloudProfileImage (input)[]` | no | Cloud images managed by this profile. |
-| `name` | `string` | no | The public cloud profile name displayed in TeamCity. |
-| `projectId` | `string` | yes | The TeamCity project that owns the cloud profile. |
-| `properties` | `{ [key: string]: string }` | no | Cloud provider-specific properties. The complete map is sensitive because TeamCity cloud profiles can contain secure values. |
+| Property          | Type                          | Required | Description                                                                                                                  |
+| ----------------- | ----------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `cloudProviderId` | `string`                      | yes      | The TeamCity cloud provider ID, for example amazon.                                                                          |
+| `images`          | `CloudProfileImage (input)[]` | no       | Cloud images managed by this profile.                                                                                        |
+| `name`            | `string`                      | no       | The public cloud profile name displayed in TeamCity.                                                                         |
+| `projectId`       | `string`                      | yes      | The TeamCity project that owns the cloud profile.                                                                            |
+| `properties`      | `{ [key: string]: string }`   | no       | Cloud provider-specific properties. The complete map is sensitive because TeamCity cloud profiles can contain secure values. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `cloudProviderId` | `string` | no | The TeamCity cloud provider ID, for example amazon. |
-| `images` | `CloudProfileImage (output)[]` | no | Cloud images managed by this profile. |
-| `name` | `string` | no | The public cloud profile name displayed in TeamCity. |
-| `projectId` | `string` | no | The TeamCity project that owns the cloud profile. |
-| `properties` | `{ [key: string]: string }` | no | Cloud provider-specific properties. The complete map is sensitive because TeamCity cloud profiles can contain secure values. |
+| Property          | Type                           | Computed | Description                                                                                                                  |
+| ----------------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `cloudProviderId` | `string`                       | no       | The TeamCity cloud provider ID, for example amazon.                                                                          |
+| `images`          | `CloudProfileImage (output)[]` | no       | Cloud images managed by this profile.                                                                                        |
+| `name`            | `string`                       | no       | The public cloud profile name displayed in TeamCity.                                                                         |
+| `projectId`       | `string`                       | no       | The TeamCity project that owns the cloud profile.                                                                            |
+| `properties`      | `{ [key: string]: string }`    | no       | Cloud provider-specific properties. The complete map is sensitive because TeamCity cloud profiles can contain secure values. |
 
 ## `CloudProfileImage (input)`
 
 Input object `CloudProfileImage`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `agentPoolId` | `number` | no | The agent pool that receives agents started from this image. |
-| `id` | `string` | no | The TeamCity cloud image ID. |
-| `name` | `string` | yes | The cloud image name displayed in TeamCity. |
-| `properties` | `{ [key: string]: string }` | no | Image-specific provider properties. The complete map is sensitive because it can contain secure values. |
+| Property      | Type                        | Required | Description                                                                                             |
+| ------------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `agentPoolId` | `number`                    | no       | The agent pool that receives agents started from this image.                                            |
+| `id`          | `string`                    | no       | The TeamCity cloud image ID.                                                                            |
+| `name`        | `string`                    | yes      | The cloud image name displayed in TeamCity.                                                             |
+| `properties`  | `{ [key: string]: string }` | no       | Image-specific provider properties. The complete map is sensitive because it can contain secure values. |
 
 ## `CloudProfileImage (output)`
 
 Output object `CloudProfileImage`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `agentPoolId` | `number` | no | The agent pool that receives agents started from this image. |
-| `id` | `string` | yes | The TeamCity cloud image ID. |
-| `name` | `string` | yes | The cloud image name displayed in TeamCity. |
-| `properties` | `{ [key: string]: string }` | yes | Image-specific provider properties. The complete map is sensitive because it can contain secure values. |
+| Property      | Type                        | Always present | Description                                                                                             |
+| ------------- | --------------------------- | -------------- | ------------------------------------------------------------------------------------------------------- |
+| `agentPoolId` | `number`                    | no             | The agent pool that receives agents started from this image.                                            |
+| `id`          | `string`                    | yes            | The TeamCity cloud image ID.                                                                            |
+| `name`        | `string`                    | yes            | The cloud image name displayed in TeamCity.                                                             |
+| `properties`  | `{ [key: string]: string }` | yes            | Image-specific provider properties. The complete map is sensitive because it can contain secure values. |

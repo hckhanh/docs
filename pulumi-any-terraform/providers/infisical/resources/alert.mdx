@@ -19,159 +19,159 @@ Construct with `new infisical.Alert(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `channels` | `{ [key: string]: AlertChannels (input) }` | yes | The channels the alert is delivered to, keyed by a name of your choosing. The key is what identifies a channel to Terraform and is never sent to Infisical, so renaming a channel updates it in place and it keeps the deliveries it has already made. Changing a key, on the other hand, deletes the channel and creates a new one, so the new channel notifies about everything that is still expiring, even if the old one already did. Each channel carries exactly one configuration block, and that block is what gives the channel its type. At least one and at most 10 channels are allowed. |
-| `description` | `string` | no | An optional description of the alert. |
-| `enabled` | `boolean` | no | Whether the alert is evaluated. Defaults to true. |
-| `expiry` | `AlertExpiry (input)` | no | Fires before the watched resource expires. Only for alerts on these resource types: identity.authentication. |
-| `name` | `string` | no | The name of the alert. |
-| `projectId` | `string` | no | The ID of the project the resource belongs to. Required for project level resources, and must be omitted for organization level ones. |
-| `resourceId` | `string` | yes | The ID of the resource to watch. For the identity.authentication resource type this is a machine identity's ID. |
-| `resourceType` | `string` | yes | The type of the resource to watch. Options: identity.authentication. |
+| Property       | Type                                       | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `channels`     | `{ [key: string]: AlertChannels (input) }` | yes      | The channels the alert is delivered to, keyed by a name of your choosing. The key is what identifies a channel to Terraform and is never sent to Infisical, so renaming a channel updates it in place and it keeps the deliveries it has already made. Changing a key, on the other hand, deletes the channel and creates a new one, so the new channel notifies about everything that is still expiring, even if the old one already did. Each channel carries exactly one configuration block, and that block is what gives the channel its type. At least one and at most 10 channels are allowed. |
+| `description`  | `string`                                   | no       | An optional description of the alert.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `enabled`      | `boolean`                                  | no       | Whether the alert is evaluated. Defaults to true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `expiry`       | `AlertExpiry (input)`                      | no       | Fires before the watched resource expires. Only for alerts on these resource types: identity.authentication.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `name`         | `string`                                   | no       | The name of the alert.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `projectId`    | `string`                                   | no       | The ID of the project the resource belongs to. Required for project level resources, and must be omitted for organization level ones.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `resourceId`   | `string`                                   | yes      | The ID of the resource to watch. For the identity.authentication resource type this is a machine identity's ID.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `resourceType` | `string`                                   | yes      | The type of the resource to watch. Options: identity.authentication.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `channels` | `{ [key: string]: AlertChannels (output) }` | no | The channels the alert is delivered to, keyed by a name of your choosing. The key is what identifies a channel to Terraform and is never sent to Infisical, so renaming a channel updates it in place and it keeps the deliveries it has already made. Changing a key, on the other hand, deletes the channel and creates a new one, so the new channel notifies about everything that is still expiring, even if the old one already did. Each channel carries exactly one configuration block, and that block is what gives the channel its type. At least one and at most 10 channels are allowed. |
-| `description` | `string` | no | An optional description of the alert. |
-| `enabled` | `boolean` | no | Whether the alert is evaluated. Defaults to true. |
-| `expiry` | `AlertExpiry (output)` | no | Fires before the watched resource expires. Only for alerts on these resource types: identity.authentication. |
-| `name` | `string` | no | The name of the alert. |
-| `orgId` | `string` | yes | The ID of the organization the alert belongs to. Always set, whether the alert is scoped to the organization or to a project, so it is what tells you which organization a project level alert was created under. |
-| `projectId` | `string` | no | The ID of the project the resource belongs to. Required for project level resources, and must be omitted for organization level ones. |
-| `resourceId` | `string` | no | The ID of the resource to watch. For the identity.authentication resource type this is a machine identity's ID. |
-| `resourceType` | `string` | no | The type of the resource to watch. Options: identity.authentication. |
+| Property       | Type                                        | Computed | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `channels`     | `{ [key: string]: AlertChannels (output) }` | no       | The channels the alert is delivered to, keyed by a name of your choosing. The key is what identifies a channel to Terraform and is never sent to Infisical, so renaming a channel updates it in place and it keeps the deliveries it has already made. Changing a key, on the other hand, deletes the channel and creates a new one, so the new channel notifies about everything that is still expiring, even if the old one already did. Each channel carries exactly one configuration block, and that block is what gives the channel its type. At least one and at most 10 channels are allowed. |
+| `description`  | `string`                                    | no       | An optional description of the alert.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `enabled`      | `boolean`                                   | no       | Whether the alert is evaluated. Defaults to true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `expiry`       | `AlertExpiry (output)`                      | no       | Fires before the watched resource expires. Only for alerts on these resource types: identity.authentication.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `name`         | `string`                                    | no       | The name of the alert.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `orgId`        | `string`                                    | yes      | The ID of the organization the alert belongs to. Always set, whether the alert is scoped to the organization or to a project, so it is what tells you which organization a project level alert was created under.                                                                                                                                                                                                                                                                                                                                                                                     |
+| `projectId`    | `string`                                    | no       | The ID of the project the resource belongs to. Required for project level resources, and must be omitted for organization level ones.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `resourceId`   | `string`                                    | no       | The ID of the resource to watch. For the identity.authentication resource type this is a machine identity's ID.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `resourceType` | `string`                                    | no       | The type of the resource to watch. Options: identity.authentication.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## `AlertChannels (input)`
 
 Input object `AlertChannels`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `email` | `AlertChannelsEmail (input)` | no | Notifies principals of your organization or project by email. |
-| `enabled` | `boolean` | no | Whether the channel delivers notifications. Defaults to true. |
-| `id` | `string` | no | The ID of the channel in Infisical. |
-| `name` | `string` | yes | The name the channel is shown under in Infisical. |
-| `pagerduty` | `AlertChannelsPagerduty (input)` | no | Creates PagerDuty incidents through the Events API v2. |
-| `slack` | `AlertChannelsSlack (input)` | no | Posts notifications to a Slack channel through an incoming webhook. |
-| `webhook` | `AlertChannelsWebhook (input)` | no | Sends notifications to an HTTPS endpoint as a CloudEvents payload. |
+| Property    | Type                             | Required | Description                                                         |
+| ----------- | -------------------------------- | -------- | ------------------------------------------------------------------- |
+| `email`     | `AlertChannelsEmail (input)`     | no       | Notifies principals of your organization or project by email.       |
+| `enabled`   | `boolean`                        | no       | Whether the channel delivers notifications. Defaults to true.       |
+| `id`        | `string`                         | no       | The ID of the channel in Infisical.                                 |
+| `name`      | `string`                         | yes      | The name the channel is shown under in Infisical.                   |
+| `pagerduty` | `AlertChannelsPagerduty (input)` | no       | Creates PagerDuty incidents through the Events API v2.              |
+| `slack`     | `AlertChannelsSlack (input)`     | no       | Posts notifications to a Slack channel through an incoming webhook. |
+| `webhook`   | `AlertChannelsWebhook (input)`   | no       | Sends notifications to an HTTPS endpoint as a CloudEvents payload.  |
 
 ## `AlertChannelsEmail (input)`
 
 Input object `AlertChannelsEmail`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `recipients` | `AlertChannelsEmailRecipient (input)[]` | yes | The principals to notify. At least one and at most 20 are allowed. |
+| Property     | Type                                    | Required | Description                                                        |
+| ------------ | --------------------------------------- | -------- | ------------------------------------------------------------------ |
+| `recipients` | `AlertChannelsEmailRecipient (input)[]` | yes      | The principals to notify. At least one and at most 20 are allowed. |
 
 ## `AlertChannelsEmailRecipient (input)`
 
 Input object `AlertChannelsEmailRecipient`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes | The ID of the recipient user or group. The principal must belong to the scope the alert is created in. |
-| `type` | `string` | yes | The type of the recipient. Options: user, group. |
+| Property | Type     | Required | Description                                                                                            |
+| -------- | -------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `id`     | `string` | yes      | The ID of the recipient user or group. The principal must belong to the scope the alert is created in. |
+| `type`   | `string` | yes      | The type of the recipient. Options: user, group.                                                       |
 
 ## `AlertChannelsPagerduty (input)`
 
 Input object `AlertChannelsPagerduty`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `integrationKey` | `string` | yes | The PagerDuty Events API v2 integration key incidents are created with, a 32 character hex string. Write-only: it is never returned by the API, so it cannot be imported. |
+| Property         | Type     | Required | Description                                                                                                                                                               |
+| ---------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `integrationKey` | `string` | yes      | The PagerDuty Events API v2 integration key incidents are created with, a 32 character hex string. Write-only: it is never returned by the API, so it cannot be imported. |
 
 ## `AlertChannelsSlack (input)`
 
 Input object `AlertChannelsSlack`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `webhookUrl` | `string` | yes | The Slack incoming webhook URL notifications are posted to. Must be a https://hooks.slack.com URL. Write-only: it is never returned by the API, so it cannot be imported. |
+| Property     | Type     | Required | Description                                                                                                                                                               |
+| ------------ | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `webhookUrl` | `string` | yes      | The Slack incoming webhook URL notifications are posted to. Must be a https://hooks.slack.com URL. Write-only: it is never returned by the API, so it cannot be imported. |
 
 ## `AlertChannelsWebhook (input)`
 
 Input object `AlertChannelsWebhook`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `signingSecret` | `string` | no | The secret used to sign the payload so the receiver can verify it. Write-only: it is never returned by the API, so an imported channel keeps the secret it was created with until one is set here. |
-| `url` | `string` | yes | The HTTPS URL the CloudEvents payload is sent to. |
+| Property        | Type     | Required | Description                                                                                                                                                                                        |
+| --------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `signingSecret` | `string` | no       | The secret used to sign the payload so the receiver can verify it. Write-only: it is never returned by the API, so an imported channel keeps the secret it was created with until one is set here. |
+| `url`           | `string` | yes      | The HTTPS URL the CloudEvents payload is sent to.                                                                                                                                                  |
 
 ## `AlertExpiry (input)`
 
 Input object `AlertExpiry`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alertBeforeDays` | `number` | yes | How many days before the watched resource expires the alert fires. Must be between 1 and 90. |
-| `dailyReminder` | `boolean` | no | Whether to keep notifying once a day until the watched resource expires, instead of notifying once. Defaults to false. |
+| Property          | Type      | Required | Description                                                                                                            |
+| ----------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `alertBeforeDays` | `number`  | yes      | How many days before the watched resource expires the alert fires. Must be between 1 and 90.                           |
+| `dailyReminder`   | `boolean` | no       | Whether to keep notifying once a day until the watched resource expires, instead of notifying once. Defaults to false. |
 
 ## `AlertChannels (output)`
 
 Output object `AlertChannels`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `email` | `AlertChannelsEmail (output)` | no | Notifies principals of your organization or project by email. |
-| `enabled` | `boolean` | yes | Whether the channel delivers notifications. Defaults to true. |
-| `id` | `string` | yes | The ID of the channel in Infisical. |
-| `name` | `string` | yes | The name the channel is shown under in Infisical. |
-| `pagerduty` | `AlertChannelsPagerduty (output)` | no | Creates PagerDuty incidents through the Events API v2. |
-| `slack` | `AlertChannelsSlack (output)` | no | Posts notifications to a Slack channel through an incoming webhook. |
-| `webhook` | `AlertChannelsWebhook (output)` | no | Sends notifications to an HTTPS endpoint as a CloudEvents payload. |
+| Property    | Type                              | Always present | Description                                                         |
+| ----------- | --------------------------------- | -------------- | ------------------------------------------------------------------- |
+| `email`     | `AlertChannelsEmail (output)`     | no             | Notifies principals of your organization or project by email.       |
+| `enabled`   | `boolean`                         | yes            | Whether the channel delivers notifications. Defaults to true.       |
+| `id`        | `string`                          | yes            | The ID of the channel in Infisical.                                 |
+| `name`      | `string`                          | yes            | The name the channel is shown under in Infisical.                   |
+| `pagerduty` | `AlertChannelsPagerduty (output)` | no             | Creates PagerDuty incidents through the Events API v2.              |
+| `slack`     | `AlertChannelsSlack (output)`     | no             | Posts notifications to a Slack channel through an incoming webhook. |
+| `webhook`   | `AlertChannelsWebhook (output)`   | no             | Sends notifications to an HTTPS endpoint as a CloudEvents payload.  |
 
 ## `AlertChannelsEmail (output)`
 
 Output object `AlertChannelsEmail`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `recipients` | `AlertChannelsEmailRecipient (output)[]` | yes | The principals to notify. At least one and at most 20 are allowed. |
+| Property     | Type                                     | Always present | Description                                                        |
+| ------------ | ---------------------------------------- | -------------- | ------------------------------------------------------------------ |
+| `recipients` | `AlertChannelsEmailRecipient (output)[]` | yes            | The principals to notify. At least one and at most 20 are allowed. |
 
 ## `AlertChannelsEmailRecipient (output)`
 
 Output object `AlertChannelsEmailRecipient`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `id` | `string` | yes | The ID of the recipient user or group. The principal must belong to the scope the alert is created in. |
-| `type` | `string` | yes | The type of the recipient. Options: user, group. |
+| Property | Type     | Always present | Description                                                                                            |
+| -------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------ |
+| `id`     | `string` | yes            | The ID of the recipient user or group. The principal must belong to the scope the alert is created in. |
+| `type`   | `string` | yes            | The type of the recipient. Options: user, group.                                                       |
 
 ## `AlertChannelsPagerduty (output)`
 
 Output object `AlertChannelsPagerduty`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `integrationKey` | `string` | yes | The PagerDuty Events API v2 integration key incidents are created with, a 32 character hex string. Write-only: it is never returned by the API, so it cannot be imported. |
+| Property         | Type     | Always present | Description                                                                                                                                                               |
+| ---------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `integrationKey` | `string` | yes            | The PagerDuty Events API v2 integration key incidents are created with, a 32 character hex string. Write-only: it is never returned by the API, so it cannot be imported. |
 
 ## `AlertChannelsSlack (output)`
 
 Output object `AlertChannelsSlack`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `webhookUrl` | `string` | yes | The Slack incoming webhook URL notifications are posted to. Must be a https://hooks.slack.com URL. Write-only: it is never returned by the API, so it cannot be imported. |
+| Property     | Type     | Always present | Description                                                                                                                                                               |
+| ------------ | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `webhookUrl` | `string` | yes            | The Slack incoming webhook URL notifications are posted to. Must be a https://hooks.slack.com URL. Write-only: it is never returned by the API, so it cannot be imported. |
 
 ## `AlertChannelsWebhook (output)`
 
 Output object `AlertChannelsWebhook`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `signingSecret` | `string` | no | The secret used to sign the payload so the receiver can verify it. Write-only: it is never returned by the API, so an imported channel keeps the secret it was created with until one is set here. |
-| `url` | `string` | yes | The HTTPS URL the CloudEvents payload is sent to. |
+| Property        | Type     | Always present | Description                                                                                                                                                                                        |
+| --------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `signingSecret` | `string` | no             | The secret used to sign the payload so the receiver can verify it. Write-only: it is never returned by the API, so an imported channel keeps the secret it was created with until one is set here. |
+| `url`           | `string` | yes            | The HTTPS URL the CloudEvents payload is sent to.                                                                                                                                                  |
 
 ## `AlertExpiry (output)`
 
 Output object `AlertExpiry`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `alertBeforeDays` | `number` | yes | How many days before the watched resource expires the alert fires. Must be between 1 and 90. |
-| `dailyReminder` | `boolean` | yes | Whether to keep notifying once a day until the watched resource expires, instead of notifying once. Defaults to false. |
+| Property          | Type      | Always present | Description                                                                                                            |
+| ----------------- | --------- | -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `alertBeforeDays` | `number`  | yes            | How many days before the watched resource expires the alert fires. Must be between 1 and 90.                           |
+| `dailyReminder`   | `boolean` | yes            | Whether to keep notifying once a day until the watched resource expires, instead of notifying once. Defaults to false. |

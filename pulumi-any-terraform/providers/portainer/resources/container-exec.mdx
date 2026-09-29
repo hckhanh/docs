@@ -19,45 +19,45 @@ Construct with `new portainer.ContainerExec(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `command` | `string` | yes | Shell command to execute inside the target container. |
-| `containerExecId` | `string` | no |  |
-| `endpointId` | `number` | yes | Identifier of the Portainer endpoint hosting the container or Swarm service. |
-| `mode` | `string` | no | Deployment mode: 'standalone' (default) or 'swarm' |
-| `serviceName` | `string` | yes | Name of the container (standalone) or Swarm service in which the command should be executed. |
-| `timeouts` | `ContainerExecTimeouts (input)` | no |  |
-| `user` | `string` | no | User and optional group used to run the command inside the container (defaults to `root:root`). |
-| `wait` | `number` | no | Initial delay in seconds before executing the command. |
+| Property          | Type                            | Required | Description                                                                                     |
+| ----------------- | ------------------------------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `command`         | `string`                        | yes      | Shell command to execute inside the target container.                                           |
+| `containerExecId` | `string`                        | no       |                                                                                                 |
+| `endpointId`      | `number`                        | yes      | Identifier of the Portainer endpoint hosting the container or Swarm service.                    |
+| `mode`            | `string`                        | no       | Deployment mode: 'standalone' (default) or 'swarm'                                              |
+| `serviceName`     | `string`                        | yes      | Name of the container (standalone) or Swarm service in which the command should be executed.    |
+| `timeouts`        | `ContainerExecTimeouts (input)` | no       |                                                                                                 |
+| `user`            | `string`                        | no       | User and optional group used to run the command inside the container (defaults to `root:root`). |
+| `wait`            | `number`                        | no       | Initial delay in seconds before executing the command.                                          |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `command` | `string` | no | Shell command to execute inside the target container. |
-| `containerExecId` | `string` | no |  |
-| `endpointId` | `number` | no | Identifier of the Portainer endpoint hosting the container or Swarm service. |
-| `mode` | `string` | no | Deployment mode: 'standalone' (default) or 'swarm' |
-| `output` | `string` | yes | Standard output captured from the executed command. |
-| `serviceName` | `string` | no | Name of the container (standalone) or Swarm service in which the command should be executed. |
-| `timeouts` | `ContainerExecTimeouts (output)` | no |  |
-| `user` | `string` | no | User and optional group used to run the command inside the container (defaults to `root:root`). |
-| `wait` | `number` | no | Initial delay in seconds before executing the command. |
+| Property          | Type                             | Computed | Description                                                                                     |
+| ----------------- | -------------------------------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `command`         | `string`                         | no       | Shell command to execute inside the target container.                                           |
+| `containerExecId` | `string`                         | no       |                                                                                                 |
+| `endpointId`      | `number`                         | no       | Identifier of the Portainer endpoint hosting the container or Swarm service.                    |
+| `mode`            | `string`                         | no       | Deployment mode: 'standalone' (default) or 'swarm'                                              |
+| `output`          | `string`                         | yes      | Standard output captured from the executed command.                                             |
+| `serviceName`     | `string`                         | no       | Name of the container (standalone) or Swarm service in which the command should be executed.    |
+| `timeouts`        | `ContainerExecTimeouts (output)` | no       |                                                                                                 |
+| `user`            | `string`                         | no       | User and optional group used to run the command inside the container (defaults to `root:root`). |
+| `wait`            | `number`                         | no       | Initial delay in seconds before executing the command.                                          |
 
 ## `ContainerExecTimeouts (input)`
 
 Input object `ContainerExecTimeouts`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `create` | `string` | no       |             |
 
 ## `ContainerExecTimeouts (output)`
 
 Output object `ContainerExecTimeouts`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `create` | `string` | no |  |
+| Property | Type     | Always present | Description |
+| -------- | -------- | -------------- | ----------- |
+| `create` | `string` | no             |             |

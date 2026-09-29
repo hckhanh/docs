@@ -19,24 +19,24 @@ Construct with `new portainer.KubernetesNamespace(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `annotations` | `{ [key: string]: string }` | no | Map of annotations applied to the Kubernetes namespace. |
-| `environmentId` | `number` | yes | Identifier of the Portainer Kubernetes environment where the namespace is created. |
-| `kubernetesNamespaceId` | `string` | no |  |
-| `name` | `string` | no | Name of the Kubernetes namespace (metadata.name). |
-| `owner` | `string` | no | Owner label assigned to the namespace in Portainer. |
-| `resourceQuota` | `{ [key: string]: string }` | no | Resource quota limits applied to the namespace (e.g. cpu, memory limits and requests). |
+| Property                | Type                        | Required | Description                                                                            |
+| ----------------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------- |
+| `annotations`           | `{ [key: string]: string }` | no       | Map of annotations applied to the Kubernetes namespace.                                |
+| `environmentId`         | `number`                    | yes      | Identifier of the Portainer Kubernetes environment where the namespace is created.     |
+| `kubernetesNamespaceId` | `string`                    | no       |                                                                                        |
+| `name`                  | `string`                    | no       | Name of the Kubernetes namespace (metadata.name).                                      |
+| `owner`                 | `string`                    | no       | Owner label assigned to the namespace in Portainer.                                    |
+| `resourceQuota`         | `{ [key: string]: string }` | no       | Resource quota limits applied to the namespace (e.g. cpu, memory limits and requests). |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `annotations` | `{ [key: string]: string }` | no | Map of annotations applied to the Kubernetes namespace. |
-| `environmentId` | `number` | no | Identifier of the Portainer Kubernetes environment where the namespace is created. |
-| `kubernetesNamespaceId` | `string` | no |  |
-| `name` | `string` | no | Name of the Kubernetes namespace (metadata.name). |
-| `owner` | `string` | no | Owner label assigned to the namespace in Portainer. |
-| `resourceQuota` | `{ [key: string]: string }` | no | Resource quota limits applied to the namespace (e.g. cpu, memory limits and requests). |
+| Property                | Type                        | Computed | Description                                                                            |
+| ----------------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------- |
+| `annotations`           | `{ [key: string]: string }` | no       | Map of annotations applied to the Kubernetes namespace.                                |
+| `environmentId`         | `number`                    | no       | Identifier of the Portainer Kubernetes environment where the namespace is created.     |
+| `kubernetesNamespaceId` | `string`                    | no       |                                                                                        |
+| `name`                  | `string`                    | no       | Name of the Kubernetes namespace (metadata.name).                                      |
+| `owner`                 | `string`                    | no       | Owner label assigned to the namespace in Portainer.                                    |
+| `resourceQuota`         | `{ [key: string]: string }` | no       | Resource quota limits applied to the namespace (e.g. cpu, memory limits and requests). |

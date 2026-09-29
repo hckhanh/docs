@@ -19,41 +19,41 @@ Construct with `new infisical.AppConnectionBitbucket(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionBitbucketCredentials (input)` | yes | The credentials for the Bitbucket App Connection |
-| `description` | `string` | no | An optional description for the Bitbucket App Connection. |
-| `method` | `string` | yes | The method used to authenticate with Bitbucket. Possible values are: api-token |
-| `name` | `string` | no | The name of the Bitbucket App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                        | Required | Description                                                                                                                   |
+| ------------- | ------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionBitbucketCredentials (input)` | yes      | The credentials for the Bitbucket App Connection                                                                              |
+| `description` | `string`                                    | no       | An optional description for the Bitbucket App Connection.                                                                     |
+| `method`      | `string`                                    | yes      | The method used to authenticate with Bitbucket. Possible values are: api-token                                                |
+| `name`        | `string`                                    | no       | The name of the Bitbucket App Connection to create. Must be slug-friendly                                                     |
+| `projectId`   | `string`                                    | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionBitbucketCredentials (output)` | no | The credentials for the Bitbucket App Connection |
-| `credentialsHash` | `string` | yes | The hash of the Bitbucket App Connection credentials |
-| `description` | `string` | no | An optional description for the Bitbucket App Connection. |
-| `method` | `string` | no | The method used to authenticate with Bitbucket. Possible values are: api-token |
-| `name` | `string` | no | The name of the Bitbucket App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                         | Computed | Description                                                                                                                   |
+| ----------------- | -------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionBitbucketCredentials (output)` | no       | The credentials for the Bitbucket App Connection                                                                              |
+| `credentialsHash` | `string`                                     | yes      | The hash of the Bitbucket App Connection credentials                                                                          |
+| `description`     | `string`                                     | no       | An optional description for the Bitbucket App Connection.                                                                     |
+| `method`          | `string`                                     | no       | The method used to authenticate with Bitbucket. Possible values are: api-token                                                |
+| `name`            | `string`                                     | no       | The name of the Bitbucket App Connection to create. Must be slug-friendly                                                     |
+| `projectId`       | `string`                                     | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionBitbucketCredentials (input)`
 
 Input object `AppConnectionBitbucketCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `apiToken` | `string` | yes | The Bitbucket API token for authentication. |
-| `email` | `string` | yes | The email address associated with the Bitbucket API token. |
+| Property   | Type     | Required | Description                                                |
+| ---------- | -------- | -------- | ---------------------------------------------------------- |
+| `apiToken` | `string` | yes      | The Bitbucket API token for authentication.                |
+| `email`    | `string` | yes      | The email address associated with the Bitbucket API token. |
 
 ## `AppConnectionBitbucketCredentials (output)`
 
 Output object `AppConnectionBitbucketCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `apiToken` | `string` | yes | The Bitbucket API token for authentication. |
-| `email` | `string` | yes | The email address associated with the Bitbucket API token. |
+| Property   | Type     | Always present | Description                                                |
+| ---------- | -------- | -------------- | ---------------------------------------------------------- |
+| `apiToken` | `string` | yes            | The Bitbucket API token for authentication.                |
+| `email`    | `string` | yes            | The email address associated with the Bitbucket API token. |

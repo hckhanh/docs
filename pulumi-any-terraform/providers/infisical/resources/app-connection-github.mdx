@@ -19,43 +19,43 @@ Construct with `new infisical.AppConnectionGithub(name, args, opts?)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionGithubCredentials (input)` | yes | The credentials for the GitHub App Connection |
-| `description` | `string` | no | An optional description for the GitHub App Connection. |
-| `method` | `string` | yes | The method used to authenticate with GitHub. Possible values are: pat |
-| `name` | `string` | no | The name of the GitHub App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property      | Type                                     | Required | Description                                                                                                                   |
+| ------------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials` | `AppConnectionGithubCredentials (input)` | yes      | The credentials for the GitHub App Connection                                                                                 |
+| `description` | `string`                                 | no       | An optional description for the GitHub App Connection.                                                                        |
+| `method`      | `string`                                 | yes      | The method used to authenticate with GitHub. Possible values are: pat                                                         |
+| `name`        | `string`                                 | no       | The name of the GitHub App Connection to create. Must be slug-friendly                                                        |
+| `projectId`   | `string`                                 | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## Outputs
 
 Computed outputs are produced by the provider. They are not constructor arguments.
 
-| Property | Type | Computed | Description |
-| --- | --- | --- | --- |
-| `credentials` | `AppConnectionGithubCredentials (output)` | no | The credentials for the GitHub App Connection |
-| `credentialsHash` | `string` | yes | The hash of the GitHub App Connection credentials |
-| `description` | `string` | no | An optional description for the GitHub App Connection. |
-| `method` | `string` | no | The method used to authenticate with GitHub. Possible values are: pat |
-| `name` | `string` | no | The name of the GitHub App Connection to create. Must be slug-friendly |
-| `projectId` | `string` | no | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
+| Property          | Type                                      | Computed | Description                                                                                                                   |
+| ----------------- | ----------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `credentials`     | `AppConnectionGithubCredentials (output)` | no       | The credentials for the GitHub App Connection                                                                                 |
+| `credentialsHash` | `string`                                  | yes      | The hash of the GitHub App Connection credentials                                                                             |
+| `description`     | `string`                                  | no       | An optional description for the GitHub App Connection.                                                                        |
+| `method`          | `string`                                  | no       | The method used to authenticate with GitHub. Possible values are: pat                                                         |
+| `name`            | `string`                                  | no       | The name of the GitHub App Connection to create. Must be slug-friendly                                                        |
+| `projectId`       | `string`                                  | no       | The ID of the project to scope the app connection to. If not provided, the app connection will be scoped to the organization. |
 
 ## `AppConnectionGithubCredentials (input)`
 
 Input object `AppConnectionGithubCredentials`. Fields below belong to this object, not to the parent.
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `host` | `string` | no | The hostname of your GitHub Enterprise instance. Required when `instanceType` is 'server'. |
-| `instanceType` | `string` | no | The type of GitHub instance. Use 'cloud' for GitHub.com (default) or 'server' for GitHub Enterprise. When 'server', host is required. |
-| `personalAccessToken` | `string` | yes | The Personal Access Token used to access GitHub. |
+| Property              | Type     | Required | Description                                                                                                                           |
+| --------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `host`                | `string` | no       | The hostname of your GitHub Enterprise instance. Required when `instanceType` is 'server'.                                            |
+| `instanceType`        | `string` | no       | The type of GitHub instance. Use 'cloud' for GitHub.com (default) or 'server' for GitHub Enterprise. When 'server', host is required. |
+| `personalAccessToken` | `string` | yes      | The Personal Access Token used to access GitHub.                                                                                      |
 
 ## `AppConnectionGithubCredentials (output)`
 
 Output object `AppConnectionGithubCredentials`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `host` | `string` | no | The hostname of your GitHub Enterprise instance. Required when `instanceType` is 'server'. |
-| `instanceType` | `string` | no | The type of GitHub instance. Use 'cloud' for GitHub.com (default) or 'server' for GitHub Enterprise. When 'server', host is required. |
-| `personalAccessToken` | `string` | yes | The Personal Access Token used to access GitHub. |
+| Property              | Type     | Always present | Description                                                                                                                           |
+| --------------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `host`                | `string` | no             | The hostname of your GitHub Enterprise instance. Required when `instanceType` is 'server'.                                            |
+| `instanceType`        | `string` | no             | The type of GitHub instance. Use 'cloud' for GitHub.com (default) or 'server' for GitHub Enterprise. When 'server', host is required. |
+| `personalAccessToken` | `string` | yes            | The Personal Access Token used to access GitHub.                                                                                      |

@@ -19,29 +19,29 @@ Call `portainer.getKubernetesCustomResources(args)`.
 
 ## Arguments
 
-| Property | Type | Required | Description |
-| --- | --- | --- | --- |
-| `definition` | `string` | yes |  |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | no |  |
+| Property     | Type     | Required | Description |
+| ------------ | -------- | -------- | ----------- |
+| `definition` | `string` | yes      |             |
+| `endpointId` | `number` | yes      |             |
+| `id`         | `string` | no       |             |
 
 ## Result
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `definition` | `string` | yes |  |
-| `endpointId` | `number` | yes |  |
-| `id` | `string` | yes |  |
-| `resources` | `GetKubernetesCustomResourcesResource[]` | yes |  |
+| Property     | Type                                     | Always present | Description |
+| ------------ | ---------------------------------------- | -------------- | ----------- |
+| `definition` | `string`                                 | yes            |             |
+| `endpointId` | `number`                                 | yes            |             |
+| `id`         | `string`                                 | yes            |             |
+| `resources`  | `GetKubernetesCustomResourcesResource[]` | yes            |             |
 
 ## `GetKubernetesCustomResourcesResource`
 
 Output object `GetKubernetesCustomResourcesResource`. Fields below belong to this object.
 
-| Property | Type | Always present | Description |
-| --- | --- | --- | --- |
-| `creationDate` | `string` | no |  |
-| `definitionName` | `string` | no |  |
-| `name` | `string` | no |  |
-| `namespace` | `string` | no |  |
-| `uid` | `string` | no |  |
+| Property         | Type     | Always present | Description |
+| ---------------- | -------- | -------------- | ----------- |
+| `creationDate`   | `string` | no             |             |
+| `definitionName` | `string` | no             |             |
+| `name`           | `string` | no             |             |
+| `namespace`      | `string` | no             |             |
+| `uid`            | `string` | no             |             |
