@@ -9,13 +9,27 @@ Resource AuthSettings in pulumi-teamcity.
 
 Pulumi type: `teamcity:index/authSettings:AuthSettings`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
+
+const resource = new teamcity.AuthSettings("authSettings", {
+  allowGuest: true,
+  collapseLoginForm: true,
+  emailVerification: true,
+  guestUsername: "<guestUsername>",
+  modules: {
+    token: {},
+  },
+  perProjectPermissions: true,
+  welcomeText: "<welcomeText>",
+})
 ```
-
-Construct with `new teamcity.AuthSettings(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

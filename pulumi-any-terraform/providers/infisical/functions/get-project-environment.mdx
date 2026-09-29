@@ -9,11 +9,18 @@ Function getProjectEnvironment in pulumi-infisical.
 
 Invoke token: `infisical:index/getProjectEnvironment:getProjectEnvironment`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
-```
 
-Call `infisical.getProjectEnvironment(args)`.
+const result = await infisical.getProjectEnvironment({
+  projectId: "<projectId>",
+  slug: "<slug>",
+})
+```
 
 `getProjectEnvironmentOutput` accepts Input values and returns `Output` of the same result.
 

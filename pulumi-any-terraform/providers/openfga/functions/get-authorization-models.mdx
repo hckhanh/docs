@@ -9,11 +9,17 @@ Function getAuthorizationModels in pulumi-openfga.
 
 Invoke token: `openfga:index/getAuthorizationModels:getAuthorizationModels`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as openfga from "pulumi-openfga"
-```
 
-Call `openfga.getAuthorizationModels(args)`.
+const result = await openfga.getAuthorizationModels({
+  storeId: "<storeId>",
+})
+```
 
 `getAuthorizationModelsOutput` accepts Input values and returns `Output` of the same result.
 

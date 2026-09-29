@@ -9,13 +9,23 @@ Resource BuildConfigurationAgentRequirement in pulumi-teamcity.
 
 Pulumi type: `teamcity:index/buildConfigurationAgentRequirement:BuildConfigurationAgentRequirement`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
+
+const resource = new teamcity.BuildConfigurationAgentRequirement(
+  "buildConfigurationAgentRequirement",
+  {
+    buildConfigurationId: "<buildConfigurationId>",
+    condition: "<condition>",
+  },
+)
 ```
-
-Construct with `new teamcity.BuildConfigurationAgentRequirement(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

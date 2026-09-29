@@ -9,11 +9,17 @@ Function getCustomTemplate in pulumi-portainer.
 
 Invoke token: `portainer:index/getCustomTemplate:getCustomTemplate`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getCustomTemplate(args)`.
+const result = await portainer.getCustomTemplate({
+  title: "<title>",
+})
+```
 
 `getCustomTemplateOutput` accepts Input values and returns `Output` of the same result.
 

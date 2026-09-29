@@ -9,11 +9,18 @@ Function getGitopsRepoFileSearch in pulumi-portainer.
 
 Invoke token: `portainer:index/getGitopsRepoFileSearch:getGitopsRepoFileSearch`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getGitopsRepoFileSearch(args)`.
+const result = await portainer.getGitopsRepoFileSearch({
+  reference: "<reference>",
+  repository: "<repository>",
+})
+```
 
 `getGitopsRepoFileSearchOutput` accepts Input values and returns `Output` of the same result.
 

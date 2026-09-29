@@ -9,11 +9,17 @@ Function getCommand in pulumi-local.
 
 Invoke token: `local:index/getCommand:getCommand`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as local from "pulumi-local"
-```
 
-Call `local.getCommand(args)`.
+const result = await local.getCommand({
+  command: "<command>",
+})
+```
 
 `getCommandOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,11 +9,15 @@ Function getMeta in pulumi-buildkite.
 
 Invoke token: `buildkite:index/getMeta:getMeta`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as buildkite from "pulumi-buildkite"
-```
 
-Call `buildkite.getMeta(args)`.
+const result = await buildkite.getMeta()
+```
 
 `getMetaOutput` accepts Input values and returns `Output` of the same result.
 

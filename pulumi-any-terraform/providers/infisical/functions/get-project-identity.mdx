@@ -9,11 +9,18 @@ Function getProjectIdentity in pulumi-infisical.
 
 Invoke token: `infisical:index/getProjectIdentity:getProjectIdentity`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
-```
 
-Call `infisical.getProjectIdentity(args)`.
+const result = await infisical.getProjectIdentity({
+  identityId: "<identityId>",
+  projectId: "<projectId>",
+})
+```
 
 `getProjectIdentityOutput` accepts Input values and returns `Output` of the same result.
 

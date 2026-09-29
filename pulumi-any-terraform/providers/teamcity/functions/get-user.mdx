@@ -9,11 +9,15 @@ Function getUser in pulumi-teamcity.
 
 Invoke token: `teamcity:index/getUser:getUser`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
-```
 
-Call `teamcity.getUser(args)`.
+const result = await teamcity.getUser()
+```
 
 `getUserOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,13 +9,30 @@ Resource DomainContacts in pulumi-namecheap.
 
 Pulumi type: `namecheap:index/domainContacts:DomainContacts`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as namecheap from "pulumi-namecheap"
+
+const resource = new namecheap.DomainContacts("domainContacts", {
+  domain: "<domain>",
+  registrant: {
+    address1: "<address1>",
+    city: "<city>",
+    country: "<country>",
+    emailAddress: "<emailAddress>",
+    firstName: "<firstName>",
+    lastName: "<lastName>",
+    phone: "<phone>",
+    postalCode: "<postalCode>",
+    stateProvince: "<stateProvince>",
+  },
+})
 ```
-
-Construct with `new namecheap.DomainContacts(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

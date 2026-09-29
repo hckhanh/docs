@@ -9,11 +9,17 @@ Function getRelationshipTuples in pulumi-openfga.
 
 Invoke token: `openfga:index/getRelationshipTuples:getRelationshipTuples`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as openfga from "pulumi-openfga"
-```
 
-Call `openfga.getRelationshipTuples(args)`.
+const result = await openfga.getRelationshipTuples({
+  storeId: "<storeId>",
+})
+```
 
 `getRelationshipTuplesOutput` accepts Input values and returns `Output` of the same result.
 

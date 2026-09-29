@@ -9,11 +9,18 @@ Function getMetric in pulumi-logtail.
 
 Invoke token: `logtail:index/getMetric:getMetric`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
-```
 
-Call `logtail.getMetric(args)`.
+const result = await logtail.getMetric({
+  name: "<name>",
+  sourceId: "<sourceId>",
+})
+```
 
 `getMetricOutput` accepts Input values and returns `Output` of the same result.
 

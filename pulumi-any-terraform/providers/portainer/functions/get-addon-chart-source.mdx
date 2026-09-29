@@ -9,11 +9,17 @@ Function getAddonChartSource in pulumi-portainer.
 
 Invoke token: `portainer:index/getAddonChartSource:getAddonChartSource`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getAddonChartSource(args)`.
+const result = await portainer.getAddonChartSource({
+  addonId: "<addonId>",
+})
+```
 
 `getAddonChartSourceOutput` accepts Input values and returns `Output` of the same result.
 

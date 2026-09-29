@@ -9,11 +9,19 @@ Function getDashboardAlert in pulumi-logtail.
 
 Invoke token: `logtail:index/getDashboardAlert:getDashboardAlert`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
-```
 
-Call `logtail.getDashboardAlert(args)`.
+const result = await logtail.getDashboardAlert({
+  chartId: "<chartId>",
+  dashboardId: "<dashboardId>",
+  name: "<name>",
+})
+```
 
 `getDashboardAlertOutput` accepts Input values and returns `Output` of the same result.
 

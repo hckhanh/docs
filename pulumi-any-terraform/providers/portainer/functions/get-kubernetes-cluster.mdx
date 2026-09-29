@@ -9,11 +9,17 @@ Function getKubernetesCluster in pulumi-portainer.
 
 Invoke token: `portainer:index/getKubernetesCluster:getKubernetesCluster`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getKubernetesCluster(args)`.
+const result = await portainer.getKubernetesCluster({
+  environmentId: 0,
+})
+```
 
 `getKubernetesClusterOutput` accepts Input values and returns `Output` of the same result.
 

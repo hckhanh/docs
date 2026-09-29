@@ -9,11 +9,17 @@ Function getAlertingRuleEnvironments in pulumi-portainer.
 
 Invoke token: `portainer:index/getAlertingRuleEnvironments:getAlertingRuleEnvironments`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getAlertingRuleEnvironments(args)`.
+const result = await portainer.getAlertingRuleEnvironments({
+  ruleId: 0,
+})
+```
 
 `getAlertingRuleEnvironmentsOutput` accepts Input values and returns `Output` of the same result.
 

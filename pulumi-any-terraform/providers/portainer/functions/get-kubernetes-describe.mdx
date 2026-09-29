@@ -9,11 +9,19 @@ Function getKubernetesDescribe in pulumi-portainer.
 
 Invoke token: `portainer:index/getKubernetesDescribe:getKubernetesDescribe`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getKubernetesDescribe(args)`.
+const result = await portainer.getKubernetesDescribe({
+  environmentId: 0,
+  kind: "<kind>",
+  name: "<name>",
+})
+```
 
 `getKubernetesDescribeOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,11 +9,17 @@ Function getKubernetesEvents in pulumi-portainer.
 
 Invoke token: `portainer:index/getKubernetesEvents:getKubernetesEvents`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getKubernetesEvents(args)`.
+const result = await portainer.getKubernetesEvents({
+  environmentId: 0,
+})
+```
 
 `getKubernetesEventsOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,11 +9,17 @@ Function getPipeline in pulumi-buildkite.
 
 Invoke token: `buildkite:index/getPipeline:getPipeline`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as buildkite from "pulumi-buildkite"
-```
 
-Call `buildkite.getPipeline(args)`.
+const result = await buildkite.getPipeline({
+  slug: "<slug>",
+})
+```
 
 `getPipelineOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,11 +9,17 @@ Function getIncomingWebhook in pulumi-better-uptime.
 
 Invoke token: `better-uptime:index/getIncomingWebhook:getIncomingWebhook`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as betteruptime from "pulumi-better-uptime"
-```
 
-Call `betteruptime.getIncomingWebhook(args)`.
+const result = await betteruptime.getIncomingWebhook({
+  name: "<name>",
+})
+```
 
 `getIncomingWebhookOutput` accepts Input values and returns `Output` of the same result.
 

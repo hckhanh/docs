@@ -9,11 +9,15 @@ Function getServer in pulumi-teamcity.
 
 Invoke token: `teamcity:index/getServer:getServer`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
-```
 
-Call `teamcity.getServer(args)`.
+const result = await teamcity.getServer()
+```
 
 `getServerOutput` accepts Input values and returns `Output` of the same result.
 

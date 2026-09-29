@@ -9,11 +9,18 @@ Function getDashboardChart in pulumi-logtail.
 
 Invoke token: `logtail:index/getDashboardChart:getDashboardChart`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
-```
 
-Call `logtail.getDashboardChart(args)`.
+const result = await logtail.getDashboardChart({
+  dashboardId: "<dashboardId>",
+  name: "<name>",
+})
+```
 
 `getDashboardChartOutput` accepts Input values and returns `Output` of the same result.
 

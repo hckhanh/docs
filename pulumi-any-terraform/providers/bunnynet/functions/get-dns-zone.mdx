@@ -9,11 +9,17 @@ Function getDnsZone in pulumi-bunnynet.
 
 Invoke token: `bunnynet:index/getDnsZone:getDnsZone`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as bunnynet from "pulumi-bunnynet"
-```
 
-Call `bunnynet.getDnsZone(args)`.
+const result = await bunnynet.getDnsZone({
+  domain: "<domain>",
+})
+```
 
 `getDnsZoneOutput` accepts Input values and returns `Output` of the same result.
 

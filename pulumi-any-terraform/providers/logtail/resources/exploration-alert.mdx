@@ -9,13 +9,20 @@ Resource ExplorationAlert in pulumi-logtail.
 
 Pulumi type: `logtail:index/explorationAlert:ExplorationAlert`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
+
+const resource = new logtail.ExplorationAlert("explorationAlert", {
+  alertType: "<alertType>",
+  explorationId: "<explorationId>",
+})
 ```
-
-Construct with `new logtail.ExplorationAlert(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

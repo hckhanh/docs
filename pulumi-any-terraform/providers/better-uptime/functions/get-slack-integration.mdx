@@ -9,11 +9,17 @@ Function getSlackIntegration in pulumi-better-uptime.
 
 Invoke token: `better-uptime:index/getSlackIntegration:getSlackIntegration`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as betteruptime from "pulumi-better-uptime"
-```
 
-Call `betteruptime.getSlackIntegration(args)`.
+const result = await betteruptime.getSlackIntegration({
+  slackChannelName: "<slackChannelName>",
+})
+```
 
 `getSlackIntegrationOutput` accepts Input values and returns `Output` of the same result.
 

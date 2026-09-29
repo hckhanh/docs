@@ -9,13 +9,17 @@ Resource Pullzone in pulumi-bunnynet.
 
 Pulumi type: `bunnynet:index/pullzone:Pullzone`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as bunnynet from "pulumi-bunnynet"
+
+const resource = new bunnynet.Pullzone("pullzone", {})
 ```
-
-Construct with `new bunnynet.Pullzone(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

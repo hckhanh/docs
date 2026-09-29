@@ -9,11 +9,18 @@ Function getProjectUser in pulumi-infisical.
 
 Invoke token: `infisical:index/getProjectUser:getProjectUser`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
-```
 
-Call `infisical.getProjectUser(args)`.
+const result = await infisical.getProjectUser({
+  projectId: "<projectId>",
+  userId: "<userId>",
+})
+```
 
 `getProjectUserOutput` accepts Input values and returns `Output` of the same result.
 

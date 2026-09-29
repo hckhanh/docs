@@ -9,11 +9,18 @@ Function getProjectRole in pulumi-infisical.
 
 Invoke token: `infisical:index/getProjectRole:getProjectRole`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
-```
 
-Call `infisical.getProjectRole(args)`.
+const result = await infisical.getProjectRole({
+  projectId: "<projectId>",
+  slug: "<slug>",
+})
+```
 
 `getProjectRoleOutput` accepts Input values and returns `Output` of the same result.
 

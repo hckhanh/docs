@@ -9,11 +9,17 @@ Function getInsight in pulumi-posthog.
 
 Invoke token: `posthog:index/getInsight:getInsight`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as posthog from "pulumi-posthog"
-```
 
-Call `posthog.getInsight(args)`.
+const result = await posthog.getInsight({
+  shortId: "<shortId>",
+})
+```
 
 `getInsightOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,13 +9,20 @@ Resource ComputeScript in pulumi-bunnynet.
 
 Pulumi type: `bunnynet:index/computeScript:ComputeScript`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as bunnynet from "pulumi-bunnynet"
+
+const resource = new bunnynet.ComputeScript("computeScript", {
+  content: "<content>",
+  type: "middleware",
+})
 ```
-
-Construct with `new bunnynet.ComputeScript(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

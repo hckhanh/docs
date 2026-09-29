@@ -9,11 +9,21 @@ Function getEnvironmentMetrics in pulumi-portainer.
 
 Invoke token: `portainer:index/getEnvironmentMetrics:getEnvironmentMetrics`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getEnvironmentMetrics(args)`.
+const result = await portainer.getEnvironmentMetrics({
+  aggregation: "<aggregation>",
+  endpointId: 0,
+  from: "<from>",
+  metric: "<metric>",
+  to: "<to>",
+})
+```
 
 `getEnvironmentMetricsOutput` accepts Input values and returns `Output` of the same result.
 

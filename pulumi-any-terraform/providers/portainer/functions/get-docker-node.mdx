@@ -9,11 +9,18 @@ Function getDockerNode in pulumi-portainer.
 
 Invoke token: `portainer:index/getDockerNode:getDockerNode`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getDockerNode(args)`.
+const result = await portainer.getDockerNode({
+  endpointId: 0,
+  hostname: "<hostname>",
+})
+```
 
 `getDockerNodeOutput` accepts Input values and returns `Output` of the same result.
 

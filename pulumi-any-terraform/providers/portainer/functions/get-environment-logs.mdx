@@ -9,11 +9,19 @@ Function getEnvironmentLogs in pulumi-portainer.
 
 Invoke token: `portainer:index/getEnvironmentLogs:getEnvironmentLogs`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getEnvironmentLogs(args)`.
+const result = await portainer.getEnvironmentLogs({
+  endpointId: 0,
+  from: "<from>",
+  to: "<to>",
+})
+```
 
 `getEnvironmentLogsOutput` accepts Input values and returns `Output` of the same result.
 

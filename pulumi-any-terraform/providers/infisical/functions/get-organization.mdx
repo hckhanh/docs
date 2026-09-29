@@ -9,11 +9,17 @@ Function getOrganization in pulumi-infisical.
 
 Invoke token: `infisical:index/getOrganization:getOrganization`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
-```
 
-Call `infisical.getOrganization(args)`.
+const result = await infisical.getOrganization({
+  slug: "<slug>",
+})
+```
 
 `getOrganizationOutput` accepts Input values and returns `Output` of the same result.
 

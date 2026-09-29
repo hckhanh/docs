@@ -9,11 +9,19 @@ Function getLdapLoginTest in pulumi-portainer.
 
 Invoke token: `portainer:index/getLdapLoginTest:getLdapLoginTest`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getLdapLoginTest(args)`.
+const result = await portainer.getLdapLoginTest({
+  testPassword: "<testPassword>",
+  url: "<url>",
+  username: "<username>",
+})
+```
 
 `getLdapLoginTestOutput` accepts Input values and returns `Output` of the same result.
 

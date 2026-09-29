@@ -51,6 +51,148 @@ function kebab(name) {
     .toLowerCase()
 }
 
+function camel(name) {
+  return name.charAt(0).toLowerCase() + name.slice(1)
+}
+
+function documentedLiteral(docs, kind) {
+  if (!docs) return null
+  const option = docs.match(/Options:\s*`([^`]+)`/)
+  if (option) {
+    if (kind === "string") return JSON.stringify(option[1])
+    if (kind === "number" && /^-?\d+(?:\.\d+)?$/.test(option[1]))
+      return option[1]
+    if (kind === "boolean" && /^(?:true|false)$/.test(option[1]))
+      return option[1]
+  }
+  const possible = docs.match(/Possible values:\s*`?([A-Za-z0-9_.:/+-]+)`?/)
+  if (possible && kind === "string") return JSON.stringify(possible[1])
+  const supported = docs.match(/Supported options:\s*`?([A-Za-z0-9_.:/+-]+)`?/)
+  if (supported && kind === "string") return JSON.stringify(supported[1])
+  const example = docs.match(/\be\.g\.(?:,)?\s*`([^`]+)`/)
+  if (!example) return null
+  const value = example[1]
+  if (kind === "number" && /^-?\d+(?:\.\d+)?$/.test(value)) return value
+  if (
+    kind === "string" &&
+    value.length <= 80 &&
+    !value.includes("<") &&
+    !value.includes(" ") &&
+    !/^Y{2,}/.test(value)
+  ) {
+    return JSON.stringify(value)
+  }
+  return null
+}
+
+function findInterface(typeName, interfaces) {
+  for (const iface of interfaces.values()) {
+    if (typeLabel(iface, interfaces) === typeName) return iface
+  }
+  return null
+}
+
+function literalForType(type, docs, name, interfaces, stack, depth) {
+  const trimmed = type.trim()
+  if (trimmed.endsWith("[]")) {
+    const inner = literalForType(
+      trimmed.slice(0, -2),
+      docs,
+      name,
+      interfaces,
+      stack,
+      depth,
+    )
+    return `[${inner}]`
+  }
+  if (trimmed.startsWith("{") || trimmed === "any" || trimmed === "object")
+    return "{}"
+  if (trimmed.includes("|")) {
+    return literalForType(
+      trimmed.split("|")[0],
+      docs,
+      name,
+      interfaces,
+      stack,
+      depth,
+    )
+  }
+  if (trimmed === "string")
+    return documentedLiteral(docs, "string") ?? JSON.stringify(`<${name}>`)
+  if (trimmed === "number") return documentedLiteral(docs, "number") ?? "0"
+  if (trimmed === "boolean") return documentedLiteral(docs, "boolean") ?? "true"
+  const iface = findInterface(trimmed, interfaces)
+  if (!iface || stack.has(iface.key) || depth > 4) return "{}"
+  stack.add(iface.key)
+  const fields = shapeProps(iface, interfaces)
+    .filter((prop) => !prop.optional && !prop.index)
+    .map((prop) => ({
+      name: prop.name,
+      value: literalForType(
+        prop.type,
+        prop.docs,
+        prop.name,
+        interfaces,
+        stack,
+        depth + 1,
+      ),
+    }))
+  stack.delete(iface.key)
+  return renderArgs(fields)
+}
+
+function renderArgs(fields) {
+  if (fields.length === 0) return "{}"
+  const lines = fields.map((field) => {
+    if (!field.value.includes("\n")) return `  ${field.name}: ${field.value},`
+    const [first, ...rest] = field.value.split("\n")
+    return `  ${field.name}: ${first}\n${rest.map((line) => `  ${line}`).join("\n")},`
+  })
+  return `{\n${lines.join("\n")}\n}`
+}
+
+function renderSample(
+  kind,
+  binding,
+  npmName,
+  exportName,
+  argProps,
+  interfaces,
+) {
+  const fields = argProps
+    .filter((prop) => !prop.optional && !prop.index)
+    .map((prop) => ({
+      name: prop.name,
+      value: literalForType(
+        prop.type,
+        prop.docs,
+        prop.name,
+        interfaces,
+        new Set(),
+        0,
+      ),
+    }))
+  const args = renderArgs(fields)
+  const logical = camel(exportName)
+  const variable = kind === "resource" ? "resource" : "result"
+  const call =
+    kind === "resource"
+      ? `const ${variable} = new ${binding}.${exportName}("${logical}", ${args})`
+      : `const ${variable} = await ${binding}.${exportName}(${fields.length === 0 ? "" : args})`
+  return [
+    "## Example",
+    "",
+    "Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.",
+    "",
+    "```ts",
+    `import * as ${binding} from "${npmName}"`,
+    "",
+    call,
+    "```",
+    "",
+  ].join("\n")
+}
+
 function read(file) {
   return readFileSync(file, "utf8")
 }
@@ -646,14 +788,16 @@ function renderResource(pkgInfo, resource) {
     "",
     `Pulumi type: \`${pulumiType(source)}\`.`,
     "",
-    "```ts",
-    `import * as ${binding} from "${npmName}"`,
-    "```",
-    "",
-    `Construct with \`new ${binding}.${resource.name}(name, args, opts?)\`.`,
-    "",
     "`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.",
     "",
+    renderSample(
+      "resource",
+      binding,
+      npmName,
+      resource.name,
+      argProps,
+      pkgInfo.interfaces,
+    ),
     "## Arguments",
     "",
     table(argProps, "input"),
@@ -714,12 +858,14 @@ function renderFunction(pkgInfo, item) {
     "",
     signature.token ? `Invoke token: \`${signature.token}\`.` : "",
     "",
-    "```ts",
-    `import * as ${binding} from "${npmName}"`,
-    "```",
-    "",
-    `Call \`${binding}.${item.name}(args)\`.`,
-    "",
+    renderSample(
+      "function",
+      binding,
+      npmName,
+      item.name,
+      argProps,
+      pkgInfo.interfaces,
+    ),
   ]
   if (signature.outputVariant) {
     lines.push(
@@ -1349,6 +1495,15 @@ function assertFixtures() {
   }
   if (!records.includes("pulumi-namecheap"))
     throw new Error("Namecheap import missing")
+  if (
+    !records.includes("## Example") ||
+    !records.includes("new namecheap.DomainRecords") ||
+    !records.includes("domain:")
+  ) {
+    throw new Error(
+      "Namecheap DomainRecords example is missing its required argument",
+    )
+  }
   const recordRows = parseTable(records, "## `DomainRecordsRecord (input)`")
   const recordNames = recordRows.map((row) => row.name)
   if (recordNames.join(",") !== "address,hostname,mxPref,ttl,type") {

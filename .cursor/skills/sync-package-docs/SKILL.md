@@ -8,7 +8,7 @@ description: >-
 
 # Sync package docs
 
-Update this repository from the latest `main` of each package. Do not document a local feature branch. Do not invent fields, examples, hostnames, or sample values. Do not commit or publish unless the user asks.
+Update this repository from the latest `main` of each package. Do not document a local feature branch. Do not invent fields, hostnames, or sample values outside the generated examples. Do not commit or publish unless the user asks.
 
 Scratch files go in the operating-system temp directory. Do not create `tmp/` in this repository.
 
@@ -42,6 +42,8 @@ Run the command from this repository. The script loads TypeScript from the Pulum
 If the script reports a package missing from its provider list, add that package's title and existing icon to `providerMeta` in `scripts/generate-provider-reference.mjs`, then run it again. Do not draw a new icon.
 
 The generator keeps nested object fields on that object's heading. `Pullzone.origin` is `PullzoneOrigin`; a storage zone is `origin.storagezone`, and `origin.type` includes `StorageZone`. `Pullzone` has no `originUrl` or `storageZoneId` argument.
+
+Each resource and function page includes one example. The example sets required arguments only. Angle-bracket strings are placeholders. Any other value is copied from that field's SDK description. Do not add further sample hostnames, addresses, or tokens by hand.
 
 OpenFGA `getAuthorizationModelDocument` is split across linked part pages because the SDK unrolls recursive types. Leave that split in place.
 

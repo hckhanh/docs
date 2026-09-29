@@ -9,11 +9,17 @@ Function getKubernetesApplicationResources in pulumi-portainer.
 
 Invoke token: `portainer:index/getKubernetesApplicationResources:getKubernetesApplicationResources`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getKubernetesApplicationResources(args)`.
+const result = await portainer.getKubernetesApplicationResources({
+  environmentId: 0,
+})
+```
 
 `getKubernetesApplicationResourcesOutput` accepts Input values and returns `Output` of the same result.
 

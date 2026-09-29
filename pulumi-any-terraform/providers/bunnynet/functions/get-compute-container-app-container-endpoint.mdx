@@ -9,11 +9,19 @@ Function getComputeContainerAppContainerEndpoint in pulumi-bunnynet.
 
 Invoke token: `bunnynet:index/getComputeContainerAppContainerEndpoint:getComputeContainerAppContainerEndpoint`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as bunnynet from "pulumi-bunnynet"
-```
 
-Call `bunnynet.getComputeContainerAppContainerEndpoint(args)`.
+const result = await bunnynet.getComputeContainerAppContainerEndpoint({
+  app: "<app>",
+  container: "<container>",
+  name: "<name>",
+})
+```
 
 `getComputeContainerAppContainerEndpointOutput` accepts Input values and returns `Output` of the same result.
 

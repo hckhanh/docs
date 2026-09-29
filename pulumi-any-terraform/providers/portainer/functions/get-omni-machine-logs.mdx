@@ -9,11 +9,18 @@ Function getOmniMachineLogs in pulumi-portainer.
 
 Invoke token: `portainer:index/getOmniMachineLogs:getOmniMachineLogs`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getOmniMachineLogs(args)`.
+const result = await portainer.getOmniMachineLogs({
+  credentialId: 0,
+  machineName: "<machineName>",
+})
+```
 
 `getOmniMachineLogsOutput` accepts Input values and returns `Output` of the same result.
 

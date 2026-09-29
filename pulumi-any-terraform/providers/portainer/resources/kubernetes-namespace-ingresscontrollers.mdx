@@ -9,13 +9,33 @@ Resource KubernetesNamespaceIngresscontrollers in pulumi-portainer.
 
 Pulumi type: `portainer:index/kubernetesNamespaceIngresscontrollers:KubernetesNamespaceIngresscontrollers`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
+
+const resource = new portainer.KubernetesNamespaceIngresscontrollers(
+  "kubernetesNamespaceIngresscontrollers",
+  {
+    controllers: [
+      {
+        availability: true,
+        className: "<className>",
+        name: "<name>",
+        new: true,
+        type: "<type>",
+        used: true,
+      },
+    ],
+    environmentId: 0,
+    namespace: "<namespace>",
+  },
+)
 ```
-
-Construct with `new portainer.KubernetesNamespaceIngresscontrollers(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

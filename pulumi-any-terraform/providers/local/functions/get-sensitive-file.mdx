@@ -9,11 +9,17 @@ Function getSensitiveFile in pulumi-local.
 
 Invoke token: `local:index/getSensitiveFile:getSensitiveFile`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as local from "pulumi-local"
-```
 
-Call `local.getSensitiveFile(args)`.
+const result = await local.getSensitiveFile({
+  filename: "<filename>",
+})
+```
 
 `getSensitiveFileOutput` accepts Input values and returns `Output` of the same result.
 

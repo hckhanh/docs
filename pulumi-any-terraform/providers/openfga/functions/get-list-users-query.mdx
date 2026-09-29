@@ -9,11 +9,20 @@ Function getListUsersQuery in pulumi-openfga.
 
 Invoke token: `openfga:index/getListUsersQuery:getListUsersQuery`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as openfga from "pulumi-openfga"
-```
 
-Call `openfga.getListUsersQuery(args)`.
+const result = await openfga.getListUsersQuery({
+  object: "<object>",
+  relation: "<relation>",
+  storeId: "<storeId>",
+  type: "<type>",
+})
+```
 
 `getListUsersQueryOutput` accepts Input values and returns `Output` of the same result.
 

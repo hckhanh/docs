@@ -9,11 +9,19 @@ Function getBackupAzureConnection in pulumi-portainer.
 
 Invoke token: `portainer:index/getBackupAzureConnection:getBackupAzureConnection`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getBackupAzureConnection(args)`.
+const result = await portainer.getBackupAzureConnection({
+  authMethod: "<authMethod>",
+  containerName: "<containerName>",
+  storageAccountName: "<storageAccountName>",
+})
+```
 
 `getBackupAzureConnectionOutput` accepts Input values and returns `Output` of the same result.
 

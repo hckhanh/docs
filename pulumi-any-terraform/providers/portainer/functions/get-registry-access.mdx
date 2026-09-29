@@ -9,11 +9,18 @@ Function getRegistryAccess in pulumi-portainer.
 
 Invoke token: `portainer:index/getRegistryAccess:getRegistryAccess`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getRegistryAccess(args)`.
+const result = await portainer.getRegistryAccess({
+  endpointId: 0,
+  registryId: 0,
+})
+```
 
 `getRegistryAccessOutput` accepts Input values and returns `Output` of the same result.
 

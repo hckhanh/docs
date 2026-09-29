@@ -9,11 +9,17 @@ Function getClusterNetworkRanges in pulumi-buildkite.
 
 Invoke token: `buildkite:index/getClusterNetworkRanges:getClusterNetworkRanges`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as buildkite from "pulumi-buildkite"
-```
 
-Call `buildkite.getClusterNetworkRanges(args)`.
+const result = await buildkite.getClusterNetworkRanges({
+  clusterUuid: "<clusterUuid>",
+})
+```
 
 `getClusterNetworkRangesOutput` accepts Input values and returns `Output` of the same result.
 

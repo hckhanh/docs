@@ -9,13 +9,22 @@ Resource DomainHostRecord in pulumi-namecheap.
 
 Pulumi type: `namecheap:index/domainHostRecord:DomainHostRecord`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as namecheap from "pulumi-namecheap"
+
+const resource = new namecheap.DomainHostRecord("domainHostRecord", {
+  address: "<address>",
+  domain: "example.com",
+  hostname: "www",
+  type: "<type>",
+})
 ```
-
-Construct with `new namecheap.DomainHostRecord(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

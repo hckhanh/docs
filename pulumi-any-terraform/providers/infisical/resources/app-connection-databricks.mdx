@@ -9,13 +9,27 @@ Resource AppConnectionDatabricks in pulumi-infisical.
 
 Pulumi type: `infisical:index/appConnectionDatabricks:AppConnectionDatabricks`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
+
+const resource = new infisical.AppConnectionDatabricks(
+  "appConnectionDatabricks",
+  {
+    credentials: {
+      clientId: "<clientId>",
+      clientSecret: "<clientSecret>",
+      workspaceUrl: "<workspaceUrl>",
+    },
+    method: "<method>",
+  },
+)
 ```
-
-Construct with `new infisical.AppConnectionDatabricks(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

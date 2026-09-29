@@ -9,11 +9,17 @@ Function getDashboardGroup in pulumi-logtail.
 
 Invoke token: `logtail:index/getDashboardGroup:getDashboardGroup`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
-```
 
-Call `logtail.getDashboardGroup(args)`.
+const result = await logtail.getDashboardGroup({
+  name: "<name>",
+})
+```
 
 `getDashboardGroupOutput` accepts Input values and returns `Output` of the same result.
 

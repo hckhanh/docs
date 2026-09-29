@@ -9,13 +9,23 @@ Resource AppConnectionDigicert in pulumi-infisical.
 
 Pulumi type: `infisical:index/appConnectionDigicert:AppConnectionDigicert`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as infisical from "pulumi-infisical"
+
+const resource = new infisical.AppConnectionDigicert("appConnectionDigicert", {
+  credentials: {
+    apiKey: "<apiKey>",
+    region: "<region>",
+  },
+  method: "<method>",
+})
 ```
-
-Construct with `new infisical.AppConnectionDigicert(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

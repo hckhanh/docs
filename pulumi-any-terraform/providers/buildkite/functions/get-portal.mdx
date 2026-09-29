@@ -9,11 +9,17 @@ Function getPortal in pulumi-buildkite.
 
 Invoke token: `buildkite:index/getPortal:getPortal`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as buildkite from "pulumi-buildkite"
-```
 
-Call `buildkite.getPortal(args)`.
+const result = await buildkite.getPortal({
+  slug: "<slug>",
+})
+```
 
 `getPortalOutput` accepts Input values and returns `Output` of the same result.
 

@@ -9,13 +9,23 @@ Resource VersionedSettings in pulumi-teamcity.
 
 Pulumi type: `teamcity:index/versionedSettings:VersionedSettings`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
+
+const resource = new teamcity.VersionedSettings("versionedSettings", {
+  allowUiEditing: true,
+  projectId: "<projectId>",
+  settings: "<settings>",
+  showChanges: true,
+  vcsrootId: "<vcsrootId>",
+})
 ```
-
-Construct with `new teamcity.VersionedSettings(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

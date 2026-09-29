@@ -9,11 +9,17 @@ Function getVideoLanguage in pulumi-bunnynet.
 
 Invoke token: `bunnynet:index/getVideoLanguage:getVideoLanguage`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as bunnynet from "pulumi-bunnynet"
-```
 
-Call `bunnynet.getVideoLanguage(args)`.
+const result = await bunnynet.getVideoLanguage({
+  code: "<code>",
+})
+```
 
 `getVideoLanguageOutput` accepts Input values and returns `Output` of the same result.
 

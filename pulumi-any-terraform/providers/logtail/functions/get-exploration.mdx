@@ -9,11 +9,17 @@ Function getExploration in pulumi-logtail.
 
 Invoke token: `logtail:index/getExploration:getExploration`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as logtail from "pulumi-logtail"
-```
 
-Call `logtail.getExploration(args)`.
+const result = await logtail.getExploration({
+  name: "<name>",
+})
+```
 
 `getExplorationOutput` accepts Input values and returns `Output` of the same result.
 

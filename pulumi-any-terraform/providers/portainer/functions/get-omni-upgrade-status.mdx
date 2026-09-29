@@ -9,11 +9,19 @@ Function getOmniUpgradeStatus in pulumi-portainer.
 
 Invoke token: `portainer:index/getOmniUpgradeStatus:getOmniUpgradeStatus`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getOmniUpgradeStatus(args)`.
+const result = await portainer.getOmniUpgradeStatus({
+  cluster: "<cluster>",
+  component: "<component>",
+  credentialId: 0,
+})
+```
 
 `getOmniUpgradeStatusOutput` accepts Input values and returns `Output` of the same result.
 

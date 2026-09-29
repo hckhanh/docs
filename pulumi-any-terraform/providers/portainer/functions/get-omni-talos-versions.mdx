@@ -9,11 +9,17 @@ Function getOmniTalosVersions in pulumi-portainer.
 
 Invoke token: `portainer:index/getOmniTalosVersions:getOmniTalosVersions`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getOmniTalosVersions(args)`.
+const result = await portainer.getOmniTalosVersions({
+  credentialId: 0,
+})
+```
 
 `getOmniTalosVersionsOutput` accepts Input values and returns `Output` of the same result.
 

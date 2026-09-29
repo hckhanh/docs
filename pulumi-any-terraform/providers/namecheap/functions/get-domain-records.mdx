@@ -9,11 +9,17 @@ Function getDomainRecords in pulumi-namecheap.
 
 Invoke token: `namecheap:index/getDomainRecords:getDomainRecords`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as namecheap from "pulumi-namecheap"
-```
 
-Call `namecheap.getDomainRecords(args)`.
+const result = await namecheap.getDomainRecords({
+  domain: "<domain>",
+})
+```
 
 `getDomainRecordsOutput` accepts Input values and returns `Output` of the same result.
 

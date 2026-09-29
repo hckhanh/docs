@@ -9,11 +9,18 @@ Function getKubernetesPodMetrics in pulumi-portainer.
 
 Invoke token: `portainer:index/getKubernetesPodMetrics:getKubernetesPodMetrics`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getKubernetesPodMetrics(args)`.
+const result = await portainer.getKubernetesPodMetrics({
+  environmentId: 0,
+  namespace: "<namespace>",
+})
+```
 
 `getKubernetesPodMetricsOutput` accepts Input values and returns `Output` of the same result.
 

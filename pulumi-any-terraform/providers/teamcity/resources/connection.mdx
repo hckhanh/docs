@@ -9,13 +9,28 @@ Resource Connection in pulumi-teamcity.
 
 Pulumi type: `teamcity:index/connection:Connection`.
 
+`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
+
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as teamcity from "pulumi-teamcity"
+
+const resource = new teamcity.Connection("connection", {
+  githubApp: {
+    appId: "<appId>",
+    clientId: "<clientId>",
+    clientSecret: "<clientSecret>",
+    displayName: "<displayName>",
+    ownerUrl: "<ownerUrl>",
+    privateKey: "<privateKey>",
+    webhookSecret: "<webhookSecret>",
+  },
+  projectId: "<projectId>",
+})
 ```
-
-Construct with `new teamcity.Connection(name, args, opts?)`.
-
-`name` is the Pulumi resource name. Nested object fields are documented under that object. They are not arguments of this resource.
 
 ## Arguments
 

@@ -9,11 +9,18 @@ Function getTeamMembership in pulumi-portainer.
 
 Invoke token: `portainer:index/getTeamMembership:getTeamMembership`.
 
+## Example
+
+Only required arguments are set. A string in angle brackets stands in for that argument. Any other value is an option or example written in the SDK description.
+
 ```ts
 import * as portainer from "pulumi-portainer"
-```
 
-Call `portainer.getTeamMembership(args)`.
+const result = await portainer.getTeamMembership({
+  teamId: 0,
+  userId: 0,
+})
+```
 
 `getTeamMembershipOutput` accepts Input values and returns `Output` of the same result.
 
