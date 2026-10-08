@@ -3,10 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate:providers": "node scripts/generate-provider-reference.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "format": "oxfmt",
     "format:check": "oxfmt --check"
   },
   "devDependencies": {
-    "oxfmt": "0.70.0"
+    "oxfmt": "0.70.0",
+    "typescript": "6.0.2"
   }
 }

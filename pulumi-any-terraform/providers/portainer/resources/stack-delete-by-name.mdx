@@ -20,6 +20,7 @@ import * as portainer from "pulumi-portainer"
 
 const resource = new portainer.StackDeleteByName("stackDeleteByName", {
   endpointId: 0,
+  namespace: "<namespace>",
 })
 ```
 
@@ -30,6 +31,7 @@ const resource = new portainer.StackDeleteByName("stackDeleteByName", {
 | `endpointId`          | `number`  | yes      | Identifier of the environment the stack was deployed to.                                                                                  |
 | `external`            | `boolean` | no       | Whether the stack was created outside Portainer. Set it to true to remove a stack Portainer only discovered, rather than one it deployed. |
 | `name`                | `string`  | no       | Name of the Kubernetes stack to remove. Every stack with this name in the target environment is removed.                                  |
+| `namespace`           | `string`  | yes      | Kubernetes namespace the stack was deployed into. Portainer requires it, even though its API specification does not list it.              |
 | `stackDeleteByNameId` | `string`  | no       |                                                                                                                                           |
 
 ## Outputs
@@ -41,4 +43,5 @@ Computed outputs are produced by the provider. They are not constructor argument
 | `endpointId`          | `number`  | no       | Identifier of the environment the stack was deployed to.                                                                                  |
 | `external`            | `boolean` | no       | Whether the stack was created outside Portainer. Set it to true to remove a stack Portainer only discovered, rather than one it deployed. |
 | `name`                | `string`  | no       | Name of the Kubernetes stack to remove. Every stack with this name in the target environment is removed.                                  |
+| `namespace`           | `string`  | no       | Kubernetes namespace the stack was deployed into. Portainer requires it, even though its API specification does not list it.              |
 | `stackDeleteByNameId` | `string`  | no       |                                                                                                                                           |

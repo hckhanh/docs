@@ -37,7 +37,7 @@ git -C /Users/khanh/KhanhProjects/pulumi-any-terraform worktree remove --force "
 npm run format
 ```
 
-Run the command from this repository. The script loads TypeScript from the Pulumi checkout's `node_modules` and writes pages here. The script exits non-zero when a documented field does not match the SDK. Do not hand-edit the generated MDX to silence that failure.
+Run `npm ci` in this repository before generating. The script uses this repository's TypeScript dependency and writes pages into the repository containing the script. The Pulumi source checkout does not need installed dependencies. The script exits non-zero before replacing pages when a documented field does not match the SDK. Do not hand-edit the generated MDX to silence that failure.
 
 If the script reports a package missing from its provider list, add that package's title and existing icon to `providerMeta` in `scripts/generate-provider-reference.mjs`, then run it again. Do not draw a new icon.
 

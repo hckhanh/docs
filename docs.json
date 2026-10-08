@@ -853,7 +853,8 @@
                           "pulumi-any-terraform/providers/posthog/resources/role",
                           "pulumi-any-terraform/providers/posthog/resources/role-membership",
                           "pulumi-any-terraform/providers/posthog/resources/subscription",
-                          "pulumi-any-terraform/providers/posthog/resources/survey"
+                          "pulumi-any-terraform/providers/posthog/resources/survey",
+                          "pulumi-any-terraform/providers/posthog/resources/warehouse-table"
                         ]
                       },
                       {
@@ -985,44 +986,84 @@
                 "product": "fast-url",
                 "icon": "/images/fast-url.svg",
                 "description": "A high-performance URL building library that makes constructing URLs safe and convenient",
-                "pages": [
-                  "fast-url/overview",
-                  "fast-url/getting-started",
-                  "fast-url/api-reference",
-                  "fast-url/benchmarks"
+                "groups": [
+                  {
+                    "group": "Getting Started",
+                    "pages": ["fast-url/overview", "fast-url/getting-started"]
+                  },
+                  {
+                    "group": "API Reference",
+                    "pages": ["fast-url/api-reference", "fast-url/benchmarks"]
+                  }
                 ]
               },
               {
                 "product": "vn-number",
                 "icon": "/images/vn-number.svg",
                 "description": "Utility functions that work with numbers in Vietnamese",
-                "pages": ["vn-number/overview", "vn-number/api-reference"]
+                "groups": [
+                  {
+                    "group": "Getting Started",
+                    "pages": ["vn-number/overview"]
+                  },
+                  {
+                    "group": "API Reference",
+                    "pages": ["vn-number/api-reference"]
+                  }
+                ]
               },
               {
                 "product": "ja4",
                 "icon": "/images/ja4.svg",
                 "description": "Parse JA4 TLS fingerprint strings into structured objects",
-                "pages": ["ja4/overview", "ja4/api", "ja4/concepts"]
+                "groups": [
+                  {
+                    "group": "Getting Started",
+                    "pages": ["ja4/overview"]
+                  },
+                  {
+                    "group": "API Reference",
+                    "pages": ["ja4/api", "ja4/concepts"]
+                  }
+                ]
               },
               {
                 "product": "what-the-fetch",
                 "icon": "/images/what-the-fetch.svg",
                 "description": "Type-safe API client with schema validation using Standard Schema",
-                "pages": [
-                  "what-the-fetch/overview",
-                  "what-the-fetch/getting-started",
-                  "what-the-fetch/api-reference",
-                  "what-the-fetch/benchmarks"
+                "groups": [
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "what-the-fetch/overview",
+                      "what-the-fetch/getting-started"
+                    ]
+                  },
+                  {
+                    "group": "API Reference",
+                    "pages": [
+                      "what-the-fetch/api-reference",
+                      "what-the-fetch/benchmarks"
+                    ]
+                  }
                 ]
               },
               {
                 "product": "format-prompt",
                 "icon": "/images/format-prompt.svg",
                 "description": "A utility to format prompts for a cleaner presentation and optimal token usage",
-                "pages": [
-                  "format-prompt/overview",
-                  "format-prompt/getting-started",
-                  "format-prompt/api-reference"
+                "groups": [
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "format-prompt/overview",
+                      "format-prompt/getting-started"
+                    ]
+                  },
+                  {
+                    "group": "API Reference",
+                    "pages": ["format-prompt/api-reference"]
+                  }
                 ]
               }
             ]

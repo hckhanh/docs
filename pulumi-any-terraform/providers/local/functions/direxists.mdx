@@ -14,14 +14,16 @@ Only required arguments are set. A string in angle brackets stands in for that a
 ```ts
 import * as local from "pulumi-local"
 
-const result = await local.direxists()
+const result = await local.direxists("<path>")
 ```
 
 `direxistsOutput` accepts Input values and returns `Output` of the same result.
 
 ## Arguments
 
-This function takes no arguments.
+| Property | Type     | Required | Description |
+| -------- | -------- | -------- | ----------- |
+| `path`   | `string` | yes      |             |
 
 ## Result
 

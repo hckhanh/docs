@@ -17,8 +17,10 @@ Only required arguments are set. A string in angle brackets stands in for that a
 import * as portainer from "pulumi-portainer"
 
 const result = await portainer.getRegistryConnection({
+  password: "<password>",
   type: 0,
   url: "<url>",
+  username: "<username>",
 })
 ```
 
@@ -30,11 +32,11 @@ const result = await portainer.getRegistryConnection({
 | ------------- | --------- | -------- | ----------- |
 | `failOnError` | `boolean` | no       |             |
 | `id`          | `string`  | no       |             |
-| `password`    | `string`  | no       |             |
+| `password`    | `string`  | yes      |             |
 | `tls`         | `boolean` | no       |             |
 | `type`        | `number`  | yes      |             |
 | `url`         | `string`  | yes      |             |
-| `username`    | `string`  | no       |             |
+| `username`    | `string`  | yes      |             |
 
 ## Result
 
@@ -43,9 +45,9 @@ const result = await portainer.getRegistryConnection({
 | `failOnError` | `boolean` | no             |             |
 | `id`          | `string`  | yes            |             |
 | `message`     | `string`  | yes            |             |
-| `password`    | `string`  | no             |             |
+| `password`    | `string`  | yes            |             |
 | `success`     | `boolean` | yes            |             |
 | `tls`         | `boolean` | no             |             |
 | `type`        | `number`  | yes            |             |
 | `url`         | `string`  | yes            |             |
-| `username`    | `string`  | no             |             |
+| `username`    | `string`  | yes            |             |

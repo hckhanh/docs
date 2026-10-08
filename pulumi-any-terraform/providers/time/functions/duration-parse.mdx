@@ -16,14 +16,16 @@ Only required arguments are set. A string in angle brackets stands in for that a
 ```ts
 import * as time from "pulumi-time"
 
-const result = await time.durationParse()
+const result = await time.durationParse("<duration>")
 ```
 
 `durationParseOutput` accepts Input values and returns `Output` of the same result.
 
 ## Arguments
 
-This function takes no arguments.
+| Property   | Type     | Required | Description |
+| ---------- | -------- | -------- | ----------- |
+| `duration` | `string` | yes      |             |
 
 ## Result
 

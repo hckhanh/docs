@@ -7,17 +7,20 @@ import {
   mkdirSync,
   readFileSync,
   readdirSync,
+  realpathSync,
   rmSync,
   statSync,
   writeFileSync,
 } from "node:fs"
-import { dirname, join, relative } from "node:path"
-import ts from "/Users/khanh/KhanhProjects/pulumi-any-terraform/node_modules/typescript/lib/typescript.js"
+import { dirname, join, relative, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
+import ts from "typescript"
 
-const packagesRoot =
+const docsRoot = fileURLToPath(new URL("../", import.meta.url))
+const packagesRoot = resolve(
   process.env.PULUMI_PACKAGES ??
-  "/Users/khanh/KhanhProjects/pulumi-any-terraform/packages"
-const docsRoot = "/Users/khanh/Projects/docs"
+    join(docsRoot, "../pulumi-any-terraform/packages"),
+)
 const docsJsonPath = join(docsRoot, "docs.json")
 
 const providerMeta = [
@@ -158,6 +161,7 @@ function renderSample(
   exportName,
   argProps,
   interfaces,
+  { positional = false, required = false } = {},
 ) {
   const fields = argProps
     .filter((prop) => !prop.optional && !prop.index)
@@ -175,10 +179,15 @@ function renderSample(
   const args = renderArgs(fields)
   const logical = camel(exportName)
   const variable = kind === "resource" ? "resource" : "result"
+  const functionArgs = positional
+    ? fields.map((field) => field.value).join(", ")
+    : fields.length > 0 || required
+      ? args
+      : ""
   const call =
     kind === "resource"
       ? `const ${variable} = new ${binding}.${exportName}("${logical}", ${args})`
-      : `const ${variable} = await ${binding}.${exportName}(${fields.length === 0 ? "" : args})`
+      : `const ${variable} = await ${binding}.${exportName}(${functionArgs})`
   return [
     "## Example",
     "",
@@ -707,12 +716,12 @@ function loadPackage(dirName) {
   }
 }
 
-function functionSignature(source, name) {
+function functionSignature(source, name, interfaces) {
   const fn = source.statements.find(
     (node) => ts.isFunctionDeclaration(node) && node.name?.text === name,
   )
   if (!fn) throw new Error(`Function ${name} not found in ${source.fileName}`)
-  const argsParam = fn.parameters.find((parameter) => {
+  const parameters = fn.parameters.filter((parameter) => {
     const typeName =
       parameter.type && ts.isTypeReferenceNode(parameter.type)
         ? parameter.type.typeName.getText(source)
@@ -722,8 +731,11 @@ function functionSignature(source, name) {
       typeName !== "pulumi.InvokeOutputOptions"
     )
   })
+  const argsParam = parameters.length === 1 ? parameters[0] : null
   const argsName =
-    argsParam?.type && ts.isTypeReferenceNode(argsParam.type)
+    argsParam?.type &&
+    ts.isTypeReferenceNode(argsParam.type) &&
+    interfaces.has(`local:${argsParam.type.typeName.getText(source)}`)
       ? argsParam.type.typeName.getText(source)
       : null
   let resultName = null
@@ -741,7 +753,13 @@ function functionSignature(source, name) {
     (node) =>
       ts.isFunctionDeclaration(node) && node.name?.text === `${name}Output`,
   )
-  return { argsName, resultName, token: invoke?.[1] ?? "", outputVariant }
+  return {
+    argsName,
+    resultName,
+    parameters,
+    token: invoke?.[1] ?? "",
+    outputVariant,
+  }
 }
 
 function renderResource(pkgInfo, resource) {
@@ -825,7 +843,7 @@ function renderResource(pkgInfo, resource) {
 
 function renderFunction(pkgInfo, item) {
   const source = pkgInfo.sources.get(item.file) ?? parse(item.file)
-  const signature = functionSignature(source, item.name)
+  const signature = functionSignature(source, item.name, pkgInfo.interfaces)
   const args = signature.argsName
     ? pkgInfo.interfaces.get(`local:${signature.argsName}`)
     : null
@@ -836,7 +854,18 @@ function renderFunction(pkgInfo, item) {
     throw new Error(`Missing ${signature.argsName} for ${item.name}`)
   if (signature.resultName && !result)
     throw new Error(`Missing ${signature.resultName} for ${item.name}`)
-  const argProps = args ? shapeProps(args, pkgInfo.interfaces) : []
+  const argProps = args
+    ? shapeProps(args, pkgInfo.interfaces)
+    : signature.parameters.map((parameter) => {
+        const refs = { interfaces: pkgInfo.interfaces, list: [] }
+        return {
+          name: parameter.name.getText(source),
+          optional: Boolean(parameter.questionToken || parameter.initializer),
+          type: renderType(parameter.type, source, refs),
+          docs: cleanDocs(commentOf(parameter, source)),
+          refs: refs.list,
+        }
+      })
   const resultProps = result
     ? shapeProps(result, pkgInfo.interfaces).map((prop) => ({
         ...prop,
@@ -865,6 +894,12 @@ function renderFunction(pkgInfo, item) {
       item.name,
       argProps,
       pkgInfo.interfaces,
+      {
+        positional: !args,
+        required: signature.parameters.some(
+          (parameter) => !parameter.questionToken && !parameter.initializer,
+        ),
+      },
     ),
   ]
   if (signature.outputVariant) {
@@ -876,7 +911,9 @@ function renderFunction(pkgInfo, item) {
   lines.push(
     "## Arguments",
     "",
-    args ? table(argProps, "input") : "This function takes no arguments.",
+    signature.parameters.length > 0
+      ? table(argProps, "input")
+      : "This function takes no arguments.",
     "",
   )
   lines.push(
@@ -1167,12 +1204,12 @@ function splitLargePage(page, markdown, title) {
     return [path, text]
   })
 }
-function verifyRendered(file, rendered) {
+function verifyRendered(file, rendered, readPage = read) {
   const markdown = rendered.parts
     ? rendered.parts
-        .map((part) => read(join(docsRoot, `${part}.mdx`)))
+        .map((part) => readPage(join(docsRoot, `${part}.mdx`)))
         .join("\n")
-    : read(file)
+    : readPage(file)
   if (rendered.argProps) {
     const args = parseTable(markdown, "## Arguments")
     if (!args) throw new Error(`${file} missing arguments`)
@@ -1208,6 +1245,12 @@ function verifyRendered(file, rendered) {
 }
 
 function main() {
+  const docs = JSON.parse(read(docsJsonPath))
+  const product = docs.navigation.tabs[0].productGroups[0].products.find(
+    (item) => item.product === "Pulumi Any Terraform",
+  )
+  if (!product)
+    throw new Error("Pulumi Any Terraform product is missing from docs.json")
   const packageNames = providerMeta.map(([dir]) => dir)
   const onDisk = readdirSync(packagesRoot).filter((name) =>
     statSync(join(packagesRoot, name)).isDirectory(),
@@ -1329,16 +1372,18 @@ function main() {
     renderProductOverview(navProviders),
   )
 
-  const providerRoot = join(docsRoot, "pulumi-any-terraform/providers")
-  rmSync(providerRoot, { recursive: true, force: true })
-  for (const page of guidePages) {
-    rmSync(join(docsRoot, "pulumi-any-terraform", `${page}.mdx`), {
-      force: true,
-    })
+  const readGenerated = (file) => {
+    const page = relative(docsRoot, file)
+      .replaceAll("\\", "/")
+      .replace(/\.mdx$/, "")
+    const markdown = generated.get(page)
+    if (typeof markdown !== "string")
+      throw new Error(`Missing generated page ${page}`)
+    return markdown
   }
   for (const [page, markdown] of generated) {
     if (page.endsWith("#check")) continue
-    writePage(join(docsRoot, `${page}.mdx`), markdown)
+    assertBalanced(markdown, page)
   }
 
   for (const [page, rendered] of generated) {
@@ -1346,10 +1391,11 @@ function main() {
     verifyRendered(
       join(docsRoot, `${page.slice(0, -"#check".length)}.mdx`),
       rendered,
+      readGenerated,
     )
   }
+  assertFixtures(readGenerated)
 
-  const docs = JSON.parse(read(docsJsonPath))
   docs.markdown.instructions = [
     "This site documents fast-url, format-prompt, ja4, vn-number, what-the-fetch, and Pulumi Any Terraform.",
     "Each library is a separate product. Its pages start at /<library>/overview.",
@@ -1360,10 +1406,6 @@ function main() {
     "If a URL is missing, follow the suggested pages or search /search?q= instead of guessing another path.",
     "The published documentation site is https://docs.khanh.id.",
   ]
-  const tab = docs.navigation.tabs[0]
-  const product = tab.productGroups[0].products.find(
-    (item) => item.product === "Pulumi Any Terraform",
-  )
   product.description = "TypeScript packages bridged from Terraform providers"
   delete product.pages
   product.groups = [
@@ -1401,7 +1443,28 @@ function main() {
       })
     }
   }
-  docs.redirects = [...keptRedirects, ...dedupeRedirects(pulumiRedirects)]
+  docs.redirects = [
+    ...keptRedirects,
+    ...preserveRedirects(
+      docs.redirects.filter((redirect) =>
+        redirect.source.startsWith("/pulumi-any-terraform"),
+      ),
+      pulumiRedirects,
+      generated,
+    ),
+  ]
+
+  const providerRoot = join(docsRoot, "pulumi-any-terraform/providers")
+  rmSync(providerRoot, { recursive: true, force: true })
+  for (const page of guidePages) {
+    rmSync(join(docsRoot, "pulumi-any-terraform", `${page}.mdx`), {
+      force: true,
+    })
+  }
+  for (const [page, markdown] of generated) {
+    if (page.endsWith("#check")) continue
+    writePage(join(docsRoot, `${page}.mdx`), markdown)
+  }
   writeFileSync(docsJsonPath, `${JSON.stringify(docs, null, 2)}\n`)
 
   const indexPath = join(docsRoot, "index.mdx")
@@ -1411,7 +1474,6 @@ function main() {
   )
   writeFileSync(indexPath, index)
 
-  assertFixtures()
   process.stderr.write(
     `wrote ${[...generated.keys()].filter((key) => !key.endsWith("#check")).length} pages\n`,
   )
@@ -1448,8 +1510,33 @@ function dedupeRedirects(redirects) {
   return result
 }
 
-function assertFixtures() {
-  const pullzone = read(
+function preserveRedirects(existing, updates, generated) {
+  const redirects = dedupeRedirects([...updates, ...existing]).filter(
+    (redirect) => !generated.has(redirect.source.slice(1)),
+  )
+  const destinations = new Map(
+    redirects.map((redirect) => [redirect.source, redirect.destination]),
+  )
+  return redirects.map((redirect) => {
+    let destination = redirect.destination
+    const visited = new Set([redirect.source])
+    while (destinations.has(destination) && !visited.has(destination)) {
+      visited.add(destination)
+      destination = destinations.get(destination)
+    }
+    if (
+      destination.startsWith("/pulumi-any-terraform/") &&
+      !generated.has(destination.slice(1))
+    ) {
+      const oldPage = destination.slice(1)
+      destination = matchMoved(oldPage, generated) ?? providerOverview(oldPage)
+    }
+    return { ...redirect, destination }
+  })
+}
+
+function assertFixtures(readPage = read) {
+  const pullzone = readPage(
     join(
       docsRoot,
       "pulumi-any-terraform/providers/bunnynet/resources/pullzone.mdx",
@@ -1481,7 +1568,7 @@ function assertFixtures() {
   ) {
     throw new Error(`PullzoneOrigin fields: ${[...originNames].join(", ")}`)
   }
-  const records = read(
+  const records = readPage(
     join(
       docsRoot,
       "pulumi-any-terraform/providers/namecheap/resources/domain-records.mdx",
@@ -1518,9 +1605,16 @@ function assertFixtures() {
   }
   if (required.has("ttl") || required.has("mxPref"))
     throw new Error("optional DomainRecordsRecord field marked required")
-  const overview = read(join(docsRoot, "pulumi-any-terraform/overview.mdx"))
+  const overview = readPage(join(docsRoot, "pulumi-any-terraform/overview.mdx"))
   if (/Python|Go, and C#|C#/.test(overview))
     throw new Error("Overview still claims other languages")
 }
 
-main()
+export { collectInterfaces, preserveRedirects, renderFunction }
+
+if (
+  process.argv[1] &&
+  realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)
+) {
+  main()
+}
